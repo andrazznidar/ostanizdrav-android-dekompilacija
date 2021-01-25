@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:tag="layout/view_tan_input_group_4_0" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tan_input_1" android:layout_marginStart="@dimen/no_padding" style="@style/tanInputDigit" />
+    <TextView android:id="@id/tan_input_2" style="@style/tanInputDigit" />
+    <TextView android:id="@id/tan_input_3" style="@style/tanInputDigit" />
+    <TextView android:id="@id/tan_input_4" android:layout_marginEnd="@dimen/no_padding" style="@style/tanInputDigit" />
+</LinearLayout>

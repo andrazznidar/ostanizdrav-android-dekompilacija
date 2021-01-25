@@ -1,0 +1,71 @@
+.class public final Lokhttp3/internal/http2/Http2Connection$Builder;
+.super Ljava/lang/Object;
+.source "Http2Connection.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lokhttp3/internal/http2/Http2Connection;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Builder"
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$Builder\n*L\n1#1,1006:1\n*E\n"
+.end annotation
+
+
+# instance fields
+.field public client:Z
+
+.field public connectionName:Ljava/lang/String;
+
+.field public listener:Lokhttp3/internal/http2/Http2Connection$Listener;
+
+.field public pingIntervalMillis:I
+
+.field public pushObserver:Lokhttp3/internal/http2/PushObserver;
+
+.field public sink:Lokio/BufferedSink;
+
+.field public socket:Ljava/net/Socket;
+
+.field public source:Lokio/BufferedSource;
+
+.field public final taskRunner:Lokhttp3/internal/concurrent/TaskRunner;
+
+
+# direct methods
+.method public constructor <init>(ZLokhttp3/internal/concurrent/TaskRunner;)V
+    .locals 0
+
+    if-eqz p2, :cond_0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lokhttp3/internal/http2/Http2Connection$Builder;->client:Z
+
+    iput-object p2, p0, Lokhttp3/internal/http2/Http2Connection$Builder;->taskRunner:Lokhttp3/internal/concurrent/TaskRunner;
+
+    sget-object p1, Lokhttp3/internal/http2/Http2Connection$Listener;->REFUSE_INCOMING_STREAMS:Lokhttp3/internal/http2/Http2Connection$Listener;
+
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$Builder;->listener:Lokhttp3/internal/http2/Http2Connection$Listener;
+
+    sget-object p1, Lokhttp3/internal/http2/PushObserver;->CANCEL:Lokhttp3/internal/http2/PushObserver;
+
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$Builder;->pushObserver:Lokhttp3/internal/http2/PushObserver;
+
+    return-void
+
+    :cond_0
+    const-string p1, "taskRunner"
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method

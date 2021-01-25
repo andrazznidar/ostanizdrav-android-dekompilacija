@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/include_risk_details_behavior_row_0" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/risk_details_behavior_icon" android:tag="binding_1" android:background="@drawable/circle" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:tag="binding_2" android:focusable="false" android:layout_width="@dimen/icon_size_risk_details_behavior" android:layout_height="@dimen/icon_size_risk_details_behavior" android:layout_margin="@dimen/icon_margin_risk_details_behavior" android:importantForAccessibility="no" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView android:tag="binding_3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/risk_details_behavior_icon" app:layout_constraintTop_toTopOf="parent" style="@style/subtitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

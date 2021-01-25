@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.rki.coronawarnapp.ui.view.UnscrollableEditText android:id="@id/tan_input_edittext" android:tag="layout/view_tan_input_edittext_0" style="@style/tanInputEdittext"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

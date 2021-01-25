@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/include_main_overview_glossary_0" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/main_overview_glossary" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/row">
+        <TextView android:id="@id/main_overview_glossary_subtitle" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:accessibilityHeading="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@id/guideline_body" app:layout_constraintTop_toTopOf="parent" style="@style/headline6" />
+        <TextView android:id="@id/main_overview_glossary_body" android:tag="binding_2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@id/main_overview_glossary_subtitle" app:layout_constraintTop_toBottomOf="@id/main_overview_glossary_subtitle" style="@style/subtitle" />
+        <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@id/guideline_body" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_begin="@dimen/guideline_body_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

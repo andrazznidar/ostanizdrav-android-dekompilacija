@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="submission_done_further_info_bullet_points">
+        <item>Your quarantine period is usually 14 days. Please observe your symptoms and monitor how they develop.</item>
+        <item>You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.</item>
+        <item>"Please think especially about the people who will not be notified directly by the app since they don't have a device, or haven't installed the app."</item>
+        <item>Even when you no longer have any symptoms and you feel well again, you could still be infectious.</item>
+    </string-array>
+    <string-array name="submission_intro_bullet_points">
+        <item>If you have been diagnosed with COVID-19, you can notify others.</item>
+        <item>If you were given a TAN for a positive diagnosis, you can use this to register the test.</item>
+        <item>If you do not have a TAN, you can request one by telephone.</item>
+    </string-array>
+    <string-array name="test_result_card_negative_further_info_bullet_points">
+        <item>Still feeling unwell? If you feel very poorly and/or your symptoms have worsened, please contact your general practitioner.</item>
+        <item>Remain at home until you feel well again. If you were to get infected with coronavirus (SARS-CoV-2) whilst weakened from another infection, this could lead to a serious illness.</item>
+        <item>Do not go to work if you feel unwell to ensure you do not put other people at risk. If your symptoms worsen, you might need a further SARS-CoV-2 test.</item>
+    </string-array>
+</resources>
