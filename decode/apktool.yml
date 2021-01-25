@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: '#OstaniZdrav_si.gov.ostanizdrav.apk'
+apkFileName: '#OstaniZdrav_base.apk'
 compressionType: false
 doNotCompress:
 - resources.arsc
@@ -586,5 +586,5 @@ usesFramework:
   tag: null
 version: 2.5.0
 versionInfo:
-  versionCode: '51'
+  versionCode: '56'
   versionName: 1.1.1

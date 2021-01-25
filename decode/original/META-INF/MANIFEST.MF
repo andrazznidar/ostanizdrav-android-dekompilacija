@@ -3,7 +3,7 @@ Built-By: BundleTool
 Created-By: BundleTool
 
 Name: AndroidManifest.xml
-SHA-256-Digest: xvgpK3wG4KM4baX1i+Uk258Ou1vometHP16pUXMj1IU=
+SHA-256-Digest: NBKiWhG4suvqd0U/pMr+62iYV2usMw6ZwmHe3p8TecE=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: 0cq94INRAxehM5WgOEQqof7/BqELgx/h39z9LVcmfLw=
@@ -307,8 +307,14 @@ SHA-256-Digest: TIealxQ/wSlwipZu5tcMSEdBYPV1Rjtc31K2iRCzlfM=
 Name: assets/privacy_en.html
 SHA-256-Digest: oxrhswgEGkPRTI3E1QSrSguCk3Pt+5qu/NJRezw+Cks=
 
+Name: assets/privacy_hu.html
+SHA-256-Digest: xHmyVl6lt3DYiwMA6p5CyPrPW8vIC07yvhPOF6fvGRI=
+
+Name: assets/privacy_it.html
+SHA-256-Digest: VOdNpDdqeO1vVzZ0Cuwcs/Ak+cFPnbNSM6XO8kdba9g=
+
 Name: assets/privacy_sl.html
-SHA-256-Digest: bbZk7CimWbpgzO132rhaFsadzgsnNHGkyjKx9uHDoeE=
+SHA-256-Digest: aafYbAYRXaotV8KI9Rf4WtrzldEeucCJJiXyDY5cBXk=
 
 Name: assets/privacy_tr.html
 SHA-256-Digest: fGP7KpwUfBgvCcFIR0LN3pjDUWHOFbwmVIrC1HJHaeU=
@@ -319,8 +325,14 @@ SHA-256-Digest: vFuhrIAK6XAXkUZjkSR/mT7p+GvT3/MRkim/K6csvGw=
 Name: assets/technical_en.html
 SHA-256-Digest: z4okLeNl6lJ1kcib7TSe9nzAvkw6Xhd0R3Os0mjuvg4=
 
+Name: assets/technical_hu.html
+SHA-256-Digest: YTPk1alW2Y5g75VlFfXOfGeL7uC0OO/kuRHRmU+HM8Y=
+
+Name: assets/technical_it.html
+SHA-256-Digest: w+1p3ta4KHf8NRp/NE4mPRHK+4oIjMFnrEO3sh5oAqg=
+
 Name: assets/technical_sl.html
-SHA-256-Digest: Eaz2Rq5Hae05sDuxYzJr+w9NMxM+Q5e+UsERBC9AZYs=
+SHA-256-Digest: wFQxl+Hg4pxSnx6ta45KaSbAwpKr7g1kumLRg0PLwJw=
 
 Name: assets/technical_tr.html
 SHA-256-Digest: vFuhrIAK6XAXkUZjkSR/mT7p+GvT3/MRkim/K6csvGw=
@@ -329,10 +341,16 @@ Name: assets/terms_de.html
 SHA-256-Digest: TOxvsUwnK31ENrIzRxhAJdPf55OtEF/psgrp++M+0/M=
 
 Name: assets/terms_en.html
-SHA-256-Digest: 7jnUBmO1D5s3b8J0lqasoxquktSUBMsK+EnUKs1Uneo=
+SHA-256-Digest: u+84npctJoH2l5O8NzEs3mlOUXvTZ8nh4Tp77Ys7J2Y=
+
+Name: assets/terms_hu.html
+SHA-256-Digest: mGh9laa7MSGUY7vgbnCSwV392MKMRLh8mcV1F3N3D3k=
+
+Name: assets/terms_it.html
+SHA-256-Digest: MHAEzSlvEpkuAoL8Y0dXiy7cIkU7YpdLAKDrly2Xi9Q=
 
 Name: assets/terms_sl.html
-SHA-256-Digest: ah2LIjWWWcei4rbv9rlL4CfjIuu8sLQKyPQOrb84hQc=
+SHA-256-Digest: kQXPORHRLR810aKSevS1EqEeZsIb8FfU/HrCxLjKoE8=
 
 Name: assets/terms_tr.html
 SHA-256-Digest: r5cKcHgZw29MA22a9YQ/bCStDsr3+amZh1uC4Sf9AXs=
@@ -3914,7 +3932,7 @@ Name: res/xml/network_security_config.xml
 SHA-256-Digest: deluQaUSKeL9meH0hbtKHDm+IrCtYpnE1lWuVRIOZl4=
 
 Name: res/xml/splits0.xml
-SHA-256-Digest: fT0guHqQDt//MLfX/scAjGBWM7CL/KhsL9mJ8xhGIlI=
+SHA-256-Digest: EoroGWp2et4dfPmrDMspu/mzN35qFhEx/cmzSAjLebk=
 
 Name: res/xml/standalone_badge.xml
 SHA-256-Digest: 0n1ZSGT6AtYtaZQU58+WJCQiGDlWTXQEKQmHy1PjBOI=
