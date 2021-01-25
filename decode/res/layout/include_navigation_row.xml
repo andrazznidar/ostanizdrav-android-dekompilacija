@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/include_navigation_row_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/navigation_row" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/row">
-        <ImageView android:id="@id/navigation_row_icon" android:tag="binding_1" android:layout_width="@dimen/icon_size_settings" android:layout_height="@dimen/icon_size_settings" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/spacing_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/navigation_row_subtitle" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/icon" />
-        <TextView android:id="@id/navigation_row_subtitle" android:tag="binding_2" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/navigation_row_icon" app:layout_constraintTop_toTopOf="parent" style="@style/headline5Tint" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/submission_country_no_selection_container" android:tag="layout/include_submission_country_no_selection_0" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardGrey"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:id="@id/submission_country_no_selection_header" android:tag="binding_1" android:focusable="true" android:layout_width="@dimen/match_constraint" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:layout_marginBottom="@dimen/spacing_normal" android:text="@string/submission_country_no_selection_headline" android:layout_marginVertical="@dimen/spacing_normal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/guideline_end" app:layout_constraintStart_toStartOf="@id/guideline_start" app:layout_constraintTop_toTopOf="parent" style="@style/headline5" />
-    <include layout="@layout/merge_guidelines_side" />
-</androidx.constraintlayout.widget.ConstraintLayout>

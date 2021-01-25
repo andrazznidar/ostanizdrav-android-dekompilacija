@@ -1,0 +1,15 @@
+nav details,
+nav a {
+  padding-left: 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (pointer: fine) {
+  nav details,
+  nav a {
+    padding-left: 1%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}

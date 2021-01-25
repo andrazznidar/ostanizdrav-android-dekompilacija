@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape android:shape="rectangle"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:radius="@dimen/calendar_header_initial_radius" android:topLeftRadius="@dimen/calendar_header_top_radius" android:topRightRadius="@dimen/calendar_header_top_radius" android:bottomLeftRadius="@dimen/calendar_header_bottom_radius" android:bottomRightRadius="@dimen/calendar_header_bottom_radius" />
-    <solid android:color="@color/colorCalendarLayoutFocusOn" />
-</shape>

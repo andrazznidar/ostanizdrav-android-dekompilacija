@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@id/guideline_card_start" android:tag="layout/merge_guidelines_card_0" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_begin="@dimen/guideline_card" />
-    <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@id/guideline_card_end" android:tag="layout/merge_guidelines_card_1" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_end="@dimen/guideline_card" />
-</merge>
