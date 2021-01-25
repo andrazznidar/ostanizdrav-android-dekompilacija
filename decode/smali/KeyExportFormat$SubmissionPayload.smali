@@ -39,6 +39,8 @@
 
 
 # instance fields
+.field public bitField0_:I
+
 .field public keys_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,6 +50,8 @@
         }
     .end annotation
 .end field
+
+.field public padding_:Lcom/google/protobuf/ByteString;
 
 
 # direct methods
@@ -74,13 +78,38 @@
 
     iput-object v0, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
+    sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
+
+    iput-object v0, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
     return-void
+.end method
+
+.method public static access$5800(LKeyExportFormat$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget v0, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    iput-object p1, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    return-void
+
+    :cond_0
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 
 # virtual methods
 .method public final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -89,6 +118,8 @@
     const/4 v0, 0x0
 
     const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     packed-switch p1, :pswitch_data_0
 
@@ -170,20 +201,22 @@
 
     :cond_2
     :goto_1
-    if-nez v1, :cond_6
+    if-nez v1, :cond_7
 
     :try_start_1
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result p1
 
-    const/4 v0, 0x1
+    if-eqz p1, :cond_6
 
-    if-eqz p1, :cond_5
+    const/16 v0, 0xa
 
-    const/16 v2, 0xa
+    if-eq p1, v0, :cond_4
 
-    if-eq p1, v2, :cond_3
+    const/16 v0, 0x12
+
+    if-eq p1, v0, :cond_3
 
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/GeneratedMessageLite;->parseUnknownField(ILcom/google/protobuf/CodedInputStream;)Z
 
@@ -194,13 +227,28 @@
     goto :goto_2
 
     :cond_3
+    iget p1, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    or-int/2addr p1, v2
+
+    iput p1, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object p1
+
+    iput-object p1, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    goto :goto_1
+
+    :cond_4
     iget-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
     check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
 
     iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_5
 
     iget-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -210,7 +258,7 @@
 
     iput-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_4
+    :cond_5
     iget-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
     sget-object v0, LKeyExportFormat$TemporaryExposureKey;->DEFAULT_INSTANCE:LKeyExportFormat$TemporaryExposureKey;
@@ -231,9 +279,9 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     :goto_2
-    move v1, v0
+    move v1, v2
 
     goto :goto_1
 
@@ -274,7 +322,7 @@
     :goto_3
     throw p1
 
-    :cond_6
+    :cond_7
     :pswitch_5
     sget-object p1, LKeyExportFormat$SubmissionPayload;->DEFAULT_INSTANCE:LKeyExportFormat$SubmissionPayload;
 
@@ -287,22 +335,66 @@
 
     iget-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    iget-object p3, p3, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v0, p3, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {p2, p1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+    invoke-interface {p2, p1, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object p1
 
     iput-object p1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
+    iget p1, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr p1, v2
+
+    if-ne p1, v2, :cond_8
+
+    move p1, v2
+
+    goto :goto_4
+
+    :cond_8
+    move p1, v1
+
+    :goto_4
+    iget-object v0, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    iget v3, p3, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr v3, v2
+
+    if-ne v3, v2, :cond_9
+
+    move v1, v2
+
+    :cond_9
+    iget-object v2, p3, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    invoke-interface {p2, p1, v0, v1, v2}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitByteString(ZLcom/google/protobuf/ByteString;ZLcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
+
+    move-result-object p1
+
+    iput-object p1, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    sget-object p1, Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;->INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;
+
+    if-ne p2, p1, :cond_a
+
+    iget p1, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    iget p2, p3, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    or-int/2addr p1, p2
+
+    iput p1, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    :cond_a
     return-object p0
 
     :pswitch_7
     sget-object p1, LKeyExportFormat$SubmissionPayload;->DEFAULT_INSTANCE:LKeyExportFormat$SubmissionPayload;
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -340,6 +432,8 @@
 
     move-result v2
 
+    const/4 v3, 0x1
+
     if-ge v0, v2, :cond_1
 
     iget-object v2, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
@@ -349,8 +443,6 @@
     move-result-object v2
 
     check-cast v2, Lcom/google/protobuf/MessageLite;
-
-    const/4 v3, 0x1
 
     invoke-static {v3, v2}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
 
@@ -363,6 +455,23 @@
     goto :goto_0
 
     :cond_1
+    iget v0, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr v0, v3
+
+    if-ne v0, v3, :cond_2
+
+    const/4 v0, 0x2
+
+    iget-object v2, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    invoke-static {v0, v2}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/protobuf/ByteString;)I
+
+    move-result v0
+
+    add-int/2addr v1, v0
+
+    :cond_2
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
     invoke-virtual {v0}, Lcom/google/protobuf/UnknownFieldSetLite;->getSerializedSize()I
@@ -393,6 +502,8 @@
 
     move-result v1
 
+    const/4 v2, 0x1
+
     if-ge v0, v1, :cond_0
 
     iget-object v1, p0, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
@@ -403,8 +514,6 @@
 
     check-cast v1, Lcom/google/protobuf/MessageLite;
 
-    const/4 v2, 0x1
-
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
     add-int/lit8 v0, v0, 0x1
@@ -412,6 +521,19 @@
     goto :goto_0
 
     :cond_0
+    iget v0, p0, LKeyExportFormat$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr v0, v2
+
+    if-ne v0, v2, :cond_1
+
+    const/4 v0, 0x2
+
+    iget-object v1, p0, LKeyExportFormat$SubmissionPayload;->padding_:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
+
+    :cond_1
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSetLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V

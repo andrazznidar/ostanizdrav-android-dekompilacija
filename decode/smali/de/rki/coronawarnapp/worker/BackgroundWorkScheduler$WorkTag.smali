@@ -25,6 +25,10 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
+.field public static final enum BACKGROUND_NOISE_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+.field public static final enum BACKGROUND_NOISE_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
 .field public static final enum DIAGNOSIS_KEY_RETRIEVAL_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
 .field public static final enum DIAGNOSIS_KEY_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
@@ -40,7 +44,7 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    const/4 v0, 0x3
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
@@ -85,6 +89,30 @@
     sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_TEST_RESULT_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
     aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+    const-string v2, "BACKGROUND_NOISE_ONE_TIME_WORKER"
+
+    const/4 v3, 0x3
+
+    const-string v4, "BACKGROUND_NOISE_PERIODIC_WORKER"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->BACKGROUND_NOISE_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+    const/4 v2, 0x4
+
+    invoke-direct {v1, v4, v2, v4}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->BACKGROUND_NOISE_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+    aput-object v1, v0, v2
 
     sput-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->$VALUES:[Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 

@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -27,21 +27,23 @@
 
 .field public zzd:I
 
+.field public zze:I
+
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzd;
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzf;
 
-    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzd;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzf;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>([BIII)V
+.method public constructor <init>([BIIII)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
@@ -53,6 +55,8 @@
     iput p3, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzc:I
 
     iput p4, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzd:I
+
+    iput p5, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
 
     return-void
 .end method
@@ -122,7 +126,25 @@
 
     move-result-object v0
 
-    iget p1, p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzd:I
+    iget v1, p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzd:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget p1, p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -161,7 +183,7 @@
 .method public final hashCode()I
     .locals 3
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -201,6 +223,16 @@
 
     aput-object v1, v0, v2
 
+    iget v1, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
@@ -213,7 +245,7 @@
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -311,7 +343,17 @@
 
     aput-object v3, v1, v2
 
-    const-string v2, "TemporaryExposureKey<keyData: %s, rollingStartIntervalNumber: %s, transmissionRiskLevel: %d, rollingPeriod: %d>"
+    iget v2, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v3, 0x4
+
+    aput-object v2, v1, v3
+
+    const-string v2, "TemporaryExposureKey<keyData: %s, rollingStartIntervalNumber: %s, transmissionRiskLevel: %d, rollingPeriod: %d, reportType: %d>"
 
     invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -352,6 +394,12 @@
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzd:I
 
     const/4 v1, 0x4
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->writeInt(Landroid/os/Parcel;II)V
+
+    iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
+
+    const/4 v1, 0x5
 
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->writeInt(Landroid/os/Parcel;II)V
 

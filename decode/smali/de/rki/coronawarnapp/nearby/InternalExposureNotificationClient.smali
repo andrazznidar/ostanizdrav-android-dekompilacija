@@ -62,7 +62,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p2
 
@@ -115,7 +115,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -171,7 +171,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -312,7 +312,7 @@
 
     new-instance p1, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v2
 
@@ -420,7 +420,9 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v5, v2, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     cmp-long v2, v9, v6
 
@@ -514,7 +516,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f12012b
+    const v3, 0x7f12013f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -652,7 +654,7 @@
 
     new-instance p1, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v1
 

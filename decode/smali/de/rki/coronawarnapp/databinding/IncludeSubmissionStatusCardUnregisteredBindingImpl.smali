@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ba
+    const v1, 0x7f0902c6
 
     const/4 v2, 0x1
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902b7
+    const v1, 0x7f0902c3
 
     const/4 v2, 0x2
 
@@ -37,7 +37,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902b8
+    const v1, 0x7f0902c4
 
     const/4 v2, 0x3
 
@@ -45,7 +45,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902b9
+    const v1, 0x7f0902c5
 
     const/4 v2, 0x4
 
@@ -53,7 +53,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902b6
+    const v1, 0x7f0902c2
 
     const/4 v2, 0x5
 

@@ -38,9 +38,9 @@
     <drawable name="APKTOOL_DUMMY_83" />
     <drawable name="APKTOOL_DUMMY_86" />
     <drawable name="APKTOOL_DUMMY_87" />
-    <drawable name="APKTOOL_DUMMY_f4" />
-    <drawable name="APKTOOL_DUMMY_f5" />
-    <drawable name="APKTOOL_DUMMY_f6" />
     <drawable name="APKTOOL_DUMMY_f7" />
-    <drawable name="APKTOOL_DUMMY_fc" />
+    <drawable name="APKTOOL_DUMMY_f8" />
+    <drawable name="APKTOOL_DUMMY_f9" />
+    <drawable name="APKTOOL_DUMMY_fa" />
+    <drawable name="APKTOOL_DUMMY_ff" />
 </resources>

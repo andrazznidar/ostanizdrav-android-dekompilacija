@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->createDayEntryForUrl(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->createDayEntryForUrl(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.util.CachedKeyFileHolder"
     f = "CachedKeyFileHolder.kt"
     l = {
-        0xa6,
-        0xa7
+        0xb3,
+        0xb4
     }
     m = "createDayEntryForUrl"
 .end annotation
@@ -32,6 +32,8 @@
 .field public L$2:Ljava/lang/Object;
 
 .field public L$3:Ljava/lang/Object;
+
+.field public L$4:Ljava/lang/Object;
 
 .field public label:I
 
@@ -70,7 +72,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->createDayEntryForUrl(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->createDayEntryForUrl(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

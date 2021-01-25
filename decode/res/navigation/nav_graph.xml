@@ -59,6 +59,7 @@
         <action android:id="@id/action_submissionResultFragment_to_submissionResultPositiveOtherWarningFragment" app:destination="@id/submissionResultPositiveOtherWarningFragment" />
     </fragment>
     <fragment android:label="fragment_submission_tan" android:name="de.rki.coronawarnapp.ui.submission.SubmissionTanFragment" android:id="@id/submissionTanFragment">
+        <action android:id="@id/action_submissionTanFragment_to_submissionDispatcherFragment" app:destination="@id/submissionDispatcherFragment" app:popUpTo="@id/submissionDispatcherFragment" app:popUpToInclusive="true" />
         <action android:id="@id/action_submissionTanFragment_to_submissionResultFragment" app:destination="@id/submissionResultFragment" app:popUpTo="@id/submissionResultFragment" app:popUpToInclusive="true" />
     </fragment>
     <fragment android:label="SubmissionIntroFragment" android:name="de.rki.coronawarnapp.ui.submission.SubmissionIntroFragment" android:id="@id/submissionIntroFragment">

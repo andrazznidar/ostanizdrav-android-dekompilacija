@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->toState(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toState(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -348,7 +348,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c007d
+    const v6, 0x7f0c007f
 
     aput v6, v4, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090266
+    const v1, 0x7f090272
 
     const/4 v2, 0x4
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09026a
+    const v1, 0x7f090276
 
     const/4 v2, 0x5
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09026e
+    const v1, 0x7f09027a
 
     const/4 v2, 0x6
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09026f
+    const v1, 0x7f09027b
 
     const/4 v2, 0x7
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090270
+    const v1, 0x7f09027c
 
     const/16 v2, 0x8
 
@@ -101,7 +101,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09026c
+    const v1, 0x7f090278
 
     const/16 v2, 0x9
 
@@ -109,7 +109,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090271
+    const v1, 0x7f09027d
 
     const/16 v2, 0xa
 
@@ -303,7 +303,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12005f
+    const v2, 0x7f120060
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

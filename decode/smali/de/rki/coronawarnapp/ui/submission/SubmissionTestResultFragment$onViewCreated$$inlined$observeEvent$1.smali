@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEvent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Event.kt\nde/rki/coronawarnapp/util/EventKt$observeEvent$1\n+ 2 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n*L\n1#1,29:1\n116#2,2:30\n*E\n"
+    value = "SMAP\nEvent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Event.kt\nde/rki/coronawarnapp/util/EventKt$observeEvent$1\n+ 2 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n*L\n1#1,29:1\n118#2,2:30\n*E\n"
 .end annotation
 
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNotificationHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NotificationHelper.kt\nde/rki/coronawarnapp/notification/NotificationHelper\n*L\n1#1,182:1\n*E\n"
+    value = "SMAP\nNotificationHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NotificationHelper.kt\nde/rki/coronawarnapp/notification/NotificationHelper\n*L\n1#1,201:1\n*E\n"
 .end annotation
 
 
@@ -24,6 +24,12 @@
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
+
+    new-instance v0, Lde/rki/coronawarnapp/notification/NotificationHelper;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/notification/NotificationHelper;-><init>()V
+
+    sput-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
     const-class v0, Lde/rki/coronawarnapp/notification/NotificationHelper;
 
@@ -45,7 +51,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1200db
+    const v1, 0x7f1200de
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -109,7 +115,17 @@
     throw v0
 .end method
 
-.method public static final buildNotification(Ljava/lang/String;Ljava/lang/String;I)Landroid/app/Notification;
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final buildNotification(Ljava/lang/String;Ljava/lang/String;IZ)Landroid/app/Notification;
     .locals 5
 
     new-instance v0, Landroidx/core/app/NotificationCompat$Builder;
@@ -126,7 +142,7 @@
 
     iget-object v1, v0, Landroidx/core/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    const v2, 0x7f0800d4
+    const v2, 0x7f0800d7
 
     iput v2, v1, Landroid/app/Notification;->icon:I
 
@@ -134,7 +150,7 @@
 
     iput v1, v0, Landroidx/core/app/NotificationCompat$Builder;->mPriority:I
 
-    iput p2, v0, Landroidx/core/app/NotificationCompat$Builder;->mVisibility:I
+    iput p3, v0, Landroidx/core/app/NotificationCompat$Builder;->mVisibility:I
 
     sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -166,171 +182,209 @@
 
     invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroidx/core/app/NotificationCompat$Builder;
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    if-eqz p4, :cond_0
 
-    move-result v2
+    new-instance p4, Landroidx/core/app/NotificationCompat$BigTextStyle;
 
-    if-lez v2, :cond_0
+    invoke-direct {p4}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
 
-    move v3, v1
-
-    :cond_0
-    if-eqz v3, :cond_1
-
-    invoke-static {p0}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {p2}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    iput-object v2, v0, Landroidx/core/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
+    iput-object v2, p4, Landroidx/core/app/NotificationCompat$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
-    :cond_1
-    if-nez p2, :cond_2
+    invoke-virtual {v0, p4}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
-    invoke-static {p0, p1, v1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->buildNotification(Ljava/lang/String;Ljava/lang/String;I)Landroid/app/Notification;
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result-object p0
+    move-result p4
 
-    iput-object p0, v0, Landroidx/core/app/NotificationCompat$Builder;->mPublicVersion:Landroid/app/Notification;
+    if-lez p4, :cond_1
+
+    move p4, v1
 
     goto :goto_0
 
-    :cond_2
-    if-ne p2, v1, :cond_3
+    :cond_1
+    move p4, v3
+
+    :goto_0
+    if-eqz p4, :cond_2
 
     invoke-static {p1}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result-object p0
+    move-result-object p4
 
-    iput-object p0, v0, Landroidx/core/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
+    iput-object p4, v0, Landroidx/core/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
 
-    :cond_3
-    :goto_0
-    invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
+    :cond_2
+    if-nez p3, :cond_3
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final sendNotification(Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 5
-
-    invoke-static {p0, p1, p2}, Lde/rki/coronawarnapp/notification/NotificationHelper;->buildNotification(Ljava/lang/String;Ljava/lang/String;I)Landroid/app/Notification;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_3
-
-    sget-object p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    invoke-virtual {p0, p1, p2, v1, v3}, Lde/rki/coronawarnapp/notification/NotificationHelper;->buildNotification(Ljava/lang/String;Ljava/lang/String;IZ)Landroid/app/Notification;
 
     move-result-object p1
 
-    new-instance p2, Landroidx/core/app/NotificationManagerCompat;
+    iput-object p1, v0, Landroidx/core/app/NotificationCompat$Builder;->mPublicVersion:Landroid/app/Notification;
 
-    invoke-direct {p2, p1}, Landroidx/core/app/NotificationManagerCompat;-><init>(Landroid/content/Context;)V
+    goto :goto_1
 
-    sget-object p1, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
+    :cond_3
+    if-ne p3, v1, :cond_4
 
-    invoke-virtual {p1}, Lkotlin/random/Random$Default;->nextInt()I
+    invoke-static {p2}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result p1
+    move-result-object p1
 
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+    iput-object p1, v0, Landroidx/core/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
+
+    :cond_4
+    :goto_1
+    invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+    .locals 4
+
+    const-string v0, "title"
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_5
+
+    const-string v0, "content"
+
+    if-eqz p2, :cond_4
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lde/rki/coronawarnapp/notification/NotificationHelper;->buildNotification(Ljava/lang/String;Ljava/lang/String;IZ)Landroid/app/Notification;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    sget-object p2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    new-instance p3, Landroidx/core/app/NotificationManagerCompat;
+
+    invoke-direct {p3, p2}, Landroidx/core/app/NotificationManagerCompat;-><init>(Landroid/content/Context;)V
+
+    sget-object p2, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
+
+    invoke-virtual {p2}, Lkotlin/random/Random$Default;->nextInt()I
+
+    move-result p2
+
+    iget-object p4, p1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
+    const/4 v0, 0x0
+
+    if-eqz p4, :cond_0
 
     const-string v2, "android.support.useSideChannel"
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p4, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p4
 
-    if-eqz v0, :cond_0
+    if-eqz p4, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p4, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    move p4, v0
 
     :goto_0
-    const/4 v2, 0x0
+    if-eqz p4, :cond_2
 
-    if-eqz v0, :cond_2
+    new-instance p4, Landroidx/core/app/NotificationManagerCompat$NotifyTask;
 
-    new-instance v0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;
+    iget-object v2, p3, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;
 
-    iget-object v3, p2, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-direct {p4, v2, p2, v1, p1}, Landroidx/core/app/NotificationManagerCompat$NotifyTask;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+
+    sget-object v2, Landroidx/core/app/NotificationManagerCompat;->sLock:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    sget-object p1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+
+    if-nez p1, :cond_1
+
+    new-instance p1, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+
+    iget-object v3, p3, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
 
-    invoke-direct {v0, v3, p1, v2, p0}, Landroidx/core/app/NotificationManagerCompat$NotifyTask;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+    invoke-direct {p1, v3}, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;-><init>(Landroid/content/Context;)V
 
-    sget-object v3, Landroidx/core/app/NotificationManagerCompat;->sLock:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    :try_start_0
-    sget-object p0, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
-
-    if-nez p0, :cond_1
-
-    new-instance p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
-
-    iget-object v4, p2, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-direct {p0, v4}, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;-><init>(Landroid/content/Context;)V
-
-    sput-object p0, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+    sput-object p1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
 
     :cond_1
-    sget-object p0, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+    sget-object p1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
 
-    iget-object p0, p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;->mHandler:Landroid/os/Handler;
+    iget-object p1, p1, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, v1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p1, v0, p4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    move-result-object p0
+    move-result-object p1
 
-    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    monitor-exit v3
+    monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p2, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
+    iget-object p1, p3, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
 
-    invoke-virtual {p0, v2, p1}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, p2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
 
     goto :goto_1
 
     :catchall_0
-    move-exception p0
+    move-exception p1
 
     :try_start_1
-    monitor-exit v3
+    monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw p0
+    throw p1
 
     :cond_2
-    iget-object p2, p2, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
+    iget-object p3, p3, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
 
-    invoke-virtual {p2, v2, p1, p0}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
+    invoke-virtual {p3, v1, p2, p1}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
 
     :cond_3
     :goto_1
     return-void
+
+    :cond_4
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_5
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw v1
 .end method

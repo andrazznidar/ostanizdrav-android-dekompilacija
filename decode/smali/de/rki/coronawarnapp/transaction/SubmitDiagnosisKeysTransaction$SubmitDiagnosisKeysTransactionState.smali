@@ -31,40 +31,26 @@
 
 .field public static final enum CLOSE:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
-.field public static final enum RETRIEVE_TAN:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
+.field public static final enum RETRIEVE_TAN_AND_SUBMIT_KEYS:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
 .field public static final enum RETRIEVE_TEMPORARY_EXPOSURE_KEY_HISTORY:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
 .field public static final enum STORE_SUCCESS:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
-
-.field public static final enum SUBMIT_KEYS:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x5
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
     new-instance v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
-    const-string v2, "RETRIEVE_TAN"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;->RETRIEVE_TAN:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
-
-    aput-object v1, v0, v3
-
-    new-instance v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
-
     const-string v2, "RETRIEVE_TEMPORARY_EXPOSURE_KEY_HISTORY"
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;-><init>(Ljava/lang/String;I)V
 
@@ -74,13 +60,13 @@
 
     new-instance v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
-    const-string v2, "SUBMIT_KEYS"
+    const-string v2, "RETRIEVE_TAN_AND_SUBMIT_KEYS"
 
-    const/4 v3, 0x2
+    const/4 v3, 0x1
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;->SUBMIT_KEYS:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
+    sput-object v1, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;->RETRIEVE_TAN_AND_SUBMIT_KEYS:Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;
 
     aput-object v1, v0, v3
 
@@ -88,7 +74,7 @@
 
     const-string v2, "STORE_SUCCESS"
 
-    const/4 v3, 0x3
+    const/4 v3, 0x2
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;-><init>(Ljava/lang/String;I)V
 
@@ -100,7 +86,7 @@
 
     const-string v2, "CLOSE"
 
-    const/4 v3, 0x4
+    const/4 v3, 0x3
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/transaction/SubmitDiagnosisKeysTransaction$SubmitDiagnosisKeysTransactionState;-><init>(Ljava/lang/String;I)V
 

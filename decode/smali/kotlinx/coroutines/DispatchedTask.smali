@@ -127,7 +127,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p1, p2}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -200,7 +200,7 @@
     :goto_1
     iget v7, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    invoke-static {v7}, Lcom/google/android/gms/common/internal/Preconditions;->isCancellableMode(I)Z
+    invoke-static {v7}, Lkotlin/collections/MapsKt___MapsKt;->isCancellableMode(I)Z
 
     move-result v7
 

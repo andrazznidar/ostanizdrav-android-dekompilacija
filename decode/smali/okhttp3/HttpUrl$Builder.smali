@@ -1209,7 +1209,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1373,7 +1373,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

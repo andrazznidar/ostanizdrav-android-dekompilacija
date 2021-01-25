@@ -8,9 +8,11 @@
 
 .field public final onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
+.field public final onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -19,6 +21,13 @@
 
     iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    if-eqz p10, :cond_0
+
+    iput-object p0, p10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_0
     return-void
 .end method
 

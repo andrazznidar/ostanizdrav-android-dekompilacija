@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09027a
+    const v1, 0x7f090286
 
     const/4 v2, 0x4
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c4
+    const v1, 0x7f0900c5
 
     const/4 v2, 0x5
 
@@ -84,9 +84,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c0050
-        0x7f0c0068
-        0x7f0c007d
+        0x7f0c0051
+        0x7f0c006a
+        0x7f0c007f
     .end array-data
 .end method
 

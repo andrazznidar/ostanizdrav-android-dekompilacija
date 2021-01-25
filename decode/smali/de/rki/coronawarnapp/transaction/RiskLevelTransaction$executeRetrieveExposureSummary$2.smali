@@ -22,15 +22,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2\n*L\n1#1,552:1\n*E\n"
+    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2\n*L\n1#1,543:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.transaction.RiskLevelTransaction$executeRetrieveExposureSummary$2"
     f = "RiskLevelTransaction.kt"
     l = {
-        0x15d,
-        0x15d
+        0x165
     }
     m = "invokeSuspend"
 .end annotation
@@ -122,13 +121,9 @@
 
     iget v1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->label:I
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_2
-
-    if-eq v1, v3, :cond_1
+    if-eqz v1, :cond_1
 
     if-ne v1, v2, :cond_0
 
@@ -138,7 +133,7 @@
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -150,68 +145,35 @@
     throw p1
 
     :cond_1
-    iget-object v1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->L$0:Ljava/lang/Object;
-
-    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
-
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_0
+    iget-object p1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
-    :cond_2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    sget-object v1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->p$:Lkotlinx/coroutines/CoroutineScope;
-
-    sget-object p1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->L$0:Ljava/lang/Object;
-
-    iput v3, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->label:I
-
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->getLastExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_3
-
-    return-object v0
-
-    :cond_3
-    :goto_0
-    check-cast p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
-
-    if-eqz p1, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->L$0:Ljava/lang/Object;
+    iput-object p1, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->L$0:Ljava/lang/Object;
 
     iput v2, p0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeRetrieveExposureSummary$2;->label:I
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->getNewExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->getNewExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_2
 
     return-object v0
 
-    :cond_5
-    :goto_1
+    :cond_2
+    :goto_0
     check-cast p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
 
-    :goto_2
     sget-object v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_3
 
     sget-object v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->TAG:Ljava/lang/String;
 
-    new-array v1, v3, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
@@ -235,11 +197,13 @@
 
     aput-object v3, v1, v2
 
-    invoke-static {v0, v1}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 
-    :cond_6
+    :cond_3
     const/4 p1, 0x0
 
     throw p1

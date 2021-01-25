@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExposureSummaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1366#2:63\n1435#2,3:64\n*E\n*S KotlinDebug\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository\n*L\n29#1:63\n29#1,3:64\n*E\n"
+    value = "SMAP\nExposureSummaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,68:1\n1366#2:69\n1435#2,3:70\n*E\n*S KotlinDebug\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository\n*L\n34#1:69\n34#1,3:70\n*E\n"
 .end annotation
 
 
@@ -95,24 +95,25 @@
 
 
 # virtual methods
-.method public final getLatestExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 14
+.method public final getLatestExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/String;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;",
+            "Lkotlin/Unit;",
             ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;
+    instance-of v0, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;
 
     if-eqz v0, :cond_0
 
-    move-object v0, p1
+    move-object v0, p2
 
     check-cast v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;
 
@@ -133,358 +134,134 @@
     :cond_0
     new-instance v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;
 
-    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;-><init>(Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;-><init>(Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->result:Ljava/lang/Object;
+    iget-object p2, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->result:Ljava/lang/Object;
 
     sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     iget v2, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->label:I
 
-    const/4 v3, 0x0
+    const/4 v3, 0x2
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    if-eqz v2, :cond_3
 
-    if-eqz v2, :cond_2
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v5, :cond_1
+    if-ne v2, v3, :cond_1
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$0:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    iget-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$0:Ljava/lang/Object;
 
-    goto :goto_1
+    check-cast p1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    iget-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->exposureSummaryDao:Lde/rki/coronawarnapp/storage/ExposureSummaryDao;
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$0:Ljava/lang/Object;
+
+    check-cast v2, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p2, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
     iput-object p0, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$0:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->label:I
+    iput-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    check-cast p1, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;
+    iput v4, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->label:I
 
-    if-eqz p1, :cond_11
+    invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncIsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    const-string v2, "SELECT * FROM exposure_summary ORDER BY id DESC LIMIT 1"
+    move-result-object p2
 
-    invoke-static {v2, v3}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v2
-
-    iget-object v6, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    new-instance v7, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$4;
-
-    invoke-direct {v7, p1, v2}, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$4;-><init>(Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
-
-    invoke-static {v6, v3, v7, v0}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_3
+    if-ne p2, v1, :cond_4
 
     return-object v1
 
-    :cond_3
-    move-object v0, p0
+    :cond_4
+    move-object v2, p0
 
     :goto_1
-    check-cast p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;
+    check-cast p2, Ljava/lang/Boolean;
 
-    if-eqz p1, :cond_e
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    if-eqz v0, :cond_d
+    move-result p2
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;
+    if-eqz p2, :cond_6
 
-    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;-><init>()V
+    sget-object p2, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->attenuationDurationsInMinutes:Ljava/util/List;
+    iput-object v2, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$0:Ljava/lang/Object;
 
-    if-eqz v1, :cond_c
+    iput-object p1, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
+    iput v3, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->label:I
 
-    move-result v2
+    invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncGetExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    new-array v6, v2, [I
+    move-result-object p2
 
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    if-ne p2, v1, :cond_5
 
-    move-result-object v1
-
-    move v7, v3
-
-    :goto_2
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_4
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/Number;
-
-    invoke-virtual {v8}, Ljava/lang/Number;->intValue()I
-
-    move-result v8
-
-    add-int/lit8 v9, v7, 0x1
-
-    aput v8, v6, v7
-
-    move v7, v9
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v1, 0x3
-
-    if-ne v2, v1, :cond_5
-
-    move v1, v5
-
-    goto :goto_3
+    return-object v1
 
     :cond_5
-    move v1, v3
+    :goto_2
+    check-cast p2, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
 
-    :goto_3
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    sget-object p1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->matchedKeyCount:Landroidx/lifecycle/MutableLiveData;
 
-    move v1, v3
+    iget v0, p2, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;->zzb:I
 
-    :goto_4
-    if-ge v1, v2, :cond_7
+    new-instance v1, Ljava/lang/Integer;
 
-    aget v7, v6, v1
+    invoke-direct {v1, v0}, Ljava/lang/Integer;-><init>(I)V
 
-    if-ltz v7, :cond_6
+    invoke-virtual {p1, v1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    move v8, v5
+    sget-object p1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->daysSinceLastExposure:Landroidx/lifecycle/MutableLiveData;
 
-    goto :goto_5
+    iget p2, p2, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;->zza:I
+
+    new-instance v0, Ljava/lang/Integer;
+
+    invoke-direct {v0, p2}, Ljava/lang/Integer;-><init>(I)V
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
     :cond_6
-    move v8, v3
-
-    :goto_5
-    new-array v9, v5, [Ljava/lang/Object;
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v9, v3
-
-    const-string v7, "attenuationDuration (%s) must be >= 0"
-
-    invoke-static {v8, v7, v9}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_4
-
-    :cond_7
-    invoke-static {v6, v2}, Ljava/util/Arrays;->copyOf([II)[I
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzd:[I
-
-    iget v1, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->daysSinceLastExposure:I
-
-    if-ltz v1, :cond_8
-
-    move v2, v5
-
-    goto :goto_6
-
-    :cond_8
-    move v2, v3
-
-    :goto_6
-    new-array v6, v5, [Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v6, v3
-
-    const-string v7, "daysSinceLastExposure (%s) must be >= 0"
-
-    invoke-static {v2, v7, v6}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    iput v1, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zza:I
-
-    iget v1, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->matchedKeyCount:I
-
-    if-ltz v1, :cond_9
-
-    move v2, v5
-
-    goto :goto_7
-
-    :cond_9
-    move v2, v3
-
-    :goto_7
-    new-array v6, v5, [Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v6, v3
-
-    const-string v7, "matchedKeyCount (%s) must be >= 0"
-
-    invoke-static {v2, v7, v6}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    iput v1, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzb:I
-
-    iget v1, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->maximumRiskScore:I
-
-    if-ltz v1, :cond_a
-
-    const/16 v2, 0x1000
-
-    if-gt v1, v2, :cond_a
-
-    move v2, v5
-
-    goto :goto_8
-
-    :cond_a
-    move v2, v3
-
-    :goto_8
-    new-array v6, v5, [Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v6, v3
-
-    const-string v7, "maximumRiskScore (%s) must be >= 0 and <= 4096"
-
-    invoke-static {v2, v7, v6}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    iput v1, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzc:I
-
-    iget v13, p1, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->summationRiskScore:I
-
-    if-ltz v13, :cond_b
-
-    move p1, v5
-
-    goto :goto_9
-
-    :cond_b
-    move p1, v3
-
-    :goto_9
-    new-array v1, v5, [Ljava/lang/Object;
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v1, v3
-
-    const-string v2, "summationRiskScore (%s) must be >= 0"
-
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    iput v13, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zze:I
-
-    new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
-
-    iget v9, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zza:I
-
-    iget v10, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzb:I
-
-    iget v11, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzc:I
-
-    iget-object v12, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;->zzd:[I
-
-    move-object v8, p1
-
-    invoke-direct/range {v8 .. v13}, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;-><init>(III[II)V
-
-    goto :goto_a
-
-    :cond_c
-    const-string p1, "$this$toIntArray"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v4
-
-    :cond_d
-    throw v4
-
-    :cond_e
-    move-object p1, v4
-
-    :goto_a
-    sget-object v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->matchedKeyCount:Landroidx/lifecycle/MutableLiveData;
-
-    if-eqz p1, :cond_f
-
-    iget v1, p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;->zzb:I
-
-    new-instance v2, Ljava/lang/Integer;
-
-    invoke-direct {v2, v1}, Ljava/lang/Integer;-><init>(I)V
-
-    goto :goto_b
-
-    :cond_f
-    move-object v2, v4
-
-    :goto_b
-    invoke-virtual {v0, v2}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->daysSinceLastExposure:Landroidx/lifecycle/MutableLiveData;
-
-    if-eqz p1, :cond_10
-
-    iget v1, p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;->zza:I
-
-    new-instance v4, Ljava/lang/Integer;
-
-    invoke-direct {v4, v1}, Ljava/lang/Integer;-><init>(I)V
-
-    :cond_10
-    invoke-virtual {v0, v4}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_11
-    throw v4
 .end method
 
 .method public final insertExposureSummaryEntity(Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;

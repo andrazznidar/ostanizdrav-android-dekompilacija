@@ -44,72 +44,76 @@
 
     check-cast p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;
 
-    iget-wide v0, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->id:J
+    const/4 v0, 0x0
 
-    const/4 v2, 0x1
+    if-eqz p2, :cond_2
 
-    invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const-wide/16 v1, 0x0
 
-    const/4 v0, 0x2
+    const/4 v3, 0x1
 
-    iget v1, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->daysSinceLastExposure:I
+    invoke-interface {p1, v3, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    int-to-long v1, v1
+    const/4 v1, 0x2
 
-    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget v2, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->daysSinceLastExposure:I
 
-    const/4 v0, 0x3
+    int-to-long v2, v2
 
-    iget v1, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->matchedKeyCount:I
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    int-to-long v1, v1
+    const/4 v1, 0x3
 
-    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget v2, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->matchedKeyCount:I
 
-    const/4 v0, 0x4
+    int-to-long v2, v2
 
-    iget v1, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->maximumRiskScore:I
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    int-to-long v1, v1
+    const/4 v1, 0x4
 
-    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget v2, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->maximumRiskScore:I
 
-    const/4 v0, 0x5
+    int-to-long v2, v2
 
-    iget v1, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->summationRiskScore:I
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    int-to-long v1, v1
+    const/4 v1, 0x5
 
-    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget v2, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->summationRiskScore:I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$1;->this$0:Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;
+    int-to-long v2, v2
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__converters:Lde/rki/coronawarnapp/util/Converters;
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$1;->this$0:Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__converters:Lde/rki/coronawarnapp/util/Converters;
 
     iget-object p2, p2, Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;->attenuationDurationsInMinutes:Ljava/util/List;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/util/Converters;->gson:Lcom/google/gson/Gson;
+    iget-object v1, v1, Lde/rki/coronawarnapp/util/Converters;->gson:Lcom/google/gson/Gson;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     if-nez p2, :cond_0
 
     sget-object p2, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
 
-    new-instance v1, Ljava/io/StringWriter;
+    new-instance v0, Ljava/io/StringWriter;
 
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
     :try_start_0
-    invoke-virtual {v0, v1}, Lcom/google/gson/Gson;->newJsonWriter(Ljava/io/Writer;)Lcom/google/gson/stream/JsonWriter;
+    invoke-virtual {v1, v0}, Lcom/google/gson/Gson;->newJsonWriter(Ljava/io/Writer;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v2
 
-    invoke-virtual {v0, p2, v2}, Lcom/google/gson/Gson;->toJson(Lcom/google/gson/JsonElement;Lcom/google/gson/stream/JsonWriter;)V
+    invoke-virtual {v1, p2, v2}, Lcom/google/gson/Gson;->toJson(Lcom/google/gson/JsonElement;Lcom/google/gson/stream/JsonWriter;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object p2
 
@@ -127,18 +131,18 @@
     :cond_0
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     new-instance v2, Ljava/io/StringWriter;
 
     invoke-direct {v2}, Ljava/io/StringWriter;-><init>()V
 
     :try_start_1
-    invoke-virtual {v0, v2}, Lcom/google/gson/Gson;->newJsonWriter(Ljava/io/Writer;)Lcom/google/gson/stream/JsonWriter;
+    invoke-virtual {v1, v2}, Lcom/google/gson/Gson;->newJsonWriter(Ljava/io/Writer;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v3
 
-    invoke-virtual {v0, p2, v1, v3}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/stream/JsonWriter;)V
+    invoke-virtual {v1, p2, v0, v3}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Lcom/google/gson/stream/JsonWriter;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -167,9 +171,10 @@
     throw p2
 
     :cond_1
-    const/4 p1, 0x0
+    throw v0
 
-    throw p1
+    :cond_2
+    throw v0
 .end method
 
 .method public createQuery()Ljava/lang/String;

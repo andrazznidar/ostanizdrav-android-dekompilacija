@@ -77,7 +77,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/main/MainShareFragment;
 
-    const v1, 0x7f1200ac
+    const v1, 0x7f1200af
 
     invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

@@ -47,7 +47,7 @@
 
     new-array v6, v2, [I
 
-    const v7, 0x7f0c0050
+    const v7, 0x7f0c0051
 
     aput v7, v6, v4
 
@@ -79,7 +79,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTechnicalBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/4 v2, 0x5
 
@@ -97,8 +97,8 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c007d
+        0x7f0c0052
+        0x7f0c007f
     .end array-data
 .end method
 
@@ -237,7 +237,7 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120073
+    const v2, 0x7f120076
 
     invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
@@ -249,7 +249,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120071
+    const v2, 0x7f120074
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120072
+    const v2, 0x7f120075
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

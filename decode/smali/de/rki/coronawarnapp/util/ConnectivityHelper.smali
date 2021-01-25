@@ -7,6 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/util/ConnectivityHelper$BluetoothCallback;,
+        Lde/rki/coronawarnapp/util/ConnectivityHelper$LocationCallback;,
         Lde/rki/coronawarnapp/util/ConnectivityHelper$NetworkCallback;
     }
 .end annotation
@@ -39,8 +40,61 @@
     return-void
 .end method
 
-.method public static final isBackgroundJobEnabled(Landroid/content/Context;)Z
-    .locals 3
+.method public static final autoModeEnabled(Landroid/content/Context;)Z
+    .locals 1
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->isBackgroundRestricted(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "power"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Landroid/os/PowerManager;->isIgnoringBatteryOptimizations(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/TypeCastException;
+
+    const-string v0, "null cannot be cast to non-null type android.os.PowerManager"
+
+    invoke-direct {p0, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
+.end method
+
+.method public static final isBackgroundRestricted(Landroid/content/Context;)Z
+    .locals 2
 
     const-string v0, "activity"
 
@@ -48,7 +102,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
 
     check-cast p0, Landroid/app/ActivityManager;
 
@@ -56,26 +110,21 @@
 
     const/16 v1, 0x1c
 
-    const/4 v2, 0x1
-
-    if-lt v0, v1, :cond_1
+    if-lt v0, v1, :cond_0
 
     invoke-virtual {p0}, Landroid/app/ActivityManager;->isBackgroundRestricted()Z
 
     move-result p0
 
-    if-nez p0, :cond_0
-
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
 
     :cond_1
-    :goto_0
-    return v2
-
-    :cond_2
     new-instance p0, Lkotlin/TypeCastException;
 
     const-string v0, "null cannot be cast to non-null type android.app.ActivityManager"

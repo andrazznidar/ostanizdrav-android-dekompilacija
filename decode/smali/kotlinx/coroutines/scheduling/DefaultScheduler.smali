@@ -43,7 +43,7 @@
 
     const-string v3, "kotlinx.coroutines.io.parallelism"
 
-    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v3 .. v8}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v1
 

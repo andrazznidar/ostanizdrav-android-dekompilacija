@@ -179,9 +179,11 @@
 
     aput-object p1, v1, v3
 
-    const-string p1, "Exception caught:%s"
+    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {p1, v1}, Ltimber/log/Timber;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "Exception caught:%s"
+
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     move v4, v3
 
@@ -201,9 +203,11 @@
 
     aput-object p1, v1, v3
 
-    const-string p1, "ApplicationConfigurationCorruptException caught:%s"
+    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {p1, v1}, Ltimber/log/Timber;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "ApplicationConfigurationCorruptException caught:%s"
+
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_4
     if-eqz v4, :cond_4
@@ -216,7 +220,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/update/UpdateChecker;->activity:Lde/rki/coronawarnapp/ui/LauncherActivity;
 
-    const v2, 0x7f120238
+    const v2, 0x7f12025c
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -228,7 +232,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/update/UpdateChecker;->activity:Lde/rki/coronawarnapp/ui/LauncherActivity;
 
-    const v2, 0x7f120237
+    const v2, 0x7f12025b
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -242,7 +246,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/update/UpdateChecker;->activity:Lde/rki/coronawarnapp/ui/LauncherActivity;
 
-    const v2, 0x7f120236
+    const v2, 0x7f12025a
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -283,7 +287,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12011b
+    const v2, 0x7f12012f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -472,19 +476,23 @@
 
     aput-object p1, v2, v0
 
-    const-string p1, "minVersionStringFromServer:%s"
+    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {p1, v2}, Ltimber/log/Timber;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v4, "minVersionStringFromServer:%s"
+
+    invoke-virtual {p1, v4, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-array p1, v3, [Ljava/lang/Object;
 
-    const-string v2, "1.1.1"
+    const-string v2, "1.3.1"
 
     aput-object v2, p1, v0
 
-    const-string v4, "Current app version:%s"
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v4, p1}, Ltimber/log/Timber;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v5, "Current app version:%s"
+
+    invoke-virtual {v4, v5, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz v1, :cond_7
 
@@ -608,7 +616,9 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 

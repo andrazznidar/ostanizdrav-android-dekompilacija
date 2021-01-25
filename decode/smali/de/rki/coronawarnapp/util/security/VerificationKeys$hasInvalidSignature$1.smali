@@ -177,7 +177,9 @@
 
     new-array v7, v6, [Ljava/lang/Object;
 
-    invoke-static {v5, v7}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v8, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v8, v5, v7}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -234,7 +236,7 @@
 
     invoke-direct {v10, v8}, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-static {v9, v10}, Lcom/google/android/gms/common/internal/Preconditions;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {v9, v10}, Lkotlin/collections/MapsKt___MapsKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object v8
 
@@ -312,7 +314,9 @@
 
     new-array v2, v6, [Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v3, v1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -322,18 +326,22 @@
 
     new-array v1, v6, [Ljava/lang/Object;
 
-    const-string v2, "export is invalid"
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v2, v1}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "export is invalid"
+
+    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_5
 
     :cond_8
     new-array v1, v6, [Ljava/lang/Object;
 
-    const-string v2, "export is valid"
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v2, v1}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "export is valid"
+
+    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_5
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

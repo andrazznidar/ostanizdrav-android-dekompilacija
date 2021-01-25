@@ -127,11 +127,11 @@
 
     invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v3, 0x7f120203
+    const v3, 0x7f120227
 
-    const v4, 0x7f120202
+    const v4, 0x7f120226
 
-    const v5, 0x7f120201
+    const v5, 0x7f120225
 
     const/4 v6, 0x0
 
@@ -195,6 +195,24 @@
     move-result-object p1
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->refreshDeviceUIState()V
+
+    iget-object p1, p0, L-$$LambdaGroup$js$pt4JgsPyjYktSQSqq5A3U9nRukQ;->$capture$0:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultCard:Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCard:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
 
     return-void
 .end method

@@ -58,7 +58,7 @@
 
     check-cast p0, Lkotlinx/coroutines/DispatchedContinuation;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->toState(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toState(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

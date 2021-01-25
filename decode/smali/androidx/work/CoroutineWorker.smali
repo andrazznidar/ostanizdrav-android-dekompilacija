@@ -138,47 +138,25 @@
 
     move-result-object v0
 
-    new-instance v1, Lkotlinx/coroutines/internal/ContextScope;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
 
-    sget-object v2, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
-
-    invoke-interface {v0, v2}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v2, Lkotlinx/coroutines/JobImpl;
-
-    invoke-direct {v2, v3}, Lkotlinx/coroutines/JobImpl;-><init>(Lkotlinx/coroutines/Job;)V
-
-    invoke-interface {v0, v2}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-direct {v1, v0}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
-
-    const/4 v2, 0x0
-
-    const/4 v0, 0x0
+    move-result-object v1
 
     new-instance v4, Landroidx/work/CoroutineWorker$startWork$1;
 
-    invoke-direct {v4, p0, v3}, Landroidx/work/CoroutineWorker$startWork$1;-><init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x0
+
+    invoke-direct {v4, p0, v0}, Landroidx/work/CoroutineWorker$startWork$1;-><init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
 
     const/4 v5, 0x3
 
     const/4 v6, 0x0
 
-    move-object v3, v0
-
-    invoke-static/range {v1 .. v6}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     iget-object v0, p0, Landroidx/work/CoroutineWorker;->future:Landroidx/work/impl/utils/futures/SettableFuture;
 

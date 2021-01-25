@@ -160,7 +160,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -196,7 +196,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -94,7 +94,7 @@
 
     new-instance v0, Lokio/ByteString;
 
-    invoke-static {p0}, Lkotlinx/coroutines/TimeSourceKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
 
     move-result-object v1
 
@@ -411,7 +411,7 @@
 
     if-gt p3, v1, :cond_0
 
-    invoke-static {v0, p1, p2, p3, p4}, Lkotlinx/coroutines/TimeSourceKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v0, p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->arrayRangeEquals([BI[BII)Z
 
     move-result p1
 

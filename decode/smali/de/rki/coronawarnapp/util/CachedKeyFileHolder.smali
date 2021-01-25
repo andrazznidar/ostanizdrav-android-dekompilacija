@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCachedKeyFileHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,212:1\n706#2:213\n783#2,2:214\n706#2:216\n783#2,2:217\n1366#2:219\n1435#2,3:220\n*E\n*S KotlinDebug\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder\n*L\n130#1:213\n130#1,2:214\n146#1:216\n146#1,2:217\n157#1:219\n157#1,3:220\n*E\n"
+    value = "SMAP\nCachedKeyFileHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,225:1\n706#2:226\n783#2,2:227\n706#2:229\n783#2,2:230\n1366#2:232\n1435#2,3:233\n*E\n*S KotlinDebug\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder\n*L\n143#1:226\n143#1,2:227\n159#1:229\n159#1,2:230\n170#1:232\n170#1,3:233\n*E\n"
 .end annotation
 
 
@@ -19,7 +19,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     new-instance v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
@@ -49,13 +49,103 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository$Companion;->getDateRepository(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    sget-object v2, Lde/rki/coronawarnapp/storage/AppDatabase;->Companion:Lde/rki/coronawarnapp/storage/AppDatabase$Companion;
 
-    move-result-object v0
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    sput-object v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    move-result-object v1
+
+    const-string v3, "context.applicationContext"
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Lde/rki/coronawarnapp/storage/AppDatabase$Companion;->getInstance(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/AppDatabase;
+
+    move-result-object v1
+
+    check-cast v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;
+
+    iget-object v2, v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;->_keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;->_keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+
+    goto :goto_0
+
+    :cond_0
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;->_keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+
+    if-nez v2, :cond_1
+
+    new-instance v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v2, v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;->_keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+
+    :cond_1
+    iget-object v2, v1, Lde/rki/coronawarnapp/storage/AppDatabase_Impl;->_keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    move-object v1, v2
+
+    :goto_0
+    sget-object v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->instance:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+
+    if-eqz v2, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    monitor-enter v0
+
+    :try_start_1
+    sget-object v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->instance:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+
+    if-eqz v2, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;-><init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;)V
+
+    sput-object v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->instance:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_1
+    monitor-exit v0
+
+    :goto_2
+    sput-object v2, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+
+    throw v1
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v0
 .end method
 
 .method public constructor <init>()V
@@ -68,11 +158,12 @@
 
 
 # virtual methods
-.method public final createDayEntryForUrl(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+.method public final createDayEntryForUrl(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             "Lkotlin/coroutines/Continuation<",
             "-",
@@ -82,11 +173,11 @@
         }
     .end annotation
 
-    instance-of v0, p2, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;
+    instance-of v0, p3, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;
 
     if-eqz v0, :cond_0
 
-    move-object v0, p2
+    move-object v0, p3
 
     check-cast v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;
 
@@ -107,10 +198,10 @@
     :cond_0
     new-instance v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;
 
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;-><init>(Lde/rki/coronawarnapp/util/CachedKeyFileHolder;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p3}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;-><init>(Lde/rki/coronawarnapp/util/CachedKeyFileHolder;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->result:Ljava/lang/Object;
+    iget-object p3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->result:Ljava/lang/Object;
 
     sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -128,6 +219,10 @@
 
     if-ne v2, v3, :cond_1
 
+    iget-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$2:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/String;
+
     iget-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$1:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/String;
@@ -136,7 +231,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
@@ -150,13 +245,19 @@
     throw p1
 
     :cond_2
+    iget-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$4:Ljava/lang/Object;
+
+    move-object p2, p1
+
+    check-cast p2, Ljava/lang/String;
+
     iget-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$3:Ljava/lang/Object;
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$2:Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    check-cast v2, Ljava/lang/String;
 
     iget-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$1:Ljava/lang/Object;
 
@@ -166,59 +267,67 @@
 
     check-cast v7, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v9, p2
+    move-object v9, p3
 
-    move-object p2, p1
+    move-object p3, p1
 
     move-object p1, v6
 
     move-object v6, v9
 
+    move-object v10, v2
+
+    move-object v2, p2
+
+    move-object p2, v10
+
     goto :goto_1
 
     :cond_3
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    sget-object v2, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    sget-object p3, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
 
-    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->generateCacheKeyFromString(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v2, Lde/rki/coronawarnapp/http/WebRequestBuilder;->Companion:Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;
 
-    move-result-object p2
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;->getInstance()Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    sget-object v6, Lde/rki/coronawarnapp/http/WebRequestBuilder;->Companion:Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;->getInstance()Lde/rki/coronawarnapp/http/WebRequestBuilder;
-
-    move-result-object v6
+    move-result-object v2
 
     iput-object p0, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$1:Ljava/lang/Object;
 
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$2:Ljava/lang/Object;
+    iput-object p2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$2:Ljava/lang/Object;
 
-    iput-object p2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$3:Ljava/lang/Object;
+    iput-object p3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$3:Ljava/lang/Object;
+
+    iput-object p2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$4:Ljava/lang/Object;
 
     iput v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->label:I
 
-    sget-object v7, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+    sget-object v6, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
-    new-instance v8, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;
+    new-instance v7, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;
 
-    invoke-direct {v8, v6, p1, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v7, v2, p1, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v7, v8, v0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v6, v7, v0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v2
 
-    if-ne v6, v1, :cond_4
+    if-ne v2, v1, :cond_4
 
     return-object v1
 
     :cond_4
     move-object v7, p0
+
+    move-object v6, v2
+
+    move-object v2, p2
 
     :goto_1
     check-cast v6, Ljava/io/File;
@@ -235,51 +344,53 @@
 
     iput-object p1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$1:Ljava/lang/Object;
 
+    iput-object p2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->L$2:Ljava/lang/Object;
+
     iput v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$createDayEntryForUrl$1;->label:I
 
-    iget-object p1, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
+    iget-object p1, p3, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->keyCacheDao:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao;
 
-    new-instance v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;
+    new-instance p2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;-><init>()V
+    invoke-direct {p2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;-><init>()V
 
-    if-eqz p2, :cond_6
+    if-eqz v2, :cond_6
 
-    iput-object p2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->id:Ljava/lang/String;
+    iput-object v2, p2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->id:Ljava/lang/String;
 
     invoke-virtual {v6}, Ljava/net/URI;->getRawPath()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p3
 
-    const-string v3, "uri.rawPath"
+    const-string v2, "uri.rawPath"
 
-    invoke-static {p2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object p2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->path:Ljava/lang/String;
+    iput-object p3, p2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->path:Ljava/lang/String;
 
-    const/4 p2, 0x0
+    const/4 p3, 0x0
 
-    iput p2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->type:I
+    iput p3, p2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->type:I
 
     check-cast p1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
 
-    iget-object p2, p1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object p3, p1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    new-instance v3, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$5;
+    new-instance v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$5;
 
-    invoke-direct {v3, p1, v2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$5;-><init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;)V
+    invoke-direct {v2, p1, p2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$5;-><init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;)V
 
-    invoke-static {p2, v4, v3, v0}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p3, v4, v2, v0}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p3
 
-    if-ne p2, v1, :cond_5
+    if-ne p3, v1, :cond_5
 
     return-object v1
 
     :cond_5
     :goto_2
-    return-object p2
+    return-object p3
 
     :cond_6
     const-string p1, "<set-?>"
@@ -290,7 +401,7 @@
 .end method
 
 .method public final generateCacheKeyFromString(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     sget-object v0, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -322,7 +433,9 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p1, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 
@@ -435,7 +548,7 @@
 
     invoke-direct {v4, p2, p1, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetHourIndex$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/util/Date;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v2, v4, v0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v4, v0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -471,7 +584,9 @@
 
     new-array v1, v0, [Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p1, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     check-cast p2, Ljava/lang/Iterable;
 
@@ -578,13 +693,15 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 .end method
 
 .method public final getMissingDaysFromDiff(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -688,9 +805,9 @@
 
     iget-object v5, p2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    new-instance v6, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$9;
+    new-instance v6, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$10;
 
-    invoke-direct {v6, p2, v2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$9;-><init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+    invoke-direct {v6, p2, v2}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$10;-><init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
 
     invoke-static {v5, v4, v6, v0}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -724,7 +841,9 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -832,7 +951,9 @@
 
     new-array v7, v4, [Ljava/lang/Object;
 
-    invoke-static {v2, v7}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v8, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v8, v2, v7}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -888,7 +1009,9 @@
 
     new-array v0, v4, [Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 

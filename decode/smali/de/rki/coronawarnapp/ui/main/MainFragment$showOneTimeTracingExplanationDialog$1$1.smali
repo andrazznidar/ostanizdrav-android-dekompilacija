@@ -156,7 +156,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/ui/main/MainFragment$showOneTimeTracingExplanationDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainFragment;
 
-    const v2, 0x7f12014e
+    const v2, 0x7f120167
 
     invoke-virtual {v0, v2}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

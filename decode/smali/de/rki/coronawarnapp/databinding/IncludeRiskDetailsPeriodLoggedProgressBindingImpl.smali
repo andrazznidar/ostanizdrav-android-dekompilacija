@@ -25,7 +25,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901d9
+    const v1, 0x7f0901e4
 
     const/4 v2, 0x3
 
@@ -173,7 +173,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120156
+    const v5, 0x7f120172
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,7 +369,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

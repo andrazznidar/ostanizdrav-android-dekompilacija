@@ -1,50 +1,54 @@
-.class public final Lcom/google/android/gms/internal/nearby/zzx;
-.super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.class public final synthetic Lcom/google/android/gms/internal/nearby/zzx;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-        "Lcom/google/android/gms/internal/nearby/zzq;",
-        "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public final zza:Lcom/google/android/gms/internal/nearby/zzt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzt;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzx;->zza:Lcom/google/android/gms/internal/nearby/zzt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
-    .locals 6
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
 
-    check-cast p4, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
 
-    new-instance p4, Lcom/google/android/gms/internal/nearby/zzq;
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-object v0, p4
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzac;
 
-    move-object v1, p1
+    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/nearby/zzac;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    move-object v2, p2
+    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
-    move-object v3, p5
+    move-result-object p1
 
-    move-object v4, p6
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzbq;
 
-    move-object v5, p3
+    new-instance p2, Lcom/google/android/gms/internal/nearby/zzau;
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/nearby/zzq;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;Lcom/google/android/gms/common/internal/ClientSettings;)V
+    const/4 v1, 0x0
 
-    return-object p4
+    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzau;-><init>(Lcom/google/android/gms/internal/nearby/zzax;)V
+
+    iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzau;->zzb:Lcom/google/android/gms/internal/nearby/zzbu;
+
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzbq;->zza(Lcom/google/android/gms/internal/nearby/zzau;)V
+
+    return-void
 .end method

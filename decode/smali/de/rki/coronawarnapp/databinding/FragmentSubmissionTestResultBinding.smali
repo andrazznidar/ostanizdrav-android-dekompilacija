@@ -18,13 +18,15 @@
 
 .field public final submissionTestResultContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
+.field public final submissionTestResultContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;
+
 .field public final submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
 .field public final submissionTestResultSpinner:Landroid/widget/ProgressBar;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Barrier;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/ProgressBar;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Barrier;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/ProgressBar;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -41,14 +43,21 @@
 
     iput-object p12, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p13, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iput-object p13, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;
 
     if-eqz p13, :cond_0
 
     iput-object p0, p13, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    iput-object p14, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultSpinner:Landroid/widget/ProgressBar;
+    iput-object p14, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    if-eqz p14, :cond_1
+
+    iput-object p0, p14, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_1
+    iput-object p15, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBinding;->submissionTestResultSpinner:Landroid/widget/ProgressBar;
 
     return-void
 .end method

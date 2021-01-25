@@ -512,7 +512,9 @@
 
     invoke-virtual {p0}, Lokio/RealBufferedSink;->emitCompleteSegments()Lokio/BufferedSink;
 
-    return-object p0
+    move-result-object p1
+
+    return-object p1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;

@@ -62,7 +62,7 @@
 
 .field public gt73Dbm_:I
 
-.field public lt10Dbm_:I
+.field public le10Dbm_:I
 
 
 # direct methods
@@ -231,7 +231,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     goto :goto_1
 
@@ -594,7 +594,7 @@
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->gt10Le15Dbm_:I
 
-    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     if-eqz p1, :cond_1b
 
@@ -606,22 +606,22 @@
     move p1, v1
 
     :goto_12
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
-    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     if-eqz v3, :cond_1c
 
     move v1, v2
 
     :cond_1c
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     return-object p0
 
@@ -766,7 +766,7 @@
     add-int/2addr v1, v2
 
     :cond_7
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     iget v0, v0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskLevel;->value:I
 
@@ -873,7 +873,7 @@
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_6
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     iget v0, v0, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskLevel;->value:I
 

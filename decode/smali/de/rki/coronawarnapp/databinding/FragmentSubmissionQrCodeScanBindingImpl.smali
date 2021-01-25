@@ -43,7 +43,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c007d
+    const v5, 0x7f0c007f
 
     aput v5, v2, v4
 
@@ -55,7 +55,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09029b
+    const v1, 0x7f0902a7
 
     const/4 v2, 0x2
 
@@ -63,7 +63,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09029e
+    const v1, 0x7f0902aa
 
     const/4 v2, 0x3
 
@@ -71,7 +71,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090296
+    const v1, 0x7f0902a2
 
     const/4 v2, 0x4
 
@@ -79,7 +79,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09029c
+    const v1, 0x7f0902a8
 
     const/4 v2, 0x5
 
@@ -87,7 +87,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090297
+    const v1, 0x7f0902a3
 
     const/4 v2, 0x6
 
@@ -95,7 +95,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09029d
+    const v1, 0x7f0902a9
 
     const/4 v2, 0x7
 
@@ -103,7 +103,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09029a
+    const v1, 0x7f0902a6
 
     const/16 v2, 0x8
 
@@ -111,7 +111,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090299
+    const v1, 0x7f0902a5
 
     const/16 v2, 0x9
 

@@ -430,7 +430,7 @@
 
     invoke-interface {v14, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-static {v12}, Lkotlinx/coroutines/TimeSourceKt;->isProbablyUtf8(Lokio/Buffer;)Z
+    invoke-static {v12}, Lkotlin/collections/MapsKt___MapsKt;->isProbablyUtf8(Lokio/Buffer;)Z
 
     move-result v14
 
@@ -822,7 +822,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static {v5, v6}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v5, v6}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     goto :goto_e
 
@@ -841,7 +841,7 @@
 
     move-object v3, v0
 
-    invoke-static {v5, v2}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v5, v2}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v3
 
@@ -871,7 +871,7 @@
     invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_f
-    invoke-static {v4}, Lkotlinx/coroutines/TimeSourceKt;->isProbablyUtf8(Lokio/Buffer;)Z
+    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->isProbablyUtf8(Lokio/Buffer;)Z
 
     move-result v5
 

@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract submitKeys(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LKeyExportFormat$SubmissionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract submitKeys(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LKeyExportFormat$SubmissionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .param p1    # Ljava/lang/String;
         .annotation runtime Lretrofit2/http/Url;
         .end annotation
@@ -19,13 +19,19 @@
             value = "cwa-fake"
         .end annotation
     .end param
-    .param p4    # LKeyExportFormat$SubmissionPayload;
+    .param p4    # Ljava/lang/String;
+        .annotation runtime Lretrofit2/http/Header;
+            value = "cwa-header-padding"
+        .end annotation
+    .end param
+    .param p5    # LKeyExportFormat$SubmissionPayload;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",

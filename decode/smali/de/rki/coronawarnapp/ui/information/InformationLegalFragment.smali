@@ -141,6 +141,42 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/information/InformationLegalFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalContactForm:Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;->informationLegalContactForm:Landroid/widget/TextView;
+
+    const-string p2, "binding.informationLegal\u2026formationLegalContactForm"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/information/InformationLegalFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalContactForm:Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;->informationLegalContactFormNonEnDe:Landroid/widget/TextView;
+
+    const-string p2, "binding.informationLegal\u2026onLegalContactFormNonEnDe"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+
     return-void
 
     :cond_0

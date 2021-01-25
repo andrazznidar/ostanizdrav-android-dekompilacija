@@ -38,7 +38,7 @@
 
     int-to-long v0, p3
 
-    invoke-static {p1, p2, v0, v1}, Lkotlinx/coroutines/TimeSourceKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -48,7 +48,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p1, p2, p3, p4}, Lkotlinx/coroutines/TimeSourceKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 

@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultInvalidStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ed
+    const v1, 0x7f0902fb
 
     const/4 v2, 0x1
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultInvalidStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ee
+    const v1, 0x7f0902fc
 
     const/4 v2, 0x2
 

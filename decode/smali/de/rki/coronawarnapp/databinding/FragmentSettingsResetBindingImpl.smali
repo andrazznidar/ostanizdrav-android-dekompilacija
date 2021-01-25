@@ -47,7 +47,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0050
+    const v6, 0x7f0c0051
 
     aput v6, v4, v5
 
@@ -83,7 +83,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0900d0
 
     const/4 v2, 0x6
 
@@ -91,7 +91,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cb
+    const v1, 0x7f0900cc
 
     const/4 v2, 0x7
 
@@ -99,7 +99,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090222
+    const v1, 0x7f09022d
 
     const/16 v2, 0x8
 
@@ -107,7 +107,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090221
+    const v1, 0x7f09022c
 
     const/16 v2, 0x9
 
@@ -115,7 +115,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d0
+    const v1, 0x7f0900d1
 
     const/16 v2, 0xa
 
@@ -123,7 +123,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cc
+    const v1, 0x7f0900cd
 
     const/16 v2, 0xb
 
@@ -131,7 +131,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/16 v2, 0xc
 
@@ -148,9 +148,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c007b
-        0x7f0c007c
+        0x7f0c0052
+        0x7f0c007d
+        0x7f0c007e
     .end array-data
 .end method
 
@@ -357,7 +357,7 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120181
+    const v2, 0x7f12019d
 
     invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
@@ -369,7 +369,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120175
+    const v2, 0x7f120191
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12017e
+    const v2, 0x7f12019a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -401,7 +401,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800c5
+    const v2, 0x7f0800c7
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -417,7 +417,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120180
+    const v2, 0x7f12019c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -433,7 +433,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120177
+    const v2, 0x7f120193
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -449,7 +449,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12017f
+    const v2, 0x7f12019b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -465,7 +465,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800cb
+    const v2, 0x7f0800ce
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 

@@ -350,7 +350,7 @@
 
     new-instance v2, Lokhttp3/internal/http/RealResponseBody;
 
-    invoke-static {v11}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v11}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v3
 

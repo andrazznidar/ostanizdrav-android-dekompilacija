@@ -48,6 +48,16 @@
     .end annotation
 .end field
 
+.field public static final isLocationEnabled:Landroidx/lifecycle/MutableLiveData;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/lifecycle/MutableLiveData<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static final isManualKeyRetrievalEnabled:Landroidx/lifecycle/MutableLiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -164,6 +174,14 @@
     invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
 
     sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBluetoothEnabled:Landroidx/lifecycle/MutableLiveData;
+
+    new-instance v0, Landroidx/lifecycle/MutableLiveData;
+
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
+
+    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isLocationEnabled:Landroidx/lifecycle/MutableLiveData;
 
     new-instance v0, Landroidx/lifecycle/MutableLiveData;
 

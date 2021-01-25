@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.ui.viewmodel.TracingViewModel$refreshExposureSummary$1"
     f = "TracingViewModel.kt"
     l = {
-        0xa1
+        0xd8
     }
     m = "invokeSuspend"
 .end annotation
@@ -33,6 +33,8 @@
 
 # instance fields
 .field public L$0:Ljava/lang/Object;
+
+.field public L$1:Ljava/lang/Object;
 
 .field public label:I
 
@@ -111,7 +113,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -122,6 +124,10 @@
     if-eqz v1, :cond_1
 
     if-ne v1, v2, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->L$1:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->L$0:Ljava/lang/Object;
 
@@ -149,17 +155,27 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->p$:Lkotlinx/coroutines/CoroutineScope;
 
     :try_start_1
-    sget-object v1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->Companion:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;
+    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;->getExposureSummaryRepository()Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->googleApiToken()Ljava/lang/String;
 
     move-result-object v1
 
+    if-eqz v1, :cond_2
+
+    sget-object v3, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->Companion:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;->getExposureSummaryRepository()Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+
+    move-result-object v3
+
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->L$0:Ljava/lang/Object;
+
+    iput-object v1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->L$1:Ljava/lang/Object;
 
     iput v2, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel$refreshExposureSummary$1;->label:I
 
-    invoke-virtual {v1, p0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v3, v1, p0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -175,7 +191,9 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

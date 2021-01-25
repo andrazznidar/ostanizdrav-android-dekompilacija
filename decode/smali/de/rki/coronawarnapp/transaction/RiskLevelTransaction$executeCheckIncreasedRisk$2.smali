@@ -22,7 +22,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeCheckIncreasedRisk$2\n*L\n1#1,552:1\n*E\n"
+    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeCheckIncreasedRisk$2\n*L\n1#1,543:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -259,7 +259,9 @@
 
     new-array v0, v5, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v5, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     add-double/2addr v3, v6
 
@@ -293,9 +295,13 @@
 
     move-result-object p1
 
-    new-array v0, v5, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     div-double/2addr v8, v12
 
@@ -335,9 +341,9 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "calculated risk with the given config: "
+    const-string v5, "calculated risk with the given config: "
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
@@ -345,9 +351,13 @@
 
     move-result-object v0
 
-    aput-object v0, v3, v5
+    const/4 v1, 0x0
 
-    invoke-static {v2, v3}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v3, v1
+
+    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
@@ -454,9 +464,13 @@
 
     move-result-object p1
 
-    new-array v0, v5, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
@@ -489,9 +503,13 @@
 
     move-result-object p1
 
-    new-array v0, v5, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNDETERMINED:Lde/rki/coronawarnapp/risk/RiskLevel;
 

@@ -17,8 +17,7 @@
     c = "de.rki.coronawarnapp.transaction.RiskLevelTransaction"
     f = "RiskLevelTransaction.kt"
     l = {
-        0x214,
-        0x217
+        0x20e
     }
     m = "getNewExposureSummary"
 .end annotation
@@ -28,8 +27,6 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
-
-.field public L$2:Ljava/lang/Object;
 
 .field public label:I
 

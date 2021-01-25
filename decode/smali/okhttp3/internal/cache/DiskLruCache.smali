@@ -1336,7 +1336,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    invoke-static {v3, v2}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v3, v2}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
@@ -1357,12 +1357,12 @@
     move-exception v1
 
     :try_start_5
-    invoke-static {v3, v0}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v3, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 
     :catch_0
-    invoke-static {v3, v2}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v3, v2}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     invoke-interface {v0, v1}, Lokhttp3/internal/io/FileSystem;->delete(Ljava/io/File;)V
 
@@ -1556,7 +1556,7 @@
 
     invoke-direct {v1, v0, v2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lokio/Sink;Lkotlin/jvm/functions/Function1;)V
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v0
 
@@ -1695,7 +1695,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v1
 
@@ -1837,7 +1837,7 @@
     :goto_2
     const/4 v0, 0x0
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -1892,7 +1892,7 @@
     :catchall_1
     move-exception v2
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v2
 .end method
@@ -2209,7 +2209,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v0
     :try_end_0
@@ -2242,7 +2242,9 @@
 
     invoke-interface {v0, v4, v5}, Lokio/BufferedSink;->writeDecimalLong(J)Lokio/BufferedSink;
 
-    invoke-interface {v0, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
+    move-result-object v2
+
+    invoke-interface {v2, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     iget v2, p0, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I
 
@@ -2250,7 +2252,9 @@
 
     invoke-interface {v0, v4, v5}, Lokio/BufferedSink;->writeDecimalLong(J)Lokio/BufferedSink;
 
-    invoke-interface {v0, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
+    move-result-object v2
+
+    invoke-interface {v2, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     invoke-interface {v0, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
@@ -2322,7 +2326,7 @@
 
     :cond_2
     :try_start_2
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache;->fileSystem:Lokhttp3/internal/io/FileSystem;
 
@@ -2387,7 +2391,7 @@
     move-exception v2
 
     :try_start_4
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v2
     :try_end_4

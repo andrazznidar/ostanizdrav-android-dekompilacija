@@ -259,7 +259,7 @@
 
     iput v3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$deleteAllAppContent$1;->label:I
 
-    invoke-static {p1, v4, p0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v4, p0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

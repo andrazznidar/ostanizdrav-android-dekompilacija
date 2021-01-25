@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
 
@@ -73,60 +73,8 @@
 
     invoke-direct {v3, v2, v1}, Landroidx/lifecycle/Transformations$1;-><init>(Landroidx/lifecycle/MediatorLiveData;Landroidx/arch/core/util/Function;)V
 
-    new-instance v1, Landroidx/lifecycle/MediatorLiveData$Source;
+    invoke-virtual {v2, v0, v3}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
 
-    invoke-direct {v1, v0, v3}, Landroidx/lifecycle/MediatorLiveData$Source;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
-
-    iget-object v4, v2, Landroidx/lifecycle/MediatorLiveData;->mSources:Landroidx/arch/core/internal/SafeIterableMap;
-
-    invoke-virtual {v4, v0, v1}, Landroidx/arch/core/internal/SafeIterableMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/lifecycle/MediatorLiveData$Source;
-
-    if-eqz v0, :cond_1
-
-    iget-object v4, v0, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
-
-    if-ne v4, v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "This source was already added with the different observer"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    :goto_0
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    iget v0, v2, Landroidx/lifecycle/LiveData;->mActiveCount:I
-
-    if-lez v0, :cond_3
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v0, 0x0
-
-    :goto_1
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v1}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
-
-    :cond_4
-    :goto_2
     const-string v0, "Transformations.map(tan)\u2026actersValid(it)\n        }"
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V

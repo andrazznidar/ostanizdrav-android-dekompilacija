@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.http.WebRequestBuilder"
     f = "WebRequestBuilder.kt"
     l = {
-        0x6f
+        0x75
     }
     m = "asyncGetApplicationConfigurationFromServer"
 .end annotation

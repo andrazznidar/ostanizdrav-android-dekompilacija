@@ -48,7 +48,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p1, p0}, Lcom/google/android/gms/common/internal/Preconditions;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lkotlin/collections/MapsKt___MapsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

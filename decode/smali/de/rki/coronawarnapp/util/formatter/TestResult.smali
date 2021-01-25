@@ -32,6 +32,8 @@
 
 .field public static final enum POSITIVE:Lde/rki/coronawarnapp/util/formatter/TestResult;
 
+.field public static final enum REDEEMED:Lde/rki/coronawarnapp/util/formatter/TestResult;
+
 
 # instance fields
 .field public final value:I
@@ -41,7 +43,7 @@
 .method public static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lde/rki/coronawarnapp/util/formatter/TestResult;
 
@@ -90,6 +92,18 @@
     invoke-direct {v1, v2, v3, v3}, Lde/rki/coronawarnapp/util/formatter/TestResult;-><init>(Ljava/lang/String;II)V
 
     sput-object v1, Lde/rki/coronawarnapp/util/formatter/TestResult;->INVALID:Lde/rki/coronawarnapp/util/formatter/TestResult;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/util/formatter/TestResult;
+
+    const-string v2, "REDEEMED"
+
+    const/4 v3, 0x4
+
+    invoke-direct {v1, v2, v3, v3}, Lde/rki/coronawarnapp/util/formatter/TestResult;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lde/rki/coronawarnapp/util/formatter/TestResult;->REDEEMED:Lde/rki/coronawarnapp/util/formatter/TestResult;
 
     aput-object v1, v0, v3
 

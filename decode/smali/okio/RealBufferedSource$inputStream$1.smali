@@ -166,7 +166,7 @@
 
     int-to-long v5, p3
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/RealBufferedSource$inputStream$1;->this$0:Lokio/RealBufferedSource;
 

@@ -6,3 +6,15 @@
 # virtual methods
 .method public abstract invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
 .end method
+
+.method public abstract scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+.end method

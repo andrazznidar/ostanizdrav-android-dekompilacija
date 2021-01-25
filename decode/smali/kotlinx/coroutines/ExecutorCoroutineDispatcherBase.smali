@@ -127,61 +127,138 @@
 .end method
 
 .method public invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
-    .locals 4
+    .locals 1
 
     iget-boolean v0, p0, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->removesFutureOnCancellation:Z
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    :try_start_0
-    move-object v2, p0
-
-    check-cast v2, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;
-
-    iget-object v2, v2, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;->executor:Ljava/util/concurrent/Executor;
-
-    instance-of v3, v2, Ljava/util/concurrent/ScheduledExecutorService;
-
-    if-nez v3, :cond_0
-
-    move-object v2, v1
-
-    :cond_0
-    check-cast v2, Ljava/util/concurrent/ScheduledExecutorService;
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v2, p3, p1, p2, v0}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    invoke-virtual {p0, p3, p1, p2, v0}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->scheduleBlock(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
     move-result-object v0
-    :try_end_0
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v1, v0
-
-    :catch_0
-    :cond_1
-    if-eqz v1, :cond_2
-
-    new-instance p1, Lkotlinx/coroutines/DisposableFutureHandle;
-
-    invoke-direct {p1, v1}, Lkotlinx/coroutines/DisposableFutureHandle;-><init>(Ljava/util/concurrent/Future;)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    new-instance p1, Lkotlinx/coroutines/DisposableFutureHandle;
+
+    invoke-direct {p1, v0}, Lkotlinx/coroutines/DisposableFutureHandle;-><init>(Ljava/util/concurrent/Future;)V
+
+    goto :goto_1
+
+    :cond_1
     sget-object v0, Lkotlinx/coroutines/DefaultExecutor;->INSTANCE:Lkotlinx/coroutines/DefaultExecutor;
 
     invoke-virtual {v0, p1, p2, p3}, Lkotlinx/coroutines/DefaultExecutor;->invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p1
 
-    :goto_0
+    :goto_1
     return-object p1
+.end method
+
+.method public final scheduleBlock(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Runnable;",
+            "J",
+            "Ljava/util/concurrent/TimeUnit;",
+            ")",
+            "Ljava/util/concurrent/ScheduledFuture<",
+            "*>;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    move-object v1, p0
+
+    check-cast v1, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;
+
+    iget-object v1, v1, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;->executor:Ljava/util/concurrent/Executor;
+
+    instance-of v2, v1, Ljava/util/concurrent/ScheduledExecutorService;
+
+    if-nez v2, :cond_0
+
+    move-object v1, v0
+
+    :cond_0
+    check-cast v1, Ljava/util/concurrent/ScheduledExecutorService;
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v1, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, p1
+
+    :catch_0
+    :cond_1
+    return-object v0
+.end method
+
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    iget-boolean v0, p0, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->removesFutureOnCancellation:Z
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlinx/coroutines/ResumeUndispatchedRunnable;
+
+    invoke-direct {v0, p0, p3}, Lkotlinx/coroutines/ResumeUndispatchedRunnable;-><init>(Lkotlinx/coroutines/CoroutineDispatcher;Lkotlinx/coroutines/CancellableContinuation;)V
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {p0, v0, p1, p2, v1}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->scheduleBlock(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    new-instance p1, Lkotlinx/coroutines/CancelFutureOnCancel;
+
+    invoke-direct {p1, v0}, Lkotlinx/coroutines/CancelFutureOnCancel;-><init>(Ljava/util/concurrent/Future;)V
+
+    invoke-interface {p3, p1}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+
+    return-void
+
+    :cond_1
+    sget-object v0, Lkotlinx/coroutines/DefaultExecutor;->INSTANCE:Lkotlinx/coroutines/DefaultExecutor;
+
+    invoke-virtual {v0, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase;->scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

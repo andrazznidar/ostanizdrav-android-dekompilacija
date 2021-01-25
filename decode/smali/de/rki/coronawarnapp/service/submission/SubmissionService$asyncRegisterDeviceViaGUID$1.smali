@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.service.submission.SubmissionService"
     f = "SubmissionService.kt"
     l = {
-        0x1e
+        0x21
     }
     m = "asyncRegisterDeviceViaGUID"
 .end annotation

@@ -93,11 +93,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f1201c7
+    const v6, 0x7f1201eb
 
-    const v7, 0x7f1201c5
+    const v7, 0x7f1201e9
 
-    const v8, 0x7f1201c6
+    const v8, 0x7f1201ea
 
     const/4 v9, 0x0
 
@@ -126,7 +126,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f1201be
+    const v7, 0x7f1201df
 
     if-eqz v2, :cond_1
 
@@ -138,7 +138,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -158,7 +158,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -194,7 +194,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -243,11 +243,11 @@
 
     invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v5, 0x7f1201bd
+    const v5, 0x7f1201de
 
-    const v6, 0x7f1201bb
+    const v6, 0x7f1201dc
 
-    const v7, 0x7f1201bc
+    const v7, 0x7f1201dd
 
     const/4 v8, 0x0
 
@@ -364,7 +364,7 @@
 .end method
 
 .method public static final access$storeTanAndContinue(Lde/rki/coronawarnapp/ui/submission/SubmissionTanFragment;)V
-    .locals 3
+    .locals 4
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionTanFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/SubmissionTanViewModel;
 
@@ -419,7 +419,9 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v3, v1, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v1, Lde/rki/coronawarnapp/storage/SubmissionRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/SubmissionRepository;
 

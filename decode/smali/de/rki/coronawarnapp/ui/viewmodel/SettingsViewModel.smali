@@ -44,6 +44,16 @@
     .end annotation
 .end field
 
+.field public final isLocationEnabled:Landroidx/lifecycle/LiveData;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/lifecycle/LiveData<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final isManualKeyRetrievalEnabled:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -130,6 +140,12 @@
     sget-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBluetoothEnabled:Landroidx/lifecycle/MutableLiveData;
 
     iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isBluetoothEnabled:Landroidx/lifecycle/LiveData;
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/SettingsRepository;
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isLocationEnabled:Landroidx/lifecycle/MutableLiveData;
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isLocationEnabled:Landroidx/lifecycle/LiveData;
 
     sget-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/SettingsRepository;
 
@@ -389,7 +405,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120118
+    const v2, 0x7f12012c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -443,7 +459,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120119
+    const v2, 0x7f12012d
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

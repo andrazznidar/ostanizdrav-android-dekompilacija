@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncGetRegistrationToken$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0x95
+        0xa2
     }
     m = "invokeSuspend"
 .end annotation
@@ -34,7 +34,9 @@
 # instance fields
 .field public final synthetic $key:Ljava/lang/String;
 
-.field public final synthetic $keyType:Ljava/lang/String;
+.field public final synthetic $keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
+
+.field public I$0:I
 
 .field public L$0:Ljava/lang/Object;
 
@@ -48,12 +50,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Lde/rki/coronawarnapp/service/submission/KeyType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Ljava/lang/String;
+    iput-object p2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
 
     iput-object p3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$key:Ljava/lang/String;
 
@@ -86,11 +88,11 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Ljava/lang/String;
+    iget-object v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
 
     iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$key:Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2, v3, p2}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, v3, p2}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Lde/rki/coronawarnapp/service/submission/KeyType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -129,7 +131,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 12
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -151,7 +153,7 @@
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -167,17 +169,13 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
 
-    const-string v3, "GUID"
+    sget-object v3, Lde/rki/coronawarnapp/service/submission/KeyType;->GUID:Lde/rki/coronawarnapp/service/submission/KeyType;
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v4, 0x0
 
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    sget-object v1, Lde/rki/coronawarnapp/util/security/SecurityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/security/SecurityHelper;
+    if-ne v1, v3, :cond_3
 
     iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$key:Ljava/lang/String;
 
@@ -189,15 +187,15 @@
 
     move-result-object v3
 
-    sget-object v4, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v5, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {v1, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v1
 
-    const-string v4, "(this as java.lang.String).getBytes(charset)"
+    const-string v5, "(this as java.lang.String).getBytes(charset)"
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/security/MessageDigest;->digest([B)[B
 
@@ -208,8 +206,6 @@
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     array-length v3, v1
-
-    const/4 v4, 0x0
 
     const-string v5, ""
 
@@ -269,38 +265,81 @@
     iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$key:Ljava/lang/String;
 
     :cond_4
-    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
+    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/http/WebRequestBuilder;->verificationService:Lde/rki/coronawarnapp/http/service/VerificationService;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    sget-object v3, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->INSTANCE:Lde/rki/coronawarnapp/service/submission/SubmissionConstants;
+    move-result v1
 
-    sget-object v3, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->REGISTRATION_TOKEN_URL:Ljava/lang/String;
+    if-eqz v1, :cond_6
 
-    new-instance v4, Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;
+    if-ne v1, v2, :cond_5
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Ljava/lang/String;
+    const/16 v1, 0xbe
 
-    invoke-direct {v4, v6, v5}, Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    goto :goto_1
+
+    :cond_5
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p1
+
+    :cond_6
+    const/16 v1, 0x8b
+
+    :goto_1
+    iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
+
+    iget-object v6, v3, Lde/rki/coronawarnapp/http/WebRequestBuilder;->verificationService:Lde/rki/coronawarnapp/http/service/VerificationService;
+
+    sget-object v7, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->INSTANCE:Lde/rki/coronawarnapp/service/submission/SubmissionConstants;
+
+    sget-object v7, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->REGISTRATION_TOKEN_URL:Ljava/lang/String;
+
+    invoke-static {v3, v4}, Lde/rki/coronawarnapp/http/WebRequestBuilder;->access$requestPadding(Lde/rki/coronawarnapp/http/WebRequestBuilder;I)Ljava/lang/String;
+
+    move-result-object v9
+
+    new-instance v10, Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->$keyType:Lde/rki/coronawarnapp/service/submission/KeyType;
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
+
+    invoke-static {v4, v1}, Lde/rki/coronawarnapp/http/WebRequestBuilder;->access$requestPadding(Lde/rki/coronawarnapp/http/WebRequestBuilder;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v10, v3, v5, v4}, Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->L$0:Ljava/lang/Object;
 
     iput-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->L$1:Ljava/lang/Object;
 
+    iput v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->I$0:I
+
     iput v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetRegistrationToken$2;->label:I
 
-    const-string p1, "0"
+    const-string v8, "0"
 
-    invoke-interface {v1, v3, p1, v4, p0}, Lde/rki/coronawarnapp/http/service/VerificationService;->getRegistrationToken(Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object v11, p0
+
+    invoke-interface/range {v6 .. v11}, Lde/rki/coronawarnapp/http/service/VerificationService;->getRegistrationToken(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/http/requests/RegistrationTokenRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_7
 
     return-object v0
 
-    :cond_5
-    :goto_1
+    :cond_7
+    :goto_2
     check-cast p1, Lde/rki/coronawarnapp/http/responses/RegistrationTokenResponse;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/http/responses/RegistrationTokenResponse;->getRegistrationToken()Ljava/lang/String;

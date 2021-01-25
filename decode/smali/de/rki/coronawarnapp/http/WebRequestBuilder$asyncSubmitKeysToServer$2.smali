@@ -21,11 +21,15 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nWebRequestBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WebRequestBuilder.kt\nde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2\n*L\n1#1,259:1\n*E\n"
+.end annotation
+
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncSubmitKeysToServer$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0xbc
+        0xe2
     }
     m = "invokeSuspend"
 .end annotation
@@ -34,9 +38,11 @@
 # instance fields
 .field public final synthetic $authCode:Ljava/lang/String;
 
-.field public final synthetic $faked:Z
-
 .field public final synthetic $keyList:Ljava/util/List;
+
+.field public I$0:I
+
+.field public I$1:I
 
 .field public L$0:Ljava/lang/Object;
 
@@ -52,20 +58,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/util/List;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$keyList:Ljava/util/List;
 
-    iput-boolean p3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$faked:Z
-
-    iput-object p4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
+    iput-object p3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p5}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -73,7 +77,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,27 +92,21 @@
 
     if-eqz p2, :cond_0
 
-    new-instance v6, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;
+    new-instance v0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$keyList:Ljava/util/List;
 
-    iget-boolean v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$faked:Z
+    iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
-
-    move-object v0, v6
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/util/List;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, v3, p2}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
-    iput-object p1, v6, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iput-object p1, v0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
-    return-object v6
+    return-object v0
 
     :cond_0
     const-string p1, "completion"
@@ -141,7 +139,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 13
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -155,11 +153,11 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$2:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, LKeyExportFormat$SubmissionPayload;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$1:Ljava/lang/Object;
 
-    check-cast v0, LKeyExportFormat$SubmissionPayload;
+    check-cast v0, Ljava/lang/String;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$0:Ljava/lang/Object;
 
@@ -167,7 +165,7 @@
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -207,141 +205,161 @@
 
     const/4 v3, 0x0
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    sget-object v1, LKeyExportFormat$SubmissionPayload;->DEFAULT_INSTANCE:LKeyExportFormat$SubmissionPayload;
+    invoke-virtual {v5, v1, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
+    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$keyList:Ljava/util/List;
 
-    move-result-object v1
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    check-cast v1, LKeyExportFormat$SubmissionPayload$Builder;
+    move-result v1
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$keyList:Ljava/util/List;
+    rsub-int/lit8 v1, v1, 0xe
 
-    invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
 
-    iget-object v4, v1, Lcom/google/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/protobuf/GeneratedMessageLite;
+    move-result v1
 
-    check-cast v4, LKeyExportFormat$SubmissionPayload;
+    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    iget-object v5, v4, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+    mul-int/lit8 v5, v1, 0x1c
 
-    move-object v6, v5
+    invoke-static {v4, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder;->access$requestPadding(Lde/rki/coronawarnapp/http/WebRequestBuilder;I)Ljava/lang/String;
 
-    check-cast v6, Lcom/google/protobuf/AbstractProtobufList;
+    move-result-object v4
 
-    iget-boolean v6, v6, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    sget-object v5, LKeyExportFormat$SubmissionPayload;->DEFAULT_INSTANCE:LKeyExportFormat$SubmissionPayload;
 
-    if-nez v6, :cond_2
-
-    invoke-static {v5}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+    invoke-virtual {v5}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object v5
 
-    iput-object v5, v4, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+    check-cast v5, LKeyExportFormat$SubmissionPayload$Builder;
+
+    iget-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$keyList:Ljava/util/List;
+
+    invoke-virtual {v5}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
+
+    iget-object v7, v5, Lcom/google/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/protobuf/GeneratedMessageLite;
+
+    check-cast v7, LKeyExportFormat$SubmissionPayload;
+
+    iget-object v8, v7, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v9, v8
+
+    check-cast v9, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v9, v9, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v9, :cond_2
+
+    invoke-static {v8}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v8
+
+    iput-object v8, v7, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
     :cond_2
-    iget-object v4, v4, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v7, v7, LKeyExportFormat$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
-    if-eqz v3, :cond_6
+    if-eqz v6, :cond_5
 
-    instance-of v5, v3, Lcom/google/protobuf/LazyStringList;
+    instance-of v8, v6, Lcom/google/protobuf/LazyStringList;
 
-    if-eqz v5, :cond_3
+    if-eqz v8, :cond_3
 
-    move-object v5, v3
+    move-object v8, v6
 
-    check-cast v5, Lcom/google/protobuf/LazyStringList;
+    check-cast v8, Lcom/google/protobuf/LazyStringList;
 
-    invoke-interface {v5}, Lcom/google/protobuf/LazyStringList;->getUnderlyingElements()Ljava/util/List;
+    invoke-interface {v8}, Lcom/google/protobuf/LazyStringList;->getUnderlyingElements()Ljava/util/List;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-static {v5}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
+    invoke-static {v8}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
 
-    invoke-interface {v4, v3}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v7, v6}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 
     :cond_3
-    invoke-static {v3}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
+    invoke-static {v6}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
 
-    invoke-interface {v4, v3}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v7, v6}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
     :goto_0
-    invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+    invoke-static {v4}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
 
-    move-result-object v1
+    move-result-object v6
 
-    move-object v7, v1
+    invoke-virtual {v5}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
+
+    iget-object v7, v5, Lcom/google/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/protobuf/GeneratedMessageLite;
 
     check-cast v7, LKeyExportFormat$SubmissionPayload;
 
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$faked:Z
+    invoke-static {v7, v6}, LKeyExportFormat$SubmissionPayload;->access$5800(LKeyExportFormat$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
 
-    if-eqz v1, :cond_4
+    invoke-virtual {v5}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
-    invoke-static {}, Ljava/lang/Math;->random()D
+    move-result-object v5
 
-    move-result-wide v3
+    move-object v11, v5
 
-    double-to-int v1, v3
+    check-cast v11, LKeyExportFormat$SubmissionPayload;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    move-result-object v1
+    iget-object v6, v5, Lde/rki/coronawarnapp/http/WebRequestBuilder;->submissionService:Lde/rki/coronawarnapp/http/service/SubmissionService;
 
-    goto :goto_1
+    sget-object v5, Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;->INSTANCE:Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;
 
-    :cond_4
-    const-string v1, "0"
+    sget-object v7, Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;->DIAGNOSIS_KEYS_SUBMISSION_URL:Ljava/lang/String;
 
-    :goto_1
-    move-object v6, v1
+    iget-object v8, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
+    const-string v5, "submissionPayload"
 
-    iget-object v3, v1, Lde/rki/coronawarnapp/http/WebRequestBuilder;->submissionService:Lde/rki/coronawarnapp/http/service/SubmissionService;
-
-    sget-object v1, Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;->INSTANCE:Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;
-
-    sget-object v4, Lde/rki/coronawarnapp/service/diagnosiskey/DiagnosisKeyConstants;->DIAGNOSIS_KEYS_SUBMISSION_URL:Ljava/lang/String;
-
-    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->$authCode:Ljava/lang/String;
-
-    const-string v1, "submissionPayload"
-
-    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$0:Ljava/lang/Object;
 
-    iput-object v7, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$1:Ljava/lang/Object;
+    iput v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->I$0:I
 
-    iput-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$2:Ljava/lang/Object;
+    iput v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->I$1:I
+
+    iput-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$1:Ljava/lang/Object;
+
+    iput-object v11, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->L$2:Ljava/lang/Object;
 
     iput v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncSubmitKeysToServer$2;->label:I
 
-    move-object v8, p0
+    const-string v9, "0"
 
-    invoke-interface/range {v3 .. v8}, Lde/rki/coronawarnapp/http/service/SubmissionService;->submitKeys(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LKeyExportFormat$SubmissionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const-string v10, ""
+
+    move-object v12, p0
+
+    invoke-interface/range {v6 .. v12}, Lde/rki/coronawarnapp/http/service/SubmissionService;->submitKeys(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;LKeyExportFormat$SubmissionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
-    :cond_5
-    :goto_2
+    :cond_4
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
-    :cond_6
-    throw v5
+    :cond_5
+    throw v8
 .end method

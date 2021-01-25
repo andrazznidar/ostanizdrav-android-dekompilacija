@@ -29,7 +29,7 @@
 
     mul-long/2addr v0, v2
 
-    invoke-static {p1, p2, v0, v1}, Lkotlinx/coroutines/TimeSourceKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -135,7 +135,7 @@
     move-wide p3, v2
 
     :goto_1
-    invoke-static {p1, p2, p3, p4}, Lkotlinx/coroutines/TimeSourceKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 

@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090132
+    const v1, 0x7f090136
 
     const/4 v2, 0x3
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c7
+    const v1, 0x7f0900c8
 
     const/4 v2, 0x4
 
@@ -333,7 +333,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x1d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

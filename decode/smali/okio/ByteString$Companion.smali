@@ -52,7 +52,7 @@
 
     int-to-long v4, p3
 
-    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     add-int/2addr p3, p2
 
@@ -169,7 +169,7 @@
 
     new-instance v0, Lokio/ByteString;
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
 
     move-result-object v1
 

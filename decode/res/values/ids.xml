@@ -90,6 +90,7 @@
     <item type="id" name="action_submissionResultFragment_to_submissionResultPositiveOtherWarningFragment" />
     <item type="id" name="action_submissionResultPositiveOtherWarningFragment_to_submissionDoneFragment" />
     <item type="id" name="action_submissionResultPositiveOtherWarningFragment_to_submissionResultFragment" />
+    <item type="id" name="action_submissionTanFragment_to_submissionDispatcherFragment" />
     <item type="id" name="action_submissionTanFragment_to_submissionResultFragment" />
     <item type="id" name="action_text" />
     <item type="id" name="actions" />
@@ -177,6 +178,7 @@
     <item type="id" name="information_about_body" />
     <item type="id" name="information_about_body_emphasized" />
     <item type="id" name="information_about_container" />
+    <item type="id" name="information_about_easy_language" />
     <item type="id" name="information_about_header" />
     <item type="id" name="information_about_header_details" />
     <item type="id" name="information_contact" />
@@ -196,6 +198,8 @@
     <item type="id" name="information_help" />
     <item type="id" name="information_legal" />
     <item type="id" name="information_legal_body_publisher" />
+    <item type="id" name="information_legal_contact_form" />
+    <item type="id" name="information_legal_contact_form_non_en_de" />
     <item type="id" name="information_legal_container" />
     <item type="id" name="information_legal_divider_contact" />
     <item type="id" name="information_legal_divider_taxid" />
@@ -344,10 +348,13 @@
     <item type="id" name="onboarding_button_next" />
     <item type="id" name="onboarding_card" />
     <item type="id" name="onboarding_container" />
+    <item type="id" name="onboarding_easy_language" />
     <item type="id" name="onboarding_fragment_container" />
     <item type="id" name="onboarding_header" />
     <item type="id" name="onboarding_headline" />
     <item type="id" name="onboarding_illustration" />
+    <item type="id" name="onboarding_include" />
+    <item type="id" name="onboarding_location_card" />
     <item type="id" name="onboarding_notifications_container" />
     <item type="id" name="onboarding_privacy_container" />
     <item type="id" name="onboarding_subtitle" />
@@ -384,6 +391,10 @@
     <item type="id" name="risk_card_row_saved_days_circle_progress" />
     <item type="id" name="risk_card_row_saved_risk" />
     <item type="id" name="risk_card_row_time_fetched" />
+    <item type="id" name="risk_details_additional_information" />
+    <item type="id" name="risk_details_additional_information_body" />
+    <item type="id" name="risk_details_additional_information_headline" />
+    <item type="id" name="risk_details_additional_information_subtitle" />
     <item type="id" name="risk_details_behavior" />
     <item type="id" name="risk_details_behavior_bullet_point_1" />
     <item type="id" name="risk_details_behavior_bullet_point_2" />
@@ -484,6 +495,7 @@
     <item type="id" name="settings_tracing_status" />
     <item type="id" name="settings_tracing_status_bluetooth" />
     <item type="id" name="settings_tracing_status_connection" />
+    <item type="id" name="settings_tracing_status_location" />
     <item type="id" name="settings_tracing_status_tracing" />
     <item type="id" name="settings_tracing_switch_row" />
     <item type="id" name="shortcut" />
@@ -610,6 +622,7 @@
     <item type="id" name="submission_test_result_button_positive_continue" />
     <item type="id" name="submission_test_result_card" />
     <item type="id" name="submission_test_result_container" />
+    <item type="id" name="submission_test_result_content" />
     <item type="id" name="submission_test_result_header" />
     <item type="id" name="submission_test_result_invalid_steps" />
     <item type="id" name="submission_test_result_negative_info" />
@@ -636,6 +649,7 @@
     <item type="id" name="testRiskLevelCalculation" />
     <item type="id" name="test_checkbox_android_button_tint" />
     <item type="id" name="test_checkbox_app_button_tint" />
+    <item type="id" name="test_result_card" />
     <item type="id" name="test_result_card_content" />
     <item type="id" name="test_result_card_headline" />
     <item type="id" name="test_result_card_positive_body" />

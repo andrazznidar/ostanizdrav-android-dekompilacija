@@ -73,7 +73,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902d2
+    const v1, 0x7f0902df
 
     const/16 v2, 0xa
 
@@ -97,14 +97,14 @@
 
     :array_1
     .array-data 4
-        0x7f0c0075
-        0x7f0c0079
-        0x7f0c0078
-        0x7f0c0074
-        0x7f0c007a
         0x7f0c0077
-        0x7f0c007d
+        0x7f0c007b
+        0x7f0c007a
+        0x7f0c0076
         0x7f0c007c
+        0x7f0c0079
+        0x7f0c007f
+        0x7f0c007e
     .end array-data
 .end method
 
@@ -280,13 +280,15 @@
 
     const-wide/16 v9, 0x304
 
-    if-eqz v6, :cond_8
+    const/4 v12, 0x0
+
+    if-eqz v6, :cond_7
 
     and-long v13, v2, v9
 
     cmp-long v6, v13, v4
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_4
 
     if-eqz v0, :cond_0
 
@@ -295,7 +297,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move-object v6, v12
 
     :goto_0
     const/4 v13, 0x2
@@ -313,7 +315,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move-object v6, v12
 
     :goto_1
     invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatTestResultPositiveStepsVisible(Lde/rki/coronawarnapp/util/DeviceUIState;)I
@@ -354,65 +356,47 @@
 
     move-result v11
 
-    sget-object v12, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
+    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatTestResultInvalidStepsVisible(Lde/rki/coronawarnapp/util/DeviceUIState;)I
 
-    if-ne v6, v12, :cond_4
+    move-result v15
 
-    move v12, v15
+    move/from16 v16, v13
 
     goto :goto_4
 
     :cond_4
-    const/4 v12, 0x0
+    move-object v6, v12
+
+    const/4 v11, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
 
     :goto_4
-    invoke-static {v12}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+    and-long v17, v2, v7
 
-    move-result v12
+    cmp-long v13, v17, v4
 
-    move/from16 v17, v13
+    if-eqz v13, :cond_6
 
-    move v13, v11
+    if-eqz v0, :cond_5
 
-    move v11, v12
-
-    move v12, v14
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->testResultReceivedDate:Landroidx/lifecycle/LiveData;
 
     goto :goto_5
 
     :cond_5
-    const/4 v6, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/16 v17, 0x0
+    move-object v0, v12
 
     :goto_5
-    and-long v14, v2, v7
+    const/4 v13, 0x6
 
-    cmp-long v14, v14, v4
-
-    if-eqz v14, :cond_7
+    invoke-virtual {v1, v13, v0}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
     if-eqz v0, :cond_6
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->testResultReceivedDate:Landroidx/lifecycle/LiveData;
-
-    goto :goto_6
-
-    :cond_6
-    const/4 v0, 0x0
-
-    :goto_6
-    const/4 v14, 0x6
-
-    invoke-virtual {v1, v14, v0}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
-
-    if-eqz v0, :cond_7
 
     invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
@@ -420,94 +404,85 @@
 
     check-cast v0, Ljava/util/Date;
 
-    move-object/from16 v16, v0
+    move-object v12, v0
 
-    goto :goto_7
+    :cond_6
+    move v0, v11
+
+    move-object v13, v12
+
+    move v11, v15
+
+    move-object v12, v6
+
+    move/from16 v6, v16
+
+    goto :goto_6
 
     :cond_7
-    const/16 v16, 0x0
+    move-object v13, v12
 
-    :goto_7
-    move-object/from16 v0, v16
-
-    move/from16 v14, v17
-
-    move/from16 v18, v11
-
-    move-object v11, v6
-
-    move v6, v12
-
-    move/from16 v12, v18
-
-    goto :goto_8
-
-    :cond_8
     const/4 v0, 0x0
 
     const/4 v6, 0x0
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
     const/4 v14, 0x0
 
-    :goto_8
+    :goto_6
     and-long/2addr v9, v2
 
     cmp-long v9, v9, v4
 
-    if-eqz v9, :cond_9
+    if-eqz v9, :cond_8
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultCard:Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
 
-    invoke-virtual {v9, v11}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
+    invoke-virtual {v9, v12}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultInvalidSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultInvalidStepsBinding;
 
     iget-object v9, v9, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v9, v12}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v9, v11}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultNegativeInfo:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultNegativeFurtherInfoBinding;
 
     iget-object v9, v9, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v9, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultNegativeSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultNegativeStepsBinding;
 
     iget-object v9, v9, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v9, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultPendingSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultPendingStepsBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultPendingSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultPendingStepsBinding;
 
-    iget-object v9, v9, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v9, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultPositiveSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultPositiveSteps:Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBinding;
 
-    iget-object v6, v6, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v6, v14}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_9
+    :cond_8
     and-long/2addr v2, v7
 
-    cmp-long v2, v2, v4
+    cmp-long v0, v2, v4
 
-    if-eqz v2, :cond_a
+    if-eqz v0, :cond_9
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultCard:Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultCard:Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
 
-    invoke-virtual {v2, v0}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->setRegisterDate(Ljava/util/Date;)V
+    invoke-virtual {v0, v13}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->setRegisterDate(Ljava/util/Date;)V
 
-    :cond_a
+    :cond_9
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBinding;->submissionTestResultCard:Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -1106,7 +1081,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x1c
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

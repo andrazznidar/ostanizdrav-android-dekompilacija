@@ -26,6 +26,8 @@
 
 .field public static final enum PAIRED_POSITIVE_TELETAN:Lde/rki/coronawarnapp/util/DeviceUIState;
 
+.field public static final enum PAIRED_REDEEMED:Lde/rki/coronawarnapp/util/DeviceUIState;
+
 .field public static final enum SUBMITTED_FINAL:Lde/rki/coronawarnapp/util/DeviceUIState;
 
 .field public static final enum UNPAIRED:Lde/rki/coronawarnapp/util/DeviceUIState;
@@ -35,7 +37,7 @@
 .method public static constructor <clinit>()V
     .locals 4
 
-    const/16 v0, 0x8
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lde/rki/coronawarnapp/util/DeviceUIState;
 
@@ -113,9 +115,21 @@
 
     new-instance v1, Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    const-string v2, "SUBMITTED_INITIAL"
+    const-string v2, "PAIRED_REDEEMED"
 
     const/4 v3, 0x6
+
+    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/util/DeviceUIState;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_REDEEMED:Lde/rki/coronawarnapp/util/DeviceUIState;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/util/DeviceUIState;
+
+    const-string v2, "SUBMITTED_INITIAL"
+
+    const/4 v3, 0x7
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/util/DeviceUIState;-><init>(Ljava/lang/String;I)V
 
@@ -125,7 +139,7 @@
 
     const-string v2, "SUBMITTED_FINAL"
 
-    const/4 v3, 0x7
+    const/16 v3, 0x8
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/util/DeviceUIState;-><init>(Ljava/lang/String;I)V
 

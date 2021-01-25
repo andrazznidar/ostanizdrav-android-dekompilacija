@@ -1,6 +1,6 @@
 .class public final synthetic Lcom/google/android/gms/internal/nearby/zzs;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/RemoteCall;
@@ -36,11 +36,11 @@
 .method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzq;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
 
     check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/nearby/zzp;->zzb(Lcom/google/android/gms/internal/nearby/zzq;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/nearby/zzt;->zzb(Lcom/google/android/gms/internal/nearby/zzr;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     return-void
 .end method

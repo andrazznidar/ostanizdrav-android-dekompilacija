@@ -22,14 +22,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRetrieveDiagnosisKeysTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$executeAPISubmission$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,280:1\n1648#2,2:281\n*E\n*S KotlinDebug\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$executeAPISubmission$2\n*L\n252#1,2:281\n*E\n"
+    value = "SMAP\nRetrieveDiagnosisKeysTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$executeAPISubmission$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,290:1\n1648#2,2:291\n*E\n*S KotlinDebug\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$executeAPISubmission$2\n*L\n262#1,2:291\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction$executeAPISubmission$2"
     f = "RetrieveDiagnosisKeysTransaction.kt"
     l = {
-        0x100
+        0x10a
     }
     m = "invokeSuspend"
 .end annotation
@@ -231,7 +231,7 @@
 
     new-instance p1, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v5
 
@@ -306,7 +306,9 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

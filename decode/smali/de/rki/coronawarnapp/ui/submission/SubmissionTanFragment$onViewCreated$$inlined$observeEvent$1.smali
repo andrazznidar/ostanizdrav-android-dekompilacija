@@ -107,7 +107,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f090064
+    const v1, 0x7f090065
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 

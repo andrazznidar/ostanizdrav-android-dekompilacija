@@ -81,7 +81,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120122
+    const v3, 0x7f120136
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -93,47 +93,56 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_4
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v2, :cond_3
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x4
+
+    if-eq v1, v2, :cond_1
+
+    const/4 v2, 0x5
 
     if-eq v1, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_2
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_LEVEL_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_3
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->NO_CALCULATION_POSSIBLE_TRACING_OFF:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_LEVEL_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_4
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->NO_CALCULATION_POSSIBLE_TRACING_OFF:Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    goto :goto_0
+
+    :cond_5
     sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_INITIAL:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     :goto_0

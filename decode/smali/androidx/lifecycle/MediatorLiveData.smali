@@ -52,6 +52,76 @@
 
 
 # virtual methods
+.method public addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<S:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroidx/lifecycle/LiveData<",
+            "TS;>;",
+            "Landroidx/lifecycle/Observer<",
+            "-TS;>;)V"
+        }
+    .end annotation
+
+    new-instance v0, Landroidx/lifecycle/MediatorLiveData$Source;
+
+    invoke-direct {v0, p1, p2}, Landroidx/lifecycle/MediatorLiveData$Source;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+
+    iget-object v1, p0, Landroidx/lifecycle/MediatorLiveData;->mSources:Landroidx/arch/core/internal/SafeIterableMap;
+
+    invoke-virtual {v1, p1, v0}, Landroidx/arch/core/internal/SafeIterableMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/lifecycle/MediatorLiveData$Source;
+
+    if-eqz p1, :cond_1
+
+    iget-object v1, p1, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
+
+    if-ne v1, p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "This source was already added with the different observer"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    if-eqz p1, :cond_2
+
+    return-void
+
+    :cond_2
+    iget p1, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
+
+    if-lez p1, :cond_3
+
+    const/4 p1, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    const/4 p1, 0x0
+
+    :goto_1
+    if-eqz p1, :cond_4
+
+    invoke-virtual {v0}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
+
+    :cond_4
+    return-void
+.end method
+
 .method public onActive()V
     .locals 3
 

@@ -197,7 +197,9 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v4, v1, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/transaction/Transaction$executeState$2;->$block:Lkotlin/jvm/functions/Function2;
 

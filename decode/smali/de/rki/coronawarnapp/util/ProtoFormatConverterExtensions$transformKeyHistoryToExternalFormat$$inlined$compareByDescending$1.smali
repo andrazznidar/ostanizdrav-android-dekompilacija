@@ -58,7 +58,7 @@
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Lcom/google/android/gms/common/internal/Preconditions;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    invoke-static {p2, p1}, Lkotlin/collections/MapsKt___MapsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1
 

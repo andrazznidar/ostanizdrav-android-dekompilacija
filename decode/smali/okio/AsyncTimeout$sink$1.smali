@@ -219,7 +219,7 @@
 
     move-wide v5, p2
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     :goto_0
     const-wide/16 v1, 0x0

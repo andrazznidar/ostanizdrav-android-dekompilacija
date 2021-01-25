@@ -314,50 +314,29 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 9
+    .locals 8
 
-    new-instance v7, Lkotlin/collections/AbstractCollection$toString$1;
+    new-instance v6, Lkotlin/collections/AbstractCollection$toString$1;
 
-    invoke-direct {v7, p0}, Lkotlin/collections/AbstractCollection$toString$1;-><init>(Lkotlin/collections/AbstractCollection;)V
+    invoke-direct {v6, p0}, Lkotlin/collections/AbstractCollection$toString$1;-><init>(Lkotlin/collections/AbstractCollection;)V
 
-    const/4 v5, -0x1
+    const-string v1, ", "
 
-    const-string v6, "..."
+    const-string v2, "["
 
-    if-eqz v6, :cond_0
+    const-string v3, "]"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    const/4 v4, 0x0
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v5, 0x0
 
-    const-string v2, ", "
-
-    const-string v3, "["
-
-    const-string v4, "]"
+    const/16 v7, 0x18
 
     move-object v0, p0
 
-    move-object v1, v8
-
-    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "joinTo(StringBuilder(), \u2026ed, transform).toString()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-object v0
-
-    :cond_0
-    const-string v0, "truncated"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method

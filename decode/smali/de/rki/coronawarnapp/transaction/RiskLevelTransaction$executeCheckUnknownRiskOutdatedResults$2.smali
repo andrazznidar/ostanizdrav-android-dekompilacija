@@ -22,7 +22,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeCheckUnknownRiskOutdatedResults$2\n*L\n1#1,552:1\n*E\n"
+    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction$executeCheckUnknownRiskOutdatedResults$2\n*L\n1#1,543:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -141,7 +141,7 @@
     const/4 p1, 0x0
 
     :goto_0
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
@@ -163,7 +163,7 @@
 
     const/4 v0, 0x0
 
-    if-lez p1, :cond_1
+    if-lez p1, :cond_2
 
     sget-object p1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
 
@@ -171,19 +171,62 @@
 
     move-result p1
 
+    if-eqz p1, :cond_2
+
+    sget-object p1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
+
+    sget-object p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->autoModeEnabled(Landroid/content/Context;)Z
+
+    move-result p1
+
+    const-string v1, "diagnosis keys outdated and active tracing time is above threshold"
+
     if-eqz p1, :cond_1
 
     sget-object p1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
 
+    new-array v2, v0, [Ljava/lang/Object;
+
+    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v3, v1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
     new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v1, "diagnosis keys outdated and active tracing time is above threshold"
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "manual mode not active (background jobs enabled)"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 
     :cond_1
+    sget-object p1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    new-array v2, v0, [Ljava/lang/Object;
+
+    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v3, v1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v2, "manual mode active (background jobs disabled)"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -204,13 +247,15 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNDETERMINED:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     return-object p1
 
-    :cond_2
+    :cond_3
     new-instance p1, Lde/rki/coronawarnapp/exception/RiskLevelCalculationException;
 
     new-instance v0, Ljava/lang/IllegalArgumentException;

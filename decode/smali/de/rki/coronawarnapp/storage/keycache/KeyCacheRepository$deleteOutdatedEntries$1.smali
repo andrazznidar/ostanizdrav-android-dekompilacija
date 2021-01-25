@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.storage.keycache.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0x3e,
-        0x44
+        0x42,
+        0x48
     }
     m = "deleteOutdatedEntries"
 .end annotation

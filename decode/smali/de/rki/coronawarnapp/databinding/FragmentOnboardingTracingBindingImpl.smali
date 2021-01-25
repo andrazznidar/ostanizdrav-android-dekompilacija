@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0057
+    const v6, 0x7f0c0058
 
     aput v6, v4, v5
 
@@ -79,7 +79,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c6
+    const v1, 0x7f0900c7
 
     const/4 v2, 0x4
 
@@ -87,7 +87,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09019d
+    const v1, 0x7f0901a1
 
     const/4 v2, 0x5
 
@@ -95,7 +95,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09019c
+    const v1, 0x7f0901a0
 
     const/4 v2, 0x6
 
@@ -103,7 +103,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d1
+    const v1, 0x7f0900d2
 
     const/4 v2, 0x7
 
@@ -111,7 +111,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/16 v2, 0x8
 
@@ -119,7 +119,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0900d0
 
     const/16 v2, 0x9
 
@@ -127,7 +127,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cb
+    const v1, 0x7f0900cc
 
     const/16 v2, 0xa
 
@@ -317,7 +317,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200fa
+    const v2, 0x7f120108
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -333,7 +333,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200fb
+    const v2, 0x7f120109
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -349,7 +349,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200fc
+    const v2, 0x7f12010a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -365,7 +365,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120102
+    const v2, 0x7f120111
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -381,7 +381,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120103
+    const v2, 0x7f120112
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -413,7 +413,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120104
+    const v2, 0x7f120113
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -429,7 +429,55 @@
 
     move-result-object v1
 
-    const v2, 0x7f120105
+    const v2, 0x7f120114
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setLocationBodyCard(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f120116
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setLocationHeadlineCard(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f08009d
+
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setLocationIconCard(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f120117
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

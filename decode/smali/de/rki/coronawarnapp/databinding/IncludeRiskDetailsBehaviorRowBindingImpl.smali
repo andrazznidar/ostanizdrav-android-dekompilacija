@@ -112,7 +112,7 @@
 
     const/4 v8, 0x0
 
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_c
 
     sget-object v8, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -193,7 +193,7 @@
 
     move-result v4
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_5
     :goto_4
@@ -216,10 +216,12 @@
 
     move-result v4
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_7
     :goto_5
+    const v10, 0x7f060048
+
     if-nez v4, :cond_8
 
     goto :goto_6
@@ -227,32 +229,51 @@
     :cond_8
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v11
 
-    if-nez v4, :cond_9
+    if-nez v11, :cond_9
 
-    const v4, 0x7f060048
-
-    invoke-virtual {v9, v4}, Landroid/content/Context;->getColor(I)I
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getColor(I)I
 
     move-result v4
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_9
     :goto_6
+    const/4 v11, 0x5
+
+    if-nez v4, :cond_a
+
+    goto :goto_7
+
+    :cond_a
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    if-ne v4, v11, :cond_b
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getColor(I)I
+
+    move-result v4
+
+    goto :goto_8
+
+    :cond_b
+    :goto_7
     const v4, 0x7f060059
 
     invoke-virtual {v9, v4}, Landroid/content/Context;->getColor(I)I
 
     move-result v4
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_a
+    :cond_c
     move v4, v8
 
-    :goto_7
+    :goto_8
     const-wide/16 v9, 0xa
 
     and-long/2addr v9, v0
@@ -265,20 +286,20 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_d
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_b
-    if-eqz v7, :cond_c
+    :cond_d
+    if-eqz v7, :cond_e
 
     sget v1, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
     const/16 v2, 0x15
 
-    if-lt v1, v2, :cond_c
+    if-lt v1, v2, :cond_e
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
 
@@ -296,14 +317,14 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_c
-    if-eqz v0, :cond_d
+    :cond_e
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView3:Landroid/widget/TextView;
 
     invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_d
+    :cond_f
     return-void
 
     :catchall_0
@@ -450,7 +471,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xc
+    const/16 p1, 0xd
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -489,7 +510,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x12
+    const/16 p1, 0x16
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

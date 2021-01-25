@@ -52,7 +52,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p3, p4}, Lkotlinx/coroutines/TimeSourceKt;->safeToInt(J)I
+    invoke-static {p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeToInt(J)I
 
     move-result p3
 
@@ -219,7 +219,7 @@
 
     move-result v2
 
-    invoke-static {p0, v0, v1, v2}, Lkotlinx/coroutines/TimeSourceKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, v0, v1, v2}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

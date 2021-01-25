@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingIntervalRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingIntervalRepository.kt\nde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion\n*L\n1#1,71:1\n*E\n"
+    value = "SMAP\nTracingIntervalRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingIntervalRepository.kt\nde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion\n*L\n1#1,73:1\n*E\n"
 .end annotation
 
 

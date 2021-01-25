@@ -18,15 +18,13 @@
     f = "TimeVariables.kt"
     l = {
         0xb9,
-        0xc2
+        0xc0
     }
     m = "getActiveTracingDaysInRetentionPeriod"
 .end annotation
 
 
 # instance fields
-.field public I$0:I
-
 .field public J$0:J
 
 .field public L$0:Ljava/lang/Object;

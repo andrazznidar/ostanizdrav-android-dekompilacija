@@ -194,7 +194,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lkotlinx/coroutines/TimeSourceKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 

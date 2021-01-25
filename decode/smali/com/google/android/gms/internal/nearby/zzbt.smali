@@ -1,169 +1,146 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzbt;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.super Lcom/google/android/gms/internal/nearby/zzb;
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/nearby/zzbt;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
-
-.field public zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+# interfaces
+.implements Lcom/google/android/gms/internal/nearby/zzbq;
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method public constructor <init>(Landroid/os/IBinder;)V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzby;
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.INearbyExposureNotificationService"
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/nearby/zzby;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/nearby/zzbt;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/IBinder;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;)V
-    .locals 0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/common/api/internal/IStatusCallback;
-
-    move-result-object p1
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzbw;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzam;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v0
 
-    return v0
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    :cond_0
-    instance-of v1, p1, Lcom/google/android/gms/internal/nearby/zzbt;
+    const/4 p1, 0x7
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
 
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzbt;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
-
-    iget-object v3, p1, Lcom/google/android/gms/internal/nearby/zzbt;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
-
-    invoke-static {v1, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/nearby/zzbt;->zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-    invoke-static {v1, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzau;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    const/4 v0, 0x2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    const/4 v2, 0x0
+    const/4 p1, 0x4
 
-    aput-object v1, v0, v2
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzbz;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
 
-    move-result v0
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    invoke-interface {v1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+    const/4 p1, 0x3
 
-    move-result-object v1
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
 
-    const/4 v2, 0x3
+    return-void
+.end method
 
-    const/4 v3, 0x0
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzcd;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/Preconditions;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzbt;->zzb:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+    move-result-object v0
 
-    const/4 v2, 0x4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    const/4 p1, 0x5
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->zzb(Landroid/os/Parcel;I)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzch;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/nearby/zzcl;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzb;->zza()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zzb;->zzb(ILandroid/os/Parcel;)V
 
     return-void
 .end method

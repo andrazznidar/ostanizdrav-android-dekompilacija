@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultNegativeFurtherInfoBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900be
+    const v1, 0x7f0900bf
 
     const/4 v2, 0x1
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultNegativeFurtherInfoBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900bd
+    const v1, 0x7f0900be
 
     const/4 v2, 0x2
 

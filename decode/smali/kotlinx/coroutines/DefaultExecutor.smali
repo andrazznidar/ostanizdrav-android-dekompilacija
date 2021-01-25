@@ -179,55 +179,34 @@
 .method public invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
     .locals 3
 
-    const-wide/16 v0, 0x0
+    invoke-static {p1, p2}, Lkotlinx/coroutines/EventLoop_commonKt;->delayToNanos(J)J
 
-    cmp-long v2, p1, v0
+    move-result-wide p1
 
-    if-gtz v2, :cond_0
+    const-wide v0, 0x3fffffffffffffffL    # 1.9999999999999998
+
+    cmp-long v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    new-instance v2, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;
+
+    add-long/2addr p1, v0
+
+    invoke-direct {v2, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;-><init>(JLjava/lang/Runnable;)V
+
+    invoke-virtual {p0, v0, v1, v2}, Lkotlinx/coroutines/EventLoopImplBase;->schedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
 
     goto :goto_0
 
     :cond_0
-    const-wide v0, 0x8637bd05af6L
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_1
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    goto :goto_0
-
-    :cond_1
-    const-wide/32 v0, 0xf4240
-
-    mul-long/2addr v0, p1
-
-    :goto_0
-    const-wide p1, 0x3fffffffffffffffL    # 1.9999999999999998
-
-    cmp-long p1, v0, p1
-
-    if-gez p1, :cond_2
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide p1
-
-    new-instance v2, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;
-
-    add-long/2addr v0, p1
-
-    invoke-direct {v2, v0, v1, p3}, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;-><init>(JLjava/lang/Runnable;)V
-
-    invoke-virtual {p0, p1, p2, v2}, Lkotlinx/coroutines/EventLoopImplBase;->schedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
-
-    goto :goto_1
-
-    :cond_2
     sget-object v2, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
-    :goto_1
+    :goto_0
     return-object v2
 .end method
 

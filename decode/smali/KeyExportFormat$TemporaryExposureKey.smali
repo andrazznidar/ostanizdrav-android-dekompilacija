@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method public static access$6000(LKeyExportFormat$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
+.method public static access$6200(LKeyExportFormat$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
     .locals 1
 
     if-eqz p1, :cond_0

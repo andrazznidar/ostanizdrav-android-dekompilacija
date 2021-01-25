@@ -84,6 +84,32 @@
     return-object v0
 .end method
 
+.method public static final random(Lkotlin/ranges/IntRange;Lkotlin/random/Random;)I
+    .locals 0
+
+    :try_start_0
+    invoke-static {p1, p0}, Lkotlin/collections/MapsKt___MapsKt;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/util/NoSuchElementException;
+
+    invoke-virtual {p0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public static final step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
     .locals 3
 

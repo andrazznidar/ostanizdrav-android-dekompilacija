@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.transaction.RiskLevelTransaction"
     f = "RiskLevelTransaction.kt"
     l = {
-        0x1c3,
-        0x1c5,
-        0x1c6
+        0x1cb,
+        0x1cd,
+        0x1ce
     }
     m = "isValidResult"
 .end annotation

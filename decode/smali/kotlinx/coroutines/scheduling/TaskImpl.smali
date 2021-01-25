@@ -57,7 +57,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -69,7 +69,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

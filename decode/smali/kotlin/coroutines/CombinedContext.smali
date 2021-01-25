@@ -337,7 +337,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 

@@ -35,17 +35,17 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     new-instance v0, Landroidx/work/Constraints$Builder;
 
     invoke-direct {v0}, Landroidx/work/Constraints$Builder;-><init>()V
 
-    new-instance v1, Landroidx/work/Constraints;
+    invoke-virtual {v0}, Landroidx/work/Constraints$Builder;->build()Landroidx/work/Constraints;
 
-    invoke-direct {v1, v0}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
+    move-result-object v0
 
-    sput-object v1, Landroidx/work/Constraints;->NONE:Landroidx/work/Constraints;
+    sput-object v0, Landroidx/work/Constraints;->NONE:Landroidx/work/Constraints;
 
     return-void
 .end method

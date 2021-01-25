@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,8 @@
     c = "de.rki.coronawarnapp.storage.ExposureSummaryRepository"
     f = "ExposureSummaryRepository.kt"
     l = {
-        0x2d
+        0x33,
+        0x34
     }
     m = "getLatestExposureSummary"
 .end annotation
@@ -25,6 +26,8 @@
 
 # instance fields
 .field public L$0:Ljava/lang/Object;
+
+.field public L$1:Ljava/lang/Object;
 
 .field public label:I
 
@@ -61,7 +64,9 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$getLatestExposureSummary$1;->this$0:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

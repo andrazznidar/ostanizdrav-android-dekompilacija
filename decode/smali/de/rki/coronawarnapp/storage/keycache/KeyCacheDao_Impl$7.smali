@@ -20,12 +20,16 @@
 # instance fields
 .field public final synthetic this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
 
+.field public final synthetic val$entities:Ljava/util/List;
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;Ljava/util/List;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->val$entities:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +39,7 @@
 
 # virtual methods
 .method public call()Ljava/lang/Object;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -44,68 +48,101 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__preparedStmtOfClear:Landroidx/room/SharedSQLiteStatement;
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    :try_start_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__deletionAdapterOfKeyCacheEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->val$entities:Ljava/util/List;
 
     invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->beginTransaction()V
-
-    :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-result-object v2
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+    :try_start_1
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+    move-result v3
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__preparedStmtOfClear:Landroidx/room/SharedSQLiteStatement;
+    if-eqz v3, :cond_1
 
-    iget-object v3, v2, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-ne v0, v3, :cond_0
+    move-result-object v3
 
-    iget-object v0, v2, Landroidx/room/SharedSQLiteStatement;->mLock:Ljava/util/concurrent/atomic/AtomicBoolean;
+    check-cast v3, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;
 
-    const/4 v2, 0x0
+    iget-object v3, v3, Lde/rki/coronawarnapp/storage/keycache/KeyCacheEntity;->id:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    const/4 v4, 0x1
+
+    if-nez v3, :cond_0
+
+    invoke-interface {v2, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    goto :goto_1
 
     :cond_0
-    return-object v1
+    invoke-interface {v2, v4, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :cond_1
+    :try_start_2
+    invoke-virtual {v0, v2}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    return-object v0
 
     :catchall_0
     move-exception v1
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__preparedStmtOfClear:Landroidx/room/SharedSQLiteStatement;
-
-    invoke-virtual {v2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+    :try_start_3
+    invoke-virtual {v0, v2}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
 
     throw v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl$7;->this$0:Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/storage/keycache/KeyCacheDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    throw v0
 .end method

@@ -61,3 +61,33 @@
 
 .method public abstract enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
 .end method
+
+.method public enqueueUniqueWork(Ljava/lang/String;Landroidx/work/ExistingWorkPolicy;Landroidx/work/OneTimeWorkRequest;)Landroidx/work/Operation;
+    .locals 6
+
+    invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    move-object v1, p0
+
+    check-cast v1, Landroidx/work/impl/WorkManagerImpl;
+
+    new-instance p3, Landroidx/work/impl/WorkContinuationImpl;
+
+    const/4 v5, 0x0
+
+    move-object v0, p3
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-direct/range {v0 .. v5}, Landroidx/work/impl/WorkContinuationImpl;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;Landroidx/work/ExistingWorkPolicy;Ljava/util/List;Ljava/util/List;)V
+
+    invoke-virtual {p3}, Landroidx/work/impl/WorkContinuationImpl;->enqueue()Landroidx/work/Operation;
+
+    move-result-object p1
+
+    return-object p1
+.end method

@@ -251,7 +251,7 @@
 
     iget-object v0, v6, Lde/rki/coronawarnapp/ui/main/MainFragment$showOneTimeTracingExplanationDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainFragment;
 
-    const v2, 0x7f120155
+    const v2, 0x7f120171
 
     invoke-virtual {v0, v2}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -269,7 +269,7 @@
 
     iget-object v4, v6, Lde/rki/coronawarnapp/ui/main/MainFragment$showOneTimeTracingExplanationDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainFragment;
 
-    const v3, 0x7f120156
+    const v3, 0x7f120172
 
     new-array v0, v1, [Ljava/lang/Object;
 
@@ -353,7 +353,7 @@
 
     iget-object v0, v6, Lde/rki/coronawarnapp/ui/main/MainFragment$showOneTimeTracingExplanationDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainFragment;
 
-    const v1, 0x7f12014d
+    const v1, 0x7f120166
 
     invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -395,7 +395,7 @@
 
     iput v8, v6, Lde/rki/coronawarnapp/ui/main/MainFragment$showOneTimeTracingExplanationDialog$1;->label:I
 
-    invoke-static {v13, v14, p0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v13, v14, p0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 

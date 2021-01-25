@@ -137,6 +137,24 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingEasyLanguage:Landroid/widget/TextView;
+
+    const-string p2, "binding.onboardingInclude.onboardingEasyLanguage"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+
     return-void
 
     :cond_0

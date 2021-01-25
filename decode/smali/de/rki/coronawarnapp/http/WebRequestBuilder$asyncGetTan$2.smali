@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncGetTan$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0xa7
+        0xbb
     }
     m = "invokeSuspend"
 .end annotation
@@ -121,7 +121,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 9
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -157,25 +157,41 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/http/WebRequestBuilder;->verificationService:Lde/rki/coronawarnapp/http/service/VerificationService;
+    iget-object v3, v1, Lde/rki/coronawarnapp/http/WebRequestBuilder;->verificationService:Lde/rki/coronawarnapp/http/service/VerificationService;
 
-    sget-object v3, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->INSTANCE:Lde/rki/coronawarnapp/service/submission/SubmissionConstants;
+    sget-object v4, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->INSTANCE:Lde/rki/coronawarnapp/service/submission/SubmissionConstants;
 
-    sget-object v3, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->TAN_REQUEST_URL:Ljava/lang/String;
+    sget-object v4, Lde/rki/coronawarnapp/service/submission/SubmissionConstants;->TAN_REQUEST_URL:Ljava/lang/String;
 
-    new-instance v4, Lde/rki/coronawarnapp/http/requests/TanRequestBody;
+    const/16 v5, 0xe
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->$registrationToken:Ljava/lang/String;
+    invoke-static {v1, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder;->access$requestPadding(Lde/rki/coronawarnapp/http/WebRequestBuilder;I)Ljava/lang/String;
 
-    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/http/requests/TanRequestBody;-><init>(Ljava/lang/String;)V
+    move-result-object v6
+
+    new-instance v7, Lde/rki/coronawarnapp/http/requests/TanRequestBody;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->$registrationToken:Ljava/lang/String;
+
+    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
+
+    const/16 v8, 0xaa
+
+    invoke-static {v5, v8}, Lde/rki/coronawarnapp/http/WebRequestBuilder;->access$requestPadding(Lde/rki/coronawarnapp/http/WebRequestBuilder;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v7, v1, v5}, Lde/rki/coronawarnapp/http/requests/TanRequestBody;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->L$0:Ljava/lang/Object;
 
     iput v2, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetTan$2;->label:I
 
-    const-string p1, "0"
+    const-string v5, "0"
 
-    invoke-interface {v1, v3, p1, v4, p0}, Lde/rki/coronawarnapp/http/service/VerificationService;->getTAN(Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/http/requests/TanRequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object v8, p0
+
+    invoke-interface/range {v3 .. v8}, Lde/rki/coronawarnapp/http/service/VerificationService;->getTAN(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/http/requests/TanRequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

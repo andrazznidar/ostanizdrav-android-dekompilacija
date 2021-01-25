@@ -267,21 +267,21 @@
     .catch Ljava/net/ConnectException; {:try_start_0 .. :try_end_0} :catch_1
 
     :try_start_1
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->source(Ljava/net/Socket;)Lokio/Source;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->source(Ljava/net/Socket;)Lokio/Source;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object p1
 
     iput-object p1, p0, Lokhttp3/internal/connection/RealConnection;->source:Lokio/BufferedSource;
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->sink(Ljava/net/Socket;)Lokio/Sink;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->sink(Ljava/net/Socket;)Lokio/Sink;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object p1
 
@@ -1100,21 +1100,21 @@
     :cond_6
     iput-object v1, p0, Lokhttp3/internal/connection/RealConnection;->socket:Ljava/net/Socket;
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->source(Ljava/net/Socket;)Lokio/Source;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->source(Ljava/net/Socket;)Lokio/Source;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object p1
 
     iput-object p1, p0, Lokhttp3/internal/connection/RealConnection;->source:Lokio/BufferedSource;
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->sink(Ljava/net/Socket;)Lokio/Sink;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->sink(Ljava/net/Socket;)Lokio/Sink;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object p1
 

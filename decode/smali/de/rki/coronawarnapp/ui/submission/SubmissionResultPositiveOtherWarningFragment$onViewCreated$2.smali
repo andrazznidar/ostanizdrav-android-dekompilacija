@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public onChanged(Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
@@ -57,17 +57,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
-
-    move-result-object p1
-
-    new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
-
-    const v1, 0x7f090062
-
-    invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->doNavigate(Landroidx/navigation/NavController;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1}, Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;->access$navigateToSubmissionDoneFragment(Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;)V
 
     :cond_0
     return-void

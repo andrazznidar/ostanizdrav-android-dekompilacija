@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.storage.ExposureSummaryRepository"
     f = "ExposureSummaryRepository.kt"
     l = {
-        0x28
+        0x2d
     }
     m = "insertExposureSummaryEntity"
 .end annotation

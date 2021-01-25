@@ -65,7 +65,7 @@
     :catch_0
     move-exception v1
 
-    invoke-static {v1}, Lkotlinx/coroutines/TimeSourceKt;->isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
 
     move-result v2
 

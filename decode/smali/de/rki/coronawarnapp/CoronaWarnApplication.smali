@@ -7,6 +7,12 @@
 .implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nCoronaWarnApplication.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaWarnApplication.kt\nde/rki/coronawarnapp/CoronaWarnApplication\n*L\n1#1,193:1\n*E\n"
+.end annotation
+
+
 # static fields
 .field public static final Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -50,6 +56,75 @@
     return-void
 .end method
 
+.method public static final access$createWakeLock(Lde/rki/coronawarnapp/CoronaWarnApplication;)Landroid/os/PowerManager$WakeLock;
+    .locals 3
+
+    const-string v0, "power"
+
+    invoke-virtual {p0, v0}, Landroid/app/Application;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    check-cast p0, Landroid/os/PowerManager;
+
+    const/4 v0, 0x1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->TAG:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "-WAKE-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object p0
+
+    const-wide/32 v0, 0x927c0
+
+    invoke-virtual {p0, v0, v1}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
+
+    const-string v0, "newWakeLock(\n           \u2026_IN_MS)\n                }"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "(getSystemService(Contex\u2026          }\n            }"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lkotlin/TypeCastException;
+
+    const-string v0, "null cannot be cast to non-null type android.os.PowerManager"
+
+    invoke-direct {p0, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method public static final getAppContext()Landroid/content/Context;
     .locals 2
 
@@ -80,43 +155,22 @@
 
 # virtual methods
 .method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 1
+    .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "SourceLockedOrientationActivity"
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    const-string p2, "device"
-
-    const-string v0, "deviceForTesters"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p2
-
-    xor-int/lit8 p2, p2, 0x1
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p2
-
-    const/16 v0, 0x2000
-
-    invoke-virtual {p2, v0, v0}, Landroid/view/Window;->setFlags(II)V
-
-    :cond_0
     const/16 p2, 0xc
 
     invoke-virtual {p1, p2}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     return-void
 
-    :cond_1
+    :cond_0
     const-string p1, "activity"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
@@ -490,7 +544,7 @@
 .end method
 
 .method public final onAppBackgrounded()V
-    .locals 2
+    .locals 3
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -501,15 +555,17 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v1, "App backgrounded"
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "App backgrounded"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 .method public final onAppForegrounded()V
-    .locals 2
+    .locals 3
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -522,33 +578,57 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v1, "App foregrounded"
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "App foregrounded"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 .method public onCreate()V
-    .locals 8
+    .locals 13
 
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
     sput-object p0, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
+    new-instance v0, Landroidx/work/Configuration$Builder;
+
+    invoke-direct {v0}, Landroidx/work/Configuration$Builder;-><init>()V
+
+    const/4 v1, 0x3
+
+    iput v1, v0, Landroidx/work/Configuration$Builder;->mLoggingLevel:I
+
+    new-instance v1, Landroidx/work/Configuration;
+
+    invoke-direct {v1, v0}, Landroidx/work/Configuration;-><init>(Landroidx/work/Configuration$Builder;)V
+
+    const-string v0, "Configuration.Builder()\n\u2026BUG)\n            .build()"
+
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, v1}, Landroidx/work/impl/WorkManagerImpl;->initialize(Landroid/content/Context;Landroidx/work/Configuration;)V
+
     sget-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0x1a
+    const-string v1, "instance"
 
-    if-lt v0, v1, :cond_2
+    const-string v2, "instance.applicationContext"
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0x1a
+
+    const/4 v5, 0x2
+
+    if-lt v0, v4, :cond_2
 
     sget-object v0, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    const/4 v1, 0x0
-
-    const-string v2, "instance"
 
     if-eqz v0, :cond_1
 
@@ -556,11 +636,9 @@
 
     move-result-object v0
 
-    const-string v3, "instance.applicationContext"
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v4, 0x7f1200df
+    const v4, 0x7f1200e2
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -570,19 +648,17 @@
 
     invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
+    invoke-static {v5}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
 
     move-result-object v4
 
-    new-instance v5, Landroid/app/NotificationChannel;
+    new-instance v6, Landroid/app/NotificationChannel;
 
-    sget-object v6, Lde/rki/coronawarnapp/notification/NotificationHelper;->channelId:Ljava/lang/String;
+    sget-object v7, Lde/rki/coronawarnapp/notification/NotificationHelper;->channelId:Ljava/lang/String;
 
-    const/4 v7, 0x4
+    const/4 v8, 0x4
 
-    invoke-direct {v5, v6, v0, v7}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+    invoke-direct {v6, v7, v0, v8}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
     sget-object v0, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -592,35 +668,35 @@
 
     move-result-object v0
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v1, 0x7f1200dc
+    const v7, 0x7f1200df
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v5, v0}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
+    invoke-virtual {v6, v0}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
 
     sget-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->audioAttributes:Landroid/media/AudioAttributes;
 
-    invoke-virtual {v5, v4, v0}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
+    invoke-virtual {v6, v4, v0}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
 
     sget-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->notificationManager:Landroid/app/NotificationManager;
 
-    invoke-virtual {v0, v5}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    invoke-virtual {v0, v6}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    throw v1
+    throw v3
 
     :cond_1
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    throw v1
+    throw v3
 
     :cond_2
     :goto_0
@@ -628,15 +704,15 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
-    invoke-static {v0, v1}, Ljava/security/Security;->insertProviderAt(Ljava/security/Provider;I)I
+    invoke-static {v0, v4}, Ljava/security/Security;->insertProviderAt(Ljava/security/Provider;I)I
 
     sget-object v0, Landroidx/lifecycle/ProcessLifecycleOwner;->sInstance:Landroidx/lifecycle/ProcessLifecycleOwner;
 
-    const-string v1, "ProcessLifecycleOwner.get()"
+    const-string v6, "ProcessLifecycleOwner.get()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mRegistry:Landroidx/lifecycle/LifecycleRegistry;
 
@@ -644,5 +720,175 @@
 
     invoke-virtual {p0, p0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
+    const-string v0, "device"
+
+    const-string v7, "deviceForTesters"
+
+    invoke-static {v0, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v0, Lde/rki/coronawarnapp/util/debug/FileLogger;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/util/debug/FileLogger;-><init>(Landroid/content/Context;)V
+
+    :goto_1
+    const-string v0, "Application onCreate"
+
+    const-string v7, "App was woken up"
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v8, 0x0
+
+    aput-object v0, v5, v8
+
+    aput-object v7, v5, v4
+
+    sget-object v9, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v10, "sendDebugNotification(title=%s, content=%s)"
+
+    invoke-virtual {v9, v10, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v5
+
+    sget-object v9, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    if-eqz v9, :cond_8
+
+    invoke-virtual {v9}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    invoke-static {v9, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v10, 0x7f120120
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-interface {v5, v9, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    sget-object v5, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
+
+    invoke-virtual {v5, v0, v7, v4, v4}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+
+    :goto_2
+    sget-object v0, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
+
+    invoke-virtual {p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v4, "applicationContext"
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->autoModeEnabled(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    sget-object v0, Landroidx/lifecycle/ProcessLifecycleOwner;->sInstance:Landroidx/lifecycle/ProcessLifecycleOwner;
+
+    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    new-instance v10, Lde/rki/coronawarnapp/CoronaWarnApplication$onCreate$1;
+
+    invoke-direct {v10, p0, v3}, Lde/rki/coronawarnapp/CoronaWarnApplication$onCreate$1;-><init>(Lde/rki/coronawarnapp/CoronaWarnApplication;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v11, 0x3
+
+    const/4 v12, 0x0
+
+    invoke-static/range {v7 .. v12}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    if-eqz v4, :cond_6
+
+    invoke-virtual {v4}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v2, 0x7f120130
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-wide/16 v4, 0x0
+
+    invoke-interface {v0, v1, v4, v5}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    cmp-long v2, v0, v4
+
+    if-nez v2, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    :goto_3
+    if-eqz v3, :cond_7
+
+    sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;
+
+    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->startWorkScheduler()V
+
+    goto :goto_4
+
+    :cond_6
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    throw v3
+
+    :cond_7
+    :goto_4
     return-void
+
+    :cond_8
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    throw v3
 .end method

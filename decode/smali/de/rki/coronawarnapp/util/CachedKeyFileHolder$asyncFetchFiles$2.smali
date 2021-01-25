@@ -24,21 +24,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCachedKeyFileHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,212:1\n1366#2:213\n1435#2,3:214\n1366#2:217\n1435#2,3:218\n1366#2:221\n1435#2,3:222\n1366#2:225\n1435#2,3:226\n1366#2:229\n1435#2,3:230\n1648#2,2:233\n*E\n*S KotlinDebug\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2\n*L\n80#1:213\n80#1,3:214\n81#1:217\n81#1,3:218\n95#1:221\n95#1,3:222\n104#1:225\n104#1,3:226\n105#1:229\n105#1,3:230\n117#1,2:233\n*E\n"
+    value = "SMAP\nCachedKeyFileHolder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,225:1\n1366#2:226\n1435#2,3:227\n1366#2:230\n1435#2,3:231\n1366#2:234\n1435#2,3:235\n1366#2:238\n1435#2,3:239\n1366#2:242\n1435#2,3:243\n1648#2,2:246\n*E\n*S KotlinDebug\n*F\n+ 1 CachedKeyFileHolder.kt\nde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2\n*L\n82#1:226\n82#1,3:227\n83#1:230\n83#1,3:231\n97#1:234\n97#1,3:235\n107#1:238\n107#1,3:239\n108#1:242\n108#1,3:243\n130#1,2:246\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.util.CachedKeyFileHolder$asyncFetchFiles$2"
     f = "CachedKeyFileHolder.kt"
     l = {
-        0x48,
-        0x4f,
-        0xdc,
-        0x62,
-        0x63,
-        0x6e,
-        0x71,
-        0x74
+        0x4a,
+        0x51,
+        0xe9,
+        0x64,
+        0x65,
+        0x7a,
+        0x7e,
+        0x81
     }
     m = "invokeSuspend"
 .end annotation
@@ -138,234 +138,226 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 18
+    .locals 20
 
-    move-object/from16 v1, p0
+    move-object/from16 v0, p0
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
 
-    const/16 v3, 0xa
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    const/16 v4, 0xa
 
-    const-string v5, "DateTimeFormat.forPatter\u2026        .print(this.time)"
+    const/4 v5, 0x0
 
-    const-string v6, "yyyy-MM-dd"
+    const-string v6, "DateTimeFormat.forPatter\u2026        .print(this.time)"
 
-    const-string v7, "$this$toServerFormat"
+    const-string v7, "yyyy-MM-dd"
 
-    const/4 v8, 0x0
+    const-string v8, "$this$toServerFormat"
 
-    const/4 v9, 0x1
+    const/4 v9, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v2, :pswitch_data_0
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 
     :pswitch_0
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/List;
+    check-cast v1, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/Collection;
+    check-cast v1, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/List;
+    check-cast v1, Ljava/util/Collection;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/List;
+    check-cast v1, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v1, Ljava/util/List;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object/from16 v0, p1
+    move-object/from16 v2, p1
+
+    goto/16 :goto_e
+
+    :pswitch_1
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/Collection;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
+
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_d
 
-    :pswitch_1
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Exception;
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/Collection;
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
-
-    check-cast v2, Lkotlinx/coroutines/CoroutineScope;
-
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_10
-
     :pswitch_2
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
 
-    move-object v3, v0
+    check-cast v2, Ljava/util/List;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
 
     check-cast v3, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
-
-    move-object v4, v0
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
     check-cast v4, Ljava/util/Collection;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    move-object v5, v0
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
     check-cast v5, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
-
-    move-object v6, v0
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
     check-cast v6, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
-
-    move-object v7, v0
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
     check-cast v7, Lkotlinx/coroutines/CoroutineScope;
 
-    :try_start_0
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto/16 :goto_c
 
-    :catch_0
-    move-exception v0
-
-    goto/16 :goto_f
-
     :pswitch_3
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/Collection;
+    check-cast v2, Ljava/util/Collection;
 
-    iget-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/List;
-
-    iget-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
     check-cast v4, Ljava/util/List;
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    check-cast v5, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v5, Ljava/util/List;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    check-cast v6, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object/from16 v6, p1
+    move-object/from16 v7, p1
 
     :cond_0
-    move-object v7, v5
+    move-object/from16 v19, v4
 
-    move-object v5, v3
+    move-object v4, v2
 
-    move-object v3, v4
+    move-object v2, v6
 
-    move-object v4, v0
+    move-object v6, v5
+
+    move-object/from16 v5, v19
 
     goto/16 :goto_9
 
     :pswitch_4
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/Collection;
+    check-cast v2, Ljava/util/Collection;
 
-    iget-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/List;
-
-    iget-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
     check-cast v4, Ljava/util/List;
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    check-cast v5, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v5, Ljava/util/List;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    check-cast v6, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_8
 
     :pswitch_5
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/List;
+    check-cast v1, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object/from16 v0, p1
+    move-object/from16 v2, p1
 
     goto/16 :goto_6
 
     :pswitch_6
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    check-cast v4, Ljava/util/List;
+    check-cast v3, Ljava/util/List;
 
-    iget-object v8, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    check-cast v8, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v5, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v15, v8
+    move-object v15, v5
 
-    move-object/from16 v8, p1
+    move-object/from16 v5, p1
 
     goto/16 :goto_3
 
     :pswitch_7
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v2, Lkotlinx/coroutines/CoroutineScope;
 
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -376,7 +368,7 @@
     :pswitch_8
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
     sget-object v10, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
@@ -445,13 +437,13 @@
     goto :goto_1
 
     :cond_2
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v1, Lkotlin/TypeCastException;
 
     const-string v2, "null cannot be cast to non-null type android.os.storage.StorageManager"
 
-    invoke-direct {v0, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 
     :cond_3
     sget-object v10, Lde/rki/coronawarnapp/storage/FileStorageHelper;->keyExportDirectory:Ljava/io/File;
@@ -471,13 +463,13 @@
 
     cmp-long v10, v12, v10
 
-    if-ltz v10, :cond_16
+    if-ltz v10, :cond_17
 
     sget-object v10, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    iput v9, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
 
     sget-object v10, Lde/rki/coronawarnapp/http/WebRequestBuilder;->Companion:Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;
 
@@ -489,15 +481,15 @@
 
     new-instance v12, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetDateIndex$2;
 
-    invoke-direct {v12, v10, v4}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetDateIndex$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v12, v10, v5}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetDateIndex$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v11, v12, v1}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v11, v12, v0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v10
 
-    if-ne v10, v2, :cond_4
+    if-ne v10, v1, :cond_4
 
-    return-object v2
+    return-object v1
 
     :cond_4
     :goto_2
@@ -509,7 +501,7 @@
 
     move-result v11
 
-    xor-int/2addr v11, v9
+    xor-int/2addr v11, v3
 
     if-eqz v11, :cond_c
 
@@ -527,29 +519,31 @@
 
     move-result-object v12
 
-    const v13, 0x7f120114
+    const v13, 0x7f120128
 
     invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v12
 
-    invoke-interface {v11, v12, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v11, v12, v9}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v11
 
     if-eqz v11, :cond_c
 
-    new-array v8, v8, [Ljava/lang/Object;
+    new-array v3, v9, [Ljava/lang/Object;
 
-    const-string v9, "Last 3 Hours will be Fetched. Only use for Debugging!"
+    sget-object v9, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v9, v8}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v11, "Last 3 Hours will be Fetched. Only use for Debugging!"
 
-    iget-object v8, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
+    invoke-virtual {v9, v11, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz v8, :cond_b
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
 
-    invoke-static {v6}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
+    if-eqz v3, :cond_b
+
+    invoke-static {v7}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v9
 
@@ -565,11 +559,11 @@
 
     move-result-object v9
 
-    invoke-virtual {v8}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
 
     move-result-wide v11
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-virtual {v9}, Lorg/joda/time/format/DateTimeFormatter;->requirePrinter()Lorg/joda/time/format/InternalPrinter;
 
@@ -579,90 +573,90 @@
 
     move-result v13
 
-    invoke-direct {v8, v13}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v3, v13}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :try_start_1
-    invoke-virtual {v9, v8, v11, v12, v4}, Lorg/joda/time/format/DateTimeFormatter;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    :try_start_0
+    invoke-virtual {v9, v3, v11, v12, v5}, Lorg/joda/time/format/DateTimeFormatter;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_1
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v10, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_a
-
-    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
-
-    iget-object v9, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
-
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
-
-    iput-object v10, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
-
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    const/4 v11, 0x2
-
-    iput v11, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
-
-    invoke-virtual {v8, v9, v1}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getLast3Hours(Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    if-ne v8, v2, :cond_5
-
-    return-object v2
-
-    :cond_5
-    move-object v15, v0
-
-    move-object v0, v4
-
-    move-object v4, v10
-
-    :goto_3
-    check-cast v8, Ljava/lang/Iterable;
-
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-static {v8, v3}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v3
-
-    invoke-direct {v9, v3}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    :catch_0
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v10, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_a
+
+    sget-object v5, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    iput-object v10, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+
+    const/4 v11, 0x2
+
+    iput v11, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+
+    invoke-virtual {v5, v9, v0}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getLast3Hours(Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-ne v5, v1, :cond_5
+
+    return-object v1
+
+    :cond_5
+    move-object v15, v2
+
+    move-object v2, v3
+
+    move-object v3, v10
+
+    :goto_3
+    check-cast v5, Ljava/lang/Iterable;
+
+    new-instance v9, Ljava/util/ArrayList;
+
+    invoke-static {v5, v4}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v4
+
+    invoke-direct {v9, v4}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
     :goto_4
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v5
 
-    if-eqz v8, :cond_7
+    if-eqz v5, :cond_7
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v5
 
-    check-cast v8, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
     sget-object v10, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->$currentDate:Ljava/util/Date;
 
     if-eqz v11, :cond_6
 
-    invoke-static {v6}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {v7}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v12
 
@@ -688,63 +682,63 @@
 
     move-result-object v16
 
-    move-object/from16 p1, v3
+    move-object/from16 p1, v4
 
     invoke-interface/range {v16 .. v16}, Lorg/joda/time/format/InternalPrinter;->estimatePrintedLength()I
 
-    move-result v3
+    move-result v4
 
-    invoke-direct {v11, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v11, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    :try_start_2
-    invoke-virtual {v12, v11, v13, v14, v3}, Lorg/joda/time/format/DateTimeFormatter;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    :try_start_1
+    invoke-virtual {v12, v11, v13, v14, v4}, Lorg/joda/time/format/DateTimeFormatter;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_2
+    :catch_1
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v10, v3}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v4}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "/hour/"
+    const-string v4, "/hour/"
 
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v9, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-object/from16 v3, p1
+    move-object/from16 v4, p1
 
     goto :goto_4
 
     :cond_6
-    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    throw v0
+    throw v1
 
     :cond_7
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
 
@@ -752,7 +746,7 @@
 
     move-result v5
 
-    invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -787,333 +781,439 @@
 
     move-object v9, v15
 
-    invoke-static/range {v9 .. v14}, Lcom/google/android/gms/common/internal/Preconditions;->async$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Deferred;
+    invoke-static/range {v9 .. v14}, Lkotlin/collections/MapsKt___MapsKt;->async$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Deferred;
 
     move-result-object v6
 
-    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
     :cond_8
-    iput-object v15, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iput-object v15, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    const/4 v0, 0x3
+    const/4 v2, 0x3
 
-    iput v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    iput v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
 
-    invoke-static {v3, v1}, Lcom/google/android/gms/common/internal/Preconditions;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v4, v0}, Lkotlin/collections/MapsKt___MapsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-ne v0, v2, :cond_9
+    if-ne v2, v1, :cond_9
 
-    return-object v2
+    return-object v1
 
     :cond_9
     :goto_6
-    return-object v0
+    return-object v2
 
     :cond_a
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "you cannot use the last 3 hour mode if the date index does not contain any data for today"
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 
     :cond_b
-    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    throw v0
+    throw v1
 
     :cond_c
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    const/16 v4, 0xa
+    const/16 v5, 0xa
 
-    invoke-static {v10, v4}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v4
-
-    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_7
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v10, v5}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    sget-object v6, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
-
-    invoke-virtual {v6, v5}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    invoke-virtual {v6, v5}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->generateCacheKeyFromString(Ljava/lang/String;)Ljava/lang/String;
+    :goto_7
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v5
+    move-result v6
 
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eqz v6, :cond_d
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    sget-object v7, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    invoke-virtual {v7, v6}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->generateCacheKeyFromString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
     :cond_d
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object v5, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
-
-    sget-object v5, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
-
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
-
-    iput-object v10, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
-
-    iput-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
-
-    const/4 v6, 0x4
-
-    iput v6, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
-
-    invoke-virtual {v5, v3, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->deleteOutdatedEntries(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    if-ne v5, v2, :cond_e
-
-    return-object v2
-
-    :cond_e
-    move-object v5, v0
-
-    move-object v0, v4
-
-    move-object v4, v10
-
-    :goto_8
     sget-object v6, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    iput-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    sget-object v6, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
 
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    iput-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iput-object v10, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    const/4 v7, 0x5
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
-    iput v7, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    const/4 v7, 0x4
 
-    invoke-virtual {v6, v4, v1}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getMissingDaysFromDiff(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput v7, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+
+    invoke-virtual {v6, v4, v0}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->deleteOutdatedEntries(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v6
 
-    if-ne v6, v2, :cond_0
+    if-ne v6, v1, :cond_e
 
-    return-object v2
+    return-object v1
+
+    :cond_e
+    move-object v6, v2
+
+    move-object v2, v5
+
+    move-object v5, v10
+
+    :goto_8
+    sget-object v7, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+
+    const/4 v8, 0x5
+
+    iput v8, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+
+    invoke-virtual {v7, v5, v0}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getMissingDaysFromDiff(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    if-ne v7, v1, :cond_0
+
+    return-object v1
 
     :goto_9
-    check-cast v6, Ljava/util/List;
+    check-cast v7, Ljava/util/List;
 
-    invoke-interface {v6}, Ljava/util/Collection;->isEmpty()Z
+    new-instance v8, Ljava/util/ArrayList;
 
-    move-result v0
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    xor-int/2addr v0, v9
+    invoke-static {v8}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
 
-    if-eqz v0, :cond_11
+    move-result-object v14
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-interface {v7}, Ljava/util/Collection;->isEmpty()Z
 
-    const/16 v9, 0xa
+    move-result v8
 
-    invoke-static {v6, v9}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    xor-int/2addr v3, v8
+
+    if-eqz v3, :cond_11
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    const/16 v8, 0xa
+
+    invoke-static {v7, v8}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v8
+
+    invoke-direct {v3, v8}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    :goto_a
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    invoke-direct {v0, v9}, Ljava/util/ArrayList;-><init>(I)V
+    if-eqz v9, :cond_f
 
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v9
 
-    :goto_a
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v9, Ljava/lang/String;
 
-    move-result v10
+    sget-object v10, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
 
-    if-eqz v10, :cond_f
+    invoke-virtual {v10, v9}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v9
 
-    move-result-object v10
-
-    check-cast v10, Ljava/lang/String;
-
-    sget-object v11, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
-
-    invoke-virtual {v11, v10}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->getURLForDay(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
 
     :cond_f
-    new-instance v9, Ljava/util/ArrayList;
+    new-instance v15, Ljava/util/ArrayList;
 
-    const/16 v10, 0xa
+    const/16 v8, 0xa
 
-    invoke-static {v0, v10}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v3, v8}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v10
+    move-result v8
 
-    invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v15, v8}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v3
 
     :goto_b
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v10
+    move-result v8
 
-    if-eqz v10, :cond_10
+    if-eqz v8, :cond_10
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    move-object v9, v8
+
+    check-cast v9, Ljava/lang/String;
+
+    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    invoke-virtual {v8, v9}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->generateCacheKeyFromString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    check-cast v10, Ljava/lang/String;
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    new-instance v18, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2$invokeSuspend$$inlined$map$lambda$1;
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move-object/from16 v8, v18
 
-    new-instance v13, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2$4$1;
+    move-object v12, v2
 
-    const/4 v14, 0x0
+    move-object v13, v14
 
-    invoke-direct {v13, v10, v14}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2$4$1;-><init>(Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v8 .. v13}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2$invokeSuspend$$inlined$map$lambda$1;-><init>(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;Lkotlinx/coroutines/CoroutineScope;Ljava/util/List;)V
 
-    const/4 v14, 0x3
+    const/4 v12, 0x3
 
-    const/4 v15, 0x0
+    const/4 v13, 0x0
 
-    move-object v10, v7
+    move-object v8, v2
 
-    invoke-static/range {v10 .. v15}, Lcom/google/android/gms/common/internal/Preconditions;->async$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Deferred;
+    move-object/from16 v9, v16
 
-    move-result-object v10
+    move-object/from16 v10, v17
 
-    invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-object/from16 v11, v18
+
+    invoke-static/range {v8 .. v13}, Lkotlin/collections/MapsKt___MapsKt;->async$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Deferred;
+
+    move-result-object v8
+
+    invoke-virtual {v15, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
     :cond_10
-    invoke-interface {v4, v9}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v4, v15}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
     :cond_11
-    :try_start_3
-    iput-object v7, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
 
-    iput-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
 
-    iput-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
 
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
 
-    iput-object v6, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
 
-    const/4 v0, 0x6
+    iput-object v14, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
 
-    iput v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    const/4 v3, 0x6
 
-    invoke-static {v4, v1}, Lcom/google/android/gms/common/internal/Preconditions;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
 
-    move-result-object v0
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    invoke-static {v4, v0}, Lkotlin/collections/MapsKt___MapsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    if-ne v0, v2, :cond_12
+    move-result-object v3
 
-    return-object v2
+    if-ne v3, v1, :cond_12
+
+    return-object v1
 
     :cond_12
-    move-object/from16 v17, v6
+    move-object v3, v7
 
-    move-object v6, v3
+    move-object v7, v2
 
-    move-object/from16 v3, v17
+    move-object v2, v14
 
     :goto_c
-    sget-object v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    sget-object v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput-object v7, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    iput-object v6, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+    move-result v9
 
-    iput-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+    const-string v9, " failed entries "
 
-    iput-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v3, 0x8
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+    move-result-object v8
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->getFilesFromEntries(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v9, 0x0
 
-    move-result-object v0
+    new-array v9, v9, [Ljava/lang/Object;
 
-    if-ne v0, v2, :cond_13
+    sget-object v10, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    return-object v2
+    invoke-virtual {v10, v8, v9}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :cond_13
-    :goto_d
-    check-cast v0, Ljava/util/List;
+    const-string v8, "failedEntryCacheKeys"
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v8
+
+    xor-int/lit8 v8, v8, 0x1
+
+    if-eqz v8, :cond_14
+
+    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
+
+    const/4 v3, 0x7
+
+    iput v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+
+    invoke-virtual {v8, v2, v0}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->clear(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
+    if-ne v2, v1, :cond_13
+
+    return-object v1
+
+    :cond_13
+    :goto_d
+    new-instance v1, Ljava/io/IOException;
+
+    const-string v2, "failed to download all key files, at least one failing request."
+
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_14
+    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
+
+    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
+
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
+
+    const/16 v2, 0x8
+
+    iput v2, v0, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
+
+    invoke-virtual {v8, v0}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->getFilesFromEntries(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-ne v2, v1, :cond_15
+
+    return-object v1
+
+    :cond_15
     :goto_e
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_f
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_16
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -1135,65 +1235,29 @@
 
     move-result-object v3
 
-    new-array v4, v8, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    invoke-static {v3, v4}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-array v4, v4, [Ljava/lang/Object;
 
-    goto :goto_e
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    :cond_14
-    return-object v0
+    invoke-virtual {v5, v3, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :catch_3
-    move-exception v0
-
-    move-object/from16 v17, v6
-
-    move-object v6, v3
-
-    move-object/from16 v3, v17
-
-    :goto_f
-    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->INSTANCE:Lde/rki/coronawarnapp/util/CachedKeyFileHolder;
-
-    sget-object v8, Lde/rki/coronawarnapp/util/CachedKeyFileHolder;->keyCache:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
-
-    iput-object v7, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$0:Ljava/lang/Object;
-
-    iput-object v6, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$1:Ljava/lang/Object;
-
-    iput-object v5, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$2:Ljava/lang/Object;
-
-    iput-object v4, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$3:Ljava/lang/Object;
-
-    iput-object v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$4:Ljava/lang/Object;
-
-    iput-object v0, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->L$5:Ljava/lang/Object;
-
-    const/4 v3, 0x7
-
-    iput v3, v1, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;->label:I
-
-    invoke-virtual {v8, v1}, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->clear(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-ne v3, v2, :cond_15
-
-    return-object v2
-
-    :cond_15
-    :goto_10
-    throw v0
+    goto :goto_f
 
     :cond_16
-    new-instance v0, Lde/rki/coronawarnapp/exception/NotEnoughSpaceOnDiskException;
+    return-object v2
 
-    const/4 v2, 0x0
+    :cond_17
+    new-instance v1, Lde/rki/coronawarnapp/exception/NotEnoughSpaceOnDiskException;
 
-    invoke-direct {v0, v2, v9}, Lde/rki/coronawarnapp/exception/NotEnoughSpaceOnDiskException;-><init>(Ljava/lang/Throwable;I)V
+    const/4 v2, 0x1
 
-    throw v0
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lde/rki/coronawarnapp/exception/NotEnoughSpaceOnDiskException;-><init>(Ljava/lang/Throwable;I)V
+
+    throw v1
 
     :pswitch_data_0
     .packed-switch 0x0

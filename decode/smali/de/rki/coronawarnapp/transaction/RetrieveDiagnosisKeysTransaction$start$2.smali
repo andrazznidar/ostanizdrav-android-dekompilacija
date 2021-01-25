@@ -31,22 +31,22 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRetrieveDiagnosisKeysTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$start$2\n*L\n1#1,280:1\n*E\n"
+    value = "SMAP\nRetrieveDiagnosisKeysTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RetrieveDiagnosisKeysTransaction.kt\nde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction$start$2\n*L\n1#1,290:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction$start$2"
     f = "RetrieveDiagnosisKeysTransaction.kt"
     l = {
-        0x7c,
-        0x7e,
-        0x84,
-        0x89,
-        0x8e,
-        0x93,
-        0x99,
-        0xa0,
-        0xa4
+        0x8f,
+        0x91,
+        0x97,
+        0x9c,
+        0xa1,
+        0xa6,
+        0xac,
+        0xb3,
+        0xb7
     }
     m = "invokeSuspend"
 .end annotation
@@ -356,9 +356,11 @@
 
     new-array p1, v2, [Ljava/lang/Object;
 
-    const-string v2, "EN is not enabled, skipping RetrieveDiagnosisKeys"
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v2, p1}, Ltimber/log/Timber;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "EN is not enabled, skipping RetrieveDiagnosisKeys"
+
+    invoke-virtual {v2, v3, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;
 
@@ -583,9 +585,11 @@
     :cond_9
     new-array v2, v2, [Ljava/lang/Object;
 
-    const-string v3, "no key files, skipping submission to internal API."
+    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v3, v2}, Ltimber/log/Timber;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v8, "no key files, skipping submission to internal API."
+
+    invoke-virtual {v3, v8, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_a
     move-object v2, v1

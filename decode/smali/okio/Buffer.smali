@@ -199,7 +199,7 @@
 
     move-wide v5, p4
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     const-wide/16 v1, 0x0
 
@@ -578,7 +578,7 @@
 
     move-wide v2, p1
 
-    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -1659,7 +1659,7 @@
 
     int-to-long v5, p3
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -2260,7 +2260,7 @@
 
     move-result-object v2
 
-    invoke-static {v13}, Lkotlinx/coroutines/TimeSourceKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v13}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2497,7 +2497,7 @@
 
     move-result-object v1
 
-    invoke-static {v10}, Lkotlinx/coroutines/TimeSourceKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v10}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v2
 
@@ -3214,7 +3214,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -3630,7 +3630,7 @@
 
     int-to-long v4, p1
 
-    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -4047,7 +4047,7 @@
 
     move-wide v5, v7
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     add-int/2addr p3, p2
 
@@ -4164,7 +4164,7 @@
 
     move-wide/from16 v10, p2
 
-    invoke-static/range {v6 .. v11}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v6 .. v11}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
     move-wide/from16 v5, p2
 

@@ -27,7 +27,7 @@
     c = "de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction$executeFetchKeyFilesFromServer$2"
     f = "RetrieveDiagnosisKeysTransaction.kt"
     l = {
-        0xed
+        0xf7
     }
     m = "invokeSuspend"
 .end annotation
@@ -173,7 +173,7 @@
 
     invoke-direct {v2, v1, v3}, Lde/rki/coronawarnapp/util/CachedKeyFileHolder$asyncFetchFiles$2;-><init>(Ljava/util/Date;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1, v2, p0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, p0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

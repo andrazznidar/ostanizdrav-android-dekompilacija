@@ -19,7 +19,7 @@
 
     const-string v0, "0123456789abcdef"
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 

@@ -59,7 +59,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f12017b
+    const v0, 0x7f120197
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -71,11 +71,11 @@
 
     invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$confirmReset$resetDialog$1;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
 
-    const v2, 0x7f12017d
+    const v2, 0x7f120199
 
-    const v3, 0x7f12017a
+    const v3, 0x7f120196
 
-    const v4, 0x7f12017c
+    const v4, 0x7f120198
 
     const/4 v8, 0x0
 
@@ -133,7 +133,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static/range {v1 .. v6}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 
@@ -142,7 +142,7 @@
 .end method
 
 .method public static final access$deleteLocalAppContent(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
-    .locals 4
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -164,7 +164,9 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Ltimber/log/Timber;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v4, v1, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v1, Lde/rki/coronawarnapp/storage/AppDatabase;->Companion:Lde/rki/coronawarnapp/storage/AppDatabase$Companion;
 
@@ -204,9 +206,42 @@
     :try_start_0
     sput-object v0, Lde/rki/coronawarnapp/storage/AppDatabase;->instance:Lde/rki/coronawarnapp/storage/AppDatabase;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     monitor-exit v1
+
+    sget-object p0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->Companion:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository$Companion;
+
+    monitor-enter p0
+
+    :try_start_1
+    sput-object v0, Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;->instance:Lde/rki/coronawarnapp/storage/keycache/KeyCacheRepository;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    monitor-exit p0
+
+    sget-object p0, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->Companion:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;
+
+    monitor-enter p0
+
+    :try_start_2
+    sput-object v0, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->instance:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    monitor-exit p0
+
+    sget-object p0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->Companion:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;
+
+    monitor-enter p0
+
+    :try_start_3
+    sput-object v0, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->instance:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    monitor-exit p0
 
     sget-object p0, Lde/rki/coronawarnapp/util/security/SecurityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/security/SecurityHelper;
 
@@ -224,6 +259,16 @@
 
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
+    sget-object p0, Lde/rki/coronawarnapp/storage/RiskLevelRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/RiskLevelRepository;
+
+    sget-object p0, Lde/rki/coronawarnapp/storage/RiskLevelRepository;->riskLevelScore:Landroidx/lifecycle/MutableLiveData;
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+
     sget-object p0, Lde/rki/coronawarnapp/storage/FileStorageHelper;->INSTANCE:Lde/rki/coronawarnapp/storage/FileStorageHelper;
 
     sget-object p0, Lde/rki/coronawarnapp/storage/FileStorageHelper;->keyExportDirectory:Ljava/io/File;
@@ -238,11 +283,11 @@
 
     sget-object p0, Lde/rki/coronawarnapp/storage/FileStorageHelper$getAllFilesInKeyExportDirectory$1;->INSTANCE:Lde/rki/coronawarnapp/storage/FileStorageHelper$getAllFilesInKeyExportDirectory$1;
 
-    invoke-static {v0, p0}, Lcom/google/android/gms/common/internal/Preconditions;->filter(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, p0}, Lkotlin/collections/MapsKt___MapsKt;->filter(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object p0
 
@@ -272,7 +317,9 @@
 
     new-array v0, v2, [Ljava/lang/Object;
 
-    invoke-static {p0, v0}, Ltimber/log/Timber;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p0, v0}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 
@@ -284,6 +331,27 @@
     throw v0
 
     :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :catchall_2
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :catchall_3
     move-exception p0
 
     monitor-exit v1

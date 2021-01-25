@@ -53,7 +53,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901d4
+    const v1, 0x7f0901df
 
     const/4 v2, 0x4
 
@@ -61,7 +61,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901d5
+    const v1, 0x7f0901e0
 
     const/4 v2, 0x5
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901d6
+    const v1, 0x7f0901e1
 
     const/4 v2, 0x6
 
@@ -86,9 +86,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c005e
-        0x7f0c005e
-        0x7f0c005e
+        0x7f0c005f
+        0x7f0c005f
+        0x7f0c005f
     .end array-data
 .end method
 
@@ -259,7 +259,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120142
+    const v2, 0x7f12015b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -275,38 +275,6 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800ba
-
-    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorStayAway:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f120144
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setBody(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorStayAway:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
     const v2, 0x7f0800bb
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -315,6 +283,38 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorStayAway:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f12015d
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setBody(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorStayAway:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0800bc
+
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorStayHome:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
@@ -323,7 +323,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120145
+    const v2, 0x7f12015e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -339,7 +339,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800bc
+    const v2, 0x7f0800bd
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -704,7 +704,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

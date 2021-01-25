@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,19 +105,25 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->label:I
 
-    const/4 v3, 0x1
+    const/16 v3, 0x20
+
+    const v4, 0x7f120120
+
+    const-string v5, "sendDebugNotification(title=%s, content=%s)"
+
+    const-string v6, "content"
+
+    const/4 v7, 0x2
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$3:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/DateTime;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$2:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/DateTime;
+    if-ne v2, v8, :cond_1
 
     iget-object v1, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$1:Ljava/lang/Object;
 
@@ -130,9 +136,14 @@
     :try_start_0
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_1
+    goto/16 :goto_4
+
+    :catch_0
+    move-exception p1
+
+    goto/16 :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -146,34 +157,104 @@
     :cond_2
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    sget-object p1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Background job started. Run attempt: "
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget v2, v2, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x20
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     move-result-object p1
 
-    const/4 v2, 0x0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1, v2}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    iget-object v11, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
 
+    iget-object v11, v11, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v11, ": doWork() started. Run attempt: "
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v11, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget v11, v11, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v11, v9, [Ljava/lang/Object;
+
+    invoke-virtual {p1, v2, v11}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    const-string p1, "KeyOneTime Executing: Start"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "KeyOneTime started. Run attempt: "
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v11, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget v11, v11, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_a
+
+    new-array v11, v7, [Ljava/lang/Object;
+
+    aput-object p1, v11, v9
+
+    aput-object v2, v11, v8
+
+    sget-object v12, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v12, v5, v11}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v11, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v11
+
+    sget-object v12, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-interface {v11, v12, v9}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v11
+
+    if-nez v11, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    sget-object v11, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
+
+    invoke-virtual {v11, p1, v2, v8, v8}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+
+    :goto_1
     new-instance p1, Landroidx/work/ListenableWorker$Result$Success;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Success;-><init>()V
@@ -183,95 +264,161 @@
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_1
-    new-instance v2, Lorg/joda/time/DateTime;
-
-    new-instance v4, Lorg/joda/time/Instant;
-
-    invoke-direct {v4}, Lorg/joda/time/Instant;-><init>()V
-
-    sget-object v5, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
-
-    invoke-direct {v2, v4, v5}, Lorg/joda/time/DateTime;-><init>(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)V
-
-    new-instance v4, Lorg/joda/time/DateTime;
-
-    sget-object v5, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->lastTimeDiagnosisKeysFromServerFetch()Ljava/util/Date;
-
-    move-result-object v5
-
-    sget-object v6, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
-
-    invoke-direct {v4, v5, v6}, Lorg/joda/time/DateTime;-><init>(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)V
-
-    sget-object v5, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->lastTimeDiagnosisKeysFromServerFetch()Ljava/util/Date;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_3
-
-    invoke-virtual {v2}, Lorg/joda/time/DateTime;->withTimeAtStartOfDay()Lorg/joda/time/DateTime;
-
-    move-result-object v5
-
-    invoke-virtual {v4}, Lorg/joda/time/DateTime;->withTimeAtStartOfDay()Lorg/joda/time/DateTime;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v5
-
-    xor-int/2addr v5, v3
-
-    if-eqz v5, :cond_6
-
-    :cond_3
-    sget-object v5, Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;
+    sget-object v2, Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;
 
     iput-object p0, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$1:Ljava/lang/Object;
 
-    iput-object v2, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$2:Ljava/lang/Object;
+    iput v8, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->label:I
 
-    iput-object v4, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$3:Ljava/lang/Object;
-
-    iput v3, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->label:I
-
-    invoke-virtual {v5, v0}, Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;->start(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Lde/rki/coronawarnapp/transaction/RetrieveDiagnosisKeysTransaction;->startWithConstraints(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     if-ne v0, v1, :cond_4
 
     return-object v1
 
     :cond_4
-    move-object v1, p1
-
-    :goto_1
-    move-object p1, v1
-
-    goto :goto_2
-
-    :catch_0
     move-object v0, p0
 
+    move-object v1, p1
+
+    goto/16 :goto_4
+
     :catch_1
-    iget-object p1, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+    move-exception p1
 
-    iget p1, p1, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
+    move-object v0, p0
 
-    const/4 v0, 0x2
+    :goto_2
+    sget-object v1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
 
-    if-le p1, v0, :cond_5
+    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v11, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget-object v11, v11, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v11, ": Error during RetrieveDiagnosisKeysTransaction.startWithConstraints()."
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v11, v9, [Ljava/lang/Object;
+
+    invoke-virtual {v1, p1, v2, v11}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v1, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget v1, v1, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
+
+    if-le v1, v7, :cond_7
+
+    sget-object v1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
+
+    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget-object v3, v3, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v3, ": Retry attempts exceeded."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v3, v9, [Ljava/lang/Object;
+
+    invoke-virtual {v1, p1, v2, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    const-string p1, "KeyOneTime Executing: Failure"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "KeyOneTime failed with "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget v0, v0, Landroidx/work/WorkerParameters;->mRunAttemptCount:I
+
+    const-string v2, " attempts"
+
+    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    new-array v1, v7, [Ljava/lang/Object;
+
+    aput-object p1, v1, v9
+
+    aput-object v0, v1, v8
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, v9}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    sget-object v1, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
+
+    invoke-virtual {v1, p1, v0, v8, v8}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+
+    :goto_3
     new-instance p1, Landroidx/work/ListenableWorker$Result$Failure;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Failure;-><init>()V
@@ -282,16 +429,148 @@
 
     return-object p1
 
-    :cond_5
-    new-instance p1, Landroidx/work/ListenableWorker$Result$Retry;
-
-    invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Retry;-><init>()V
-
-    const-string v0, "Result.retry()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
     :cond_6
-    :goto_2
-    return-object p1
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw v10
+
+    :cond_7
+    sget-object v1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
+
+    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v11, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget-object v11, v11, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v11, ": Retrying."
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v11, v9, [Ljava/lang/Object;
+
+    invoke-virtual {v1, p1, v2, v11}, Ltimber/log/Timber$Tree;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v1, Landroidx/work/ListenableWorker$Result$Retry;
+
+    invoke-direct {v1}, Landroidx/work/ListenableWorker$Result$Retry;-><init>()V
+
+    const-string p1, "Result.retry()"
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_4
+    const-string p1, "KeyOneTime Executing: End"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "KeyOneTime result: "
+
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_9
+
+    new-array v3, v7, [Ljava/lang/Object;
+
+    aput-object p1, v3, v9
+
+    aput-object v2, v3, v8
+
+    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v6, v5, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v3, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v3
+
+    sget-object v5, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v3, v4, v9}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    if-nez v3, :cond_8
+
+    goto :goto_5
+
+    :cond_8
+    sget-object v3, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
+
+    invoke-virtual {v3, p1, v2, v8, v8}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+
+    :goto_5
+    sget-object p1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
+
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object p1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v0, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget-object v0, v0, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": doWork() finished with %s"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-array v2, v8, [Ljava/lang/Object;
+
+    aput-object v1, v2, v9
+
+    invoke-virtual {p1, v0, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object v1
+
+    :cond_9
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw v10
+
+    :cond_a
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw v10
 .end method

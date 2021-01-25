@@ -1,35 +1,50 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzaa;
-.super Lcom/google/android/gms/internal/nearby/zzas;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 
-# instance fields
-.field public final synthetic zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
+        "Lcom/google/android/gms/internal/nearby/zzr;",
+        "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzaa;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzas;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/common/api/Status;Z)V
-    .locals 1
+.method public final synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
+    .locals 6
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    check-cast p4, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
 
-    move-result-object p2
+    new-instance p4, Lcom/google/android/gms/internal/nearby/zzr;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzaa;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    move-object v0, p4
 
-    invoke-static {p1, p2, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    move-object v1, p1
 
-    return-void
+    move-object v2, p2
+
+    move-object v3, p5
+
+    move-object v4, p6
+
+    move-object v5, p3
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/nearby/zzr;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;Lcom/google/android/gms/common/internal/ClientSettings;)V
+
+    return-object p4
 .end method

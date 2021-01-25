@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction$executeRetrieveRiskScoreParams$2"
     f = "RetrieveDiagnosisKeysTransaction.kt"
     l = {
-        0xe3
+        0xed
     }
     m = "invokeSuspend"
 .end annotation

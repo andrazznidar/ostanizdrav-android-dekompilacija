@@ -25,8 +25,8 @@
     c = "de.rki.coronawarnapp.ui.settings.SettingsTracingFragment$startStopTracing$1"
     f = "SettingsTracingFragment.kt"
     l = {
-        0x8c,
-        0x8d
+        0x97,
+        0x98
     }
     m = "invokeSuspend"
 .end annotation
@@ -116,23 +116,25 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 14
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    const-string v0, "requireActivity()"
 
-    iget v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    const/4 v2, 0x0
+    iget v2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    const/4 v4, 0x2
 
-    if-eqz v1, :cond_2
+    const/4 v5, 0x1
 
-    if-eq v1, v4, :cond_1
+    if-eqz v2, :cond_2
 
-    if-ne v1, v3, :cond_0
+    if-eq v2, v5, :cond_1
+
+    if-ne v2, v4, :cond_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
 
@@ -155,9 +157,9 @@
     throw p1
 
     :cond_1
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
+    iget-object v2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
 
-    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v2, Lkotlinx/coroutines/CoroutineScope;
 
     :try_start_1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
@@ -169,22 +171,22 @@
     :cond_2
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iget-object v2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->p$:Lkotlinx/coroutines/CoroutineScope;
 
     :try_start_2
     sget-object p1, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
-    iput-object v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
+    iput-object v2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
 
-    iput v4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
+    iput v5, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncIsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v1, :cond_3
 
-    return-object v0
+    return-object v1
 
     :cond_3
     :goto_0
@@ -198,17 +200,17 @@
 
     sget-object p1, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
-    iput-object v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
+    iput-object v2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->L$0:Ljava/lang/Object;
 
-    iput v3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
+    iput v4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->label:I
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncStop(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v1, :cond_4
 
-    return-object v0
+    return-object v1
 
     :cond_4
     :goto_1
@@ -224,7 +226,7 @@
 
     invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->stopWorkScheduler()V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_5
     sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
@@ -252,17 +254,86 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    throw v2
+    throw v3
 
     :cond_7
     :try_start_3
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;
 
     invoke-static {p1}, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->access$showConsentDialog(Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "power"
+
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    check-cast v1, Landroid/os/PowerManager;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Landroid/os/PowerManager;->isIgnoringBatteryOptimizations(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_9
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$startStopTracing$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;
+
+    new-instance v1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v5
+
+    invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v10, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    sget-object v11, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$showManualCheckingRequiredDialog$dialog$1;->INSTANCE:Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$showManualCheckingRequiredDialog$dialog$1;
+
+    const v6, 0x7f1200f7
+
+    const v7, 0x7f1200f5
+
+    const v8, 0x7f1200f6
+
+    const/4 v9, 0x0
+
+    const/4 v12, 0x0
+
+    const/16 v13, 0x80
+
+    move-object v4, v1
+
+    invoke-direct/range {v4 .. v13}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/app/Activity;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 
     goto :goto_2
+
+    :cond_8
+    new-instance p1, Lkotlin/TypeCastException;
+
+    const-string v0, "null cannot be cast to non-null type android.os.PowerManager"
+
+    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
     :catch_0
     move-exception p1
@@ -279,8 +350,9 @@
 
     sget-object v1, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->TAG:Ljava/lang/String;
 
-    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1, v3}, Lcom/google/android/gms/common/internal/Preconditions;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
 
+    :cond_9
     :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzac;
-.super Lcom/google/android/gms/internal/nearby/zzbc;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.super Lcom/google/android/gms/internal/nearby/zzbx;
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 
 # instance fields
@@ -13,15 +13,24 @@
 
     iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzbc;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzbx;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;)V
+.method public final zza(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/Status;",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;)V"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionTestResultFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n+ 2 Event.kt\nde/rki/coronawarnapp/util/EventKt\n+ 3 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,192:1\n27#2,2:193\n78#3,3:195\n78#3,3:198\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n*L\n115#1,2:193\n32#1,3:195\n33#1,3:198\n*E\n"
+    value = "SMAP\nSubmissionTestResultFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n+ 2 Event.kt\nde/rki/coronawarnapp/util/EventKt\n+ 3 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,213:1\n27#2,2:214\n78#3,3:216\n78#3,3:219\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTestResultFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment\n*L\n117#1,2:214\n34#1,3:216\n35#1,3:219\n*E\n"
 .end annotation
 
 
@@ -117,7 +117,7 @@
 
     const/4 v5, 0x1
 
-    const v6, 0x7f1201be
+    const v6, 0x7f1201df
 
     const-string v7, "requireActivity()"
 
@@ -131,7 +131,7 @@
 
     invoke-static {v9, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v5, v5, [Ljava/lang/Object;
 
@@ -151,7 +151,7 @@
 
     invoke-static {v11, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -184,7 +184,7 @@
 
     invoke-static {v9, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v5, v5, [Ljava/lang/Object;
 
@@ -204,7 +204,7 @@
 
     invoke-static {v11, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -233,11 +233,11 @@
 
     invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v20, 0x7f1201bd
+    const v20, 0x7f1201de
 
-    const v21, 0x7f1201bb
+    const v21, 0x7f1201dc
 
-    const v22, 0x7f1201bc
+    const v22, 0x7f1201dd
 
     const/16 v23, 0x0
 
@@ -316,7 +316,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1201fd
+    const v0, 0x7f120221
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -326,11 +326,11 @@
 
     invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment$removeTestAfterConfirmation$removeTestDialog$1;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;)V
 
-    const v2, 0x7f120200
+    const v2, 0x7f120224
 
-    const v3, 0x7f1201ff
+    const v3, 0x7f120223
 
-    const v4, 0x7f1201fe
+    const v4, 0x7f120222
 
     const/4 v6, 0x0
 
@@ -363,6 +363,44 @@
     move-result p0
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setTextColor(I)V
+
+    return-void
+.end method
+
+.method public static final access$showRedeemedTokenWarningDialog(Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;)V
+    .locals 11
+
+    new-instance v10, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v1
+
+    const-string p0, "requireActivity()"
+
+    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v2, 0x7f1201e8
+
+    const v3, 0x7f1201e6
+
+    const v4, 0x7f1201e7
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/16 v9, 0xf0
+
+    move-object v0, v10
+
+    invoke-direct/range {v0 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/app/Activity;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+
+    invoke-static {v10}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 
     return-void
 .end method
@@ -621,6 +659,22 @@
     new-instance v0, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment$onViewCreated$$inlined$observeEvent$1;
 
     invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment$onViewCreated$$inlined$observeEvent$1;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;)V
+
+    invoke-virtual {p1, p2, v0}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;->getSubmissionViewModel()Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->deviceUiState:Landroidx/lifecycle/LiveData;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    move-result-object p2
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment$onViewCreated$2;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionTestResultFragment;)V
 
     invoke-virtual {p1, p2, v0}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
 

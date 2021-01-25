@@ -41,7 +41,7 @@
 
     iput-char p1, p0, Lkotlin/ranges/CharProgression;->first:C
 
-    invoke-static {p1, p2, p3}, Lcom/google/android/gms/common/internal/Preconditions;->getProgressionLastElement(III)I
+    invoke-static {p1, p2, p3}, Lkotlin/collections/MapsKt___MapsKt;->getProgressionLastElement(III)I
 
     move-result p1
 

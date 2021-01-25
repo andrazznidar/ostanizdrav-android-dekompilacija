@@ -17,14 +17,16 @@
     c = "de.rki.coronawarnapp.storage.tracing.TracingIntervalRepository"
     f = "TracingIntervalRepository.kt"
     l = {
-        0x3c,
-        0x3d
+        0x41,
+        0x43
     }
     m = "getIntervals"
 .end annotation
 
 
 # instance fields
+.field public J$0:J
+
 .field public L$0:Ljava/lang/Object;
 
 .field public label:I

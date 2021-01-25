@@ -124,6 +124,16 @@
     throw v0
 .end method
 
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;->missing()Ljava/lang/Void;
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 

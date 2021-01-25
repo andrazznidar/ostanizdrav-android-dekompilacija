@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -43,7 +41,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c0057
+    const v5, 0x7f0c0058
 
     aput v5, v2, v4
 
@@ -55,7 +53,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09019d
+    const v1, 0x7f0901a1
 
     const/4 v2, 0x2
 
@@ -63,7 +61,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d1
+    const v1, 0x7f0900d2
 
     const/4 v2, 0x3
 
@@ -71,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/4 v2, 0x4
 
@@ -79,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0900d0
 
     const/4 v2, 0x5
 
@@ -87,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cb
+    const v1, 0x7f0900cc
 
     const/4 v2, 0x6
 
@@ -97,7 +95,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 12
+    .locals 13
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -157,7 +155,15 @@
 
     check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/4 v5, 0x0
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    move-object v12, v0
+
+    check-cast v12, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    const/4 v5, 0x1
 
     move-object v2, p0
 
@@ -165,25 +171,12 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-direct/range {v2 .. v12}, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;)V
 
-    const-wide/16 v1, -0x1
+    const-wide/16 v0, -0x1
 
-    iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mDirtyFlags:J
+    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mDirtyFlags:J
 
-    const/4 p1, 0x1
-
-    aget-object p1, v0, p1
-
-    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
-
-    if-eqz p1, :cond_0
-
-    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v0, 0x0
@@ -217,7 +210,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x1
+    const-wide/16 v4, 0x2
 
     and-long/2addr v0, v4
 
@@ -225,7 +218,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -233,7 +226,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200e0
+    const v2, 0x7f1200e7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -241,23 +234,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setBody(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f1200e1
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setBodyEmphasized(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -271,9 +248,41 @@
 
     move-result-object v1
 
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setBodyEmphasized(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f1200f3
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setHeadline(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f120110
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setEasyLanguageText(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -289,7 +298,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setIllustration(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -297,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200e9
+    const v2, 0x7f1200f4
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -305,7 +314,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setIllustrationDescription(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -313,7 +322,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200f3
+    const v2, 0x7f120101
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -322,7 +331,7 @@
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->setSubtitle(Ljava/lang/String;)V
 
     :cond_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -364,7 +373,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -395,7 +404,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x1
+    const-wide/16 v0, 0x2
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mDirtyFlags:J
@@ -404,7 +413,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -424,11 +433,48 @@
 .end method
 
 .method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
+    .locals 2
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    return p1
+    if-eqz p1, :cond_0
+
+    return v0
+
+    :cond_0
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+
+    if-nez p3, :cond_1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mDirtyFlags:J
+
+    const-wide/16 v0, 0x1
+
+    or-long/2addr p1, v0
+
+    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mDirtyFlags:J
+
+    monitor-exit p0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
@@ -436,7 +482,7 @@
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

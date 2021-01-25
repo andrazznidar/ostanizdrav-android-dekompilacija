@@ -1,46 +1,137 @@
-.class public final synthetic Lcom/google/android/gms/internal/nearby/zzr;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
+.class public final Lcom/google/android/gms/internal/nearby/zzr;
+.super Lcom/google/android/gms/common/internal/GmsClient;
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/common/internal/GmsClient<",
+        "Lcom/google/android/gms/internal/nearby/zzbq;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;Lcom/google/android/gms/common/internal/ClientSettings;)V
+    .locals 7
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzr;
+    const/16 v3, 0xec
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/nearby/zzr;-><init>()V
+    move-object v0, p0
 
-    sput-object v0, Lcom/google/android/gms/internal/nearby/zzr;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    move-object v1, p1
 
-    return-void
-.end method
+    move-object v2, p2
 
-.method public constructor <init>()V
-    .locals 0
+    move-object v4, p5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v5, p3
+
+    move-object v6, p4
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+.method public final synthetic createServiceInterface(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzq;
+    if-nez p1, :cond_0
 
-    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+    const/4 p1, 0x0
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/nearby/zzp;->zza(Lcom/google/android/gms/internal/nearby/zzq;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    return-object p1
 
-    return-void
+    :cond_0
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.INearbyExposureNotificationService"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lcom/google/android/gms/internal/nearby/zzbq;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Lcom/google/android/gms/internal/nearby/zzbq;
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzbt;
+
+    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/nearby/zzbt;-><init>(Landroid/os/IBinder;)V
+
+    return-object v0
+.end method
+
+.method public final getApiFeatures()[Lcom/google/android/gms/common/Feature;
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/google/android/gms/common/Feature;
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzc:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
+.method public final getMinApkVersion()I
+    .locals 1
+
+    const v0, 0xc02e3e0
+
+    return v0
+.end method
+
+.method public final getServiceDescriptor()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.INearbyExposureNotificationService"
+
+    return-object v0
+.end method
+
+.method public final getStartServiceAction()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.START"
+
+    return-object v0
+.end method
+
+.method public final getUseDynamicLookup()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final requiresGooglePlayServices()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzl:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/google/android/gms/nearby/Nearby;->zza(Landroid/content/Context;)Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -278,9 +278,9 @@
 
     const-wide/16 v5, 0x1
 
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/TimeSourceKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/TimeSourceKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 
@@ -341,7 +341,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/TimeSourceKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -456,7 +456,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/TimeSourceKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -507,7 +507,7 @@
 
     aget-object v3, v3, v1
 
-    invoke-static {v3, v2, p2, p3, v4}, Lkotlinx/coroutines/TimeSourceKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v3, v2, p2, p3, v4}, Lkotlin/collections/MapsKt___MapsKt;->arrayRangeEquals([BI[BII)Z
 
     move-result v2
 
@@ -640,7 +640,7 @@
 
     add-int/2addr p3, p2
 
-    invoke-static {p0, p2}, Lkotlinx/coroutines/TimeSourceKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 

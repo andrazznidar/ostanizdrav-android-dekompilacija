@@ -354,7 +354,7 @@
 
     check-cast v10, LKeyExportFormat$TemporaryExposureKey;
 
-    invoke-static {v10, v6}, LKeyExportFormat$TemporaryExposureKey;->access$6000(LKeyExportFormat$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
+    invoke-static {v10, v6}, LKeyExportFormat$TemporaryExposureKey;->access$6200(LKeyExportFormat$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
 
     iget v6, v7, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzb:I
 

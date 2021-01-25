@@ -39,7 +39,7 @@
     if-eqz p1, :cond_0
 
     :try_start_0
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->appendingSink(Ljava/io/File;)Lokio/Sink;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->appendingSink(Ljava/io/File;)Lokio/Sink;
 
     move-result-object p1
     :try_end_0
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->appendingSink(Ljava/io/File;)Lokio/Sink;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->appendingSink(Ljava/io/File;)Lokio/Sink;
 
     move-result-object p1
 
@@ -337,7 +337,7 @@
     const/4 v2, 0x0
 
     :try_start_0
-    invoke-static {p1, v2, v1, v0}, Lkotlinx/coroutines/TimeSourceKt;->sink$default(Ljava/io/File;ZILjava/lang/Object;)Lokio/Sink;
+    invoke-static {p1, v2, v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->sink$default(Ljava/io/File;ZILjava/lang/Object;)Lokio/Sink;
 
     move-result-object p1
     :try_end_0
@@ -352,7 +352,7 @@
 
     invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
 
-    invoke-static {p1, v2, v1, v0}, Lkotlinx/coroutines/TimeSourceKt;->sink$default(Ljava/io/File;ZILjava/lang/Object;)Lokio/Sink;
+    invoke-static {p1, v2, v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->sink$default(Ljava/io/File;ZILjava/lang/Object;)Lokio/Sink;
 
     move-result-object p1
 
@@ -402,7 +402,7 @@
 
     invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v0}, Lkotlinx/coroutines/TimeSourceKt;->source(Ljava/io/InputStream;)Lokio/Source;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->source(Ljava/io/InputStream;)Lokio/Source;
 
     move-result-object p1
 

@@ -261,7 +261,7 @@
 
     invoke-direct {v1, p0, p1, p2, v2}, Lde/rki/coronawarnapp/transaction/Transaction$executeState$2;-><init>(Lde/rki/coronawarnapp/transaction/Transaction;Lde/rki/coronawarnapp/transaction/TransactionState;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v0, v1, p3}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v1, p3}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -375,27 +375,27 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
 
-    const/4 v3, 0x4
+    const/4 v3, 0x3
 
-    const/4 v4, 0x3
+    const/4 v4, 0x2
 
-    const/4 v5, 0x2
+    const/4 v5, 0x1
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x1
+    const/4 v7, 0x4
 
     const/4 v8, 0x0
 
     if-eqz v2, :cond_5
 
-    if-eq v2, v7, :cond_4
+    if-eq v2, v5, :cond_4
 
-    if-eq v2, v5, :cond_3
+    if-eq v2, v4, :cond_3
 
-    if-eq v2, v4, :cond_2
+    if-eq v2, v3, :cond_2
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v7, :cond_1
 
     iget-object p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
 
@@ -451,7 +451,7 @@
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_3
     iget-object p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
@@ -464,30 +464,27 @@
 
     iget-boolean v2, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->Z$0:Z
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
+    iget-object v4, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/transaction/Transaction;
+    check-cast v4, Lde/rki/coronawarnapp/transaction/Transaction;
 
     :try_start_1
     invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    move-object v5, v4
+
     move v4, v2
 
-    move-object v5, v3
-
     move-object v2, p1
-
-    :goto_1
-    move-object v3, p2
 
     goto/16 :goto_3
 
     :catchall_1
     move-exception p3
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_4
     iget-object p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
@@ -500,9 +497,9 @@
 
     iget-boolean v2, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->Z$0:Z
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/transaction/Transaction;
+    check-cast v5, Lde/rki/coronawarnapp/transaction/Transaction;
 
     :try_start_2
     invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
@@ -518,7 +515,12 @@
     :catch_0
     move-exception p1
 
-    goto/16 :goto_8
+    :goto_1
+    move-object p3, p1
+
+    move p1, v2
+
+    goto/16 :goto_7
 
     :cond_5
     invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
@@ -565,7 +567,9 @@
 
     new-array p2, v8, [Ljava/lang/Object;
 
-    invoke-static {p1, p2}, Ltimber/log/Timber;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object p3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {p3, p1, p2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -583,30 +587,30 @@
 
     iput-object p3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
 
-    iput v7, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
+    iput v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
 
     invoke-interface {p3, v6, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
     if-ne v2, v1, :cond_7
 
     return-object v1
 
     :cond_7
-    move-object v3, p0
+    move-object v5, p0
 
     :goto_2
     :try_start_4
     sget-object v2, Lde/rki/coronawarnapp/transaction/Transaction$InternalTransactionStates;->INIT:Lde/rki/coronawarnapp/transaction/Transaction$InternalTransactionStates;
 
-    new-instance v4, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$1;
+    new-instance v7, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$1;
 
-    invoke-direct {v4, v6, v3, v0, p2}, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$1;-><init>(Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/transaction/Transaction;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v7, v6, v5, v0, p2}, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$1;-><init>(Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/transaction/Transaction;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function2;)V
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
+    iput-object v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
 
     iput-boolean p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->Z$0:Z
 
@@ -614,13 +618,13 @@
 
     iput-object p3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
 
-    invoke-virtual {v3, v2, v4, v0}, Lde/rki/coronawarnapp/transaction/Transaction;->executeState(Lde/rki/coronawarnapp/transaction/TransactionState;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v5, v2, v7, v0}, Lde/rki/coronawarnapp/transaction/Transaction;->executeState(Lde/rki/coronawarnapp/transaction/TransactionState;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     if-ne v2, v1, :cond_8
 
@@ -631,55 +635,56 @@
 
     move-object v2, p3
 
-    move-object v5, v3
-
-    goto/16 :goto_1
-
     :goto_3
     :try_start_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide p1
+    move-result-wide v7
 
     sget-wide v9, Lde/rki/coronawarnapp/transaction/Transaction;->TRANSACTION_TIMEOUT_MS:J
 
-    new-instance p3, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$2;
+    new-instance p1, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$2;
 
-    invoke-direct {p3, v6, v5, v0, v3}, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$2;-><init>(Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/transaction/Transaction;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {p1, v6, v5, v0, p2}, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$$inlined$withLock$lambda$2;-><init>(Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/transaction/Transaction;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function2;)V
 
     iput-object v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
 
     iput-boolean v4, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->Z$0:Z
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$1:Ljava/lang/Object;
+    iput-object p2, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$1:Ljava/lang/Object;
 
     iput-object v2, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$2:Ljava/lang/Object;
 
-    iput-wide p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->J$0:J
+    iput-wide v7, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->J$0:J
 
-    const/4 v7, 0x3
+    iput v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
 
-    iput v7, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
+    invoke-static {v9, v10, p1, v0}, Lkotlin/collections/MapsKt___MapsKt;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-static {v9, v10, p3, v0}, Lkotlinx/coroutines/BuildersKt__Builders_commonKt;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object p1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    move-result-object p3
-
-    if-ne p3, v1, :cond_9
+    if-ne p1, v1, :cond_9
 
     return-object v1
 
     :cond_9
+    move-object v3, p2
+
+    move-wide p1, v7
+
     :goto_4
+    :try_start_6
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v9
+    move-result-wide v7
 
-    sub-long/2addr v9, p1
+    sub-long/2addr v7, p1
 
     new-instance p1, Ljava/lang/Long;
 
-    invoke-direct {p1, v9, v10}, Ljava/lang/Long;-><init>(J)V
+    invoke-direct {p1, v7, v8}, Ljava/lang/Long;-><init>(J)V
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
@@ -703,9 +708,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v9
+    move-result-wide v7
 
-    invoke-virtual {p3, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v7, ") "
 
@@ -743,30 +748,14 @@
 
     move-result-object p1
 
-    new-array p2, v8, [Ljava/lang/Object;
+    const/4 p2, 0x0
+
+    new-array p2, p2, [Ljava/lang/Object;
 
     sget-object p3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    check-cast p3, Ltimber/log/Timber$1;
+    invoke-virtual {p3, p1, p2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz p3, :cond_b
-
-    sget-object p3, Ltimber/log/Timber;->forestAsArray:[Ltimber/log/Timber$Tree;
-
-    array-length v7, p3
-
-    :goto_5
-    if-ge v8, v7, :cond_a
-
-    aget-object v9, p3, v8
-
-    invoke-virtual {v9, p1, p2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_5
-
-    :cond_a
     iget-object p1, v5, Lde/rki/coronawarnapp/transaction/Transaction;->executedStatesStack:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -778,13 +767,13 @@
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :try_start_6
-    invoke-interface {v2, v6}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
     :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    :try_start_7
+    invoke-interface {v2, v6}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
 
     return-object p1
 
@@ -795,17 +784,14 @@
 
     move v2, v4
 
-    move-object v3, v5
+    goto/16 :goto_1
 
-    goto :goto_8
+    :catchall_2
+    move-exception p1
 
-    :cond_b
-    :try_start_7
-    throw v6
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    move-object v3, p2
 
-    :goto_6
+    :goto_5
     move-object p3, p1
 
     move-object p1, v2
@@ -814,12 +800,14 @@
 
     move v2, v4
 
-    move-object v3, v5
+    move-object v4, v5
 
-    goto :goto_7
+    goto :goto_6
 
-    :catchall_2
+    :catchall_3
     move-exception v2
+
+    move-object v4, v5
 
     move-object v11, v2
 
@@ -829,28 +817,28 @@
 
     move-object p3, v11
 
-    :goto_7
+    :goto_6
     :try_start_8
     invoke-interface {p1, v6}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p3
     :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
-
-    :goto_8
-    move-object p3, p1
-
-    move p1, v2
-
-    goto :goto_9
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
     :catch_2
+    move-exception p1
+
+    move-object v5, v4
+
+    goto/16 :goto_1
+
+    :catch_3
     move-exception p3
 
-    move-object v3, p0
+    move-object v5, p0
 
-    :goto_9
-    iput-object v3, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
+    :goto_7
+    iput-object v5, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->L$0:Ljava/lang/Object;
 
     iput-boolean p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->Z$0:Z
 
@@ -862,13 +850,13 @@
 
     iput p1, v0, Lde/rki/coronawarnapp/transaction/Transaction$lockAndExecute$2;->label:I
 
-    if-eqz v3, :cond_c
+    if-eqz v5, :cond_a
 
-    invoke-static {v3, p3, v0}, Lde/rki/coronawarnapp/transaction/Transaction;->handleTransactionError$suspendImpl(Lde/rki/coronawarnapp/transaction/Transaction;Ljava/lang/Throwable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v5, p3, v0}, Lde/rki/coronawarnapp/transaction/Transaction;->handleTransactionError$suspendImpl(Lde/rki/coronawarnapp/transaction/Transaction;Ljava/lang/Throwable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     return-object v1
 
-    :cond_c
+    :cond_a
     throw v6
 .end method
 

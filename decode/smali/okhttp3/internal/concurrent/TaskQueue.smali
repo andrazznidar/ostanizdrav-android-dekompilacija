@@ -237,7 +237,7 @@
 
     const-string v3, "canceled"
 
-    invoke-static {v0, p0, v3}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v0, p0, v3}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -289,7 +289,7 @@
 
     const-string p2, "schedule canceled (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -314,7 +314,7 @@
 
     const-string p2, "schedule failed (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
@@ -427,7 +427,7 @@
 
     const-string p2, "already scheduled"
 
-    invoke-static {p1, p0, p2}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     return v1
@@ -462,7 +462,7 @@
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lkotlinx/coroutines/TimeSourceKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -483,7 +483,7 @@
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lkotlinx/coroutines/TimeSourceKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -494,7 +494,7 @@
     move-result-object p4
 
     :goto_2
-    invoke-static {p1, p0, p4}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p4}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_6
     iget-object p4, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;

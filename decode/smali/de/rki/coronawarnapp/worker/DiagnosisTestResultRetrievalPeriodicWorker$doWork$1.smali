@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.worker.DiagnosisTestResultRetrievalPeriodicWorker"
     f = "DiagnosisTestResultRetrievalPeriodicWorker.kt"
     l = {
-        0x3b
+        0x41
     }
     m = "doWork"
 .end annotation

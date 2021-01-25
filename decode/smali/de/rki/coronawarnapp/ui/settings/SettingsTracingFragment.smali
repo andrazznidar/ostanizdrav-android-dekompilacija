@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSettingsTracingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsTracingFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsTracingFragment\n+ 2 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,182:1\n78#2,3:183\n78#2,3:186\n*E\n*S KotlinDebug\n*F\n+ 1 SettingsTracingFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsTracingFragment\n*L\n44#1,3:183\n45#1,3:186\n*E\n"
+    value = "SMAP\nSettingsTracingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsTracingFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsTracingFragment\n+ 2 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,210:1\n78#2,3:211\n78#2,3:214\n*E\n*S KotlinDebug\n*F\n+ 1 SettingsTracingFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsTracingFragment\n*L\n45#1,3:211\n46#1,3:214\n*E\n"
 .end annotation
 
 
@@ -95,6 +95,20 @@
     return-void
 .end method
 
+.method public static final access$getSettingsViewModel$p(Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;)Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+    .locals 0
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->settingsViewModel$delegate:Lkotlin/Lazy;
+
+    invoke-interface {p0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getTracingViewModel$p(Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;)Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
     .locals 0
 
@@ -118,7 +132,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1200e3
+    const v0, 0x7f1200ea
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -138,11 +152,11 @@
 
     invoke-direct {v8, v0, p0}, L-$$LambdaGroup$ks$SHaFfKUHe9wxUks14KRpIKo_r8A;-><init>(ILjava/lang/Object;)V
 
-    const v2, 0x7f120103
+    const v2, 0x7f120112
 
-    const v3, 0x7f1200fb
+    const v3, 0x7f120109
 
-    const v4, 0x7f1200e5
+    const v4, 0x7f1200ec
 
     move-object v0, v9
 
@@ -176,7 +190,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static/range {v1 .. v6}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 
@@ -387,7 +401,7 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 4
+    .locals 5
 
     if-eqz p1, :cond_0
 
@@ -455,6 +469,16 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;->settingsTracingStatusLocation:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    iget-object v4, v4, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->tracingStatusCardButton:Landroid/widget/Button;
+
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v3, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationPermissionHelper;
 
     invoke-direct {v3, p0, p0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationPermissionHelper;-><init>(Landroidx/fragment/app/Fragment;Lde/rki/coronawarnapp/nearby/InternalExposureNotificationPermissionHelper$Callback;)V
@@ -467,35 +491,43 @@
 
     invoke-virtual {p2, v3}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    new-instance p2, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;
+    new-instance p2, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;
 
     const/4 v3, 0x0
 
-    invoke-direct {p2, v3, p0}, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v3, p0}, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance p1, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;
+    new-instance p1, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;
 
     const/4 p2, 0x1
 
-    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance p1, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;
+    new-instance p1, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;
 
     const/4 p2, 0x2
 
-    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v1, p1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance p1, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;
+    new-instance p1, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;
 
     const/4 p2, 0x3
 
-    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$WxmhS01STVHzjs11RrO42jmPu3A;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v4, p1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    new-instance p1, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;
+
+    const/4 p2, 0x4
+
+    invoke-direct {p1, p2, p0}, L-$$LambdaGroup$js$m08xYDM5aYR4vDmeTb4BnBCNDm4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v2, p1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

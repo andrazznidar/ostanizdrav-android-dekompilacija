@@ -161,13 +161,29 @@
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
-    sget-object p1, Lde/rki/coronawarnapp/service/submission/SubmissionService;->INSTANCE:Lde/rki/coronawarnapp/service/submission/SubmissionService;
-
     iput-object p0, v0, Lde/rki/coronawarnapp/storage/SubmissionRepository$fetchTestResult$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lde/rki/coronawarnapp/storage/SubmissionRepository$fetchTestResult$1;->label:I
 
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/service/submission/SubmissionService;->asyncRequestTestResult(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken()Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_d
+
+    new-instance v2, Lde/rki/coronawarnapp/http/playbook/PlaybookImpl;
+
+    sget-object v4, Lde/rki/coronawarnapp/http/WebRequestBuilder;->Companion:Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/http/WebRequestBuilder$Companion;->getInstance()Lde/rki/coronawarnapp/http/WebRequestBuilder;
+
+    move-result-object v4
+
+    invoke-direct {v2, v4}, Lde/rki/coronawarnapp/http/playbook/PlaybookImpl;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;)V
+
+    invoke-virtual {v2, p1, v0}, Lde/rki/coronawarnapp/http/playbook/PlaybookImpl;->testResult(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -200,7 +216,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120110
+    const v2, 0x7f120124
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -273,19 +289,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_c
 
-    if-eq p1, v3, :cond_a
+    if-eq p1, v3, :cond_b
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_9
+    if-eq p1, v0, :cond_a
 
     const/4 v0, 0x3
 
+    if-eq p1, v0, :cond_9
+
+    const/4 v0, 0x4
+
     if-ne p1, v0, :cond_8
 
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_REDEEMED:Lde/rki/coronawarnapp/util/DeviceUIState;
 
     goto :goto_4
 
@@ -297,22 +317,34 @@
     throw p1
 
     :cond_9
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_POSITIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
 
     goto :goto_4
 
     :cond_a
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NEGATIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_POSITIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
 
     goto :goto_4
 
     :cond_b
+    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NEGATIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
+
+    goto :goto_4
+
+    :cond_c
     sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NO_RESULT:Lde/rki/coronawarnapp/util/DeviceUIState;
-    :try_end_1
-    .catch Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_4
     return-object p1
+
+    :cond_d
+    new-instance p1, Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException;
+
+    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException;-><init>()V
+
+    throw p1
+    :try_end_1
+    .catch Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException; {:try_start_1 .. :try_end_1} :catch_0
 
     :catch_0
     sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->UNPAIRED:Lde/rki/coronawarnapp/util/DeviceUIState;
@@ -321,7 +353,7 @@
 .end method
 
 .method public final refreshUIState(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -401,25 +433,7 @@
 
     sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const v5, 0x7f12011a
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    invoke-interface {v2, v4, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->numberOfSuccessfulSubmissions()I
 
     move-result v2
 
@@ -440,27 +454,7 @@
 
     sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const v6, 0x7f120112
-
-    invoke-virtual {v4, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v2, v4, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys()Ljava/lang/Boolean;
 
     move-result-object v2
 

@@ -17,8 +17,7 @@
     c = "de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction"
     f = "RetrieveDiagnosisKeysTransaction.kt"
     l = {
-        0xa8,
-        0xb1
+        0xbb
     }
     m = "rollback"
 .end annotation

@@ -331,7 +331,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    invoke-static {v2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v2, v0}, Lkotlin/collections/MapsKt___MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
 
     goto :goto_1
 
@@ -821,13 +821,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v0
 
     check-cast p1, Lkotlin/reflect/KClass;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object p1
 
@@ -1087,7 +1087,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v0
 

@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field public final informationLegalContactForm:Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;
+
 .field public final informationLegalContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final informationLegalDividerContact:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
@@ -16,41 +18,48 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalContactForm:Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalDividerContact:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    if-eqz p6, :cond_0
 
-    if-eqz p7, :cond_0
-
-    iput-object p0, p7, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+    iput-object p0, p6, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalDividerTaxid:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalDividerContact:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     if-eqz p8, :cond_1
 
     iput-object p0, p8, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalDividerTaxid:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     if-eqz p9, :cond_2
 
     iput-object p0, p9, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
-    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     if-eqz p10, :cond_3
 
     iput-object p0, p10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_3
+    iput-object p11, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBinding;->informationLegalHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+
+    if-eqz p11, :cond_4
+
+    iput-object p0, p11, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
     return-void
 .end method
 

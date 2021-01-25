@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ea
+    const v1, 0x7f0902f8
 
     const/4 v2, 0x1
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902e9
+    const v1, 0x7f0902f7
 
     const/4 v2, 0x2
 
@@ -39,7 +39,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902e8
+    const v1, 0x7f0902f6
 
     const/4 v2, 0x3
 

@@ -27,7 +27,7 @@
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncGetHourIndex$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0x57
+        0x5a
     }
     m = "invokeSuspend"
 .end annotation

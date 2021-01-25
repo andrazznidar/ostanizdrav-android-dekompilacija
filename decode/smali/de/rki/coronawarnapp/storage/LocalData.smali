@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLocalData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LocalData.kt\nde/rki/coronawarnapp/storage/LocalData\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,677:1\n43#2,8:678\n43#2,8:686\n43#2,8:694\n43#2,8:702\n43#2,8:710\n43#2,8:718\n43#2,8:726\n43#2,8:734\n43#2,8:742\n43#2,8:750\n43#2,8:758\n43#2,8:766\n43#2,8:774\n43#2,8:782\n43#2,8:790\n43#2,8:798\n43#2,8:806\n43#2,8:814\n43#2,8:822\n43#2,8:830\n43#2,8:838\n43#2,8:846\n43#2,8:854\n43#2,8:862\n43#2,8:870\n43#2,8:878\n*E\n*S KotlinDebug\n*F\n+ 1 LocalData.kt\nde/rki/coronawarnapp/storage/LocalData\n*L\n42#1,8:678\n70#1,8:686\n102#1,8:694\n132#1,8:702\n148#1,8:710\n193#1,8:718\n223#1,8:726\n261#1,8:734\n295#1,8:742\n324#1,8:750\n360#1,8:758\n391#1,8:766\n420#1,8:774\n447#1,8:782\n461#1,8:790\n483#1,8:798\n505#1,8:806\n534#1,8:814\n544#1,8:822\n564#1,8:830\n581#1,8:838\n604#1,8:846\n620#1,8:854\n630#1,8:862\n647#1,8:870\n658#1,8:878\n*E\n"
+    value = "SMAP\nLocalData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LocalData.kt\nde/rki/coronawarnapp/storage/LocalData\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,714:1\n43#2,8:715\n43#2,8:723\n43#2,8:731\n43#2,8:739\n43#2,8:747\n43#2,8:755\n43#2,8:763\n43#2,8:771\n43#2,8:779\n43#2,8:787\n43#2,8:795\n43#2,8:803\n43#2,8:811\n43#2,8:819\n43#2,8:827\n43#2,8:835\n43#2,8:843\n43#2,8:851\n43#2,8:859\n43#2,8:867\n43#2,8:875\n43#2,8:883\n43#2,8:891\n43#2,8:899\n43#2,8:907\n43#2,8:915\n43#2,8:923\n43#2,8:931\n*E\n*S KotlinDebug\n*F\n+ 1 LocalData.kt\nde/rki/coronawarnapp/storage/LocalData\n*L\n42#1,8:715\n70#1,8:723\n94#1,8:731\n126#1,8:739\n156#1,8:747\n172#1,8:755\n217#1,8:763\n247#1,8:771\n285#1,8:779\n319#1,8:787\n348#1,8:795\n384#1,8:803\n415#1,8:811\n444#1,8:819\n471#1,8:827\n485#1,8:835\n507#1,8:843\n529#1,8:851\n558#1,8:859\n568#1,8:867\n588#1,8:875\n605#1,8:883\n628#1,8:891\n644#1,8:899\n654#1,8:907\n671#1,8:915\n682#1,8:923\n695#1,8:931\n*E\n"
 .end annotation
 
 
@@ -51,7 +51,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12010f
+    const v2, 0x7f120123
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -89,7 +89,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120124
+    const v2, 0x7f120138
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120124
+    const v2, 0x7f120138
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -147,7 +147,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12011e
+    const v2, 0x7f120132
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -175,7 +175,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120110
+    const v2, 0x7f120124
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -201,7 +201,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120111
+    const v2, 0x7f120125
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -244,7 +244,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120111
+    const v2, 0x7f120125
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -255,6 +255,38 @@
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     return-void
+.end method
+
+.method public static final isAllowedToSubmitDiagnosisKeys()Ljava/lang/Boolean;
+    .locals 3
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f120126
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static final isAllowedToSubmitDiagnosisKeys(Z)V
@@ -272,7 +304,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120112
+    const v2, 0x7f120126
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -298,7 +330,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120118
+    const v2, 0x7f12012c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -326,7 +358,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120119
+    const v2, 0x7f12012d
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -354,7 +386,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120113
+    const v2, 0x7f120127
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -397,7 +429,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120113
+    const v2, 0x7f120127
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -437,7 +469,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120123
+    const v3, 0x7f120137
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -449,47 +481,56 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_4
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v2, :cond_3
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x4
+
+    if-eq v1, v2, :cond_1
+
+    const/4 v2, 0x5
 
     if-eq v1, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_2
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_LEVEL_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_3
-    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->NO_CALCULATION_POSSIBLE_TRACING_OFF:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_LEVEL_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     goto :goto_0
 
     :cond_4
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->NO_CALCULATION_POSSIBLE_TRACING_OFF:Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    goto :goto_0
+
+    :cond_5
     sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_INITIAL:Lde/rki/coronawarnapp/risk/RiskLevel;
 
     :goto_0
@@ -509,7 +550,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120128
+    const v2, 0x7f12013c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -552,7 +593,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120128
+    const v2, 0x7f12013c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -592,7 +633,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12012a
+    const v2, 0x7f12013e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -617,6 +658,34 @@
     return-void
 .end method
 
+.method public static final numberOfSuccessfulSubmissions()I
+    .locals 3
+
+    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f12012e
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static final registrationToken()Ljava/lang/String;
     .locals 3
 
@@ -630,7 +699,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12011f
+    const v2, 0x7f120133
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -660,7 +729,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12011f
+    const v2, 0x7f120133
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -688,7 +757,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120125
+    const v2, 0x7f120139
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -716,7 +785,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120126
+    const v2, 0x7f12013a
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -742,7 +811,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12012b
+    const v2, 0x7f12013f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

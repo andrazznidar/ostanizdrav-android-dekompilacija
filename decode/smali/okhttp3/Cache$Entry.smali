@@ -222,7 +222,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     :try_start_0
-    invoke-static/range {p1 .. p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static/range {p1 .. p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v2
     :try_end_0
@@ -1009,7 +1009,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object p1
 
@@ -1049,7 +1049,9 @@
 
     invoke-virtual {v2, v4, v5}, Lokio/RealBufferedSink;->writeDecimalLong(J)Lokio/BufferedSink;
 
-    invoke-virtual {v2, v3}, Lokio/RealBufferedSink;->writeByte(I)Lokio/BufferedSink;
+    move-result-object v1
+
+    invoke-interface {v1, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     iget-object v1, p0, Lokhttp3/Cache$Entry;->varyHeaders:Lokhttp3/Headers;
 
@@ -1132,7 +1134,9 @@
 
     invoke-virtual {v2, v6, v7}, Lokio/RealBufferedSink;->writeDecimalLong(J)Lokio/BufferedSink;
 
-    invoke-virtual {v2, v3}, Lokio/RealBufferedSink;->writeByte(I)Lokio/BufferedSink;
+    move-result-object v1
+
+    invoke-interface {v1, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     iget-object v1, p0, Lokhttp3/Cache$Entry;->responseHeaders:Lokhttp3/Headers;
 
@@ -1277,7 +1281,7 @@
 
     :cond_3
     :goto_2
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -1292,7 +1296,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 .end method

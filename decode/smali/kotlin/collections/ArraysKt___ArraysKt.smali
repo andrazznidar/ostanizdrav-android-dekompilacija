@@ -359,7 +359,7 @@
     if-gt p3, p5, :cond_2
 
     :cond_1
-    invoke-static {p1, v0, p7}, Lcom/google/android/gms/common/internal/Preconditions;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v0, p7}, Lkotlin/collections/MapsKt___MapsKt;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_0
 
@@ -416,6 +416,169 @@
     invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public static joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    .locals 8
+
+    and-int/lit8 p5, p7, 0x1
+
+    if-eqz p5, :cond_0
+
+    const-string p1, ", "
+
+    :cond_0
+    move-object v2, p1
+
+    and-int/lit8 p1, p7, 0x2
+
+    const-string p5, ""
+
+    if-eqz p1, :cond_1
+
+    move-object v3, p5
+
+    goto :goto_0
+
+    :cond_1
+    move-object v3, p2
+
+    :goto_0
+    and-int/lit8 p1, p7, 0x4
+
+    if-eqz p1, :cond_2
+
+    move-object v4, p5
+
+    goto :goto_1
+
+    :cond_2
+    move-object v4, p3
+
+    :goto_1
+    and-int/lit8 p1, p7, 0x8
+
+    if-eqz p1, :cond_3
+
+    const/4 p4, -0x1
+
+    :cond_3
+    move v5, p4
+
+    and-int/lit8 p1, p7, 0x10
+
+    const/4 p2, 0x0
+
+    if-eqz p1, :cond_4
+
+    const-string p1, "..."
+
+    move-object v6, p1
+
+    goto :goto_2
+
+    :cond_4
+    move-object v6, p2
+
+    :goto_2
+    and-int/lit8 p1, p7, 0x20
+
+    if-eqz p1, :cond_5
+
+    move-object v7, p2
+
+    goto :goto_3
+
+    :cond_5
+    move-object v7, p6
+
+    :goto_3
+    if-eqz v3, :cond_8
+
+    if-eqz v4, :cond_7
+
+    if-eqz v6, :cond_6
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "joinTo(StringBuilder(), \u2026ed, transform).toString()"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_6
+    const-string p0, "truncated"
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_7
+    const-string p0, "postfix"
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_8
+    const-string p0, "prefix"
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public static final plus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-static {p0, p1}, Lkotlin/collections/ArraysKt___ArraysKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-static {v0, p0}, Lcom/google/android/gms/common/internal/Preconditions;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    return-object v0
 .end method
 
 .method public static final plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
@@ -877,7 +1040,7 @@
     move-result-object p0
 
     :goto_0
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->setOf(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->setOf(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v1
 
@@ -915,7 +1078,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->setOf(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->setOf(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
 

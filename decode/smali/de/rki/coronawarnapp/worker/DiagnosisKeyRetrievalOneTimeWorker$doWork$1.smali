@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.worker.DiagnosisKeyRetrievalOneTimeWorker"
     f = "DiagnosisKeyRetrievalOneTimeWorker.kt"
     l = {
-        0x2e
+        0x26
     }
     m = "doWork"
 .end annotation
@@ -27,10 +27,6 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
-
-.field public L$2:Ljava/lang/Object;
-
-.field public L$3:Ljava/lang/Object;
 
 .field public label:I
 

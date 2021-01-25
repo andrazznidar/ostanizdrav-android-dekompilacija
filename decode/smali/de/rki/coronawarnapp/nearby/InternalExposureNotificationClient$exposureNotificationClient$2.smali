@@ -68,9 +68,9 @@
 
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzp;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzt;
 
-    invoke-direct {v1, v0}, Lcom/google/android/gms/internal/nearby/zzp;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lcom/google/android/gms/internal/nearby/zzt;-><init>(Landroid/content/Context;)V
 
     return-object v1
 .end method

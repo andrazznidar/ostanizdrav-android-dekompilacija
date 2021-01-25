@@ -50,6 +50,20 @@
 
     invoke-static {p1}, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->access$startStopTracing(Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;)V
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment$setButtonOnClickListener$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/settings/SettingsTracingFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;->settingsTracingSwitchRow:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowHeaderBody:Landroid/widget/TextView;
+
+    const p2, 0x8000
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->sendAccessibilityEvent(I)V
+
     :cond_0
     return-void
 .end method

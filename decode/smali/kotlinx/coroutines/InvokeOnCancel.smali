@@ -39,12 +39,14 @@
 
 
 # virtual methods
-.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-virtual {p0, p1}, Lkotlinx/coroutines/InvokeOnCancel;->invoke(Ljava/lang/Throwable;)V
+    iget-object v0, p0, Lkotlinx/coroutines/InvokeOnCancel;->handler:Lkotlin/jvm/functions/Function1;
+
+    invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -72,7 +74,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/InvokeOnCancel;->handler:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -82,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -60,7 +60,7 @@
 
     move-result v6
 
-    invoke-static {p0}, Lkotlinx/coroutines/TimeSourceKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v9
 
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    invoke-static {p0}, Lkotlinx/coroutines/TimeSourceKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v2
 

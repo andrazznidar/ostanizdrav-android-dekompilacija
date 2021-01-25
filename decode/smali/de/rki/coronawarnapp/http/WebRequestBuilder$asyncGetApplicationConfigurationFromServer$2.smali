@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncGetApplicationConfigurationFromServer$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0x74
+        0x7a
     }
     m = "invokeSuspend"
 .end annotation
@@ -270,7 +270,9 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    invoke-static {v4, v5}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v6, v4, v5}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
@@ -286,7 +288,7 @@
 
     invoke-direct {v6, v4}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    invoke-static {v0, v6, v5}, Lcom/google/android/gms/common/internal/Preconditions;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+    invoke-static {v0, v6, v5}, Lkotlin/collections/MapsKt___MapsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
 
     invoke-virtual {v6}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -359,7 +361,7 @@
     :cond_6
     if-nez p1, :cond_3
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v3}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     iget-object p1, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
@@ -455,7 +457,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 

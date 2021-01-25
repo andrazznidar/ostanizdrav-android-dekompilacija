@@ -22,8 +22,6 @@
 
 .field public daysSinceLastExposure:I
 
-.field public id:J
-
 .field public matchedKeyCount:I
 
 .field public maximumRiskScore:I

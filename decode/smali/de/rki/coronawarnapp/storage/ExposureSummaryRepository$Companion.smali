@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExposureSummaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion\n*L\n1#1,62:1\n*E\n"
+    value = "SMAP\nExposureSummaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureSummaryRepository.kt\nde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion\n*L\n1#1,68:1\n*E\n"
 .end annotation
 
 

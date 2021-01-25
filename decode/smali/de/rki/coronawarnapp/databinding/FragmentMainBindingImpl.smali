@@ -95,7 +95,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090159
+    const v1, 0x7f09015d
 
     const/16 v2, 0x12
 
@@ -103,7 +103,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090126
+    const v1, 0x7f09012a
 
     const/16 v2, 0x13
 
@@ -111,7 +111,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/16 v2, 0x14
 
@@ -137,16 +137,16 @@
 
     :array_1
     .array-data 4
-        0x7f0c004f
-        0x7f0c0059
-        0x7f0c0071
-        0x7f0c006d
+        0x7f0c0050
+        0x7f0c005a
+        0x7f0c0073
         0x7f0c006f
+        0x7f0c0071
+        0x7f0c0072
         0x7f0c0070
-        0x7f0c006e
-        0x7f0c0052
-        0x7f0c007d
-        0x7f0c007c
+        0x7f0c0053
+        0x7f0c007f
+        0x7f0c007e
     .end array-data
 
     :array_2
@@ -325,7 +325,7 @@
 
     check-cast v21, Lcom/airbnb/lottie/LottieAnimationView;
 
-    const/16 v3, 0x10
+    const/16 v3, 0x11
 
     move-object/from16 v0, p0
 
@@ -442,7 +442,7 @@
 
     iget-object v10, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
 
-    const-wide/32 v11, 0xd0421
+    const-wide/32 v11, 0x1a0c21
 
     and-long/2addr v11, v4
 
@@ -450,7 +450,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v6, :cond_11
+    if-eqz v6, :cond_15
 
     if-eqz v8, :cond_0
 
@@ -458,10 +458,14 @@
 
     iget-object v12, v8, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isBluetoothEnabled:Landroidx/lifecycle/LiveData;
 
+    iget-object v13, v8, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isLocationEnabled:Landroidx/lifecycle/LiveData;
+
     goto :goto_0
 
     :cond_0
     const/4 v12, 0x0
+
+    const/4 v13, 0x0
 
     const/4 v11, 0x0
 
@@ -471,6 +475,10 @@
     const/16 v7, 0xa
 
     invoke-virtual {v1, v7, v12}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+
+    const/16 v7, 0xb
+
+    invoke-virtual {v1, v7, v13}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
     if-eqz v10, :cond_1
 
@@ -482,9 +490,9 @@
     const/4 v7, 0x0
 
     :goto_1
-    const/4 v13, 0x5
+    const/4 v14, 0x5
 
-    invoke-virtual {v1, v13, v7}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    invoke-virtual {v1, v14, v7}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
     if-eqz v11, :cond_2
 
@@ -514,7 +522,21 @@
     const/4 v12, 0x0
 
     :goto_3
-    if-eqz v7, :cond_4
+    if-eqz v13, :cond_4
+
+    invoke-virtual {v13}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Ljava/lang/Boolean;
+
+    goto :goto_4
+
+    :cond_4
+    const/4 v13, 0x0
+
+    :goto_4
+    if-eqz v7, :cond_5
 
     invoke-virtual {v7}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
@@ -522,12 +544,12 @@
 
     check-cast v7, Ljava/lang/Boolean;
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_4
+    :cond_5
     const/4 v7, 0x0
 
-    :goto_4
+    :goto_5
     invoke-static {v11}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v11
@@ -536,286 +558,257 @@
 
     move-result v12
 
+    invoke-static {v13}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+
+    move-result v13
+
     invoke-static {v7}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v7
 
-    invoke-static {v7, v12, v11}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZ)I
-
-    move-result v13
-
-    const/4 v14, 0x2
-
-    const/4 v15, 0x3
-
-    if-eqz v13, :cond_7
-
-    if-eq v13, v14, :cond_6
-
-    if-eq v13, v15, :cond_5
-
-    const v13, 0x7f0800d2
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    goto :goto_5
-
-    :cond_5
-    const v13, 0x7f0800d1
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    goto :goto_5
-
-    :cond_6
-    const v13, 0x7f0800cf
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    goto :goto_5
-
-    :cond_7
-    const/high16 v13, 0x7f110000
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    :goto_5
     sget-object v14, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
     move-result-object v14
 
-    invoke-static {v7, v12, v11}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZ)I
+    invoke-static {v7, v12, v11, v13}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZZ)I
 
     move-result v15
 
-    move-object/from16 v16, v13
+    move/from16 v16, v6
 
-    const-string v13, " "
+    const-string v6, " "
 
-    if-eqz v15, :cond_b
+    if-eqz v15, :cond_a
 
-    move/from16 v17, v6
+    move-object/from16 v17, v10
 
-    const/4 v6, 0x1
+    const/4 v10, 0x1
 
-    if-eq v15, v6, :cond_a
+    if-eq v15, v10, :cond_9
 
-    const/4 v6, 0x2
+    const/4 v10, 0x2
 
-    if-eq v15, v6, :cond_9
+    if-eq v15, v10, :cond_8
 
-    const/4 v6, 0x3
+    const/4 v10, 0x3
 
-    if-eq v15, v6, :cond_8
+    if-eq v15, v10, :cond_7
+
+    const/4 v10, 0x4
+
+    if-eq v15, v10, :cond_6
 
     const-string v6, ""
 
     goto/16 :goto_6
 
-    :cond_8
-    new-instance v6, Ljava/lang/StringBuilder;
+    :cond_6
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v15, 0x7f120186
+    const v15, 0x7f1201a5
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v15
 
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v13, 0x7f12001c
+    const v6, 0x7f12001c
 
-    invoke-virtual {v14, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v6
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    goto/16 :goto_6
+
+    :cond_7
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const v15, 0x7f1201a2
+
+    invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const v6, 0x7f12001c
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    goto :goto_6
+
+    :cond_8
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const v15, 0x7f1201a1
+
+    invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const v6, 0x7f12001c
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     goto :goto_6
 
     :cond_9
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v15, 0x7f120185
+    const v15, 0x7f1201a4
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v15
 
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v13, 0x7f12001c
+    const v6, 0x7f12001c
 
-    invoke-virtual {v14, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v6
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     goto :goto_6
 
     :cond_a
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-object/from16 v17, v10
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    const v15, 0x7f120188
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const v15, 0x7f1201a0
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v15
 
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v13, 0x7f12001c
+    const v6, 0x7f12001c
 
-    invoke-virtual {v14, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    goto :goto_6
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_b
-    move/from16 v17, v6
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const v15, 0x7f120184
-
-    invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const v13, 0x7f12001c
-
-    invoke-virtual {v14, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     :goto_6
-    sget-object v13, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    invoke-static {v7, v12, v11, v13}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZZ)I
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    move-result v10
 
-    move-result-object v13
+    if-eqz v10, :cond_e
 
-    invoke-static {v7, v12, v11}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZ)I
+    const/4 v14, 0x2
 
-    move-result v14
+    if-eq v10, v14, :cond_d
 
-    if-eqz v14, :cond_f
+    const/4 v14, 0x3
 
-    const/4 v15, 0x1
+    if-eq v10, v14, :cond_c
 
-    if-eq v14, v15, :cond_e
+    const/4 v14, 0x4
 
-    const/4 v15, 0x2
+    if-eq v10, v14, :cond_b
 
-    if-eq v14, v15, :cond_d
+    const v10, 0x7f0800d5
 
-    const/4 v15, 0x3
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-eq v14, v15, :cond_c
+    move-result-object v10
 
-    const-string v13, ""
+    goto :goto_7
+
+    :cond_b
+    const v10, 0x7f0800c9
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
 
     goto :goto_7
 
     :cond_c
-    const v14, 0x7f120186
+    const v10, 0x7f0800d4
 
-    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v13
-
-    const-string v14, "appContext.getString(R.s\u2026body_connection_inactive)"
-
-    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v10
 
     goto :goto_7
 
     :cond_d
-    const v14, 0x7f120185
+    const v10, 0x7f0800d2
 
-    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v13
-
-    const-string v14, "appContext.getString(R.s\u2026_body_bluetooth_inactive)"
-
-    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v10
 
     goto :goto_7
 
     :cond_e
-    const v14, 0x7f120188
+    const/high16 v10, 0x7f110000
 
-    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v13
-
-    const-string v14, "appContext.getString(R.s\u2026gs_tracing_body_inactive)"
-
-    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_7
-
-    :cond_f
-    const v14, 0x7f120184
-
-    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    const-string v14, "appContext.getString(R.s\u2026ings_tracing_body_active)"
-
-    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v10
 
     :goto_7
     sget-object v14, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
@@ -824,11 +817,111 @@
 
     move-result-object v14
 
-    invoke-static {v7, v12, v11}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZ)I
+    invoke-static {v7, v12, v11, v13}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZZ)I
+
+    move-result v15
+
+    if-eqz v15, :cond_13
+
+    move-object/from16 v18, v6
+
+    const/4 v6, 0x1
+
+    if-eq v15, v6, :cond_12
+
+    const/4 v6, 0x2
+
+    if-eq v15, v6, :cond_11
+
+    const/4 v6, 0x3
+
+    if-eq v15, v6, :cond_10
+
+    const/4 v6, 0x4
+
+    if-eq v15, v6, :cond_f
+
+    const-string v6, ""
+
+    goto :goto_8
+
+    :cond_f
+    const v6, 0x7f1201a5
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v14, "appContext.getString(R.s\u2026g_body_inactive_location)"
+
+    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_8
+
+    :cond_10
+    const v6, 0x7f1201a2
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v14, "appContext.getString(R.s\u2026body_connection_inactive)"
+
+    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_8
+
+    :cond_11
+    const v6, 0x7f1201a1
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v14, "appContext.getString(R.s\u2026_body_bluetooth_inactive)"
+
+    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_8
+
+    :cond_12
+    const v6, 0x7f1201a4
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v14, "appContext.getString(R.s\u2026gs_tracing_body_inactive)"
+
+    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_8
+
+    :cond_13
+    move-object/from16 v18, v6
+
+    const v6, 0x7f1201a0
+
+    invoke-virtual {v14, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v14, "appContext.getString(R.s\u2026ings_tracing_body_active)"
+
+    invoke-static {v6, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_8
+    sget-object v14, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v14
+
+    invoke-static {v7, v12, v11, v13}, Lcom/google/android/gms/common/internal/Preconditions;->tracingStatusHelper(ZZZZ)I
 
     move-result v7
 
-    if-eqz v7, :cond_10
+    if-eqz v7, :cond_14
 
     const v7, 0x7f060061
 
@@ -836,84 +929,89 @@
 
     move-result v7
 
-    goto :goto_8
+    goto :goto_9
 
-    :cond_10
+    :cond_14
     const v7, 0x7f06003e
 
     invoke-virtual {v14, v7}, Landroid/content/Context;->getColor(I)I
 
     move-result v7
 
-    goto :goto_8
+    :goto_9
+    move-object v11, v6
 
-    :cond_11
-    move/from16 v17, v6
+    move-object/from16 v6, v18
+
+    goto :goto_a
+
+    :cond_15
+    move/from16 v16, v6
+
+    move-object/from16 v17, v10
 
     const/4 v7, 0x0
 
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
     const/4 v6, 0x0
 
     const/4 v11, 0x0
 
-    move-object/from16 v16, v11
+    :goto_a
+    const-wide/32 v12, 0x141180
 
-    :goto_8
-    const-wide/32 v11, 0xa0980
-
-    and-long/2addr v11, v4
+    and-long/2addr v12, v4
 
     const-wide/16 v14, 0x0
 
-    cmp-long v11, v11, v14
+    cmp-long v12, v12, v14
 
-    const-wide/32 v18, 0xa0100
+    const-wide/32 v18, 0x140100
 
-    const-wide/32 v20, 0xa0800
+    const-wide/32 v20, 0x141000
 
-    const-wide/32 v22, 0xa0000
+    const-wide/32 v22, 0x140000
 
-    if-eqz v11, :cond_24
+    if-eqz v12, :cond_28
 
-    and-long v11, v4, v20
+    and-long v12, v4, v20
 
-    cmp-long v11, v11, v14
+    cmp-long v12, v12, v14
 
-    if-eqz v11, :cond_18
+    if-eqz v12, :cond_1c
 
-    if-eqz v9, :cond_13
+    if-eqz v9, :cond_17
 
-    sget-object v11, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    sget-object v12, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
     invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    if-eqz v11, :cond_12
+    if-eqz v12, :cond_16
 
-    const/4 v11, 0x1
+    const/4 v12, 0x1
 
-    goto :goto_9
+    goto :goto_b
 
-    :cond_12
-    const/4 v11, 0x0
-
-    :goto_9
-    iget-object v12, v9, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->uiStateState:Landroidx/lifecycle/LiveData;
-
-    goto :goto_a
-
-    :cond_13
-    const/4 v11, 0x0
-
+    :cond_16
     const/4 v12, 0x0
 
-    :goto_a
-    const/16 v14, 0xb
+    :goto_b
+    iget-object v13, v9, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->uiStateState:Landroidx/lifecycle/LiveData;
 
-    invoke-virtual {v1, v14, v12}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    goto :goto_c
+
+    :cond_17
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    :goto_c
+    const/16 v14, 0xc
+
+    invoke-virtual {v1, v14, v13}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
     and-long v14, v4, v22
 
@@ -921,9 +1019,9 @@
 
     cmp-long v14, v14, v24
 
-    if-eqz v14, :cond_14
+    if-eqz v14, :cond_18
 
-    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v14
 
@@ -937,128 +1035,128 @@
 
     move-result v14
 
-    goto :goto_b
-
-    :cond_14
-    const/4 v14, 0x0
-
-    :goto_b
-    if-eqz v12, :cond_15
-
-    invoke-virtual {v12}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    goto :goto_c
-
-    :cond_15
-    const/4 v12, 0x0
-
-    :goto_c
-    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v11
-
-    sget-object v15, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-static {v11, v15}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_17
-
-    sget-object v11, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->STARTED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    if-eq v12, v11, :cond_16
-
-    sget-object v11, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->FAILED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    if-ne v12, v11, :cond_17
-
-    :cond_16
-    const/4 v11, 0x1
-
     goto :goto_d
 
-    :cond_17
-    const/4 v11, 0x0
+    :cond_18
+    const/4 v14, 0x0
 
     :goto_d
-    invoke-static {v11}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+    if-eqz v13, :cond_19
 
-    move-result v11
+    invoke-virtual {v13}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
     goto :goto_e
 
-    :cond_18
-    const/4 v11, 0x0
+    :cond_19
+    const/4 v13, 0x0
+
+    :goto_e
+    invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v12
+
+    sget-object v15, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-static {v12, v15}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_1b
+
+    sget-object v12, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->STARTED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+
+    if-eq v13, v12, :cond_1a
+
+    sget-object v12, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->FAILED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+
+    if-ne v13, v12, :cond_1b
+
+    :cond_1a
+    const/4 v12, 0x1
+
+    goto :goto_f
+
+    :cond_1b
+    const/4 v12, 0x0
+
+    :goto_f
+    invoke-static {v12}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+
+    move-result v12
+
+    goto :goto_10
+
+    :cond_1c
+    const/4 v12, 0x0
 
     const/4 v14, 0x0
 
-    :goto_e
-    const-wide/32 v24, 0xa0080
+    :goto_10
+    const-wide/32 v24, 0x140080
 
     and-long v24, v4, v24
 
     const-wide/16 v26, 0x0
 
-    cmp-long v12, v24, v26
+    cmp-long v13, v24, v26
 
-    if-eqz v12, :cond_1a
+    if-eqz v13, :cond_1e
 
-    if-eqz v9, :cond_19
+    if-eqz v9, :cond_1d
 
-    iget-object v12, v9, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->testResultReceivedDate:Landroidx/lifecycle/LiveData;
+    iget-object v13, v9, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->testResultReceivedDate:Landroidx/lifecycle/LiveData;
 
-    goto :goto_f
+    goto :goto_11
 
-    :cond_19
-    const/4 v12, 0x0
+    :cond_1d
+    const/4 v13, 0x0
 
-    :goto_f
+    :goto_11
     const/4 v15, 0x7
 
-    invoke-virtual {v1, v15, v12}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    invoke-virtual {v1, v15, v13}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
-    if-eqz v12, :cond_1a
+    if-eqz v13, :cond_1e
 
-    invoke-virtual {v12}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+    invoke-virtual {v13}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Ljava/util/Date;
+    check-cast v13, Ljava/util/Date;
 
-    goto :goto_10
+    goto :goto_12
 
-    :cond_1a
-    const/4 v12, 0x0
+    :cond_1e
+    const/4 v13, 0x0
 
-    :goto_10
+    :goto_12
     and-long v24, v4, v18
 
     const-wide/16 v26, 0x0
 
     cmp-long v15, v24, v26
 
-    if-eqz v15, :cond_23
+    if-eqz v15, :cond_27
 
-    if-eqz v9, :cond_1b
+    if-eqz v9, :cond_1f
 
     iget-object v9, v9, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->deviceUiState:Landroidx/lifecycle/LiveData;
 
-    goto :goto_11
+    goto :goto_13
 
-    :cond_1b
+    :cond_1f
     const/4 v9, 0x0
 
-    :goto_11
+    :goto_13
     const/16 v15, 0x8
 
     invoke-virtual {v1, v15, v9}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
-    if-eqz v9, :cond_1c
+    if-eqz v9, :cond_20
 
     invoke-virtual {v9}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
@@ -1066,90 +1164,94 @@
 
     check-cast v9, Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    goto :goto_12
+    goto :goto_14
 
-    :cond_1c
+    :cond_20
     const/4 v9, 0x0
 
-    :goto_12
-    if-ne v9, v3, :cond_1d
+    :goto_14
+    if-ne v9, v3, :cond_21
 
     const/4 v15, 0x1
 
-    goto :goto_13
+    goto :goto_15
 
-    :cond_1d
+    :cond_21
     const/4 v15, 0x0
 
-    :goto_13
+    :goto_15
     invoke-static {v15}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
 
     move-result v15
 
-    if-eq v9, v2, :cond_1f
+    if-eq v9, v2, :cond_23
 
-    if-ne v9, v0, :cond_1e
+    if-ne v9, v0, :cond_22
 
-    goto :goto_14
+    goto :goto_16
 
-    :cond_1e
+    :cond_22
     const/16 v24, 0x0
 
-    goto :goto_15
+    goto :goto_17
 
-    :cond_1f
-    :goto_14
+    :cond_23
+    :goto_16
     const/16 v24, 0x1
 
-    :goto_15
+    :goto_17
     invoke-static/range {v24 .. v24}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
 
     move-result v24
 
-    move/from16 v25, v11
+    move/from16 v25, v12
 
-    sget-object v11, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object v12, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    if-eq v9, v11, :cond_21
+    if-eq v9, v12, :cond_25
 
-    sget-object v11, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NEGATIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object v12, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NEGATIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    if-eq v9, v11, :cond_21
+    if-eq v9, v12, :cond_25
 
-    sget-object v11, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NO_RESULT:Lde/rki/coronawarnapp/util/DeviceUIState;
+    sget-object v12, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NO_RESULT:Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    if-ne v9, v11, :cond_20
+    if-eq v9, v12, :cond_25
 
-    goto :goto_16
+    sget-object v12, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_REDEEMED:Lde/rki/coronawarnapp/util/DeviceUIState;
 
-    :cond_20
-    const/4 v11, 0x0
-
-    goto :goto_17
-
-    :cond_21
-    :goto_16
-    const/4 v11, 0x1
-
-    :goto_17
-    invoke-static {v11}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
-
-    move-result v11
-
-    if-eq v9, v2, :cond_22
-
-    if-eq v9, v0, :cond_22
-
-    if-eq v9, v3, :cond_22
-
-    const/4 v0, 0x1
+    if-ne v9, v12, :cond_24
 
     goto :goto_18
 
-    :cond_22
+    :cond_24
+    const/4 v12, 0x0
+
+    goto :goto_19
+
+    :cond_25
+    :goto_18
+    const/4 v12, 0x1
+
+    :goto_19
+    invoke-static {v12}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+
+    move-result v12
+
+    if-eq v9, v2, :cond_26
+
+    if-eq v9, v0, :cond_26
+
+    if-eq v9, v3, :cond_26
+
+    const/4 v0, 0x1
+
+    goto :goto_1a
+
+    :cond_26
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_1a
     invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
 
     move-result v0
@@ -1158,41 +1260,43 @@
 
     move/from16 v2, v25
 
-    goto :goto_1a
+    goto :goto_1c
 
-    :cond_23
-    move/from16 v25, v11
+    :cond_27
+    move/from16 v25, v12
 
-    goto :goto_19
+    goto :goto_1b
 
-    :cond_24
-    const/4 v11, 0x0
+    :cond_28
+    const/4 v12, 0x0
 
     const/4 v14, 0x0
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    :goto_19
+    :goto_1b
     const/4 v0, 0x0
 
     const/4 v2, 0x0
-
-    const/16 v24, 0x0
 
     const/4 v9, 0x0
 
     const/4 v15, 0x0
 
+    const/16 v24, 0x0
+
     move/from16 v3, v24
 
-    move/from16 v28, v11
+    move/from16 v28, v12
 
-    move v11, v2
+    move v12, v0
+
+    move v0, v2
 
     move/from16 v2, v28
 
-    :goto_1a
-    const-wide/32 v24, 0x80000
+    :goto_1c
+    const-wide/32 v24, 0x100000
 
     and-long v24, v4, v24
 
@@ -1200,135 +1304,137 @@
 
     cmp-long v24, v24, v26
 
-    move/from16 v25, v7
+    if-eqz v24, :cond_2a
 
-    const/4 v7, 0x4
+    move/from16 v24, v7
 
-    if-eqz v24, :cond_26
+    sget v7, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
-    move-object/from16 v24, v13
+    move-object/from16 v25, v10
 
-    sget v13, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
+    const/4 v10, 0x4
 
-    if-lt v13, v7, :cond_25
+    if-lt v7, v10, :cond_29
 
     iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderLogo:Landroid/widget/ImageView;
 
     invoke-virtual {v7}, Landroid/widget/ImageView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v13
+    move-result-object v10
 
-    move-object/from16 v26, v6
+    move-object/from16 v26, v11
 
-    const v6, 0x7f12001e
+    const v11, 0x7f12001e
 
-    invoke-virtual {v13, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatImage(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v10}, Lcom/google/android/gms/common/internal/Preconditions;->formatImage(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
-    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v10}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    goto :goto_1b
+    goto :goto_1d
 
-    :cond_25
-    move-object/from16 v26, v6
+    :cond_29
+    move-object/from16 v26, v11
 
-    :goto_1b
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderOptionsMenu:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    :goto_1d
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderOptionsMenu:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
-    iget-object v7, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v10, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v10}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v10
 
-    const v13, 0x7f0800a9
+    const v11, 0x7f0800aa
 
-    invoke-static {v7, v13}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v10, v11}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v10}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderOptionsMenu:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderOptionsMenu:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
-    iget-object v7, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v10, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v10}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v7
+    move-result-object v10
 
-    const v13, 0x7f120026
+    const v11, 0x7f120026
 
-    invoke-virtual {v7, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIconDescription(Ljava/lang/String;)V
+    invoke-virtual {v7, v10}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIconDescription(Ljava/lang/String;)V
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderShare:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderShare:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
-    iget-object v7, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v10, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v10}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v10
 
-    const v13, 0x7f0800aa
+    const v11, 0x7f0800ab
 
-    invoke-static {v7, v13}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v10, v11}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v10}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderShare:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderShare:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
-    iget-object v7, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v10, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v7}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v10}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v7
+    move-result-object v10
 
-    const v13, 0x7f120028
+    const v11, 0x7f120028
 
-    invoke-virtual {v7, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIconDescription(Ljava/lang/String;)V
+    invoke-virtual {v7, v10}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIconDescription(Ljava/lang/String;)V
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
 
-    sget-object v7, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v10, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-virtual {v6, v7}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;->setShowDetails(Ljava/lang/Boolean;)V
+    invoke-virtual {v7, v10}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;->setShowDetails(Ljava/lang/Boolean;)V
 
-    goto :goto_1c
+    goto :goto_1e
 
-    :cond_26
-    move-object/from16 v26, v6
+    :cond_2a
+    move/from16 v24, v7
 
-    move-object/from16 v24, v13
+    move-object/from16 v25, v10
 
-    :goto_1c
-    and-long v6, v4, v18
+    move-object/from16 v26, v11
+
+    :goto_1e
+    and-long v10, v4, v18
 
     const-wide/16 v18, 0x0
 
-    cmp-long v6, v6, v18
+    cmp-long v7, v10, v18
 
-    if-eqz v6, :cond_27
+    if-eqz v7, :cond_2b
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
+    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
 
-    iget-object v6, v6, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v7, v7, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v6, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v7, v0}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTestDone:Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardDoneBinding;
 
@@ -1346,46 +1452,48 @@
 
     iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v0, v11}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v12}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTestResult:Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;
 
     invoke-virtual {v0, v9}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
 
-    :cond_27
-    const-wide/32 v6, 0x90000
+    :cond_2b
+    const-wide/32 v9, 0x120000
 
-    and-long/2addr v6, v4
+    and-long/2addr v9, v4
 
-    const-wide/16 v18, 0x0
+    const-wide/16 v11, 0x0
 
-    cmp-long v0, v6, v18
+    cmp-long v0, v9, v11
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2c
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
 
     invoke-virtual {v0, v8}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;->setSettingsViewModel(Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;)V
 
-    :cond_28
-    const-wide/32 v6, 0xc0000
+    :cond_2c
+    const-wide/32 v7, 0x180000
 
-    and-long/2addr v6, v4
+    and-long/2addr v7, v4
 
-    cmp-long v0, v6, v18
+    cmp-long v0, v7, v11
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2d
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainRisk:Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
 
-    invoke-virtual {v0, v10}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;->setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+    move-object/from16 v3, v17
 
-    :cond_29
-    and-long v6, v4, v20
+    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;->setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
 
-    cmp-long v0, v6, v18
+    :cond_2d
+    and-long v7, v4, v20
 
-    if-eqz v0, :cond_2a
+    cmp-long v0, v7, v11
+
+    if-eqz v0, :cond_2e
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTestFetching:Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardFetchingBinding;
 
@@ -1393,27 +1501,27 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_2a
-    const-wide/32 v2, 0xa0080
+    :cond_2e
+    const-wide/32 v2, 0x140080
 
     and-long/2addr v2, v4
 
-    cmp-long v0, v2, v18
+    cmp-long v0, v2, v11
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2f
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTestPositive:Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;
 
-    iput-object v12, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->mRegisterDate:Ljava/util/Date;
+    iput-object v13, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->mRegisterDate:Ljava/util/Date;
 
-    :cond_2b
+    :cond_2f
     and-long v2, v4, v22
 
-    cmp-long v0, v2, v18
+    cmp-long v0, v2, v11
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_30
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTestUnregistered:Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBinding;
 
@@ -1421,33 +1529,31 @@
 
     invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_2c
-    if-eqz v17, :cond_32
+    :cond_30
+    if-eqz v16, :cond_36
 
     sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
     const/4 v2, 0x4
 
-    if-lt v0, v2, :cond_2d
+    if-lt v0, v2, :cond_31
 
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTracingHeadline:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    :cond_31
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTracingHeadline:Landroid/widget/TextView;
 
     move-object/from16 v6, v26
 
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    :cond_2d
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTracingHeadline:Landroid/widget/TextView;
-
-    move-object/from16 v13, v24
-
-    invoke-static {v0, v13}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_35
 
-    if-eqz v16, :cond_2f
+    if-eqz v25, :cond_33
 
     sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -1459,7 +1565,7 @@
 
     move-result-object v3
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
@@ -1473,9 +1579,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_32
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
@@ -1485,10 +1591,10 @@
 
     invoke-virtual {v0, v2}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_1d
+    goto :goto_1f
 
-    :cond_2e
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Integer;->intValue()I
+    :cond_32
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
@@ -1504,17 +1610,17 @@
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
 
-    :cond_2f
-    :goto_1d
+    :cond_33
+    :goto_1f
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
-    invoke-static/range {v25 .. v25}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v24 .. v24}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_34
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_36
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -1546,9 +1652,9 @@
 
     invoke-virtual {v2, v3, v4, v6}, Lcom/airbnb/lottie/LottieDrawable;->addValueCallback(Lcom/airbnb/lottie/model/KeyPath;Ljava/lang/Object;Lcom/airbnb/lottie/value/LottieValueCallback;)V
 
-    goto :goto_1e
+    goto :goto_20
 
-    :cond_30
+    :cond_34
     const-string v0, "view"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
@@ -1557,7 +1663,7 @@
 
     throw v0
 
-    :cond_31
+    :cond_35
     const/4 v0, 0x0
 
     const-string v2, "view"
@@ -1566,8 +1672,8 @@
 
     throw v0
 
-    :cond_32
-    :goto_1e
+    :cond_36
+    :goto_20
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentMainBinding;->mainHeaderShare:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -1806,7 +1912,7 @@
 
     monitor-enter p0
 
-    const-wide/32 v0, 0x80000
+    const-wide/32 v0, 0x100000
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
@@ -1899,7 +2005,7 @@
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/32 v1, 0x8000
+    const-wide/32 v1, 0x10000
 
     or-long/2addr p1, v1
 
@@ -1934,7 +2040,7 @@
     :try_start_1
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x4000
+    const-wide/32 v1, 0x8000
 
     or-long/2addr p1, v1
 
@@ -1969,7 +2075,7 @@
     :try_start_2
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x2000
+    const-wide/16 v1, 0x4000
 
     or-long/2addr p1, v1
 
@@ -2004,7 +2110,7 @@
     :try_start_3
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x1000
+    const-wide/16 v1, 0x2000
 
     or-long/2addr p1, v1
 
@@ -2039,7 +2145,7 @@
     :try_start_4
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x800
+    const-wide/16 v1, 0x1000
 
     or-long/2addr p1, v1
 
@@ -2074,7 +2180,7 @@
     :try_start_5
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x400
+    const-wide/16 v1, 0x800
 
     or-long/2addr p1, v1
 
@@ -2100,7 +2206,7 @@
     return v0
 
     :pswitch_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBinding;
+    check-cast p2, Landroidx/lifecycle/LiveData;
 
     if-nez p3, :cond_6
 
@@ -2109,7 +2215,7 @@
     :try_start_6
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x200
+    const-wide/16 v1, 0x400
 
     or-long/2addr p1, v1
 
@@ -2135,7 +2241,7 @@
     return v0
 
     :pswitch_7
-    check-cast p2, Landroidx/lifecycle/LiveData;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBinding;
 
     if-nez p3, :cond_7
 
@@ -2144,7 +2250,7 @@
     :try_start_7
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x100
+    const-wide/16 v1, 0x200
 
     or-long/2addr p1, v1
 
@@ -2179,7 +2285,7 @@
     :try_start_8
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x80
+    const-wide/16 v1, 0x100
 
     or-long/2addr p1, v1
 
@@ -2205,7 +2311,7 @@
     return v0
 
     :pswitch_9
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBinding;
+    check-cast p2, Landroidx/lifecycle/LiveData;
 
     if-nez p3, :cond_9
 
@@ -2214,7 +2320,7 @@
     :try_start_9
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x40
+    const-wide/16 v1, 0x80
 
     or-long/2addr p1, v1
 
@@ -2240,7 +2346,7 @@
     return v0
 
     :pswitch_a
-    check-cast p2, Landroidx/lifecycle/LiveData;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBinding;
 
     if-nez p3, :cond_a
 
@@ -2249,7 +2355,7 @@
     :try_start_a
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x20
+    const-wide/16 v1, 0x40
 
     or-long/2addr p1, v1
 
@@ -2275,7 +2381,7 @@
     return v0
 
     :pswitch_b
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    check-cast p2, Landroidx/lifecycle/LiveData;
 
     if-nez p3, :cond_b
 
@@ -2284,7 +2390,7 @@
     :try_start_b
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x10
+    const-wide/16 v1, 0x20
 
     or-long/2addr p1, v1
 
@@ -2310,7 +2416,7 @@
     return v0
 
     :pswitch_c
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
     if-nez p3, :cond_c
 
@@ -2319,7 +2425,7 @@
     :try_start_c
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x8
+    const-wide/16 v1, 0x10
 
     or-long/2addr p1, v1
 
@@ -2345,7 +2451,7 @@
     return v0
 
     :pswitch_d
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;
 
     if-nez p3, :cond_d
 
@@ -2354,7 +2460,7 @@
     :try_start_d
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x4
+    const-wide/16 v1, 0x8
 
     or-long/2addr p1, v1
 
@@ -2380,7 +2486,7 @@
     return v0
 
     :pswitch_e
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBinding;
 
     if-nez p3, :cond_e
 
@@ -2389,7 +2495,7 @@
     :try_start_e
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x2
+    const-wide/16 v1, 0x4
 
     or-long/2addr p1, v1
 
@@ -2415,7 +2521,7 @@
     return v0
 
     :pswitch_f
-    check-cast p2, Landroidx/lifecycle/LiveData;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
     if-nez p3, :cond_f
 
@@ -2424,7 +2530,7 @@
     :try_start_f
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x1
+    const-wide/16 v1, 0x2
 
     or-long/2addr p1, v1
 
@@ -2449,10 +2555,46 @@
     :goto_f
     return v0
 
+    :pswitch_10
+    check-cast p2, Landroidx/lifecycle/LiveData;
+
+    if-nez p3, :cond_10
+
+    monitor-enter p0
+
+    :try_start_10
+    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
+
+    const-wide/16 v1, 0x1
+
+    or-long/2addr p1, v1
+
+    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
+
+    monitor-exit p0
+
+    goto :goto_10
+
+    :catchall_10
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_10
+
+    throw p1
+
+    :cond_10
+    move v0, v1
+
+    :goto_10
+    return v0
+
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_10
         :pswitch_f
         :pswitch_e
         :pswitch_d
@@ -2538,7 +2680,7 @@
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/32 v2, 0x10000
+    const-wide/32 v2, 0x20000
 
     or-long/2addr v0, v2
 
@@ -2548,7 +2690,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -2577,7 +2719,7 @@
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/32 v2, 0x20000
+    const-wide/32 v2, 0x40000
 
     or-long/2addr v0, v2
 
@@ -2587,7 +2729,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x1c
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -2616,7 +2758,7 @@
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;->mDirtyFlags:J
 
-    const-wide/32 v2, 0x40000
+    const-wide/32 v2, 0x80000
 
     or-long/2addr v0, v2
 
@@ -2626,7 +2768,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

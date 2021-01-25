@@ -881,7 +881,7 @@
 
     invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v6, v6, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->lt10Dbm_:I
+    iget v6, v6, Lde/rki/coronawarnapp/server/protocols/ApplicationConfigurationOuterClass$RiskScoreParameters$AttenuationRiskParameter;->le10Dbm_:I
 
     const/4 v7, 0x7
 
@@ -1091,7 +1091,7 @@
 
     aput-object v6, v4, v5
 
-    const-string v5, "durationAtAttenuationThresholds[0] (%s) must be <= than durationAtAttenuationThresholds[0] (%s)"
+    const-string v5, "durationAtAttenuationThresholds[0] (%s) must be <= than durationAtAttenuationThresholds[1] (%s)"
 
     invoke-static {v1, v5, v4}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 

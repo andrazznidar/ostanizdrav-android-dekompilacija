@@ -93,11 +93,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f1201c7
+    const v6, 0x7f1201eb
 
-    const v7, 0x7f1201c5
+    const v7, 0x7f1201e9
 
-    const v8, 0x7f1201c6
+    const v8, 0x7f1201ea
 
     const/4 v9, 0x0
 
@@ -126,7 +126,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f1201be
+    const v7, 0x7f1201df
 
     if-eqz v2, :cond_1
 
@@ -138,7 +138,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -158,7 +158,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -194,7 +194,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -243,11 +243,11 @@
 
     invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v5, 0x7f1201bd
+    const v5, 0x7f1201de
 
-    const v6, 0x7f1201bb
+    const v6, 0x7f1201dc
 
-    const v7, 0x7f1201bc
+    const v7, 0x7f1201dd
 
     const/4 v8, 0x0
 
@@ -522,7 +522,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1201d7
+    const v0, 0x7f1201fb
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -538,11 +538,11 @@
 
     invoke-direct {v8, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionQRCodeScanFragment$showInvalidScanDialog$invalidScanDialogInstance$2;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionQRCodeScanFragment;)V
 
-    const v2, 0x7f1201d9
+    const v2, 0x7f1201fd
 
-    const v3, 0x7f1201d6
+    const v3, 0x7f1201fa
 
-    const v4, 0x7f1201d8
+    const v4, 0x7f1201fc
 
     move-object v0, v9
 
@@ -734,7 +734,7 @@
 
     invoke-static {v6, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v3, 0x7f1201de
+    const v3, 0x7f120202
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -750,11 +750,11 @@
 
     invoke-direct {v13, v2, v0}, L-$$LambdaGroup$ks$y5AzvCSKxZbtk-U5pjkW1LIe-VA;-><init>(ILjava/lang/Object;)V
 
-    const v7, 0x7f1201e0
+    const v7, 0x7f120204
 
-    const v8, 0x7f1201dd
+    const v8, 0x7f120201
 
-    const v9, 0x7f1201df
+    const v9, 0x7f120203
 
     move-object v5, v1
 
@@ -781,11 +781,11 @@
 
     invoke-direct {v3, v0}, Lde/rki/coronawarnapp/ui/submission/SubmissionQRCodeScanFragment$showCameraPermissionDeniedDialog$permissionDeniedDialog$1;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionQRCodeScanFragment;)V
 
-    const v16, 0x7f1201dc
+    const v16, 0x7f120200
 
-    const v17, 0x7f1201da
+    const v17, 0x7f1201fe
 
-    const v18, 0x7f1201db
+    const v18, 0x7f1201ff
 
     const/16 v19, 0x0
 

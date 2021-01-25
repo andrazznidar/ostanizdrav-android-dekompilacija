@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090287
+    const v1, 0x7f090293
 
     const/4 v2, 0x5
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090286
+    const v1, 0x7f090292
 
     const/4 v2, 0x6
 
@@ -89,10 +89,10 @@
 
     :array_1
     .array-data 4
-        0x7f0c005e
-        0x7f0c005e
-        0x7f0c006a
-        0x7f0c007d
+        0x7f0c005f
+        0x7f0c005f
+        0x7f0c006c
+        0x7f0c007f
     .end array-data
 .end method
 
@@ -236,7 +236,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201b5
+    const v2, 0x7f1201d6
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -252,7 +252,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800b5
+    const v2, 0x7f0800b6
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -278,7 +278,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1201b8
+    const v3, 0x7f1201d9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -294,7 +294,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0800d6
+    const v3, 0x7f0800d9
 
     invoke-static {v2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 

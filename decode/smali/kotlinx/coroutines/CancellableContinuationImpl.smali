@@ -183,7 +183,7 @@
 
     invoke-direct {v1, v3, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :cond_2
     :goto_1
@@ -237,7 +237,7 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p2, v0}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
@@ -385,13 +385,13 @@
 
     if-eqz v3, :cond_9
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->isCancellableMode(I)Z
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->isCancellableMode(I)Z
 
     move-result v3
 
     iget v4, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->isCancellableMode(I)Z
+    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->isCancellableMode(I)Z
 
     move-result v4
 
@@ -442,7 +442,7 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->resume(Lkotlinx/coroutines/DispatchedTask;Lkotlin/coroutines/Continuation;I)V
+    invoke-static {p0, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->resume(Lkotlinx/coroutines/DispatchedTask;Lkotlin/coroutines/Continuation;I)V
 
     :cond_8
     invoke-virtual {p1}, Lkotlinx/coroutines/EventLoop;->processUnconfinedEvent()Z
@@ -478,7 +478,7 @@
     throw v0
 
     :cond_9
-    invoke-static {p0, v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->resume(Lkotlinx/coroutines/DispatchedTask;Lkotlin/coroutines/Continuation;I)V
+    invoke-static {p0, v0, p1}, Lkotlin/collections/MapsKt___MapsKt;->resume(Lkotlinx/coroutines/DispatchedTask;Lkotlin/coroutines/Continuation;I)V
 
     :goto_2
     return-void
@@ -815,7 +815,7 @@
 
     invoke-direct {v1, v2, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_1
     return-void
@@ -940,14 +940,128 @@
     throw p2
 .end method
 
+.method public final resumeImpl(Ljava/lang/Object;I)Lkotlinx/coroutines/CancelledContinuation;
+    .locals 3
+
+    :goto_0
+    iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->_state:Ljava/lang/Object;
+
+    instance-of v1, v0, Lkotlinx/coroutines/NotCompleted;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lkotlinx/coroutines/CancellableContinuationImpl;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v1, p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChildIfNonResuable()V
+
+    invoke-virtual {p0, p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->dispatchResume(I)V
+
+    return-object v2
+
+    :cond_1
+    instance-of p2, v0, Lkotlinx/coroutines/CancelledContinuation;
+
+    if-eqz p2, :cond_3
+
+    check-cast v0, Lkotlinx/coroutines/CancelledContinuation;
+
+    if-eqz v0, :cond_2
+
+    sget-object p2, Lkotlinx/coroutines/CancelledContinuation;->_resumed$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p2, v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_3
+
+    return-object v0
+
+    :cond_2
+    throw v2
+
+    :cond_3
+    const-string p2, "Already resumed, but proposed with update "
+
+    invoke-static {p2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public resumeUndispatched(Lkotlinx/coroutines/CoroutineDispatcher;Ljava/lang/Object;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CoroutineDispatcher;",
+            "TT;)V"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
+
+    instance-of v1, v0, Lkotlinx/coroutines/DispatchedContinuation;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    move-object v0, v2
+
+    :cond_0
+    check-cast v0, Lkotlinx/coroutines/DispatchedContinuation;
+
+    if-eqz v0, :cond_1
+
+    iget-object v2, v0, Lkotlinx/coroutines/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
+
+    :cond_1
+    if-ne v2, p1, :cond_2
+
+    const/4 p1, 0x2
+
+    goto :goto_0
+
+    :cond_2
+    iget p1, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
+
+    :goto_0
+    invoke-virtual {p0, p2, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeImpl(Ljava/lang/Object;I)Lkotlinx/coroutines/CancelledContinuation;
+
+    return-void
+.end method
+
 .method public resumeWith(Ljava/lang/Object;)V
-    .locals 5
+    .locals 3
 
     invoke-static {p1}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v0
-
-    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
@@ -963,84 +1077,22 @@
     move-result-object v0
 
     :cond_1
-    const/4 p1, 0x2
+    const/4 p1, 0x0
+
+    const/4 v1, 0x2
 
     new-instance v2, Lkotlinx/coroutines/CompletedExceptionally;
 
-    invoke-direct {v2, v0, v1, p1}, Lkotlinx/coroutines/CompletedExceptionally;-><init>(Ljava/lang/Throwable;ZI)V
+    invoke-direct {v2, v0, p1, v1}, Lkotlinx/coroutines/CompletedExceptionally;-><init>(Ljava/lang/Throwable;ZI)V
 
     move-object p1, v2
 
     :goto_0
     iget v0, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    :goto_1
-    iget-object v2, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->_state:Ljava/lang/Object;
+    invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeImpl(Ljava/lang/Object;I)Lkotlinx/coroutines/CancelledContinuation;
 
-    instance-of v3, v2, Lkotlinx/coroutines/NotCompleted;
-
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_3
-
-    sget-object v3, Lkotlinx/coroutines/CancellableContinuationImpl;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v3, p0, v2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChildIfNonResuable()V
-
-    invoke-virtual {p0, v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->dispatchResume(I)V
-
-    goto :goto_2
-
-    :cond_3
-    instance-of v0, v2, Lkotlinx/coroutines/CancelledContinuation;
-
-    if-eqz v0, :cond_5
-
-    check-cast v2, Lkotlinx/coroutines/CancelledContinuation;
-
-    if-eqz v2, :cond_4
-
-    sget-object v0, Lkotlinx/coroutines/CancelledContinuation;->_resumed$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v2, v1, v3}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    :goto_2
     return-void
-
-    :cond_4
-    throw v4
-
-    :cond_5
-    const-string v0, "Already resumed, but proposed with update "
-
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public final setupCancellation()V
@@ -1201,7 +1253,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v1 .. v6}, Lcom/google/android/gms/common/internal/Preconditions;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object v0
 
@@ -1254,7 +1306,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1272,7 +1324,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

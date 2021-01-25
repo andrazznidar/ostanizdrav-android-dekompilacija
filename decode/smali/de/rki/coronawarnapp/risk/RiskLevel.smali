@@ -40,6 +40,8 @@
 
 .field public static final enum UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
 
+.field public static final enum UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
+
 .field public static final UNSUCCESSFUL_RISK_LEVELS:[Lde/rki/coronawarnapp/risk/RiskLevel;
 
 
@@ -49,9 +51,9 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 11
+    .locals 13
 
-    const/4 v0, 0x6
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lde/rki/coronawarnapp/risk/RiskLevel;
 
@@ -117,17 +119,29 @@
 
     new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    const-string v2, "UNDETERMINED"
+    const-string v2, "UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL"
 
     const/4 v8, 0x5
 
-    const/16 v9, 0x2329
+    invoke-direct {v1, v2, v8, v8}, Lde/rki/coronawarnapp/risk/RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    invoke-direct {v1, v2, v8, v9}, Lde/rki/coronawarnapp/risk/RiskLevel;-><init>(Ljava/lang/String;II)V
+    sput-object v1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    aput-object v1, v0, v8
+
+    new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    const-string v2, "UNDETERMINED"
+
+    const/4 v9, 0x6
+
+    const/16 v10, 0x2329
+
+    invoke-direct {v1, v2, v9, v10}, Lde/rki/coronawarnapp/risk/RiskLevel;-><init>(Ljava/lang/String;II)V
 
     sput-object v1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNDETERMINED:Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    aput-object v1, v0, v8
+    aput-object v1, v0, v9
 
     sput-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->$VALUES:[Lde/rki/coronawarnapp/risk/RiskLevel;
 
@@ -139,7 +153,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->Companion:Lde/rki/coronawarnapp/risk/RiskLevel$Companion;
 
-    new-array v0, v6, [Lde/rki/coronawarnapp/risk/RiskLevel;
+    new-array v0, v7, [Lde/rki/coronawarnapp/risk/RiskLevel;
 
     sget-object v1, Lde/rki/coronawarnapp/risk/RiskLevel;->UNDETERMINED:Lde/rki/coronawarnapp/risk/RiskLevel;
 
@@ -149,25 +163,29 @@
 
     aput-object v2, v0, v4
 
-    sget-object v9, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v10, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    aput-object v9, v0, v5
+    aput-object v10, v0, v5
+
+    sget-object v11, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevel;
+
+    aput-object v11, v0, v6
 
     sput-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->UNSUCCESSFUL_RISK_LEVELS:[Lde/rki/coronawarnapp/risk/RiskLevel;
 
     new-array v0, v4, [Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    sget-object v10, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v12, Lde/rki/coronawarnapp/risk/RiskLevel;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    aput-object v10, v0, v3
+    aput-object v12, v0, v3
 
     sput-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->HIGH_RISK_LEVELS:[Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    new-array v0, v8, [Lde/rki/coronawarnapp/risk/RiskLevel;
+    new-array v0, v9, [Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    sget-object v8, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_INITIAL:Lde/rki/coronawarnapp/risk/RiskLevel;
+    sget-object v9, Lde/rki/coronawarnapp/risk/RiskLevel;->UNKNOWN_RISK_INITIAL:Lde/rki/coronawarnapp/risk/RiskLevel;
 
-    aput-object v8, v0, v3
+    aput-object v9, v0, v3
 
     aput-object v2, v0, v4
 
@@ -175,9 +193,11 @@
 
     aput-object v2, v0, v5
 
-    aput-object v9, v0, v6
+    aput-object v10, v0, v6
 
-    aput-object v1, v0, v7
+    aput-object v11, v0, v7
+
+    aput-object v1, v0, v8
 
     sput-object v0, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_RISK_LEVELS:[Lde/rki/coronawarnapp/risk/RiskLevel;
 

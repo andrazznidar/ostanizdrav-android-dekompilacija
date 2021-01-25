@@ -6,31 +6,35 @@
 # instance fields
 .field public final informationAboutContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
+.field public final informationAboutEasyLanguage:Landroid/widget/TextView;
+
 .field public final informationAboutHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
 .field public final informationAboutHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
     iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutEasyLanguage:Landroid/widget/TextView;
 
-    if-eqz p10, :cond_0
+    iput-object p11, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    iput-object p0, p10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
-    iput-object p11, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
-
-    if-eqz p11, :cond_1
+    if-eqz p11, :cond_0
 
     iput-object p0, p11, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_0
+    iput-object p12, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;->informationAboutHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+
+    if-eqz p12, :cond_1
+
+    iput-object p0, p12, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
     return-void

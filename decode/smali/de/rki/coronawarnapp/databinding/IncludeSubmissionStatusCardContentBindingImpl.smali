@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a0
+    const v1, 0x7f0902ac
 
     const/4 v2, 0x5
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a2
+    const v1, 0x7f0902ae
 
     const/4 v2, 0x6
 
@@ -159,7 +159,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 14
+    .locals 15
 
     monitor-enter p0
 
@@ -186,7 +186,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_10
 
     sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
@@ -194,9 +194,11 @@
 
     move-result-object v2
 
-    const/4 v3, 0x5
+    const/4 v3, 0x6
 
-    const/4 v5, 0x4
+    const/4 v5, 0x5
+
+    const/4 v6, 0x4
 
     if-nez v4, :cond_0
 
@@ -205,11 +207,13 @@
     :cond_0
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v6
+    move-result v7
 
-    if-eq v6, v5, :cond_2
+    if-eq v7, v6, :cond_2
 
-    if-eq v6, v3, :cond_1
+    if-eq v7, v5, :cond_1
+
+    if-eq v7, v3, :cond_1
 
     :goto_0
     const-string v2, ""
@@ -217,41 +221,41 @@
     goto :goto_1
 
     :cond_1
-    const v6, 0x7f1201ee
+    const v7, 0x7f120212
 
-    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v6, "appContext.getString(R.s\u2026us_card_subtitle_invalid)"
+    const-string v7, "appContext.getString(R.s\u2026us_card_subtitle_invalid)"
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_2
-    const v6, 0x7f1201ef
+    const v7, 0x7f120213
 
-    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v6, "appContext.getString(R.s\u2026s_card_subtitle_negative)"
+    const-string v7, "appContext.getString(R.s\u2026s_card_subtitle_negative)"
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_1
-    sget-object v6, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    sget-object v7, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
-    move-result-object v6
+    move-result-object v7
 
-    const-string v7, "appContext.getString(R.s\u2026status_card_body_pending)"
+    const-string v8, "appContext.getString(R.s\u2026status_card_body_pending)"
 
-    const v8, 0x7f1201e5
+    const v9, 0x7f120209
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
     if-nez v4, :cond_3
 
@@ -260,64 +264,66 @@
     :cond_3
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v10
+    move-result v11
 
-    if-eq v10, v9, :cond_6
+    if-eq v11, v10, :cond_6
 
-    if-eq v10, v5, :cond_5
+    if-eq v11, v6, :cond_5
 
-    if-eq v10, v3, :cond_4
+    if-eq v11, v5, :cond_4
+
+    if-eq v11, v3, :cond_4
 
     :goto_2
-    invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_3
 
     :cond_4
-    const v7, 0x7f1201e3
+    const v8, 0x7f120207
 
-    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    const-string v7, "appContext.getString(R.s\u2026status_card_body_invalid)"
+    const-string v8, "appContext.getString(R.s\u2026status_card_body_invalid)"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_3
 
     :cond_5
-    const v7, 0x7f1201e4
+    const v8, 0x7f120208
 
-    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    const-string v7, "appContext.getString(R.s\u2026tatus_card_body_negative)"
+    const-string v8, "appContext.getString(R.s\u2026tatus_card_body_negative)"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_3
 
     :cond_6
-    invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_3
-    sget-object v7, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v8, 0x7f08009f
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_3
+    sget-object v8, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const v9, 0x7f0800a0
 
     if-nez v4, :cond_7
 
@@ -326,206 +332,202 @@
     :cond_7
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v10
+    move-result v11
 
-    const v11, 0x7f0800a2
+    const v12, 0x7f0800a3
 
-    if-eq v10, v9, :cond_b
+    packed-switch v11, :pswitch_data_0
 
-    const/4 v12, 0x2
+    goto :goto_4
 
-    if-eq v10, v12, :cond_a
-
-    const/4 v12, 0x3
-
-    if-eq v10, v12, :cond_a
-
-    if-eq v10, v5, :cond_9
-
-    if-eq v10, v3, :cond_8
-
-    :goto_4
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    goto :goto_5
-
-    :cond_8
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    goto :goto_5
-
-    :cond_9
-    const v8, 0x7f0800a0
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    goto :goto_5
-
-    :cond_a
-    invoke-virtual {v7, v11}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    goto :goto_5
-
-    :cond_b
-    invoke-virtual {v7, v11}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    :goto_5
-    sget-object v8, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    :pswitch_0
+    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
 
-    if-nez v4, :cond_c
+    goto :goto_5
 
-    goto :goto_6
+    :pswitch_1
+    const v9, 0x7f0800a1
 
-    :cond_c
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result v10
+    move-result-object v8
 
-    if-eq v10, v5, :cond_e
+    goto :goto_5
 
-    if-eq v10, v3, :cond_d
+    :pswitch_2
+    invoke-virtual {v8, v12}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    :goto_6
-    const v10, 0x7f06005c
+    move-result-object v8
 
-    invoke-virtual {v8, v10}, Landroid/content/Context;->getColor(I)I
+    goto :goto_5
 
-    move-result v8
+    :pswitch_3
+    invoke-virtual {v8, v12}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    goto :goto_7
+    move-result-object v8
 
-    :cond_d
-    const v10, 0x7f060060
+    goto :goto_5
 
-    invoke-virtual {v8, v10}, Landroid/content/Context;->getColor(I)I
+    :goto_4
+    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result v8
+    move-result-object v8
 
-    goto :goto_7
-
-    :cond_e
-    const v10, 0x7f06005f
-
-    invoke-virtual {v8, v10}, Landroid/content/Context;->getColor(I)I
-
-    move-result v8
-
-    :goto_7
-    sget-object v10, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    :goto_5
+    sget-object v9, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v9
 
-    const-string v11, "appContext.getString(R.s\u2026tatus_card_title_pending)"
+    if-nez v4, :cond_8
 
-    const v12, 0x7f1201f2
+    goto :goto_6
 
-    if-nez v4, :cond_f
+    :cond_8
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v11
+
+    if-eq v11, v6, :cond_a
+
+    if-eq v11, v5, :cond_9
+
+    if-eq v11, v3, :cond_9
+
+    :goto_6
+    const v11, 0x7f06005c
+
+    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
+
+    move-result v9
+
+    goto :goto_7
+
+    :cond_9
+    const v11, 0x7f060060
+
+    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
+
+    move-result v9
+
+    goto :goto_7
+
+    :cond_a
+    const v11, 0x7f06005f
+
+    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
+
+    move-result v9
+
+    :goto_7
+    sget-object v11, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    const-string v12, "appContext.getString(R.s\u2026tatus_card_title_pending)"
+
+    const v13, 0x7f120216
+
+    if-nez v4, :cond_b
 
     goto :goto_8
 
-    :cond_f
+    :cond_b
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v13
+    move-result v14
 
-    if-eq v13, v9, :cond_11
+    if-eq v14, v10, :cond_d
 
-    if-eq v13, v5, :cond_10
+    if-eq v14, v6, :cond_c
 
-    if-eq v13, v3, :cond_10
+    if-eq v14, v5, :cond_c
+
+    if-eq v14, v3, :cond_c
 
     :goto_8
-    invoke-virtual {v10, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v11, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    invoke-static {v9, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_9
-
-    :cond_10
-    const v9, 0x7f1201f0
-
-    invoke-virtual {v10, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v10, "appContext.getString(R.s\u2026tus_card_title_available)"
-
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_9
 
-    :cond_11
-    invoke-virtual {v10, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    :cond_c
+    const v10, 0x7f120214
 
-    move-result-object v9
+    invoke-virtual {v11, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-static {v9, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v10
+
+    const-string v11, "appContext.getString(R.s\u2026tus_card_title_available)"
+
+    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_9
+
+    :cond_d
+    invoke-virtual {v11, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_9
-    if-nez v4, :cond_12
+    if-nez v4, :cond_e
 
     goto :goto_a
 
-    :cond_12
+    :cond_e
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
-    if-eq v4, v5, :cond_13
+    if-eq v4, v6, :cond_f
 
-    if-eq v4, v3, :cond_13
+    if-eq v4, v5, :cond_f
+
+    if-eq v4, v3, :cond_f
 
     :goto_a
     const/16 v1, 0x8
 
-    :cond_13
+    :cond_f
     move-object v3, v2
 
     move v2, v1
 
-    move v1, v8
+    move v1, v9
 
     goto :goto_b
 
-    :cond_14
+    :cond_10
     move-object v3, v2
 
-    move-object v6, v3
+    move-object v7, v3
 
-    move-object v7, v6
+    move-object v8, v7
 
-    move-object v9, v7
+    move-object v10, v8
 
     move v2, v1
 
     :goto_b
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_11
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentBody:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v7}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v8}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentSubtitle:Landroid/widget/TextView;
 
@@ -541,9 +543,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentTitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v9}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v10}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_15
+    :cond_11
     return-void
 
     :catchall_0
@@ -555,6 +557,18 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public hasPendingBindings()Z

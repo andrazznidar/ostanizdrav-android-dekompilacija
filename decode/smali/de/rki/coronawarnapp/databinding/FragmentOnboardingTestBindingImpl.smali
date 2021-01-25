@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0057
+    const v6, 0x7f0c0058
 
     aput v6, v4, v5
 
@@ -79,7 +79,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c6
+    const v1, 0x7f0900c7
 
     const/4 v2, 0x4
 
@@ -87,7 +87,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09019d
+    const v1, 0x7f0901a1
 
     const/4 v2, 0x5
 
@@ -95,7 +95,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d1
+    const v1, 0x7f0900d2
 
     const/4 v2, 0x6
 
@@ -103,7 +103,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/4 v2, 0x7
 
@@ -111,7 +111,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0900d0
 
     const/16 v2, 0x8
 
@@ -119,7 +119,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cb
+    const v1, 0x7f0900cc
 
     const/16 v2, 0x9
 
@@ -301,7 +301,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200f5
+    const v2, 0x7f120103
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -317,7 +317,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200f6
+    const v2, 0x7f120104
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -349,7 +349,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200f7
+    const v2, 0x7f120105
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -365,7 +365,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1200f8
+    const v2, 0x7f120106
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c007d
+    const v6, 0x7f0c007f
 
     aput v6, v4, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902bb
+    const v1, 0x7f0902c7
 
     const/4 v2, 0x3
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902c1
+    const v1, 0x7f0902cd
 
     const/4 v2, 0x4
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902bd
+    const v1, 0x7f0902c9
 
     const/4 v2, 0x5
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902bf
+    const v1, 0x7f0902cb
 
     const/4 v2, 0x6
 

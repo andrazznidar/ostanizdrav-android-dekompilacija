@@ -217,64 +217,64 @@
 
 .field public static final ic_keyboard_arrow_right_black_24dp:I = 0x7f080099
 
-.field public static final ic_menu_arrow_down_black_24dp:I = 0x7f0800ab
+.field public static final ic_menu_arrow_down_black_24dp:I = 0x7f0800ac
 
-.field public static final ic_menu_arrow_up_black_24dp:I = 0x7f0800ac
+.field public static final ic_menu_arrow_up_black_24dp:I = 0x7f0800ad
 
-.field public static final ic_mtrl_checked_circle:I = 0x7f0800ad
+.field public static final ic_mtrl_checked_circle:I = 0x7f0800ae
 
-.field public static final ic_mtrl_chip_checked_black:I = 0x7f0800ae
+.field public static final ic_mtrl_chip_checked_black:I = 0x7f0800af
 
-.field public static final ic_mtrl_chip_checked_circle:I = 0x7f0800af
+.field public static final ic_mtrl_chip_checked_circle:I = 0x7f0800b0
 
-.field public static final ic_mtrl_chip_close_circle:I = 0x7f0800b0
+.field public static final ic_mtrl_chip_close_circle:I = 0x7f0800b1
 
-.field public static final mtrl_dialog_background:I = 0x7f0800e7
+.field public static final mtrl_dialog_background:I = 0x7f0800ea
 
-.field public static final mtrl_dropdown_arrow:I = 0x7f0800e8
+.field public static final mtrl_dropdown_arrow:I = 0x7f0800eb
 
-.field public static final mtrl_ic_arrow_drop_down:I = 0x7f0800e9
+.field public static final mtrl_ic_arrow_drop_down:I = 0x7f0800ec
 
-.field public static final mtrl_ic_arrow_drop_up:I = 0x7f0800ea
+.field public static final mtrl_ic_arrow_drop_up:I = 0x7f0800ed
 
-.field public static final mtrl_ic_cancel:I = 0x7f0800eb
+.field public static final mtrl_ic_cancel:I = 0x7f0800ee
 
-.field public static final mtrl_ic_error:I = 0x7f0800ec
+.field public static final mtrl_ic_error:I = 0x7f0800ef
 
-.field public static final mtrl_popupmenu_background:I = 0x7f0800ed
+.field public static final mtrl_popupmenu_background:I = 0x7f0800f0
 
-.field public static final mtrl_popupmenu_background_dark:I = 0x7f0800ee
+.field public static final mtrl_popupmenu_background_dark:I = 0x7f0800f1
 
-.field public static final mtrl_tabs_default_indicator:I = 0x7f0800ef
+.field public static final mtrl_tabs_default_indicator:I = 0x7f0800f2
 
-.field public static final navigation_empty_icon:I = 0x7f0800f0
+.field public static final navigation_empty_icon:I = 0x7f0800f3
 
-.field public static final notification_action_background:I = 0x7f0800f1
+.field public static final notification_action_background:I = 0x7f0800f4
 
-.field public static final notification_bg:I = 0x7f0800f2
+.field public static final notification_bg:I = 0x7f0800f5
 
-.field public static final notification_bg_low:I = 0x7f0800f3
+.field public static final notification_bg_low:I = 0x7f0800f6
 
-.field public static final notification_bg_low_normal:I = 0x7f0800f4
+.field public static final notification_bg_low_normal:I = 0x7f0800f7
 
-.field public static final notification_bg_low_pressed:I = 0x7f0800f5
+.field public static final notification_bg_low_pressed:I = 0x7f0800f8
 
-.field public static final notification_bg_normal:I = 0x7f0800f6
+.field public static final notification_bg_normal:I = 0x7f0800f9
 
-.field public static final notification_bg_normal_pressed:I = 0x7f0800f7
+.field public static final notification_bg_normal_pressed:I = 0x7f0800fa
 
-.field public static final notification_icon_background:I = 0x7f0800f8
+.field public static final notification_icon_background:I = 0x7f0800fb
 
-.field public static final notification_template_icon_bg:I = 0x7f0800f9
+.field public static final notification_template_icon_bg:I = 0x7f0800fc
 
-.field public static final notification_template_icon_low_bg:I = 0x7f0800fa
+.field public static final notification_template_icon_low_bg:I = 0x7f0800fd
 
-.field public static final notification_tile_bg:I = 0x7f0800fb
+.field public static final notification_tile_bg:I = 0x7f0800fe
 
-.field public static final notify_panel_notification_icon_bg:I = 0x7f0800fc
+.field public static final notify_panel_notification_icon_bg:I = 0x7f0800ff
 
-.field public static final test_custom_background:I = 0x7f080104
+.field public static final test_custom_background:I = 0x7f080107
 
-.field public static final tooltip_frame_dark:I = 0x7f080105
+.field public static final tooltip_frame_dark:I = 0x7f080108
 
-.field public static final tooltip_frame_light:I = 0x7f080106
+.field public static final tooltip_frame_light:I = 0x7f080109

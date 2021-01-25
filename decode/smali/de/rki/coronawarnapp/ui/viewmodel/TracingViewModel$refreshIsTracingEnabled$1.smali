@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.ui.viewmodel.TracingViewModel$refreshIsTracingEnabled$1"
     f = "TracingViewModel.kt"
     l = {
-        0x92
+        0xc6
     }
     m = "invokeSuspend"
 .end annotation

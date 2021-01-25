@@ -617,7 +617,7 @@
 
     iget-object v3, p1, Lorg/joda/time/chrono/LimitChronology;->iLowerLimit:Lorg/joda/time/DateTime;
 
-    invoke-static {v1, v3}, Lkotlinx/coroutines/TimeSourceKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -627,7 +627,7 @@
 
     iget-object p1, p1, Lorg/joda/time/chrono/LimitChronology;->iUpperLimit:Lorg/joda/time/DateTime;
 
-    invoke-static {v1, p1}, Lkotlinx/coroutines/TimeSourceKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

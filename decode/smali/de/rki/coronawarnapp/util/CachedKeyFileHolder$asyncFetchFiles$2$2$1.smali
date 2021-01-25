@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.util.CachedKeyFileHolder$asyncFetchFiles$2$2$1"
     f = "CachedKeyFileHolder.kt"
     l = {
-        0x54
+        0x56
     }
     m = "invokeSuspend"
 .end annotation
@@ -178,7 +178,7 @@
 
     invoke-direct {v2, v1, v3, v4}, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;-><init>(Lde/rki/coronawarnapp/http/WebRequestBuilder;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1, v2, p0}, Lcom/google/android/gms/common/internal/Preconditions;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, p0}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

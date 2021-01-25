@@ -83,7 +83,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1200ff
+    const v0, 0x7f12010d
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -95,11 +95,11 @@
 
     invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$showCancelDialog$dialog$1;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;)V
 
-    const v2, 0x7f120101
+    const v2, 0x7f12010f
 
-    const v3, 0x7f1200fe
+    const v3, 0x7f12010c
 
-    const v4, 0x7f120100
+    const v4, 0x7f12010e
 
     const/4 v8, 0x0
 
@@ -273,7 +273,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v2 .. v7}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 .end method

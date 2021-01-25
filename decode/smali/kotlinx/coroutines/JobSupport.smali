@@ -243,7 +243,7 @@
 
     move-object v0, p0
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/common/internal/Preconditions;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p1
 
@@ -2879,7 +2879,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3257,7 +3257,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/common/internal/Preconditions;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object v0
 

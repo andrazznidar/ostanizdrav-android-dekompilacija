@@ -105,7 +105,7 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -217,7 +217,7 @@
 .method public final resumeWith(Ljava/lang/Object;)V
     .locals 1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->toState(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toState(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -355,11 +355,11 @@
     :cond_2
     if-eqz p3, :cond_3
 
-    invoke-static {p3, p2, p0}, Lcom/google/android/gms/common/internal/Preconditions;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p3, p2, p0}, Lkotlin/collections/MapsKt___MapsKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -377,7 +377,7 @@
     throw v1
 
     :cond_4
-    invoke-static {p3, p2, p0}, Lkotlinx/coroutines/TimeSourceKt;->startCoroutineCancellable(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    invoke-static {p3, p2, p0}, Lkotlin/collections/MapsKt___MapsKt;->startCoroutineCancellable(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
     :cond_5
     :goto_0

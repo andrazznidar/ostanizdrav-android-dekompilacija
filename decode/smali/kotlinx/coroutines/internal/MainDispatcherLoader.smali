@@ -42,15 +42,15 @@
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {}, L$$ServiceLoaderMethods;->$load2()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load1()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v1
 

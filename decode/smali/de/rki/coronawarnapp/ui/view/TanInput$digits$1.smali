@@ -71,7 +71,7 @@
 
     const-class v0, Landroid/widget/TextView;
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
+    invoke-static {p1, v0}, Lkotlin/collections/MapsKt___MapsKt;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 

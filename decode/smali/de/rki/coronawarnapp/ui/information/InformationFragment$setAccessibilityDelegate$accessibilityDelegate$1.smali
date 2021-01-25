@@ -34,7 +34,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragment$setAccessibilityDelegate$accessibilityDelegate$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragment;
 
-    const v0, 0x7f120064
+    const v0, 0x7f120065
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

@@ -147,7 +147,7 @@
 
     move-result-object v9
 
-    invoke-static {v9}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v9}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v9
 
@@ -528,7 +528,7 @@
 
     new-instance v0, Lokhttp3/internal/http/RealResponseBody;
 
-    invoke-static {v3}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v3}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v3
 

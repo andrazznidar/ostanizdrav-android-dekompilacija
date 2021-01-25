@@ -53,7 +53,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1201ad
+    const v0, 0x7f1201ce
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -65,11 +65,11 @@
 
     invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionDispatcherFragment$checkForDataPrivacyPermission$cameraPermissionRationaleDialogInstance$1;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionDispatcherFragment;)V
 
-    const v2, 0x7f1201af
+    const v2, 0x7f1201d0
 
-    const v3, 0x7f1201ac
+    const v3, 0x7f1201cd
 
-    const v4, 0x7f1201ae
+    const v4, 0x7f1201cf
 
     const/4 v8, 0x0
 

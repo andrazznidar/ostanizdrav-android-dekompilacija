@@ -128,7 +128,7 @@
 
     invoke-direct {v4}, Lokio/BlackholeSink;-><init>()V
 
-    invoke-static {v4}, Lkotlinx/coroutines/TimeSourceKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v4
 

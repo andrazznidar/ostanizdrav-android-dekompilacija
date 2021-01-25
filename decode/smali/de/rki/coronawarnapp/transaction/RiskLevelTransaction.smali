@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction\n*L\n1#1,552:1\n*E\n"
+    value = "SMAP\nRiskLevelTransaction.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTransaction.kt\nde/rki/coronawarnapp/transaction/RiskLevelTransaction\n*L\n1#1,543:1\n*E\n"
 .end annotation
 
 
@@ -185,7 +185,9 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return p0
 
@@ -313,128 +315,8 @@
     return-object p1
 .end method
 
-.method public final getLastExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    instance-of v0, p1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;
-
-    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;-><init>(Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->label:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
-
-    sget-object p1, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->Companion:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;->getExposureSummaryRepository()Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
-
-    move-result-object p1
-
-    iput-object p0, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->L$0:Ljava/lang/Object;
-
-    iput v3, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getLastExposureSummary$1;->label:I
-
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->getLatestExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_1
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "used exposure summary for the risk level calculation: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-object p1
-.end method
-
 .method public final getNewExposureSummary(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -480,23 +362,15 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->label:I
 
-    const/4 v3, 0x2
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v4, :cond_2
+    if-eqz v2, :cond_2
 
     if-ne v2, v3, :cond_1
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$2:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    check-cast v1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$1:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$0:Ljava/lang/Object;
 
@@ -504,7 +378,7 @@
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -516,19 +390,6 @@
     throw p1
 
     :cond_2
-    iget-object v2, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$1:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/String;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$0:Ljava/lang/Object;
-
-    check-cast v4, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
@@ -537,7 +398,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_4
 
     sget-object v2, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
@@ -545,83 +406,55 @@
 
     iput-object p1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$1:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->label:I
 
     invoke-virtual {v2, p1, v0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncGetExposureSummary(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-ne v2, v1, :cond_4
+    if-ne v0, v1, :cond_3
 
     return-object v1
 
-    :cond_4
-    move-object v4, p0
+    :cond_3
+    move-object v1, p1
 
-    move-object v6, v2
-
-    move-object v2, p1
-
-    move-object p1, v6
+    move-object p1, v0
 
     :goto_1
     check-cast p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
 
-    sget-object v5, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->Companion:Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository$Companion;->getExposureSummaryRepository()Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v5
+    sget-object v2, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
 
-    iput-object v4, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$0:Ljava/lang/Object;
+    iget-object v2, v2, Lde/rki/coronawarnapp/transaction/Transaction;->transactionId:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object v2, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$1:Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iput-object p1, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->L$2:Ljava/lang/Object;
+    const-string v2, " - generated new exposure summary with "
 
-    iput v3, v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction$getNewExposureSummary$1;->label:I
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, p1, v0}, Lde/rki/coronawarnapp/storage/ExposureSummaryRepository;->insertExposureSummaryEntity(Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    if-ne v0, v1, :cond_5
+    const/4 v1, 0x0
 
-    return-object v1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    :cond_5
-    move-object v1, p1
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    :goto_2
-    new-instance p1, Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    return-object p1
 
-    sget-object v0, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/transaction/Transaction;->transactionId:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, " - generated new exposure summary with "
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-object v1
-
-    :cond_6
+    :cond_4
     new-instance p1, Lde/rki/coronawarnapp/exception/RiskLevelCalculationException;
 
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -777,7 +610,9 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-static {p2, v2}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v6, p2, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p2, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->lastCalculatedRiskLevelScoreForRollback:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -821,7 +656,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f12012a
+    const v7, 0x7f12013e
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1101,6 +936,8 @@
 
     const/4 v2, 0x1
 
+    const/4 v3, 0x0
+
     if-eqz v1, :cond_0
 
     sget-object v1, Lde/rki/coronawarnapp/risk/RiskLevel;->LOW_RISK_LEVELS:[Lde/rki/coronawarnapp/risk/RiskLevel;
@@ -1134,38 +971,38 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-eqz v0, :cond_3
 
     sget-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
-    sget-object v0, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    const v1, 0x7f1200da
+    const v4, 0x7f1200dd
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "CoronaWarnApplication.ge\u2026string.notification_body)"
+    const-string v4, "CoronaWarnApplication.ge\u2026string.notification_body)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    sget-boolean v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->isAppInForeground:Z
+    sget-boolean v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->isAppInForeground:Z
 
-    if-nez v1, :cond_3
+    if-nez v4, :cond_3
 
-    const-string v1, ""
+    const-string v4, ""
 
-    invoke-static {v1, v0, v2}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-virtual {v0, v4, v1, v2, v3}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     :cond_3
     sget-object v0, Lde/rki/coronawarnapp/storage/RiskLevelRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/RiskLevelRepository;
@@ -1194,7 +1031,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120122
+    const v4, 0x7f120136
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1226,7 +1063,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120123
+    const v3, 0x7f120137
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

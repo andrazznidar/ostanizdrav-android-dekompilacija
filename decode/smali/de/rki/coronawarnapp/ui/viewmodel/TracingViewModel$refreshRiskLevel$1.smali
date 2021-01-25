@@ -25,8 +25,8 @@
     c = "de.rki.coronawarnapp.ui.viewmodel.TracingViewModel$refreshRiskLevel$1"
     f = "TracingViewModel.kt"
     l = {
-        0x5f,
-        0x6b
+        0x93,
+        0x9f
     }
     m = "invokeSuspend"
 .end annotation
@@ -124,7 +124,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 14
 
     sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
@@ -282,7 +282,7 @@
 
     move-result-object v10
 
-    invoke-static {v10}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->isBackgroundJobEnabled(Landroid/content/Context;)Z
+    invoke-static {v10}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->autoModeEnabled(Landroid/content/Context;)Z
 
     move-result v10
 
@@ -302,7 +302,9 @@
 
     new-array v12, v8, [Ljava/lang/Object;
 
-    invoke-static {v11, v12}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v13, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v13, v11, v12}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -320,7 +322,9 @@
 
     new-array v12, v8, [Ljava/lang/Object;
 
-    invoke-static {v11, v12}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v13, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v13, v11, v12}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -338,7 +342,9 @@
 
     new-array v8, v8, [Ljava/lang/Object;
 
-    invoke-static {v11, v8}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v12, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v12, v11, v8}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz v7, :cond_6
 

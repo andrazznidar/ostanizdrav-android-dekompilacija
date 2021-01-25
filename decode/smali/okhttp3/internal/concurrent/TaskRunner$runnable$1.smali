@@ -93,7 +93,7 @@
 
     const-string v5, "starting"
 
-    invoke-static {v1, v0, v5}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v5}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_1
     :try_start_1
@@ -121,7 +121,7 @@
 
     move-result-object v2
 
-    invoke-static {v4, v5}, Lkotlinx/coroutines/TimeSourceKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v4, v5}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -131,7 +131,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v0, v2}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -170,7 +170,7 @@
 
     move-result-object v2
 
-    invoke-static {v6, v7}, Lkotlinx/coroutines/TimeSourceKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v6, v7}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -180,7 +180,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v0, v2}, Lkotlinx/coroutines/TimeSourceKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     throw v5

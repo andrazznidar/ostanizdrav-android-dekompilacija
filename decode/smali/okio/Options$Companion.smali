@@ -783,7 +783,7 @@
 
     check-cast v15, Ljava/lang/Comparable;
 
-    invoke-static {v15, v8}, Lcom/google/android/gms/common/internal/Preconditions;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    invoke-static {v15, v8}, Lkotlin/collections/MapsKt___MapsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v15
 

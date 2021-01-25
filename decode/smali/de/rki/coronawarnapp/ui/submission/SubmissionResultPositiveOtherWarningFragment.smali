@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionResultPositiveOtherWarningFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionResultPositiveOtherWarningFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment\n+ 2 Event.kt\nde/rki/coronawarnapp/util/EventKt\n+ 3 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,186:1\n27#2,2:187\n78#3,3:189\n78#3,3:192\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionResultPositiveOtherWarningFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment\n*L\n126#1,2:187\n34#1,3:189\n35#1,3:192\n*E\n"
+    value = "SMAP\nSubmissionResultPositiveOtherWarningFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionResultPositiveOtherWarningFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment\n+ 2 Event.kt\nde/rki/coronawarnapp/util/EventKt\n+ 3 FragmentViewModelLazy.kt\nandroidx/fragment/app/FragmentViewModelLazyKt\n*L\n1#1,197:1\n27#2,2:198\n78#3,3:200\n78#3,3:203\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionResultPositiveOtherWarningFragment.kt\nde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment\n*L\n126#1,2:198\n34#1,3:200\n35#1,3:203\n*E\n"
 .end annotation
 
 
@@ -118,11 +118,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f1201c1
+    const v6, 0x7f1201e2
 
-    const v7, 0x7f1201bf
+    const v7, 0x7f1201e0
 
-    const v8, 0x7f1201c0
+    const v8, 0x7f1201e1
 
     const/4 v9, 0x0
 
@@ -155,11 +155,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f1201c4
+    const v6, 0x7f1201e5
 
-    const v7, 0x7f1201c2
+    const v7, 0x7f1201e3
 
-    const v8, 0x7f1201c3
+    const v8, 0x7f1201e4
 
     const/4 v9, 0x0
 
@@ -188,7 +188,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f1201be
+    const v7, 0x7f1201df
 
     if-eqz v2, :cond_2
 
@@ -200,7 +200,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -220,7 +220,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -256,7 +256,7 @@
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v10, 0x7f1201bd
+    const v10, 0x7f1201de
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -276,7 +276,7 @@
 
     invoke-static {v11, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v12, 0x7f1201bc
+    const v12, 0x7f1201dd
 
     const/4 v13, 0x0
 
@@ -305,11 +305,11 @@
 
     invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v5, 0x7f1201bd
+    const v5, 0x7f1201de
 
-    const v6, 0x7f1201bb
+    const v6, 0x7f1201dc
 
-    const v7, 0x7f1201bc
+    const v7, 0x7f1201dd
 
     const/4 v8, 0x0
 
@@ -350,6 +350,31 @@
     const/4 v0, 0x0
 
     throw v0
+.end method
+
+.method public static final access$navigateToSubmissionDoneFragment(Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;)V
+    .locals 2
+
+    if-eqz p0, :cond_0
+
+    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+
+    move-result-object p0
+
+    new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
+
+    const v1, 0x7f090062
+
+    invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->doNavigate(Landroidx/navigation/NavController;Landroidx/navigation/NavDirections;)V
+
+    return-void
+
+    :cond_0
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 .method public static final access$navigateToSubmissionResultFragment(Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;)V
@@ -513,7 +538,17 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    xor-int/2addr v1, v2
+
+    if-eqz v1, :cond_1
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;->getSubmissionViewModel()Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;
 
@@ -537,14 +572,67 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v2 .. v7}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    return-void
+    goto :goto_0
 
     :cond_0
     throw v0
 
     :cond_1
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionResultPositiveOtherWarningFragment;->getSubmissionViewModel()Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    sget-object p1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;
+
+    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->stopWorkScheduler()V
+
+    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    const-string p1, "editor"
+
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline3(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    sget-object v0, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x7f12012e
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+
+    move-result-object p1
+
+    new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
+
+    const v1, 0x7f090062
+
+    invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->doNavigate(Landroidx/navigation/NavController;Landroidx/navigation/NavDirections;)V
+
+    :goto_0
+    return-void
+
+    :cond_2
+    throw v0
+
+    :cond_3
     const-string p1, "keys"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V

@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090283
+    const v1, 0x7f09028f
 
     const/4 v2, 0x5
 
@@ -75,8 +75,8 @@
 
     :array_1
     .array-data 4
-        0x7f0c0069
-        0x7f0c007d
+        0x7f0c006b
+        0x7f0c007f
     .end array-data
 .end method
 
@@ -213,7 +213,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201b7
+    const v2, 0x7f1201d8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

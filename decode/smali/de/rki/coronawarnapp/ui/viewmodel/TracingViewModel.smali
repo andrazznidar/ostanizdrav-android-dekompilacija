@@ -20,10 +20,30 @@
     .end annotation
 .end field
 
+.field public final additionalInformationVisibility:Landroidx/lifecycle/MediatorLiveData;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/lifecycle/MediatorLiveData<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final daysSinceLastExposure:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/lifecycle/LiveData<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final informationBodyNoticeVisibility:Landroidx/lifecycle/MediatorLiveData;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/lifecycle/MediatorLiveData<",
             "Ljava/lang/Integer;",
             ">;"
         }
@@ -70,6 +90,8 @@
     .end annotation
 .end field
 
+.field public final riskDetailPresenter:Lde/rki/coronawarnapp/ui/riskdetails/DefaultRiskDetailPresenter;
+
 .field public final riskLevel:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -113,9 +135,15 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 4
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/riskdetails/DefaultRiskDetailPresenter;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/ui/riskdetails/DefaultRiskDetailPresenter;-><init>()V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->riskDetailPresenter:Lde/rki/coronawarnapp/ui/riskdetails/DefaultRiskDetailPresenter;
 
     sget-object v0, Lde/rki/coronawarnapp/storage/RiskLevelRepository;->INSTANCE:Lde/rki/coronawarnapp/storage/RiskLevelRepository;
 
@@ -165,6 +193,66 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->isRefreshing:Landroidx/lifecycle/LiveData;
 
+    new-instance v0, Landroidx/lifecycle/MediatorLiveData;
+
+    invoke-direct {v0}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->additionalInformationVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    new-instance v0, Landroidx/lifecycle/MediatorLiveData;
+
+    invoke-direct {v0}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->informationBodyNoticeVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->additionalInformationVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->riskLevel:Landroidx/lifecycle/LiveData;
+
+    new-instance v2, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3, p0}, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->additionalInformationVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->matchedKeyCount:Landroidx/lifecycle/LiveData;
+
+    new-instance v2, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v3, p0}, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->informationBodyNoticeVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->riskLevel:Landroidx/lifecycle/LiveData;
+
+    new-instance v2, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v3, p0}, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->informationBodyNoticeVisibility:Landroidx/lifecycle/MediatorLiveData;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->matchedKeyCount:Landroidx/lifecycle/LiveData;
+
+    new-instance v2, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v2, v3, p0}, L-$$LambdaGroup$js$JSCAhbLQxhBnMY4iEsYQVlAenOo;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+
     return-void
 .end method
 
@@ -189,7 +277,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/common/internal/Preconditions;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 .end method

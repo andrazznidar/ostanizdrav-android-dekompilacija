@@ -1,17 +1,9 @@
 .class public final Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-nearby@@18.0.2-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary$ExposureSummaryBuilder;
-    }
-.end annotation
 
 
 # static fields

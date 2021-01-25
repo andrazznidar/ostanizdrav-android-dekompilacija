@@ -47,7 +47,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0050
+    const v6, 0x7f0c0051
 
     aput v6, v4, v5
 
@@ -85,7 +85,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0900d0
 
     const/16 v2, 0x8
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cb
+    const v1, 0x7f0900cc
 
     const/16 v2, 0x9
 
@@ -101,7 +101,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f0900c9
 
     const/16 v2, 0xa
 
@@ -120,11 +120,11 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c0064
-        0x7f0c0064
-        0x7f0c007b
-        0x7f0c007c
+        0x7f0c0052
+        0x7f0c0066
+        0x7f0c0066
+        0x7f0c007d
+        0x7f0c007e
     .end array-data
 .end method
 
@@ -453,7 +453,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f12016a
+    const v5, 0x7f120186
 
     invoke-static {v4, v5, v9}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
 
@@ -461,7 +461,7 @@
 
     const v5, 0x7f08008f
 
-    const v13, 0x7f0800c4
+    const v13, 0x7f0800c6
 
     invoke-static {v0, v5, v13}, Lcom/google/android/gms/common/internal/Preconditions;->formatDrawable(ZII)Landroid/graphics/drawable/Drawable;
 
@@ -471,13 +471,13 @@
 
     move-result-object v13
 
-    const v14, 0x7f12016e
+    const v14, 0x7f12018a
 
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v14
 
-    const v15, 0x7f12016d
+    const v15, 0x7f120189
 
     invoke-static {v13, v15, v14}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
 
@@ -487,7 +487,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f120166
+    const v15, 0x7f120182
 
     invoke-static {v14, v15, v9}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
 
@@ -579,7 +579,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120168
+    const v5, 0x7f120184
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -595,7 +595,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120169
+    const v5, 0x7f120185
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -611,7 +611,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f12016b
+    const v5, 0x7f120187
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -627,7 +627,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0800c9
+    const v5, 0x7f0800cc
 
     invoke-static {v4, v5}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -647,7 +647,7 @@
 
     iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v5, 0x7f120172
+    const v5, 0x7f12018e
 
     invoke-static {v4, v5, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
@@ -671,7 +671,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120170
+    const v5, 0x7f12018c
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -699,7 +699,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120171
+    const v5, 0x7f12018d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1296,7 +1296,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

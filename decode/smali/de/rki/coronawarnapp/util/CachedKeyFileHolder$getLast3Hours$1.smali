@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.util.CachedKeyFileHolder"
     f = "CachedKeyFileHolder.kt"
     l = {
-        0x90
+        0x9d
     }
     m = "getLast3Hours"
 .end annotation

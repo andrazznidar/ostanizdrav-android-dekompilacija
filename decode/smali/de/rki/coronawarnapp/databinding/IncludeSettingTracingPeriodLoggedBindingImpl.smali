@@ -45,7 +45,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c0060
+    const v5, 0x7f0c0062
 
     aput v5, v2, v4
 
@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingTracingPeriodLoggedBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901f1
+    const v1, 0x7f0901fc
 
     const/4 v2, 0x2
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingTracingPeriodLoggedBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901ee
+    const v1, 0x7f0901f9
 
     const/4 v2, 0x3
 
@@ -404,7 +404,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

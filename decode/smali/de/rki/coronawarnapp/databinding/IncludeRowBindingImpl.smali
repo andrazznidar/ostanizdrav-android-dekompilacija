@@ -47,7 +47,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c004f
+    const v4, 0x7f0c0050
 
     aput v4, v2, v5
 
@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09014c
+    const v1, 0x7f090150
 
     const/4 v2, 0x4
 
@@ -67,7 +67,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c7
+    const v1, 0x7f0900c8
 
     const/4 v2, 0x5
 
@@ -75,7 +75,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090218
+    const v1, 0x7f090223
 
     const/4 v2, 0x6
 
@@ -420,7 +420,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xc
+    const/16 p1, 0xd
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -471,7 +471,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x1d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

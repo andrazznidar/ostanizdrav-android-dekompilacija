@@ -440,26 +440,13 @@
 
     iput-object v5, v2, Landroidx/core/app/NotificationCompat$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
-    iget-object v5, v8, Landroidx/core/app/NotificationCompat$Builder;->mStyle:Landroidx/core/app/NotificationCompat$Style;
-
-    if-eq v5, v2, :cond_7
-
-    iput-object v2, v8, Landroidx/core/app/NotificationCompat$Builder;->mStyle:Landroidx/core/app/NotificationCompat$Style;
-
-    iget-object v5, v2, Landroidx/core/app/NotificationCompat$Style;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
-
-    if-eq v5, v8, :cond_7
-
-    iput-object v8, v2, Landroidx/core/app/NotificationCompat$Style;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
-
     invoke-virtual {v8, v2}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
-    :cond_7
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->isWearable(Landroid/content/Context;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_8
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -477,7 +464,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     sget v0, Lcom/google/android/gms/base/R$drawable;->common_full_open_on_phone:I
 
@@ -497,12 +484,12 @@
 
     goto :goto_3
 
-    :cond_8
+    :cond_7
     iput-object p3, v8, Landroidx/core/app/NotificationCompat$Builder;->mContentIntent:Landroid/app/PendingIntent;
 
     goto :goto_3
 
-    :cond_9
+    :cond_8
     const v2, 0x108008a
 
     iget-object v5, v8, Landroidx/core/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
@@ -544,13 +531,13 @@
 
     move-result p3
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_c
 
     invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAtLeastO()Z
 
     move-result p3
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_b
 
     sget-object p3, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa:Ljava/lang/Object;
 
@@ -571,7 +558,7 @@
 
     move-result-object p1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_9
 
     new-instance v0, Landroid/app/NotificationChannel;
 
@@ -583,7 +570,7 @@
 
     goto :goto_4
 
-    :cond_a
+    :cond_9
     invoke-virtual {v0}, Landroid/app/NotificationChannel;->getName()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -592,13 +579,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_a
 
     invoke-virtual {v0, p1}, Landroid/app/NotificationChannel;->setName(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v7, v0}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    :cond_b
+    :cond_a
     :goto_4
     iput-object p3, v8, Landroidx/core/app/NotificationCompat$Builder;->mChannelId:Ljava/lang/String;
 
@@ -614,32 +601,32 @@
 
     throw p1
 
-    :cond_c
+    :cond_b
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_d
+    :cond_c
     :goto_5
     invoke-virtual {v8}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p1
 
-    if-eq p2, v3, :cond_e
+    if-eq p2, v3, :cond_d
 
-    if-eq p2, v1, :cond_e
+    if-eq p2, v1, :cond_d
 
     const/4 p3, 0x3
 
-    if-eq p2, p3, :cond_e
+    if-eq p2, p3, :cond_d
 
     const p2, 0x9b6d
 
     goto :goto_6
 
-    :cond_e
+    :cond_d
     const/16 p2, 0x28c4
 
     sget-object p3, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->sCanceledAvailabilityNotification:Ljava/util/concurrent/atomic/AtomicBoolean;

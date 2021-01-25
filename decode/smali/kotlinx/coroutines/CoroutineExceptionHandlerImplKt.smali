@@ -19,15 +19,15 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    invoke-static {}, L$$ServiceLoaderMethods;->$load1()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load2()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v0
 

@@ -22,14 +22,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWebRequestBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WebRequestBuilder.kt\nde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2\n*L\n1#1,193:1\n*E\n"
+    value = "SMAP\nWebRequestBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WebRequestBuilder.kt\nde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2\n*L\n1#1,259:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.http.WebRequestBuilder$asyncGetKeyFilesFromServer$2"
     f = "WebRequestBuilder.kt"
     l = {
-        0x68
+        0x6c
     }
     m = "invokeSuspend"
 .end annotation
@@ -135,7 +135,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -143,11 +143,13 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
 
     if-eqz v1, :cond_1
 
-    if-ne v1, v3, :cond_0
+    if-ne v1, v4, :cond_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$5:Ljava/lang/Object;
 
@@ -157,21 +159,21 @@
 
     check-cast v1, Ljava/lang/Throwable;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$3:Ljava/lang/Object;
+    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$3:Ljava/lang/Object;
 
-    check-cast v3, Ljava/io/Closeable;
+    check-cast v4, Ljava/io/Closeable;
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$2:Ljava/lang/Object;
+    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$2:Ljava/lang/Object;
 
-    check-cast v4, Ljava/io/File;
+    check-cast v5, Ljava/io/File;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$1:Ljava/lang/Object;
+    iget-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$1:Ljava/lang/Object;
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$0:Ljava/lang/Object;
+    iget-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$0:Ljava/lang/Object;
 
-    check-cast v5, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v6, Lkotlinx/coroutines/CoroutineScope;
 
     :try_start_0
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
@@ -203,47 +205,54 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->$url:Ljava/lang/String;
+    iget-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->$url:Ljava/lang/String;
 
-    sget-object v5, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v6, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {v5, v6}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "(this as java.lang.String).getBytes(charset)"
+    const-string v6, "(this as java.lang.String).getBytes(charset)"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4}, Ljava/util/UUID;->nameUUIDFromBytes([B)Ljava/util/UUID;
+    invoke-static {v5}, Ljava/util/UUID;->nameUUIDFromBytes([B)Ljava/util/UUID;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v4, ".zip"
+    const-string v5, ".zip"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    new-instance v4, Ljava/io/File;
+    new-instance v5, Ljava/io/File;
 
-    sget-object v5, Lde/rki/coronawarnapp/storage/FileStorageHelper;->INSTANCE:Lde/rki/coronawarnapp/storage/FileStorageHelper;
+    sget-object v6, Lde/rki/coronawarnapp/storage/FileStorageHelper;->INSTANCE:Lde/rki/coronawarnapp/storage/FileStorageHelper;
 
-    sget-object v5, Lde/rki/coronawarnapp/storage/FileStorageHelper;->keyExportDirectory:Ljava/io/File;
+    sget-object v6, Lde/rki/coronawarnapp/storage/FileStorageHelper;->keyExportDirectory:Ljava/io/File;
 
-    invoke-direct {v4, v5, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v5, v6, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    new-instance v5, Ljava/io/FileOutputStream;
+    invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
-    invoke-direct {v5, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    move-result v6
 
-    const/4 v6, 0x0
+    if-eqz v6, :cond_2
+
+    invoke-virtual {v5}, Ljava/io/File;->delete()Z
+
+    :cond_2
+    new-instance v6, Ljava/io/FileOutputStream;
+
+    invoke-direct {v6, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
     :try_start_1
     new-instance v7, Ljava/lang/StringBuilder;
@@ -268,7 +277,9 @@
 
     new-array v8, v2, [Ljava/lang/Object;
 
-    invoke-static {v7, v8}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v9, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v9, v7, v8}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v7, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->this$0:Lde/rki/coronawarnapp/http/WebRequestBuilder;
 
@@ -280,32 +291,32 @@
 
     iput-object v1, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$1:Ljava/lang/Object;
 
-    iput-object v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$2:Ljava/lang/Object;
+    iput-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$2:Ljava/lang/Object;
 
-    iput-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$3:Ljava/lang/Object;
+    iput-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$3:Ljava/lang/Object;
 
-    iput-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$4:Ljava/lang/Object;
+    iput-object v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$4:Ljava/lang/Object;
 
-    iput-object v5, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$5:Ljava/lang/Object;
+    iput-object v6, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->L$5:Ljava/lang/Object;
 
-    iput v3, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->label:I
+    iput v4, p0, Lde/rki/coronawarnapp/http/WebRequestBuilder$asyncGetKeyFilesFromServer$2;->label:I
 
     invoke-interface {v7, v8, p0}, Lde/rki/coronawarnapp/http/service/DistributionService;->getKeyFiles(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_3
 
     return-object v0
 
-    :cond_2
-    move-object v0, v5
+    :cond_3
+    move-object v1, v3
 
-    move-object v3, v0
+    move-object v0, v6
 
-    move-object v1, v6
+    move-object v4, v0
 
     :goto_0
     :try_start_2
@@ -314,45 +325,79 @@
     invoke-virtual {p1}, Lokhttp3/ResponseBody;->byteStream()Ljava/io/InputStream;
 
     move-result-object p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    const/16 v5, 0x2000
+    const/16 v6, 0x2000
 
-    invoke-static {p1, v0, v5}, Lcom/google/android/gms/common/internal/Preconditions;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+    :try_start_3
+    invoke-static {p1, v0, v6}, Lkotlin/collections/MapsKt___MapsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+
+    move-result-wide v6
+
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-direct {v0, v6, v7}, Ljava/lang/Long;-><init>(J)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :try_start_4
+    invoke-static {p1, v3}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     const-string p1, "key file request successful."
 
     new-array v0, v2, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-static {v3, v1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-virtual {v2, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    return-object v4
+    invoke-static {v4, v1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    return-object v5
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    :catchall_2
+    move-exception v1
+
+    :try_start_6
+    invoke-static {p1, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    throw v1
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     :goto_1
-    move-object v5, v3
+    move-object v6, v4
 
     goto :goto_2
 
-    :catchall_1
+    :catchall_3
     move-exception p1
 
     :goto_2
-    :try_start_3
+    :try_start_7
     throw p1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
-    :catchall_2
+    :catchall_4
     move-exception v0
 
-    invoke-static {v5, p1}, Lcom/google/android/gms/common/internal/Preconditions;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v6, p1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v0
 
-    :cond_3
+    :cond_4
     new-instance p1, Lkotlin/TypeCastException;
 
     const-string v0, "null cannot be cast to non-null type java.lang.String"

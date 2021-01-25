@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,7 +198,9 @@
 
     new-array v2, v7, [Ljava/lang/Object;
 
-    invoke-static {p1, v2}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v8, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v8, p1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
 
@@ -250,7 +252,9 @@
 
     new-array v8, v7, [Ljava/lang/Object;
 
-    invoke-static {v2, v8}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v9, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v9, v2, v8}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
@@ -271,11 +275,11 @@
     :cond_6
     move-object v5, p0
 
-    move-object v9, v2
+    move-object v10, v2
 
     move-object v2, p1
 
-    move-object p1, v9
+    move-object p1, v10
 
     :goto_2
     check-cast p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;
@@ -324,7 +328,9 @@
 
     new-array v8, v7, [Ljava/lang/Object;
 
-    invoke-static {p1, v8}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v9, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v9, p1, v8}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;->INSTANCE:Lde/rki/coronawarnapp/transaction/RiskLevelTransaction;
 
@@ -350,7 +356,9 @@
 
     new-array v0, v7, [Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Ltimber/log/Timber;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_5
 

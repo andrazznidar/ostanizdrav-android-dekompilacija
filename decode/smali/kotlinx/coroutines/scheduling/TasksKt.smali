@@ -31,7 +31,7 @@
 
     const/4 v8, 0x0
 
-    invoke-static/range {v0 .. v8}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
+    invoke-static/range {v0 .. v8}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
 
     move-result-wide v0
 
@@ -49,7 +49,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     sget v0, Lkotlinx/coroutines/internal/SystemPropsKt__SystemPropsKt;->AVAILABLE_PROCESSORS:I
 
@@ -75,7 +75,7 @@
 
     const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
 
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 
@@ -103,7 +103,7 @@
 
     const-string v3, "kotlinx.coroutines.scheduler.max.pool.size"
 
-    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v3 .. v8}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 
@@ -123,7 +123,7 @@
 
     const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
 
-    invoke-static/range {v1 .. v9}, Lkotlinx/coroutines/TimeSourceKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
+    invoke-static/range {v1 .. v9}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
 
     move-result-wide v1
 

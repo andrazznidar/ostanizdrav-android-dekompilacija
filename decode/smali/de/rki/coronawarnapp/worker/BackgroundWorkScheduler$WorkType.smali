@@ -25,6 +25,10 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
+.field public static final enum BACKGROUND_NOISE_ONE_TIME_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+.field public static final enum BACKGROUND_NOISE_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
 .field public static final enum DIAGNOSIS_KEY_BACKGROUND_ONE_TIME_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
 .field public static final enum DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
@@ -40,7 +44,7 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    const/4 v0, 0x3
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
@@ -83,6 +87,34 @@
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    const-string v2, "BACKGROUND_NOISE_PERIODIC_WORK"
+
+    const/4 v3, 0x3
+
+    const-string v4, "BackgroundNoisePeriodicWork"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->BACKGROUND_NOISE_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    const-string v2, "BACKGROUND_NOISE_ONE_TIME_WORK"
+
+    const/4 v3, 0x4
+
+    const-string v4, "BackgroundNoiseOneTimeWork"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->BACKGROUND_NOISE_ONE_TIME_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
     aput-object v1, v0, v3
 
