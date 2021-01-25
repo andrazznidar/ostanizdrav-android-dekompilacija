@@ -47,6 +47,14 @@
 
 .method public constructor <init>(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "other"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -81,6 +89,18 @@
 
 .method public constructor <init>([J[J[J)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "yPlusX",
+            "yMinusX",
+            "t2d"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -97,6 +117,16 @@
 # virtual methods
 .method public copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "other",
+            "icopy"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->yPlusX:[J
 

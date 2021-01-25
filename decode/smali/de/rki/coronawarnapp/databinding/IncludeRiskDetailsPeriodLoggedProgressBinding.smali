@@ -4,9 +4,7 @@
 
 
 # instance fields
-.field public mRiskLevel:Ljava/lang/Integer;
-
-.field public mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+.field public mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
 .field public final riskDetailsInvestigationPeriodCircleProgress:Lde/rki/coronawarnapp/ui/view/CircleProgress;
 
@@ -24,5 +22,5 @@
 
 
 # virtual methods
-.method public abstract setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public abstract setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 .end method

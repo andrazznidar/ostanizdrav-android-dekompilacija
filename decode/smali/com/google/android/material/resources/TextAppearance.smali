@@ -61,7 +61,7 @@
 
     sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColor:I
 
-    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -69,7 +69,7 @@
 
     sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorHint:I
 
-    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -77,7 +77,7 @@
 
     sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorLink:I
 
-    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -135,7 +135,7 @@
 
     sget v0, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowColor:I
 
-    invoke-static {p1, p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, p2, v0}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object p1
 
@@ -321,7 +321,7 @@
 
     const-string v0, "Error loading font "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

@@ -885,6 +885,50 @@
     return-wide p1
 .end method
 
+.method public getDateTimeMillis(JIIII)J
+    .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/joda/time/chrono/AssembledChronology;->iBase:Lorg/joda/time/Chronology;
+
+    if-eqz v0, :cond_0
+
+    iget v1, p0, Lorg/joda/time/chrono/AssembledChronology;->iBaseFlags:I
+
+    const/4 v2, 0x1
+
+    and-int/2addr v1, v2
+
+    if-ne v1, v2, :cond_0
+
+    move-wide v1, p1
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    move v6, p6
+
+    invoke-virtual/range {v0 .. v6}, Lorg/joda/time/Chronology;->getDateTimeMillis(JIIII)J
+
+    move-result-wide p1
+
+    return-wide p1
+
+    :cond_0
+    invoke-super/range {p0 .. p6}, Lorg/joda/time/chrono/BaseChronology;->getDateTimeMillis(JIIII)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getZone()Lorg/joda/time/DateTimeZone;
     .locals 1
 

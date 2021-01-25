@@ -628,11 +628,11 @@
 .method public final getBlackPointOnSegment(FFFF)Lcom/google/zxing/ResultPoint;
     .locals 5
 
-    invoke-static {p1, p2, p3, p4}, Lcom/google/android/gms/common/internal/Preconditions;->distance(FFFF)F
+    invoke-static {p1, p2, p3, p4}, Landroidx/transition/ViewGroupUtilsApi14;->distance(FFFF)F
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->round(F)I
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
 
     move-result v0
 
@@ -657,7 +657,7 @@
 
     add-float/2addr v3, p1
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->round(F)I
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
 
     move-result v3
 
@@ -665,7 +665,7 @@
 
     add-float/2addr v2, p2
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->round(F)I
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
 
     move-result v2
 

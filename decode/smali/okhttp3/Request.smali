@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRequest.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Request.kt\nokhttp3/Request\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,298:1\n1651#2,3:299\n*E\n*S KotlinDebug\n*F\n+ 1 Request.kt\nokhttp3/Request\n*L\n112#1,3:299\n*E\n"
+    value = "SMAP\nRequest.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Request.kt\nokhttp3/Request\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,298:1\n1808#2,3:299\n*E\n*S KotlinDebug\n*F\n+ 1 Request.kt\nokhttp3/Request\n*L\n119#1,3:299\n*E\n"
 .end annotation
 
 
@@ -57,15 +57,21 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "url"
 
-    if-eqz p1, :cond_3
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_2
+    const-string v0, "method"
 
-    if-eqz p3, :cond_1
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p5, :cond_0
+    const-string v0, "headers"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "tags"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -80,34 +86,6 @@
     iput-object p5, p0, Lokhttp3/Request;->tags:Ljava/util/Map;
 
     return-void
-
-    :cond_0
-    const-string p1, "tags"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "headers"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p1, "method"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
-    const-string p1, "url"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
@@ -136,6 +114,10 @@
 .method public final header(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;
 
     invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -150,7 +132,7 @@
 
     const-string v0, "Request{method="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -231,7 +213,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->throwIndexOverflow()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
 
     const/4 v0, 0x0
 
@@ -272,7 +254,7 @@
 
     const-string v1, "StringBuilder().apply(builderAction).toString()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -57,6 +57,17 @@
 
 .method public constructor <init>([BI)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "initialCounter"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;
@@ -93,6 +104,22 @@
 
 .method public static quarterRound([IIIII)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "x",
+            "a",
+            "b",
+            "c",
+            "d"
+        }
+    .end annotation
 
     aget v0, p0, p1
 
@@ -187,6 +214,16 @@
 
 .method public static rotateLeft(II)I
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "x",
+            "y"
+        }
+    .end annotation
 
     shl-int v0, p0, p1
 
@@ -201,6 +238,16 @@
 
 .method public static setSigmaAndKey([I[I)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x10
+        }
+        names = {
+            "state",
+            "key"
+        }
+    .end annotation
 
     sget-object v0, Lcom/google/crypto/tink/subtle/ChaCha20Base;->SIGMA:[I
 
@@ -223,6 +270,14 @@
 
 .method public static shuffleState([I)V
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "state"
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -293,6 +348,14 @@
 
 .method public static toIntArray([B)[I
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "input"
+        }
+    .end annotation
 
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
@@ -323,6 +386,16 @@
 # virtual methods
 .method public chacha20Block([BI)Ljava/nio/ByteBuffer;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "nonce",
+            "counter"
+        }
+    .end annotation
 
     invoke-static {p1}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->toIntArray([B)[I
 
@@ -386,10 +459,29 @@
 .end method
 
 .method public abstract createInitialState([II)[I
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "nonce",
+            "counter"
+        }
+    .end annotation
 .end method
 
 .method public decrypt(Ljava/nio/ByteBuffer;)[B
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "ciphertext"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -442,6 +534,15 @@
 
 .method public decrypt([B)[B
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "ciphertext"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -461,6 +562,17 @@
 
 .method public encrypt(Ljava/nio/ByteBuffer;[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x10
+        }
+        names = {
+            "output",
+            "plaintext"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -511,6 +623,15 @@
 
 .method public encrypt([B)[B
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "plaintext"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -564,6 +685,19 @@
 
 .method public final process([BLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)V
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0,
+            0x0
+        }
+        names = {
+            "nonce",
+            "output",
+            "input"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -599,12 +733,12 @@
 
     rem-int/lit8 v4, v0, 0x40
 
-    invoke-static {p2, p3, v3, v4}, Lcom/google/android/gms/common/internal/Preconditions;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
+    invoke-static {p2, p3, v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
 
     goto :goto_1
 
     :cond_0
-    invoke-static {p2, p3, v3, v5}, Lcom/google/android/gms/common/internal/Preconditions;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
+    invoke-static {p2, p3, v3, v5}, Landroidx/transition/ViewGroupUtilsApi14;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
 
     :goto_1
     add-int/lit8 v2, v2, 0x1

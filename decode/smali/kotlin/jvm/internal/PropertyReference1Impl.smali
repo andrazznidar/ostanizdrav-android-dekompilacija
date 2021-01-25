@@ -3,25 +3,23 @@
 .source "PropertyReference1Impl.java"
 
 
-# instance fields
-.field public final name:Ljava/lang/String;
-
-.field public final owner:Lkotlin/reflect/KDeclarationContainer;
-
-.field public final signature:Ljava/lang/String;
-
-
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/KDeclarationContainer;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 6
 
-    invoke-direct {p0}, Lkotlin/jvm/internal/PropertyReference1;-><init>()V
+    sget-object v1, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
 
-    iput-object p1, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->owner:Lkotlin/reflect/KDeclarationContainer;
+    move-object v0, p0
 
-    iput-object p2, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
+    move-object v2, p1
 
-    iput-object p3, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->signature:Ljava/lang/String;
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lkotlin/jvm/internal/PropertyReference1;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -54,28 +52,4 @@
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getOwner()Lkotlin/reflect/KDeclarationContainer;
-    .locals 1
-
-    iget-object v0, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->owner:Lkotlin/reflect/KDeclarationContainer;
-
-    return-object v0
-.end method
-
-.method public getSignature()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lkotlin/jvm/internal/PropertyReference1Impl;->signature:Ljava/lang/String;
-
-    return-object v0
 .end method

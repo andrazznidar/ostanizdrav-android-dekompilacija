@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExchange.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Exchange.kt\nokhttp3/internal/connection/Exchange$ResponseBodySource\n*L\n1#1,328:1\n*E\n"
+    value = "SMAP\nExchange.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Exchange.kt\nokhttp3/internal/connection/Exchange$ResponseBodySource\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,328:1\n1#2:329\n*E\n"
 .end annotation
 
 
@@ -43,9 +43,9 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "delegate"
 
-    if-eqz p2, :cond_1
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->this$0:Lokhttp3/internal/connection/Exchange;
 
@@ -63,17 +63,12 @@
 
     if-nez p1, :cond_0
 
-    invoke-virtual {p0, v0}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
 
     :cond_0
     return-void
-
-    :cond_1
-    const-string p1, "delegate"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
@@ -119,7 +114,7 @@
 .end method
 
 .method public final complete(Ljava/io/IOException;)Ljava/io/IOException;
-    .locals 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -139,11 +134,11 @@
 
     iput-boolean v0, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->completed:Z
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_2
 
     iget-boolean v0, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->invokeStartEvent:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
@@ -155,37 +150,32 @@
 
     iget-object v0, v0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    const/4 v2, 0x0
+    if-eqz v1, :cond_1
 
-    if-eqz v1, :cond_2
+    const-string v1, "call"
 
-    if-eqz v0, :cond_1
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_1
-    const-string p1, "call"
+    const/4 p1, 0x0
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v2
+    throw p1
 
     :cond_2
-    throw v2
-
-    :cond_3
     :goto_0
-    iget-object v3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->this$0:Lokhttp3/internal/connection/Exchange;
+    iget-object v0, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->this$0:Lokhttp3/internal/connection/Exchange;
 
-    iget-wide v4, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
+    iget-wide v1, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
 
-    const/4 v6, 0x1
+    const/4 v3, 0x1
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    move-object v8, p1
+    move-object v5, p1
 
-    invoke-virtual/range {v3 .. v8}, Lokhttp3/internal/connection/Exchange;->bodyComplete(JZZLjava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/connection/Exchange;->bodyComplete(JZZLjava/io/IOException;)Ljava/io/IOException;
 
     move-result-object p1
 
@@ -200,26 +190,28 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "sink"
 
-    if-eqz p1, :cond_8
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-boolean v1, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->closed:Z
+    iget-boolean v0, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->closed:Z
 
-    xor-int/lit8 v1, v1, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v1, :cond_7
+    if-eqz v0, :cond_6
 
     :try_start_0
-    iget-object v1, p0, Lokio/ForwardingSource;->delegate:Lokio/Source;
+    iget-object v0, p0, Lokio/ForwardingSource;->delegate:Lokio/Source;
 
-    invoke-interface {v1, p1, p2, p3}, Lokio/Source;->read(Lokio/Buffer;J)J
+    invoke-interface {v0, p1, p2, p3}, Lokio/Source;->read(Lokio/Buffer;J)J
 
     move-result-wide p1
 
     iget-boolean p3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->invokeStartEvent:Z
 
-    if-eqz p3, :cond_2
+    const/4 v0, 0x0
+
+    if-eqz p3, :cond_1
 
     const/4 p3, 0x0
 
@@ -233,38 +225,30 @@
 
     iget-object v1, v1, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_0
 
-    if-eqz v1, :cond_0
+    const-string p3, "call"
+
+    invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
     throw v0
 
     :cond_1
-    :try_start_1
-    throw v0
-
-    :cond_2
     :goto_0
     const-wide/16 v1, -0x1
 
     cmp-long p3, p1, v1
 
-    if-nez p3, :cond_3
+    if-nez p3, :cond_2
 
     invoke-virtual {p0, v0}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
 
     return-wide v1
 
-    :cond_3
+    :cond_2
     iget-wide v3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
 
     add-long/2addr v3, p1
@@ -273,17 +257,17 @@
 
     cmp-long p3, v5, v1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_4
 
     iget-wide v1, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->contentLength:J
 
     cmp-long p3, v3, v1
 
-    if-gtz p3, :cond_4
+    if-gtz p3, :cond_3
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
     new-instance p1, Ljava/net/ProtocolException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -312,7 +296,7 @@
 
     throw p1
 
-    :cond_5
+    :cond_4
     :goto_1
     iput-wide v3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
 
@@ -320,13 +304,13 @@
 
     cmp-long p3, v3, v1
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_5
 
     invoke-virtual {p0, v0}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_6
+    :cond_5
     return-wide p1
 
     :catch_0
@@ -338,7 +322,7 @@
 
     throw p1
 
-    :cond_7
+    :cond_6
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "closed"
@@ -350,11 +334,4 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_8
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

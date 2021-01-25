@@ -21,103 +21,29 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/ViewModelStore;)V
-    .locals 4
+    .locals 1
 
     invoke-direct {p0}, Landroidx/loader/app/LoaderManager;-><init>()V
 
     iput-object p1, p0, Landroidx/loader/app/LoaderManagerImpl;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    sget-object p1, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->FACTORY:Landroidx/lifecycle/ViewModelProvider$Factory;
+    new-instance p1, Landroidx/lifecycle/ViewModelProvider;
 
-    const-class v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+    sget-object v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->FACTORY:Landroidx/lifecycle/ViewModelProvider$Factory;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    invoke-direct {p1, p2, v0}, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;)V
 
-    move-result-object v1
+    const-class p2, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
-    if-eqz v1, :cond_3
-
-    const-string v2, "androidx.lifecycle.ViewModelProvider.DefaultKey:"
-
-    invoke-static {v2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p2, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/lifecycle/ViewModel;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    instance-of p2, p1, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
-
-    if-eqz p2, :cond_2
-
-    check-cast p1, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
-
-    invoke-virtual {p1, v2}, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;->onRequery(Landroidx/lifecycle/ViewModel;)V
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v2, p1, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
-
-    if-eqz v2, :cond_1
-
-    check-cast p1, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
-
-    invoke-virtual {p1, v1, v0}, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;->create(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+    invoke-virtual {p1, p2}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p1
 
-    goto :goto_0
+    check-cast p1, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
-    :cond_1
-    check-cast p1, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel$1;
-
-    invoke-virtual {p1, v0}, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel$1;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-
-    move-result-object p1
-
-    :goto_0
-    move-object v2, p1
-
-    iget-object p1, p2, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
-
-    invoke-virtual {p1, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/lifecycle/ViewModel;
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Landroidx/lifecycle/ViewModel;->onCleared()V
-
-    :cond_2
-    :goto_1
-    check-cast v2, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
-
-    iput-object v2, p0, Landroidx/loader/app/LoaderManagerImpl;->mLoaderViewModel:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+    iput-object p1, p0, Landroidx/loader/app/LoaderManagerImpl;->mLoaderViewModel:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
     return-void
-
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Local and anonymous classes can not be ViewModels"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 

@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,156:1\n310#2,7:157\n338#2,7:164\n*E\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n26#1,7:157\n28#1,7:164\n*E\n"
+    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,157:1\n318#2,7:158\n346#2,7:165\n*E\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n27#1,7:158\n29#1,7:165\n*E\n"
 .end annotation
 
 
@@ -102,7 +102,13 @@
     :cond_1
     check-cast p1, Ljava/util/Collection;
 
-    if-eqz p1, :cond_5
+    const-string v1, "c"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "other"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -156,15 +162,6 @@
     :cond_4
     :goto_1
     return v0
-
-    :cond_5
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public abstract get(I)Ljava/lang/Object;
@@ -178,24 +175,28 @@
 .method public hashCode()I
     .locals 3
 
-    const/4 v0, 0x1
+    const-string v0, "c"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
+
+    const/4 v1, 0x1
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/lit8 v1, v1, 0x1f
 
     if-eqz v2, :cond_0
 
@@ -209,12 +210,12 @@
     const/4 v2, 0x0
 
     :goto_1
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     goto :goto_0
 
     :cond_1
-    return v0
+    return v1
 .end method
 
 .method public indexOf(Ljava/lang/Object;)I

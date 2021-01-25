@@ -53,7 +53,7 @@
 
     invoke-direct {v0, v1}, Landroidx/work/Data;-><init>(Ljava/util/Map;)V
 
-    invoke-static {v0}, Landroidx/work/Data;->toByteArray(Landroidx/work/Data;)[B
+    invoke-static {v0}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
     return-object v0
 .end method

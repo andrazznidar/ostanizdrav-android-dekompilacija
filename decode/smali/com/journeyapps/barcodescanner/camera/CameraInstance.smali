@@ -79,7 +79,7 @@
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->closer:Ljava/lang/Runnable;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/camera/CameraThread;->instance:Lcom/journeyapps/barcodescanner/camera/CameraThread;
 

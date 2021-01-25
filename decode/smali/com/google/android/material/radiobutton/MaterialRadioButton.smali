@@ -141,19 +141,19 @@
 
     sget v0, Lcom/google/android/material/R$attr;->colorControlActivated:I
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v0}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
 
     move-result v0
 
     sget v1, Lcom/google/android/material/R$attr;->colorOnSurface:I
 
-    invoke-static {p0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
 
     move-result v1
 
     sget v2, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
 
     move-result v2
 
@@ -167,7 +167,7 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    invoke-static {v2, v0, v5}, Lcom/google/android/gms/common/internal/Preconditions;->layer(IIF)I
+    invoke-static {v2, v0, v5}, Landroidx/transition/ViewGroupUtilsApi14;->layer(IIF)I
 
     move-result v0
 
@@ -177,7 +177,7 @@
 
     const v4, 0x3f0a3d71    # 0.54f
 
-    invoke-static {v2, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->layer(IIF)I
+    invoke-static {v2, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->layer(IIF)I
 
     move-result v4
 
@@ -187,7 +187,7 @@
 
     const v4, 0x3ec28f5c    # 0.38f
 
-    invoke-static {v2, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->layer(IIF)I
+    invoke-static {v2, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->layer(IIF)I
 
     move-result v5
 
@@ -195,7 +195,7 @@
 
     const/4 v0, 0x3
 
-    invoke-static {v2, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->layer(IIF)I
+    invoke-static {v2, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->layer(IIF)I
 
     move-result v1
 

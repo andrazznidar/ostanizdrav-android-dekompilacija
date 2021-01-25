@@ -90,6 +90,14 @@
 
 .method public static contract([J)[B
     .locals 14
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "inputLimbs"
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -556,6 +564,14 @@
 
 .method public static expand([B)[J
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "input"
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -652,6 +668,18 @@
 
 .method public static mult([J[J[J)V
     .locals 23
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "in",
+            "in2"
+        }
+    .end annotation
 
     const/16 v0, 0x13
 
@@ -1520,6 +1548,16 @@
 
 .method public static reduce([J[J)V
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "input",
+            "output"
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -1946,6 +1984,16 @@
 
 .method public static square([J[J)V
     .locals 24
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "in"
+        }
+    .end annotation
 
     const/16 v0, 0x13
 
@@ -2478,6 +2526,18 @@
 
 .method public static sub([J[J[J)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "in1",
+            "in2"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2504,6 +2564,18 @@
 
 .method public static sum([J[J[J)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "in1",
+            "in2"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

@@ -107,19 +107,19 @@
 
     sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemFillColor:I
 
-    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v6
 
     sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemTextColor:I
 
-    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v7
 
     sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemStrokeColor:I
 
-    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v8
 

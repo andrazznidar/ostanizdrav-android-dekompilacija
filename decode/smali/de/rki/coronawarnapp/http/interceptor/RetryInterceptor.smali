@@ -20,6 +20,10 @@
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
     .locals 6
 
+    const-string v0, "chain"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;
 
     move-result-object v0
@@ -45,7 +49,7 @@
 
     const-string v1, "Request is not successful - "
 
-    invoke-static {v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 

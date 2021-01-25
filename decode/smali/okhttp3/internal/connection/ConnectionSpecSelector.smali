@@ -3,12 +3,6 @@
 .source "ConnectionSpecSelector.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConnectionSpecSelector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConnectionSpecSelector.kt\nokhttp3/internal/connection/ConnectionSpecSelector\n*L\n1#1,123:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public final connectionSpecs:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -29,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,22 +33,15 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const-string v0, "connectionSpecs"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
     return-void
-
-    :cond_0
-    const-string p1, "connectionSpecs"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -67,24 +54,26 @@
         }
     .end annotation
 
-    iget v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
+    const-string v0, "sslSocket"
 
-    iget-object v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    iget v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
-    move-result v1
+    iget-object v2, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
 
     :goto_0
-    const/4 v2, 0x0
-
     const/4 v3, 0x1
 
-    if-ge v0, v1, :cond_1
+    if-ge v1, v2, :cond_1
 
     iget-object v4, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
-    invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -96,136 +85,78 @@
 
     if-eqz v5, :cond_0
 
-    add-int/2addr v0, v3
+    add-int/2addr v1, v3
 
-    iput v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
+    iput v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
     goto :goto_1
 
     :cond_0
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    move-object v4, v2
+    const/4 v4, 0x0
 
     :goto_1
-    if-nez v4, :cond_3
+    if-eqz v4, :cond_9
 
-    const-string v0, "Unable to find acceptable protocols. isFallback="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x2c
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    const-string v3, " modes="
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    const-string v1, " supported protocols="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
-
-    move-result-object p1
-
-    if-nez p1, :cond_2
-
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_2
-    invoke-static {p1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "java.util.Arrays.toString(this)"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/net/UnknownServiceException;
-
-    invoke-direct {v0, p1}, Ljava/net/UnknownServiceException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
-    iget v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
-
-    iget-object v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    :goto_2
-    if-ge v0, v1, :cond_5
+    iget v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
     iget-object v2, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lokhttp3/ConnectionSpec;
-
-    invoke-virtual {v2, p1}, Lokhttp3/ConnectionSpec;->isCompatible(Ljavax/net/ssl/SSLSocket;)Z
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    :goto_2
+    if-ge v1, v2, :cond_3
 
-    move v0, v3
+    iget-object v5, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
+
+    invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lokhttp3/ConnectionSpec;
+
+    invoke-virtual {v5, p1}, Lokhttp3/ConnectionSpec;->isCompatible(Ljavax/net/ssl/SSLSocket;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    move v1, v3
 
     goto :goto_3
 
-    :cond_4
-    add-int/lit8 v0, v0, 0x1
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    :cond_5
-    const/4 v0, 0x0
+    :cond_3
+    const/4 v1, 0x0
 
     :goto_3
-    iput-boolean v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallbackPossible:Z
+    iput-boolean v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallbackPossible:Z
 
-    iget-boolean v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
+    iget-boolean v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
 
-    iget-object v1, v4, Lokhttp3/ConnectionSpec;->cipherSuitesAsString:[Ljava/lang/String;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_6
+    iget-object v0, v4, Lokhttp3/ConnectionSpec;->cipherSuitesAsString:[Ljava/lang/String;
+
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, "sslSocket.enabledCipherSuites"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v2, v4, Lokhttp3/ConnectionSpec;->cipherSuitesAsString:[Ljava/lang/String;
 
@@ -233,21 +164,21 @@
 
     sget-object v5, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;
 
-    invoke-static {v1, v2, v5}, Lokhttp3/internal/Util;->intersect([Ljava/lang/String;[Ljava/lang/String;Ljava/util/Comparator;)[Ljava/lang/String;
+    invoke-static {v0, v2, v5}, Lokhttp3/internal/Util;->intersect([Ljava/lang/String;[Ljava/lang/String;Ljava/util/Comparator;)[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_4
 
-    :cond_6
+    :cond_4
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     :goto_4
     iget-object v2, v4, Lokhttp3/ConnectionSpec;->tlsVersionsAsString:[Ljava/lang/String;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_5
 
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
@@ -255,7 +186,7 @@
 
     const-string v5, "sslSocket.enabledProtocols"
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v5, v4, Lokhttp3/ConnectionSpec;->tlsVersionsAsString:[Ljava/lang/String;
 
@@ -267,7 +198,7 @@
 
     goto :goto_5
 
-    :cond_7
+    :cond_5
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
     move-result-object v2
@@ -279,7 +210,7 @@
 
     const-string v6, "supportedCipherSuites"
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v6, Lokhttp3/CipherSuite;->Companion:Lokhttp3/CipherSuite$Companion;
 
@@ -293,72 +224,84 @@
 
     const-string v7, "cipherSuitesIntersection"
 
-    if-eqz v0, :cond_8
+    if-eqz v1, :cond_6
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
-    if-eq v6, v0, :cond_8
+    if-eq v6, v1, :cond_6
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aget-object v5, v5, v6
 
     const-string v6, "supportedCipherSuites[indexOfFallbackScsv]"
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    array-length v6, v1
+    const-string v6, "$this$concat"
+
+    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v6, "value"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v6, v0
 
     add-int/2addr v6, v3
 
-    invoke-static {v1, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v0, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v3, "java.util.Arrays.copyOf(this, newSize)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v1, [Ljava/lang/String;
+    check-cast v0, [Ljava/lang/String;
 
-    array-length v3, v1
+    const-string v3, "$this$lastIndex"
 
-    add-int/2addr v3, v0
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v5, v1, v3
+    array-length v3, v0
 
-    :cond_8
-    new-instance v0, Lokhttp3/ConnectionSpec$Builder;
+    add-int/2addr v3, v1
 
-    invoke-direct {v0, v4}, Lokhttp3/ConnectionSpec$Builder;-><init>(Lokhttp3/ConnectionSpec;)V
+    aput-object v5, v0, v3
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_6
+    new-instance v1, Lokhttp3/ConnectionSpec$Builder;
 
-    array-length v3, v1
+    invoke-direct {v1, v4}, Lokhttp3/ConnectionSpec$Builder;-><init>(Lokhttp3/ConnectionSpec;)V
 
-    invoke-static {v1, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v0, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v1
+    array-length v3, v0
 
-    check-cast v1, [Ljava/lang/String;
+    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
+    move-result-object v0
 
-    const-string v1, "tlsVersionsIntersection"
+    check-cast v0, [Ljava/lang/String;
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
 
-    array-length v1, v2
+    const-string v0, "tlsVersionsIntersection"
 
-    invoke-static {v2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v1
+    array-length v0, v2
 
-    check-cast v1, [Ljava/lang/String;
+    invoke-static {v2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
+    check-cast v0, [Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
+
+    invoke-virtual {v1}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
 
     move-result-object v0
 
@@ -366,23 +309,78 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     iget-object v1, v0, Lokhttp3/ConnectionSpec;->tlsVersionsAsString:[Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljavax/net/ssl/SSLSocket;->setEnabledProtocols([Ljava/lang/String;)V
 
-    :cond_9
+    :cond_7
     invoke-virtual {v0}, Lokhttp3/ConnectionSpec;->cipherSuites()Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     iget-object v0, v0, Lokhttp3/ConnectionSpec;->cipherSuitesAsString:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
 
-    :cond_a
+    :cond_8
     return-object v4
+
+    :cond_9
+    new-instance v0, Ljava/net/UnknownServiceException;
+
+    const-string v1, "Unable to find acceptable protocols. isFallback="
+
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x2c
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const-string v3, " modes="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const-string v2, " supported protocols="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    invoke-static {p1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v2, "java.util.Arrays.toString(this)"
+
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/net/UnknownServiceException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

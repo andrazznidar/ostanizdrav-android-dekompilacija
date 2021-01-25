@@ -28,7 +28,9 @@
 .method public final forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;
     .locals 2
 
-    if-eqz p1, :cond_3
+    const-string v0, "javaName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
@@ -125,15 +127,6 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_3
-    const-string p1, "javaName"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :pswitch_data_0
     .packed-switch -0x1dfc3f27

@@ -17,6 +17,16 @@
 
 
 # virtual methods
+.method public getChronology(Ljava/lang/Object;Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+    .locals 0
+
+    invoke-static {p2}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public getChronology(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
     .locals 0
 
@@ -37,12 +47,36 @@
     return-wide p1
 .end method
 
+.method public getPartialValues(Lorg/joda/time/ReadablePartial;Ljava/lang/Object;Lorg/joda/time/Chronology;)[I
+    .locals 2
+
+    invoke-virtual {p0, p2, p3}, Lorg/joda/time/convert/AbstractConverter;->getInstantMillis(Ljava/lang/Object;Lorg/joda/time/Chronology;)J
+
+    move-result-wide v0
+
+    invoke-virtual {p3, p1, v0, v1}, Lorg/joda/time/Chronology;->get(Lorg/joda/time/ReadablePartial;J)[I
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getPartialValues(Lorg/joda/time/ReadablePartial;Ljava/lang/Object;Lorg/joda/time/Chronology;Lorg/joda/time/format/DateTimeFormatter;)[I
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3}, Lorg/joda/time/convert/AbstractConverter;->getPartialValues(Lorg/joda/time/ReadablePartial;Ljava/lang/Object;Lorg/joda/time/Chronology;)[I
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 
     const-string v0, "Converter["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

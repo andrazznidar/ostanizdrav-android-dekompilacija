@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWorkQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n+ 2 Tasks.kt\nkotlinx/coroutines/scheduling/TasksKt\n*L\n1#1,201:1\n85#2:202\n85#2:203\n85#2:204\n85#2:205\n*E\n*S KotlinDebug\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n*L\n83#1:202\n129#1:203\n153#1:204\n195#1:205\n*E\n"
+    value = "SMAP\nWorkQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n+ 2 Tasks.kt\nkotlinx/coroutines/scheduling/TasksKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,201:1\n88#2:202\n88#2:204\n88#2:205\n88#2:206\n1#3:203\n*E\n*S KotlinDebug\n*F\n+ 1 WorkQueue.kt\nkotlinx/coroutines/scheduling/WorkQueue\n*L\n83#1:202\n129#1:204\n153#1:205\n195#1:206\n*E\n"
 .end annotation
 
 
@@ -321,50 +321,23 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    if-ne v1, v3, :cond_2
-
-    move v1, v3
+    if-ne v1, v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    move v1, v2
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_3
 
     sget-object v1, Lkotlinx/coroutines/scheduling/WorkQueue;->blockingTasksInBuffer$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
 
-    move-result v1
-
-    sget-boolean v4, Lkotlinx/coroutines/DebugKt;->ASSERTIONS_ENABLED:Z
-
-    if-eqz v4, :cond_5
-
-    if-ltz v1, :cond_3
-
-    move v2, v3
-
     :cond_3
-    if-eqz v2, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    :cond_5
-    :goto_1
     return-object v0
 .end method
 

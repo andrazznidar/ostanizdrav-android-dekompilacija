@@ -4,10 +4,12 @@
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(I)V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, v0}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

@@ -136,14 +136,14 @@
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v10
 
     goto :goto_0
 
     :pswitch_3
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v9
 
@@ -169,7 +169,7 @@
     goto :goto_0
 
     :pswitch_5
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v8
 
@@ -210,7 +210,7 @@
 
     invoke-direct {v2, v0}, Lcom/airbnb/lottie/parser/GradientColorParser;-><init>(I)V
 
-    invoke-static {p0, p1, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
+    invoke-static {p0, p1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
 
     move-result-object v2
 

@@ -19,10 +19,24 @@
 
 
 # virtual methods
+.method public abstract await(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-TT;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getCompleted()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
         }
     .end annotation
+.end method
+
+.method public abstract getCompletionExceptionOrNull()Ljava/lang/Throwable;
 .end method

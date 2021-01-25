@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
+        Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;,
+        Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
     }
 .end annotation
 
@@ -74,7 +75,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,13 +93,13 @@
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
-    new-instance p5, Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
+    new-instance v0, Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {p5, p0, v0}, Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;-><init>(Lcom/google/gson/internal/bind/TreeTypeAdapter;Lcom/google/gson/internal/bind/TreeTypeAdapter$1;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;-><init>(Lcom/google/gson/internal/bind/TreeTypeAdapter;Lcom/google/gson/internal/bind/TreeTypeAdapter$1;)V
 
-    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->context:Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->context:Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
 
     iput-object p1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->serializer:Lcom/google/gson/JsonSerializer;
 
@@ -108,7 +109,7 @@
 
     iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->typeToken:Lcom/google/gson/reflect/TypeToken;
 
-    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPast:Lcom/google/gson/TypeAdapterFactory;
+    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPast:Lcom/google/gson/TypeAdapterFactory;
 
     return-void
 .end method
@@ -162,75 +163,10 @@
     return-object p1
 
     :cond_1
-    :try_start_0
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
-    :try_end_0
-    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_4
-    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1
-
-    const/4 v0, 0x0
-
-    :try_start_1
-    sget-object v1, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
-
-    invoke-virtual {v1, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/gson/JsonElement;
-    :try_end_1
-    .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_2
-
-    :catch_0
-    move-exception p1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p1
-
-    new-instance v0, Lcom/google/gson/JsonSyntaxException;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :catch_2
-    move-exception p1
-
-    new-instance v0, Lcom/google/gson/JsonIOException;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :catch_3
-    move-exception p1
-
-    new-instance v0, Lcom/google/gson/JsonSyntaxException;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :catch_4
-    move-exception p1
-
-    const/4 v0, 0x1
-
-    :goto_1
-    if-eqz v0, :cond_4
-
-    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
-
-    :goto_2
     const/4 v0, 0x0
 
     if-eqz p1, :cond_3
@@ -257,13 +193,6 @@
     return-object p1
 
     :cond_3
-    throw v0
-
-    :cond_4
-    new-instance v0, Lcom/google/gson/JsonSyntaxException;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
-
     throw v0
 .end method
 

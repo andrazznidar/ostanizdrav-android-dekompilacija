@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Task.kt\nokhttp3/internal/concurrent/Task\n*L\n1#1,71:1\n*E\n"
+    value = "SMAP\nTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Task.kt\nokhttp3/internal/concurrent/Task\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,71:1\n1#2:72\n*E\n"
 .end annotation
 
 
@@ -21,9 +21,11 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,15 +38,6 @@
     iput-wide p1, p0, Lokhttp3/internal/concurrent/Task;->nextExecuteNanoTime:J
 
     return-void
-
-    :cond_0
-    const-string p1, "name"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 

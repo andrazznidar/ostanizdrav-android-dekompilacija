@@ -1,4 +1,4 @@
-.class public final Landroidx/work/impl/utils/futures/AbstractFuture$Failure$1;
+.class public Landroidx/work/impl/utils/futures/AbstractFuture$Failure$1;
 .super Ljava/lang/Throwable;
 .source "AbstractFuture.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

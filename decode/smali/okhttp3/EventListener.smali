@@ -38,88 +38,44 @@
 
 
 # virtual methods
-.method public connectEnd(Lokhttp3/Call;Ljava/net/InetSocketAddress;Ljava/net/Proxy;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    if-eqz p2, :cond_1
-
-    if-eqz p3, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p2, "proxy"
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    const-string p2, "inetSocketAddress"
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
 .method public connectionAcquired(Lokhttp3/Call;Lokhttp3/Connection;)V
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "call"
 
-    if-eqz p1, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_0
-
-    return-void
-
-    :cond_0
     const-string p1, "connection"
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    throw v0
-
-    :cond_1
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method
 
 .method public requestFailed(Lokhttp3/Call;Ljava/io/IOException;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "call"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "ioe"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
-
-    :cond_0
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public responseFailed(Lokhttp3/Call;Ljava/io/IOException;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "call"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "ioe"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
-
-    :cond_0
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

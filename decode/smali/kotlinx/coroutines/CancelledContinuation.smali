@@ -1,6 +1,6 @@
 .class public final Lkotlinx/coroutines/CancelledContinuation;
 .super Lkotlinx/coroutines/CompletedExceptionally;
-.source "CompletedExceptionally.kt"
+.source "CompletionState.kt"
 
 
 # static fields

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nResponse.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Response.kt\nokhttp3/Response\n*L\n1#1,455:1\n*E\n"
+    value = "SMAP\nResponse.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Response.kt\nokhttp3/Response\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,455:1\n1#2:456\n*E\n"
 .end annotation
 
 
@@ -62,15 +62,21 @@
 
     move-object v4, p6
 
-    const/4 v5, 0x0
+    const-string v5, "request"
 
-    if-eqz v1, :cond_3
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v2, :cond_2
+    const-string v5, "protocol"
 
-    if-eqz v3, :cond_1
+    invoke-static {p2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v4, :cond_0
+    const-string v5, "message"
+
+    invoke-static {p3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v5, "headers"
+
+    invoke-static {p6, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -119,34 +125,6 @@
     iput-object v1, v0, Lokhttp3/Response;->exchange:Lokhttp3/internal/connection/Exchange;
 
     return-void
-
-    :cond_0
-    const-string v1, "headers"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v5
-
-    :cond_1
-    const-string v1, "message"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v5
-
-    :cond_2
-    const-string v1, "protocol"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v5
-
-    :cond_3
-    const-string v1, "request"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v5
 .end method
 
 .method public static header$default(Lokhttp3/Response;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
@@ -155,6 +133,12 @@
     and-int/lit8 p2, p3, 0x2
 
     const/4 p2, 0x0
+
+    if-eqz p0, :cond_1
+
+    const-string p3, "name"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
@@ -168,6 +152,9 @@
 
     :cond_0
     return-object p2
+
+    :cond_1
+    throw p2
 .end method
 
 
@@ -251,7 +238,7 @@
 
     const-string v0, "Response{protocol="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

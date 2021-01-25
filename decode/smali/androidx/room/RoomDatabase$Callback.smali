@@ -22,3 +22,11 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
+    .locals 0
+
+    return-void
+.end method

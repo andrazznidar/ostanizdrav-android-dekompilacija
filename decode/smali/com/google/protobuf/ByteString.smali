@@ -12,6 +12,7 @@
     value = {
         Lcom/google/protobuf/ByteString$BoundedByteString;,
         Lcom/google/protobuf/ByteString$LiteralByteString;,
+        Lcom/google/protobuf/ByteString$CodedBuilder;,
         Lcom/google/protobuf/ByteString$LeafByteString;,
         Lcom/google/protobuf/ByteString$ArraysByteArrayCopier;,
         Lcom/google/protobuf/ByteString$SystemByteArrayCopier;,
@@ -165,7 +166,7 @@
 
     const-string v0, "ByteString would be too long: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -211,7 +212,7 @@
 
     const-string v0, "Index < 0: "
 
-    invoke-static {v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -226,7 +227,7 @@
 
     const-string v2, ", "
 
-    invoke-static {v1, p0, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p0, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -263,7 +264,7 @@
 
     const-string v1, ", "
 
-    invoke-static {v0, p0, v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p0, v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -278,7 +279,7 @@
 
     const-string v1, " >= "
 
-    invoke-static {v0, p1, v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p1, v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -293,7 +294,7 @@
 
     const-string v0, " < 0"
 
-    invoke-static {p2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -317,6 +318,18 @@
     move-result-object p0
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method public static newCodedBuilder(I)Lcom/google/protobuf/ByteString$CodedBuilder;
+    .locals 2
+
+    new-instance v0, Lcom/google/protobuf/ByteString$CodedBuilder;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/protobuf/ByteString$CodedBuilder;-><init>(ILcom/google/protobuf/ByteString$1;)V
 
     return-object v0
 .end method
@@ -411,6 +424,9 @@
 .method public abstract isBalanced()Z
 .end method
 
+.method public abstract isValidUtf8()Z
+.end method
+
 .method public iterator()Ljava/util/Iterator;
     .locals 1
 
@@ -421,7 +437,13 @@
     return-object v0
 .end method
 
+.method public abstract newCodedInput()Lcom/google/protobuf/CodedInputStream;
+.end method
+
 .method public abstract partialHash(III)I
+.end method
+
+.method public abstract partialIsValidUtf8(III)I
 .end method
 
 .method public abstract size()I
@@ -467,6 +489,33 @@
 
     move-result-object v0
 
+    return-object v0
+.end method
+
+.method public abstract toStringInternal(Ljava/nio/charset/Charset;)Ljava/lang/String;
+.end method
+
+.method public final toStringUtf8()Ljava/lang/String;
+    .locals 2
+
+    sget-object v0, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->size()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v0, ""
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/ByteString;->toStringInternal(Ljava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
     return-object v0
 .end method
 

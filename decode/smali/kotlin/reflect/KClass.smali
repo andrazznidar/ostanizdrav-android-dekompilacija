@@ -18,3 +18,8 @@
         "Ljava/lang/Object;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract getSimpleName()Ljava/lang/String;
+.end method

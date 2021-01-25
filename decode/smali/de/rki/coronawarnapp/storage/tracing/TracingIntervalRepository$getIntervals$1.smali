@@ -25,8 +25,6 @@
 
 
 # instance fields
-.field public J$0:J
-
 .field public L$0:Ljava/lang/Object;
 
 .field public label:I

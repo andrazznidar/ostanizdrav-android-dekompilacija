@@ -14,6 +14,51 @@
 
 
 # virtual methods
+.method public abstract getAtomicOp()Lkotlinx/coroutines/internal/AtomicOp;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/internal/AtomicOp<",
+            "*>;"
+        }
+    .end annotation
+.end method
+
+.method public final isEarlierThan(Lkotlinx/coroutines/internal/OpDescriptor;)Z
+    .locals 6
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/OpDescriptor;->getAtomicOp()Lkotlinx/coroutines/internal/AtomicOp;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lkotlinx/coroutines/internal/OpDescriptor;->getAtomicOp()Lkotlinx/coroutines/internal/AtomicOp;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/AtomicOp;->getOpSequence()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lkotlinx/coroutines/internal/AtomicOp;->getOpSequence()J
+
+    move-result-wide v4
+
+    cmp-long p1, v2, v4
+
+    if-gez p1, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
 .method public abstract perform(Ljava/lang/Object;)Ljava/lang/Object;
 .end method
 
@@ -38,7 +83,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -13,10 +13,6 @@
     name = "Editor"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiskLruCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiskLruCache.kt\nokhttp3/internal/cache/DiskLruCache$Editor\n*L\n1#1,1065:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public done:Z
@@ -30,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/cache/DiskLruCache;Lokhttp3/internal/cache/DiskLruCache$Entry;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -38,6 +34,10 @@
             ")V"
         }
     .end annotation
+
+    const-string v0, "entry"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;
 
@@ -255,7 +255,7 @@
 
     xor-int/2addr v1, v2
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->entry:Lokhttp3/internal/cache/DiskLruCache$Entry;
 
@@ -285,28 +285,15 @@
 
     iget-boolean v1, v1, Lokhttp3/internal/cache/DiskLruCache$Entry;->readable:Z
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->written:[Z
 
-    if-eqz v1, :cond_1
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     aput-boolean v2, v1, p1
 
-    goto :goto_0
-
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
-    :goto_0
-    :try_start_2
     iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->entry:Lokhttp3/internal/cache/DiskLruCache$Entry;
 
     iget-object v1, v1, Lokhttp3/internal/cache/DiskLruCache$Entry;->dirtyFiles:Ljava/util/List;
@@ -316,10 +303,10 @@
     move-result-object v1
 
     check-cast v1, Ljava/io/File;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_3
+    :try_start_2
     iget-object v2, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;
 
     iget-object v2, v2, Lokhttp3/internal/cache/DiskLruCache;->fileSystem:Lokhttp3/internal/io/FileSystem;
@@ -327,11 +314,11 @@
     invoke-interface {v2, v1}, Lokhttp3/internal/io/FileSystem;->sink(Ljava/io/File;)Lokio/Sink;
 
     move-result-object v1
-    :try_end_3
-    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :try_start_4
+    :try_start_3
     new-instance v2, Lokhttp3/internal/cache/FaultHidingSink;
 
     new-instance v3, Lokhttp3/internal/cache/DiskLruCache$Editor$newSink$$inlined$synchronized$lambda$1;
@@ -339,27 +326,27 @@
     invoke-direct {v3, p0, p1}, Lokhttp3/internal/cache/DiskLruCache$Editor$newSink$$inlined$synchronized$lambda$1;-><init>(Lokhttp3/internal/cache/DiskLruCache$Editor;I)V
 
     invoke-direct {v2, v1, v3}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lokio/Sink;Lkotlin/jvm/functions/Function1;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     monitor-exit v0
 
     return-object v2
 
     :catch_0
-    :try_start_5
+    :try_start_4
     new-instance p1, Lokio/BlackholeSink;
 
     invoke-direct {p1}, Lokio/BlackholeSink;-><init>()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     monitor-exit v0
 
     return-object p1
 
-    :cond_3
-    :try_start_6
+    :cond_2
+    :try_start_5
     const-string p1, "Check failed."
 
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -371,8 +358,8 @@
     invoke-direct {v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v1
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     :catchall_0
     move-exception p1

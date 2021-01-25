@@ -76,21 +76,101 @@
 
     iget-object p2, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 
-    invoke-virtual {p2, p1}, Lorg/joda/time/chrono/BasicChronology;->isLeapYear(I)Z
+    invoke-virtual {p2, p1}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYear(I)I
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    return p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 1
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->isSupported(Lorg/joda/time/DateTimeFieldType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->get(Lorg/joda/time/DateTimeFieldType;)I
+
+    move-result p1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYear(I)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iget-object p1, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    if-eqz p1, :cond_1
 
     const/16 p1, 0x16e
 
-    goto :goto_0
+    return p1
 
-    :cond_0
-    const/16 p1, 0x16d
+    :cond_1
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 4
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
 
     :goto_0
+    if-ge v1, v0, :cond_1
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v2
+
+    sget-object v3, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    if-ne v2, v3, :cond_0
+
+    aget p1, p2, v1
+
+    iget-object p2, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {p2, p1}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYear(I)I
+
+    move-result p1
+
     return p1
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    if-eqz p1, :cond_2
+
+    const/16 p1, 0x16e
+
+    return p1
+
+    :cond_2
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
 .method public getMaximumValueForSet(JI)I
@@ -109,7 +189,15 @@
     if-ge p3, v1, :cond_1
 
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->getMaximumValue(J)I
+    iget-object p3, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {p3, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getYear(J)I
+
+    move-result p1
+
+    iget-object p2, p0, Lorg/joda/time/chrono/BasicDayOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {p2, p1}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYear(I)I
 
     move-result v0
 

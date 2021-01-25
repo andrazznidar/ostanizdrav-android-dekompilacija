@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c007f
+    const v6, 0x7f0c00ab
 
     aput v6, v4, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902c7
+    const v1, 0x7f0903ec
 
     const/4 v2, 0x3
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902cd
+    const v1, 0x7f0903f2
 
     const/4 v2, 0x4
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902c9
+    const v1, 0x7f0903f0
 
     const/4 v2, 0x5
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902cb
+    const v1, 0x7f0903ee
 
     const/4 v2, 0x6
 
@@ -115,7 +115,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     aget-object v1, v0, v1
 
@@ -123,7 +123,7 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -137,7 +137,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lde/rki/coronawarnapp/ui/view/TanInput;
+    check-cast v9, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;
 
     const/4 v5, 0x0
 
@@ -147,7 +147,7 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/TanInput;)V
+    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/submission/tan/TanInput;)V
 
     const-wide/16 v1, -0x1
 
@@ -286,7 +286,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x2
+    const-wide/16 v0, 0x1
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->mDirtyFlags:J

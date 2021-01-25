@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nResponse.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Response.kt\nokhttp3/Response$Builder\n*L\n1#1,455:1\n*E\n"
+    value = "SMAP\nResponse.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Response.kt\nokhttp3/Response$Builder\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,455:1\n1#2:456\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,9 @@
 .method public constructor <init>(Lokhttp3/Response;)V
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "response"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -133,29 +135,10 @@
     iput-object p1, p0, Lokhttp3/Response$Builder;->exchange:Lokhttp3/internal/connection/Exchange;
 
     return-void
-
-    :cond_0
-    const-string p1, "response"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Response$Builder;
-    .locals 1
-
-    iget-object v0, p0, Lokhttp3/Response$Builder;->headers:Lokhttp3/Headers$Builder;
-
-    invoke-virtual {v0, p1, p2}, Lokhttp3/Headers$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
-
-    return-object p0
-.end method
-
 .method public build()Lokhttp3/Response;
     .locals 19
 
@@ -269,7 +252,7 @@
     :cond_4
     const-string v1, "code < 0: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -443,9 +426,11 @@
 .end method
 
 .method public headers(Lokhttp3/Headers;)Lokhttp3/Response$Builder;
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "headers"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lokhttp3/Headers;->newBuilder()Lokhttp3/Headers$Builder;
 
@@ -454,70 +439,40 @@
     iput-object p1, p0, Lokhttp3/Response$Builder;->headers:Lokhttp3/Headers$Builder;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "headers"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public message(Ljava/lang/String;)Lokhttp3/Response$Builder;
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "message"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/Response$Builder;->message:Ljava/lang/String;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "message"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public protocol(Lokhttp3/Protocol;)Lokhttp3/Response$Builder;
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "protocol"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/Response$Builder;->protocol:Lokhttp3/Protocol;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "protocol"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public request(Lokhttp3/Request;)Lokhttp3/Response$Builder;
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "request"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/Response$Builder;->request:Lokhttp3/Request;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "request"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

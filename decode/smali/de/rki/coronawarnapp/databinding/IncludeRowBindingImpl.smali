@@ -47,7 +47,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c0050
+    const v4, 0x7f0c0076
 
     aput v4, v2, v5
 
@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090150
+    const v1, 0x7f090204
 
     const/4 v2, 0x4
 
@@ -67,7 +67,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f090167
 
     const/4 v2, 0x5
 
@@ -75,7 +75,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090223
+    const v1, 0x7f0902f7
 
     const/4 v2, 0x6
 
@@ -227,7 +227,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v9
 
@@ -253,7 +253,9 @@
 
     move-result v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityInverted(Z)I
+    xor-int/lit8 v5, v5, 0x1
+
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
 
     move-result v8
 
@@ -420,7 +422,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xd
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -471,7 +473,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1d
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

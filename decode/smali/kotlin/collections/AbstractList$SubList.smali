@@ -54,6 +54,10 @@
         }
     .end annotation
 
+    const-string v0, "list"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Lkotlin/collections/AbstractList;-><init>()V
 
     iput-object p1, p0, Lkotlin/collections/AbstractList$SubList;->list:Lkotlin/collections/AbstractList;
@@ -85,7 +89,7 @@
 
     const-string v1, " > toIndex: "
 
-    invoke-static {v0, p2, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p2, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -160,7 +164,7 @@
 
     const-string v3, ", size: "
 
-    invoke-static {v2, p1, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

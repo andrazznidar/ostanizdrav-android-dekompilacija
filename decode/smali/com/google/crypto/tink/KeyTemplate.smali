@@ -18,6 +18,14 @@
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/proto/KeyTemplate;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "kt"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,6 +36,18 @@
 
 .method public static create(Ljava/lang/String;[BLcom/google/crypto/tink/KeyTemplate$OutputPrefixType;)Lcom/google/crypto/tink/KeyTemplate;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "typeUrl",
+            "value",
+            "outputPrefixType"
+        }
+    .end annotation
 
     new-instance v0, Lcom/google/crypto/tink/KeyTemplate;
 

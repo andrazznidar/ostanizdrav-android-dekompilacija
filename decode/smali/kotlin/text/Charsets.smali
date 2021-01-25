@@ -3,12 +3,6 @@
 .source "Charsets.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCharsets.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Charsets.kt\nkotlin/text/Charsets\n*L\n1#1,100:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final INSTANCE:Lkotlin/text/Charsets;
 
@@ -31,7 +25,7 @@
 
     const-string v1, "Charset.forName(\"UTF-8\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sput-object v0, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -43,7 +37,7 @@
 
     const-string v1, "Charset.forName(\"UTF-16\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "UTF-16BE"
 
@@ -53,7 +47,7 @@
 
     const-string v1, "Charset.forName(\"UTF-16BE\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "UTF-16LE"
 
@@ -63,7 +57,7 @@
 
     const-string v1, "Charset.forName(\"UTF-16LE\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "US-ASCII"
 
@@ -73,7 +67,7 @@
 
     const-string v1, "Charset.forName(\"US-ASCII\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "ISO-8859-1"
 
@@ -83,7 +77,7 @@
 
     const-string v1, "Charset.forName(\"ISO-8859-1\")"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 .end method

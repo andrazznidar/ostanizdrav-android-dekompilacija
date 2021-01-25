@@ -178,6 +178,26 @@
     return v2
 .end method
 
+.method public getDifference(JJ)I
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDurationField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDurationField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
+.end method
+
 .method public final getType()Lorg/joda/time/DurationFieldType;
     .locals 1
 
@@ -229,7 +249,7 @@
 
     const-string v0, "UnsupportedDurationField["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

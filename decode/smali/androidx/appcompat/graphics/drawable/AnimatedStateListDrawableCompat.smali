@@ -406,7 +406,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v2, v1, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -445,7 +445,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v2, v1, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -572,7 +572,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v2, v1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -607,7 +607,7 @@
 
     const-string v3, ": <transition> tag requires \'fromId\' & \'toId\' attributes"
 
-    invoke-static {v2, v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -622,7 +622,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v2, v1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

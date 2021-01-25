@@ -17,20 +17,34 @@
 
 
 # virtual methods
-.method public createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
-    .locals 3
+.method public bridge synthetic createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/MainCoroutineDispatcher;
+    .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/android/AndroidDispatcherFactory;->createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/android/HandlerContext;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public createDispatcher(Ljava/util/List;)Lkotlinx/coroutines/android/HandlerContext;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
+            ">;)",
+            "Lkotlinx/coroutines/android/HandlerContext;"
+        }
+    .end annotation
 
     new-instance p1, Lkotlinx/coroutines/android/HandlerContext;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
-
-    const-string v1, "Looper.getMainLooper()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
@@ -40,20 +54,11 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "Main"
+    const/4 v2, 0x0
 
-    invoke-direct {p1, v0, v2, v1}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
+    invoke-direct {p1, v0, v1, v2}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
 
     return-object p1
-
-    :cond_0
-    const-string p1, "allFactories"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public getLoadPriority()I

@@ -24,6 +24,18 @@
     return-object v0
 .end method
 
+.method public static malformedVarint()Lcom/google/protobuf/InvalidProtocolBufferException;
+    .locals 2
+
+    new-instance v0, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    const-string v1, "CodedInputStream encountered a malformed varint."
+
+    invoke-direct {v0, v1}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
 .method public static negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
     .locals 2
 

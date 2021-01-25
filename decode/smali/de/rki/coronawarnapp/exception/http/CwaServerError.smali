@@ -3,34 +3,46 @@
 .source "CwaWebException.kt"
 
 
-# instance fields
-.field public final statusCode:I
-
-
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
 
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(I)V
+    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    iput p1, p0, Lde/rki/coronawarnapp/exception/http/CwaServerError;->statusCode:I
+    const/16 p2, 0x1f4
 
-    const/16 v0, 0x1f4
+    if-gt p2, p1, :cond_0
 
-    if-gt v0, p1, :cond_0
+    const/16 p2, 0x257
 
-    const/16 v0, 0x257
-
-    if-lt v0, p1, :cond_0
+    if-lt p2, p1, :cond_0
 
     return-void
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "a server error has to have code 5xx"
+    const-string p3, "Invalid HTTP server error code "
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const-string v0, " (!= 5xx)"
 
-    throw p1
+    invoke-static {p3, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+    .locals 0
+
+    and-int/lit8 p3, p4, 0x4
+
+    const/4 p3, 0x0
+
+    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/http/CwaServerError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
 .end method

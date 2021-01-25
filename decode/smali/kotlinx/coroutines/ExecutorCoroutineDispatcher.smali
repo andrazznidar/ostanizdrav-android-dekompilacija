@@ -14,11 +14,13 @@
 
     sget-object v1, Lkotlinx/coroutines/ExecutorCoroutineDispatcher$Key$1;->INSTANCE:Lkotlinx/coroutines/ExecutorCoroutineDispatcher$Key$1;
 
-    const/4 v2, 0x0
+    const-string v2, "baseKey"
 
-    if-eqz v0, :cond_2
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_1
+    const-string v2, "safeCast"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     instance-of v1, v0, Lkotlin/coroutines/AbstractCoroutineContextKey;
 
@@ -28,20 +30,6 @@
 
     :cond_0
     return-void
-
-    :cond_1
-    const-string v0, "safeCast"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v2
-
-    :cond_2
-    const-string v0, "baseKey"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v2
 .end method
 
 .method public constructor <init>()V

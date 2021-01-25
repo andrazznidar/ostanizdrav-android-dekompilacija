@@ -79,7 +79,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -148,15 +150,6 @@
     invoke-interface {p2}, Lokhttp3/internal/cache/CacheRequest;->abort()V
 
     :cond_2
-    throw p1
-
-    :cond_3
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
     throw p1
 .end method
 

@@ -5,6 +5,17 @@
 
 # virtual methods
 .method public abstract decrypt([B[B)[B
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -13,6 +24,17 @@
 .end method
 
 .method public abstract encrypt([B[B)[B
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

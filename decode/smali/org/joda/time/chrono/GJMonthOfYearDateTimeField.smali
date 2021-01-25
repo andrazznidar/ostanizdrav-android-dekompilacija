@@ -399,7 +399,7 @@
 
     const-string v2, "Magnitude of add amount is too large: "
 
-    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v2
 
@@ -483,6 +483,128 @@
     aget-object p1, p2, p1
 
     return-object p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 8
+
+    cmp-long v0, p1, p3
+
+    if-gez v0, :cond_0
+
+    invoke-virtual {p0, p3, p4, p1, p2}, Lorg/joda/time/field/ImpreciseDateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    neg-int p1, p1
+
+    int-to-long p1, p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getYear(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v1, p1, p2, v0}, Lorg/joda/time/chrono/BasicChronology;->getMonthOfYear(JI)I
+
+    move-result v1
+
+    iget-object v2, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v2, p3, p4}, Lorg/joda/time/chrono/BasicChronology;->getYear(J)I
+
+    move-result v2
+
+    iget-object v3, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v3, p3, p4, v2}, Lorg/joda/time/chrono/BasicChronology;->getMonthOfYear(JI)I
+
+    move-result v3
+
+    sub-int v4, v0, v2
+
+    int-to-long v4, v4
+
+    iget v6, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iMax:I
+
+    int-to-long v6, v6
+
+    mul-long/2addr v4, v6
+
+    int-to-long v6, v1
+
+    add-long/2addr v4, v6
+
+    int-to-long v6, v3
+
+    sub-long/2addr v4, v6
+
+    iget-object v6, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v6, p1, p2, v0, v1}, Lorg/joda/time/chrono/BasicChronology;->getDayOfMonth(JII)I
+
+    move-result v6
+
+    iget-object v7, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v7, v0, v1}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYearMonth(II)I
+
+    move-result v7
+
+    if-ne v6, v7, :cond_1
+
+    iget-object v7, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v7, p3, p4, v2, v3}, Lorg/joda/time/chrono/BasicChronology;->getDayOfMonth(JII)I
+
+    move-result v7
+
+    if-le v7, v6, :cond_1
+
+    iget-object v7, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    iget-object v7, v7, Lorg/joda/time/chrono/AssembledChronology;->iDayOfMonth:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v7, p3, p4, v6}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p3
+
+    :cond_1
+    iget-object v6, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v6, v0, v1}, Lorg/joda/time/chrono/BasicChronology;->getYearMonthMillis(II)J
+
+    move-result-wide v0
+
+    sub-long/2addr p1, v0
+
+    iget-object v0, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, v2, v3}, Lorg/joda/time/chrono/BasicChronology;->getYearMonthMillis(II)J
+
+    move-result-wide v0
+
+    sub-long/2addr p3, v0
+
+    cmp-long p1, p1, p3
+
+    if-gez p1, :cond_2
+
+    const-wide/16 p1, 0x1
+
+    sub-long/2addr v4, p1
+
+    :cond_2
+    move-wide p1, v4
+
+    :goto_0
+    return-wide p1
 .end method
 
 .method public getLeapDurationField()Lorg/joda/time/DurationField;
@@ -589,7 +711,7 @@
 .end method
 
 .method public roundFloor(J)J
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 
@@ -605,15 +727,9 @@
 
     iget-object p2, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 
-    invoke-virtual {p2, v0}, Lorg/joda/time/chrono/BasicChronology;->getYearMillis(I)J
-
-    move-result-wide v1
-
-    invoke-virtual {p2, v0, p1}, Lorg/joda/time/chrono/BasicChronology;->getTotalMillisByYearMonth(II)J
+    invoke-virtual {p2, v0, p1}, Lorg/joda/time/chrono/BasicChronology;->getYearMonthMillis(II)J
 
     move-result-wide p1
-
-    add-long/2addr p1, v1
 
     return-wide p1
 .end method
@@ -625,7 +741,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, p3, v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

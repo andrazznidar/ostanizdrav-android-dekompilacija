@@ -79,7 +79,9 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    const-string v1, "execute parameter required"
+
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
 
     new-instance v0, Lcom/google/android/gms/common/api/internal/zach;
 
@@ -90,13 +92,4 @@
     invoke-direct {v0, p0, v1, v2}, Lcom/google/android/gms/common/api/internal/zach;-><init>(Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;[Lcom/google/android/gms/common/Feature;Z)V
 
     return-object v0
-
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "execute parameter required"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

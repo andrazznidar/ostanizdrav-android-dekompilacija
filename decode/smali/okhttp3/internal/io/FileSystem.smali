@@ -11,9 +11,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lokhttp3/internal/io/FileSystem$Companion$SYSTEM$1;
+    new-instance v0, Lokhttp3/internal/io/FileSystem$Companion$SystemFileSystem;
 
-    invoke-direct {v0}, Lokhttp3/internal/io/FileSystem$Companion$SYSTEM$1;-><init>()V
+    invoke-direct {v0}, Lokhttp3/internal/io/FileSystem$Companion$SystemFileSystem;-><init>()V
 
     sput-object v0, Lokhttp3/internal/io/FileSystem;->SYSTEM:Lokhttp3/internal/io/FileSystem;
 

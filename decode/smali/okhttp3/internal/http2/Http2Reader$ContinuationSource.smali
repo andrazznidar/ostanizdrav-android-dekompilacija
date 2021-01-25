@@ -16,10 +16,6 @@
     name = "ContinuationSource"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Reader.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Reader.kt\nokhttp3/internal/http2/Http2Reader$ContinuationSource\n*L\n1#1,508:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public flags:I
@@ -37,7 +33,11 @@
 
 # direct methods
 .method public constructor <init>(Lokio/BufferedSource;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -67,7 +67,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_6
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     iget v0, p0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->left:I
@@ -241,15 +243,6 @@
     iput p3, p0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->left:I
 
     return-wide p1
-
-    :cond_6
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public timeout()Lokio/Timeout;

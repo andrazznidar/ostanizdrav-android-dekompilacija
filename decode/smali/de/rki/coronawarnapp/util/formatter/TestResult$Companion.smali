@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestResult.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestResult.kt\nde/rki/coronawarnapp/util/formatter/TestResult$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,15:1\n1060#2,2:16\n*E\n*S KotlinDebug\n*F\n+ 1 TestResult.kt\nde/rki/coronawarnapp/util/formatter/TestResult$Companion\n*L\n12#1,2:16\n*E\n"
+    value = "SMAP\nTestResult.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestResult.kt\nde/rki/coronawarnapp/util/formatter/TestResult$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,14:1\n1102#2,2:15\n*E\n*S KotlinDebug\n*F\n+ 1 TestResult.kt\nde/rki/coronawarnapp/util/formatter/TestResult$Companion\n*L\n11#1,2:15\n*E\n"
 .end annotation
 
 

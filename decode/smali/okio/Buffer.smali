@@ -11,7 +11,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBuffer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Buffer.kt\nokio/Buffer\n+ 2 -Util.kt\nokio/-Util\n+ 3 Buffer.kt\nokio/internal/BufferKt\n*L\n1#1,1019:1\n78#2:1020\n75#2:1053\n75#2:1054\n66#2:1114\n66#2:1115\n66#2:1121\n66#2:1122\n66#2:1142\n66#2:1144\n66#2:1146\n66#2:1148\n66#2:1151\n66#2:1153\n66#2:1155\n66#2:1157\n72#2:1177\n72#2:1179\n69#2:1182\n69#2:1184\n69#2:1186\n69#2:1188\n69#2:1190\n69#2:1192\n69#2:1194\n69#2:1196\n78#2:1361\n66#2:1373\n66#2:1375\n66#2:1380\n66#2:1382\n66#2:1387\n66#2:1389\n66#2:1394\n66#2:1396\n66#2:1417\n66#2:1420\n75#2:1477\n78#2:1935\n78#2:1957\n78#2:1966\n237#3,32:1021\n272#3,10:1055\n285#3,18:1065\n399#3,2:1083\n105#3:1085\n401#3:1086\n107#3,18:1087\n306#3,9:1105\n315#3,5:1116\n320#3,10:1123\n333#3,9:1133\n342#3:1143\n343#3:1145\n344#3:1147\n347#3,2:1149\n349#3:1152\n350#3:1154\n351#3:1156\n352#3,10:1158\n365#3,9:1168\n374#3:1178\n377#3,2:1180\n379#3:1183\n380#3:1185\n381#3:1187\n382#3:1189\n383#3:1191\n384#3:1193\n385#3:1195\n386#3,10:1197\n636#3,56:1207\n695#3,55:1263\n752#3:1318\n755#3,7:1319\n766#3,7:1326\n776#3,6:1333\n784#3,5:1339\n816#3,6:1344\n826#3,11:1350\n837#3,2:1362\n842#3,9:1364\n852#3:1374\n853#3,4:1376\n858#3:1381\n859#3,4:1383\n864#3:1388\n865#3,4:1390\n870#3:1395\n871#3,20:1397\n892#3,2:1418\n895#3,18:1421\n590#3:1439\n593#3,6:1440\n601#3:1446\n604#3,7:1447\n613#3,17:1454\n405#3:1471\n408#3,5:1472\n413#3,10:1478\n426#3,5:1488\n429#3,2:1493\n917#3,88:1495\n1008#3,48:1583\n560#3:1631\n567#3,21:1632\n1059#3,7:1653\n1069#3,7:1660\n1079#3,4:1667\n1086#3,8:1671\n1097#3,10:1679\n1110#3,14:1689\n434#3,63:1703\n500#3,40:1766\n543#3,15:1806\n1127#3:1821\n1178#3,39:1822\n1219#3,6:1861\n1228#3,8:1867\n105#3:1875\n1236#3,22:1876\n107#3,18:1898\n1262#3,5:1916\n105#3:1921\n1267#3,13:1922\n1280#3,13:1936\n107#3,8:1949\n117#3,8:1958\n1297#3,4:1967\n105#3:1971\n1301#3,50:1972\n107#3,18:2022\n1360#3,13:2040\n1376#3,32:2053\n1411#3,12:2085\n1426#3,18:2097\n1448#3,2:2115\n1454#3,34:2117\n*E\n*S KotlinDebug\n*F\n+ 1 Buffer.kt\nokio/Buffer\n*L\n160#1:1020\n190#1:1053\n228#1:1054\n254#1:1114\n254#1:1115\n254#1:1121\n254#1:1122\n257#1:1142\n257#1:1144\n257#1:1146\n257#1:1148\n257#1:1151\n257#1:1153\n257#1:1155\n257#1:1157\n260#1:1177\n260#1:1179\n260#1:1182\n260#1:1184\n260#1:1186\n260#1:1188\n260#1:1190\n260#1:1192\n260#1:1194\n260#1:1196\n328#1:1361\n331#1:1373\n331#1:1375\n331#1:1380\n331#1:1382\n331#1:1387\n331#1:1389\n331#1:1394\n331#1:1396\n331#1:1417\n331#1:1420\n367#1:1477\n472#1:1935\n472#1:1957\n472#1:1966\n174#1,32:1021\n245#1,10:1055\n248#1,18:1065\n251#1,2:1083\n251#1:1085\n251#1:1086\n251#1,18:1087\n254#1,9:1105\n254#1,5:1116\n254#1,10:1123\n257#1,9:1133\n257#1:1143\n257#1:1145\n257#1:1147\n257#1,2:1149\n257#1:1152\n257#1:1154\n257#1:1156\n257#1,10:1158\n260#1,9:1168\n260#1:1178\n260#1,2:1180\n260#1:1183\n260#1:1185\n260#1:1187\n260#1:1189\n260#1:1191\n260#1:1193\n260#1:1195\n260#1,10:1197\n272#1,56:1207\n275#1,55:1263\n277#1:1318\n280#1,7:1319\n282#1,7:1326\n285#1,6:1333\n288#1,5:1339\n322#1,6:1344\n328#1,11:1350\n328#1,2:1362\n331#1,9:1364\n331#1:1374\n331#1,4:1376\n331#1:1381\n331#1,4:1383\n331#1:1388\n331#1,4:1390\n331#1:1395\n331#1,20:1397\n331#1,2:1418\n331#1,18:1421\n333#1:1439\n336#1,6:1440\n338#1:1446\n341#1,7:1447\n344#1,17:1454\n364#1:1471\n367#1,5:1472\n367#1,10:1478\n369#1,5:1488\n372#1,2:1493\n377#1,88:1495\n380#1,48:1583\n399#1:1631\n405#1,21:1632\n426#1,7:1653\n430#1,7:1660\n432#1,4:1667\n434#1,8:1671\n438#1,10:1679\n442#1,14:1689\n446#1,63:1703\n449#1,40:1766\n452#1,15:1806\n454#1:1821\n454#1,39:1822\n456#1,6:1861\n466#1,8:1867\n466#1:1875\n466#1,22:1876\n466#1,18:1898\n472#1,5:1916\n472#1:1921\n472#1,13:1922\n472#1,13:1936\n472#1,8:1949\n472#1,8:1958\n477#1,4:1967\n477#1:1971\n477#1,50:1972\n477#1,18:2022\n487#1,13:2040\n549#1,32:2053\n551#1,12:2085\n559#1,18:2097\n564#1,2:2115\n566#1,34:2117\n*E\n"
+    value = "SMAP\nBuffer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Buffer.kt\nokio/Buffer\n+ 2 -Util.kt\nokio/-Util\n+ 3 Buffer.kt\nokio/internal/BufferKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1019:1\n78#2:1020\n75#2:1053\n75#2:1055\n66#2:1115\n66#2:1140\n72#2:1170\n69#2:1176\n78#2:1350\n66#2:1362\n75#2:1463\n78#2:1925\n237#3,32:1021\n272#3,10:1056\n285#3,18:1066\n399#3,2:1084\n105#3:1086\n401#3:1087\n107#3,18:1088\n306#3,9:1106\n315#3,15:1116\n333#3,9:1131\n342#3,20:1141\n365#3,9:1161\n374#3,5:1171\n379#3,17:1177\n636#3,56:1194\n695#3,55:1250\n752#3:1305\n755#3:1306\n756#3,6:1308\n766#3,7:1314\n776#3,6:1321\n784#3,5:1327\n816#3,6:1332\n826#3:1338\n827#3,10:1340\n837#3,2:1351\n842#3,9:1353\n852#3,61:1363\n590#3:1424\n593#3:1425\n594#3,5:1427\n601#3:1432\n604#3,7:1433\n613#3,17:1440\n405#3:1457\n408#3,5:1458\n413#3,10:1464\n426#3,5:1474\n429#3,2:1479\n917#3:1481\n918#3,87:1483\n1008#3,48:1570\n560#3:1618\n567#3,21:1619\n1059#3,7:1640\n1069#3,7:1647\n1079#3,4:1654\n1086#3,8:1658\n1097#3,10:1666\n1110#3,14:1676\n434#3,63:1690\n500#3,40:1753\n543#3:1793\n545#3,13:1795\n1127#3:1808\n1178#3:1809\n1179#3,38:1811\n1219#3,2:1849\n1221#3,4:1852\n1228#3,3:1856\n1232#3,4:1860\n105#3:1864\n1236#3,22:1865\n107#3,18:1887\n1262#3,2:1905\n1264#3,3:1908\n105#3:1911\n1267#3,13:1912\n1280#3,13:1926\n107#3,18:1939\n1297#3,2:1957\n1300#3:1960\n105#3:1961\n1301#3,50:1962\n107#3,18:2012\n1360#3,13:2030\n1376#3,32:2043\n1411#3,12:2075\n1426#3,18:2087\n1448#3:2105\n1449#3:2107\n1454#3,34:2108\n1#4:1054\n1#4:1307\n1#4:1339\n1#4:1426\n1#4:1482\n1#4:1794\n1#4:1810\n1#4:1851\n1#4:1859\n1#4:1907\n1#4:1959\n1#4:2106\n*E\n*S KotlinDebug\n*F\n+ 1 Buffer.kt\nokio/Buffer\n*L\n160#1:1020\n190#1:1053\n228#1:1055\n254#1:1115\n257#1:1140\n260#1:1170\n260#1:1176\n328#1:1350\n331#1:1362\n367#1:1463\n472#1:1925\n174#1,32:1021\n245#1,10:1056\n248#1,18:1066\n251#1,2:1084\n251#1:1086\n251#1:1087\n251#1,18:1088\n254#1,9:1106\n254#1,15:1116\n257#1,9:1131\n257#1,20:1141\n260#1,9:1161\n260#1,5:1171\n260#1,17:1177\n272#1,56:1194\n275#1,55:1250\n277#1:1305\n280#1:1306\n280#1,6:1308\n282#1,7:1314\n285#1,6:1321\n288#1,5:1327\n322#1,6:1332\n328#1:1338\n328#1,10:1340\n328#1,2:1351\n331#1,9:1353\n331#1,61:1363\n333#1:1424\n336#1:1425\n336#1,5:1427\n338#1:1432\n341#1,7:1433\n344#1,17:1440\n364#1:1457\n367#1,5:1458\n367#1,10:1464\n369#1,5:1474\n372#1,2:1479\n377#1:1481\n377#1,87:1483\n380#1,48:1570\n399#1:1618\n405#1,21:1619\n426#1,7:1640\n430#1,7:1647\n432#1,4:1654\n434#1,8:1658\n438#1,10:1666\n442#1,14:1676\n446#1,63:1690\n449#1,40:1753\n452#1:1793\n452#1,13:1795\n454#1:1808\n454#1:1809\n454#1,38:1811\n456#1,2:1849\n456#1,4:1852\n466#1,3:1856\n466#1,4:1860\n466#1:1864\n466#1,22:1865\n466#1,18:1887\n472#1,2:1905\n472#1,3:1908\n472#1:1911\n472#1,13:1912\n472#1,13:1926\n472#1,18:1939\n477#1,2:1957\n477#1:1960\n477#1:1961\n477#1,50:1962\n477#1,18:2012\n487#1,13:2030\n549#1,32:2043\n551#1,12:2075\n559#1,18:2087\n564#1:2105\n564#1:2107\n566#1,34:2108\n280#1:1307\n328#1:1339\n336#1:1426\n377#1:1482\n452#1:1794\n454#1:1810\n456#1:1851\n466#1:1859\n472#1:1907\n477#1:1959\n564#1:2106\n*E\n"
 .end annotation
 
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public clone()Lokio/Buffer;
-    .locals 7
+    .locals 6
 
     new-instance v0, Lokio/Buffer;
 
@@ -62,63 +62,46 @@
     :cond_0
     iget-object v1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {v1}, Lokio/Segment;->sharedCopy()Lokio/Segment;
 
-    move-result-object v3
+    move-result-object v2
 
-    iput-object v3, v0, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v2, v0, Lokio/Buffer;->head:Lokio/Segment;
 
-    iput-object v3, v3, Lokio/Segment;->prev:Lokio/Segment;
+    iput-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    iput-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
+    iput-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    iget-object v4, v1, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v3, v1, Lokio/Segment;->next:Lokio/Segment;
 
     :goto_0
-    if-eq v4, v1, :cond_3
+    if-eq v3, v1, :cond_1
 
-    iget-object v5, v3, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v4, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v5, :cond_2
+    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    if-eqz v4, :cond_1
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v4}, Lokio/Segment;->sharedCopy()Lokio/Segment;
+    invoke-virtual {v3}, Lokio/Segment;->sharedCopy()Lokio/Segment;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
+    invoke-virtual {v4, v5}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
 
-    iget-object v4, v4, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
 
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_3
     iget-wide v1, p0, Lokio/Buffer;->size:J
 
     iput-wide v1, v0, Lokio/Buffer;->size:J
 
     :goto_1
     return-object v0
-
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
 .end method
 
 .method public close()V
@@ -143,13 +126,11 @@
     :cond_0
     iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_3
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v2, :cond_2
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v3, v2, Lokio/Segment;->limit:I
 
@@ -174,24 +155,14 @@
 
     :goto_0
     return-wide v2
-
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v3
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v3
 .end method
 
 .method public final copyTo(Lokio/Buffer;JJ)Lokio/Buffer;
-    .locals 8
+    .locals 7
 
-    const/4 v0, 0x0
+    const-string v0, "out"
 
-    if-eqz p1, :cond_8
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-wide v1, p0, Lokio/Buffer;->size:J
 
@@ -199,107 +170,107 @@
 
     move-wide v5, p4
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v0, 0x0
 
-    cmp-long v3, p4, v1
+    cmp-long v2, p4, v0
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_3
 
     :cond_0
-    iget-wide v3, p1, Lokio/Buffer;->size:J
+    iget-wide v2, p1, Lokio/Buffer;->size:J
 
-    add-long/2addr v3, p4
+    add-long/2addr v2, p4
 
-    iput-wide v3, p1, Lokio/Buffer;->size:J
+    iput-wide v2, p1, Lokio/Buffer;->size:J
 
-    iget-object v3, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
     :goto_0
-    if-eqz v3, :cond_7
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v4, v3, Lokio/Segment;->limit:I
+    iget v3, v2, Lokio/Segment;->limit:I
 
-    iget v5, v3, Lokio/Segment;->pos:I
+    iget v4, v2, Lokio/Segment;->pos:I
 
-    sub-int v6, v4, v5
+    sub-int v5, v3, v4
 
-    int-to-long v6, v6
+    int-to-long v5, v5
 
-    cmp-long v6, p2, v6
+    cmp-long v5, p2, v5
 
-    if-ltz v6, :cond_1
+    if-ltz v5, :cond_1
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v3, v4
 
-    int-to-long v4, v4
+    int-to-long v3, v3
 
-    sub-long/2addr p2, v4
+    sub-long/2addr p2, v3
 
-    iget-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
     goto :goto_0
 
     :cond_1
     :goto_1
-    cmp-long v4, p4, v1
+    cmp-long v3, p4, v0
 
-    if-lez v4, :cond_6
+    if-lez v3, :cond_3
 
-    if-eqz v3, :cond_5
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v3}, Lokio/Segment;->sharedCopy()Lokio/Segment;
+    invoke-virtual {v2}, Lokio/Segment;->sharedCopy()Lokio/Segment;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget v5, v4, Lokio/Segment;->pos:I
+    iget v4, v3, Lokio/Segment;->pos:I
 
     long-to-int p2, p2
 
-    add-int/2addr v5, p2
+    add-int/2addr v4, p2
 
-    iput v5, v4, Lokio/Segment;->pos:I
+    iput v4, v3, Lokio/Segment;->pos:I
 
     long-to-int p2, p4
 
-    add-int/2addr v5, p2
+    add-int/2addr v4, p2
 
-    iget p2, v4, Lokio/Segment;->limit:I
+    iget p2, v3, Lokio/Segment;->limit:I
 
-    invoke-static {v5, p2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v4, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    iput p2, v4, Lokio/Segment;->limit:I
+    iput p2, v3, Lokio/Segment;->limit:I
 
     iget-object p2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
     if-nez p2, :cond_2
 
-    iput-object v4, v4, Lokio/Segment;->prev:Lokio/Segment;
+    iput-object v3, v3, Lokio/Segment;->prev:Lokio/Segment;
 
-    iput-object v4, v4, Lokio/Segment;->next:Lokio/Segment;
+    iput-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
 
-    iput-object v4, p1, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v3, p1, Lokio/Buffer;->head:Lokio/Segment;
 
     goto :goto_2
 
     :cond_2
-    if-eqz p2, :cond_4
+    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object p2, p2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz p2, :cond_3
+    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {p2, v4}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
+    invoke-virtual {p2, v3}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
 
     :goto_2
-    iget p2, v4, Lokio/Segment;->limit:I
+    iget p2, v3, Lokio/Segment;->limit:I
 
-    iget p3, v4, Lokio/Segment;->pos:I
+    iget p3, v3, Lokio/Segment;->pos:I
 
     sub-int/2addr p2, p3
 
@@ -307,42 +278,15 @@
 
     sub-long/2addr p4, p2
 
-    iget-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    move-wide p2, v1
+    move-wide p2, v0
 
     goto :goto_1
 
     :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_6
     :goto_3
     return-object p0
-
-    :cond_7
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_8
-    const-string p1, "out"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public emitCompleteSegments()Lokio/BufferedSink;
@@ -352,11 +296,13 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
+
+    const/4 v2, 0x0
 
     const/4 v3, 0x1
 
@@ -366,17 +312,14 @@
     :goto_0
     move v2, v3
 
-    goto/16 :goto_6
+    goto/16 :goto_3
 
     :cond_1
     instance-of v4, v1, Lokio/Buffer;
 
     if-nez v4, :cond_2
 
-    :goto_1
-    const/4 v2, 0x0
-
-    goto/16 :goto_6
+    goto/16 :goto_3
 
     :cond_2
     iget-wide v4, v0, Lokio/Buffer;->size:J
@@ -389,7 +332,7 @@
 
     if-eqz v6, :cond_3
 
-    goto :goto_1
+    goto :goto_3
 
     :cond_3
     const-wide/16 v6, 0x0
@@ -403,136 +346,102 @@
     :cond_4
     iget-object v4, v0, Lokio/Buffer;->head:Lokio/Segment;
 
-    const/4 v5, 0x0
-
-    if-eqz v4, :cond_c
+    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v1, v1, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v1, :cond_b
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v8, v4, Lokio/Segment;->pos:I
+    iget v5, v4, Lokio/Segment;->pos:I
 
-    iget v9, v1, Lokio/Segment;->pos:I
+    iget v8, v1, Lokio/Segment;->pos:I
 
-    move-wide v10, v6
+    move-wide v9, v6
 
-    :goto_2
-    iget-wide v12, v0, Lokio/Buffer;->size:J
+    :goto_1
+    iget-wide v11, v0, Lokio/Buffer;->size:J
 
-    cmp-long v12, v10, v12
+    cmp-long v11, v9, v11
 
-    if-gez v12, :cond_0
+    if-gez v11, :cond_0
 
-    iget v12, v4, Lokio/Segment;->limit:I
+    iget v11, v4, Lokio/Segment;->limit:I
+
+    sub-int/2addr v11, v5
+
+    iget v12, v1, Lokio/Segment;->limit:I
 
     sub-int/2addr v12, v8
 
-    iget v13, v1, Lokio/Segment;->limit:I
+    invoke-static {v11, v12}, Ljava/lang/Math;->min(II)I
 
-    sub-int/2addr v13, v9
+    move-result v11
 
-    invoke-static {v12, v13}, Ljava/lang/Math;->min(II)I
+    int-to-long v11, v11
 
-    move-result v12
+    move-wide v13, v6
 
-    int-to-long v12, v12
+    :goto_2
+    cmp-long v15, v13, v11
 
-    move-wide v14, v6
+    if-gez v15, :cond_6
 
-    :goto_3
-    cmp-long v16, v14, v12
+    iget-object v15, v4, Lokio/Segment;->data:[B
 
-    if-gez v16, :cond_6
+    add-int/lit8 v16, v5, 0x1
 
-    iget-object v2, v4, Lokio/Segment;->data:[B
+    aget-byte v5, v15, v5
+
+    iget-object v15, v1, Lokio/Segment;->data:[B
 
     add-int/lit8 v17, v8, 0x1
 
-    aget-byte v2, v2, v8
+    aget-byte v8, v15, v8
 
-    iget-object v8, v1, Lokio/Segment;->data:[B
-
-    add-int/lit8 v18, v9, 0x1
-
-    aget-byte v8, v8, v9
-
-    if-eq v2, v8, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    const-wide/16 v8, 0x1
-
-    add-long/2addr v14, v8
-
-    move/from16 v8, v17
-
-    move/from16 v9, v18
+    if-eq v5, v8, :cond_5
 
     goto :goto_3
 
-    :cond_6
-    iget v2, v4, Lokio/Segment;->limit:I
+    :cond_5
+    const-wide/16 v18, 0x1
 
-    if-ne v8, v2, :cond_8
+    add-long v13, v13, v18
 
-    iget-object v2, v4, Lokio/Segment;->next:Lokio/Segment;
+    move/from16 v5, v16
 
-    if-eqz v2, :cond_7
-
-    iget v4, v2, Lokio/Segment;->pos:I
-
-    move v8, v4
-
-    move-object v4, v2
-
-    goto :goto_4
-
-    :cond_7
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v5
-
-    :cond_8
-    :goto_4
-    iget v2, v1, Lokio/Segment;->limit:I
-
-    if-ne v9, v2, :cond_a
-
-    iget-object v1, v1, Lokio/Segment;->next:Lokio/Segment;
-
-    if-eqz v1, :cond_9
-
-    iget v2, v1, Lokio/Segment;->pos:I
-
-    move v9, v2
-
-    goto :goto_5
-
-    :cond_9
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v5
-
-    :cond_a
-    :goto_5
-    add-long/2addr v10, v12
+    move/from16 v8, v17
 
     goto :goto_2
 
-    :goto_6
+    :cond_6
+    iget v13, v4, Lokio/Segment;->limit:I
+
+    if-ne v5, v13, :cond_7
+
+    iget-object v4, v4, Lokio/Segment;->next:Lokio/Segment;
+
+    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget v5, v4, Lokio/Segment;->pos:I
+
+    :cond_7
+    iget v13, v1, Lokio/Segment;->limit:I
+
+    if-ne v8, v13, :cond_8
+
+    iget-object v1, v1, Lokio/Segment;->next:Lokio/Segment;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget v8, v1, Lokio/Segment;->pos:I
+
+    :cond_8
+    add-long/2addr v9, v11
+
+    goto :goto_1
+
+    :goto_3
     return v2
-
-    :cond_b
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v5
-
-    :cond_c
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v5
 .end method
 
 .method public exhausted()Z
@@ -570,7 +479,7 @@
 .end method
 
 .method public final getByte(J)B
-    .locals 8
+    .locals 6
 
     iget-wide v0, p0, Lokio/Buffer;->size:J
 
@@ -578,50 +487,45 @@
 
     move-wide v2, p1
 
-    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_3
 
-    if-eqz v0, :cond_5
+    iget-wide v1, p0, Lokio/Buffer;->size:J
 
-    iget-wide v2, p0, Lokio/Buffer;->size:J
+    sub-long v3, v1, p1
 
-    sub-long v4, v2, p1
+    cmp-long v3, v3, p1
 
-    cmp-long v4, v4, p1
-
-    if-gez v4, :cond_2
+    if-gez v3, :cond_1
 
     :goto_0
-    cmp-long v4, v2, p1
+    cmp-long v3, v1, p1
 
-    if-lez v4, :cond_1
+    if-lez v3, :cond_0
 
     iget-object v0, v0, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v4, v0, Lokio/Segment;->limit:I
+    iget v3, v0, Lokio/Segment;->limit:I
 
-    iget v5, v0, Lokio/Segment;->pos:I
+    iget v4, v0, Lokio/Segment;->pos:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v3, v4
 
-    int-to-long v4, v4
+    int-to-long v3, v3
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v1, v3
 
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    throw v1
-
-    :cond_1
-    iget-object v1, v0, Lokio/Segment;->data:[B
+    iget-object v3, v0, Lokio/Segment;->data:[B
 
     iget v0, v0, Lokio/Segment;->pos:I
 
@@ -629,65 +533,82 @@
 
     add-long/2addr v4, p1
 
-    sub-long/2addr v4, v2
+    sub-long/2addr v4, v1
 
     long-to-int p1, v4
 
-    aget-byte p1, v1, p1
+    aget-byte p1, v3, p1
+
+    goto :goto_2
+
+    :cond_1
+    const-wide/16 v1, 0x0
+
+    :goto_1
+    iget v3, v0, Lokio/Segment;->limit:I
+
+    iget v4, v0, Lokio/Segment;->pos:I
+
+    sub-int/2addr v3, v4
+
+    int-to-long v3, v3
+
+    add-long/2addr v3, v1
+
+    cmp-long v5, v3, p1
+
+    if-lez v5, :cond_2
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget-object v3, v0, Lokio/Segment;->data:[B
+
+    iget v0, v0, Lokio/Segment;->pos:I
+
+    int-to-long v4, v0
+
+    add-long/2addr v4, p1
+
+    sub-long/2addr v4, v1
+
+    long-to-int p1, v4
+
+    aget-byte p1, v3, p1
 
     goto :goto_2
 
     :cond_2
-    const-wide/16 v2, 0x0
-
-    :goto_1
-    iget v4, v0, Lokio/Segment;->limit:I
-
-    iget v5, v0, Lokio/Segment;->pos:I
-
-    sub-int/2addr v4, v5
-
-    int-to-long v6, v4
-
-    add-long/2addr v6, v2
-
-    cmp-long v4, v6, p1
-
-    if-lez v4, :cond_3
-
-    iget-object v0, v0, Lokio/Segment;->data:[B
-
-    int-to-long v4, v5
-
-    add-long/2addr v4, p1
-
-    sub-long/2addr v4, v2
-
-    long-to-int p1, v4
-
-    aget-byte p1, v0, p1
-
-    :goto_2
-    return p1
-
-    :cond_3
     iget-object v0, v0, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v0, :cond_4
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    move-wide v2, v6
+    move-wide v1, v3
 
     goto :goto_1
 
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    :cond_3
+    const/4 v0, 0x0
 
-    throw v1
+    const-wide/16 v1, -0x1
 
-    :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    throw v1
+    iget-object v3, v0, Lokio/Segment;->data:[B
+
+    iget v0, v0, Lokio/Segment;->pos:I
+
+    int-to-long v4, v0
+
+    add-long/2addr v4, p1
+
+    sub-long/2addr v4, v1
+
+    long-to-int p1, v4
+
+    aget-byte p1, v3, p1
+
+    :goto_2
+    return p1
 .end method
 
 .method public hashCode()I
@@ -695,7 +616,7 @@
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     const/4 v1, 0x1
 
@@ -722,7 +643,7 @@
     :cond_1
     iget-object v0, v0, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -731,13 +652,6 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_3
     const/4 v1, 0x0
 
     :goto_1
@@ -769,7 +683,7 @@
     const/4 v2, 0x0
 
     :goto_1
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_c
 
     iget-wide v2, p0, Lokio/Buffer;->size:J
 
@@ -789,7 +703,7 @@
     :cond_3
     iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_b
 
     iget-wide v3, p0, Lokio/Buffer;->size:J
 
@@ -797,18 +711,16 @@
 
     cmp-long v5, v5, p2
 
-    const/4 v6, 0x0
-
-    if-gez v5, :cond_9
+    if-gez v5, :cond_7
 
     :goto_2
     cmp-long v0, v3, p2
 
-    if-lez v0, :cond_5
+    if-lez v0, :cond_4
 
     iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v2, :cond_4
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v0, v2, Lokio/Segment;->limit:I
 
@@ -823,15 +735,10 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v6
-
-    :cond_5
     :goto_3
     cmp-long v0, v3, p4
 
-    if-gez v0, :cond_f
+    if-gez v0, :cond_b
 
     iget-object v0, v2, Lokio/Segment;->data:[B
 
@@ -864,11 +771,11 @@
     long-to-int p2, v5
 
     :goto_4
-    if-ge p2, v1, :cond_7
+    if-ge p2, v1, :cond_6
 
     aget-byte p3, v0, p2
 
-    if-ne p3, p1, :cond_6
+    if-ne p3, p1, :cond_5
 
     iget p1, v2, Lokio/Segment;->pos:I
 
@@ -878,14 +785,14 @@
 
     add-long/2addr p1, v3
 
-    goto/16 :goto_9
+    goto :goto_9
 
-    :cond_6
+    :cond_5
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_4
 
-    :cond_7
+    :cond_6
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -898,20 +805,13 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_8
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v3
 
     goto :goto_3
 
-    :cond_8
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_9
+    :cond_7
     :goto_5
     iget v3, v2, Lokio/Segment;->limit:I
 
@@ -925,12 +825,12 @@
 
     cmp-long v5, v3, p2
 
-    if-lez v5, :cond_d
+    if-lez v5, :cond_a
 
     :goto_6
     cmp-long v3, v0, p4
 
-    if-gez v3, :cond_f
+    if-gez v3, :cond_b
 
     iget-object v3, v2, Lokio/Segment;->data:[B
 
@@ -963,11 +863,11 @@
     long-to-int p2, v5
 
     :goto_7
-    if-ge p2, v4, :cond_b
+    if-ge p2, v4, :cond_9
 
     aget-byte p3, v3, p2
 
-    if-ne p3, p1, :cond_a
+    if-ne p3, p1, :cond_8
 
     iget p1, v2, Lokio/Segment;->pos:I
 
@@ -979,12 +879,12 @@
 
     goto :goto_9
 
-    :cond_a
+    :cond_8
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_7
 
-    :cond_b
+    :cond_9
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -997,46 +897,32 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_c
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v0
 
     goto :goto_6
 
-    :cond_c
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_d
-    const/4 v0, 0x0
-
+    :cond_a
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_e
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide v0, v3
 
     goto :goto_5
 
-    :cond_e
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_f
+    :cond_b
     :goto_8
     const-wide/16 p1, -0x1
 
     :goto_9
     return-wide p1
 
-    :cond_10
+    :cond_c
     const-string p1, "size="
 
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1074,7 +960,9 @@
 .method public indexOfElement(Lokio/ByteString;)J
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "targetBytes"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -1083,45 +971,40 @@
     move-result-wide v0
 
     return-wide v0
-
-    :cond_0
-    const-string p1, "targetBytes"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public indexOfElement(Lokio/ByteString;J)J
-    .locals 12
+    .locals 11
+
+    const-string v0, "targetBytes"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
     cmp-long v2, p2, v0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     if-ltz v2, :cond_0
 
-    move v2, v4
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    move v2, v3
+    move v2, v4
 
     :goto_0
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_13
 
     iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
     const-wide/16 v5, -0x1
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_12
 
     iget-wide v7, p0, Lokio/Buffer;->size:J
 
@@ -1131,18 +1014,16 @@
 
     const/4 v10, 0x2
 
-    const/4 v11, 0x0
-
-    if-gez v9, :cond_c
+    if-gez v9, :cond_9
 
     :goto_1
     cmp-long v0, v7, p2
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_1
 
     iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v2, :cond_1
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v0, v2, Lokio/Segment;->limit:I
 
@@ -1157,22 +1038,17 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_2
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 
     move-result v0
 
-    if-ne v0, v10, :cond_7
+    if-ne v0, v10, :cond_5
 
-    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
+    invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result v0
 
-    invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
+    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result p1
 
@@ -1181,7 +1057,7 @@
 
     cmp-long v1, v7, v3
 
-    if-gez v1, :cond_18
+    if-gez v1, :cond_12
 
     iget-object v1, v2, Lokio/Segment;->data:[B
 
@@ -1198,28 +1074,28 @@
     iget p3, v2, Lokio/Segment;->limit:I
 
     :goto_3
-    if-ge p2, p3, :cond_5
+    if-ge p2, p3, :cond_4
 
     aget-byte v3, v1, p2
 
-    if-eq v3, v0, :cond_4
+    if-eq v3, v0, :cond_3
 
-    if-ne v3, p1, :cond_3
+    if-ne v3, p1, :cond_2
 
     goto :goto_4
 
-    :cond_3
+    :cond_2
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_3
 
-    :cond_4
+    :cond_3
     :goto_4
     iget p1, v2, Lokio/Segment;->pos:I
 
     goto :goto_8
 
-    :cond_5
+    :cond_4
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -1232,18 +1108,13 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_6
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v7
 
     goto :goto_2
 
-    :cond_6
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_7
+    :cond_5
     invoke-virtual {p1}, Lokio/ByteString;->internalArray$okio()[B
 
     move-result-object p1
@@ -1253,7 +1124,7 @@
 
     cmp-long v0, v7, v0
 
-    if-gez v0, :cond_18
+    if-gez v0, :cond_12
 
     iget-object v0, v2, Lokio/Segment;->data:[B
 
@@ -1270,20 +1141,20 @@
     iget p3, v2, Lokio/Segment;->limit:I
 
     :goto_6
-    if-ge p2, p3, :cond_a
+    if-ge p2, p3, :cond_8
 
     aget-byte v1, v0, p2
 
-    array-length v4, p1
+    array-length v3, p1
 
-    move v9, v3
+    move v9, v4
 
     :goto_7
-    if-ge v9, v4, :cond_9
+    if-ge v9, v3, :cond_7
 
     aget-byte v10, p1, v9
 
-    if-ne v1, v10, :cond_8
+    if-ne v1, v10, :cond_6
 
     iget p1, v2, Lokio/Segment;->pos:I
 
@@ -1296,17 +1167,17 @@
 
     goto/16 :goto_11
 
-    :cond_8
+    :cond_6
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_7
 
-    :cond_9
+    :cond_7
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_6
 
-    :cond_a
+    :cond_8
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -1319,18 +1190,13 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_b
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v7
 
     goto :goto_5
 
-    :cond_b
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_c
+    :cond_9
     :goto_9
     iget v7, v2, Lokio/Segment;->limit:I
 
@@ -1344,30 +1210,30 @@
 
     cmp-long v9, v7, p2
 
-    if-lez v9, :cond_16
+    if-lez v9, :cond_11
 
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 
     move-result v7
 
-    if-ne v7, v10, :cond_11
-
-    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
-
-    move-result v3
+    if-ne v7, v10, :cond_d
 
     invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
+
+    move-result v4
+
+    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result p1
 
     :goto_a
     iget-wide v7, p0, Lokio/Buffer;->size:J
 
-    cmp-long v4, v0, v7
+    cmp-long v3, v0, v7
 
-    if-gez v4, :cond_18
+    if-gez v3, :cond_12
 
-    iget-object v4, v2, Lokio/Segment;->data:[B
+    iget-object v3, v2, Lokio/Segment;->data:[B
 
     iget v7, v2, Lokio/Segment;->pos:I
 
@@ -1382,28 +1248,28 @@
     iget p3, v2, Lokio/Segment;->limit:I
 
     :goto_b
-    if-ge p2, p3, :cond_f
+    if-ge p2, p3, :cond_c
 
-    aget-byte v7, v4, p2
+    aget-byte v7, v3, p2
 
-    if-eq v7, v3, :cond_e
+    if-eq v7, v4, :cond_b
 
-    if-ne v7, p1, :cond_d
+    if-ne v7, p1, :cond_a
 
     goto :goto_c
 
-    :cond_d
+    :cond_a
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_b
 
-    :cond_e
+    :cond_b
     :goto_c
     iget p1, v2, Lokio/Segment;->pos:I
 
     goto :goto_10
 
-    :cond_f
+    :cond_c
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -1416,18 +1282,13 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_10
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v0
 
     goto :goto_a
 
-    :cond_10
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_11
+    :cond_d
     invoke-virtual {p1}, Lokio/ByteString;->internalArray$okio()[B
 
     move-result-object p1
@@ -1435,11 +1296,11 @@
     :goto_d
     iget-wide v7, p0, Lokio/Buffer;->size:J
 
-    cmp-long v4, v0, v7
+    cmp-long v3, v0, v7
 
-    if-gez v4, :cond_18
+    if-gez v3, :cond_12
 
-    iget-object v4, v2, Lokio/Segment;->data:[B
+    iget-object v3, v2, Lokio/Segment;->data:[B
 
     iget v7, v2, Lokio/Segment;->pos:I
 
@@ -1454,20 +1315,20 @@
     iget p3, v2, Lokio/Segment;->limit:I
 
     :goto_e
-    if-ge p2, p3, :cond_14
+    if-ge p2, p3, :cond_10
 
-    aget-byte v7, v4, p2
+    aget-byte v7, v3, p2
 
     array-length v8, p1
 
-    move v9, v3
+    move v9, v4
 
     :goto_f
-    if-ge v9, v8, :cond_13
+    if-ge v9, v8, :cond_f
 
     aget-byte v10, p1, v9
 
-    if-ne v7, v10, :cond_12
+    if-ne v7, v10, :cond_e
 
     iget p1, v2, Lokio/Segment;->pos:I
 
@@ -1480,17 +1341,17 @@
 
     goto :goto_11
 
-    :cond_12
+    :cond_e
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_f
 
-    :cond_13
+    :cond_f
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_e
 
-    :cond_14
+    :cond_10
     iget p2, v2, Lokio/Segment;->limit:I
 
     iget p3, v2, Lokio/Segment;->pos:I
@@ -1503,39 +1364,29 @@
 
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_15
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide p2, v0
 
     goto :goto_d
 
-    :cond_15
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_16
+    :cond_11
     iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v2, :cond_17
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-wide v0, v7
 
     goto/16 :goto_9
 
-    :cond_17
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v11
-
-    :cond_18
+    :cond_12
     :goto_11
     return-wide v5
 
-    :cond_19
+    :cond_13
     const-string p1, "fromIndex < 0: "
 
-    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1576,7 +1427,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -1626,9 +1479,7 @@
 
     iput-object p1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1, v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     :cond_0
     return v1
@@ -1637,19 +1488,14 @@
     const/4 p1, -0x1
 
     return p1
-
-    :cond_2
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public read([BII)I
     .locals 7
+
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     array-length v0, p1
 
@@ -1659,7 +1505,7 @@
 
     int-to-long v5, p3
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -1707,9 +1553,7 @@
 
     iput-object p1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1, v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_0
 
@@ -1724,7 +1568,9 @@
 .method public read(Lokio/Buffer;J)J
     .locals 4
 
-    if-eqz p1, :cond_4
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -1770,7 +1616,7 @@
     :cond_3
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1783,15 +1629,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_4
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public readAll(Lokio/Sink;)J
@@ -1801,6 +1638,10 @@
             Ljava/io/IOException;
         }
     .end annotation
+
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lokio/Buffer;->size:J
 
@@ -1828,58 +1669,51 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v2, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v2, :cond_1
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v3, v2, Lokio/Segment;->pos:I
+    iget v1, v0, Lokio/Segment;->pos:I
 
-    iget v4, v2, Lokio/Segment;->limit:I
+    iget v2, v0, Lokio/Segment;->limit:I
 
-    iget-object v5, v2, Lokio/Segment;->data:[B
+    iget-object v3, v0, Lokio/Segment;->data:[B
 
-    add-int/lit8 v6, v3, 0x1
+    add-int/lit8 v4, v1, 0x1
 
-    aget-byte v3, v5, v3
+    aget-byte v1, v3, v1
+
+    iget-wide v5, p0, Lokio/Buffer;->size:J
 
     const-wide/16 v7, 0x1
 
-    sub-long/2addr v0, v7
+    sub-long/2addr v5, v7
 
-    iput-wide v0, p0, Lokio/Buffer;->size:J
+    iput-wide v5, p0, Lokio/Buffer;->size:J
 
-    if-ne v6, v4, :cond_0
+    if-ne v4, v2, :cond_0
 
-    invoke-virtual {v2}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object v0, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {v0, v2}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_0
 
     :cond_0
-    iput v6, v2, Lokio/Segment;->pos:I
+    iput v4, v0, Lokio/Segment;->pos:I
 
     :goto_0
-    return v3
+    return v1
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -1931,6 +1765,10 @@
 
     new-array p2, p1, [B
 
+    const-string v0, "sink"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     :goto_1
     if-ge v1, p1, :cond_2
 
@@ -1968,7 +1806,7 @@
     :cond_4
     const-string v0, "byteCount: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2073,7 +1911,7 @@
     :cond_3
     const-string v0, "byteCount: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2104,7 +1942,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_b
 
     const-wide/16 v1, -0x7
 
@@ -2117,7 +1955,7 @@
     :cond_0
     iget-object v8, v0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v8, :cond_b
+    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v9, v8, Lokio/Segment;->data:[B
 
@@ -2196,7 +2034,7 @@
 
     const-string v3, "Number too large: "
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -2256,11 +2094,11 @@
 
     const-string v2, "Expected leading [0-9] or \'-\' character but was 0x"
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-static {v13}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v13}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2286,18 +2124,14 @@
 
     iput-object v8, v0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object v8, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    move-object v9, v15
-
-    invoke-virtual {v8, v9}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v15}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_4
 
     :cond_8
-    move-object v9, v15
+    move-object v8, v15
 
-    iput v10, v9, Lokio/Segment;->pos:I
+    iput v10, v8, Lokio/Segment;->pos:I
 
     :goto_4
     if-nez v6, :cond_9
@@ -2326,13 +2160,6 @@
     return-wide v3
 
     :cond_b
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v1, 0x0
-
-    throw v1
-
-    :cond_c
     new-instance v1, Ljava/io/EOFException;
 
     invoke-direct {v1}, Ljava/io/EOFException;-><init>()V
@@ -2354,7 +2181,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     const/4 v0, 0x0
 
@@ -2365,7 +2192,7 @@
     :cond_0
     iget-object v6, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v6, :cond_9
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v7, v6, Lokio/Segment;->data:[B
 
@@ -2463,7 +2290,7 @@
 
     const-string v2, "Number too large: "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -2493,11 +2320,11 @@
 
     const-string v1, "Expected leading [0-9a-fA-F] character but was 0x"
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {v10}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v10}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v2
 
@@ -2521,9 +2348,7 @@
 
     iput-object v7, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object v7, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {v7, v6}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v6}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_4
 
@@ -2549,13 +2374,6 @@
     return-wide v4
 
     :cond_9
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_a
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -2564,7 +2382,7 @@
 .end method
 
 .method public readInt()I
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/EOFException;
@@ -2575,25 +2393,25 @@
 
     const-wide/16 v2, 0x4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_3
+    if-ltz v0, :cond_2
 
-    iget-object v4, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v4, :cond_2
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v5, v4, Lokio/Segment;->pos:I
+    iget v1, v0, Lokio/Segment;->pos:I
 
-    iget v6, v4, Lokio/Segment;->limit:I
+    iget v4, v0, Lokio/Segment;->limit:I
 
-    sub-int v7, v6, v5
+    sub-int v5, v4, v1
 
-    int-to-long v7, v7
+    int-to-long v5, v5
 
-    cmp-long v7, v7, v2
+    cmp-long v5, v5, v2
 
-    if-gez v7, :cond_0
+    if-gez v5, :cond_0
 
     invoke-virtual {p0}, Lokio/Buffer;->readByte()B
 
@@ -2634,79 +2452,72 @@
     goto :goto_1
 
     :cond_0
-    iget-object v7, v4, Lokio/Segment;->data:[B
+    iget-object v5, v0, Lokio/Segment;->data:[B
 
-    add-int/lit8 v8, v5, 0x1
+    add-int/lit8 v6, v1, 0x1
 
-    aget-byte v5, v7, v5
+    aget-byte v1, v5, v1
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    shl-int/lit8 v5, v5, 0x18
+    shl-int/lit8 v1, v1, 0x18
 
-    add-int/lit8 v9, v8, 0x1
+    add-int/lit8 v7, v6, 0x1
 
-    aget-byte v8, v7, v8
+    aget-byte v6, v5, v6
 
-    and-int/lit16 v8, v8, 0xff
+    and-int/lit16 v6, v6, 0xff
 
-    shl-int/lit8 v8, v8, 0x10
+    shl-int/lit8 v6, v6, 0x10
 
-    or-int/2addr v5, v8
+    or-int/2addr v1, v6
 
-    add-int/lit8 v8, v9, 0x1
+    add-int/lit8 v6, v7, 0x1
 
-    aget-byte v9, v7, v9
-
-    and-int/lit16 v9, v9, 0xff
-
-    shl-int/lit8 v9, v9, 0x8
-
-    or-int/2addr v5, v9
-
-    add-int/lit8 v9, v8, 0x1
-
-    aget-byte v7, v7, v8
+    aget-byte v7, v5, v7
 
     and-int/lit16 v7, v7, 0xff
 
-    or-int/2addr v5, v7
+    shl-int/lit8 v7, v7, 0x8
 
-    sub-long/2addr v0, v2
+    or-int/2addr v1, v7
 
-    iput-wide v0, p0, Lokio/Buffer;->size:J
+    add-int/lit8 v7, v6, 0x1
 
-    if-ne v9, v6, :cond_1
+    aget-byte v5, v5, v6
 
-    invoke-virtual {v4}, Lokio/Segment;->pop()Lokio/Segment;
+    and-int/lit16 v5, v5, 0xff
 
-    move-result-object v0
+    or-int/2addr v1, v5
 
-    iput-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-wide v5, p0, Lokio/Buffer;->size:J
 
-    sget-object v0, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
+    sub-long/2addr v5, v2
 
-    invoke-virtual {v0, v4}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    iput-wide v5, p0, Lokio/Buffer;->size:J
+
+    if-ne v7, v4, :cond_1
+
+    invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
+
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_0
 
     :cond_1
-    iput v9, v4, Lokio/Segment;->pos:I
+    iput v7, v0, Lokio/Segment;->pos:I
 
     :goto_0
-    move v0, v5
+    move v0, v1
 
     :goto_1
     return v0
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -2715,7 +2526,7 @@
 .end method
 
 .method public readShort()S
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/EOFException;
@@ -2726,23 +2537,23 @@
 
     const-wide/16 v2, 0x2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_3
+    if-ltz v0, :cond_2
 
-    iget-object v4, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v4, :cond_2
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v5, v4, Lokio/Segment;->pos:I
+    iget v1, v0, Lokio/Segment;->pos:I
 
-    iget v6, v4, Lokio/Segment;->limit:I
+    iget v4, v0, Lokio/Segment;->limit:I
 
-    sub-int v7, v6, v5
+    sub-int v5, v4, v1
 
-    const/4 v8, 0x2
+    const/4 v6, 0x2
 
-    if-ge v7, v8, :cond_0
+    if-ge v5, v6, :cond_0
 
     invoke-virtual {p0}, Lokio/Buffer;->readByte()B
 
@@ -2765,59 +2576,52 @@
     goto :goto_1
 
     :cond_0
-    iget-object v7, v4, Lokio/Segment;->data:[B
+    iget-object v5, v0, Lokio/Segment;->data:[B
 
-    add-int/lit8 v8, v5, 0x1
+    add-int/lit8 v6, v1, 0x1
 
-    aget-byte v5, v7, v5
+    aget-byte v1, v5, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x8
+
+    add-int/lit8 v7, v6, 0x1
+
+    aget-byte v5, v5, v6
 
     and-int/lit16 v5, v5, 0xff
 
-    shl-int/lit8 v5, v5, 0x8
+    or-int/2addr v1, v5
 
-    add-int/lit8 v9, v8, 0x1
+    iget-wide v5, p0, Lokio/Buffer;->size:J
 
-    aget-byte v7, v7, v8
+    sub-long/2addr v5, v2
 
-    and-int/lit16 v7, v7, 0xff
+    iput-wide v5, p0, Lokio/Buffer;->size:J
 
-    or-int/2addr v5, v7
+    if-ne v7, v4, :cond_1
 
-    sub-long/2addr v0, v2
+    invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
 
-    iput-wide v0, p0, Lokio/Buffer;->size:J
+    move-result-object v2
 
-    if-ne v9, v6, :cond_1
+    iput-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    invoke-virtual {v4}, Lokio/Segment;->pop()Lokio/Segment;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
-
-    sget-object v0, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {v0, v4}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_0
 
     :cond_1
-    iput v9, v4, Lokio/Segment;->pos:I
+    iput v7, v0, Lokio/Segment;->pos:I
 
     :goto_0
-    int-to-short v0, v5
+    int-to-short v0, v1
 
     :goto_1
     return v0
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -2866,58 +2670,58 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "charset"
 
-    if-eqz p3, :cond_7
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-ltz v0, :cond_0
+
+    const v1, 0x7fffffff
+
+    int-to-long v1, v1
 
     cmp-long v1, p1, v1
 
-    if-ltz v1, :cond_0
+    if-gtz v1, :cond_0
 
-    const v2, 0x7fffffff
-
-    int-to-long v2, v2
-
-    cmp-long v2, p1, v2
-
-    if-gtz v2, :cond_0
-
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_5
 
-    iget-wide v2, p0, Lokio/Buffer;->size:J
+    iget-wide v1, p0, Lokio/Buffer;->size:J
 
-    cmp-long v2, v2, p1
+    cmp-long v1, v1, p1
 
-    if-ltz v2, :cond_5
+    if-ltz v1, :cond_4
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     const-string p1, ""
 
     return-object p1
 
     :cond_1
-    iget-object v1, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v1, :cond_4
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v0, v1, Lokio/Segment;->pos:I
+    iget v1, v0, Lokio/Segment;->pos:I
 
-    int-to-long v2, v0
+    int-to-long v2, v1
 
     add-long/2addr v2, p1
 
-    iget v4, v1, Lokio/Segment;->limit:I
+    iget v4, v0, Lokio/Segment;->limit:I
 
     int-to-long v4, v4
 
@@ -2936,59 +2740,52 @@
     return-object p2
 
     :cond_2
-    iget-object v2, v1, Lokio/Segment;->data:[B
+    iget-object v2, v0, Lokio/Segment;->data:[B
 
     long-to-int v3, p1
 
     new-instance v4, Ljava/lang/String;
 
-    invoke-direct {v4, v2, v0, v3, p3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v4, v2, v1, v3, p3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    iget p3, v1, Lokio/Segment;->pos:I
+    iget p3, v0, Lokio/Segment;->pos:I
 
     add-int/2addr p3, v3
 
-    iput p3, v1, Lokio/Segment;->pos:I
+    iput p3, v0, Lokio/Segment;->pos:I
 
-    iget-wide v2, p0, Lokio/Buffer;->size:J
+    iget-wide v1, p0, Lokio/Buffer;->size:J
 
-    sub-long/2addr v2, p1
+    sub-long/2addr v1, p1
 
-    iput-wide v2, p0, Lokio/Buffer;->size:J
+    iput-wide v1, p0, Lokio/Buffer;->size:J
 
-    iget p1, v1, Lokio/Segment;->limit:I
+    iget p1, v0, Lokio/Segment;->limit:I
 
     if-ne p3, p1, :cond_3
 
-    invoke-virtual {v1}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
 
     move-result-object p1
 
     iput-object p1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1, v1}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     :cond_3
     return-object v4
 
     :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_5
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
 
     throw p1
 
-    :cond_6
+    :cond_5
     const-string p3, "byteCount: "
 
-    invoke-static {p3, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p3, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3001,13 +2798,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_7
-    const-string p1, "charset"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public readUtf8()Ljava/lang/String;
@@ -3202,7 +2992,7 @@
 
     const-string v3, ": "
 
-    invoke-static {v2, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -3214,7 +3004,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->toHexString(B)Ljava/lang/String;
+    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toHexString(B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -3386,25 +3176,25 @@
 
     invoke-virtual/range {v0 .. v5}, Lokio/Buffer;->copyTo(Lokio/Buffer;JJ)Lokio/Buffer;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v0, Ljava/io/EOFException;
 
     const-string v1, "\\n not found: limit="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lokio/Buffer;->size:J
+    move-result-object v1
 
-    invoke-static {v1, v2, p1, p2}, Ljava/lang/Math;->min(JJ)J
+    iget-wide v2, p0, Lokio/Buffer;->size:J
+
+    invoke-static {v2, v3, p1, p2}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string p1, " content="
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Lokio/Buffer;->readByteString()Lokio/ByteString;
 
@@ -3414,26 +3204,24 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 p1, 0x2026
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance p2, Ljava/io/EOFException;
+    invoke-direct {v0, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p2, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    throw v0
 
     :cond_4
     const-string v0, "limit < 0: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3495,7 +3283,9 @@
 .method public select(Lokio/Options;)I
     .locals 3
 
-    if-eqz p1, :cond_1
+    const-string v0, "options"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -3526,15 +3316,6 @@
 
     :goto_0
     return v0
-
-    :cond_1
-    const-string p1, "options"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public skip(J)V
@@ -3597,9 +3378,7 @@
 
     iput-object v1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object v1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {v1, v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     goto :goto_0
 
@@ -3615,7 +3394,7 @@
 .end method
 
 .method public final snapshot(I)Lokio/ByteString;
-    .locals 9
+    .locals 8
 
     if-nez p1, :cond_0
 
@@ -3630,7 +3409,7 @@
 
     int-to-long v4, p1
 
-    invoke-static/range {v0 .. v5}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/Buffer;->head:Lokio/Segment;
 
@@ -3641,11 +3420,9 @@
     move v3, v2
 
     :goto_0
-    const/4 v4, 0x0
+    if-ge v2, p1, :cond_2
 
-    if-ge v2, p1, :cond_3
-
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v4, v0, Lokio/Segment;->limit:I
 
@@ -3673,68 +3450,58 @@
     throw p1
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v4
-
-    :cond_3
     new-array v0, v3, [[B
 
     mul-int/lit8 v2, v3, 0x2
 
     new-array v2, v2, [I
 
-    iget-object v5, p0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v4, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    move-object v6, v5
+    move-object v5, v4
 
-    move v5, v1
+    move v4, v1
 
     :goto_1
-    if-ge v1, p1, :cond_5
+    if-ge v1, p1, :cond_3
 
-    if-eqz v6, :cond_4
+    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-object v7, v6, Lokio/Segment;->data:[B
+    iget-object v6, v5, Lokio/Segment;->data:[B
 
-    aput-object v7, v0, v5
+    aput-object v6, v0, v4
 
-    iget v7, v6, Lokio/Segment;->limit:I
+    iget v6, v5, Lokio/Segment;->limit:I
 
-    iget v8, v6, Lokio/Segment;->pos:I
+    iget v7, v5, Lokio/Segment;->pos:I
 
-    sub-int/2addr v7, v8
+    sub-int/2addr v6, v7
 
-    add-int/2addr v1, v7
+    add-int/2addr v1, v6
 
     invoke-static {v1, p1}, Ljava/lang/Math;->min(II)I
 
-    move-result v7
+    move-result v6
 
-    aput v7, v2, v5
+    aput v6, v2, v4
 
-    add-int v7, v5, v3
+    add-int v6, v4, v3
 
-    iget v8, v6, Lokio/Segment;->pos:I
+    iget v7, v5, Lokio/Segment;->pos:I
 
-    aput v8, v2, v7
+    aput v7, v2, v6
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    iput-boolean v7, v6, Lokio/Segment;->shared:Z
+    iput-boolean v6, v5, Lokio/Segment;->shared:Z
 
-    add-int/2addr v5, v7
+    add-int/2addr v4, v6
 
-    iget-object v6, v6, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v5, v5, Lokio/Segment;->next:Lokio/Segment;
 
     goto :goto_1
 
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v4
-
-    :cond_5
+    :cond_3
     new-instance p1, Lokio/SegmentedByteString;
 
     invoke-direct {p1, v0, v2}, Lokio/SegmentedByteString;-><init>([[B[I)V
@@ -3791,7 +3558,7 @@
     :cond_1
     const-string v0, "size > Int.MAX_VALUE: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -3831,15 +3598,13 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Lokio/Buffer;->head:Lokio/Segment;
 
     if-nez v1, :cond_1
 
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1}, Lokio/SegmentPool;->take()Lokio/Segment;
+    invoke-static {}, Lokio/SegmentPool;->take()Lokio/Segment;
 
     move-result-object p1
 
@@ -3852,13 +3617,11 @@
     goto :goto_2
 
     :cond_1
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_5
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v1, v1, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v1, :cond_4
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v2, v1, Lokio/Segment;->limit:I
 
@@ -3879,9 +3642,7 @@
 
     :cond_3
     :goto_1
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1}, Lokio/SegmentPool;->take()Lokio/Segment;
+    invoke-static {}, Lokio/SegmentPool;->take()Lokio/Segment;
 
     move-result-object p1
 
@@ -3891,16 +3652,6 @@
     return-object p1
 
     :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_6
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "unexpected capacity"
@@ -3922,7 +3673,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
@@ -3973,69 +3726,48 @@
     iput-wide v1, p0, Lokio/Buffer;->size:J
 
     return v0
-
-    :cond_1
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public write(Lokio/ByteString;)Lokio/Buffer;
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "byteString"
 
-    const/4 v0, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {p1, p0, v0, v1}, Lokio/ByteString;->write$okio(Lokio/Buffer;II)V
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, p0, v1, v0}, Lokio/ByteString;->write$okio(Lokio/Buffer;II)V
 
     return-object p0
-
-    :cond_0
-    const-string p1, "byteString"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public write([B)Lokio/Buffer;
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "source"
 
-    const/4 v0, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    array-length v1, p1
+    array-length v0, p1
 
-    invoke-virtual {p0, p1, v0, v1}, Lokio/Buffer;->write([BII)Lokio/Buffer;
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0}, Lokio/Buffer;->write([BII)Lokio/Buffer;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public write([BII)Lokio/Buffer;
     .locals 9
 
-    if-eqz p1, :cond_1
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     array-length v0, p1
 
@@ -4047,7 +3779,7 @@
 
     move-wide v5, v7
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     add-int/2addr p3, p2
 
@@ -4096,15 +3828,6 @@
     iput-wide p1, p0, Lokio/Buffer;->size:J
 
     return-object p0
-
-    :cond_1
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public bridge synthetic write(Lokio/ByteString;)Lokio/BufferedSink;
@@ -4132,453 +3855,390 @@
 .end method
 
 .method public write(Lokio/Buffer;J)V
-    .locals 17
+    .locals 12
 
-    move-object/from16 v0, p0
+    const-string v0, "source"
 
-    move-object/from16 v1, p1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v2, 0x0
+    const/4 v0, 0x1
 
-    if-eqz v1, :cond_1c
+    const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    if-eq p1, p0, :cond_0
 
-    const/4 v4, 0x0
-
-    if-eq v1, v0, :cond_0
-
-    move v5, v3
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    move v5, v4
+    move v2, v1
 
     :goto_0
-    if-eqz v5, :cond_1b
+    if-eqz v2, :cond_f
 
-    iget-wide v6, v1, Lokio/Buffer;->size:J
+    iget-wide v3, p1, Lokio/Buffer;->size:J
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v5, 0x0
 
-    move-wide/from16 v10, p2
+    move-wide v7, p2
 
-    invoke-static/range {v6 .. v11}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
-
-    move-wide/from16 v5, p2
+    invoke-static/range {v3 .. v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     :goto_1
-    const-wide/16 v7, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v7, v5, v7
+    cmp-long v2, p2, v2
 
-    if-lez v7, :cond_1a
+    if-lez v2, :cond_e
 
-    iget-object v7, v1, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v7, :cond_19
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v8, v7, Lokio/Segment;->limit:I
+    iget v2, v2, Lokio/Segment;->limit:I
 
-    if-eqz v7, :cond_18
+    iget-object v3, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    iget v7, v7, Lokio/Segment;->pos:I
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    sub-int/2addr v8, v7
+    iget v3, v3, Lokio/Segment;->pos:I
 
-    int-to-long v7, v8
+    sub-int/2addr v2, v3
 
-    cmp-long v7, v5, v7
+    int-to-long v2, v2
 
-    const/16 v8, 0x2000
+    cmp-long v2, p2, v2
 
-    if-gez v7, :cond_c
+    const/16 v3, 0x2000
 
-    iget-object v7, v0, Lokio/Buffer;->head:Lokio/Segment;
+    if-gez v2, :cond_7
 
-    if-eqz v7, :cond_2
+    iget-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v7, :cond_1
+    if-eqz v2, :cond_1
 
-    iget-object v7, v7, Lokio/Segment;->prev:Lokio/Segment;
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
     goto :goto_2
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_2
-    move-object v7, v2
+    const/4 v2, 0x0
 
     :goto_2
-    if-eqz v7, :cond_5
+    if-eqz v2, :cond_3
 
-    iget-boolean v9, v7, Lokio/Segment;->owner:Z
+    iget-boolean v4, v2, Lokio/Segment;->owner:Z
 
-    if-eqz v9, :cond_5
+    if-eqz v4, :cond_3
 
-    iget v9, v7, Lokio/Segment;->limit:I
+    iget v4, v2, Lokio/Segment;->limit:I
 
-    int-to-long v9, v9
+    int-to-long v4, v4
 
-    add-long/2addr v9, v5
+    add-long/2addr v4, p2
 
-    iget-boolean v11, v7, Lokio/Segment;->shared:Z
+    iget-boolean v6, v2, Lokio/Segment;->shared:Z
 
-    if-eqz v11, :cond_3
+    if-eqz v6, :cond_2
 
-    move v11, v4
+    move v6, v1
 
     goto :goto_3
 
-    :cond_3
-    iget v11, v7, Lokio/Segment;->pos:I
+    :cond_2
+    iget v6, v2, Lokio/Segment;->pos:I
 
     :goto_3
-    int-to-long v11, v11
+    int-to-long v6, v6
 
-    sub-long/2addr v9, v11
+    sub-long/2addr v4, v6
 
-    int-to-long v11, v8
+    int-to-long v6, v3
 
-    cmp-long v9, v9, v11
+    cmp-long v4, v4, v6
 
-    if-gtz v9, :cond_5
+    if-gtz v4, :cond_3
 
-    iget-object v3, v1, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v0, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v3, :cond_4
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    long-to-int v2, v5
+    long-to-int v1, p2
 
-    invoke-virtual {v3, v7, v2}, Lokio/Segment;->writeTo(Lokio/Segment;I)V
+    invoke-virtual {v0, v2, v1}, Lokio/Segment;->writeTo(Lokio/Segment;I)V
 
-    iget-wide v2, v1, Lokio/Buffer;->size:J
+    iget-wide v0, p1, Lokio/Buffer;->size:J
 
-    sub-long/2addr v2, v5
+    sub-long/2addr v0, p2
 
-    iput-wide v2, v1, Lokio/Buffer;->size:J
+    iput-wide v0, p1, Lokio/Buffer;->size:J
 
-    iget-wide v1, v0, Lokio/Buffer;->size:J
+    iget-wide v0, p0, Lokio/Buffer;->size:J
 
-    add-long/2addr v1, v5
+    add-long/2addr v0, p2
 
-    iput-wide v1, v0, Lokio/Buffer;->size:J
+    iput-wide v0, p0, Lokio/Buffer;->size:J
 
     goto/16 :goto_a
 
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    :cond_3
+    iget-object v2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    throw v2
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    :cond_5
-    iget-object v7, v1, Lokio/Buffer;->head:Lokio/Segment;
+    long-to-int v4, p2
 
-    if-eqz v7, :cond_b
+    if-lez v4, :cond_4
 
-    long-to-int v9, v5
+    iget v5, v2, Lokio/Segment;->limit:I
 
-    if-eqz v7, :cond_a
+    iget v6, v2, Lokio/Segment;->pos:I
 
-    if-lez v9, :cond_6
+    sub-int/2addr v5, v6
 
-    iget v10, v7, Lokio/Segment;->limit:I
+    if-gt v4, v5, :cond_4
 
-    iget v11, v7, Lokio/Segment;->pos:I
-
-    sub-int/2addr v10, v11
-
-    if-gt v9, v10, :cond_6
-
-    move v10, v3
+    move v5, v0
 
     goto :goto_4
 
-    :cond_6
-    move v10, v4
+    :cond_4
+    move v5, v1
 
     :goto_4
-    if-eqz v10, :cond_9
+    if-eqz v5, :cond_6
 
-    const/16 v10, 0x400
+    const/16 v5, 0x400
 
-    if-lt v9, v10, :cond_7
+    if-lt v4, v5, :cond_5
 
-    invoke-virtual {v7}, Lokio/Segment;->sharedCopy()Lokio/Segment;
+    invoke-virtual {v2}, Lokio/Segment;->sharedCopy()Lokio/Segment;
 
-    move-result-object v10
+    move-result-object v5
 
     goto :goto_5
 
-    :cond_7
-    sget-object v10, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
+    :cond_5
+    invoke-static {}, Lokio/SegmentPool;->take()Lokio/Segment;
 
-    invoke-virtual {v10}, Lokio/SegmentPool;->take()Lokio/Segment;
+    move-result-object v5
 
-    move-result-object v10
+    iget-object v6, v2, Lokio/Segment;->data:[B
 
-    iget-object v11, v7, Lokio/Segment;->data:[B
+    iget-object v7, v5, Lokio/Segment;->data:[B
 
-    iget-object v12, v10, Lokio/Segment;->data:[B
+    const/4 v8, 0x0
 
-    const/4 v13, 0x0
+    iget v9, v2, Lokio/Segment;->pos:I
 
-    iget v14, v7, Lokio/Segment;->pos:I
+    add-int v10, v9, v4
 
-    add-int v15, v14, v9
+    const/4 v11, 0x2
 
-    const/16 v16, 0x2
-
-    invoke-static/range {v11 .. v16}, Lkotlin/collections/ArraysKt___ArraysKt;->copyInto$default([B[BIIII)[B
+    invoke-static/range {v6 .. v11}, Lkotlin/collections/ArraysKt___ArraysKt;->copyInto$default([B[BIIII)[B
 
     :goto_5
-    iget v11, v10, Lokio/Segment;->pos:I
+    iget v6, v5, Lokio/Segment;->pos:I
 
-    add-int/2addr v11, v9
+    add-int/2addr v6, v4
 
-    iput v11, v10, Lokio/Segment;->limit:I
+    iput v6, v5, Lokio/Segment;->limit:I
 
-    iget v11, v7, Lokio/Segment;->pos:I
+    iget v6, v2, Lokio/Segment;->pos:I
 
-    add-int/2addr v11, v9
+    add-int/2addr v6, v4
 
-    iput v11, v7, Lokio/Segment;->pos:I
+    iput v6, v2, Lokio/Segment;->pos:I
 
-    iget-object v7, v7, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v7, :cond_8
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v7, v10}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
+    invoke-virtual {v2, v5}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
 
-    iput-object v10, v1, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v5, p1, Lokio/Buffer;->head:Lokio/Segment;
 
     goto :goto_6
 
-    :cond_8
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    :cond_6
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    throw v2
+    const-string p2, "byteCount out of range"
 
-    :cond_9
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    const-string v2, "byteCount out of range"
+    move-result-object p2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
+    throw p1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_a
-    throw v2
-
-    :cond_b
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_c
+    :cond_7
     :goto_6
-    iget-object v7, v1, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v7, :cond_17
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v9, v7, Lokio/Segment;->limit:I
+    iget v4, v2, Lokio/Segment;->limit:I
 
-    iget v10, v7, Lokio/Segment;->pos:I
+    iget v5, v2, Lokio/Segment;->pos:I
 
-    sub-int/2addr v9, v10
+    sub-int/2addr v4, v5
 
-    int-to-long v9, v9
+    int-to-long v4, v4
 
-    invoke-virtual {v7}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v2}, Lokio/Segment;->pop()Lokio/Segment;
 
-    move-result-object v11
+    move-result-object v6
 
-    iput-object v11, v1, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v6, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    iget-object v11, v0, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v6, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-nez v11, :cond_d
+    if-nez v6, :cond_8
 
-    iput-object v7, v0, Lokio/Buffer;->head:Lokio/Segment;
+    iput-object v2, p0, Lokio/Buffer;->head:Lokio/Segment;
 
-    iput-object v7, v7, Lokio/Segment;->prev:Lokio/Segment;
+    iput-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    iput-object v7, v7, Lokio/Segment;->next:Lokio/Segment;
+    iput-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
     goto :goto_9
 
-    :cond_d
-    if-eqz v11, :cond_16
+    :cond_8
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-object v11, v11, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v6, v6, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v11, :cond_15
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v11, v7}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
+    invoke-virtual {v6, v2}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
 
-    iget-object v11, v7, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v6, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eq v11, v7, :cond_e
+    if-eq v6, v2, :cond_9
 
-    move v11, v3
+    move v6, v0
 
     goto :goto_7
 
-    :cond_e
-    move v11, v4
+    :cond_9
+    move v6, v1
 
     :goto_7
-    if-eqz v11, :cond_14
+    if-eqz v6, :cond_d
 
-    iget-object v11, v7, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v6, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v11, :cond_13
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-boolean v12, v11, Lokio/Segment;->owner:Z
+    iget-boolean v6, v6, Lokio/Segment;->owner:Z
 
-    if-nez v12, :cond_f
+    if-nez v6, :cond_a
 
     goto :goto_9
 
-    :cond_f
-    iget v12, v7, Lokio/Segment;->limit:I
+    :cond_a
+    iget v6, v2, Lokio/Segment;->limit:I
 
-    iget v13, v7, Lokio/Segment;->pos:I
+    iget v7, v2, Lokio/Segment;->pos:I
 
-    sub-int/2addr v12, v13
+    sub-int/2addr v6, v7
 
-    iget v13, v11, Lokio/Segment;->limit:I
+    iget-object v7, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    sub-int/2addr v8, v13
+    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-boolean v13, v11, Lokio/Segment;->shared:Z
+    iget v7, v7, Lokio/Segment;->limit:I
 
-    if-eqz v13, :cond_10
+    sub-int/2addr v3, v7
 
-    move v11, v4
+    iget-object v7, v2, Lokio/Segment;->prev:Lokio/Segment;
+
+    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget-boolean v7, v7, Lokio/Segment;->shared:Z
+
+    if-eqz v7, :cond_b
+
+    move v7, v1
 
     goto :goto_8
 
-    :cond_10
-    iget v11, v11, Lokio/Segment;->pos:I
+    :cond_b
+    iget-object v7, v2, Lokio/Segment;->prev:Lokio/Segment;
+
+    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    iget v7, v7, Lokio/Segment;->pos:I
 
     :goto_8
-    add-int/2addr v8, v11
+    add-int/2addr v3, v7
 
-    if-le v12, v8, :cond_11
+    if-le v6, v3, :cond_c
 
     goto :goto_9
 
-    :cond_11
-    iget-object v8, v7, Lokio/Segment;->prev:Lokio/Segment;
+    :cond_c
+    iget-object v3, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v8, :cond_12
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v7, v8, v12}, Lokio/Segment;->writeTo(Lokio/Segment;I)V
+    invoke-virtual {v2, v3, v6}, Lokio/Segment;->writeTo(Lokio/Segment;I)V
 
-    invoke-virtual {v7}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v2}, Lokio/Segment;->pop()Lokio/Segment;
 
-    sget-object v8, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {v8, v7}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v2}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     :goto_9
-    iget-wide v7, v1, Lokio/Buffer;->size:J
+    iget-wide v2, p1, Lokio/Buffer;->size:J
 
-    sub-long/2addr v7, v9
+    sub-long/2addr v2, v4
 
-    iput-wide v7, v1, Lokio/Buffer;->size:J
+    iput-wide v2, p1, Lokio/Buffer;->size:J
 
-    iget-wide v7, v0, Lokio/Buffer;->size:J
+    iget-wide v2, p0, Lokio/Buffer;->size:J
 
-    add-long/2addr v7, v9
+    add-long/2addr v2, v4
 
-    iput-wide v7, v0, Lokio/Buffer;->size:J
+    iput-wide v2, p0, Lokio/Buffer;->size:J
 
-    sub-long/2addr v5, v9
+    sub-long/2addr p2, v4
 
     goto/16 :goto_1
 
-    :cond_12
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    :cond_d
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    throw v2
+    const-string p2, "cannot compact"
 
-    :cond_13
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    throw v2
+    move-result-object p2
 
-    :cond_14
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "cannot compact"
+    throw p1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_15
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_16
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_17
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_18
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_19
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_1a
+    :cond_e
     :goto_a
     return-void
 
-    :cond_1b
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    :cond_f
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "source == this"
+    const-string p2, "source == this"
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p2
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
-
-    :cond_1c
-    const-string v1, "source"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v2
+    throw p1
 .end method
 
 .method public writeAll(Lokio/Source;)J
@@ -4589,7 +4249,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -4614,15 +4276,6 @@
     add-long/2addr v0, v2
 
     goto :goto_0
-
-    :cond_1
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public writeByte(I)Lokio/Buffer;
@@ -5282,32 +4935,27 @@
 .method public writeUtf8(Ljava/lang/String;)Lokio/Buffer;
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "string"
 
-    const/4 v0, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {p0, p1, v0, v1}, Lokio/Buffer;->writeUtf8(Ljava/lang/String;II)Lokio/Buffer;
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0}, Lokio/Buffer;->writeUtf8(Ljava/lang/String;II)Lokio/Buffer;
 
     return-object p0
-
-    :cond_0
-    const-string p1, "string"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public writeUtf8(Ljava/lang/String;II)Lokio/Buffer;
     .locals 11
 
-    if-eqz p1, :cond_10
+    const-string v0, "string"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -5677,7 +5325,7 @@
 
     const-string v0, " > "
 
-    invoke-static {p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -5706,7 +5354,7 @@
 
     const-string v0, " < "
 
-    invoke-static {p1, p3, v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, p3, v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -5723,7 +5371,7 @@
     :cond_f
     const-string p1, "beginIndex < 0: "
 
-    invoke-static {p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -5736,15 +5384,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_10
-    const-string p1, "string"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public bridge synthetic writeUtf8(Ljava/lang/String;)Lokio/BufferedSink;
@@ -5968,7 +5607,7 @@
 
     const-string v1, "Unexpected code point: 0x"
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

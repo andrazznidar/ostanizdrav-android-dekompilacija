@@ -149,6 +149,54 @@
     return-object p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 2
+
+    iget-object v0, p0, Lorg/joda/time/chrono/LimitChronology$LimitDateTimeField;->this$0:Lorg/joda/time/chrono/LimitChronology;
+
+    const-string v1, "minuend"
+
+    invoke-virtual {v0, p1, p2, v1}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    iget-object v0, p0, Lorg/joda/time/chrono/LimitChronology$LimitDateTimeField;->this$0:Lorg/joda/time/chrono/LimitChronology;
+
+    const-string v1, "subtrahend"
+
+    invoke-virtual {v0, p3, p4, v1}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 2
+
+    iget-object v0, p0, Lorg/joda/time/chrono/LimitChronology$LimitDateTimeField;->this$0:Lorg/joda/time/chrono/LimitChronology;
+
+    const-string v1, "minuend"
+
+    invoke-virtual {v0, p1, p2, v1}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    iget-object v0, p0, Lorg/joda/time/chrono/LimitChronology$LimitDateTimeField;->this$0:Lorg/joda/time/chrono/LimitChronology;
+
+    const-string v1, "subtrahend"
+
+    invoke-virtual {v0, p3, p4, v1}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public final getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 

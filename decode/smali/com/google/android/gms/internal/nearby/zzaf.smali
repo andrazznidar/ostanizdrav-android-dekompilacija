@@ -1,75 +1,54 @@
-.class public final Lcom/google/android/gms/internal/nearby/zzaf;
-.super Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.class public final synthetic Lcom/google/android/gms/internal/nearby/zzaf;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/util/List;
-
-.field public final synthetic zzb:Lcom/google/android/gms/tasks/TaskCompletionSource;
+.field public final zza:Lcom/google/android/gms/internal/nearby/zzt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzt;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzaf;->zza:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/nearby/zzaf;->zzb:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzaf;->zza:Lcom/google/android/gms/internal/nearby/zzt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onResult(Lcom/google/android/gms/common/api/Status;)V
-    .locals 4
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzaf;->zza:Ljava/util/List;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-result-object v0
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzat;
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/nearby/zzat;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    move-result v1
+    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
-    if-eqz v1, :cond_0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdv;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/os/ParcelFileDescriptor;
-
-    :try_start_0
-    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    const-string v2, "ExposureNotification"
-
-    const-string v3, "Failed to close file"
-
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzaf;->zzb:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    new-instance p2, Lcom/google/android/gms/internal/nearby/zzef;
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzef;-><init>(Lcom/google/android/gms/internal/nearby/zzee;)V
+
+    iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzef;->zzb:Lcom/google/android/gms/internal/nearby/zzcm;
+
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzef;)V
 
     return-void
 .end method

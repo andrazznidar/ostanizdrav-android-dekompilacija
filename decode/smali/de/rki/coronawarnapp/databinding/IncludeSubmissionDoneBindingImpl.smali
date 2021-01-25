@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09028f
+    const v1, 0x7f09039e
 
     const/4 v2, 0x5
 
@@ -75,8 +75,8 @@
 
     :array_1
     .array-data 4
-        0x7f0c006b
-        0x7f0c007f
+        0x7f0c009b
+        0x7f0c00ab
     .end array-data
 .end method
 
@@ -213,7 +213,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201d8
+    const v2, 0x7f120280
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -222,12 +222,6 @@
     check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->mIllustrationDescription:Ljava/lang/String;
-
-    sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/4 v1, 0x4
-
-    if-lt v0, v1, :cond_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;->submissionDoneHeroIllustration:Landroid/widget/ImageView;
 
@@ -239,11 +233,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->formatImage(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;->submissionDoneContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;

@@ -197,6 +197,16 @@
 
 .method public constructor <init>(I[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "flags",
+            "output"
+        }
+    .end annotation
 
     invoke-direct {p0}, Lcom/google/crypto/tink/subtle/Base64$Coder;-><init>()V
 

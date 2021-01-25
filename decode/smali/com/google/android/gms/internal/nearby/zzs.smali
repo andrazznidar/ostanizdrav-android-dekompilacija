@@ -1,6 +1,6 @@
 .class public final synthetic Lcom/google/android/gms/internal/nearby/zzs;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/RemoteCall;

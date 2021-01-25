@@ -13,10 +13,6 @@
     name = "Companion"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRequestBody.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RequestBody.kt\nokhttp3/RequestBody$Companion\n*L\n1#1,222:1\n*E\n"
-.end annotation
-
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V

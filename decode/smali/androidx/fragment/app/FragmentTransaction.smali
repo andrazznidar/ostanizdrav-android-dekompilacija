@@ -133,6 +133,9 @@
 .method public abstract commit()I
 .end method
 
+.method public abstract commitNow()V
+.end method
+
 .method public doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
     .locals 3
 
@@ -322,7 +325,7 @@
 
     const-string p2, "Fragment "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -343,6 +346,23 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public abstract remove(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
+.end method
+
+.method public setMaxLifecycle(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)Landroidx/fragment/app/FragmentTransaction;
+    .locals 2
+
+    new-instance v0, Landroidx/fragment/app/FragmentTransaction$Op;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1, p1, p2}, Landroidx/fragment/app/FragmentTransaction$Op;-><init>(ILandroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)V
+
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/FragmentTransaction;->addOp(Landroidx/fragment/app/FragmentTransaction$Op;)V
+
+    return-object p0
 .end method
 
 .method public abstract setPrimaryNavigationFragment(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;

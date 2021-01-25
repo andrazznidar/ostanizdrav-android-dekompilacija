@@ -249,7 +249,7 @@
 
     :cond_4
     :goto_3
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -257,7 +257,7 @@
 
     if-nez v0, :cond_8
 
-    sget-object v0, Lcom/google/android/gms/common/internal/Preconditions;->zzf:Ljava/lang/Boolean;
+    sget-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
 
     if-nez v0, :cond_7
 
@@ -301,10 +301,10 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/internal/Preconditions;->zzf:Ljava/lang/Boolean;
+    sput-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
 
     :cond_7
-    sget-object v0, Lcom/google/android/gms/common/internal/Preconditions;->zzf:Ljava/lang/Boolean;
+    sget-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -330,7 +330,7 @@
     move v3, v2
 
     :goto_7
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(Z)V
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -392,7 +392,7 @@
     :try_end_8
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_8 .. :try_end_8} :catch_3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-class v8, Lcom/google/android/gms/common/GoogleSignatureVerifier;
 
@@ -489,7 +489,7 @@
     :cond_d
     if-eqz v0, :cond_f
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v5, v1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;Z)Z
 

@@ -14,9 +14,11 @@
 
 .field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+.field public final mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
-.field public final mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+.field public final mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+
+.field public final mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
 
 # direct methods
@@ -25,7 +27,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0x9
+    const/16 v1, 0xc
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -41,7 +43,7 @@
 
     new-array v3, v2, [I
 
-    const/4 v4, 0x2
+    const/4 v4, 0x3
 
     const/4 v5, 0x0
 
@@ -49,7 +51,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0051
+    const v6, 0x7f0c0077
 
     aput v6, v4, v5
 
@@ -59,7 +61,7 @@
 
     const-string v1, "include_information_details"
 
-    const-string v3, "include_settings_switch_row"
+    const-string v3, "include_divider"
 
     const-string v4, "include_tracing_status_card"
 
@@ -89,9 +91,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c9
+    const v1, 0x7f09030c
 
-    const/16 v2, 0x8
+    const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f09030e
+
+    const/16 v2, 0xa
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f090168
+
+    const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -99,145 +117,186 @@
 
     :array_0
     .array-data 4
-        0x3
         0x4
         0x5
         0x6
         0x7
+        0x8
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f0c0052
-        0x7f0c0066
-        0x7f0c007d
-        0x7f0c007f
-        0x7f0c007e
+        0x7f0c0078
+        0x7f0c0076
+        0x7f0c00a8
+        0x7f0c00ab
+        0x7f0c00aa
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 12
+    .locals 16
+
+    move-object/from16 v12, p0
+
+    move-object/from16 v13, p2
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     sget-object v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v2, 0x9
+    const/16 v2, 0xc
 
-    invoke-static {p1, p2, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+    move-object/from16 v3, p1
 
-    move-result-object v0
+    invoke-static {v3, v13, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
-    const/16 v1, 0x8
+    move-result-object v14
 
-    aget-object v1, v0, v1
+    const/16 v0, 0xb
 
-    move-object v6, v1
+    aget-object v0, v14, v0
 
-    check-cast v6, Landroidx/constraintlayout/widget/Guideline;
+    move-object v4, v0
 
-    const/4 v1, 0x0
+    check-cast v4, Landroidx/constraintlayout/widget/Guideline;
 
-    aget-object v1, v0, v1
+    const/4 v0, 0x0
 
-    move-object v7, v1
+    aget-object v0, v14, v0
 
-    check-cast v7, Landroidx/constraintlayout/widget/ConstraintLayout;
+    move-object v5, v0
 
-    const/4 v1, 0x2
+    check-cast v5, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    aget-object v1, v0, v1
+    const/4 v0, 0x3
 
-    move-object v8, v1
+    aget-object v0, v14, v0
 
-    check-cast v8, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    move-object v6, v0
 
-    const/4 v1, 0x3
+    check-cast v6, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    aget-object v1, v0, v1
+    const/4 v0, 0x4
 
-    move-object v9, v1
+    aget-object v0, v14, v0
 
-    check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    move-object v7, v0
 
-    const/4 v1, 0x4
+    check-cast v7, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    aget-object v1, v0, v1
+    const/16 v0, 0x9
 
-    move-object v10, v1
+    aget-object v0, v14, v0
 
-    check-cast v10, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    move-object v8, v0
 
-    const/4 v1, 0x5
+    check-cast v8, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    aget-object v1, v0, v1
+    const/4 v0, 0x2
 
-    move-object v11, v1
+    aget-object v0, v14, v0
+
+    move-object v9, v0
+
+    check-cast v9, Landroid/widget/TextView;
+
+    const/16 v0, 0xa
+
+    aget-object v0, v14, v0
+
+    move-object v10, v0
+
+    check-cast v10, Landroid/widget/TextView;
+
+    const/4 v0, 0x6
+
+    aget-object v0, v14, v0
+
+    move-object v11, v0
 
     check-cast v11, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
 
-    const/4 v5, 0x5
+    const/4 v15, 0x4
 
-    move-object v2, p0
+    move-object/from16 v0, p0
 
-    move-object v3, p1
+    move-object/from16 v1, p1
 
-    move-object v4, p2
+    move-object/from16 v2, p2
 
-    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;)V
+    move v3, v15
 
-    const-wide/16 v1, -0x1
+    invoke-direct/range {v0 .. v11}, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;)V
 
-    iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
+    const-wide/16 v0, -0x1
 
-    const/4 p1, 0x1
+    iput-wide v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    aget-object p1, v0, p1
+    const/4 v0, 0x1
 
-    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
+    aget-object v0, v14, v0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
 
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const/4 p1, 0x6
+    const/4 v0, 0x5
 
-    aget-object p1, v0, p1
+    aget-object v0, v14, v0
 
-    check-cast p1, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
-    if-eqz p1, :cond_0
+    if-eqz v0, :cond_0
 
-    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+    iput-object v12, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    const/4 p1, 0x7
+    const/4 v0, 0x7
 
-    aget-object p1, v0, p1
+    aget-object v0, v14, v0
 
-    check-cast p1, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    if-eqz p1, :cond_1
+    if-eqz v0, :cond_1
 
-    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+    iput-object v12, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    const/16 v0, 0x8
 
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+    aget-object v0, v14, v0
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
-    invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->invalidateAll()V
+    if-eqz v0, :cond_2
+
+    iput-object v12, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    iget-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+
+    iget-object v0, v12, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsRowBackgroundPriorityHeaderBody:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+
+    invoke-virtual {v13, v0, v12}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    invoke-virtual/range {p0 .. p0}, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->invalidateAll()V
 
     return-void
 .end method
@@ -245,7 +304,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 12
+    .locals 9
 
     monitor-enter p0
 
@@ -262,7 +321,7 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->mSettingsViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
 
-    const-wide/16 v5, 0x68
+    const-wide/16 v5, 0x34
 
     and-long/2addr v5, v0
 
@@ -270,9 +329,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
-
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_4
 
     if-eqz v4, :cond_0
 
@@ -281,12 +338,12 @@
     goto :goto_0
 
     :cond_0
-    move-object v4, v7
+    move-object v4, v6
 
     :goto_0
-    const/4 v6, 0x3
+    const/4 v7, 0x2
 
-    invoke-virtual {p0, v6, v4}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    invoke-virtual {p0, v7, v4}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
 
     if-eqz v4, :cond_1
 
@@ -294,62 +351,100 @@
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/Boolean;
+    move-object v6, v4
 
-    move-object v7, v4
+    check-cast v6, Ljava/lang/Boolean;
 
     :cond_1
-    invoke-static {v7}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v4
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatStatus(Z)Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    const v6, 0x7f120218
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    xor-int/lit8 v8, v4, 0x1
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+    move-result-object v7
+
+    sget-object v8, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
-    move v11, v8
+    if-eqz v4, :cond_2
 
-    move-object v8, v6
+    const v4, 0x7f120219
 
-    move v6, v11
+    invoke-virtual {v7, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v6, "appContext.getString(stringTrue)"
+
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_1
+    move-object v6, v4
+
+    goto :goto_3
+
+    :cond_2
+    if-eqz v6, :cond_3
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    invoke-virtual {v7, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_2
+
+    :cond_3
+    const-string v4, ""
+
+    :goto_2
+    const-string v6, "if (stringFalse != null)\u2026gFalse)\n        } else \"\""
+
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
-    :cond_2
-    move v4, v6
+    :cond_4
+    :goto_3
+    const-wide/16 v7, 0x20
 
-    move-object v8, v7
-
-    :goto_1
-    const-wide/16 v9, 0x40
-
-    and-long/2addr v0, v9
+    and-long/2addr v0, v7
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080089
+    const v2, 0x7f080094
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120181
+    const v2, 0x7f120208
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -359,9 +454,9 @@
 
     move-result-object v1
 
-    const v3, 0x7f12017a
+    const v2, 0x7f120201
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -375,13 +470,15 @@
 
     move-result-object v1
 
-    const v3, 0x7f12017f
+    const v2, 0x7f120206
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setHeadline(Ljava/lang/String;)V
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mHeadline:Ljava/lang/String;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -391,9 +488,9 @@
 
     move-result-object v1
 
-    const v3, 0x7f0800c7
+    const v2, 0x7f08010b
 
-    invoke-static {v1, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -407,33 +504,13 @@
 
     move-result-object v1
 
-    const v3, 0x7f120180
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustrationDescription(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
+    const v2, 0x7f120207
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustrationDescription(Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsTracingStatusConnection:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
 
@@ -443,7 +520,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12017c
+    const v2, 0x7f120203
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -459,7 +536,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12017d
+    const v2, 0x7f120204
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -475,7 +552,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12017e
+    const v2, 0x7f120205
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -483,32 +560,14 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setHeadline(Ljava/lang/String;)V
 
-    :cond_3
-    if-eqz v5, :cond_4
+    :cond_5
+    if-eqz v5, :cond_6
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsRowBackgroundPriorityHeaderBody:Landroid/widget/TextView;
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    invoke-virtual {v0, v7}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatus(Ljava/lang/Boolean;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    invoke-virtual {v0, v8}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatusText(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsTracingStatusConnection:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
-
-    iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_4
+    :cond_6
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -517,7 +576,7 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -525,11 +584,11 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -593,7 +652,7 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -615,7 +674,7 @@
     return v1
 
     :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -626,7 +685,7 @@
     return v1
 
     :cond_5
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -657,7 +716,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x40
+    const-wide/16 v0, 0x20
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
@@ -674,7 +733,7 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -682,11 +741,11 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -712,19 +771,15 @@
 
     const/4 v1, 0x1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_6
 
-    if-eq p1, v1, :cond_6
+    if-eq p1, v1, :cond_4
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_4
-
-    const/4 v2, 0x3
-
     if-eq p1, v2, :cond_2
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
     if-eq p1, v2, :cond_0
 
@@ -740,7 +795,7 @@
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x10
+    const-wide/16 v2, 0x8
 
     or-long/2addr p1, v2
 
@@ -775,7 +830,7 @@
     :try_start_1
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x8
+    const-wide/16 v2, 0x4
 
     or-long/2addr p1, v2
 
@@ -810,7 +865,7 @@
     :try_start_2
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x4
+    const-wide/16 v2, 0x2
 
     or-long/2addr p1, v2
 
@@ -836,7 +891,7 @@
     return v0
 
     :cond_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     if-nez p3, :cond_7
 
@@ -845,7 +900,7 @@
     :try_start_3
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x2
+    const-wide/16 v2, 0x1
 
     or-long/2addr p1, v2
 
@@ -869,41 +924,6 @@
     :cond_7
     :goto_3
     return v0
-
-    :cond_8
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_9
-
-    monitor-enter p0
-
-    :try_start_4
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw p1
-
-    :cond_9
-    :goto_4
-    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
@@ -919,7 +939,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsSwitchRowBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
@@ -927,11 +947,11 @@
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mboundView13:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
@@ -948,7 +968,7 @@
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x20
+    const-wide/16 v2, 0x10
 
     or-long/2addr v0, v2
 
@@ -958,7 +978,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x17
+    const/16 p1, 0x28
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

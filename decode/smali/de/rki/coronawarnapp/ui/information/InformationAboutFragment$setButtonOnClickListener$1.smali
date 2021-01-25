@@ -43,11 +43,11 @@
     return-void
 
     :cond_0
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.main.MainActivity"
 
-    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

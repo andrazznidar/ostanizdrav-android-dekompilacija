@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTaskRunner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,314:1\n599#2,4:315\n599#2,4:319\n606#2,4:323\n599#2,4:327\n599#2,4:331\n*E\n*S KotlinDebug\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner\n*L\n79#1,4:315\n97#1,4:319\n108#1,4:323\n126#1,4:327\n152#1,4:331\n*E\n"
+    value = "SMAP\nTaskRunner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner\n+ 2 Util.kt\nokhttp3/internal/Util\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,314:1\n596#2,4:315\n596#2,4:319\n603#2,4:323\n596#2,4:327\n596#2,4:331\n1#3:335\n*E\n*S KotlinDebug\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner\n*L\n79#1,4:315\n97#1,4:319\n108#1,4:323\n126#1,4:327\n152#1,4:331\n*E\n"
 .end annotation
 
 
@@ -59,7 +59,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 5
 
     new-instance v0, Lokhttp3/internal/concurrent/TaskRunner$Companion;
 
@@ -71,31 +71,37 @@
 
     new-instance v0, Lokhttp3/internal/concurrent/TaskRunner;
 
-    new-instance v2, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;
+    new-instance v1, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lokhttp3/internal/Util;->okHttpName:Ljava/lang/String;
+    sget-object v3, Lokhttp3/internal/Util;->okHttpName:Ljava/lang/String;
 
-    const-string v5, " TaskRunner"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v3, " TaskRunner"
 
-    move-result-object v3
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v3, :cond_0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v1, Lokhttp3/internal/Util$threadFactory$1;
+    move-result-object v2
+
+    const-string v3, "name"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v3, Lokhttp3/internal/Util$threadFactory$1;
 
     const/4 v4, 0x1
 
-    invoke-direct {v1, v3, v4}, Lokhttp3/internal/Util$threadFactory$1;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v3, v2, v4}, Lokhttp3/internal/Util$threadFactory$1;-><init>(Ljava/lang/String;Z)V
 
-    invoke-direct {v2, v1}, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;-><init>(Ljava/util/concurrent/ThreadFactory;)V
+    invoke-direct {v1, v3}, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;-><init>(Ljava/util/concurrent/ThreadFactory;)V
 
-    invoke-direct {v0, v2}, Lokhttp3/internal/concurrent/TaskRunner;-><init>(Lokhttp3/internal/concurrent/TaskRunner$Backend;)V
+    invoke-direct {v0, v1}, Lokhttp3/internal/concurrent/TaskRunner;-><init>(Lokhttp3/internal/concurrent/TaskRunner$Backend;)V
 
     sput-object v0, Lokhttp3/internal/concurrent/TaskRunner;->INSTANCE:Lokhttp3/internal/concurrent/TaskRunner;
 
@@ -111,22 +117,19 @@
 
     const-string v1, "Logger.getLogger(TaskRunner::class.java.name)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sput-object v0, Lokhttp3/internal/concurrent/TaskRunner;->logger:Ljava/util/logging/Logger;
 
     return-void
-
-    :cond_0
-    const-string v0, "name"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public constructor <init>(Lokhttp3/internal/concurrent/TaskRunner$Backend;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "backend"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -179,7 +182,7 @@
 
     const-string v0, "Thread "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -189,7 +192,7 @@
 
     const-string v2, "Thread.currentThread()"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -219,7 +222,7 @@
 
     const-string v1, "currentThread"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -290,7 +293,7 @@
 
 # virtual methods
 .method public final afterRun(Lokhttp3/internal/concurrent/Task;J)V
-    .locals 7
+    .locals 6
 
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
@@ -309,7 +312,7 @@
 
     const-string p2, "Thread "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -319,7 +322,7 @@
 
     const-string v0, "Thread.currentThread()"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p3}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -345,51 +348,51 @@
     :goto_0
     iget-object v0, p1, Lokhttp3/internal/concurrent/Task;->queue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_6
+    iget-object v1, v0, Lokhttp3/internal/concurrent/TaskQueue;->activeTask:Lokhttp3/internal/concurrent/Task;
 
-    iget-object v2, v0, Lokhttp3/internal/concurrent/TaskQueue;->activeTask:Lokhttp3/internal/concurrent/Task;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    if-ne v1, p1, :cond_2
 
-    if-ne v2, p1, :cond_2
-
-    move v2, v4
+    move v1, v3
 
     goto :goto_1
 
     :cond_2
-    move v2, v3
+    move v1, v2
 
     :goto_1
-    if-eqz v2, :cond_5
+    if-eqz v1, :cond_5
 
-    iget-boolean v2, v0, Lokhttp3/internal/concurrent/TaskQueue;->cancelActiveTask:Z
+    iget-boolean v1, v0, Lokhttp3/internal/concurrent/TaskQueue;->cancelActiveTask:Z
 
-    iput-boolean v3, v0, Lokhttp3/internal/concurrent/TaskQueue;->cancelActiveTask:Z
+    iput-boolean v2, v0, Lokhttp3/internal/concurrent/TaskQueue;->cancelActiveTask:Z
 
-    iput-object v1, v0, Lokhttp3/internal/concurrent/TaskQueue;->activeTask:Lokhttp3/internal/concurrent/Task;
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Lokhttp3/internal/concurrent/TaskRunner;->busyQueues:Ljava/util/List;
+    iput-object v2, v0, Lokhttp3/internal/concurrent/TaskQueue;->activeTask:Lokhttp3/internal/concurrent/Task;
 
-    invoke-interface {v1, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    iget-object v2, p0, Lokhttp3/internal/concurrent/TaskRunner;->busyQueues:Ljava/util/List;
 
-    const-wide/16 v5, -0x1
+    invoke-interface {v2, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    cmp-long v1, p2, v5
+    const-wide/16 v4, -0x1
 
-    if-eqz v1, :cond_3
+    cmp-long v2, p2, v4
 
-    if-nez v2, :cond_3
+    if-eqz v2, :cond_3
+
+    if-nez v1, :cond_3
 
     iget-boolean v1, v0, Lokhttp3/internal/concurrent/TaskQueue;->shutdown:Z
 
     if-nez v1, :cond_3
 
-    invoke-virtual {v0, p1, p2, p3, v4}, Lokhttp3/internal/concurrent/TaskQueue;->scheduleAndDecide$okhttp(Lokhttp3/internal/concurrent/Task;JZ)Z
+    invoke-virtual {v0, p1, p2, p3, v3}, Lokhttp3/internal/concurrent/TaskQueue;->scheduleAndDecide$okhttp(Lokhttp3/internal/concurrent/Task;JZ)Z
 
     :cond_3
     iget-object p1, v0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -398,7 +401,7 @@
 
     move-result p1
 
-    xor-int/2addr p1, v4
+    xor-int/2addr p1, v3
 
     if-eqz p1, :cond_4
 
@@ -421,11 +424,6 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_6
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v1
 .end method
 
 .method public final awaitTaskToRun()Lokhttp3/internal/concurrent/Task;
@@ -454,7 +452,7 @@
     :cond_0
     new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -462,7 +460,7 @@
 
     move-result-object v5
 
-    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -570,7 +568,7 @@
     const/4 v0, 0x0
 
     :goto_2
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_a
 
     sget-boolean v6, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
@@ -587,7 +585,7 @@
     :cond_6
     new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -595,7 +593,7 @@
 
     move-result-object v5
 
-    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v5}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -623,7 +621,7 @@
 
     iget-object v2, v5, Lokhttp3/internal/concurrent/Task;->queue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    if-eqz v2, :cond_a
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v3, v2, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
@@ -668,35 +666,28 @@
     return-object v5
 
     :cond_a
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    iget-boolean v0, v1, Lokhttp3/internal/concurrent/TaskRunner;->coordinatorWaiting:Z
 
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_b
-    const/4 v0, 0x0
-
-    iget-boolean v5, v1, Lokhttp3/internal/concurrent/TaskRunner;->coordinatorWaiting:Z
-
-    if-eqz v5, :cond_d
+    if-eqz v0, :cond_c
 
     iget-wide v2, v1, Lokhttp3/internal/concurrent/TaskRunner;->coordinatorWakeUpAt:J
 
     sub-long/2addr v2, v6
 
-    cmp-long v2, v8, v2
+    cmp-long v0, v8, v2
 
-    if-gez v2, :cond_c
+    if-gez v0, :cond_b
 
-    iget-object v2, v1, Lokhttp3/internal/concurrent/TaskRunner;->backend:Lokhttp3/internal/concurrent/TaskRunner$Backend;
+    iget-object v0, v1, Lokhttp3/internal/concurrent/TaskRunner;->backend:Lokhttp3/internal/concurrent/TaskRunner$Backend;
 
-    invoke-interface {v2, p0}, Lokhttp3/internal/concurrent/TaskRunner$Backend;->coordinatorNotify(Lokhttp3/internal/concurrent/TaskRunner;)V
+    invoke-interface {v0, p0}, Lokhttp3/internal/concurrent/TaskRunner$Backend;->coordinatorNotify(Lokhttp3/internal/concurrent/TaskRunner;)V
 
-    :cond_c
+    :cond_b
+    const/4 v0, 0x0
+
     return-object v0
 
-    :cond_d
+    :cond_c
     const/4 v0, 0x1
 
     iput-boolean v0, v1, Lokhttp3/internal/concurrent/TaskRunner;->coordinatorWaiting:Z
@@ -818,6 +809,10 @@
 .method public final kickCoordinator$okhttp(Lokhttp3/internal/concurrent/TaskQueue;)V
     .locals 3
 
+    const-string v0, "taskQueue"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
     if-eqz v0, :cond_1
@@ -835,7 +830,7 @@
 
     const-string v0, "Thread "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -845,7 +840,7 @@
 
     const-string v2, "Thread.currentThread()"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -871,7 +866,7 @@
     :goto_0
     iget-object v0, p1, Lokhttp3/internal/concurrent/TaskQueue;->activeTask:Lokhttp3/internal/concurrent/Task;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     iget-object v0, p1, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
@@ -881,41 +876,34 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskRunner;->readyQueues:Ljava/util/List;
 
-    if-eqz v0, :cond_2
+    const-string v1, "$this$addIfAbsent"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_2
-    const-string p1, "$this$addIfAbsent"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskRunner;->readyQueues:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    :cond_4
+    :cond_3
     :goto_1
     iget-boolean p1, p0, Lokhttp3/internal/concurrent/TaskRunner;->coordinatorWaiting:Z
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     iget-object p1, p0, Lokhttp3/internal/concurrent/TaskRunner;->backend:Lokhttp3/internal/concurrent/TaskRunner$Backend;
 
@@ -923,7 +911,7 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     iget-object p1, p0, Lokhttp3/internal/concurrent/TaskRunner;->backend:Lokhttp3/internal/concurrent/TaskRunner$Backend;
 
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskRunner;->runnable:Ljava/lang/Runnable;

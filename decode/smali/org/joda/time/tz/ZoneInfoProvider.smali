@@ -470,7 +470,7 @@
 
     check-cast v2, Ljava/io/DataInput;
 
-    invoke-static {v2, p1}, Lkotlin/collections/MapsKt___MapsKt;->readFrom(Ljava/io/DataInput;Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
+    invoke-static {v2, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readFrom(Ljava/io/DataInput;Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
 
     move-result-object v2
 
@@ -481,7 +481,7 @@
 
     invoke-direct {v2, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    invoke-static {v2, p1}, Lkotlin/collections/MapsKt___MapsKt;->readFrom(Ljava/io/DataInput;Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
+    invoke-static {v2, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readFrom(Ljava/io/DataInput;Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
 
     move-result-object v2
 

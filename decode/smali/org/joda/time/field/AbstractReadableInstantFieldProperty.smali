@@ -70,7 +70,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -124,19 +124,17 @@
 .end method
 
 .method public getAsText(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    move-object v0, p0
+    invoke-virtual {p0}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getField()Lorg/joda/time/DateTimeField;
 
-    check-cast v0, Lorg/joda/time/MutableDateTime$Property;
+    move-result-object v0
 
-    iget-object v1, v0, Lorg/joda/time/MutableDateTime$Property;->iField:Lorg/joda/time/DateTimeField;
+    invoke-virtual {p0}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getMillis()J
 
-    iget-object v0, v0, Lorg/joda/time/MutableDateTime$Property;->iInstant:Lorg/joda/time/MutableDateTime;
+    move-result-wide v1
 
-    iget-wide v2, v0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v1, v2, v3, p1}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, p1}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -212,7 +210,7 @@
 
     const-string v0, "Property["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

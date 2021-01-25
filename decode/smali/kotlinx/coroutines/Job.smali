@@ -71,5 +71,24 @@
 .method public abstract isActive()Z
 .end method
 
+.method public abstract isCancelled()Z
+.end method
+
+.method public abstract isCompleted()Z
+.end method
+
+.method public abstract join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
 .method public abstract start()Z
 .end method

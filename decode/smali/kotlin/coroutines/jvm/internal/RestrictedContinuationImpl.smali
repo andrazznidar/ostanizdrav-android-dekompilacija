@@ -3,12 +3,6 @@
 .source "ContinuationImpl.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContinuationImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContinuationImpl.kt\nkotlin/coroutines/jvm/internal/RestrictedContinuationImpl\n*L\n1#1,168:1\n*E\n"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1

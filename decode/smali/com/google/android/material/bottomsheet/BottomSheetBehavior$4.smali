@@ -35,3 +35,19 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public perform(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;)Z
+    .locals 0
+
+    iget-object p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    iget p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;->val$state:I
+
+    invoke-virtual {p1, p2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setState(I)V
+
+    const/4 p1, 0x1
+
+    return p1
+.end method

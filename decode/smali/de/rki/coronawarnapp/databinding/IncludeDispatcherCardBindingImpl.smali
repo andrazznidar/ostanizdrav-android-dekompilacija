@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900a4
+    const v1, 0x7f09013f
 
     const/4 v2, 0x4
 
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 12
+    .locals 11
 
     monitor-enter p0
 
@@ -142,68 +142,53 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->mIllustration:Landroid/graphics/drawable/Drawable;
 
-    const/4 v5, 0x0
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->mHeadline:Ljava/lang/String;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->mHeadline:Ljava/lang/String;
+    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->mBody:Ljava/lang/String;
 
-    iget-object v7, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->mBody:Ljava/lang/String;
+    const-wide/16 v7, 0x9
 
-    const-wide/16 v8, 0x9
+    and-long/2addr v7, v0
+
+    cmp-long v7, v7, v2
+
+    const-wide/16 v8, 0xa
 
     and-long/2addr v8, v0
 
     cmp-long v8, v8, v2
 
-    const-wide/16 v9, 0xa
+    const-wide/16 v9, 0xc
 
-    and-long/2addr v9, v0
-
-    cmp-long v9, v9, v2
-
-    const-wide/16 v10, 0xc
-
-    and-long/2addr v0, v10
+    and-long/2addr v0, v9
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_0
-
-    invoke-static {v7}, Lcom/google/android/gms/common/internal/Preconditions;->formatButton(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    :cond_0
-    if-eqz v8, :cond_1
+    if-eqz v7, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->dispatcherCardIllustration:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_1
-    if-eqz v9, :cond_2
+    :cond_0
+    if-eqz v8, :cond_1
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->dispatcherCardTitle:Landroid/widget/TextView;
 
-    invoke-static {v1, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v1, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    :cond_1
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->submissionDispatcherCardText:Landroid/widget/TextView;
+
+    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->submissionDispatcherCardText:Landroid/widget/TextView;
+
+    invoke-static {v0, v6}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
 
     :cond_2
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->submissionDispatcherCardText:Landroid/widget/TextView;
-
-    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/4 v1, 0x4
-
-    if-lt v0, v1, :cond_3
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->submissionDispatcherCardText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    :cond_3
     return-void
 
     :catchall_0
@@ -311,7 +296,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -350,7 +335,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xa
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -389,7 +374,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x10
+    const/16 p1, 0x1b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

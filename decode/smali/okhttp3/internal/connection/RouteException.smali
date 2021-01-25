@@ -11,7 +11,11 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "firstConnectException"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 

@@ -928,7 +928,7 @@
 
     const-string v1, "Invalid parameter for TransitionSet ordering: "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1065,7 +1065,7 @@
 
     const-string v2, "\n"
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

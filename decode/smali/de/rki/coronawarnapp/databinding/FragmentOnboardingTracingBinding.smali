@@ -4,6 +4,16 @@
 
 
 # instance fields
+.field public mCountryData:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/ui/Country;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final onboardingButtonBack:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
 .field public final onboardingButtonDisable:Landroid/widget/Button;
@@ -39,22 +49,31 @@
     return-void
 .end method
 
-.method public static inflate(Landroid/view/LayoutInflater;)Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;
-    .locals 4
+.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;
+    .locals 2
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c003d
+    const v1, 0x7f0c004f
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {p0, v1, v2, v3, v0}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 
     check-cast p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;
 
     return-object p0
+.end method
+
+
+# virtual methods
+.method public abstract setCountryData(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/ui/Country;",
+            ">;)V"
+        }
+    .end annotation
 .end method

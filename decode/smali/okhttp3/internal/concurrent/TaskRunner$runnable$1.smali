@@ -63,11 +63,11 @@
 
     monitor-exit v0
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     iget-object v0, v1, Lokhttp3/internal/concurrent/Task;->queue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    if-eqz v0, :cond_3
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     const-wide/16 v2, -0x1
 
@@ -93,7 +93,7 @@
 
     const-string v5, "starting"
 
-    invoke-static {v1, v0, v5}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_1
     :try_start_1
@@ -117,11 +117,11 @@
 
     const-string v2, "finished run in "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-static {v4, v5}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v4, v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -131,7 +131,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v0, v2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -166,11 +166,11 @@
 
     const-string v2, "failed a run in "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-static {v6, v7}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v6, v7}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -180,19 +180,12 @@
 
     move-result-object v2
 
-    invoke-static {v1, v0, v2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     throw v5
 
     :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_4
     return-void
 
     :catchall_2

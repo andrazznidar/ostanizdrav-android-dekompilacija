@@ -58,7 +58,9 @@
 .method public read(Lokio/Buffer;J)J
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->this$0:Lokhttp3/internal/http1/Http1ExchangeCodec;
@@ -80,23 +82,14 @@
 
     iget-object p2, p2, Lokhttp3/internal/http1/Http1ExchangeCodec;->connection:Lokhttp3/internal/connection/RealConnection;
 
-    invoke-virtual {p2}, Lokhttp3/internal/connection/RealConnection;->noNewExchanges()V
+    invoke-virtual {p2}, Lokhttp3/internal/connection/RealConnection;->noNewExchanges$okhttp()V
 
-    invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->responseBodyComplete$okhttp()V
-
-    throw p1
-
-    :cond_0
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
+    invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->responseBodyComplete()V
 
     throw p1
 .end method
 
-.method public final responseBodyComplete$okhttp()V
+.method public final responseBodyComplete()V
     .locals 4
 
     iget-object v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->this$0:Lokhttp3/internal/http1/Http1ExchangeCodec;
@@ -129,7 +122,7 @@
 
     const-string v1, "state: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

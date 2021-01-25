@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09012d
+    const v1, 0x7f0901e1
 
     const/4 v2, 0x1
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09012f
+    const v1, 0x7f0901e3
 
     const/4 v2, 0x2
 
@@ -37,7 +37,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09012e
+    const v1, 0x7f0901e2
 
     const/4 v2, 0x3
 
@@ -45,7 +45,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090130
+    const v1, 0x7f0901e4
 
     const/4 v2, 0x4
 
@@ -53,7 +53,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09012c
+    const v1, 0x7f0901e0
 
     const/4 v2, 0x5
 

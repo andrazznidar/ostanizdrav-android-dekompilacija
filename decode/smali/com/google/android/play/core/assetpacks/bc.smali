@@ -589,11 +589,11 @@
 
     const-string v1, "STORAGE_FILES location path must be non-null"
 
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
     const-string v1, "STORAGE_FILES assetsPath must be non-null"
 
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/Preconditions;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
     new-instance v1, Lcom/google/android/play/core/assetpacks/bh;
 

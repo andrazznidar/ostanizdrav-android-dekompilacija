@@ -322,7 +322,7 @@
     goto :goto_0
 
     :pswitch_2
-    invoke-static {v0, v7, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {v0, v7, v3}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v31
 
@@ -541,7 +541,7 @@
 
     sget-object v5, Lcom/airbnb/lottie/parser/DocumentDataParser;->INSTANCE:Lcom/airbnb/lottie/parser/DocumentDataParser;
 
-    invoke-static {v0, v7, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
+    invoke-static {v0, v7, v5}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
 
     move-result-object v5
 
@@ -735,7 +735,7 @@
     goto/16 :goto_e
 
     :cond_10
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v5
 

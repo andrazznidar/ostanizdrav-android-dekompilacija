@@ -37,6 +37,15 @@
 
 .method public constructor <init>([B)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -62,6 +71,19 @@
 
 .method public static getParams([BII)Ljava/security/spec/AlgorithmParameterSpec;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0,
+            0x0
+        }
+        names = {
+            "buf",
+            "offset",
+            "len"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -84,7 +106,7 @@
     return-object v0
 
     :catch_0
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAndroid()Z
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAndroid()Z
 
     move-result v0
 
@@ -110,6 +132,17 @@
 # virtual methods
 .method public decrypt([B[B)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -191,6 +224,17 @@
 
 .method public encrypt([B[B)[B
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

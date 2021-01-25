@@ -270,7 +270,7 @@
 .end method
 
 .method public setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -287,9 +287,34 @@
 
     iput-wide p1, v0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
 
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide p1
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    sub-long/2addr v0, p1
+
+    iget-object p1, p0, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-wide p1, p1, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
+
+    cmp-long p1, v0, p1
+
+    if-lez p1, :cond_0
+
     invoke-virtual {p0}, Landroidx/work/WorkRequest$Builder;->getThis()Landroidx/work/WorkRequest$Builder;
 
     move-result-object p1
 
     return-object p1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The given initial delay is too large and will cause an overflow!"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

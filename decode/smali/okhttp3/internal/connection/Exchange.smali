@@ -30,11 +30,21 @@
 .method public constructor <init>(Lokhttp3/internal/connection/RealCall;Lokhttp3/EventListener;Lokhttp3/internal/connection/ExchangeFinder;Lokhttp3/internal/http/ExchangeCodec;)V
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "call"
 
-    if-eqz p2, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p3, :cond_0
+    const-string v0, "eventListener"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "finder"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "codec"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,20 +63,6 @@
     iput-object p1, p0, Lokhttp3/internal/connection/Exchange;->connection:Lokhttp3/internal/connection/RealConnection;
 
     return-void
-
-    :cond_0
-    const-string p1, "finder"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "eventListener"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
@@ -90,7 +86,7 @@
 
     const/4 p2, 0x0
 
-    if-eqz p4, :cond_4
+    if-eqz p4, :cond_3
 
     if-eqz p5, :cond_1
 
@@ -107,25 +103,20 @@
 
     iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    if-eqz v1, :cond_2
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
     throw p2
 
     :cond_3
-    throw p2
-
-    :cond_4
     :goto_0
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_6
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_4
 
     iget-object p1, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;
 
@@ -135,26 +126,21 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;
 
     iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
-    if-eqz v1, :cond_6
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
+    :cond_5
+    throw p2
+
     :cond_6
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
-
-    :cond_7
-    throw p2
-
-    :cond_8
     :goto_1
     iget-object p1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
@@ -166,59 +152,53 @@
 .end method
 
 .method public final createRequestBody(Lokhttp3/Request;Z)Lokio/Sink;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    const-string v0, "request"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iput-boolean p2, p0, Lokhttp3/internal/connection/Exchange;->isDuplex:Z
 
     iget-object p2, p1, Lokhttp3/Request;->body:Lokhttp3/RequestBody;
 
-    const/4 v0, 0x0
-
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {p2}, Lokhttp3/RequestBody;->contentLength()J
 
-    move-result-wide v1
+    move-result-wide v0
 
     iget-object p2, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;
 
-    iget-object v3, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
+    iget-object v2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_0
 
-    if-eqz v3, :cond_0
+    const-string p2, "call"
+
+    invoke-static {v2, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p2, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;
 
-    invoke-interface {p2, p1, v1, v2}, Lokhttp3/internal/http/ExchangeCodec;->createRequestBody(Lokhttp3/Request;J)Lokio/Sink;
+    invoke-interface {p2, p1, v0, v1}, Lokhttp3/internal/http/ExchangeCodec;->createRequestBody(Lokhttp3/Request;J)Lokio/Sink;
 
     move-result-object p1
 
     new-instance p2, Lokhttp3/internal/connection/Exchange$RequestBodySink;
 
-    invoke-direct {p2, p0, p1, v1, v2}, Lokhttp3/internal/connection/Exchange$RequestBodySink;-><init>(Lokhttp3/internal/connection/Exchange;Lokio/Sink;J)V
+    invoke-direct {p2, p0, p1, v0, v1}, Lokhttp3/internal/connection/Exchange$RequestBodySink;-><init>(Lokhttp3/internal/connection/Exchange;Lokio/Sink;J)V
 
     return-object p2
 
     :cond_0
-    const-string p1, "call"
+    const/4 p1, 0x0
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    throw v0
-
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
+    throw p1
 .end method
 
 .method public final readResponseHeaders(Z)Lokhttp3/Response$Builder;
@@ -237,6 +217,10 @@
     move-result-object p1
 
     if-eqz p1, :cond_0
+
+    const-string v0, "deferredTrailers"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p0, p1, Lokhttp3/Response$Builder;->exchange:Lokhttp3/internal/connection/Exchange;
     :try_end_0
@@ -260,33 +244,28 @@
 .end method
 
 .method public final responseHeadersStart()V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;
 
     iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
-    if-eqz v0, :cond_1
+    const-string v0, "call"
 
-    if-eqz v1, :cond_0
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 
     :cond_0
-    const-string v0, "call"
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v2
-
-    :cond_1
-    throw v2
+    throw v0
 .end method
 
 .method public final trackFailure(Ljava/io/IOException;)V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->finder:Lokhttp3/internal/connection/ExchangeFinder;
 
@@ -300,179 +279,115 @@
 
     iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/internal/connection/RealCall;
 
+    monitor-enter v0
+
+    :try_start_0
     const-string v2, "call"
 
-    if-eqz v1, :cond_7
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, v0, Lokhttp3/internal/connection/RealConnection;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;
+    instance-of v2, p1, Lokhttp3/internal/http2/StreamResetException;
 
-    sget-boolean v3, Lokhttp3/internal/Util;->assertionsEnabled:Z
+    const/4 v3, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_2
 
-    invoke-static {v2}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
+    move-object v2, p1
 
-    move-result v3
+    check-cast v2, Lokhttp3/internal/http2/StreamResetException;
 
-    if-nez v3, :cond_0
+    iget-object v2, v2, Lokhttp3/internal/http2/StreamResetException;->errorCode:Lokhttp3/internal/http2/ErrorCode;
+
+    sget-object v4, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
+
+    if-ne v2, v4, :cond_0
+
+    iget p1, v0, Lokhttp3/internal/connection/RealConnection;->refusedStreamCount:I
+
+    add-int/2addr p1, v3
+
+    iput p1, v0, Lokhttp3/internal/connection/RealConnection;->refusedStreamCount:I
+
+    if-le p1, v3, :cond_4
+
+    iput-boolean v3, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
+
+    iget p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
+
+    add-int/2addr p1, v3
+
+    iput p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Ljava/lang/AssertionError;
-
-    const-string v0, "Thread "
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    const-string v3, "Thread.currentThread()"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " MUST NOT hold lock on "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    iget-object v2, v0, Lokhttp3/internal/connection/RealConnection;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;
-
-    monitor-enter v2
-
-    :try_start_0
-    instance-of v3, p1, Lokhttp3/internal/http2/StreamResetException;
-
-    const/4 v4, 0x1
-
-    if-eqz v3, :cond_4
-
-    move-object v3, p1
-
-    check-cast v3, Lokhttp3/internal/http2/StreamResetException;
-
-    iget-object v3, v3, Lokhttp3/internal/http2/StreamResetException;->errorCode:Lokhttp3/internal/http2/ErrorCode;
-
-    sget-object v5, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
-
-    if-ne v3, v5, :cond_2
-
-    iget p1, v0, Lokhttp3/internal/connection/RealConnection;->refusedStreamCount:I
-
-    add-int/2addr p1, v4
-
-    iput p1, v0, Lokhttp3/internal/connection/RealConnection;->refusedStreamCount:I
-
-    if-le p1, v4, :cond_6
-
-    iput-boolean v4, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
-
-    iget p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
-
-    add-int/2addr p1, v4
-
-    iput p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
-
-    goto :goto_1
-
-    :cond_2
     check-cast p1, Lokhttp3/internal/http2/StreamResetException;
 
     iget-object p1, p1, Lokhttp3/internal/http2/StreamResetException;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
-    sget-object v3, Lokhttp3/internal/http2/ErrorCode;->CANCEL:Lokhttp3/internal/http2/ErrorCode;
+    sget-object v2, Lokhttp3/internal/http2/ErrorCode;->CANCEL:Lokhttp3/internal/http2/ErrorCode;
 
-    if-ne p1, v3, :cond_3
+    if-ne p1, v2, :cond_1
 
-    invoke-virtual {v1}, Lokhttp3/internal/connection/RealCall;->isCanceled()Z
+    iget-boolean p1, v1, Lokhttp3/internal/connection/RealCall;->canceled:Z
 
-    move-result p1
+    if-eqz p1, :cond_1
 
-    if-eqz p1, :cond_3
+    goto :goto_0
 
-    goto :goto_1
-
-    :cond_3
-    iput-boolean v4, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
+    :cond_1
+    iput-boolean v3, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
 
     iget p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
 
-    add-int/2addr p1, v4
+    add-int/2addr p1, v3
 
     iput p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4
-    invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnection;->isMultiplexed()Z
+    :cond_2
+    invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnection;->isMultiplexed$okhttp()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_5
+    if-eqz v2, :cond_3
 
-    instance-of v3, p1, Lokhttp3/internal/http2/ConnectionShutdownException;
+    instance-of v2, p1, Lokhttp3/internal/http2/ConnectionShutdownException;
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_4
 
-    :cond_5
-    iput-boolean v4, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
+    :cond_3
+    iput-boolean v3, v0, Lokhttp3/internal/connection/RealConnection;->noNewExchanges:Z
 
-    iget v3, v0, Lokhttp3/internal/connection/RealConnection;->successCount:I
+    iget v2, v0, Lokhttp3/internal/connection/RealConnection;->successCount:I
 
-    if-nez v3, :cond_6
+    if-nez v2, :cond_4
 
     iget-object v1, v1, Lokhttp3/internal/connection/RealCall;->client:Lokhttp3/OkHttpClient;
 
-    iget-object v3, v0, Lokhttp3/internal/connection/RealConnection;->route:Lokhttp3/Route;
+    iget-object v2, v0, Lokhttp3/internal/connection/RealConnection;->route:Lokhttp3/Route;
 
-    invoke-virtual {v0, v1, v3, p1}, Lokhttp3/internal/connection/RealConnection;->connectFailed$okhttp(Lokhttp3/OkHttpClient;Lokhttp3/Route;Ljava/io/IOException;)V
+    invoke-virtual {v0, v1, v2, p1}, Lokhttp3/internal/connection/RealConnection;->connectFailed$okhttp(Lokhttp3/OkHttpClient;Lokhttp3/Route;Ljava/io/IOException;)V
 
     iget p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
 
-    add-int/2addr p1, v4
+    add-int/2addr p1, v3
 
     iput p1, v0, Lokhttp3/internal/connection/RealConnection;->routeFailureCount:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_6
-    :goto_1
-    monitor-exit v2
+    :cond_4
+    :goto_0
+    monitor-exit v0
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    monitor-exit v2
-
-    throw p1
-
-    :cond_7
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
+    monitor-exit v0
 
     throw p1
 .end method

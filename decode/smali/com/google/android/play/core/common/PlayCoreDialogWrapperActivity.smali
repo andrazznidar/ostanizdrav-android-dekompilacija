@@ -32,7 +32,7 @@
 
     invoke-direct {v1, p0, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->a(Landroid/content/pm/PackageManager;Landroid/content/ComponentName;)V
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Landroid/content/pm/PackageManager;Landroid/content/ComponentName;)V
 
     return-void
 .end method

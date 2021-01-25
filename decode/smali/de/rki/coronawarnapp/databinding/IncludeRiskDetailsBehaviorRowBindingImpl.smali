@@ -83,248 +83,185 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 12
+    .locals 15
+
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskState;->LOW_RISK:Lde/rki/coronawarnapp/risk/RiskState;
+
+    sget-object v1, Lde/rki/coronawarnapp/risk/RiskState;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskState;
 
     monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
+    iget-wide v2, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    iput-wide v2, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
+    iput-wide v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mRiskLevel:Ljava/lang/Integer;
+    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mIcon:Landroid/graphics/drawable/Drawable;
+    iget-object v7, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mBody:Ljava/lang/String;
+    iget-object v8, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mBody:Ljava/lang/String;
 
-    const-wide/16 v7, 0x9
+    const-wide/16 v9, 0x9
 
-    and-long/2addr v7, v0
+    and-long/2addr v9, v2
 
-    cmp-long v7, v7, v2
+    cmp-long v9, v9, v4
 
-    const/4 v8, 0x0
+    const-wide/16 v10, 0xa
 
-    if-eqz v7, :cond_c
+    and-long/2addr v10, v2
 
-    sget-object v8, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    cmp-long v10, v10, v4
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    const/4 v11, 0x0
 
-    move-result-object v8
+    if-eqz v10, :cond_7
 
-    if-nez v4, :cond_0
+    if-eqz v7, :cond_7
+
+    iget-object v11, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v11}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    const-string v12, "context"
+
+    invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7}, Lde/rki/coronawarnapp/ui/tracing/common/BaseTracingState;->isTracingOff()Z
+
+    move-result v12
+
+    const v13, 0x7f06006f
+
+    if-eqz v12, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    iget-object v12, v7, Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    move-result v9
+    if-eq v12, v1, :cond_1
 
-    const/4 v10, 0x1
+    if-ne v12, v0, :cond_2
 
-    if-ne v9, v10, :cond_1
+    :cond_1
+    const v13, 0x7f060062
+
+    :cond_2
+    :goto_0
+    invoke-virtual {v11, v13}, Landroid/content/Context;->getColor(I)I
+
+    move-result v11
+
+    iget-object v12, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v12}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v12
+
+    const-string v13, "context"
+
+    invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7}, Lde/rki/coronawarnapp/ui/tracing/common/BaseTracingState;->isTracingOff()Z
+
+    move-result v13
+
+    const v14, 0x7f060066
+
+    if-eqz v13, :cond_3
 
     goto :goto_1
 
-    :cond_1
-    :goto_0
-    const/4 v9, 0x4
+    :cond_3
+    iget-object v13, v7, Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    if-nez v4, :cond_2
+    if-ne v13, v1, :cond_4
+
+    const v14, 0x7f06004f
+
+    goto :goto_1
+
+    :cond_4
+    if-ne v13, v0, :cond_6
+
+    iget v0, v7, Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;->daysWithEncounters:I
+
+    if-lez v0, :cond_5
+
+    const v14, 0x7f060053
+
+    goto :goto_1
+
+    :cond_5
+    const v14, 0x7f060051
+
+    :cond_6
+    :goto_1
+    invoke-virtual {v12, v14}, Landroid/content/Context;->getColor(I)I
+
+    move-result v0
 
     goto :goto_2
 
-    :cond_2
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v10
-
-    if-ne v10, v9, :cond_3
-
-    :goto_1
-    const v9, 0x7f060060
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getColor(I)I
-
-    move-result v8
-
-    goto :goto_3
-
-    :cond_3
-    :goto_2
-    const v9, 0x7f060055
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getColor(I)I
-
-    move-result v8
-
-    :goto_3
-    sget-object v9, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    if-nez v4, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v10
-
-    const/4 v11, 0x3
-
-    if-ne v10, v11, :cond_5
-
-    const v4, 0x7f060044
-
-    invoke-virtual {v9, v4}, Landroid/content/Context;->getColor(I)I
-
-    move-result v4
-
-    goto :goto_8
-
-    :cond_5
-    :goto_4
-    const/4 v10, 0x2
-
-    if-nez v4, :cond_6
-
-    goto :goto_5
-
-    :cond_6
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v11
-
-    if-ne v11, v10, :cond_7
-
-    const v4, 0x7f060046
-
-    invoke-virtual {v9, v4}, Landroid/content/Context;->getColor(I)I
-
-    move-result v4
-
-    goto :goto_8
-
     :cond_7
-    :goto_5
-    const v10, 0x7f060048
+    move v0, v11
 
-    if-nez v4, :cond_8
+    :goto_2
+    const-wide/16 v12, 0xc
 
-    goto :goto_6
+    and-long v1, v2, v12
+
+    cmp-long v1, v1, v4
+
+    if-eqz v9, :cond_8
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
+
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_8
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    if-eqz v10, :cond_9
 
-    move-result v11
+    sget v2, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
-    if-nez v11, :cond_9
+    const/16 v3, 0x15
 
-    invoke-virtual {v9, v10}, Landroid/content/Context;->getColor(I)I
+    if-lt v2, v3, :cond_9
 
-    move-result v4
+    iget-object v2, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
 
-    goto :goto_8
+    invoke-static {v11}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->riskDetailsBehaviorIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
     :cond_9
-    :goto_6
-    const/4 v11, 0x5
-
-    if-nez v4, :cond_a
-
-    goto :goto_7
-
-    :cond_a
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    if-ne v4, v11, :cond_b
-
-    invoke-virtual {v9, v10}, Landroid/content/Context;->getColor(I)I
-
-    move-result v4
-
-    goto :goto_8
-
-    :cond_b
-    :goto_7
-    const v4, 0x7f060059
-
-    invoke-virtual {v9, v4}, Landroid/content/Context;->getColor(I)I
-
-    move-result v4
-
-    goto :goto_8
-
-    :cond_c
-    move v4, v8
-
-    :goto_8
-    const-wide/16 v9, 0xa
-
-    and-long/2addr v9, v0
-
-    cmp-long v9, v9, v2
-
-    const-wide/16 v10, 0xc
-
-    and-long/2addr v0, v10
-
-    cmp-long v0, v0, v2
-
-    if-eqz v9, :cond_d
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_d
-    if-eqz v7, :cond_e
-
-    sget v1, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_e
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView2:Landroid/widget/ImageView;
-
-    invoke-static {v8}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->riskDetailsBehaviorIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
-
-    :cond_e
-    if-eqz v0, :cond_f
+    if-eqz v1, :cond_a
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mboundView3:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_f
+    :cond_a
     return-void
 
     :catchall_0
@@ -432,7 +369,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -461,7 +398,7 @@
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x2
+    const-wide/16 v2, 0x1
 
     or-long/2addr v0, v2
 
@@ -471,7 +408,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xd
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -490,17 +427,17 @@
     throw p1
 .end method
 
-.method public setRiskLevel(Ljava/lang/Integer;)V
+.method public setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
     .locals 4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mRiskLevel:Ljava/lang/Integer;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
     monitor-enter p0
 
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x1
+    const-wide/16 v2, 0x2
 
     or-long/2addr v0, v2
 
@@ -510,7 +447,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x35
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

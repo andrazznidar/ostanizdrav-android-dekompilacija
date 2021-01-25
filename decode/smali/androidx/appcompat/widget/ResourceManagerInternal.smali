@@ -611,29 +611,7 @@
 
     :cond_1
     :try_start_2
-    iget-object p1, v0, Landroidx/collection/LongSparseArray;->mKeys:[J
-
-    iget v2, v0, Landroidx/collection/LongSparseArray;->mSize:I
-
-    invoke-static {p1, v2, p2, p3}, Landroidx/collection/ContainerHelpers;->binarySearch([JIJ)I
-
-    move-result p1
-
-    if-ltz p1, :cond_2
-
-    iget-object p2, v0, Landroidx/collection/LongSparseArray;->mValues:[Ljava/lang/Object;
-
-    aget-object p3, p2, p1
-
-    sget-object v2, Landroidx/collection/LongSparseArray;->DELETED:Ljava/lang/Object;
-
-    if-eq p3, v2, :cond_2
-
-    aput-object v2, p2, p1
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, v0, Landroidx/collection/LongSparseArray;->mGarbage:Z
+    invoke-virtual {v0, p2, p3}, Landroidx/collection/LongSparseArray;->remove(J)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

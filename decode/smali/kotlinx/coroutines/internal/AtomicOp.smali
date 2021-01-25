@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAtomic.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Atomic.kt\nkotlinx/coroutines/internal/AtomicOp\n*L\n1#1,117:1\n*E\n"
+    value = "SMAP\nAtomic.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Atomic.kt\nkotlinx/coroutines/internal/AtomicOp\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,122:1\n1#2:123\n*E\n"
 .end annotation
 
 
@@ -69,74 +69,73 @@
     .end annotation
 .end method
 
-.method public final perform(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final decide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     iget-object v0, p0, Lkotlinx/coroutines/internal/AtomicOp;->_consensus:Ljava/lang/Object;
-
-    sget-object v1, Lkotlinx/coroutines/internal/AtomicKt;->NO_DECISION:Ljava/lang/Object;
-
-    if-ne v0, v1, :cond_5
-
-    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/AtomicOp;->prepare(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-boolean v1, Lkotlinx/coroutines/DebugKt;->ASSERTIONS_ENABLED:Z
-
-    if-eqz v1, :cond_2
 
     sget-object v1, Lkotlinx/coroutines/internal/AtomicKt;->NO_DECISION:Ljava/lang/Object;
 
     if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x1
-
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    const/4 v1, 0x0
+    sget-object v0, Lkotlinx/coroutines/internal/AtomicOp;->_consensus$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :goto_0
-    if-eqz v1, :cond_1
+    invoke-virtual {v0, p0, v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    goto :goto_1
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return-object p1
 
     :cond_1
-    new-instance p1, Ljava/lang/AssertionError;
+    iget-object p1, p0, Lkotlinx/coroutines/internal/AtomicOp;->_consensus:Ljava/lang/Object;
 
-    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+    return-object p1
+.end method
 
-    throw p1
+.method public getAtomicOp()Lkotlinx/coroutines/internal/AtomicOp;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/internal/AtomicOp<",
+            "*>;"
+        }
+    .end annotation
 
-    :cond_2
-    :goto_1
-    iget-object v1, p0, Lkotlinx/coroutines/internal/AtomicOp;->_consensus:Ljava/lang/Object;
+    return-object p0
+.end method
 
-    sget-object v2, Lkotlinx/coroutines/internal/AtomicKt;->NO_DECISION:Ljava/lang/Object;
+.method public getOpSequence()J
+    .locals 2
 
-    if-eq v1, v2, :cond_3
+    const-wide/16 v0, 0x0
 
-    move-object v0, v1
+    return-wide v0
+.end method
 
-    goto :goto_2
+.method public final perform(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    :cond_3
-    sget-object v1, Lkotlinx/coroutines/internal/AtomicOp;->_consensus$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v1, p0, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    goto :goto_2
-
-    :cond_4
     iget-object v0, p0, Lkotlinx/coroutines/internal/AtomicOp;->_consensus:Ljava/lang/Object;
 
-    :cond_5
-    :goto_2
+    sget-object v1, Lkotlinx/coroutines/internal/AtomicKt;->NO_DECISION:Ljava/lang/Object;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/AtomicOp;->prepare(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/internal/AtomicOp;->decide(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    :cond_0
     invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/internal/AtomicOp;->complete(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v0

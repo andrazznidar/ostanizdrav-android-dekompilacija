@@ -102,6 +102,25 @@
     throw p1
 .end method
 
+.method public static fixedOffsetZone(Ljava/lang/String;I)Lorg/joda/time/DateTimeZone;
+    .locals 2
+
+    if-nez p1, :cond_0
+
+    sget-object p0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Lorg/joda/time/tz/FixedDateTimeZone;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1, p1, p1}, Lorg/joda/time/tz/FixedDateTimeZone;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
+
+    return-object v0
+.end method
+
 .method public static forID(Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
     .locals 4
     .annotation runtime Lorg/joda/convert/FromString;
@@ -204,27 +223,50 @@
 
     move-result-object v0
 
-    if-nez p0, :cond_6
+    invoke-static {v0, p0}, Lorg/joda/time/DateTimeZone;->fixedOffsetZone(Ljava/lang/String;I)Lorg/joda/time/DateTimeZone;
 
-    sget-object p0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+    move-result-object p0
 
-    goto :goto_1
-
-    :cond_6
-    new-instance v1, Lorg/joda/time/tz/FixedDateTimeZone;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2, p0, p0}, Lorg/joda/time/tz/FixedDateTimeZone;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
-
-    move-object p0, v1
-
-    :goto_1
     return-object p0
 .end method
 
+.method public static forOffsetMillis(I)Lorg/joda/time/DateTimeZone;
+    .locals 2
+
+    const v0, -0x5265bff
+
+    if-lt p0, v0, :cond_0
+
+    const v0, 0x5265bff
+
+    if-gt p0, v0, :cond_0
+
+    invoke-static {p0}, Lorg/joda/time/DateTimeZone;->printOffset(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p0}, Lorg/joda/time/DateTimeZone;->fixedOffsetZone(Ljava/lang/String;I)Lorg/joda/time/DateTimeZone;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Millis out of range: "
+
+    invoke-static {v1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public static forTimeZone(Ljava/util/TimeZone;)Lorg/joda/time/DateTimeZone;
-    .locals 5
+    .locals 4
 
     if-nez p0, :cond_0
 
@@ -239,7 +281,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_b
 
     const-string v0, "UTC"
 
@@ -254,45 +296,40 @@
     return-object p0
 
     :cond_1
-    sget-object v0, Lorg/joda/time/DateTimeZone$LazyInit;->CONVERSION_MAP:Ljava/util/Map;
+    const/4 v0, 0x0
 
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lorg/joda/time/DateTimeZone$LazyInit;->CONVERSION_MAP:Ljava/util/Map;
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {}, Lorg/joda/time/DateTimeZone;->getProvider()Lorg/joda/time/tz/Provider;
+    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    check-cast v1, Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    invoke-static {}, Lorg/joda/time/DateTimeZone;->getProvider()Lorg/joda/time/tz/Provider;
 
-    invoke-interface {v1, v0}, Lorg/joda/time/tz/Provider;->getZone(Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
+    move-result-object v2
 
-    move-result-object v3
+    if-eqz v1, :cond_2
 
-    goto :goto_0
+    invoke-interface {v2, v1}, Lorg/joda/time/tz/Provider;->getZone(Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
+
+    move-result-object v0
 
     :cond_2
-    move-object v3, v2
+    if-nez v0, :cond_3
 
-    :goto_0
-    if-nez v3, :cond_3
+    invoke-interface {v2, p0}, Lorg/joda/time/tz/Provider;->getZone(Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
 
-    invoke-interface {v1, p0}, Lorg/joda/time/tz/Provider;->getZone(Ljava/lang/String;)Lorg/joda/time/DateTimeZone;
-
-    move-result-object v3
+    move-result-object v0
 
     :cond_3
-    if-eqz v3, :cond_4
+    if-eqz v0, :cond_4
 
-    return-object v3
+    return-object v0
 
     :cond_4
-    if-nez v0, :cond_b
+    if-nez v1, :cond_a
 
     const-string v0, "GMT+"
 
@@ -308,7 +345,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     :cond_5
     const/4 v0, 0x3
@@ -347,7 +384,7 @@
 
     const/4 p0, 0x0
 
-    :goto_1
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -358,9 +395,9 @@
 
     move-result v1
 
-    const/16 v3, 0xa
+    const/16 v2, 0xa
 
-    invoke-static {v1, v3}, Ljava/lang/Character;->digit(CI)I
+    invoke-static {v1, v2}, Ljava/lang/Character;->digit(CI)I
 
     move-result v1
 
@@ -375,7 +412,7 @@
     :cond_6
     add-int/lit8 p0, p0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_7
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -395,9 +432,9 @@
 
     int-to-long v0, p0
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v0, v0, v3
+    cmp-long v0, v0, v2
 
     if-nez v0, :cond_9
 
@@ -410,23 +447,13 @@
 
     move-result-object v0
 
-    if-nez p0, :cond_a
+    invoke-static {v0, p0}, Lorg/joda/time/DateTimeZone;->fixedOffsetZone(Ljava/lang/String;I)Lorg/joda/time/DateTimeZone;
 
-    sget-object p0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+    move-result-object p0
 
-    goto :goto_2
-
-    :cond_a
-    new-instance v1, Lorg/joda/time/tz/FixedDateTimeZone;
-
-    invoke-direct {v1, v0, v2, p0, p0}, Lorg/joda/time/tz/FixedDateTimeZone;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
-
-    move-object p0, v1
-
-    :goto_2
     return-object p0
 
-    :cond_b
+    :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The datetime zone id \'"
@@ -441,7 +468,7 @@
 
     throw v0
 
-    :cond_c
+    :cond_b
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "The TimeZone id must not be null"

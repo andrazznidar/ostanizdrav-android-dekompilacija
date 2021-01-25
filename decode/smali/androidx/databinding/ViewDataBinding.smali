@@ -2,6 +2,9 @@
 .super Landroidx/databinding/BaseObservable;
 .source "ViewDataBinding.java"
 
+# interfaces
+.implements Landroidx/viewbinding/ViewBinding;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -184,6 +187,20 @@
     throw p1
 .end method
 
+.method public static bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+    .locals 0
+
+    invoke-static {p0}, Landroidx/databinding/ViewDataBinding;->checkAndCastToBindingComponent(Ljava/lang/Object;)Landroidx/databinding/DataBindingComponent;
+
+    move-result-object p0
+
+    invoke-static {p0, p1, p2}, Landroidx/databinding/DataBindingUtil;->bind(Landroidx/databinding/DataBindingComponent;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static checkAndCastToBindingComponent(Ljava/lang/Object;)Landroidx/databinding/DataBindingComponent;
     .locals 1
 
@@ -244,11 +261,9 @@
 
     invoke-static {p4}, Landroidx/databinding/ViewDataBinding;->checkAndCastToBindingComponent(Ljava/lang/Object;)Landroidx/databinding/DataBindingComponent;
 
-    move-result-object p2
+    move-result-object p4
 
-    const/4 p4, 0x0
-
-    invoke-static {p0, p1, p4, p3, p2}, Landroidx/databinding/DataBindingUtil;->inflate(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLandroidx/databinding/DataBindingComponent;)Landroidx/databinding/ViewDataBinding;
+    invoke-static {p0, p1, p2, p3, p4}, Landroidx/databinding/DataBindingUtil;->inflate(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLandroidx/databinding/DataBindingComponent;)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 
@@ -949,24 +964,6 @@
 
     :goto_0
     return p0
-.end method
-
-.method public static safeUnbox(Ljava/lang/Long;)J
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    :goto_0
-    return-wide v0
 .end method
 
 .method public static safeUnbox(Ljava/lang/Boolean;)Z

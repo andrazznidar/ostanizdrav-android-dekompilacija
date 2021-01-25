@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConnectionSpec.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConnectionSpec.kt\nokhttp3/ConnectionSpec\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,350:1\n9338#2:351\n9671#2,3:352\n9338#2:355\n9671#2,3:356\n*E\n*S KotlinDebug\n*F\n+ 1 ConnectionSpec.kt\nokhttp3/ConnectionSpec\n*L\n59#1:351\n59#1,3:352\n75#1:355\n75#1,3:356\n*E\n"
+    value = "SMAP\nConnectionSpec.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConnectionSpec.kt\nokhttp3/ConnectionSpec\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,350:1\n11208#2:351\n11543#2,3:352\n11208#2:355\n11543#2,3:356\n*E\n*S KotlinDebug\n*F\n+ 1 ConnectionSpec.kt\nokhttp3/ConnectionSpec\n*L\n59#1:351\n59#1,3:352\n75#1:355\n75#1,3:356\n*E\n"
 .end annotation
 
 
@@ -508,7 +508,9 @@
 .method public final isCompatible(Ljavax/net/ssl/SSLSocket;)Z
     .locals 4
 
-    if-eqz p1, :cond_3
+    const-string v0, "socket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->isTls:Z
 
@@ -562,15 +564,6 @@
     const/4 p1, 0x1
 
     return p1
-
-    :cond_3
-    const-string p1, "socket"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final tlsVersions()Ljava/util/List;
@@ -645,7 +638,7 @@
 
     const-string v1, "cipherSuites="
 
-    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

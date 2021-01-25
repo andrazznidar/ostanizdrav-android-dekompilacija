@@ -54,6 +54,126 @@
 
 
 # virtual methods
+.method public clearAllTables()V
+    .locals 6
+
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    const-string v2, "VACUUM"
+
+    const-string v3, "PRAGMA foreign_keys = TRUE"
+
+    const-string v4, "PRAGMA wal_checkpoint(FULL)"
+
+    if-nez v1, :cond_0
+
+    :try_start_0
+    const-string v5, "PRAGMA foreign_keys = FALSE"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_0
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    if-eqz v1, :cond_1
+
+    const-string v5, "PRAGMA defer_foreign_keys = TRUE"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_1
+    const-string v5, "DELETE FROM `Dependency`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `WorkSpec`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `WorkTag`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `SystemIdInfo`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `WorkName`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `WorkProgress`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v5, "DELETE FROM `Preference`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    if-nez v1, :cond_2
+
+    invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_2
+    invoke-interface {v0, v4}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    invoke-interface {v0, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_3
+    return-void
+
+    :catchall_0
+    move-exception v5
+
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    if-nez v1, :cond_4
+
+    invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_4
+    invoke-interface {v0, v4}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    invoke-interface {v0, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_5
+    throw v5
+.end method
+
 .method public createInvalidationTracker()Landroidx/room/InvalidationTracker;
     .locals 10
 
@@ -111,19 +231,19 @@
 
     iget-object v1, p1, Landroidx/room/DatabaseConfiguration;->context:Landroid/content/Context;
 
-    iget-object v2, p1, Landroidx/room/DatabaseConfiguration;->name:Ljava/lang/String;
+    const/4 v2, 0x0
+
+    iget-object v3, p1, Landroidx/room/DatabaseConfiguration;->name:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    new-instance v3, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
+    new-instance v4, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
 
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v1, v2, v0, v4}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;-><init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;Z)V
+    invoke-direct {v4, v1, v3, v0, v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;-><init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;Z)V
 
     iget-object p1, p1, Landroidx/room/DatabaseConfiguration;->sqliteOpenHelperFactory:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;
 
-    invoke-interface {p1, v3}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;->create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+    invoke-interface {p1, v4}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;->create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     move-result-object p1
 
@@ -250,6 +370,48 @@
 
     :cond_1
     iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_systemIdInfoDao:Landroidx/work/impl/model/SystemIdInfoDao;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public workNameDao()Landroidx/work/impl/model/WorkNameDao;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_workNameDao:Landroidx/work/impl/model/WorkNameDao;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_workNameDao:Landroidx/work/impl/model/WorkNameDao;
+
+    return-object v0
+
+    :cond_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_workNameDao:Landroidx/work/impl/model/WorkNameDao;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Landroidx/work/impl/model/WorkNameDao_Impl;
+
+    invoke-direct {v0, p0}, Landroidx/work/impl/model/WorkNameDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_workNameDao:Landroidx/work/impl/model/WorkNameDao;
+
+    :cond_1
+    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl;->_workNameDao:Landroidx/work/impl/model/WorkNameDao;
 
     monitor-exit p0
 

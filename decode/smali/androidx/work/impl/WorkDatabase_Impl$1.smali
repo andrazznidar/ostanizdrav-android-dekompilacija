@@ -242,7 +242,7 @@
 
     iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -251,7 +251,7 @@
     move-result v0
 
     :goto_0
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_0
 
     iget-object v2, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
@@ -263,42 +263,13 @@
 
     check-cast v2, Landroidx/room/RoomDatabase$Callback;
 
-    check-cast v2, Landroidx/work/impl/WorkDatabase$2;
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->beginTransaction()V
-
-    :try_start_0
-    invoke-static {}, Landroidx/work/impl/WorkDatabase;->getPruneSQL()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {p1, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->endTransaction()V
+    invoke-virtual {v2, p1}, Landroidx/room/RoomDatabase$Callback;->onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->endTransaction()V
-
-    throw v0
-
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 

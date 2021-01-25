@@ -248,7 +248,7 @@
 
     const-string v2, "Fragment "
 
-    invoke-static {v2, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -369,7 +369,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 10
+    .locals 7
 
     invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -403,7 +403,7 @@
 
     iget-object v2, v0, Landroidx/navigation/NavController;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_b
 
     iget-object v2, v0, Landroidx/navigation/NavController;->mOnBackPressedCallback:Landroidx/activity/OnBackPressedCallback;
 
@@ -459,88 +459,23 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_a
 
-    sget-object v5, Landroidx/navigation/NavControllerViewModel;->FACTORY:Landroidx/lifecycle/ViewModelProvider$Factory;
+    new-instance v5, Landroidx/lifecycle/ViewModelProvider;
 
-    const-class v6, Landroidx/navigation/NavControllerViewModel;
+    sget-object v6, Landroidx/navigation/NavControllerViewModel;->FACTORY:Landroidx/lifecycle/ViewModelProvider$Factory;
 
-    invoke-virtual {v6}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    invoke-direct {v5, v4, v6}, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;)V
 
-    move-result-object v7
+    const-class v4, Landroidx/navigation/NavControllerViewModel;
 
-    if-eqz v7, :cond_d
-
-    const-string v8, "androidx.lifecycle.ViewModelProvider.DefaultKey:"
-
-    invoke-static {v8, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    iget-object v8, v4, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
-
-    invoke-virtual {v8, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Landroidx/lifecycle/ViewModel;
-
-    invoke-virtual {v6, v8}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    instance-of v4, v5, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
-
-    if-eqz v4, :cond_3
-
-    check-cast v5, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
-
-    invoke-virtual {v5, v8}, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;->onRequery(Landroidx/lifecycle/ViewModel;)V
-
-    goto :goto_2
-
-    :cond_1
-    instance-of v8, v5, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
-
-    if-eqz v8, :cond_2
-
-    check-cast v5, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
-
-    invoke-virtual {v5, v7, v6}, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;->create(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-
-    move-result-object v5
-
-    goto :goto_1
-
-    :cond_2
-    check-cast v5, Landroidx/navigation/NavControllerViewModel$1;
-
-    new-instance v5, Landroidx/navigation/NavControllerViewModel;
-
-    invoke-direct {v5}, Landroidx/navigation/NavControllerViewModel;-><init>()V
-
-    :goto_1
-    move-object v8, v5
-
-    iget-object v4, v4, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
-
-    invoke-virtual {v4, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object v4
 
-    check-cast v4, Landroidx/lifecycle/ViewModel;
+    check-cast v4, Landroidx/navigation/NavControllerViewModel;
 
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v4}, Landroidx/lifecycle/ViewModel;->onCleared()V
-
-    :cond_3
-    :goto_2
-    check-cast v8, Landroidx/navigation/NavControllerViewModel;
-
-    iput-object v8, v1, Landroidx/navigation/NavController;->mViewModel:Landroidx/navigation/NavControllerViewModel;
+    iput-object v4, v1, Landroidx/navigation/NavController;->mViewModel:Landroidx/navigation/NavControllerViewModel;
 
     iget-object v1, p0, Landroidx/navigation/fragment/NavHostFragment;->mNavController:Landroidx/navigation/NavHostController;
 
@@ -548,7 +483,7 @@
 
     const-string v1, "android-support-nav:fragment:graphId"
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_3
 
     const-string v4, "android-support-nav:fragment:navControllerState"
 
@@ -562,7 +497,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_2
 
     iput-boolean v2, p0, Landroidx/navigation/fragment/NavHostFragment;->mDefaultNavHost:Z
 
@@ -570,7 +505,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_1
 
     new-instance v5, Landroidx/fragment/app/BackStackRecord;
 
@@ -580,30 +515,30 @@
 
     invoke-virtual {v5}, Landroidx/fragment/app/FragmentTransaction;->commit()I
 
-    goto :goto_3
+    goto :goto_1
 
-    :cond_4
+    :cond_1
     throw v0
 
-    :cond_5
-    :goto_3
+    :cond_2
+    :goto_1
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result p1
 
     iput p1, p0, Landroidx/navigation/fragment/NavHostFragment;->mGraphId:I
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_6
+    :cond_3
     move-object v4, v0
 
-    :goto_4
-    if-eqz v4, :cond_8
+    :goto_2
+    if-eqz v4, :cond_5
 
     iget-object p1, p0, Landroidx/navigation/fragment/NavHostFragment;->mNavController:Landroidx/navigation/NavHostController;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_4
 
     iget-object v2, p1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
@@ -637,36 +572,36 @@
 
     iput-boolean v2, p1, Landroidx/navigation/NavController;->mDeepLinkHandled:Z
 
-    goto :goto_5
+    goto :goto_3
 
-    :cond_7
+    :cond_4
     throw v0
 
-    :cond_8
-    :goto_5
+    :cond_5
+    :goto_3
     iget p1, p0, Landroidx/navigation/fragment/NavHostFragment;->mGraphId:I
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_6
 
     iget-object v1, p0, Landroidx/navigation/fragment/NavHostFragment;->mNavController:Landroidx/navigation/NavHostController;
 
     invoke-virtual {v1, p1, v0}, Landroidx/navigation/NavController;->setGraph(ILandroid/os/Bundle;)V
 
-    goto :goto_6
+    goto :goto_4
 
-    :cond_9
+    :cond_6
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_7
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v3
 
-    :cond_a
-    if-eqz p1, :cond_b
+    :cond_7
+    if-eqz p1, :cond_8
 
     const-string v0, "android-support-nav:fragment:startDestinationArgs"
 
@@ -674,27 +609,18 @@
 
     move-result-object v0
 
-    :cond_b
-    if-eqz v3, :cond_c
+    :cond_8
+    if-eqz v3, :cond_9
 
     iget-object p1, p0, Landroidx/navigation/fragment/NavHostFragment;->mNavController:Landroidx/navigation/NavHostController;
 
     invoke-virtual {p1, v3, v0}, Landroidx/navigation/NavController;->setGraph(ILandroid/os/Bundle;)V
 
-    :cond_c
-    :goto_6
+    :cond_9
+    :goto_4
     return-void
 
-    :cond_d
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Local and anonymous classes can not be ViewModels"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_e
+    :cond_a
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "ViewModelStore should be set before setGraph call"
@@ -703,7 +629,7 @@
 
     throw p1
 
-    :cond_f
+    :cond_b
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "You must call setLifecycleOwner() before calling setOnBackPressedDispatcher()"

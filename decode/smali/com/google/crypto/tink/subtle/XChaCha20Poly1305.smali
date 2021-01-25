@@ -6,6 +6,15 @@
 # direct methods
 .method public constructor <init>([B)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;
@@ -21,6 +30,17 @@
 # virtual methods
 .method public newChaCha20Instance([BI)Lcom/google/crypto/tink/subtle/ChaCha20Base;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "initialCounter"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;

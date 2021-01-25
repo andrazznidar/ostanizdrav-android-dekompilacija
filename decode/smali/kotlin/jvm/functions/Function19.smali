@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "Functions.kt"
 
+# interfaces
+.implements Lkotlin/Function;
+
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -48,7 +51,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Lkotlin/Function<",
         "TR;>;"
     }
 .end annotation

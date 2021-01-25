@@ -15,3 +15,8 @@
         ">;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract getMillis()J
+.end method

@@ -21,7 +21,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLockFreeTaskQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore\n+ 2 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion\n+ 3 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n*L\n1#1,308:1\n299#2,3:309\n299#2,3:312\n299#2,3:321\n299#2,3:326\n299#2,3:331\n299#2,3:340\n299#2,3:343\n396#3,4:315\n387#3,2:319\n387#3,2:324\n387#3,2:329\n418#3,4:334\n92#3,2:338\n*E\n*S KotlinDebug\n*F\n+ 1 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore\n*L\n91#1,3:309\n92#1,3:312\n105#1,3:321\n165#1,3:326\n199#1,3:331\n231#1,3:340\n247#1,3:343\n95#1,4:315\n105#1,2:319\n165#1,2:324\n199#1,2:329\n217#1,4:334\n223#1,2:338\n*E\n"
+    value = "SMAP\nLockFreeTaskQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore\n+ 2 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion\n+ 3 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,308:1\n299#2,3:309\n299#2,3:312\n299#2,3:321\n299#2,3:326\n299#2,3:331\n299#2,3:341\n299#2,3:344\n396#3,4:315\n387#3,2:319\n387#3,2:324\n387#3,2:329\n418#3,4:335\n92#3,2:339\n1#4:334\n*E\n*S KotlinDebug\n*F\n+ 1 LockFreeTaskQueue.kt\nkotlinx/coroutines/internal/LockFreeTaskQueueCore\n*L\n91#1,3:309\n92#1,3:312\n107#1,3:321\n167#1,3:326\n200#1,3:331\n231#1,3:341\n247#1,3:344\n95#1,4:315\n105#1,2:319\n165#1,2:324\n199#1,2:329\n217#1,4:335\n223#1,2:339\n*E\n"
 .end annotation
 
 
@@ -743,53 +743,26 @@
 
     long-to-int v3, v3
 
-    sget-boolean v4, Lkotlinx/coroutines/DebugKt;->ASSERTIONS_ENABLED:Z
-
-    if-eqz v4, :cond_a
-
-    if-ne v3, v14, :cond_8
-
-    const/4 v4, 0x1
-
-    goto :goto_2
-
-    :cond_8
-    move v4, v13
-
-    :goto_2
-    if-eqz v4, :cond_9
-
-    goto :goto_3
-
-    :cond_9
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    :cond_a
-    :goto_3
     and-long v4, v1, v7
 
     const-wide/16 v18, 0x0
 
     cmp-long v4, v4, v18
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_8
 
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->next()Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_b
+    :cond_8
     sget-object v21, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->_state$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     and-long v4, v1, v16
 
-    or-long v25, v9, v4
+    or-long v25, v4, v9
 
     move-object/from16 v22, v0
 
@@ -811,11 +784,11 @@
 
     move-object v0, v15
 
-    :goto_4
-    if-eqz v0, :cond_c
+    :goto_2
+    if-eqz v0, :cond_9
 
     goto :goto_1
 
-    :cond_c
+    :cond_9
     return-object v20
 .end method

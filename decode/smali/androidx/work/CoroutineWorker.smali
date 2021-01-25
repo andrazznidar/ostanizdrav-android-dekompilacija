@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoroutineWorker.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n+ 2 ListenableFuture.kt\nandroidx/work/ListenableFutureKt\n+ 3 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,116:1\n39#2,8:117\n47#2,12:131\n39#2,8:145\n47#2,12:159\n197#3,6:125\n203#3,2:143\n197#3,6:153\n203#3,2:171\n*E\n*S KotlinDebug\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n*L\n98#1,8:117\n98#1,12:131\n109#1,8:145\n109#1,12:159\n98#1,6:125\n98#1,2:143\n109#1,6:153\n109#1,2:171\n*E\n"
+    value = "SMAP\nCoroutineWorker.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n+ 2 ListenableFuture.kt\nandroidx/work/ListenableFutureKt\n+ 3 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,117:1\n39#2,8:118\n47#2,2:135\n59#2,3:137\n39#2,8:142\n47#2,2:159\n59#2,3:161\n189#3,9:126\n198#3,2:140\n189#3,9:150\n198#3,2:164\n*E\n*S KotlinDebug\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n*L\n99#1,8:118\n99#1,2:135\n99#1,3:137\n110#1,8:142\n110#1,2:159\n110#1,3:161\n99#1,9:126\n99#1,2:140\n110#1,9:150\n110#1,2:164\n*E\n"
 .end annotation
 
 
@@ -29,17 +29,23 @@
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
     .locals 2
 
-    const/4 v0, 0x0
+    const-string v0, "appContext"
 
-    if-eqz p1, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_0
+    const-string v0, "params"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, p1, p2}, Landroidx/work/ListenableWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    new-instance p1, Lkotlinx/coroutines/JobImpl;
+    const/4 p1, 0x0
 
-    invoke-direct {p1, v0}, Lkotlinx/coroutines/JobImpl;-><init>(Lkotlinx/coroutines/Job;)V
+    const/4 p2, 0x1
+
+    invoke-static {p1, p2, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->Job$default(Lkotlinx/coroutines/Job;ILjava/lang/Object;)Lkotlinx/coroutines/CompletableJob;
+
+    move-result-object p1
 
     iput-object p1, p0, Landroidx/work/CoroutineWorker;->job:Lkotlinx/coroutines/CompletableJob;
 
@@ -49,7 +55,7 @@
 
     const-string p2, "SettableFuture.create()"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Landroidx/work/CoroutineWorker;->future:Landroidx/work/impl/utils/futures/SettableFuture;
 
@@ -63,7 +69,7 @@
 
     const-string v1, "taskExecutor"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
 
@@ -76,20 +82,6 @@
     iput-object p1, p0, Landroidx/work/CoroutineWorker;->coroutineContext:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-void
-
-    :cond_0
-    const-string p1, "params"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "appContext"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
@@ -138,7 +130,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
+    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
 
     move-result-object v1
 
@@ -156,7 +148,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     iget-object v0, p0, Landroidx/work/CoroutineWorker;->future:Landroidx/work/impl/utils/futures/SettableFuture;
 

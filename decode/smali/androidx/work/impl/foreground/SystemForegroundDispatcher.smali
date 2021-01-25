@@ -39,8 +39,6 @@
     .end annotation
 .end field
 
-.field public mLastForegroundInfo:Landroidx/work/ForegroundInfo;
-
 .field public final mLock:Ljava/lang/Object;
 
 .field public final mTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
@@ -113,8 +111,6 @@
 
     iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCurrentForegroundWorkSpecId:Ljava/lang/String;
 
-    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLastForegroundInfo:Landroidx/work/ForegroundInfo;
-
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
@@ -150,6 +146,22 @@
     invoke-virtual {p1, p0}, Landroidx/work/impl/Processor;->addExecutionListener(Landroidx/work/impl/ExecutionListener;)V
 
     return-void
+.end method
+
+.method public static createStopForegroundIntent(Landroid/content/Context;)Landroid/content/Intent;
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Landroidx/work/impl/foreground/SystemForegroundService;
+
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string p0, "ACTION_STOP_FOREGROUND"
+
+    invoke-virtual {v0, p0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    return-object v0
 .end method
 
 
@@ -262,9 +274,9 @@
 
     iget-object v4, v3, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
 
-    new-instance v5, Landroidx/work/impl/foreground/SystemForegroundService$3;
+    new-instance v5, Landroidx/work/impl/foreground/SystemForegroundService$2;
 
-    invoke-direct {v5, v3, v0, p1}, Landroidx/work/impl/foreground/SystemForegroundService$3;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;ILandroid/app/Notification;)V
+    invoke-direct {v5, v3, v0, p1}, Landroidx/work/impl/foreground/SystemForegroundService$2;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;ILandroid/app/Notification;)V
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -431,8 +443,47 @@
     return-void
 .end method
 
+.method public onDestroy()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLock:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mConstraintsTracker:Landroidx/work/impl/constraints/WorkConstraintsTracker;
+
+    invoke-virtual {v1}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->reset()V
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mWorkManagerImpl:Landroidx/work/impl/WorkManagerImpl;
+
+    iget-object v0, v0, Landroidx/work/impl/WorkManagerImpl;->mProcessor:Landroidx/work/impl/Processor;
+
+    invoke-virtual {v0, p0}, Landroidx/work/impl/Processor;->removeExecutionListener(Landroidx/work/impl/ExecutionListener;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
 .method public onExecuted(Ljava/lang/String;Z)V
-    .locals 3
+    .locals 6
 
     iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLock:Ljava/lang/Object;
 
@@ -447,33 +498,35 @@
 
     check-cast v0, Landroidx/work/impl/model/WorkSpec;
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mTrackedWorkSpecs:Ljava/util/Set;
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mTrackedWorkSpecs:Ljava/util/Set;
 
-    invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mConstraintsTracker:Landroidx/work/impl/constraints/WorkConstraintsTracker;
+
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mTrackedWorkSpecs:Ljava/util/Set;
+
+    invoke-virtual {v0, v2}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->replace(Ljava/lang/Iterable;)V
+
+    :cond_1
     monitor-exit p2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_1
-
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mConstraintsTracker:Landroidx/work/impl/constraints/WorkConstraintsTracker;
-
-    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mTrackedWorkSpecs:Ljava/util/Set;
-
-    invoke-virtual {p2, v0}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->replace(Ljava/lang/Iterable;)V
-
-    :cond_1
     iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mForegroundInfoById:Ljava/util/Map;
 
     invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -482,113 +535,162 @@
 
     check-cast p2, Landroidx/work/ForegroundInfo;
 
-    iput-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLastForegroundInfo:Landroidx/work/ForegroundInfo;
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCurrentForegroundWorkSpecId:Ljava/lang/String;
 
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCurrentForegroundWorkSpecId:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mForegroundInfoById:Ljava/util/Map;
-
-    invoke-interface {p1}, Ljava/util/Map;->size()I
-
-    move-result p1
-
-    if-lez p1, :cond_4
-
-    iget-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mForegroundInfoById:Ljava/util/Map;
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/util/Map$Entry;
-
-    :goto_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mForegroundInfoById:Ljava/util/Map;
 
-    move-result-object p2
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    check-cast p2, Ljava/util/Map$Entry;
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mForegroundInfoById:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
 
     goto :goto_1
 
     :cond_2
-    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iput-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCurrentForegroundWorkSpecId:Ljava/lang/String;
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/work/ForegroundInfo;
+
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    iget v3, v0, Landroidx/work/ForegroundInfo;->mNotificationId:I
+
+    iget v4, v0, Landroidx/work/ForegroundInfo;->mForegroundServiceType:I
+
+    iget-object v5, v0, Landroidx/work/ForegroundInfo;->mNotification:Landroid/app/Notification;
+
+    check-cast v2, Landroidx/work/impl/foreground/SystemForegroundService;
+
+    invoke-virtual {v2, v3, v4, v5}, Landroidx/work/impl/foreground/SystemForegroundService;->startForeground(IILandroid/app/Notification;)V
+
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    iget v0, v0, Landroidx/work/ForegroundInfo;->mNotificationId:I
+
+    check-cast v2, Landroidx/work/impl/foreground/SystemForegroundService;
+
+    iget-object v3, v2, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
+
+    new-instance v4, Landroidx/work/impl/foreground/SystemForegroundService$3;
+
+    invoke-direct {v4, v2, v0}, Landroidx/work/impl/foreground/SystemForegroundService$3;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;I)V
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_3
+    if-eqz p2, :cond_4
+
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v0
+
+    sget-object v2, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->TAG:Ljava/lang/String;
+
+    const-string v3, "Removing Notification (id: %s, workSpecId: %s ,notificationType: %s)"
+
+    const/4 v4, 0x3
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    iget v5, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v1
+
+    const/4 v5, 0x1
+
+    aput-object p1, v4, v5
+
+    const/4 p1, 0x2
+
+    iget v5, p2, Landroidx/work/ForegroundInfo;->mForegroundServiceType:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, p1
+
+    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/String;
+    new-array v1, v1, [Ljava/lang/Throwable;
 
-    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCurrentForegroundWorkSpecId:Ljava/lang/String;
+    invoke-virtual {v0, v2, p1, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     iget-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
 
-    if-eqz p1, :cond_4
+    iget p2, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
 
-    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    check-cast p1, Landroidx/work/impl/foreground/SystemForegroundService;
 
-    move-result-object p1
+    iget-object v0, p1, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
 
-    check-cast p1, Landroidx/work/ForegroundInfo;
+    new-instance v1, Landroidx/work/impl/foreground/SystemForegroundService$3;
 
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+    invoke-direct {v1, p1, p2}, Landroidx/work/impl/foreground/SystemForegroundService$3;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;I)V
 
-    iget v0, p1, Landroidx/work/ForegroundInfo;->mNotificationId:I
-
-    iget v1, p1, Landroidx/work/ForegroundInfo;->mForegroundServiceType:I
-
-    iget-object v2, p1, Landroidx/work/ForegroundInfo;->mNotification:Landroid/app/Notification;
-
-    check-cast p2, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    invoke-virtual {p2, v0, v1, v2}, Landroidx/work/impl/foreground/SystemForegroundService;->startForeground(IILandroid/app/Notification;)V
-
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
-
-    iget p1, p1, Landroidx/work/ForegroundInfo;->mNotificationId:I
-
-    check-cast p2, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    invoke-virtual {p2, p1}, Landroidx/work/impl/foreground/SystemForegroundService;->cancelNotification(I)V
-
-    goto :goto_2
-
-    :cond_3
-    iget-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLastForegroundInfo:Landroidx/work/ForegroundInfo;
-
-    if-eqz p1, :cond_4
-
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
-
-    if-eqz p2, :cond_4
-
-    iget p1, p1, Landroidx/work/ForegroundInfo;->mNotificationId:I
-
-    check-cast p2, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    invoke-virtual {p2, p1}, Landroidx/work/impl/foreground/SystemForegroundService;->cancelNotification(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_4
-    :goto_2
     return-void
 
     :catchall_0

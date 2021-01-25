@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRealInterceptorChain.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealInterceptorChain.kt\nokhttp3/internal/http/RealInterceptorChain\n*L\n1#1,114:1\n*E\n"
+    value = "SMAP\nRealInterceptorChain.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealInterceptorChain.kt\nokhttp3/internal/http/RealInterceptorChain\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,123:1\n1#2:124\n*E\n"
 .end annotation
 
 
@@ -57,13 +57,17 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "call"
 
-    if-eqz p1, :cond_2
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_1
+    const-string v0, "interceptors"
 
-    if-eqz p5, :cond_0
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "request"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -84,27 +88,6 @@
     iput p8, p0, Lokhttp3/internal/http/RealInterceptorChain;->writeTimeoutMillis:I
 
     return-void
-
-    :cond_0
-    const-string p1, "request"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "interceptors"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static copy$okhttp$default(Lokhttp3/internal/http/RealInterceptorChain;ILokhttp3/internal/connection/Exchange;Lokhttp3/Request;IIII)Lokhttp3/internal/http/RealInterceptorChain;
@@ -196,7 +179,9 @@
     move/from16 v10, p6
 
     :goto_5
-    if-eqz v7, :cond_6
+    const-string v1, "request"
+
+    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Lokhttp3/internal/http/RealInterceptorChain;
 
@@ -209,15 +194,6 @@
     invoke-direct/range {v2 .. v10}, Lokhttp3/internal/http/RealInterceptorChain;-><init>(Lokhttp3/internal/connection/RealCall;Ljava/util/List;ILokhttp3/internal/connection/Exchange;Lokhttp3/Request;III)V
 
     return-object v1
-
-    :cond_6
-    const-string v0, "request"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 
@@ -256,7 +232,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_d
+    const-string v0, "request"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget v0, p0, Lokhttp3/internal/http/RealInterceptorChain;->index:I
 
@@ -266,25 +244,25 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     if-ge v0, v1, :cond_0
 
-    move v0, v3
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    move v0, v3
 
     :goto_0
     if-eqz v0, :cond_c
 
     iget v0, p0, Lokhttp3/internal/http/RealInterceptorChain;->calls:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v2
 
     iput v0, p0, Lokhttp3/internal/http/RealInterceptorChain;->calls:I
 
@@ -308,14 +286,14 @@
 
     iget v0, p0, Lokhttp3/internal/http/RealInterceptorChain;->calls:I
 
-    if-ne v0, v3, :cond_1
+    if-ne v0, v2, :cond_1
 
-    move v0, v3
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    move v0, v2
+    move v0, v3
 
     :goto_1
     if-eqz v0, :cond_2
@@ -323,17 +301,17 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
     iget-object v0, p0, Lokhttp3/internal/http/RealInterceptorChain;->interceptors:Ljava/util/List;
 
-    iget v2, p0, Lokhttp3/internal/http/RealInterceptorChain;->index:I
+    iget v3, p0, Lokhttp3/internal/http/RealInterceptorChain;->index:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v3, v2
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -358,7 +336,7 @@
     throw v0
 
     :cond_3
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -366,7 +344,7 @@
 
     iget v1, p0, Lokhttp3/internal/http/RealInterceptorChain;->index:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v1, v2
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -442,7 +420,7 @@
 
     iget v7, p0, Lokhttp3/internal/http/RealInterceptorChain;->index:I
 
-    add-int/2addr v7, v3
+    add-int/2addr v7, v2
 
     iget-object v8, p0, Lokhttp3/internal/http/RealInterceptorChain;->interceptors:Ljava/util/List;
 
@@ -454,18 +432,18 @@
 
     iget p1, p1, Lokhttp3/internal/http/RealInterceptorChain;->calls:I
 
-    if-ne p1, v3, :cond_5
+    if-ne p1, v2, :cond_5
 
     goto :goto_3
 
     :cond_5
-    move p1, v2
+    move p1, v3
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    move p1, v3
+    move p1, v2
 
     :goto_4
     if-eqz p1, :cond_7
@@ -503,9 +481,12 @@
 
     if-eqz p1, :cond_9
 
-    move v2, v3
+    goto :goto_6
 
     :cond_9
+    move v2, v3
+
+    :goto_6
     if-eqz v2, :cond_a
 
     return-object v5
@@ -570,15 +551,6 @@
     move-result-object v0
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_d
-    const-string p1, "request"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
 
     throw p1
 .end method

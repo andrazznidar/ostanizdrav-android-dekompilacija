@@ -6,6 +6,18 @@
 # direct methods
 .method public static copyConditional([J[JI)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "a",
+            "b",
+            "icopy"
+        }
+    .end annotation
 
     neg-int p2, p2
 

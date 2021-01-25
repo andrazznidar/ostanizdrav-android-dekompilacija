@@ -26,6 +26,15 @@
 .end method
 
 .method public abstract getKeyManager(Ljava/lang/Class;)Lcom/google/crypto/tink/KeyManager;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "primitiveClass"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<P:",

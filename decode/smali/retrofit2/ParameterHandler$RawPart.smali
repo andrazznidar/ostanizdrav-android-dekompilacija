@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public apply(Lretrofit2/RequestBuilder;Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -59,14 +59,28 @@
 
     check-cast p2, Lokhttp3/MultipartBody$Part;
 
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_1
 
     iget-object p1, p1, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
+
+    if-eqz p1, :cond_0
+
+    const-string v0, "part"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lokhttp3/MultipartBody$Builder;->parts:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
+    goto :goto_0
+
     :cond_0
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_1
+    :goto_0
     return-void
 .end method

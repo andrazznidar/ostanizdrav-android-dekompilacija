@@ -5,45 +5,23 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTimeVariables.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TimeVariables.kt\nde/rki/coronawarnapp/risk/TimeVariables\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,239:1\n1366#2:240\n1435#2,3:241\n*E\n*S KotlinDebug\n*F\n+ 1 TimeVariables.kt\nde/rki/coronawarnapp/risk/TimeVariables\n*L\n209#1:240\n209#1,3:241\n*E\n"
+    value = "SMAP\nTimeVariables.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TimeVariables.kt\nde/rki/coronawarnapp/risk/TimeVariables\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,213:1\n1517#2:214\n1588#2,3:215\n*E\n*S KotlinDebug\n*F\n+ 1 TimeVariables.kt\nde/rki/coronawarnapp/risk/TimeVariables\n*L\n175#1:214\n175#1,3:215\n*E\n"
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lde/rki/coronawarnapp/risk/TimeVariables;
 
-.field public static final MANUAL_KEY_RETRIEVAL_DELAY:I
-
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     new-instance v0, Lde/rki/coronawarnapp/risk/TimeVariables;
 
     invoke-direct {v0}, Lde/rki/coronawarnapp/risk/TimeVariables;-><init>()V
 
     sput-object v0, Lde/rki/coronawarnapp/risk/TimeVariables;->INSTANCE:Lde/rki/coronawarnapp/risk/TimeVariables;
-
-    const-string v0, "device"
-
-    const-string v1, "deviceForTesters"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const v0, 0xea60
-
-    goto :goto_0
-
-    :cond_0
-    const v0, 0x5265c00
-
-    :goto_0
-    sput v0, Lde/rki/coronawarnapp/risk/TimeVariables;->MANUAL_KEY_RETRIEVAL_DELAY:I
 
     return-void
 .end method
@@ -105,41 +83,43 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->label:I
 
-    const/4 v3, 0x0
+    const/4 v3, 0x2
 
-    const-wide/16 v4, 0x0
-
-    const/4 v6, 0x2
-
-    const/4 v7, 0x1
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_3
 
-    if-eq v2, v7, :cond_2
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v6, :cond_1
+    if-ne v2, v3, :cond_1
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$1:Ljava/lang/Object;
+    iget-wide v1, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$3:J
 
-    check-cast v1, Ljava/util/List;
+    iget-wide v5, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$2:J
 
-    iget-wide v8, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
+    iget-wide v7, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$1:J
+
+    iget-wide v9, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$1:Ljava/lang/Object;
+
+    check-cast v3, Ljava/util/List;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$0:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/risk/TimeVariables;
+    check-cast v0, Ljava/lang/Long;
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :catch_0
     move-exception p1
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -151,22 +131,28 @@
     throw p1
 
     :cond_2
-    iget-wide v8, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
+    iget-wide v5, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$3:J
+
+    iget-wide v7, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$2:J
+
+    iget-wide v9, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$1:J
+
+    iget-wide v11, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
 
     iget-object v2, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$0:Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/risk/TimeVariables;
+    check-cast v2, Ljava/lang/Long;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->initialTracingActivationTimestamp()Ljava/lang/Long;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->initialTracingActivationTimestamp()Ljava/lang/Long;
 
     move-result-object p1
 
@@ -174,54 +160,77 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    move-result-wide v8
+    move-result-wide v5
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v10
+    move-result-wide v7
 
-    sub-long/2addr v10, v8
+    sub-long/2addr v7, v5
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/TimeVariables;->getDefaultRetentionPeriodInMS()J
 
-    move-result-wide v8
+    move-result-wide v5
 
-    cmp-long p1, v10, v8
+    cmp-long p1, v7, v5
 
     if-lez p1, :cond_4
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/TimeVariables;->getDefaultRetentionPeriodInMS()J
 
-    move-result-wide v8
+    move-result-wide v5
 
     goto :goto_1
 
     :cond_4
-    move-wide v8, v10
+    move-wide v11, v7
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
-    move-wide v8, v4
+    const-wide/16 v5, 0x0
 
     :goto_1
-    sget-object p1, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->Companion:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;
+    move-wide v11, v5
 
-    sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    :goto_2
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/TimeVariables;->getDefaultRetentionPeriodInMS()J
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    move-result-wide v9
+
+    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp()Ljava/lang/Long;
 
     move-result-object v2
 
-    invoke-virtual {p1, v2}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;->getDateRepository(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v7
+
+    sub-long v5, v7, v9
+
+    sget-object p1, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->Companion:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;
+
+    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+
+    move-result-object v13
+
+    invoke-virtual {p1, v13}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;->getDateRepository(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;
 
     move-result-object p1
 
-    iput-object p0, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$0:Ljava/lang/Object;
 
-    iput-wide v8, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
+    iput-wide v11, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
 
-    iput v7, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->label:I
+    iput-wide v9, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$1:J
+
+    iput-wide v7, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$2:J
+
+    iput-wide v5, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$3:J
+
+    iput v4, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->label:I
 
     invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->getIntervals(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -232,9 +241,7 @@
     return-object v1
 
     :cond_6
-    move-object v2, p0
-
-    :goto_2
+    :goto_3
     check-cast p1, Ljava/util/Collection;
 
     invoke-static {p1}, Lkotlin/collections/ArraysKt___ArraysKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
@@ -242,17 +249,23 @@
     move-result-object p1
 
     :try_start_1
-    sget-object v10, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
+    sget-object v13, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
 
     iput-object v2, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$0:Ljava/lang/Object;
 
-    iput-wide v8, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
-
     iput-object p1, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->L$1:Ljava/lang/Object;
 
-    iput v6, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->label:I
+    iput-wide v11, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$0:J
 
-    invoke-virtual {v10, v0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncIsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-wide v9, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$1:J
+
+    iput-wide v7, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$2:J
+
+    iput-wide v5, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->J$3:J
+
+    iput v3, v0, Lde/rki/coronawarnapp/risk/TimeVariables$getActiveTracingDaysInRetentionPeriod$1;->label:I
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncIsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
     :try_end_1
@@ -263,11 +276,21 @@
     return-object v1
 
     :cond_7
-    move-object v1, p1
+    move-object v3, p1
 
     move-object p1, v0
 
-    :goto_3
+    move-object v0, v2
+
+    move-wide v1, v5
+
+    move-wide v5, v7
+
+    move-wide v7, v9
+
+    move-wide v9, v11
+
+    :goto_4
     :try_start_2
     check-cast p1, Ljava/lang/Boolean;
 
@@ -277,36 +300,55 @@
     :try_end_2
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_2 .. :try_end_2} :catch_0
 
-    xor-int/2addr p1, v7
+    xor-int/2addr p1, v4
 
-    goto :goto_5
+    goto :goto_7
+
+    :goto_5
+    move-wide v11, v9
+
+    move-wide v9, v7
+
+    move-wide v7, v5
+
+    move-wide v5, v1
+
+    move-object v2, v0
+
+    goto :goto_6
 
     :catch_1
     move-exception v0
 
-    move-object v1, p1
+    move-object v3, p1
 
     move-object p1, v0
 
-    :goto_4
+    :goto_6
     sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    const/4 v2, 0x0
+    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
 
-    invoke-static {p1, v0, v2, v2}, Lcom/google/android/gms/common/internal/Preconditions;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 p1, 0x0
 
-    move p1, v3
+    move-object v0, v2
 
-    :goto_5
+    move-wide v1, v5
+
+    move-wide v5, v7
+
+    move-wide v7, v9
+
+    move-wide v9, v11
+
+    :goto_7
     if-eqz p1, :cond_9
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
+    if-eqz v0, :cond_9
 
     sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp()Ljava/lang/Long;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp()Ljava/lang/Long;
 
     move-result-object p1
 
@@ -314,124 +356,132 @@
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v10
+    move-result-wide v11
 
-    goto :goto_6
+    goto :goto_8
 
     :cond_8
-    move-wide v10, v6
+    move-wide v11, v5
 
-    :goto_6
-    sub-long v12, v6, v8
-
-    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v10
-
+    :goto_8
     new-instance p1, Lkotlin/Pair;
 
     new-instance v0, Ljava/lang/Long;
 
-    invoke-direct {v0, v10, v11}, Ljava/lang/Long;-><init>(J)V
+    invoke-direct {v0, v11, v12}, Ljava/lang/Long;-><init>(J)V
 
-    new-instance v2, Ljava/lang/Long;
+    new-instance v11, Ljava/lang/Long;
 
-    invoke-direct {v2, v6, v7}, Ljava/lang/Long;-><init>(J)V
+    invoke-direct {v11, v5, v6}, Ljava/lang/Long;-><init>(J)V
 
-    invoke-direct {p1, v0, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p1, v0, v11}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_9
     new-instance p1, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v3, v0}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_7
+    :goto_9
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_a
+    if-eqz v3, :cond_a
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    check-cast v1, Lkotlin/Pair;
+    check-cast v3, Lkotlin/Pair;
 
-    iget-object v2, v1, Lkotlin/Pair;->second:Ljava/lang/Object;
+    iget-object v5, v3, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast v5, Ljava/lang/Number;
+
+    invoke-virtual {v5}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v5
+
+    iget-object v3, v3, Lkotlin/Pair;->first:Ljava/lang/Object;
+
+    check-cast v3, Ljava/lang/Number;
+
+    invoke-virtual {v3}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v11
+
+    invoke-static {v11, v12, v1, v2}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v11
+
+    sub-long/2addr v5, v11
+
+    new-instance v3, Ljava/lang/Long;
+
+    invoke-direct {v3, v5, v6}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_9
+
+    :cond_a
+    const-string v0, "$this$sum"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x0
+
+    :goto_a
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
 
     check-cast v2, Ljava/lang/Number;
 
     invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    iget-object v1, v1, Lkotlin/Pair;->first:Ljava/lang/Object;
+    add-long/2addr v0, v2
 
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v1
-
-    sub-long/2addr v6, v1
-
-    new-instance v1, Ljava/lang/Long;
-
-    invoke-direct {v1, v6, v7}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_a
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_8
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Number;
-
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v0
-
-    add-long/2addr v4, v0
-
-    goto :goto_8
+    goto :goto_a
 
     :cond_b
-    sub-long/2addr v8, v4
+    invoke-static {v9, v10, v7, v8}, Ljava/lang/Math;->min(JJ)J
 
-    long-to-double v0, v8
+    move-result-wide v2
+
+    sub-long/2addr v2, v0
+
+    long-to-double v0, v2
 
     const p1, 0x5265c00
 
-    int-to-double v4, p1
+    int-to-double v2, p1
 
-    div-double/2addr v0, v4
+    div-double/2addr v0, v2
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -447,11 +497,13 @@
 
     move-result-object p1
 
-    new-array v2, v3, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v4, p1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v5, p1, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
 
@@ -461,16 +513,42 @@
 
     const-string p1, "Rounded number of days to display: "
 
-    invoke-static {p1, v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
-    new-array v2, v3, [Ljava/lang/Object;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-virtual {v3, p1, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, p1, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
+    const-wide/16 v5, 0x0
+
+    cmp-long p1, v0, v5
+
+    if-ltz p1, :cond_c
+
+    goto :goto_b
+
+    :cond_c
+    new-array p1, v4, [Ljava/lang/Object;
+
+    new-instance v3, Ljava/lang/Long;
+
+    invoke-direct {v3, v0, v1}, Ljava/lang/Long;-><init>(J)V
+
+    aput-object v3, p1, v2
+
+    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v1, "Negative active tracing days: %d"
+
+    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    move-wide v0, v5
+
+    :goto_b
     new-instance p1, Ljava/lang/Long;
 
     invoke-direct {p1, v0, v1}, Ljava/lang/Long;-><init>(J)V
@@ -492,32 +570,4 @@
     mul-long/2addr v0, v2
 
     return-wide v0
-.end method
-
-.method public final getLastTimeDiagnosisKeysFromServerFetch()Ljava/lang/Long;
-    .locals 2
-
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->lastTimeDiagnosisKeysFromServerFetch()Ljava/util/Date;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
 .end method

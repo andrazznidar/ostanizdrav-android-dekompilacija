@@ -13,13 +13,13 @@
 
     new-instance v0, Landroid/util/SparseIntArray;
 
-    const/16 v1, 0x52
+    const/16 v1, 0x7a
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
     sput-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c002f
+    const v2, 0x7f0c001f
 
     const/4 v3, 0x1
 
@@ -27,7 +27,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0030
+    const v2, 0x7f0c0021
 
     const/4 v3, 0x2
 
@@ -35,7 +35,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0031
+    const v2, 0x7f0c0022
 
     const/4 v3, 0x3
 
@@ -43,7 +43,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0032
+    const v2, 0x7f0c0023
 
     const/4 v3, 0x4
 
@@ -51,7 +51,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0033
+    const v2, 0x7f0c0024
 
     const/4 v3, 0x5
 
@@ -59,7 +59,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0034
+    const v2, 0x7f0c0025
 
     const/4 v3, 0x6
 
@@ -67,7 +67,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0035
+    const v2, 0x7f0c0026
 
     const/4 v3, 0x7
 
@@ -75,7 +75,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0036
+    const v2, 0x7f0c0027
 
     const/16 v3, 0x8
 
@@ -83,7 +83,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0037
+    const v2, 0x7f0c0028
 
     const/16 v3, 0x9
 
@@ -91,7 +91,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0038
+    const v2, 0x7f0c0029
 
     const/16 v3, 0xa
 
@@ -99,7 +99,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0039
+    const v2, 0x7f0c002a
 
     const/16 v3, 0xb
 
@@ -107,7 +107,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003a
+    const v2, 0x7f0c002b
 
     const/16 v3, 0xc
 
@@ -115,7 +115,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003b
+    const v2, 0x7f0c003f
 
     const/16 v3, 0xd
 
@@ -123,7 +123,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003c
+    const v2, 0x7f0c0040
 
     const/16 v3, 0xe
 
@@ -131,7 +131,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003d
+    const v2, 0x7f0c0041
 
     const/16 v3, 0xf
 
@@ -139,7 +139,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003e
+    const v2, 0x7f0c0042
 
     const/16 v3, 0x10
 
@@ -147,7 +147,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c003f
+    const v2, 0x7f0c0043
 
     const/16 v3, 0x11
 
@@ -155,7 +155,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0040
+    const v2, 0x7f0c0044
 
     const/16 v3, 0x12
 
@@ -163,7 +163,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0041
+    const v2, 0x7f0c0045
 
     const/16 v3, 0x13
 
@@ -171,7 +171,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0042
+    const v2, 0x7f0c0046
 
     const/16 v3, 0x14
 
@@ -179,7 +179,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0043
+    const v2, 0x7f0c0047
 
     const/16 v3, 0x15
 
@@ -187,7 +187,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0044
+    const v2, 0x7f0c0048
 
     const/16 v3, 0x16
 
@@ -195,7 +195,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0045
+    const v2, 0x7f0c0049
 
     const/16 v3, 0x17
 
@@ -203,7 +203,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0046
+    const v2, 0x7f0c004a
 
     const/16 v3, 0x18
 
@@ -211,7 +211,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0047
+    const v2, 0x7f0c004b
 
     const/16 v3, 0x19
 
@@ -219,7 +219,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0048
+    const v2, 0x7f0c004c
 
     const/16 v3, 0x1a
 
@@ -227,7 +227,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0049
+    const v2, 0x7f0c004d
 
     const/16 v3, 0x1b
 
@@ -235,7 +235,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c004a
+    const v2, 0x7f0c004e
 
     const/16 v3, 0x1c
 
@@ -243,7 +243,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c004b
+    const v2, 0x7f0c004f
 
     const/16 v3, 0x1d
 
@@ -251,7 +251,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c004d
+    const v2, 0x7f0c0050
 
     const/16 v3, 0x1e
 
@@ -259,7 +259,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c004e
+    const v2, 0x7f0c0051
 
     const/16 v3, 0x1f
 
@@ -267,7 +267,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c004f
+    const v2, 0x7f0c0052
 
     const/16 v3, 0x20
 
@@ -275,7 +275,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0050
+    const v2, 0x7f0c0053
 
     const/16 v3, 0x21
 
@@ -283,7 +283,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0051
+    const v2, 0x7f0c0054
 
     const/16 v3, 0x22
 
@@ -291,7 +291,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0052
+    const v2, 0x7f0c0055
 
     const/16 v3, 0x23
 
@@ -299,7 +299,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0053
+    const v2, 0x7f0c0056
 
     const/16 v3, 0x24
 
@@ -307,7 +307,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0054
+    const v2, 0x7f0c0057
 
     const/16 v3, 0x25
 
@@ -315,7 +315,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0055
+    const v2, 0x7f0c0058
 
     const/16 v3, 0x26
 
@@ -323,7 +323,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0056
+    const v2, 0x7f0c0059
 
     const/16 v3, 0x27
 
@@ -331,7 +331,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0057
+    const v2, 0x7f0c005a
 
     const/16 v3, 0x28
 
@@ -339,7 +339,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0058
+    const v2, 0x7f0c005b
 
     const/16 v3, 0x29
 
@@ -347,7 +347,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0059
+    const v2, 0x7f0c005c
 
     const/16 v3, 0x2a
 
@@ -355,7 +355,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005a
+    const v2, 0x7f0c005d
 
     const/16 v3, 0x2b
 
@@ -363,7 +363,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005b
+    const v2, 0x7f0c005e
 
     const/16 v3, 0x2c
 
@@ -371,7 +371,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005c
+    const v2, 0x7f0c005f
 
     const/16 v3, 0x2d
 
@@ -379,7 +379,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005d
+    const v2, 0x7f0c0060
 
     const/16 v3, 0x2e
 
@@ -387,7 +387,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005e
+    const v2, 0x7f0c0061
 
     const/16 v3, 0x2f
 
@@ -395,7 +395,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c005f
+    const v2, 0x7f0c0062
 
     const/16 v3, 0x30
 
@@ -403,7 +403,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0060
+    const v2, 0x7f0c0063
 
     const/16 v3, 0x31
 
@@ -411,7 +411,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0061
+    const v2, 0x7f0c0064
 
     const/16 v3, 0x32
 
@@ -419,7 +419,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0062
+    const v2, 0x7f0c0065
 
     const/16 v3, 0x33
 
@@ -427,7 +427,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0063
+    const v2, 0x7f0c0066
 
     const/16 v3, 0x34
 
@@ -435,7 +435,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0064
+    const v2, 0x7f0c0067
 
     const/16 v3, 0x35
 
@@ -443,7 +443,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0065
+    const v2, 0x7f0c0068
 
     const/16 v3, 0x36
 
@@ -451,7 +451,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0066
+    const v2, 0x7f0c006b
 
     const/16 v3, 0x37
 
@@ -459,7 +459,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0068
+    const v2, 0x7f0c006c
 
     const/16 v3, 0x38
 
@@ -467,7 +467,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0069
+    const v2, 0x7f0c006d
 
     const/16 v3, 0x39
 
@@ -475,7 +475,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006a
+    const v2, 0x7f0c006e
 
     const/16 v3, 0x3a
 
@@ -483,7 +483,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006b
+    const v2, 0x7f0c006f
 
     const/16 v3, 0x3b
 
@@ -491,7 +491,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006c
+    const v2, 0x7f0c0070
 
     const/16 v3, 0x3c
 
@@ -499,7 +499,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006d
+    const v2, 0x7f0c0071
 
     const/16 v3, 0x3d
 
@@ -507,7 +507,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006e
+    const v2, 0x7f0c0072
 
     const/16 v3, 0x3e
 
@@ -515,7 +515,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c006f
+    const v2, 0x7f0c0073
 
     const/16 v3, 0x3f
 
@@ -523,7 +523,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0070
+    const v2, 0x7f0c0074
 
     const/16 v3, 0x40
 
@@ -531,7 +531,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0071
+    const v2, 0x7f0c0075
 
     const/16 v3, 0x41
 
@@ -539,7 +539,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0072
+    const v2, 0x7f0c0076
 
     const/16 v3, 0x42
 
@@ -547,7 +547,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0073
+    const v2, 0x7f0c0077
 
     const/16 v3, 0x43
 
@@ -555,7 +555,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0074
+    const v2, 0x7f0c0078
 
     const/16 v3, 0x44
 
@@ -563,7 +563,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0075
+    const v2, 0x7f0c0079
 
     const/16 v3, 0x45
 
@@ -571,7 +571,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0076
+    const v2, 0x7f0c007a
 
     const/16 v3, 0x46
 
@@ -579,7 +579,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0077
+    const v2, 0x7f0c007b
 
     const/16 v3, 0x47
 
@@ -587,7 +587,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0078
+    const v2, 0x7f0c007c
 
     const/16 v3, 0x48
 
@@ -595,7 +595,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0079
+    const v2, 0x7f0c007d
 
     const/16 v3, 0x49
 
@@ -603,7 +603,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007a
+    const v2, 0x7f0c007e
 
     const/16 v3, 0x4a
 
@@ -611,7 +611,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007b
+    const v2, 0x7f0c007f
 
     const/16 v3, 0x4b
 
@@ -619,7 +619,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007c
+    const v2, 0x7f0c0080
 
     const/16 v3, 0x4c
 
@@ -627,7 +627,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007d
+    const v2, 0x7f0c0081
 
     const/16 v3, 0x4d
 
@@ -635,7 +635,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007e
+    const v2, 0x7f0c0082
 
     const/16 v3, 0x4e
 
@@ -643,7 +643,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c007f
+    const v2, 0x7f0c0083
 
     const/16 v3, 0x4f
 
@@ -651,7 +651,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c00cf
+    const v2, 0x7f0c0084
 
     const/16 v3, 0x50
 
@@ -659,7 +659,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c00d0
+    const v2, 0x7f0c0085
 
     const/16 v3, 0x51
 
@@ -667,7 +667,327 @@
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c00d1
+    const v2, 0x7f0c0086
+
+    const/16 v3, 0x52
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0087
+
+    const/16 v3, 0x53
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0088
+
+    const/16 v3, 0x54
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0089
+
+    const/16 v3, 0x55
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008a
+
+    const/16 v3, 0x56
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008b
+
+    const/16 v3, 0x57
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008c
+
+    const/16 v3, 0x58
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008d
+
+    const/16 v3, 0x59
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008e
+
+    const/16 v3, 0x5a
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c008f
+
+    const/16 v3, 0x5b
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0090
+
+    const/16 v3, 0x5c
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0091
+
+    const/16 v3, 0x5d
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0093
+
+    const/16 v3, 0x5e
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0094
+
+    const/16 v3, 0x5f
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0095
+
+    const/16 v3, 0x60
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0096
+
+    const/16 v3, 0x61
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0097
+
+    const/16 v3, 0x62
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0098
+
+    const/16 v3, 0x63
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0099
+
+    const/16 v3, 0x64
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009a
+
+    const/16 v3, 0x65
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009b
+
+    const/16 v3, 0x66
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009c
+
+    const/16 v3, 0x67
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009d
+
+    const/16 v3, 0x68
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009e
+
+    const/16 v3, 0x69
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c009f
+
+    const/16 v3, 0x6a
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a0
+
+    const/16 v3, 0x6b
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a1
+
+    const/16 v3, 0x6c
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a2
+
+    const/16 v3, 0x6d
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a3
+
+    const/16 v3, 0x6e
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a4
+
+    const/16 v3, 0x6f
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a5
+
+    const/16 v3, 0x70
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a6
+
+    const/16 v3, 0x71
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a7
+
+    const/16 v3, 0x72
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a8
+
+    const/16 v3, 0x73
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00a9
+
+    const/16 v3, 0x74
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00aa
+
+    const/16 v3, 0x75
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00ab
+
+    const/16 v3, 0x76
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c00fa
+
+    const/16 v3, 0x77
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0102
+
+    const/16 v3, 0x78
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0103
+
+    const/16 v3, 0x79
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+
+    const v2, 0x7f0c0104
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -721,52 +1041,61 @@
 
     const/4 v0, 0x0
 
-    if-lez p3, :cond_55
+    if-lez p3, :cond_68
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_67
 
     add-int/lit8 v2, p3, -0x1
 
     div-int/lit8 v2, v2, 0x32
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_34
 
     const/4 v3, 0x1
+
+    if-eq v2, v3, :cond_1
+
+    const/4 v3, 0x2
 
     if-eq v2, v3, :cond_0
 
     goto/16 :goto_2
 
     :cond_0
-    const/4 v2, 0x0
+    invoke-virtual {p0, p1, p2, p3, v1}, Lde/rki/coronawarnapp/DataBinderMapperImpl;->internalGetViewDataBinding2(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
 
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
     packed-switch p3, :pswitch_data_0
 
     goto/16 :goto_0
 
     :pswitch_0
-    const-string p3, "layout/view_tan_input_group_4_0"
+    const-string p3, "layout/include_submission_country_selector_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_2
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_1
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for view_tan_input_group_4 is invalid. Received: "
+    const-string p2, "The tag for include_submission_country_selector is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -777,24 +1106,24 @@
     throw p1
 
     :pswitch_1
-    const-string p3, "layout/view_tan_input_group_3_0"
+    const-string p3, "layout/include_submission_country_no_selection_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_3
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup3BindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup3BindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for view_tan_input_group_3 is invalid. Received: "
+    const-string p2, "The tag for include_submission_country_no_selection is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -805,24 +1134,24 @@
     throw p1
 
     :pswitch_2
-    const-string p3, "layout/view_tan_input_edittext_0"
+    const-string p3, "layout/include_submission_country_item_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_4
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/ViewTanInputEdittextBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputEdittextBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for view_tan_input_edittext is invalid. Received: "
+    const-string p2, "The tag for include_submission_country_item is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -833,39 +1162,7 @@
     throw p1
 
     :pswitch_3
-    const-string p3, "layout/merge_guidelines_side_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_4
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;
-
-    new-array p3, v3, [Landroid/view/View;
-
-    aput-object p2, p3, v2
-
-    invoke-direct {v0, p1, p3}, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for merge_guidelines_side is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_4
-    const-string p3, "layout/merge_guidelines_card_0"
+    const-string p3, "layout/include_submission_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -873,633 +1170,13 @@
 
     if-eqz p3, :cond_5
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;
-
-    new-array p3, v3, [Landroid/view/View;
-
-    aput-object p2, p3, v2
-
-    invoke-direct {v0, p1, p3}, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_5
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for merge_guidelines_card is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_5
-    const-string p3, "layout/include_tracing_status_card_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_6
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_6
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_tracing_status_card is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_6
-    const-string p3, "layout/include_test_result_positive_steps_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_7
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_7
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_positive_steps is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_7
-    const-string p3, "layout/include_test_result_pending_steps_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_8
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPendingStepsBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPendingStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_8
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_pending_steps is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_8
-    const-string p3, "layout/include_test_result_negative_steps_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_9
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultNegativeStepsBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultNegativeStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_9
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_negative_steps is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_9
-    const-string p3, "layout/include_test_result_invalid_steps_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_a
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultInvalidStepsBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultInvalidStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_a
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_invalid_steps is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_a
-    const-string p3, "layout/include_test_result_card_positive_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_b
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_b
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_card_positive is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_b
-    const-string p3, "layout/include_test_result_card_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_c
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_c
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_card is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_c
-    const-string p3, "layout/include_submission_test_result_negative_further_info_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_d
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultNegativeFurtherInfoBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultNegativeFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_d
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_test_result_negative_further_info is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_d
-    const-string p3, "layout/include_submission_test_result_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_e
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTestResultBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_e
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_test_result is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_e
-    const-string p3, "layout/include_submission_tan_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_f
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_f
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_tan is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_f
-    const-string p3, "layout/include_submission_status_card_unregistered_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_10
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_10
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_status_card_unregistered is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_10
-    const-string p3, "layout/include_submission_status_card_positive_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_11
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_11
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_status_card_positive is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_11
-    const-string p3, "layout/include_submission_status_card_fetching_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_12
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardFetchingBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardFetchingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_12
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_status_card_fetching is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_12
-    const-string p3, "layout/include_submission_status_card_done_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_13
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardDoneBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_13
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_status_card_done is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_13
-    const-string p3, "layout/include_submission_status_card_content_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_14
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_14
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_status_card_content is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_14
-    const-string p3, "layout/include_submission_positive_other_warning_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_15
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_15
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_positive_other_warning is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_15
-    const-string p3, "layout/include_submission_intro_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_16
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionIntroBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_16
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_intro is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_16
-    const-string p3, "layout/include_submission_done_further_info_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_17
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_17
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_17
-    const-string p3, "layout/include_submission_done_content_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_18
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_18
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_done_content is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_18
-    const-string p3, "layout/include_submission_done_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_19
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_19
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_done is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_19
-    const-string p3, "layout/include_submission_dispatcher_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1a
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDispatcherBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDispatcherBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_1a
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_dispatcher is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1a
-    const-string p3, "layout/include_submission_contact_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1b
-
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_1b
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_contact is invalid. Received: "
@@ -1512,14 +1189,98 @@
 
     throw p1
 
-    :pswitch_1b
+    :pswitch_4
+    const-string p3, "layout/include_submission_consent_intro_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_6
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_6
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_consent_intro is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5
+    const-string p3, "layout/include_submission_consent_body_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_7
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_7
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_consent_body is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_6
+    const-string p3, "layout/include_submission_behaviour_row_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_8
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_8
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_behaviour_row is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_7
     const-string p3, "layout/include_settings_switch_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_9
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;
 
@@ -1527,7 +1288,7 @@
 
     goto/16 :goto_0
 
-    :cond_1c
+    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_settings_switch_row is invalid. Received: "
@@ -1540,22 +1301,50 @@
 
     throw p1
 
-    :pswitch_1c
+    :pswitch_8
+    const-string p3, "layout/include_settings_plain_row_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_a
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_settings_plain_row is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_9
     const-string p3, "layout/include_setting_tracing_period_logged_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1d
+    if-eqz p3, :cond_b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingTracingPeriodLoggedBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingTracingPeriodLoggedBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_1d
+    :cond_b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_setting_tracing_period_logged is invalid. Received: "
@@ -1568,22 +1357,22 @@
 
     throw p1
 
-    :pswitch_1d
+    :pswitch_a
     const-string p3, "layout/include_setting_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_1e
+    :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_setting_row is invalid. Received: "
@@ -1596,22 +1385,22 @@
 
     throw p1
 
-    :pswitch_1e
+    :pswitch_b
     const-string p3, "layout/include_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1f
+    if-eqz p3, :cond_d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_1f
+    :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_row is invalid. Received: "
@@ -1624,22 +1413,22 @@
 
     throw p1
 
-    :pswitch_1f
+    :pswitch_c
     const-string p3, "layout/include_risk_details_period_logged_progress_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_20
+    :cond_e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_period_logged_progress is invalid. Received: "
@@ -1652,30 +1441,22 @@
 
     throw p1
 
-    :goto_0
-    return-object v0
-
-    :cond_21
-    packed-switch p3, :pswitch_data_1
-
-    goto/16 :goto_1
-
-    :pswitch_20
+    :pswitch_d
     const-string p3, "layout/include_risk_details_period_logged_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedCardBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_22
+    :cond_f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_period_logged_card is invalid. Received: "
@@ -1688,22 +1469,22 @@
 
     throw p1
 
-    :pswitch_21
+    :pswitch_e
     const-string p3, "layout/include_risk_details_low_risk_encounter_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_10
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsLowRiskEncounterBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsLowRiskEncounterBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_23
+    :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_low_risk_encounter is invalid. Received: "
@@ -1716,22 +1497,22 @@
 
     throw p1
 
-    :pswitch_22
+    :pswitch_f
     const-string p3, "layout/include_risk_details_behavior_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_11
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_24
+    :cond_11
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_behavior_row is invalid. Received: "
@@ -1744,22 +1525,22 @@
 
     throw p1
 
-    :pswitch_23
+    :pswitch_10
     const-string p3, "layout/include_risk_details_behavior_increased_risk_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_25
+    if-eqz p3, :cond_12
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_25
+    :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_behavior_increased_risk is invalid. Received: "
@@ -1772,22 +1553,22 @@
 
     throw p1
 
-    :pswitch_24
+    :pswitch_11
     const-string p3, "layout/include_risk_details_behavior_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_26
+    if-eqz p3, :cond_13
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_26
+    :cond_13
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_risk_details_behavior is invalid. Received: "
@@ -1800,25 +1581,25 @@
 
     throw p1
 
-    :pswitch_25
-    const-string p3, "layout/include_risk_card_row_0"
+    :pswitch_12
+    const-string p3, "layout/include_risk_card_content_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_27
+    if-eqz p3, :cond_14
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskCardRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskCardContentRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardContentRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_27
+    :cond_14
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_risk_card_row is invalid. Received: "
+    const-string p2, "The tag for include_risk_card_content_row is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1828,25 +1609,25 @@
 
     throw p1
 
-    :pswitch_26
-    const-string p3, "layout/include_risk_card_header_0"
+    :pswitch_13
+    const-string p3, "layout/include_risk_card_content_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_28
+    if-eqz p3, :cond_15
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskCardHeaderBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskCardContentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_28
+    :cond_15
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_risk_card_header is invalid. Received: "
+    const-string p2, "The tag for include_risk_card_content is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1856,25 +1637,25 @@
 
     throw p1
 
-    :pswitch_27
-    const-string p3, "layout/include_risk_card_0"
+    :pswitch_14
+    const-string p3, "layout/include_privacy_card_no_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_16
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRiskCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_29
+    :cond_16
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_risk_card is invalid. Received: "
+    const-string p2, "The tag for include_privacy_card_no_consent is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1884,22 +1665,22 @@
 
     throw p1
 
-    :pswitch_28
+    :pswitch_15
     const-string p3, "layout/include_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_17
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2a
+    :cond_17
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_privacy_card is invalid. Received: "
@@ -1912,22 +1693,22 @@
 
     throw p1
 
-    :pswitch_29
+    :pswitch_16
     const-string p3, "layout/include_onboarding_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_18
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2b
+    :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_onboarding is invalid. Received: "
@@ -1940,22 +1721,22 @@
 
     throw p1
 
-    :pswitch_2a
+    :pswitch_17
     const-string p3, "layout/include_navigation_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_19
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2c
+    :cond_19
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_navigation_row is invalid. Received: "
@@ -1968,22 +1749,22 @@
 
     throw p1
 
-    :pswitch_2b
+    :pswitch_18
     const-string p3, "layout/include_main_overview_segment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2d
+    if-eqz p3, :cond_1a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2d
+    :cond_1a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_segment is invalid. Received: "
@@ -1996,22 +1777,22 @@
 
     throw p1
 
-    :pswitch_2c
+    :pswitch_19
     const-string p3, "layout/include_main_overview_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2e
+    if-eqz p3, :cond_1b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2e
+    :cond_1b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_row is invalid. Received: "
@@ -2024,22 +1805,22 @@
 
     throw p1
 
-    :pswitch_2d
+    :pswitch_1a
     const-string p3, "layout/include_main_overview_glossary_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2f
+    if-eqz p3, :cond_1c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_2f
+    :cond_1c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_glossary is invalid. Received: "
@@ -2052,22 +1833,22 @@
 
     throw p1
 
-    :pswitch_2e
+    :pswitch_1b
     const-string p3, "layout/include_main_faq_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_1d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainFaqCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_30
+    :cond_1d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_faq_card is invalid. Received: "
@@ -2080,22 +1861,134 @@
 
     throw p1
 
-    :pswitch_2f
+    :pswitch_1c
+    const-string p3, "layout/include_interoperability_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_1e
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_1e
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_interoperability is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1d
+    const-string p3, "layout/include_interop_riskdetails_no_countries_infoview_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_1f
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_1f
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_interop_riskdetails_no_countries_infoview is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1e
+    const-string p3, "layout/include_interop_no_countries_infoview_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_20
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_20
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_interop_no_countries_infoview is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1f
+    const-string p3, "layout/include_interop_list_participating_countries_overview_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_21
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_21
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_interop_list_participating_countries_overview is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_20
     const-string p3, "layout/include_information_details_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_31
+    if-eqz p3, :cond_22
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_31
+    :cond_22
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_information_details is invalid. Received: "
@@ -2108,22 +2001,22 @@
 
     throw p1
 
-    :pswitch_30
+    :pswitch_21
     const-string p3, "layout/include_header_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_32
+    if-eqz p3, :cond_23
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_32
+    :cond_23
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_header is invalid. Received: "
@@ -2136,22 +2029,22 @@
 
     throw p1
 
-    :pswitch_31
+    :pswitch_22
     const-string p3, "layout/include_divider_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_33
+    if-eqz p3, :cond_24
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_33
+    :cond_24
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_divider is invalid. Received: "
@@ -2164,22 +2057,22 @@
 
     throw p1
 
-    :pswitch_32
+    :pswitch_23
     const-string p3, "layout/include_dispatcher_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_34
+    if-eqz p3, :cond_25
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_34
+    :cond_25
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_dispatcher_card is invalid. Received: "
@@ -2192,22 +2085,22 @@
 
     throw p1
 
-    :pswitch_33
+    :pswitch_24
     const-string p3, "layout/include_contact_form_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_35
+    if-eqz p3, :cond_26
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_35
+    :cond_26
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_contact_form is invalid. Received: "
@@ -2220,22 +2113,190 @@
 
     throw p1
 
-    :pswitch_34
+    :pswitch_25
+    const-string p3, "layout/include_contact_diary_privacy_card_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_27
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryPrivacyCardBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryPrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_27
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_privacy_card is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_26
+    const-string p3, "layout/include_contact_diary_overview_nested_item_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_28
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewNestedItemBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewNestedItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_28
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_overview_nested_item is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_27
+    const-string p3, "layout/include_contact_diary_overview_item_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_29
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewItemBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_29
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_overview_item is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_28
+    const-string p3, "layout/include_contact_diary_overview_header_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2a
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_overview_header is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_29
+    const-string p3, "layout/include_contact_diary_onboarding_row_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2b
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOnboardingRowBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOnboardingRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2b
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_onboarding_row is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2a
+    const-string p3, "layout/include_contact_diary_header_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2c
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryHeaderBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2c
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_contact_diary_header is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2b
     const-string p3, "layout/include_button_icon_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_2d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_36
+    :cond_2d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_button_icon is invalid. Received: "
@@ -2248,25 +2309,25 @@
 
     throw p1
 
-    :pswitch_35
-    const-string p3, "layout/fragment_submission_test_result_0"
+    :pswitch_2c
+    const-string p3, "layout/include_bullet_point_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_37
+    if-eqz p3, :cond_2e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_37
+    :cond_2e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result is invalid. Received: "
+    const-string p2, "The tag for include_bullet_point is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2276,7 +2337,239 @@
 
     throw p1
 
-    :pswitch_36
+    :pswitch_2d
+    const-string p3, "layout/include_16_years_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2f
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2f
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_16_years is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2e
+    const-string p3, "layout/fragment_submission_your_consent_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_30
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_30
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_your_consent is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2f
+    const-string p3, "layout/fragment_submission_test_result_positive_no_consent_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_31
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_31
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_positive_no_consent is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_30
+    const-string p3, "layout/fragment_submission_test_result_pending_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_32
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_32
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_pending is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_31
+    const-string p3, "layout/fragment_submission_test_result_negative_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_33
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_33
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_negative is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :goto_0
+    return-object v0
+
+    :cond_34
+    packed-switch p3, :pswitch_data_1
+
+    goto/16 :goto_1
+
+    :pswitch_32
+    const-string p3, "layout/fragment_submission_test_result_invalid_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_35
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_35
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_invalid is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_33
+    const-string p3, "layout/fragment_submission_test_result_consent_given_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_36
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_36
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_consent_given is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_34
+    const-string p3, "layout/fragment_submission_test_result_available_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_37
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_37
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_available is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_35
     const-string p3, "layout/fragment_submission_tan_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2304,8 +2597,8 @@
 
     throw p1
 
-    :pswitch_37
-    const-string p3, "layout/fragment_submission_qr_code_scan_0"
+    :pswitch_36
+    const-string p3, "layout/fragment_submission_symptom_intro_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2313,13 +2606,97 @@
 
     if-eqz p3, :cond_39
 
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_39
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_symptom_intro is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_37
+    const-string p3, "layout/fragment_submission_symptom_calendar_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3a
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_3a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_symptom_calendar is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_38
+    const-string p3, "layout/fragment_submission_result_ready_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3b
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_3b
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_result_ready is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_39
+    const-string p3, "layout/fragment_submission_qr_code_scan_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3c
+
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
-    :cond_39
+    :cond_3c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_qr_code_scan is invalid. Received: "
@@ -2332,14 +2709,14 @@
 
     throw p1
 
-    :pswitch_38
+    :pswitch_3a
     const-string p3, "layout/fragment_submission_positive_other_warning_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3a
+    if-eqz p3, :cond_3d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;
 
@@ -2347,7 +2724,7 @@
 
     goto/16 :goto_1
 
-    :cond_3a
+    :cond_3d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_positive_other_warning is invalid. Received: "
@@ -2360,25 +2737,25 @@
 
     throw p1
 
-    :pswitch_39
-    const-string p3, "layout/fragment_submission_intro_0"
+    :pswitch_3b
+    const-string p3, "layout/fragment_submission_no_consent_positive_other_warning_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3b
+    if-eqz p3, :cond_3e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionIntroBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
-    :cond_3b
+    :cond_3e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_intro is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_no_consent_positive_other_warning is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2388,14 +2765,14 @@
 
     throw p1
 
-    :pswitch_3a
+    :pswitch_3c
     const-string p3, "layout/fragment_submission_done_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3c
+    if-eqz p3, :cond_3f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;
 
@@ -2403,7 +2780,7 @@
 
     goto/16 :goto_1
 
-    :cond_3c
+    :cond_3f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_done is invalid. Received: "
@@ -2416,14 +2793,14 @@
 
     throw p1
 
-    :pswitch_3b
+    :pswitch_3d
     const-string p3, "layout/fragment_submission_dispatcher_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3d
+    if-eqz p3, :cond_40
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;
 
@@ -2431,7 +2808,7 @@
 
     goto/16 :goto_1
 
-    :cond_3d
+    :cond_40
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_dispatcher is invalid. Received: "
@@ -2444,14 +2821,42 @@
 
     throw p1
 
-    :pswitch_3c
+    :pswitch_3e
+    const-string p3, "layout/fragment_submission_country_selection_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_41
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_41
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_country_selection is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_3f
     const-string p3, "layout/fragment_submission_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3e
+    if-eqz p3, :cond_42
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;
 
@@ -2459,7 +2864,7 @@
 
     goto/16 :goto_1
 
-    :cond_3e
+    :cond_42
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_contact is invalid. Received: "
@@ -2472,14 +2877,42 @@
 
     throw p1
 
-    :pswitch_3d
+    :pswitch_40
+    const-string p3, "layout/fragment_submission_consent_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_43
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_43
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_consent is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_41
     const-string p3, "layout/fragment_settings_tracing_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3f
+    if-eqz p3, :cond_44
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;
 
@@ -2487,7 +2920,7 @@
 
     goto/16 :goto_1
 
-    :cond_3f
+    :cond_44
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_tracing is invalid. Received: "
@@ -2500,14 +2933,14 @@
 
     throw p1
 
-    :pswitch_3e
+    :pswitch_42
     const-string p3, "layout/fragment_settings_reset_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_40
+    if-eqz p3, :cond_45
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;
 
@@ -2515,7 +2948,7 @@
 
     goto/16 :goto_1
 
-    :cond_40
+    :cond_45
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_reset is invalid. Received: "
@@ -2528,14 +2961,14 @@
 
     throw p1
 
-    :pswitch_3f
+    :pswitch_43
     const-string p3, "layout/fragment_settings_notifications_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_41
+    if-eqz p3, :cond_46
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;
 
@@ -2543,7 +2976,7 @@
 
     goto/16 :goto_1
 
-    :cond_41
+    :cond_46
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_notifications is invalid. Received: "
@@ -2556,14 +2989,14 @@
 
     throw p1
 
-    :pswitch_40
+    :pswitch_44
     const-string p3, "layout/fragment_settings_background_priority_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_42
+    if-eqz p3, :cond_47
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;
 
@@ -2571,7 +3004,7 @@
 
     goto/16 :goto_1
 
-    :cond_42
+    :cond_47
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_background_priority is invalid. Received: "
@@ -2584,14 +3017,14 @@
 
     throw p1
 
-    :pswitch_41
+    :pswitch_45
     const-string p3, "layout/fragment_settings_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_43
+    if-eqz p3, :cond_48
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBindingImpl;
 
@@ -2599,7 +3032,7 @@
 
     goto/16 :goto_1
 
-    :cond_43
+    :cond_48
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings is invalid. Received: "
@@ -2612,14 +3045,14 @@
 
     throw p1
 
-    :pswitch_42
+    :pswitch_46
     const-string p3, "layout/fragment_risk_details_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_44
+    if-eqz p3, :cond_49
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentRiskDetailsBindingImpl;
 
@@ -2627,7 +3060,7 @@
 
     goto/16 :goto_1
 
-    :cond_44
+    :cond_49
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_risk_details is invalid. Received: "
@@ -2640,14 +3073,14 @@
 
     throw p1
 
-    :pswitch_43
+    :pswitch_47
     const-string p3, "layout/fragment_onboarding_tracing_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_4a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;
 
@@ -2655,7 +3088,7 @@
 
     goto/16 :goto_1
 
-    :cond_45
+    :cond_4a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_tracing is invalid. Received: "
@@ -2668,14 +3101,14 @@
 
     throw p1
 
-    :pswitch_44
+    :pswitch_48
     const-string p3, "layout/fragment_onboarding_test_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_46
+    if-eqz p3, :cond_4b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;
 
@@ -2683,7 +3116,7 @@
 
     goto/16 :goto_1
 
-    :cond_46
+    :cond_4b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_test is invalid. Received: "
@@ -2696,14 +3129,14 @@
 
     throw p1
 
-    :pswitch_45
+    :pswitch_49
     const-string p3, "layout/fragment_onboarding_privacy_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_47
+    if-eqz p3, :cond_4c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingPrivacyBindingImpl;
 
@@ -2711,7 +3144,7 @@
 
     goto/16 :goto_1
 
-    :cond_47
+    :cond_4c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_privacy is invalid. Received: "
@@ -2724,14 +3157,14 @@
 
     throw p1
 
-    :pswitch_46
+    :pswitch_4a
     const-string p3, "layout/fragment_onboarding_notifications_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_48
+    if-eqz p3, :cond_4d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;
 
@@ -2739,7 +3172,7 @@
 
     goto/16 :goto_1
 
-    :cond_48
+    :cond_4d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_notifications is invalid. Received: "
@@ -2752,14 +3185,42 @@
 
     throw p1
 
-    :pswitch_47
+    :pswitch_4b
+    const-string p3, "layout/fragment_onboarding_delta_interoperability_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4e
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_4e
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_onboarding_delta_interoperability is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_4c
     const-string p3, "layout/fragment_onboarding_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_49
+    if-eqz p3, :cond_4f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;
 
@@ -2767,7 +3228,7 @@
 
     goto/16 :goto_1
 
-    :cond_49
+    :cond_4f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding is invalid. Received: "
@@ -2780,14 +3241,14 @@
 
     throw p1
 
-    :pswitch_48
+    :pswitch_4d
     const-string p3, "layout/fragment_main_share_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4a
+    if-eqz p3, :cond_50
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentMainShareBindingImpl;
 
@@ -2795,7 +3256,7 @@
 
     goto/16 :goto_1
 
-    :cond_4a
+    :cond_50
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_main_share is invalid. Received: "
@@ -2808,14 +3269,14 @@
 
     throw p1
 
-    :pswitch_49
+    :pswitch_4e
     const-string p3, "layout/fragment_main_overview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4b
+    if-eqz p3, :cond_51
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBindingImpl;
 
@@ -2823,7 +3284,7 @@
 
     goto/16 :goto_1
 
-    :cond_4b
+    :cond_51
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_main_overview is invalid. Received: "
@@ -2836,25 +3297,25 @@
 
     throw p1
 
-    :pswitch_4a
-    const-string p3, "layout/fragment_main_0"
+    :pswitch_4f
+    const-string p3, "layout/fragment_interoperability_configuration_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4c
+    if-eqz p3, :cond_52
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentMainBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
-    :cond_4c
+    :cond_52
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_main is invalid. Received: "
+    const-string p2, "The tag for fragment_interoperability_configuration is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2864,14 +3325,14 @@
 
     throw p1
 
-    :pswitch_4b
+    :pswitch_50
     const-string p3, "layout/fragment_information_terms_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4d
+    if-eqz p3, :cond_53
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;
 
@@ -2879,7 +3340,7 @@
 
     goto/16 :goto_1
 
-    :cond_4d
+    :cond_53
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_terms is invalid. Received: "
@@ -2892,14 +3353,14 @@
 
     throw p1
 
-    :pswitch_4c
+    :pswitch_51
     const-string p3, "layout/fragment_information_technical_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4e
+    if-eqz p3, :cond_54
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTechnicalBindingImpl;
 
@@ -2907,7 +3368,7 @@
 
     goto/16 :goto_1
 
-    :cond_4e
+    :cond_54
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_technical is invalid. Received: "
@@ -2920,14 +3381,14 @@
 
     throw p1
 
-    :pswitch_4d
+    :pswitch_52
     const-string p3, "layout/fragment_information_privacy_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4f
+    if-eqz p3, :cond_55
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationPrivacyBindingImpl;
 
@@ -2935,7 +3396,7 @@
 
     goto/16 :goto_1
 
-    :cond_4f
+    :cond_55
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_privacy is invalid. Received: "
@@ -2948,22 +3409,22 @@
 
     throw p1
 
-    :pswitch_4e
+    :pswitch_53
     const-string p3, "layout/fragment_information_legal_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_50
+    if-eqz p3, :cond_56
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_50
+    :cond_56
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_legal is invalid. Received: "
@@ -2976,22 +3437,22 @@
 
     throw p1
 
-    :pswitch_4f
+    :pswitch_54
     const-string p3, "layout/fragment_information_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_51
+    if-eqz p3, :cond_57
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationContactBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentInformationContactBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_51
+    :cond_57
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_contact is invalid. Received: "
@@ -3004,22 +3465,22 @@
 
     throw p1
 
-    :pswitch_50
+    :pswitch_55
     const-string p3, "layout/fragment_information_about_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_52
+    if-eqz p3, :cond_58
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_52
+    :cond_58
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_about is invalid. Received: "
@@ -3032,22 +3493,22 @@
 
     throw p1
 
-    :pswitch_51
+    :pswitch_56
     const-string p3, "layout/fragment_information_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_53
+    if-eqz p3, :cond_59
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentInformationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_53
+    :cond_59
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information is invalid. Received: "
@@ -3060,10 +3521,374 @@
 
     throw p1
 
+    :pswitch_57
+    const-string p3, "layout/fragment_home_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5a
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentHomeBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentHomeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_home is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_58
+    const-string p3, "layout/contact_diary_person_list_item_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5b
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5b
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_person_list_item is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_59
+    const-string p3, "layout/contact_diary_person_list_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5c
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5c
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_person_list_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5a
+    const-string p3, "layout/contact_diary_person_bottom_sheet_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5d
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonBottomSheetFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonBottomSheetFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5d
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_person_bottom_sheet_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5b
+    const-string p3, "layout/contact_diary_overview_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5e
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5e
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_overview_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5c
+    const-string p3, "layout/contact_diary_onboarding_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5f
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_5f
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_onboarding_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5d
+    const-string p3, "layout/contact_diary_location_list_item_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_60
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_60
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_location_list_item is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5e
+    const-string p3, "layout/contact_diary_location_list_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_61
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_61
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_location_list_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5f
+    const-string p3, "layout/contact_diary_location_bottom_sheet_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_62
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationBottomSheetFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationBottomSheetFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_62
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_location_bottom_sheet_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_60
+    const-string p3, "layout/contact_diary_homescreen_card_include_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_63
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_1
+
+    :cond_63
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_homescreen_card_include is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_61
+    const-string p3, "layout/contact_diary_edit_persons_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_64
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_1
+
+    :cond_64
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_edit_persons_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_62
+    const-string p3, "layout/contact_diary_edit_locations_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_65
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditLocationsFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryEditLocationsFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_1
+
+    :cond_65
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_edit_locations_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_63
+    const-string p3, "layout/contact_diary_day_fragment_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_66
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto :goto_1
+
+    :cond_66
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for contact_diary_day_fragment is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
     :goto_1
     return-object v0
 
-    :cond_54
+    :cond_67
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string p2, "view must have a tag"
@@ -3072,12 +3897,32 @@
 
     throw p1
 
-    :cond_55
+    :cond_68
     :goto_2
     return-object v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x33
+        :pswitch_31
+        :pswitch_30
+        :pswitch_2f
+        :pswitch_2e
+        :pswitch_2d
+        :pswitch_2c
+        :pswitch_2b
+        :pswitch_2a
+        :pswitch_29
+        :pswitch_28
+        :pswitch_27
+        :pswitch_26
+        :pswitch_25
+        :pswitch_24
+        :pswitch_23
+        :pswitch_22
+        :pswitch_21
+        :pswitch_20
         :pswitch_1f
         :pswitch_1e
         :pswitch_1d
@@ -3114,6 +3959,24 @@
 
     :pswitch_data_1
     .packed-switch 0x1
+        :pswitch_63
+        :pswitch_62
+        :pswitch_61
+        :pswitch_60
+        :pswitch_5f
+        :pswitch_5e
+        :pswitch_5d
+        :pswitch_5c
+        :pswitch_5b
+        :pswitch_5a
+        :pswitch_59
+        :pswitch_58
+        :pswitch_57
+        :pswitch_56
+        :pswitch_55
+        :pswitch_54
+        :pswitch_53
+        :pswitch_52
         :pswitch_51
         :pswitch_50
         :pswitch_4f
@@ -3146,24 +4009,6 @@
         :pswitch_34
         :pswitch_33
         :pswitch_32
-        :pswitch_31
-        :pswitch_30
-        :pswitch_2f
-        :pswitch_2e
-        :pswitch_2d
-        :pswitch_2c
-        :pswitch_2b
-        :pswitch_2a
-        :pswitch_29
-        :pswitch_28
-        :pswitch_27
-        :pswitch_26
-        :pswitch_25
-        :pswitch_24
-        :pswitch_23
-        :pswitch_22
-        :pswitch_21
-        :pswitch_20
     .end packed-switch
 .end method
 
@@ -3199,11 +4044,11 @@
 
     if-eqz v1, :cond_5
 
-    const/16 v2, 0x4e
+    const/16 v2, 0x75
 
     if-eq p3, v2, :cond_3
 
-    const/16 v2, 0x4f
+    const/16 v2, 0x76
 
     if-eq p3, v2, :cond_1
 
@@ -3277,4 +4122,670 @@
     :cond_6
     :goto_0
     return-object v0
+.end method
+
+.method public final internalGetViewDataBinding2(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    packed-switch p3, :pswitch_data_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_0
+    const-string p3, "layout/view_tan_input_group_4_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_0
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for view_tan_input_group_4 is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1
+    const-string p3, "layout/view_tan_input_group_3_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_1
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup3BindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup3BindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for view_tan_input_group_3 is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2
+    const-string p3, "layout/view_tan_input_edittext_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/ViewTanInputEdittextBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewTanInputEdittextBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for view_tan_input_edittext is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_3
+    const-string p3, "layout/view_bullet_point_text_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for view_bullet_point_text is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_4
+    const-string p3, "layout/merge_guidelines_side_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;
+
+    new-array p4, v1, [Landroid/view/View;
+
+    aput-object p2, p4, v0
+
+    invoke-direct {p3, p1, p4}, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for merge_guidelines_side is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5
+    const-string p3, "layout/merge_guidelines_card_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;
+
+    new-array p4, v1, [Landroid/view/View;
+
+    aput-object p2, p4, v0
+
+    invoke-direct {p3, p1, p4}, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_5
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for merge_guidelines_card is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_6
+    const-string p3, "layout/include_tracing_status_card_location_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_6
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_6
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_tracing_status_card_location is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_7
+    const-string p3, "layout/include_tracing_status_card_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_7
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_7
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_tracing_status_card is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_8
+    const-string p3, "layout/include_test_result_positive_steps_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_8
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_8
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_test_result_positive_steps is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_9
+    const-string p3, "layout/include_test_result_card_positive_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_9
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_9
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_test_result_card_positive is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_a
+    const-string p3, "layout/include_test_result_card_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_a
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_test_result_card is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_b
+    const-string p3, "layout/include_submission_tan_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_b
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_b
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_tan is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_c
+    const-string p3, "layout/include_submission_status_card_unregistered_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_c
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardUnregisteredBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_c
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_unregistered is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_d
+    const-string p3, "layout/include_submission_status_card_ready_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_d
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardReadyBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardReadyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_d
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_ready is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_e
+    const-string p3, "layout/include_submission_status_card_positive_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_e
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_e
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_positive is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_f
+    const-string p3, "layout/include_submission_status_card_fetching_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_f
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardFetchingBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardFetchingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_f
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_fetching is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_10
+    const-string p3, "layout/include_submission_status_card_done_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_10
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardDoneBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_10
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_done is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_11
+    const-string p3, "layout/include_submission_status_card_content_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_11
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_11
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_status_card_content is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_12
+    const-string p3, "layout/include_submission_positive_other_warning_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_12
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_12
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_positive_other_warning is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_13
+    const-string p3, "layout/include_submission_done_further_info_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_13
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_13
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_14
+    const-string p3, "layout/include_submission_done_content_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_14
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_14
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_done_content is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_15
+    const-string p3, "layout/include_submission_done_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_15
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_15
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_done is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x65
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

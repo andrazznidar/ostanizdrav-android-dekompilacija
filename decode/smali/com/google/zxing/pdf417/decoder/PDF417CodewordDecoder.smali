@@ -105,7 +105,7 @@
 .method public static getDecodedValue([I)I
     .locals 11
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->sum([I)I
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
 
     move-result v0
 
@@ -232,7 +232,7 @@
     return v0
 
     :cond_6
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->sum([I)I
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
 
     move-result v0
 

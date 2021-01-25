@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.update.UpdateChecker"
     f = "UpdateChecker.kt"
     l = {
-        0x1b
+        0x14
     }
     m = "checkForUpdate"
 .end annotation

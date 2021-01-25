@@ -175,6 +175,18 @@
 
 .method public static add(Lcom/google/crypto/tink/subtle/Ed25519$PartialXYZT;Lcom/google/crypto/tink/subtle/Ed25519$XYZT;Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "partialXYZT",
+            "extended",
+            "cached"
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -283,6 +295,16 @@
 
 .method public static doubleXYZ(Lcom/google/crypto/tink/subtle/Ed25519$PartialXYZT;Lcom/google/crypto/tink/subtle/Ed25519$XYZ;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "partialXYZT",
+            "p"
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -369,6 +391,16 @@
 
 .method public static eq(II)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "a",
+            "b"
+        }
+    .end annotation
 
     xor-int/2addr p0, p1
 
@@ -397,6 +429,15 @@
 
 .method public static getHashedScalar([B)[B
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "privateKey"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -454,6 +495,14 @@
 
 .method public static scalarMultWithBaseToBytes([B)[B
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "a"
+        }
+    .end annotation
 
     const/16 v0, 0x40
 
@@ -707,7 +756,7 @@
 
     move-result-object v7
 
-    invoke-static {v3, v7}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {v3, v7}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result v3
 
@@ -953,6 +1002,18 @@
 
 .method public static select(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;IB)V
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "t",
+            "pos",
+            "b"
+        }
+    .end annotation
 
     and-int/lit16 v0, p2, 0xff
 

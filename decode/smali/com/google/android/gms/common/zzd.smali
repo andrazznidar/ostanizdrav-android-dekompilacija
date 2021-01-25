@@ -32,7 +32,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(Z)V
 
     invoke-static {p1}, Ljava/util/Arrays;->hashCode([B)I
 

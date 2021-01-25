@@ -205,6 +205,9 @@
     return-void
 .end method
 
+.method public abstract clearAllTables()V
+.end method
+
 .method public abstract createInvalidationTracker()Landroidx/room/InvalidationTracker;
 .end method
 

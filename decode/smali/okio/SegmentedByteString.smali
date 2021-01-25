@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSegmentedByteString.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SegmentedByteString.kt\nokio/SegmentedByteString\n+ 2 SegmentedByteString.kt\nokio/internal/SegmentedByteStringKt\n*L\n1#1,128:1\n59#2,12:129\n59#2,12:141\n100#2,27:153\n130#2,5:180\n137#2:185\n140#2,3:186\n59#2,8:189\n143#2,4:197\n67#2,4:201\n147#2:205\n59#2,12:206\n151#2:218\n81#2,10:219\n152#2,9:229\n91#2,4:238\n161#2,2:242\n170#2,4:244\n81#2,10:248\n174#2,3:258\n91#2,4:261\n177#2:265\n186#2,7:266\n81#2,10:273\n193#2,3:283\n91#2,4:286\n196#2:290\n200#2,4:291\n208#2,6:295\n59#2,8:301\n214#2,7:309\n67#2,4:316\n221#2,2:320\n*E\n*S KotlinDebug\n*F\n+ 1 SegmentedByteString.kt\nokio/SegmentedByteString\n*L\n53#1,12:129\n63#1,12:141\n75#1,27:153\n77#1,5:180\n79#1:185\n81#1,3:186\n81#1,8:189\n81#1,4:197\n81#1,4:201\n81#1:205\n87#1,12:206\n93#1:218\n93#1,10:219\n93#1,9:229\n93#1,4:238\n93#1,2:242\n100#1,4:244\n100#1,10:248\n100#1,3:258\n100#1,4:261\n100#1:265\n107#1,7:266\n107#1,10:273\n107#1,3:283\n107#1,4:286\n107#1:290\n119#1,4:291\n121#1,6:295\n121#1,8:301\n121#1,7:309\n121#1,4:316\n121#1,2:320\n*E\n"
+    value = "SMAP\nSegmentedByteString.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SegmentedByteString.kt\nokio/SegmentedByteString\n+ 2 SegmentedByteString.kt\nokio/internal/SegmentedByteStringKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,128:1\n59#2,12:129\n59#2,12:141\n100#2:153\n101#2,26:155\n130#2,5:181\n137#2:186\n140#2,3:187\n59#2,8:190\n143#2,4:198\n67#2,4:202\n147#2:206\n59#2,12:207\n151#2:219\n81#2,10:220\n152#2,9:230\n91#2,4:239\n161#2,2:243\n170#2,4:245\n81#2,10:249\n174#2,3:259\n91#2,4:262\n177#2:266\n186#2,7:267\n81#2,10:274\n193#2,3:284\n91#2,4:287\n196#2:291\n200#2,4:292\n208#2,6:296\n59#2,8:302\n214#2,7:310\n67#2,4:317\n221#2,2:321\n1#3:154\n*E\n*S KotlinDebug\n*F\n+ 1 SegmentedByteString.kt\nokio/SegmentedByteString\n*L\n53#1,12:129\n63#1,12:141\n75#1:153\n75#1,26:155\n77#1,5:181\n79#1:186\n81#1,3:187\n81#1,8:190\n81#1,4:198\n81#1,4:202\n81#1:206\n87#1,12:207\n93#1:219\n93#1,10:220\n93#1,9:230\n93#1,4:239\n93#1,2:243\n100#1,4:245\n100#1,10:249\n100#1,3:259\n100#1,4:262\n100#1:266\n107#1,7:267\n107#1,10:274\n107#1,3:284\n107#1,4:287\n107#1:291\n119#1,4:292\n121#1,6:296\n121#1,8:302\n121#1,7:310\n121#1,4:317\n121#1,2:321\n75#1:154\n*E\n"
 .end annotation
 
 
@@ -18,6 +18,14 @@
 # direct methods
 .method public constructor <init>([[B[I)V
     .locals 1
+
+    const-string v0, "segments"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "directory"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lokio/ByteString;->EMPTY:Lokio/ByteString;
 
@@ -50,6 +58,10 @@
 
 .method public digest$okio(Ljava/lang/String;)Lokio/ByteString;
     .locals 6
+
+    const-string v0, "algorithm"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
@@ -97,7 +109,7 @@
 
     const-string v1, "digest.digest()"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v0, p1}, Lokio/ByteString;-><init>([B)V
 
@@ -278,9 +290,9 @@
 
     const-wide/16 v5, 0x1
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
-    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 
@@ -322,7 +334,9 @@
 .method public rangeEquals(ILokio/ByteString;II)Z
     .locals 6
 
-    if-eqz p2, :cond_5
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -341,7 +355,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -415,21 +429,14 @@
     :cond_4
     :goto_2
     return v0
-
-    :cond_5
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public rangeEquals(I[BII)Z
     .locals 6
 
-    if-eqz p2, :cond_5
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -456,7 +463,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -507,7 +514,7 @@
 
     aget-object v3, v3, v1
 
-    invoke-static {v3, v2, p2, p3, v4}, Lkotlin/collections/MapsKt___MapsKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v3, v2, p2, p3, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->arrayRangeEquals([BI[BII)Z
 
     move-result v2
 
@@ -530,15 +537,6 @@
     :cond_4
     :goto_2
     return v0
-
-    :cond_5
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public toAsciiLowercase()Lokio/ByteString;
@@ -638,14 +636,18 @@
 .method public write$okio(Lokio/Buffer;II)V
     .locals 10
 
+    const-string v0, "buffer"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     add-int/2addr p3, p2
 
-    invoke-static {p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 
     :goto_0
-    if-ge p2, p3, :cond_3
+    if-ge p2, p3, :cond_2
 
     if-nez v0, :cond_0
 
@@ -716,9 +718,11 @@
     goto :goto_2
 
     :cond_1
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
     iget-object v2, v2, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v2, :cond_2
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {v2, v1}, Lokio/Segment;->push(Lokio/Segment;)Lokio/Segment;
 
@@ -730,13 +734,6 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
     iget-wide p2, p1, Lokio/Buffer;->size:J
 
     invoke-virtual {p0}, Lokio/ByteString;->getSize$okio()I

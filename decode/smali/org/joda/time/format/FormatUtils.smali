@@ -290,6 +290,36 @@
     return-void
 .end method
 
+.method public static appendUnpaddedInteger(Ljava/lang/StringBuffer;J)V
+    .locals 3
+
+    long-to-int v0, p1
+
+    int-to-long v1, v0
+
+    cmp-long v1, v1, p1
+
+    if-nez v1, :cond_0
+
+    :try_start_0
+    invoke-static {p0, v0}, Lorg/joda/time/format/FormatUtils;->appendUnpaddedInteger(Ljava/lang/Appendable;I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :goto_0
+    return-void
+.end method
+
 .method public static createErrorMessage(Ljava/lang/String;I)Ljava/lang/String;
     .locals 3
 

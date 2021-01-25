@@ -21,13 +21,13 @@
     value = {
         "<T:",
         "Ljava/lang/Object;",
-        "R:",
+        "V:",
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
         "Ljava/lang/Object<",
-        "TR;>;",
+        "TV;>;",
         "Lkotlin/jvm/functions/Function1<",
-        "TT;TR;>;"
+        "TT;TV;>;"
     }
 .end annotation

@@ -50,7 +50,7 @@
 
     invoke-direct {v1, v0}, Landroidx/work/Data;-><init>(Ljava/util/Map;)V
 
-    invoke-static {v1}, Landroidx/work/Data;->toByteArray(Landroidx/work/Data;)[B
+    invoke-static {v1}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
     sput-object v1, Landroidx/work/Data;->EMPTY:Landroidx/work/Data;
 
@@ -492,7 +492,7 @@
     throw p0
 .end method
 
-.method public static toByteArray(Landroidx/work/Data;)[B
+.method public static toByteArrayInternal(Landroidx/work/Data;)[B
     .locals 5
 
     const-string v0, "Error in Data#toByteArray: "

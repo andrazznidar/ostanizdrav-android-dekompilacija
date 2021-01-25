@@ -219,24 +219,6 @@
     return-wide p0
 .end method
 
-.method public static getInstance()Lorg/joda/time/chrono/GJChronology;
-    .locals 3
-
-    invoke-static {}, Lorg/joda/time/DateTimeZone;->getDefault()Lorg/joda/time/DateTimeZone;
-
-    move-result-object v0
-
-    sget-object v1, Lorg/joda/time/chrono/GJChronology;->DEFAULT_CUTOVER:Lorg/joda/time/Instant;
-
-    const/4 v2, 0x4
-
-    invoke-static {v0, v1, v2}, Lorg/joda/time/chrono/GJChronology;->getInstance(Lorg/joda/time/DateTimeZone;Lorg/joda/time/ReadableInstant;I)Lorg/joda/time/chrono/GJChronology;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public static getInstance(Lorg/joda/time/DateTimeZone;Lorg/joda/time/ReadableInstant;I)Lorg/joda/time/chrono/GJChronology;
     .locals 4
 

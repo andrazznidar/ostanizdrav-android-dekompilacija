@@ -8,7 +8,7 @@
 
 .field public mIcon:Landroid/graphics/drawable/Drawable;
 
-.field public mRiskLevel:Ljava/lang/Integer;
+.field public mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
 .field public final riskDetailsBehaviorIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -32,5 +32,5 @@
 .method public abstract setIcon(Landroid/graphics/drawable/Drawable;)V
 .end method
 
-.method public abstract setRiskLevel(Ljava/lang/Integer;)V
+.method public abstract setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 .end method

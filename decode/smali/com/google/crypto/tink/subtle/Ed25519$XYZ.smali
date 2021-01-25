@@ -47,6 +47,14 @@
 
 .method public constructor <init>(Lcom/google/crypto/tink/subtle/Ed25519$XYZ;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "xyz"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -81,6 +89,18 @@
 
 .method public constructor <init>([J[J[J)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "x",
+            "y",
+            "z"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -95,6 +115,16 @@
 
 .method public static fromPartialXYZT(Lcom/google/crypto/tink/subtle/Ed25519$XYZ;Lcom/google/crypto/tink/subtle/Ed25519$PartialXYZT;)Lcom/google/crypto/tink/subtle/Ed25519$XYZ;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "out",
+            "in"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/crypto/tink/subtle/Ed25519$XYZ;->x:[J
 

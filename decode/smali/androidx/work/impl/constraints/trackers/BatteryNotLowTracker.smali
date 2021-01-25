@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public getInitialState()Ljava/lang/Object;
-    .locals 7
+    .locals 6
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -78,47 +78,39 @@
     goto :goto_0
 
     :cond_0
-    const-string v2, "plugged"
+    const/4 v2, -0x1
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    const-string v3, "status"
 
-    move-result v2
+    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    const/4 v3, -0x1
+    move-result v3
 
-    const-string v4, "status"
+    const-string v4, "level"
 
-    invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v4, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v4
 
-    const-string v5, "level"
+    const-string v5, "scale"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v5
-
-    const-string v6, "scale"
-
-    invoke-virtual {v0, v6, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v5, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    int-to-float v3, v5
+    int-to-float v2, v4
 
     int-to-float v0, v0
 
-    div-float/2addr v3, v0
+    div-float/2addr v2, v0
 
     const/4 v0, 0x1
 
-    if-nez v2, :cond_1
+    if-eq v3, v0, :cond_1
 
-    if-eq v4, v0, :cond_1
+    const v3, 0x3e19999a    # 0.15f
 
-    const v2, 0x3e19999a    # 0.15f
-
-    cmpl-float v2, v3, v2
+    cmpl-float v2, v2, v3
 
     if-lez v2, :cond_2
 

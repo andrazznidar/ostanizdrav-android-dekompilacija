@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/nearby/exposurenotification/WakeUpService;
 .super Landroid/app/Service;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # annotations
@@ -31,7 +31,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;-><init>(Lcom/google/android/gms/nearby/exposurenotification/zzg;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;-><init>(Lcom/google/android/gms/nearby/exposurenotification/zzp;)V
 
     invoke-direct {p1, v0}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 

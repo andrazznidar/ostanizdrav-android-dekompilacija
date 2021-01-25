@@ -64,118 +64,103 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/JobNode;->job:Lkotlinx/coroutines/Job;
 
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_7
-
-    invoke-interface {v0}, Lkotlinx/coroutines/Job;->getCancellationException()Ljava/util/concurrent/CancellationException;
+    invoke-virtual {p1, v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getContinuationCancellationCause(Lkotlinx/coroutines/Job;)Ljava/lang/Throwable;
 
     move-result-object v0
 
-    iget v2, p1, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
+    iget v1, p1, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    const/4 v3, 0x0
+    const/4 v2, 0x2
 
-    if-eqz v2, :cond_0
+    const/4 v3, 0x1
 
-    goto :goto_1
+    const/4 v4, 0x0
 
-    :cond_0
-    iget-object v2, p1, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
+    if-ne v1, v2, :cond_0
 
-    instance-of v4, v2, Lkotlinx/coroutines/DispatchedContinuation;
-
-    if-nez v4, :cond_1
-
-    move-object v2, v1
-
-    :cond_1
-    check-cast v2, Lkotlinx/coroutines/DispatchedContinuation;
-
-    if-eqz v2, :cond_5
-
-    :cond_2
-    iget-object v4, v2, Lkotlinx/coroutines/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
-
-    sget-object v5, Lkotlinx/coroutines/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-eqz v5, :cond_3
-
-    sget-object v4, Lkotlinx/coroutines/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    sget-object v5, Lkotlinx/coroutines/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
-
-    invoke-virtual {v4, v2, v5, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
+    move v1, v3
 
     goto :goto_0
 
-    :cond_3
-    instance-of v5, v4, Ljava/lang/Throwable;
-
-    if-eqz v5, :cond_4
+    :cond_0
+    move v1, v4
 
     :goto_0
-    move v3, v6
+    if-nez v1, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    iget-object v1, p1, Lkotlinx/coroutines/CancellableContinuationImpl;->delegate:Lkotlin/coroutines/Continuation;
+
+    instance-of v2, v1, Lkotlinx/coroutines/internal/DispatchedContinuation;
+
+    const/4 v5, 0x0
+
+    if-nez v2, :cond_2
+
+    move-object v1, v5
+
+    :cond_2
+    check-cast v1, Lkotlinx/coroutines/internal/DispatchedContinuation;
+
+    if-eqz v1, :cond_6
+
+    :cond_3
+    iget-object v2, v1, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    sget-object v6, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    sget-object v2, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    sget-object v6, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    invoke-virtual {v2, v1, v6, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
 
     goto :goto_1
 
     :cond_4
-    sget-object v5, Lkotlinx/coroutines/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    instance-of v6, v2, Ljava/lang/Throwable;
 
-    invoke-virtual {v5, v2, v4, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eqz v6, :cond_5
 
-    move-result v4
-
-    if-eqz v4, :cond_2
+    goto :goto_1
 
     :cond_5
-    :goto_1
-    if-eqz v3, :cond_6
+    sget-object v6, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    goto :goto_2
+    invoke-virtual {v6, v1, v2, v5}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    move v3, v4
+
+    :goto_1
+    move v4, v3
 
     :cond_6
+    :goto_2
+    if-eqz v4, :cond_7
+
+    goto :goto_3
+
+    :cond_7
     invoke-virtual {p1, v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->cancel(Ljava/lang/Throwable;)Z
 
     invoke-virtual {p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChildIfNonResuable()V
 
-    :goto_2
+    :goto_3
     return-void
-
-    :cond_7
-    throw v1
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    const-string v0, "ChildContinuation["
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lkotlinx/coroutines/ChildContinuation;->child:Lkotlinx/coroutines/CancellableContinuationImpl;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x5d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

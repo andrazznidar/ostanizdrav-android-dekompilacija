@@ -55,6 +55,22 @@
     return-void
 .end method
 
+.method public d(Ljava/lang/Throwable;)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, p1, v2, v0}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public varargs d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 1
 
@@ -89,6 +105,16 @@
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, p1, v2, v0}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public varargs e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 1
+
+    const/4 v0, 0x6
+
+    invoke-virtual {p0, v0, p1, p2, p3}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -152,6 +178,16 @@
     return-void
 .end method
 
+.method public varargs i(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0, p1, p2, p3}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public abstract log(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 .end method
 
@@ -202,7 +238,7 @@
 
     const-string p4, "\n"
 
-    invoke-static {p3, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 
@@ -231,6 +267,16 @@
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1, p1, p2}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public varargs v(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0, p1, p2, p3}, Ltimber/log/Timber$Tree;->prepareLog(ILjava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method

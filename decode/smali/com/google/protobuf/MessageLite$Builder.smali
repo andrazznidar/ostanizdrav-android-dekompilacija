@@ -16,3 +16,22 @@
     accessFlags = 0x609
     name = "Builder"
 .end annotation
+
+
+# virtual methods
+.method public abstract build()Lcom/google/protobuf/MessageLite;
+.end method
+
+.method public abstract buildPartial()Lcom/google/protobuf/MessageLite;
+.end method
+
+.method public abstract mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract mergeFrom(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite$Builder;
+.end method

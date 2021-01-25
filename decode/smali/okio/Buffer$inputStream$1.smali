@@ -97,7 +97,9 @@
 .method public read([BII)I
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/Buffer$inputStream$1;->this$0:Lokio/Buffer;
 
@@ -106,15 +108,6 @@
     move-result p1
 
     return p1
-
-    :cond_0
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public toString()Ljava/lang/String;

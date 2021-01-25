@@ -3,12 +3,6 @@
 .source "Mutex.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMutex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,399:1\n112#1,11:400\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final EMPTY_LOCKED:Lkotlinx/coroutines/sync/Empty;
 
@@ -66,4 +60,21 @@
     sput-object v0, Lkotlinx/coroutines/sync/MutexKt;->EMPTY_UNLOCKED:Lkotlinx/coroutines/sync/Empty;
 
     return-void
+.end method
+
+.method public static Mutex$default(ZI)Lkotlinx/coroutines/sync/Mutex;
+    .locals 0
+
+    and-int/lit8 p1, p1, 0x1
+
+    if-eqz p1, :cond_0
+
+    const/4 p0, 0x0
+
+    :cond_0
+    new-instance p1, Lkotlinx/coroutines/sync/MutexImpl;
+
+    invoke-direct {p1, p0}, Lkotlinx/coroutines/sync/MutexImpl;-><init>(Z)V
+
+    return-object p1
 .end method

@@ -21,6 +21,21 @@
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/RSAPrivateCrtKey;Lcom/google/crypto/tink/subtle/Enums$HashType;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "priv",
+            "sigHash",
+            "mgf1Hash",
+            "saltLength"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -86,6 +101,15 @@
 # virtual methods
 .method public sign([B)[B
     .locals 17
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -116,7 +140,7 @@
 
     iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -202,7 +226,7 @@
 
     iget-object v8, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/common/internal/Preconditions;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v3, v4, v8}, Landroidx/transition/ViewGroupUtilsApi14;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
 
     move-result-object v8
 

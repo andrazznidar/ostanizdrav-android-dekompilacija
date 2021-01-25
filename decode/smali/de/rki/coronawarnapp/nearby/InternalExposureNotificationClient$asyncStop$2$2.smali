@@ -1,9 +1,9 @@
 .class public final Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$2;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "InternalExposureNotificationClient.kt"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/OnFailureListener;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -16,8 +16,14 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInternalExposureNotificationClient.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InternalExposureNotificationClient.kt\nde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$2\n*L\n1#1,164:1\n*E\n"
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/Throwable;",
+        "Lkotlin/Unit;",
+        ">;"
+    }
 .end annotation
 
 
@@ -31,34 +37,33 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFailure(Ljava/lang/Exception;)V
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    if-eqz p1, :cond_0
+    check-cast p1, Ljava/lang/Throwable;
+
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p1
 
     invoke-interface {v0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    return-void
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :cond_0
-    const-string p1, "it"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p1
 .end method

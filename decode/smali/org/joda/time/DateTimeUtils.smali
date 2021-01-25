@@ -120,6 +120,23 @@
     return-object v0
 .end method
 
+.method public static final getInstantChronology(Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Chronology;
+    .locals 0
+
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
+
+    move-result-object p0
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static final getInstantMillis(Lorg/joda/time/ReadableInstant;)J
     .locals 2
 
@@ -150,6 +167,66 @@
 
     :cond_0
     return-object p0
+.end method
+
+.method public static final isContiguous(Lorg/joda/time/ReadablePartial;)Z
+    .locals 5
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    invoke-interface {p0}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_2
+
+    invoke-interface {p0, v2}, Lorg/joda/time/ReadablePartial;->getField(I)Lorg/joda/time/DateTimeField;
+
+    move-result-object v3
+
+    if-lez v2, :cond_1
+
+    invoke-virtual {v3}, Lorg/joda/time/DateTimeField;->getRangeDurationField()Lorg/joda/time/DurationField;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v3}, Lorg/joda/time/DateTimeField;->getRangeDurationField()Lorg/joda/time/DurationField;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lorg/joda/time/DurationField;->getType()Lorg/joda/time/DurationFieldType;
+
+    move-result-object v4
+
+    if-eq v4, v0, :cond_1
+
+    :cond_0
+    return v1
+
+    :cond_1
+    invoke-virtual {v3}, Lorg/joda/time/DateTimeField;->getDurationField()Lorg/joda/time/DurationField;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/joda/time/DurationField;->getType()Lorg/joda/time/DurationFieldType;
+
+    move-result-object v0
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 .method public static put(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V

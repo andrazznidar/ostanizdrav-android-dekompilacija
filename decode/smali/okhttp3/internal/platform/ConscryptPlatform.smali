@@ -6,12 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lokhttp3/internal/platform/ConscryptPlatform$DisabledHostnameVerifier;,
         Lokhttp3/internal/platform/ConscryptPlatform$Companion;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConscryptPlatform.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConscryptPlatform.kt\nokhttp3/internal/platform/ConscryptPlatform\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,123:1\n37#2,2:124\n*E\n*S KotlinDebug\n*F\n+ 1 ConscryptPlatform.kt\nokhttp3/internal/platform/ConscryptPlatform\n*L\n70#1,2:124\n*E\n"
+    value = "SMAP\nConscryptPlatform.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConscryptPlatform.kt\nokhttp3/internal/platform/ConscryptPlatform\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,141:1\n37#2,2:142\n*E\n*S KotlinDebug\n*F\n+ 1 ConscryptPlatform.kt\nokhttp3/internal/platform/ConscryptPlatform\n*L\n89#1,2:142\n*E\n"
 .end annotation
 
 
@@ -142,23 +143,13 @@
 
     invoke-direct {p0}, Lokhttp3/internal/platform/Platform;-><init>()V
 
-    invoke-static {}, Lorg/conscrypt/Conscrypt;->newProviderBuilder()Lorg/conscrypt/Conscrypt$ProviderBuilder;
+    invoke-static {}, Lorg/conscrypt/Conscrypt;->newProvider()Ljava/security/Provider;
 
     move-result-object p1
 
-    const/4 v0, 0x1
+    const-string v0, "Conscrypt.newProvider()"
 
-    invoke-virtual {p1, v0}, Lorg/conscrypt/Conscrypt$ProviderBuilder;->provideTrustManager(Z)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/conscrypt/Conscrypt$ProviderBuilder;->build()Ljava/security/Provider;
-
-    move-result-object p1
-
-    const-string v0, "Conscrypt.newProviderBui\u2026rustManager(true).build()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/platform/ConscryptPlatform;->provider:Ljava/security/Provider;
 
@@ -180,17 +171,25 @@
         }
     .end annotation
 
-    if-eqz p3, :cond_6
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "protocols"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
+    if-eqz v1, :cond_5
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lorg/conscrypt/Conscrypt;->setUseSessionTickets(Ljavax/net/ssl/SSLSocket;Z)V
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -236,7 +235,7 @@
 
     const/16 p3, 0xa
 
-    invoke-static {v0, p3}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, p3}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result p3
 
@@ -281,11 +280,11 @@
     goto :goto_2
 
     :cond_4
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "null cannot be cast to non-null type kotlin.Array<T>"
 
-    invoke-direct {p1, p2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -294,19 +293,14 @@
 
     :goto_2
     return-void
-
-    :cond_6
-    const-string p1, "protocols"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 1
+
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
 
@@ -342,58 +336,51 @@
 
     const-string v1, "SSLContext.getInstance(\"TLS\", provider)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method
 
 .method public newSslSocketFactory(Ljavax/net/ssl/X509TrustManager;)Ljavax/net/ssl/SSLSocketFactory;
-    .locals 5
+    .locals 3
 
-    const/4 v0, 0x0
+    const-string v0, "trustManager"
 
-    if-eqz p1, :cond_0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lokhttp3/internal/platform/ConscryptPlatform;->provider:Ljava/security/Provider;
+    iget-object v0, p0, Lokhttp3/internal/platform/ConscryptPlatform;->provider:Ljava/security/Provider;
 
-    const-string v2, "TLS"
+    const-string v1, "TLS"
 
-    invoke-static {v2, v1}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;
+    invoke-static {v1, v0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "SSLContext.getInstance(\"TLS\", provider)"
+    const-string v1, "SSLContext.getInstance(\"TLS\", provider)"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    new-array v3, v2, [Ljavax/net/ssl/TrustManager;
+    new-array v1, v1, [Ljavax/net/ssl/TrustManager;
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    aput-object p1, v3, v4
+    aput-object p1, v1, v2
 
-    invoke-virtual {v1, v0, v3, v0}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+    const/4 p1, 0x0
 
-    invoke-virtual {v1}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+    invoke-virtual {v0, p1, v1, p1}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+
+    invoke-virtual {v0}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
 
     move-result-object p1
 
-    invoke-static {p1, v2}, Lorg/conscrypt/Conscrypt;->setUseEngineSocket(Ljavax/net/ssl/SSLSocketFactory;Z)V
+    const-string v0, "newSSLContext().apply {\n\u2026null)\n    }.socketFactory"
 
-    const-string v0, "newSSLContext().apply {\n\u2026ineSocket(it, true)\n    }"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
-
-    :cond_0
-    const-string p1, "trustManager"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public platformTrustManager()Ljavax/net/ssl/X509TrustManager;
@@ -411,15 +398,15 @@
 
     invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
 
-    const-string v2, "TrustManagerFactory.getI\u2026(null as KeyStore?)\n    }"
+    const-string v1, "TrustManagerFactory.getI\u2026(null as KeyStore?)\n    }"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     array-length v1, v0
 
@@ -449,25 +436,25 @@
 
     check-cast v0, Ljavax/net/ssl/X509TrustManager;
 
-    sget-object v1, Lokhttp3/internal/platform/ConscryptPlatform$platformTrustManager$2;->INSTANCE:Lokhttp3/internal/platform/ConscryptPlatform$platformTrustManager$2;
+    sget-object v1, Lokhttp3/internal/platform/ConscryptPlatform$DisabledHostnameVerifier;->INSTANCE:Lokhttp3/internal/platform/ConscryptPlatform$DisabledHostnameVerifier;
 
     invoke-static {v0, v1}, Lorg/conscrypt/Conscrypt;->setHostnameVerifier(Ljavax/net/ssl/TrustManager;Lorg/conscrypt/ConscryptHostnameVerifier;)V
 
     return-object v0
 
     :cond_1
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
 
-    invoke-direct {v0, v1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_2
     const-string v1, "Unexpected default trust managers: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -477,7 +464,7 @@
 
     const-string v2, "java.util.Arrays.toString(this)"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -492,11 +479,6 @@
     move-result-object v0
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
 
     throw v1
 .end method

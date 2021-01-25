@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGzipSource.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GzipSource.kt\nokio/GzipSource\n+ 2 RealBufferedSource.kt\nokio/RealBufferedSource\n+ 3 GzipSource.kt\nokio/-GzipSourceExtensions\n+ 4 -Util.kt\nokio/-Util\n*L\n1#1,220:1\n61#2:221\n61#2:223\n61#2:225\n61#2:226\n61#2:227\n61#2:229\n61#2:231\n202#3:222\n202#3:224\n202#3:228\n202#3:230\n78#4:232\n*E\n*S KotlinDebug\n*F\n+ 1 GzipSource.kt\nokio/GzipSource\n*L\n105#1:221\n107#1:223\n119#1:225\n120#1:226\n122#1:227\n133#1:229\n144#1:231\n106#1:222\n117#1:224\n130#1:228\n141#1:230\n187#1:232\n*E\n"
+    value = "SMAP\nGzipSource.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GzipSource.kt\nokio/GzipSource\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 RealBufferedSource.kt\nokio/RealBufferedSource\n+ 4 GzipSource.kt\nokio/-GzipSourceExtensions\n+ 5 -Util.kt\nokio/-Util\n*L\n1#1,220:1\n1#2:221\n61#3:222\n61#3:224\n61#3:226\n61#3:227\n61#3:228\n61#3:230\n61#3:232\n202#4:223\n202#4:225\n202#4:229\n202#4:231\n78#5:233\n*E\n*S KotlinDebug\n*F\n+ 1 GzipSource.kt\nokio/GzipSource\n*L\n105#1:222\n107#1:224\n119#1:226\n120#1:227\n122#1:228\n133#1:230\n144#1:232\n106#1:223\n117#1:225\n130#1:229\n141#1:231\n187#1:233\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,9 @@
 .method public constructor <init>(Lokio/Source;)V
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -61,34 +63,27 @@
     iput-object p1, p0, Lokio/GzipSource;->crc:Ljava/util/zip/CRC32;
 
     return-void
-
-    :cond_0
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
 .method public final checkEqual(Ljava/lang/String;II)V
-    .locals 3
+    .locals 4
 
     if-ne p3, p2, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v0, 0x3
+    new-instance v0, Ljava/io/IOException;
 
-    new-array v1, v0, [Ljava/lang/Object;
+    const/4 v1, 0x3
 
-    const/4 v2, 0x0
+    new-array v2, v1, [Ljava/lang/Object;
 
-    aput-object p1, v1, v2
+    const/4 v3, 0x0
+
+    aput-object p1, v2, v3
 
     const/4 p1, 0x1
 
@@ -96,7 +91,7 @@
 
     move-result-object p3
 
-    aput-object p3, v1, p1
+    aput-object p3, v2, p1
 
     const/4 p1, 0x2
 
@@ -104,9 +99,9 @@
 
     move-result-object p2
 
-    aput-object p2, v1, p1
+    aput-object p2, v2, p1
 
-    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
@@ -118,13 +113,11 @@
 
     const-string p2, "java.lang.String.format(this, *args)"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p2, Ljava/io/IOException;
+    invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    throw v0
 .end method
 
 .method public close()V
@@ -156,7 +149,9 @@
 
     move-wide/from16 v8, p2
 
-    if-eqz v7, :cond_17
+    const-string v0, "sink"
+
+    invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -599,7 +594,7 @@
     :cond_16
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, v8, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, v8, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -612,15 +607,6 @@
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
-
-    :cond_17
-    const-string v0, "sink"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public timeout()Lokio/Timeout;
@@ -636,77 +622,70 @@
 .end method
 
 .method public final updateCrc(Lokio/Buffer;JJ)V
-    .locals 5
+    .locals 4
 
     iget-object p1, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_4
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     :goto_0
-    iget v1, p1, Lokio/Segment;->limit:I
+    iget v0, p1, Lokio/Segment;->limit:I
 
-    iget v2, p1, Lokio/Segment;->pos:I
+    iget v1, p1, Lokio/Segment;->pos:I
 
-    sub-int v3, v1, v2
+    sub-int v2, v0, v1
 
-    int-to-long v3, v3
+    int-to-long v2, v2
 
-    cmp-long v3, p2, v3
+    cmp-long v2, p2, v2
 
-    if-ltz v3, :cond_1
+    if-ltz v2, :cond_0
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v0, v1
 
-    int-to-long v1, v1
+    int-to-long v0, v0
 
-    sub-long/2addr p2, v1
+    sub-long/2addr p2, v0
 
     iget-object p1, p1, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_1
-    const-wide/16 v1, 0x0
+    const-wide/16 v0, 0x0
 
     :goto_1
-    cmp-long v3, p4, v1
+    cmp-long v2, p4, v0
 
-    if-lez v3, :cond_3
+    if-lez v2, :cond_1
 
-    iget v3, p1, Lokio/Segment;->pos:I
+    iget v2, p1, Lokio/Segment;->pos:I
 
-    int-to-long v3, v3
+    int-to-long v2, v2
 
-    add-long/2addr v3, p2
+    add-long/2addr v2, p2
 
-    long-to-int p2, v3
+    long-to-int p2, v2
 
     iget p3, p1, Lokio/Segment;->limit:I
 
     sub-int/2addr p3, p2
 
-    int-to-long v3, p3
+    int-to-long v2, p3
 
-    invoke-static {v3, v4, p4, p5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v2, v3, p4, p5}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v3
+    move-result-wide v2
 
-    long-to-int p3, v3
+    long-to-int p3, v2
 
-    iget-object v3, p0, Lokio/GzipSource;->crc:Ljava/util/zip/CRC32;
+    iget-object v2, p0, Lokio/GzipSource;->crc:Ljava/util/zip/CRC32;
 
-    iget-object v4, p1, Lokio/Segment;->data:[B
+    iget-object v3, p1, Lokio/Segment;->data:[B
 
-    invoke-virtual {v3, v4, p2, p3}, Ljava/util/zip/CRC32;->update([BII)V
+    invoke-virtual {v2, v3, p2, p3}, Ljava/util/zip/CRC32;->update([BII)V
 
     int-to-long p2, p3
 
@@ -714,22 +693,12 @@
 
     iget-object p1, p1, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz p1, :cond_2
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    move-wide p2, v1
+    move-wide p2, v0
 
     goto :goto_1
 
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_3
+    :cond_1
     return-void
-
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
 .end method

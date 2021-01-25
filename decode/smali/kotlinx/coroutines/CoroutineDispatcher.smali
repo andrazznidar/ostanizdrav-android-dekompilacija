@@ -48,8 +48,16 @@
 .method public abstract dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
 .end method
 
+.method public dispatchYield(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/CoroutineDispatcher;->dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E::",
@@ -60,13 +68,15 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "key"
 
-    if-eqz p1, :cond_3
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     instance-of v1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
 
-    if-eqz v1, :cond_1
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_3
 
     check-cast p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
 
@@ -74,11 +84,31 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Lkotlin/coroutines/AbstractCoroutineContextKey;->isSubKey$kotlin_stdlib(Lkotlin/coroutines/CoroutineContext$Key;)Z
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v1
+    if-eq v1, p1, :cond_1
 
-    if-eqz v1, :cond_2
+    iget-object v0, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->topmostKey:Lkotlin/coroutines/CoroutineContext$Key;
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    if-eqz v0, :cond_4
+
+    const-string v0, "element"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->safeCast:Lkotlin/jvm/functions/Function1;
 
@@ -88,34 +118,27 @@
 
     check-cast p1, Lkotlin/coroutines/CoroutineContext$Element;
 
-    instance-of v1, p1, Lkotlin/coroutines/CoroutineContext$Element;
+    instance-of v0, p1, Lkotlin/coroutines/CoroutineContext$Element;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_2
 
-    goto :goto_0
-
-    :cond_0
-    move-object v0, p1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v1, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
-
-    if-ne v1, p1, :cond_2
-
-    move-object v0, p0
+    goto :goto_2
 
     :cond_2
-    :goto_0
-    return-object v0
+    move-object v2, p1
+
+    goto :goto_2
 
     :cond_3
-    const-string p1, "key"
+    sget-object v0, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    if-ne v0, p1, :cond_4
 
-    throw v0
+    move-object v2, p0
+
+    :cond_4
+    :goto_2
+    return-object v2
 .end method
 
 .method public final interceptContinuation(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -132,9 +155,9 @@
         }
     .end annotation
 
-    new-instance v0, Lkotlinx/coroutines/DispatchedContinuation;
+    new-instance v0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/DispatchedContinuation;-><init>(Lkotlinx/coroutines/CoroutineDispatcher;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/DispatchedContinuation;-><init>(Lkotlinx/coroutines/CoroutineDispatcher;Lkotlin/coroutines/Continuation;)V
 
     return-object v0
 .end method
@@ -148,7 +171,7 @@
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -158,23 +181,45 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    const-string v0, "key"
 
-    instance-of v0, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v0, :cond_1
+    instance-of v1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
+
+    if-eqz v1, :cond_3
 
     check-cast p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
 
     invoke-interface {p0}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p1, v0}, Lkotlin/coroutines/AbstractCoroutineContextKey;->isSubKey$kotlin_stdlib(Lkotlin/coroutines/CoroutineContext$Key;)Z
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v0
+    if-eq v1, p1, :cond_1
 
-    if-eqz v0, :cond_0
+    iget-object v0, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->topmostKey:Lkotlin/coroutines/CoroutineContext$Key;
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    if-eqz v0, :cond_2
+
+    const-string v0, "element"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->safeCast:Lkotlin/jvm/functions/Function1;
 
@@ -184,35 +229,26 @@
 
     check-cast p1, Lkotlin/coroutines/CoroutineContext$Element;
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_2
 
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
-    goto :goto_0
-
-    :cond_0
-    move-object p1, p0
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
-
-    if-ne v0, p1, :cond_0
-
-    sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
-
-    :goto_0
-    return-object p1
+    goto :goto_2
 
     :cond_2
-    const-string p1, "key"
+    move-object p1, p0
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    goto :goto_2
 
-    const/4 p1, 0x0
+    :cond_3
+    sget-object v0, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
-    throw p1
+    if-ne v0, p1, :cond_2
+
+    sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
+
+    :goto_2
+    return-object p1
 .end method
 
 .method public releaseInterceptedContinuation(Lkotlin/coroutines/Continuation;)V
@@ -225,9 +261,9 @@
         }
     .end annotation
 
-    check-cast p1, Lkotlinx/coroutines/DispatchedContinuation;
+    check-cast p1, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    iget-object p1, p1, Lkotlinx/coroutines/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+    iget-object p1, p1, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
 
     instance-of v0, p1, Lkotlinx/coroutines/CancellableContinuationImpl;
 
@@ -267,7 +303,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

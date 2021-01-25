@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/internal/nearby/zzb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
 .implements Landroid/os/IInterface;
@@ -27,15 +27,7 @@
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzb;->zza:Landroid/os/IBinder;
-
-    return-object v0
-.end method
-
-.method public final zza()Landroid/os/Parcel;
+.method public final a_()Landroid/os/Parcel;
     .locals 2
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -49,7 +41,15 @@
     return-object v0
 .end method
 
-.method public final zzb(ILandroid/os/Parcel;)V
+.method public asBinder()Landroid/os/IBinder;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzb;->zza:Landroid/os/IBinder;
+
+    return-object v0
+.end method
+
+.method public final zzc(ILandroid/os/Parcel;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {

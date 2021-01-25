@@ -211,11 +211,11 @@
     .end annotation
 
     :try_start_0
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->source(Ljava/io/InputStream;)Lokio/Source;
+    invoke-static {p0}, Lokio/Okio__JvmOkioKt;->source(Ljava/io/InputStream;)Lokio/Source;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v0
 
@@ -485,11 +485,11 @@
 
     if-eqz v1, :cond_1
 
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->source(Ljava/io/InputStream;)Lokio/Source;
+    invoke-static {p0}, Lokio/Okio__JvmOkioKt;->source(Ljava/io/InputStream;)Lokio/Source;
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v1
 
@@ -705,7 +705,7 @@
 
     const-string v1, "There is no image for "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -768,7 +768,7 @@
 
     const-string v0, "rawRes"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

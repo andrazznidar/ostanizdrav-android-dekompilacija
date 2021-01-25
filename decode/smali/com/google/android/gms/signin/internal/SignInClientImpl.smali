@@ -166,7 +166,7 @@
 
     const-string v0, "Expecting a valid ISignInCallbacks"
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_0
     iget-object v0, p0, Lcom/google/android/gms/signin/internal/SignInClientImpl;->zab:Lcom/google/android/gms/common/internal/ClientSettings;
@@ -215,7 +215,7 @@
 
     iget-object v3, p0, Lcom/google/android/gms/signin/internal/SignInClientImpl;->zad:Ljava/lang/Integer;
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
@@ -284,7 +284,7 @@
 
     const-string v1, "Connection progress callbacks cannot be null."
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
 

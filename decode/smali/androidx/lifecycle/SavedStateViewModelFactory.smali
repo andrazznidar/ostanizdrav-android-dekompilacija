@@ -326,17 +326,9 @@
 
     new-instance v0, Ljava/lang/RuntimeException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "An exception happened in constructor of "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "An exception happened in constructor of "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -380,17 +372,9 @@
 
     new-instance v0, Ljava/lang/RuntimeException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Failed to access "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Failed to access "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -400,30 +384,13 @@
 .end method
 
 .method public onRequery(Landroidx/lifecycle/ViewModel;)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/lifecycle/SavedStateViewModelFactory;->mSavedStateRegistry:Landroidx/savedstate/SavedStateRegistry;
 
     iget-object v1, p0, Landroidx/lifecycle/SavedStateViewModelFactory;->mLifecycle:Landroidx/lifecycle/Lifecycle;
 
-    const-string v2, "androidx.lifecycle.savedstate.vm.tag"
+    invoke-static {p1, v0, v1}, Landroidx/lifecycle/SavedStateHandleController;->attachHandleIfNeeded(Landroidx/lifecycle/ViewModel;Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
 
-    invoke-virtual {p1, v2}, Landroidx/lifecycle/ViewModel;->getTag(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/lifecycle/SavedStateHandleController;
-
-    if-eqz p1, :cond_0
-
-    iget-boolean v2, p1, Landroidx/lifecycle/SavedStateHandleController;->mIsAttached:Z
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {p1, v0, v1}, Landroidx/lifecycle/SavedStateHandleController;->attachToLifecycle(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
-
-    invoke-static {v0, v1}, Landroidx/lifecycle/SavedStateHandleController;->tryToAddRecreator(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
-
-    :cond_0
     return-void
 .end method

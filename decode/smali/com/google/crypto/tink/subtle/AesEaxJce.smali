@@ -59,6 +59,17 @@
 
 .method public constructor <init>([BI)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "ivSizeInBytes"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -139,6 +150,14 @@
 
 .method public static multiplyByX([B)[B
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "block"
+        }
+    .end annotation
 
     const/16 v0, 0x10
 
@@ -205,6 +224,16 @@
 
 .method public static xor([B[B)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "x",
+            "y"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -237,6 +266,17 @@
 # virtual methods
 .method public decrypt([B[B)[B
     .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -407,6 +447,17 @@
 
 .method public encrypt([B[B)[B
     .locals 15
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -593,6 +644,23 @@
 
 .method public final omac(Ljavax/crypto/Cipher;I[BII)[B
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x10,
+            0x0,
+            0x0
+        }
+        names = {
+            "ecb",
+            "tag",
+            "data",
+            "offset",
+            "length"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/crypto/IllegalBlockSizeException;,

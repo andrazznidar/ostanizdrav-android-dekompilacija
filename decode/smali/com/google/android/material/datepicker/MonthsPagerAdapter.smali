@@ -63,13 +63,13 @@
 
     move-result v0
 
-    if-gtz v0, :cond_3
+    if-gtz v0, :cond_2
 
     invoke-virtual {v2, v1}, Lcom/google/android/material/datepicker/Month;->compareTo(Lcom/google/android/material/datepicker/Month;)I
 
     move-result v0
 
-    if-gtz v0, :cond_2
+    if-gtz v0, :cond_1
 
     sget v0, Lcom/google/android/material/datepicker/MonthAdapter;->MAXIMUM_WEEKS:I
 
@@ -113,28 +113,11 @@
 
     const/4 p1, 0x1
 
-    iget-object p2, p0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;->hasObservers()Z
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mHasStableIds:Z
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
 
     return-void
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Cannot change whether this adapter has stable IDs while the adapter has registered observers."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "currentPage cannot be after lastPage"
@@ -143,7 +126,7 @@
 
     throw p1
 
-    :cond_3
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "firstPage cannot be after currentPage"

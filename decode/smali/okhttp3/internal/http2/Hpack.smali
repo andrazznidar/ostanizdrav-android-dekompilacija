@@ -736,7 +736,7 @@
 
     const-string v1, "Collections.unmodifiableMap(result)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sput-object v0, Lokhttp3/internal/http2/Hpack;->NAME_TO_FIRST_INDEX:Ljava/util/Map;
 
@@ -761,16 +761,18 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    const-string v0, "name"
 
-    const/4 v0, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 
-    move-result v1
+    move-result v0
+
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v0, v1, :cond_2
+    if-ge v1, v0, :cond_2
 
     const/16 v2, 0x41
 
@@ -780,7 +782,7 @@
 
     int-to-byte v3, v3
 
-    invoke-virtual {p1, v0}, Lokio/ByteString;->internalGet$okio(I)B
+    invoke-virtual {p1, v1}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result v4
 
@@ -792,7 +794,7 @@
     if-ge v3, v4, :cond_1
 
     :goto_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -801,7 +803,7 @@
 
     const-string v1, "PROTOCOL_ERROR response malformed: mixed case name: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -821,13 +823,4 @@
 
     :cond_2
     return-object p1
-
-    :cond_3
-    const-string p1, "name"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

@@ -94,39 +94,31 @@
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zah;->zad:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
-    iget-object v1, p1, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->hasResolution()Z
+
+    move-result v1
 
     if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    if-eqz v1, :cond_1
 
     new-instance v1, Lcom/google/android/gms/common/api/ResolvableApiException;
 
     invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/ResolvableApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_0
     new-instance v1, Lcom/google/android/gms/common/api/ApiException;
 
     invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    :goto_1
+    :goto_0
     invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
 
     return-void
 
-    :cond_2
+    :cond_1
     const/4 p1, 0x0
 
     throw p1

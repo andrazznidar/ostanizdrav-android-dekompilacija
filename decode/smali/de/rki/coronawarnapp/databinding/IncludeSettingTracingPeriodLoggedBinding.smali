@@ -4,13 +4,11 @@
 
 
 # instance fields
-.field public mRiskLevel:Ljava/lang/Integer;
-
-.field public mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+.field public mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -20,5 +18,5 @@
 
 
 # virtual methods
-.method public abstract setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public abstract setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 .end method

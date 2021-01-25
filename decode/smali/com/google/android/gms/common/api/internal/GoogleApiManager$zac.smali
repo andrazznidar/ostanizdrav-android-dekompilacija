@@ -59,7 +59,7 @@
 
     iget-object v2, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaa:Lcom/google/android/gms/common/api/internal/ApiKey;
 
-    invoke-static {v1, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -69,7 +69,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zab:Lcom/google/android/gms/common/Feature;
 
-    invoke-static {v1, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -112,7 +112,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
     move-result-object v0
 

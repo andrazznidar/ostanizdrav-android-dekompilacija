@@ -1108,13 +1108,13 @@
 
     iget v11, v5, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {v8, v9, v10, v11}, Lcom/google/android/gms/common/internal/Preconditions;->distance(FFFF)F
+    invoke-static {v8, v9, v10, v11}, Landroidx/transition/ViewGroupUtilsApi14;->distance(FFFF)F
 
     move-result v8
 
     div-float/2addr v8, v7
 
-    invoke-static {v8}, Lcom/google/android/gms/common/internal/Preconditions;->round(F)I
+    invoke-static {v8}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
 
     move-result v8
 
@@ -1126,13 +1126,13 @@
 
     iget v12, v4, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {v9, v10, v11, v12}, Lcom/google/android/gms/common/internal/Preconditions;->distance(FFFF)F
+    invoke-static {v9, v10, v11, v12}, Landroidx/transition/ViewGroupUtilsApi14;->distance(FFFF)F
 
     move-result v9
 
     div-float/2addr v9, v7
 
-    invoke-static {v9}, Lcom/google/android/gms/common/internal/Preconditions;->round(F)I
+    invoke-static {v9}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
 
     move-result v9
 

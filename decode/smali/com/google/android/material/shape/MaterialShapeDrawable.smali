@@ -250,7 +250,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v0
 
@@ -536,7 +536,7 @@
 
     iget v0, v0, Lcom/google/android/material/elevation/ElevationOverlayProvider;->elevationOverlayColor:I
 
-    invoke-static {p1, v0, v4}, Lcom/google/android/gms/common/internal/Preconditions;->layer(IIF)I
+    invoke-static {p1, v0, v4}, Landroidx/transition/ViewGroupUtilsApi14;->layer(IIF)I
 
     move-result p1
 

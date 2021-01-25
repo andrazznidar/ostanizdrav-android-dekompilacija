@@ -16,10 +16,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContinuationImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContinuationImpl.kt\nkotlin/coroutines/jvm/internal/CompletedContinuation\n*L\n1#1,168:1\n*E\n"
-.end annotation
-
 
 # static fields
 .field public static final INSTANCE:Lkotlin/coroutines/jvm/internal/CompletedContinuation;

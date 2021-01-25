@@ -27,14 +27,18 @@
 
     const/4 v1, 0x0
 
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+
+    move-result p2
+
     if-lez p3, :cond_0
 
-    if-gt p1, p2, :cond_1
+    if-gtz p2, :cond_1
 
     goto :goto_0
 
     :cond_0
-    if-lt p1, p2, :cond_1
+    if-ltz p2, :cond_1
 
     goto :goto_0
 

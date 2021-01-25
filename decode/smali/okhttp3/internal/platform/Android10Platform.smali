@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAndroid10Platform.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Android10Platform.kt\nokhttp3/internal/platform/Android10Platform\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,70:1\n704#2:71\n777#2,2:72\n*E\n*S KotlinDebug\n*F\n+ 1 Android10Platform.kt\nokhttp3/internal/platform/Android10Platform\n*L\n41#1:71\n41#1,2:72\n*E\n"
+    value = "SMAP\nAndroid10Platform.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Android10Platform.kt\nokhttp3/internal/platform/Android10Platform\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,72:1\n1#2:73\n714#3:74\n805#3,2:75\n*E\n*S KotlinDebug\n*F\n+ 1 Android10Platform.kt\nokhttp3/internal/platform/Android10Platform\n*L\n43#1:74\n43#1,2:75\n*E\n"
 .end annotation
 
 
@@ -99,8 +99,6 @@
     move v1, v3
 
     :goto_0
-    const/4 v4, 0x0
-
     if-eqz v1, :cond_1
 
     new-instance v1, Lokhttp3/internal/platform/android/Android10SocketAdapter;
@@ -110,55 +108,46 @@
     goto :goto_1
 
     :cond_1
-    move-object v1, v4
+    const/4 v1, 0x0
 
     :goto_1
     aput-object v1, v0, v3
 
-    sget-object v1, Lokhttp3/internal/platform/ConscryptPlatform;->Companion:Lokhttp3/internal/platform/ConscryptPlatform$Companion;
+    new-instance v1, Lokhttp3/internal/platform/android/DeferredSocketAdapter;
 
-    sget-boolean v1, Lokhttp3/internal/platform/ConscryptPlatform;->isSupported:Z
+    sget-object v3, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->Companion:Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;
 
-    if-eqz v1, :cond_2
+    sget-object v3, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->playProviderFactory:Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
 
-    new-instance v1, Lokhttp3/internal/platform/android/ConscryptSocketAdapter;
+    invoke-direct {v1, v3}, Lokhttp3/internal/platform/android/DeferredSocketAdapter;-><init>(Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;)V
 
-    invoke-direct {v1}, Lokhttp3/internal/platform/android/ConscryptSocketAdapter;-><init>()V
-
-    goto :goto_2
-
-    :cond_2
-    move-object v1, v4
-
-    :goto_2
     aput-object v1, v0, v2
 
     const/4 v1, 0x2
 
     new-instance v2, Lokhttp3/internal/platform/android/DeferredSocketAdapter;
 
-    const-string v3, "com.google.android.gms.org.conscrypt"
+    sget-object v3, Lokhttp3/internal/platform/android/ConscryptSocketAdapter;->factory:Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
 
-    invoke-direct {v2, v3}, Lokhttp3/internal/platform/android/DeferredSocketAdapter;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Lokhttp3/internal/platform/android/DeferredSocketAdapter;-><init>(Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;)V
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x3
 
-    sget-object v2, Lokhttp3/internal/platform/BouncyCastlePlatform;->Companion:Lokhttp3/internal/platform/BouncyCastlePlatform$Companion;
+    new-instance v2, Lokhttp3/internal/platform/android/DeferredSocketAdapter;
 
-    sget-boolean v2, Lokhttp3/internal/platform/BouncyCastlePlatform;->isSupported:Z
+    sget-object v3, Lokhttp3/internal/platform/android/BouncyCastleSocketAdapter;->factory:Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
 
-    if-eqz v2, :cond_3
+    invoke-direct {v2, v3}, Lokhttp3/internal/platform/android/DeferredSocketAdapter;-><init>(Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;)V
 
-    new-instance v4, Lokhttp3/internal/platform/android/BouncyCastleSocketAdapter;
+    aput-object v2, v0, v1
 
-    invoke-direct {v4}, Lokhttp3/internal/platform/android/BouncyCastleSocketAdapter;-><init>()V
+    const-string v1, "elements"
 
-    :cond_3
-    aput-object v4, v0, v1
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -172,13 +161,13 @@
 
     move-result-object v0
 
-    :cond_4
-    :goto_3
+    :cond_2
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -192,13 +181,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_2
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_5
+    :cond_3
     iput-object v1, p0, Lokhttp3/internal/platform/Android10Platform;->socketAdapters:Ljava/util/List;
 
     return-void
@@ -208,6 +197,12 @@
 # virtual methods
 .method public buildCertificateChainCleaner(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;
     .locals 2
+
+    const-string v0, "trustManager"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -245,7 +240,7 @@
 .end method
 
 .method public configureTlsExtensions(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -258,59 +253,63 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "sslSocket"
 
-    if-eqz p3, :cond_3
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lokhttp3/internal/platform/Android10Platform;->socketAdapters:Ljava/util/List;
+    const-string v0, "protocols"
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lokhttp3/internal/platform/Android10Platform;->socketAdapters:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-object v2, v1
+
+    check-cast v2, Lokhttp3/internal/platform/android/SocketAdapter;
+
+    invoke-interface {v2, p1}, Lokhttp3/internal/platform/android/SocketAdapter;->matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v3, v2
-
-    check-cast v3, Lokhttp3/internal/platform/android/SocketAdapter;
-
-    invoke-interface {v3, p1}, Lokhttp3/internal/platform/android/SocketAdapter;->matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    move-object v0, v2
+    goto :goto_0
 
     :cond_1
-    check-cast v0, Lokhttp3/internal/platform/android/SocketAdapter;
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    :goto_0
+    check-cast v1, Lokhttp3/internal/platform/android/SocketAdapter;
 
-    invoke-interface {v0, p1, p2, p3}, Lokhttp3/internal/platform/android/SocketAdapter;->configureTlsExtensions(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    if-eqz v1, :cond_2
+
+    invoke-interface {v1, p1, p2, p3}, Lokhttp3/internal/platform/android/SocketAdapter;->configureTlsExtensions(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
 
     :cond_2
     return-void
-
-    :cond_3
-    const-string p1, "protocols"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 4
+
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/platform/Android10Platform;->socketAdapters:Ljava/util/List;
 
@@ -367,7 +366,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const-string v0, "hostname"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {}, Landroid/security/NetworkSecurityPolicy;->getInstance()Landroid/security/NetworkSecurityPolicy;
 
@@ -378,13 +379,4 @@
     move-result p1
 
     return p1
-
-    :cond_0
-    const-string p1, "hostname"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

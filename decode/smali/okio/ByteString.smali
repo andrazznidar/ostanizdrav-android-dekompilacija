@@ -25,7 +25,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nByteString.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ByteString.kt\nokio/ByteString\n+ 2 ByteString.kt\nokio/internal/ByteStringKt\n+ 3 -Util.kt\nokio/-Util\n*L\n1#1,338:1\n39#2,7:339\n49#2:346\n52#2:347\n59#2,4:348\n63#2:353\n65#2:355\n71#2,23:356\n99#2,23:379\n126#2,10:402\n139#2:412\n142#2:413\n145#2:414\n148#2:415\n156#2:416\n165#2,3:417\n172#2:420\n176#2:421\n180#2:422\n184#2:423\n188#2,7:424\n201#2:431\n205#2,7:432\n216#2,4:439\n225#2,5:443\n234#2,6:448\n240#2:455\n241#2,8:457\n302#2,8:465\n126#2,10:473\n313#2,5:483\n316#2:488\n315#2,7:489\n60#3:352\n66#3:354\n66#3:454\n66#3:456\n*E\n*S KotlinDebug\n*F\n+ 1 ByteString.kt\nokio/ByteString\n*L\n65#1,7:339\n70#1:346\n106#1:347\n108#1,4:348\n108#1:353\n108#1:355\n110#1,23:356\n112#1,23:379\n116#1,10:402\n118#1:412\n126#1:413\n128#1:414\n130#1:415\n149#1:416\n156#1,3:417\n158#1:420\n160#1:421\n162#1:422\n164#1:423\n170#1,7:424\n173#1:431\n176#1,7:432\n178#1,4:439\n180#1,5:443\n182#1,6:448\n182#1:455\n182#1,8:457\n184#1,8:465\n184#1,10:473\n184#1,5:483\n184#1:488\n184#1,7:489\n108#1:352\n108#1:354\n182#1:454\n182#1:456\n*E\n"
+    value = "SMAP\nByteString.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ByteString.kt\nokio/ByteString\n+ 2 ByteString.kt\nokio/internal/ByteStringKt\n+ 3 -Util.kt\nokio/-Util\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,338:1\n39#2,7:339\n49#2:346\n52#2:347\n59#2,4:348\n63#2:353\n65#2:355\n71#2,23:356\n99#2,23:379\n126#2:402\n127#2,9:404\n139#2:413\n142#2:414\n145#2:415\n148#2:416\n156#2:417\n165#2,3:418\n172#2:421\n176#2:422\n180#2:423\n184#2:424\n188#2,7:425\n201#2:432\n205#2,7:433\n216#2,4:440\n225#2,5:444\n234#2,6:449\n240#2,9:456\n302#2,8:465\n126#2:473\n127#2,9:475\n313#2,9:484\n60#3:352\n66#3:354\n66#3:455\n1#4:403\n1#4:474\n*E\n*S KotlinDebug\n*F\n+ 1 ByteString.kt\nokio/ByteString\n*L\n65#1,7:339\n70#1:346\n106#1:347\n108#1,4:348\n108#1:353\n108#1:355\n110#1,23:356\n112#1,23:379\n116#1:402\n116#1,9:404\n118#1:413\n126#1:414\n128#1:415\n130#1:416\n149#1:417\n156#1,3:418\n158#1:421\n160#1:422\n162#1:423\n164#1:424\n170#1,7:425\n173#1:432\n176#1,7:433\n178#1,4:440\n180#1,5:444\n182#1,6:449\n182#1,9:456\n184#1,8:465\n184#1:473\n184#1,9:475\n184#1,9:484\n108#1:352\n108#1:354\n182#1:455\n116#1:403\n184#1:474\n*E\n"
 .end annotation
 
 
@@ -69,34 +69,41 @@
 .end method
 
 .method public constructor <init>([B)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "data"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lokio/ByteString;->data:[B
 
     return-void
-
-    :cond_0
-    const-string p1, "data"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public static final encodeUtf8(Ljava/lang/String;)Lokio/ByteString;
-    .locals 2
+    .locals 3
+
+    const-string v0, "$this$encodeUtf8"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lokio/ByteString;
 
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->asUtf8ToByteArray(Ljava/lang/String;)[B
+    const-string v1, "$this$asUtf8ToByteArray"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v1
+
+    const-string v2, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v0, v1}, Lokio/ByteString;-><init>([B)V
 
@@ -128,7 +135,9 @@
 
     check-cast p1, Lokio/ByteString;
 
-    if-eqz p1, :cond_4
+    const-string v0, "other"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lokio/ByteString;->getSize$okio()I
 
@@ -192,19 +201,14 @@
 
     :goto_2
     return v3
-
-    :cond_4
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public digest$okio(Ljava/lang/String;)Lokio/ByteString;
     .locals 2
+
+    const-string v0, "algorithm"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lokio/ByteString;
 
@@ -220,7 +224,7 @@
 
     const-string v1, "MessageDigest.getInstance(algorithm).digest(data)"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v0, p1}, Lokio/ByteString;-><init>([B)V
 
@@ -379,6 +383,10 @@
 .method public rangeEquals(ILokio/ByteString;II)Z
     .locals 1
 
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p0, Lokio/ByteString;->data:[B
 
     invoke-virtual {p2, p3, v0, p1, p4}, Lokio/ByteString;->rangeEquals(I[BII)Z
@@ -391,7 +399,9 @@
 .method public rangeEquals(I[BII)Z
     .locals 2
 
-    if-eqz p2, :cond_1
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-ltz p1, :cond_0
 
@@ -411,7 +421,7 @@
 
     if-gt p3, v1, :cond_0
 
-    invoke-static {v0, p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v0, p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->arrayRangeEquals([BI[BII)Z
 
     move-result p1
 
@@ -426,42 +436,6 @@
 
     :goto_0
     return p1
-
-    :cond_1
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final startsWith(Lokio/ByteString;)Z
-    .locals 2
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1, p1, v1, v0}, Lokio/ByteString;->rangeEquals(ILokio/ByteString;II)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const-string p1, "prefix"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public toAsciiLowercase()Lokio/ByteString;
@@ -501,7 +475,7 @@
 
     const-string v5, "java.util.Arrays.copyOf(this, size)"
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     add-int/lit8 v5, v0, 0x1
 
@@ -554,6 +528,24 @@
     move-object v0, p0
 
     :goto_4
+    return-object v0
+.end method
+
+.method public toByteArray()[B
+    .locals 2
+
+    iget-object v0, p0, Lokio/ByteString;->data:[B
+
+    array-length v1, v0
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    move-result-object v0
+
+    const-string v1, "java.util.Arrays.copyOf(this, size)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-object v0
 .end method
 
@@ -1256,7 +1248,7 @@
 
     const-string v1, "[hex="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1275,7 +1267,7 @@
     goto/16 :goto_1e
 
     :cond_48
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1316,13 +1308,13 @@
     goto :goto_1d
 
     :cond_4a
-    const/4 v4, 0x0
+    new-instance v4, Lokio/ByteString;
 
-    invoke-static {v3, v4, v6}, Lkotlin/collections/ArraysKt___ArraysKt;->copyOfRange([BII)[B
+    const/4 v5, 0x0
+
+    invoke-static {v3, v5, v6}, Lkotlin/collections/ArraysKt___ArraysKt;->copyOfRange([BII)[B
 
     move-result-object v3
-
-    new-instance v4, Lokio/ByteString;
 
     invoke-direct {v4, v3}, Lokio/ByteString;-><init>([B)V
 
@@ -1344,7 +1336,7 @@
     :cond_4b
     const-string v1, "endIndex > length("
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1385,7 +1377,7 @@
 
     const-string v8, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v8, "\\"
 
@@ -1419,7 +1411,7 @@
 
     if-ge v5, v4, :cond_4d
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1469,13 +1461,15 @@
 
     iget-object v0, p0, Lokio/ByteString;->utf8:Ljava/lang/String;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lokio/ByteString;->internalArray$okio()[B
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "$this$toUtf8String"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -1487,24 +1481,22 @@
 
     move-object v0, v2
 
-    goto :goto_0
-
     :cond_0
-    const-string v0, "$this$toUtf8String"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_1
-    :goto_0
     return-object v0
 .end method
 
 .method public write$okio(Lokio/Buffer;II)V
-    .locals 1
+    .locals 2
+
+    const-string v0, "buffer"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$commonWrite"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/ByteString;->data:[B
 

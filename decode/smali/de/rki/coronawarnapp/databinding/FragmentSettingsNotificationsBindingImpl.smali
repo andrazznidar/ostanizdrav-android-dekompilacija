@@ -47,7 +47,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0051
+    const v6, 0x7f0c0077
 
     aput v6, v4, v5
 
@@ -85,7 +85,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d0
+    const v1, 0x7f09016f
 
     const/16 v2, 0x8
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cc
+    const v1, 0x7f09016b
 
     const/16 v2, 0x9
 
@@ -101,7 +101,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c9
+    const v1, 0x7f090168
 
     const/16 v2, 0xa
 
@@ -120,11 +120,11 @@
 
     :array_1
     .array-data 4
-        0x7f0c0052
-        0x7f0c0066
-        0x7f0c0066
-        0x7f0c007d
-        0x7f0c007e
+        0x7f0c0078
+        0x7f0c0091
+        0x7f0c0091
+        0x7f0c00a8
+        0x7f0c00aa
     .end array-data
 .end method
 
@@ -219,7 +219,7 @@
 
     check-cast v12, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    const/16 v16, 0x8
+    const/16 v16, 0x5
 
     move-object/from16 v0, p0
 
@@ -276,7 +276,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 17
+    .locals 19
 
     move-object/from16 v1, p0
 
@@ -293,457 +293,554 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->mSettingsViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->mState:Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;
 
-    const-wide/16 v6, 0x331
+    const-wide/16 v6, 0x60
 
-    and-long/2addr v6, v2
+    and-long v8, v2, v6
 
-    cmp-long v6, v6, v4
+    cmp-long v8, v8, v4
 
-    const-wide/16 v7, 0x320
+    const-wide/16 v9, 0x400
 
-    const/4 v9, 0x0
+    if-eqz v8, :cond_d
 
-    const-wide/16 v10, 0x301
+    if-nez v0, :cond_0
 
-    const-wide/16 v12, 0x310
-
-    const/4 v14, 0x0
-
-    if-eqz v6, :cond_8
-
-    and-long/2addr v10, v2
-
-    cmp-long v6, v10, v4
-
-    if-eqz v6, :cond_2
-
-    if-eqz v0, :cond_0
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isNotificationsRiskEnabled:Landroidx/lifecycle/LiveData;
+    const/4 v11, 0x1
 
     goto :goto_0
 
     :cond_0
-    move-object v6, v9
+    const/4 v11, 0x0
 
     :goto_0
-    invoke-virtual {v1, v14, v6}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    if-eqz v0, :cond_1
 
-    if-eqz v6, :cond_1
-
-    invoke-virtual {v6}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/Boolean;
+    const/4 v12, 0x1
 
     goto :goto_1
 
     :cond_1
-    move-object v6, v9
+    const/4 v12, 0x0
 
     :goto_1
-    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    if-eqz v8, :cond_3
 
-    move-result v10
+    if-eqz v11, :cond_2
 
-    invoke-static {v10}, Lcom/google/android/gms/common/internal/Preconditions;->formatStatus(Z)Ljava/lang/String;
-
-    move-result-object v10
+    const-wide/16 v13, 0x100
 
     goto :goto_2
 
     :cond_2
-    move-object v6, v9
-
-    move-object v10, v6
+    const-wide/16 v13, 0x80
 
     :goto_2
-    and-long v11, v2, v12
+    or-long/2addr v2, v13
 
-    cmp-long v11, v11, v4
+    :cond_3
+    and-long/2addr v6, v2
 
-    if-eqz v11, :cond_5
+    cmp-long v6, v6, v4
 
-    if-eqz v0, :cond_3
+    if-eqz v6, :cond_5
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isNotificationsTestEnabled:Landroidx/lifecycle/LiveData;
+    if-eqz v12, :cond_4
+
+    or-long/2addr v2, v9
 
     goto :goto_3
 
-    :cond_3
-    move-object v11, v9
+    :cond_4
+    const-wide/16 v6, 0x200
 
+    or-long/2addr v2, v6
+
+    :cond_5
     :goto_3
-    const/4 v12, 0x4
+    if-eqz v0, :cond_c
 
-    invoke-virtual {v1, v12, v11}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    iget-object v6, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    if-eqz v11, :cond_4
+    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v11}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+    move-result-object v6
 
-    move-result-object v11
+    const-string v7, "c"
 
-    check-cast v11, Ljava/lang/Boolean;
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v7, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
+
+    if-eqz v7, :cond_6
+
+    const v7, 0x7f12020b
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
 
     goto :goto_4
 
-    :cond_4
-    move-object v11, v9
+    :cond_6
+    const/4 v6, 0x0
 
     :goto_4
-    invoke-static {v11}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    iget-object v7, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    move-result v12
+    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {v12}, Lcom/google/android/gms/common/internal/Preconditions;->formatStatus(Z)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v12
+    const-string v8, "c"
+
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v8, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsRiskEnabled:Z
+
+    if-eqz v8, :cond_7
+
+    const v8, 0x7f120219
 
     goto :goto_5
 
-    :cond_5
-    move-object v11, v9
-
-    move-object v12, v11
+    :cond_7
+    const v8, 0x7f120218
 
     :goto_5
-    and-long v13, v2, v7
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    cmp-long v4, v13, v4
+    move-result-object v7
 
-    if-eqz v4, :cond_9
+    const-string v8, "c.getString(\n        if \u2026string.settings_off\n    )"
 
-    if-eqz v0, :cond_6
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;->isNotificationsEnabled:Landroidx/lifecycle/LiveData;
+    iget-boolean v8, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsRiskEnabled:Z
+
+    iget-object v13, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v13}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v13
+
+    const-string v14, "c"
+
+    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v14, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
+
+    if-eqz v14, :cond_8
+
+    const v14, 0x7f120212
 
     goto :goto_6
 
-    :cond_6
-    move-object v0, v9
+    :cond_8
+    const v14, 0x7f120213
 
     :goto_6
-    const/4 v4, 0x5
+    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, v4, v0}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
+    move-result-object v13
 
-    if-eqz v0, :cond_7
+    const-string v14, "c.getString(\n        if \u2026escription_inactive\n    )"
 
-    invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v14, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v14
+
+    const-string v15, "c"
+
+    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v15, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
+
+    if-eqz v15, :cond_9
+
+    const v15, 0x7f0800cb
 
     goto :goto_7
 
-    :cond_7
-    move-object v0, v9
+    :cond_9
+    const v15, 0x7f08010a
 
     :goto_7
-    invoke-static {v0}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    const v5, 0x7f120186
-
-    invoke-static {v4, v5, v9}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const v5, 0x7f08008f
-
-    const v13, 0x7f0800c6
-
-    invoke-static {v0, v5, v13}, Lcom/google/android/gms/common/internal/Preconditions;->formatDrawable(ZII)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v13
-
-    const v14, 0x7f12018a
-
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v14, v15}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v14
 
-    const v15, 0x7f120189
+    iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-static {v13, v15, v14}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
+    invoke-virtual {v15}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v15
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const-string v9, "c"
 
-    move-result-object v14
+    invoke-static {v15, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v15, 0x7f120182
+    iget-boolean v9, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
 
-    invoke-static {v14, v15, v9}, Lcom/google/android/gms/common/internal/Preconditions;->formatText(Ljava/lang/Boolean;ILjava/lang/Integer;)Ljava/lang/String;
+    if-eqz v9, :cond_a
+
+    const v9, 0x7f12020f
+
+    invoke-virtual {v15, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityInverted(Z)I
-
-    move-result v14
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
-
-    move-result v0
-
     goto :goto_8
 
-    :cond_8
-    move-object v6, v9
+    :cond_a
+    const/4 v9, 0x0
 
-    move-object v10, v6
+    :goto_8
+    iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    move-object v11, v10
+    invoke-virtual {v15}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-object v12, v11
+    move-result-object v15
 
-    :cond_9
-    const/4 v0, 0x0
+    const-string v10, "c"
+
+    invoke-static {v15, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v10, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsTestEnabled:Z
+
+    if-eqz v10, :cond_b
+
+    const v10, 0x7f120219
+
+    goto :goto_9
+
+    :cond_b
+    const v10, 0x7f120218
+
+    :goto_9
+    invoke-virtual {v15, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v15, "c.getString(\n        if \u2026string.settings_off\n    )"
+
+    invoke-static {v10, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v15, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsTestEnabled:Z
+
+    goto :goto_a
+
+    :cond_c
+    const/4 v8, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v6, 0x0
 
     const/4 v14, 0x0
 
-    move-object v4, v9
+    const/4 v15, 0x0
 
-    move-object v5, v4
+    const/4 v7, 0x0
 
-    move-object v13, v5
+    const/4 v10, 0x0
 
-    :goto_8
-    and-long/2addr v7, v2
+    const/4 v9, 0x0
 
-    const-wide/16 v15, 0x0
+    goto :goto_a
 
-    cmp-long v7, v7, v15
+    :cond_d
+    const/4 v8, 0x0
 
-    if-eqz v7, :cond_a
+    const/4 v13, 0x0
 
-    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    const/4 v6, 0x0
 
-    iget-object v7, v7, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    const/4 v14, 0x0
 
-    invoke-virtual {v7, v14}, Landroid/view/View;->setVisibility(I)V
+    const/4 v15, 0x0
 
-    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    const/4 v7, 0x0
 
-    invoke-virtual {v7, v9}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setBody(Ljava/lang/CharSequence;)V
+    const/4 v10, 0x0
 
-    iget-object v7, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    const/4 v9, 0x0
 
-    invoke-virtual {v7, v4}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setHeadline(Ljava/lang/String;)V
+    const/4 v11, 0x0
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    const/4 v12, 0x0
 
-    invoke-virtual {v4, v5}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustration(Landroid/graphics/drawable/Drawable;)V
+    :goto_a
+    const-wide/16 v16, 0x480
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    and-long v16, v2, v16
 
-    invoke-virtual {v4, v13}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustrationDescription(Ljava/lang/String;)V
+    cmp-long v16, v16, v4
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    if-eqz v16, :cond_f
 
-    iget-object v4, v4, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    if-eqz v0, :cond_e
 
-    invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
+    iget-boolean v0, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
 
-    :cond_a
-    const-wide/16 v4, 0x200
+    goto :goto_b
 
-    and-long/2addr v4, v2
+    :cond_e
+    const/4 v0, 0x0
 
-    const-wide/16 v7, 0x0
+    :goto_b
+    const-wide/16 v16, 0x400
 
-    cmp-long v0, v4, v7
+    and-long v16, v2, v16
 
-    if-eqz v0, :cond_b
+    cmp-long v16, v16, v4
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    if-eqz v16, :cond_10
 
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    xor-int/lit8 v16, v0, 0x1
 
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    goto :goto_c
 
-    move-result-object v4
+    :cond_f
+    const/4 v0, 0x0
 
-    const v5, 0x7f120184
+    :cond_10
+    const/16 v16, 0x0
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    :goto_c
+    const-wide/16 v17, 0x60
 
-    move-result-object v4
+    and-long v17, v2, v17
 
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setBody(Ljava/lang/String;)V
+    cmp-long v17, v17, v4
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    if-eqz v17, :cond_12
 
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    if-eqz v11, :cond_11
 
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    const/4 v0, 0x1
 
-    move-result-object v4
+    :cond_11
+    if-eqz v12, :cond_13
 
-    const v5, 0x7f120185
+    goto :goto_d
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    :cond_12
+    const/4 v0, 0x0
 
-    move-result-object v4
+    :cond_13
+    const/16 v16, 0x0
 
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setButtonText(Ljava/lang/String;)V
+    :goto_d
+    move/from16 v11, v16
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    if-eqz v17, :cond_14
 
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v12, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
 
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    iget-object v12, v12, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    move-result-object v4
+    invoke-static {v12, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
 
-    const v5, 0x7f120187
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setBody(Ljava/lang/CharSequence;)V
 
-    move-result-object v4
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setHeadline(Ljava/lang/String;)V
+    move-object v6, v0
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    check-cast v6, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
 
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iput-object v9, v6, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mHeadline:Ljava/lang/String;
 
-    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v0, v14}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustration(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-object v4
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    const v5, 0x7f0800cc
-
-    invoke-static {v4, v5}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    const v5, 0x7f080089
-
-    invoke-static {v4, v5, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    const v5, 0x7f12018e
-
-    invoke-static {v4, v5, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-virtual {v0, v13}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustrationDescription(Ljava/lang/String;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
+    invoke-static {v0, v11}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f12018c
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    iget-object v4, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f12018d
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
-
-    :cond_b
-    const-wide/16 v4, 0x301
-
-    and-long/2addr v4, v2
-
-    const-wide/16 v7, 0x0
-
-    cmp-long v0, v4, v7
-
-    if-eqz v0, :cond_c
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    move-result-object v6
 
     invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatus(Ljava/lang/Boolean;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
+    invoke-virtual {v0, v7}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatusText(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatus(Ljava/lang/Boolean;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
     invoke-virtual {v0, v10}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatusText(Ljava/lang/String;)V
 
-    :cond_c
-    const-wide/16 v4, 0x310
+    :cond_14
+    const-wide/16 v6, 0x40
 
-    and-long/2addr v2, v4
+    and-long/2addr v2, v6
 
-    cmp-long v0, v2, v7
+    cmp-long v0, v2, v4
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_15
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f12020d
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setBody(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f12020e
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setButtonText(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f120210
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setHeadline(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const v3, 0x7f080110
+
+    invoke-static {v2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    const v3, 0x7f080094
+
+    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    const v3, 0x7f120217
+
+    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f120215
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    invoke-virtual {v0, v11}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatus(Ljava/lang/Boolean;)V
+    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    invoke-virtual {v0, v12}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setStatusText(Ljava/lang/String;)V
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    :cond_d
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f120216
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
+
+    :cond_15
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -892,7 +989,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x200
+    const-wide/16 v0, 0x40
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
@@ -941,33 +1038,49 @@
 .end method
 
 .method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz p1, :cond_8
 
-    return v1
+    if-eq p1, v1, :cond_6
 
-    :pswitch_0
+    const/4 v2, 0x2
+
+    if-eq p1, v2, :cond_4
+
+    const/4 v2, 0x3
+
+    if-eq p1, v2, :cond_2
+
+    const/4 v2, 0x4
+
+    if-eq p1, v2, :cond_0
+
+    return v0
+
+    :cond_0
     check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    if-nez p3, :cond_0
+    if-nez p3, :cond_1
 
     monitor-enter p0
 
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x80
+    const-wide/16 v2, 0x10
 
-    or-long/2addr p1, v1
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
+
+    move v0, v1
 
     goto :goto_0
 
@@ -980,29 +1093,29 @@
 
     throw p1
 
-    :cond_0
-    move v0, v1
-
+    :cond_1
     :goto_0
     return v0
 
-    :pswitch_1
+    :cond_2
     check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    if-nez p3, :cond_1
+    if-nez p3, :cond_3
 
     monitor-enter p0
 
     :try_start_1
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x40
+    const-wide/16 v2, 0x8
 
-    or-long/2addr p1, v1
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
+
+    move v0, v1
 
     goto :goto_1
 
@@ -1015,29 +1128,29 @@
 
     throw p1
 
-    :cond_1
-    move v0, v1
-
+    :cond_3
     :goto_1
     return v0
 
-    :pswitch_2
-    check-cast p2, Landroidx/lifecycle/LiveData;
+    :cond_4
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    if-nez p3, :cond_2
+    if-nez p3, :cond_5
 
     monitor-enter p0
 
     :try_start_2
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x20
+    const-wide/16 v2, 0x4
 
-    or-long/2addr p1, v1
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
+
+    move v0, v1
 
     goto :goto_2
 
@@ -1050,29 +1163,29 @@
 
     throw p1
 
-    :cond_2
-    move v0, v1
-
+    :cond_5
     :goto_2
     return v0
 
-    :pswitch_3
-    check-cast p2, Landroidx/lifecycle/LiveData;
+    :cond_6
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    if-nez p3, :cond_3
+    if-nez p3, :cond_7
 
     monitor-enter p0
 
     :try_start_3
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x10
+    const-wide/16 v2, 0x2
 
-    or-long/2addr p1, v1
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
+
+    move v0, v1
 
     goto :goto_3
 
@@ -1085,29 +1198,29 @@
 
     throw p1
 
-    :cond_3
-    move v0, v1
-
+    :cond_7
     :goto_3
     return v0
 
-    :pswitch_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    :cond_8
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_9
 
     monitor-enter p0
 
     :try_start_4
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v1, 0x8
+    const-wide/16 v2, 0x1
 
-    or-long/2addr p1, v1
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
+
+    move v0, v1
 
     goto :goto_4
 
@@ -1120,128 +1233,9 @@
 
     throw p1
 
-    :cond_4
-    move v0, v1
-
+    :cond_9
     :goto_4
     return v0
-
-    :pswitch_5
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_5
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x4
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_5
-
-    :catchall_5
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_5
-
-    throw p1
-
-    :cond_5
-    move v0, v1
-
-    :goto_5
-    return v0
-
-    :pswitch_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
-
-    if-nez p3, :cond_6
-
-    monitor-enter p0
-
-    :try_start_6
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x2
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_6
-
-    :catchall_6
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_6
-
-    throw p1
-
-    :cond_6
-    move v0, v1
-
-    :goto_6
-    return v0
-
-    :pswitch_7
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_7
-
-    monitor-enter p0
-
-    :try_start_7
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x1
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_7
-
-    :catchall_7
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_7
-
-    throw p1
-
-    :cond_7
-    move v0, v1
-
-    :goto_7
-    return v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
@@ -1276,17 +1270,17 @@
     return-void
 .end method
 
-.method public setSettingsViewModel(Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;)V
+.method public setState(Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;)V
     .locals 4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->mSettingsViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->mState:Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;
 
     monitor-enter p0
 
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x100
+    const-wide/16 v2, 0x20
 
     or-long/2addr v0, v2
 
@@ -1296,7 +1290,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x17
+    const/16 p1, 0x2b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

@@ -105,7 +105,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zac:Lcom/google/android/gms/common/api/Api;
 
-    invoke-static {v2, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -115,7 +115,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
-    invoke-static {v2, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

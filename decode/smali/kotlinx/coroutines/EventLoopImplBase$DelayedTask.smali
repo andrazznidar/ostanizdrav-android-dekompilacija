@@ -97,7 +97,7 @@
 .end method
 
 .method public final declared-synchronized dispose()V
-    .locals 5
+    .locals 2
 
     monitor-enter p0
 
@@ -125,7 +125,7 @@
     :cond_1
     check-cast v0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_3
 
     monitor-enter v0
     :try_end_1
@@ -136,53 +136,24 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
     if-nez v1, :cond_2
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_2
     invoke-interface {p0}, Lkotlinx/coroutines/internal/ThreadSafeHeapNode;->getIndex()I
 
     move-result v1
 
-    sget-boolean v4, Lkotlinx/coroutines/DebugKt;->ASSERTIONS_ENABLED:Z
-
-    if-eqz v4, :cond_5
-
-    if-ltz v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    move v2, v3
-
-    :goto_0
-    if-eqz v2, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v1
-
-    :cond_5
-    :goto_1
     invoke-virtual {v0, v1}, Lkotlinx/coroutines/internal/ThreadSafeHeap;->removeAtImpl(I)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :goto_2
+    :goto_0
     :try_start_3
     monitor-exit v0
 
-    goto :goto_3
+    goto :goto_1
 
     :catchall_0
     move-exception v1
@@ -191,8 +162,8 @@
 
     throw v1
 
-    :cond_6
-    :goto_3
+    :cond_3
+    :goto_1
     sget-object v0, Lkotlinx/coroutines/EventLoop_commonKt;->DISPOSED_TASK:Lkotlinx/coroutines/internal/Symbol;
 
     iput-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
@@ -300,7 +271,7 @@
 
     const-string v0, "Delayed[nanos="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

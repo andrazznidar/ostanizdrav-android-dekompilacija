@@ -38,7 +38,7 @@
 
     int-to-long v0, p3
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -48,7 +48,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -112,6 +112,30 @@
     const/4 p1, 0x0
 
     return p1
+.end method
+
+.method public getDifference(JJ)I
+    .locals 0
+
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 0
+
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
 .end method
 
 .method public getType()Lorg/joda/time/DurationFieldType;

@@ -2448,35 +2448,36 @@
 
     const v3, 0x10100a0
 
-    if-nez v1, :cond_e
-
-    :cond_d
-    move v1, v2
+    if-nez v1, :cond_d
 
     goto :goto_8
 
-    :cond_e
+    :cond_d
     array-length v5, v1
 
     move v6, v2
 
     :goto_7
-    if-ge v6, v5, :cond_d
+    if-ge v6, v5, :cond_f
 
     aget v7, v1, v6
 
-    if-ne v7, v3, :cond_f
+    if-ne v7, v3, :cond_e
 
     move v1, v4
 
-    goto :goto_8
+    goto :goto_9
 
-    :cond_f
+    :cond_e
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_7
 
+    :cond_f
     :goto_8
+    move v1, v2
+
+    :goto_9
     if-eqz v1, :cond_10
 
     iget-boolean v1, p0, Lcom/google/android/material/chip/ChipDrawable;->checkable:Z
@@ -2485,12 +2486,12 @@
 
     move v1, v4
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_10
     move v1, v2
 
-    :goto_9
+    :goto_a
     iget-boolean v3, p0, Lcom/google/android/material/chip/ChipDrawable;->currentChecked:Z
 
     if-eq v3, v1, :cond_12
@@ -2517,19 +2518,19 @@
 
     move v1, v0
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_11
     move v1, v2
 
     move v0, v4
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_12
     move v1, v2
 
-    :goto_a
+    :goto_b
     iget-object v3, p0, Lcom/google/android/material/chip/ChipDrawable;->tint:Landroid/content/res/ColorStateList;
 
     if-eqz v3, :cond_13
@@ -2540,12 +2541,12 @@
 
     move-result v3
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_13
     move v3, v2
 
-    :goto_b
+    :goto_c
     iget v5, p0, Lcom/google/android/material/chip/ChipDrawable;->currentTint:I
 
     if-eq v5, v3, :cond_14
@@ -2556,18 +2557,18 @@
 
     iget-object v3, p0, Lcom/google/android/material/chip/ChipDrawable;->tintMode:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {p0, v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {p0, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->tintFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_14
     move v4, v0
 
-    :goto_c
+    :goto_d
     iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->chipIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0}, Lcom/google/android/material/chip/ChipDrawable;->isStateful(Landroid/graphics/drawable/Drawable;)Z
@@ -3591,85 +3592,14 @@
 .end method
 
 .method public setTextAppearance(Lcom/google/android/material/resources/TextAppearance;)V
-    .locals 5
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->textDrawableHelper:Lcom/google/android/material/internal/TextDrawableHelper;
 
     iget-object v1, p0, Lcom/google/android/material/chip/ChipDrawable;->context:Landroid/content/Context;
 
-    iget-object v2, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textAppearance:Lcom/google/android/material/resources/TextAppearance;
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/material/internal/TextDrawableHelper;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;Landroid/content/Context;)V
 
-    if-eq v2, p1, :cond_2
-
-    iput-object p1, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textAppearance:Lcom/google/android/material/resources/TextAppearance;
-
-    if-eqz p1, :cond_1
-
-    iget-object v2, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textPaint:Landroid/text/TextPaint;
-
-    iget-object v3, v0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
-
-    invoke-virtual {p1}, Lcom/google/android/material/resources/TextAppearance;->createFallbackFont()V
-
-    iget-object v4, p1, Lcom/google/android/material/resources/TextAppearance;->font:Landroid/graphics/Typeface;
-
-    invoke-virtual {p1, v2, v4}, Lcom/google/android/material/resources/TextAppearance;->updateTextPaintMeasureState(Landroid/text/TextPaint;Landroid/graphics/Typeface;)V
-
-    new-instance v4, Lcom/google/android/material/resources/TextAppearance$2;
-
-    invoke-direct {v4, p1, v2, v3}, Lcom/google/android/material/resources/TextAppearance$2;-><init>(Lcom/google/android/material/resources/TextAppearance;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
-
-    invoke-virtual {p1, v1, v4}, Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
-
-    iget-object v2, v0, Lcom/google/android/material/internal/TextDrawableHelper;->delegate:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;
-
-    if-eqz v2, :cond_0
-
-    iget-object v3, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textPaint:Landroid/text/TextPaint;
-
-    invoke-interface {v2}, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;->getState()[I
-
-    move-result-object v2
-
-    iput-object v2, v3, Landroid/text/TextPaint;->drawableState:[I
-
-    :cond_0
-    iget-object v2, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textPaint:Landroid/text/TextPaint;
-
-    iget-object v3, v0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
-
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/material/resources/TextAppearance;->updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, v0, Lcom/google/android/material/internal/TextDrawableHelper;->textWidthDirty:Z
-
-    :cond_1
-    iget-object p1, v0, Lcom/google/android/material/internal/TextDrawableHelper;->delegate:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;
-
-    if-eqz p1, :cond_2
-
-    invoke-interface {p1}, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;->onTextSizeChange()V
-
-    invoke-interface {p1}, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;->getState()[I
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lcom/google/android/material/internal/TextDrawableHelper$TextDrawableDelegate;->onStateChange([I)Z
-
-    :cond_2
     return-void
 .end method
 
@@ -3741,7 +3671,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->tint:Landroid/content/res/ColorStateList;
 
-    invoke-static {p0, v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {p0, v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object p1
 

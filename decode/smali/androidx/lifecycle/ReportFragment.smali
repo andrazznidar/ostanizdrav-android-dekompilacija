@@ -193,53 +193,21 @@
 .end method
 
 .method public onResume()V
-    .locals 3
+    .locals 1
 
     invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
     iget-object v0, p0, Landroidx/lifecycle/ReportFragment;->mProcessListener:Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     check-cast v0, Landroidx/lifecycle/ProcessLifecycleOwner$2;
 
     iget-object v0, v0, Landroidx/lifecycle/ProcessLifecycleOwner$2;->this$0:Landroidx/lifecycle/ProcessLifecycleOwner;
 
-    iget v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mResumedCounter:I
-
-    const/4 v2, 0x1
-
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mResumedCounter:I
-
-    if-ne v1, v2, :cond_1
-
-    iget-boolean v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mPauseSent:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mRegistry:Landroidx/lifecycle/LifecycleRegistry;
-
-    sget-object v2, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
-
-    invoke-virtual {v1, v2}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mPauseSent:Z
-
-    goto :goto_0
+    invoke-virtual {v0}, Landroidx/lifecycle/ProcessLifecycleOwner;->activityResumed()V
 
     :cond_0
-    iget-object v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mHandler:Landroid/os/Handler;
-
-    iget-object v0, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mDelayedPauseRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    :cond_1
-    :goto_0
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {p0, v0}, Landroidx/lifecycle/ReportFragment;->dispatch(Landroidx/lifecycle/Lifecycle$Event;)V
@@ -248,7 +216,7 @@
 .end method
 
 .method public onStart()V
-    .locals 3
+    .locals 1
 
     invoke-super {p0}, Landroid/app/Fragment;->onStart()V
 
@@ -260,29 +228,7 @@
 
     iget-object v0, v0, Landroidx/lifecycle/ProcessLifecycleOwner$2;->this$0:Landroidx/lifecycle/ProcessLifecycleOwner;
 
-    iget v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mStartedCounter:I
-
-    const/4 v2, 0x1
-
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mStartedCounter:I
-
-    if-ne v1, v2, :cond_0
-
-    iget-boolean v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mStopSent:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mRegistry:Landroidx/lifecycle/LifecycleRegistry;
-
-    sget-object v2, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
-
-    invoke-virtual {v1, v2}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Landroidx/lifecycle/ProcessLifecycleOwner;->mStopSent:Z
+    invoke-virtual {v0}, Landroidx/lifecycle/ProcessLifecycleOwner;->activityStarted()V
 
     :cond_0
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;

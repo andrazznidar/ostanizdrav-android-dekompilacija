@@ -6,12 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$CondAddOp;
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$CondAddOp;,
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$RemoveFirstDesc;,
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$PrepareOp;,
+        Lkotlinx/coroutines/internal/LockFreeLinkedListNode$AbstractAtomicDesc;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLockFreeLinkedList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockFreeLinkedList.kt\nkotlinx/coroutines/internal/LockFreeLinkedListNode\n+ 2 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n*L\n1#1,658:1\n87#1,3:661\n87#1,3:664\n92#2,2:659\n92#2,2:667\n*E\n*S KotlinDebug\n*F\n+ 1 LockFreeLinkedList.kt\nkotlinx/coroutines/internal/LockFreeLinkedListNode\n*L\n150#1,3:661\n173#1,3:664\n95#1,2:659\n533#1,2:667\n*E\n"
+    value = "SMAP\nLockFreeLinkedList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockFreeLinkedList.kt\nkotlinx/coroutines/internal/LockFreeLinkedListNode\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n*L\n1#1,667:1\n87#1,3:671\n87#1,3:674\n1#2:668\n92#3,2:669\n92#3,2:677\n*E\n*S KotlinDebug\n*F\n+ 1 LockFreeLinkedList.kt\nkotlinx/coroutines/internal/LockFreeLinkedListNode\n*L\n150#1,3:671\n173#1,3:674\n95#1,2:669\n542#1,2:677\n*E\n"
 .end annotation
 
 
@@ -82,125 +85,179 @@
     return-void
 .end method
 
+.method public static final synthetic access$correctPrev(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    .locals 0
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
+.method public final addNext(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
+    .locals 1
+
+    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p0, p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    invoke-virtual {p1, p2}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->finishAdd(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
+
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
 .method public final correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
     .locals 6
 
     :goto_0
-    iget-object p1, p0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev:Ljava/lang/Object;
+    iget-object v0, p0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev:Ljava/lang/Object;
 
-    check-cast p1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    move-object v1, p1
-
-    :goto_1
     move-object v2, v0
 
+    :goto_1
+    move-object v3, v1
+
     :goto_2
-    iget-object v3, v1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next:Ljava/lang/Object;
+    iget-object v4, v2, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next:Ljava/lang/Object;
 
-    if-ne v3, p0, :cond_2
+    if-ne v4, p0, :cond_2
 
-    if-ne p1, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
-    return-object v1
+    return-object v2
 
     :cond_0
-    sget-object v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sget-object v1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    invoke-virtual {v0, p0, p1, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result v0
 
-    if-nez p1, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    return-object v1
+    return-object v2
 
     :cond_2
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->isRemoved()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
-
-    return-object v0
-
-    :cond_3
-    if-nez v3, :cond_4
+    if-eqz v5, :cond_3
 
     return-object v1
 
+    :cond_3
+    if-ne v4, p1, :cond_4
+
+    return-object v2
+
     :cond_4
-    instance-of v4, v3, Lkotlinx/coroutines/internal/OpDescriptor;
+    instance-of v5, v4, Lkotlinx/coroutines/internal/OpDescriptor;
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_6
 
-    check-cast v3, Lkotlinx/coroutines/internal/OpDescriptor;
+    if-eqz p1, :cond_5
 
-    invoke-virtual {v3, v1}, Lkotlinx/coroutines/internal/OpDescriptor;->perform(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v0, v4
 
-    goto :goto_0
+    check-cast v0, Lkotlinx/coroutines/internal/OpDescriptor;
+
+    invoke-virtual {p1, v0}, Lkotlinx/coroutines/internal/OpDescriptor;->isEarlierThan(Lkotlinx/coroutines/internal/OpDescriptor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    return-object v1
 
     :cond_5
-    instance-of v4, v3, Lkotlinx/coroutines/internal/Removed;
+    check-cast v4, Lkotlinx/coroutines/internal/OpDescriptor;
 
-    if-eqz v4, :cond_8
-
-    if-eqz v2, :cond_7
-
-    sget-object v4, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    check-cast v3, Lkotlinx/coroutines/internal/Removed;
-
-    iget-object v3, v3, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
-
-    invoke-virtual {v4, v2, v1, v3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_6
+    invoke-virtual {v4, v2}, Lkotlinx/coroutines/internal/OpDescriptor;->perform(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_6
-    move-object v1, v2
+    instance-of v5, v4, Lkotlinx/coroutines/internal/Removed;
+
+    if-eqz v5, :cond_9
+
+    if-eqz v3, :cond_8
+
+    sget-object v5, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    check-cast v4, Lkotlinx/coroutines/internal/Removed;
+
+    iget-object v4, v4, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    invoke-virtual {v5, v3, v2, v4}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    move-object v2, v3
 
     goto :goto_1
 
-    :cond_7
-    iget-object v1, v1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev:Ljava/lang/Object;
-
-    check-cast v1, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
-
-    goto :goto_2
-
     :cond_8
-    if-eqz v3, :cond_9
-
-    move-object v2, v3
+    iget-object v2, v2, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->_prev:Ljava/lang/Object;
 
     check-cast v2, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
-
-    move-object v5, v2
-
-    move-object v2, v1
-
-    move-object v1, v5
 
     goto :goto_2
 
     :cond_9
-    new-instance p1, Lkotlin/TypeCastException;
+    if-eqz v4, :cond_a
+
+    check-cast v4, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    move-object v3, v2
+
+    move-object v2, v4
+
+    goto :goto_2
+
+    :cond_a
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.internal.Node /* = kotlinx.coroutines.internal.LockFreeLinkedListNode */"
 
-    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method
@@ -304,11 +361,11 @@
     return-object v1
 
     :cond_2
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "null cannot be cast to non-null type kotlinx.coroutines.internal.Node /* = kotlinx.coroutines.internal.LockFreeLinkedListNode */"
 
-    invoke-direct {v0, v1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -349,6 +406,63 @@
     goto :goto_0
 .end method
 
+.method public final helpRemove()V
+    .locals 2
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    check-cast v0, Lkotlinx/coroutines/internal/Removed;
+
+    iget-object v0, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "null cannot be cast to non-null type kotlinx.coroutines.internal.Removed"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final helpRemovePrev()V
+    .locals 3
+
+    move-object v0, p0
+
+    :goto_0
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v2, v1, Lkotlinx/coroutines/internal/Removed;
+
+    if-nez v2, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    return-void
+
+    :cond_0
+    check-cast v1, Lkotlinx/coroutines/internal/Removed;
+
+    iget-object v0, v1, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    goto :goto_0
+.end method
+
 .method public isRemoved()Z
     .locals 1
 
@@ -362,6 +476,26 @@
 .end method
 
 .method public remove()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->removeOrNext()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public final removeOrNext()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
     .locals 4
 
     :cond_0
@@ -377,17 +511,17 @@
 
     iget-object v0, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    goto :goto_1
+    return-object v0
 
     :cond_1
     if-ne v0, p0, :cond_2
 
     check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    goto :goto_1
+    return-object v0
 
     :cond_2
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     move-object v1, v0
 
@@ -423,25 +557,14 @@
 
     invoke-virtual {v1, v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev(Lkotlinx/coroutines/internal/OpDescriptor;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    :goto_1
-    if-nez v0, :cond_4
-
-    const/4 v0, 0x1
-
-    goto :goto_2
+    return-object v0
 
     :cond_4
-    const/4 v0, 0x0
-
-    :goto_2
-    return v0
-
-    :cond_5
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "null cannot be cast to non-null type kotlinx.coroutines.internal.Node /* = kotlinx.coroutines.internal.LockFreeLinkedListNode */"
 
-    invoke-direct {v0, v1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method

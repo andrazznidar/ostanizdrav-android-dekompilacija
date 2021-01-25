@@ -69,30 +69,16 @@
 
 
 # virtual methods
-.method public addConverterFactory(Lretrofit2/Converter$Factory;)Lretrofit2/Retrofit$Builder;
-    .locals 2
-
-    iget-object v0, p0, Lretrofit2/Retrofit$Builder;->converterFactories:Ljava/util/List;
-
-    const-string v1, "factory == null"
-
-    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lretrofit2/Converter$Factory;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-object p0
-.end method
-
 .method public baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
     .locals 3
 
     const-string v0, "baseUrl == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    const-string v1, "$this$toHttpUrl"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Lokhttp3/HttpUrl$Builder;
 

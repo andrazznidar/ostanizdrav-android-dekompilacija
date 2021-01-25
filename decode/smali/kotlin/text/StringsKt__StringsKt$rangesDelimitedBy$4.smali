@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4\n*L\n1#1,1291:1\n*E\n"
+    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1291:1\n1#2:1292\n*E\n"
 .end annotation
 
 
@@ -61,35 +61,33 @@
 
     move-result p2
 
-    const/4 v6, 0x0
+    const-string v0, "$receiver"
 
-    if-eqz p1, :cond_10
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v7, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4;->$delimitersList:Ljava/util/List;
+    iget-object v6, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4;->$delimitersList:Ljava/util/List;
 
-    iget-boolean v8, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4;->$ignoreCase:Z
+    iget-boolean v7, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$4;->$ignoreCase:Z
 
     const/4 v0, 0x0
 
-    if-nez v8, :cond_3
+    const/4 v8, 0x0
 
-    invoke-interface {v7}, Ljava/util/Collection;->size()I
+    if-nez v7, :cond_1
+
+    invoke-interface {v6}, Ljava/util/Collection;->size()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_3
-
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
     if-ne v1, v2, :cond_1
 
-    invoke-interface {v7, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const-string v1, "$this$single"
+
+    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v6}, Lkotlin/collections/ArraysKt___ArraysKt;->single(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -117,29 +115,11 @@
     goto/16 :goto_5
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "List has more than one element."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    new-instance p1, Ljava/util/NoSuchElementException;
-
-    const-string p2, "List is empty."
-
-    invoke-direct {p1, p2}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
-    if-gez p2, :cond_4
+    if-gez p2, :cond_2
 
     move p2, v0
 
-    :cond_4
+    :cond_2
     new-instance v0, Lkotlin/ranges/IntRange;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -150,7 +130,7 @@
 
     instance-of p2, p1, Ljava/lang/String;
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_7
 
     iget p2, v0, Lkotlin/ranges/IntProgression;->first:I
 
@@ -158,26 +138,26 @@
 
     iget v10, v0, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz v10, :cond_5
+    if-ltz v10, :cond_3
 
-    if-gt p2, v9, :cond_e
+    if-gt p2, v9, :cond_c
 
     goto :goto_0
 
-    :cond_5
-    if-lt p2, v9, :cond_e
+    :cond_3
+    if-lt p2, v9, :cond_c
 
     :goto_0
-    invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v11
 
-    :cond_6
+    :cond_4
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -199,23 +179,23 @@
 
     move v3, p2
 
-    move v5, v8
+    move v5, v7
 
     invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt__IndentKt;->regionMatches(Ljava/lang/String;ILjava/lang/String;IIZ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     goto :goto_1
 
-    :cond_7
-    move-object v12, v6
+    :cond_5
+    move-object v12, v8
 
     :goto_1
     check-cast v12, Ljava/lang/String;
 
-    if-eqz v12, :cond_8
+    if-eqz v12, :cond_6
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -227,40 +207,40 @@
 
     goto :goto_5
 
-    :cond_8
-    if-eq p2, v9, :cond_e
+    :cond_6
+    if-eq p2, v9, :cond_c
 
     add-int/2addr p2, v10
 
     goto :goto_0
 
-    :cond_9
+    :cond_7
     iget p2, v0, Lkotlin/ranges/IntProgression;->first:I
 
     iget v9, v0, Lkotlin/ranges/IntProgression;->last:I
 
     iget v10, v0, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz v10, :cond_a
+    if-ltz v10, :cond_8
 
-    if-gt p2, v9, :cond_e
+    if-gt p2, v9, :cond_c
 
     goto :goto_2
 
-    :cond_a
-    if-lt p2, v9, :cond_e
+    :cond_8
+    if-lt p2, v9, :cond_c
 
     :goto_2
-    invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v11
 
-    :cond_b
+    :cond_9
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_a
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -280,23 +260,23 @@
 
     move v3, p2
 
-    move v5, v8
+    move v5, v7
 
     invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt__IndentKt;->regionMatchesImpl(Ljava/lang/CharSequence;ILjava/lang/CharSequence;IIZ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
     goto :goto_3
 
-    :cond_c
-    move-object v12, v6
+    :cond_a
+    move-object v12, v8
 
     :goto_3
     check-cast v12, Ljava/lang/String;
 
-    if-eqz v12, :cond_d
+    if-eqz v12, :cond_b
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -308,19 +288,19 @@
 
     goto :goto_5
 
-    :cond_d
-    if-eq p2, v9, :cond_e
+    :cond_b
+    if-eq p2, v9, :cond_c
 
     add-int/2addr p2, v10
 
     goto :goto_2
 
-    :cond_e
+    :cond_c
     :goto_4
-    move-object p2, v6
+    move-object p2, v8
 
     :goto_5
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_d
 
     iget-object p1, p2, Lkotlin/Pair;->first:Ljava/lang/Object;
 
@@ -336,17 +316,10 @@
 
     move-result-object p2
 
-    new-instance v6, Lkotlin/Pair;
+    new-instance v8, Lkotlin/Pair;
 
-    invoke-direct {v6, p1, p2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v8, p1, p2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_f
-    return-object v6
-
-    :cond_10
-    const-string p1, "$receiver"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v6
+    :cond_d
+    return-object v8
 .end method

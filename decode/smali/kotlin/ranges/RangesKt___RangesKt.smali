@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_Ranges.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Ranges.kt\nkotlin/ranges/RangesKt___RangesKt\n*L\n1#1,1211:1\n*E\n"
+    value = "SMAP\n_Ranges.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Ranges.kt\nkotlin/ranges/RangesKt___RangesKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1227:1\n1#2:1228\n*E\n"
 .end annotation
 
 
@@ -85,10 +85,18 @@
 .end method
 
 .method public static final random(Lkotlin/ranges/IntRange;Lkotlin/random/Random;)I
-    .locals 0
+    .locals 1
+
+    const-string v0, "$this$random"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "random"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
-    invoke-static {p1, p0}, Lkotlin/collections/MapsKt___MapsKt;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
+    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
 
     move-result p0
     :try_end_0
@@ -110,30 +118,66 @@
     throw p1
 .end method
 
+.method public static final random(Lkotlin/ranges/LongRange;Lkotlin/random/Random;)J
+    .locals 1
+
+    const-string v0, "$this$random"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "random"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nextLong(Lkotlin/random/Random;Lkotlin/ranges/LongRange;)J
+
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/util/NoSuchElementException;
+
+    invoke-virtual {p0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public static final step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
     .locals 3
 
-    const/4 v0, 0x0
+    const-string v0, "$this$step"
 
-    if-eqz p0, :cond_4
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-lez p1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_3
+    const-string v2, "step"
 
-    if-eqz v1, :cond_2
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz v0, :cond_2
 
     iget v0, p0, Lkotlin/ranges/IntProgression;->first:I
 
@@ -166,7 +210,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v0, 0x2e
 
@@ -179,20 +223,6 @@
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
-
-    :cond_3
-    const-string p0, "step"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    const-string p0, "$this$step"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final until(II)Lkotlin/ranges/IntRange;

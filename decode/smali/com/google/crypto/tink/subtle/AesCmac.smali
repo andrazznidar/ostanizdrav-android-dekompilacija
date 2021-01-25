@@ -19,6 +19,17 @@
 # direct methods
 .method public constructor <init>([BI)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "tagSizeInBytes"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -71,13 +82,13 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->dbl([B)[B
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->dbl([B)[B
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
 
     move-result-object p1
 
@@ -108,6 +119,15 @@
 # virtual methods
 .method public computeMac([B)[B
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -172,7 +192,7 @@
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1, v2, v4, v5, v3}, Lcom/google/android/gms/common/internal/Preconditions;->xor([BI[BII)[B
+    invoke-static {p1, v2, v4, v5, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([BI[BII)[B
 
     move-result-object v2
 
@@ -189,13 +209,13 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->cmacPad([B)[B
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->cmacPad([B)[B
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey2:[B
 
-    invoke-static {v2, v4}, Lcom/google/android/gms/common/internal/Preconditions;->xor([B[B)[B
+    invoke-static {v2, v4}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
 
     move-result-object v2
 
@@ -211,7 +231,7 @@
 
     mul-int/lit8 v7, v6, 0x10
 
-    invoke-static {v4, v5, p1, v7, v3}, Lcom/google/android/gms/common/internal/Preconditions;->xor([BI[BII)[B
+    invoke-static {v4, v5, p1, v7, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([BI[BII)[B
 
     move-result-object v4
 
@@ -224,7 +244,7 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {v2, v4}, Lcom/google/android/gms/common/internal/Preconditions;->xor([B[B)[B
+    invoke-static {v2, v4}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
 
     move-result-object p1
 
@@ -245,6 +265,17 @@
 
 .method public verifyMac([B[B)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "mac",
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -255,7 +286,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result p1
 

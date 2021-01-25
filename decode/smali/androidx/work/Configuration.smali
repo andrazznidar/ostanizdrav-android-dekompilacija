@@ -13,6 +13,10 @@
 
 
 # instance fields
+.field public final mDefaultProcessName:Ljava/lang/String;
+
+.field public final mExceptionHandler:Landroidx/work/InitializationExceptionHandler;
+
 .field public final mExecutor:Ljava/util/concurrent/Executor;
 
 .field public final mInputMergerFactory:Landroidx/work/InputMergerFactory;
@@ -24,6 +28,8 @@
 .field public final mMaxSchedulerLimit:I
 
 .field public final mMinJobSchedulerId:I
+
+.field public final mRunnableScheduler:Landroidx/work/impl/DefaultRunnableScheduler;
 
 .field public final mTaskExecutor:Ljava/util/concurrent/Executor;
 
@@ -48,17 +54,33 @@
 
     iput-object v0, p0, Landroidx/work/Configuration;->mTaskExecutor:Ljava/util/concurrent/Executor;
 
+    iget-object v0, p1, Landroidx/work/Configuration$Builder;->mWorkerFactory:Landroidx/work/WorkerFactory;
+
+    if-nez v0, :cond_0
+
     invoke-static {}, Landroidx/work/WorkerFactory;->getDefaultWorkerFactory()Landroidx/work/WorkerFactory;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
 
+    goto :goto_0
+
+    :cond_0
+    iput-object v0, p0, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
+
+    :goto_0
     new-instance v0, Landroidx/work/InputMergerFactory$1;
 
     invoke-direct {v0}, Landroidx/work/InputMergerFactory$1;-><init>()V
 
     iput-object v0, p0, Landroidx/work/Configuration;->mInputMergerFactory:Landroidx/work/InputMergerFactory;
+
+    new-instance v0, Landroidx/work/impl/DefaultRunnableScheduler;
+
+    invoke-direct {v0}, Landroidx/work/impl/DefaultRunnableScheduler;-><init>()V
+
+    iput-object v0, p0, Landroidx/work/Configuration;->mRunnableScheduler:Landroidx/work/impl/DefaultRunnableScheduler;
 
     iget v0, p1, Landroidx/work/Configuration$Builder;->mLoggingLevel:I
 
@@ -75,6 +97,12 @@
     iget p1, p1, Landroidx/work/Configuration$Builder;->mMaxSchedulerLimit:I
 
     iput p1, p0, Landroidx/work/Configuration;->mMaxSchedulerLimit:I
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Landroidx/work/Configuration;->mExceptionHandler:Landroidx/work/InitializationExceptionHandler;
+
+    iput-object p1, p0, Landroidx/work/Configuration;->mDefaultProcessName:Ljava/lang/String;
 
     return-void
 .end method

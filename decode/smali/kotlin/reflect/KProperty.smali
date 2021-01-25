@@ -9,11 +9,11 @@
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<R:",
+        "<V:",
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
         "Lkotlin/reflect/KCallable<",
-        "TR;>;"
+        "TV;>;"
     }
 .end annotation

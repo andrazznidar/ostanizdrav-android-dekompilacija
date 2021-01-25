@@ -41,15 +41,17 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
     iget v0, p0, L-$$LambdaGroup$ks$L-ALI5RJpi6oLiqVm3HV8yo7sp4;->$id$:I
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
     iget-object v0, p0, L-$$LambdaGroup$ks$L-ALI5RJpi6oLiqVm3HV8yo7sp4;->$capture$0:Ljava/lang/Object;
 
@@ -62,18 +64,24 @@
     return-object v0
 
     :cond_0
-    const/4 v0, 0x0
-
-    throw v0
+    throw v1
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/util/ExternalActionHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ExternalActionHelper;
-
     iget-object v0, p0, L-$$LambdaGroup$ks$L-ALI5RJpi6oLiqVm3HV8yo7sp4;->$capture$0:Ljava/lang/Object;
 
     check-cast v0, Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/util/ExternalActionHelper;->disableBatteryOptimizations(Landroid/content/Context;)V
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->getPowerManagement()Lde/rki/coronawarnapp/util/device/PowerManagement;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lde/rki/coronawarnapp/util/device/PowerManagement;->getToBatteryOptimizationSettingsIntent()Landroid/content/Intent;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    invoke-static {v0, v2, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->startActivitySafely$default(Landroid/app/Activity;Landroid/content/Intent;Lkotlin/jvm/functions/Function1;I)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

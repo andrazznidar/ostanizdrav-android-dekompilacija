@@ -43,7 +43,7 @@
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 

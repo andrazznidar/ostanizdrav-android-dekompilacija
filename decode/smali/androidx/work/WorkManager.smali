@@ -3,6 +3,14 @@
 .source "WorkManager.java"
 
 
+# annotations
+.annotation build Landroid/annotation/SuppressLint;
+    value = {
+        "AddedAbstractMethod"
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0

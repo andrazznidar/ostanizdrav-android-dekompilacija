@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Landroidx/work/CoroutineWorker$1;->this$0:Landroidx/work/CoroutineWorker;
 
@@ -51,9 +51,11 @@
 
     iget-object v0, v0, Landroidx/work/CoroutineWorker;->job:Lkotlinx/coroutines/CompletableJob;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    invoke-interface {v0, v1}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2, v1, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     :cond_0
     return-void

@@ -30,6 +30,15 @@
 
 .method public static get(Ljava/lang/String;)Lcom/google/crypto/tink/KmsClient;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "keyUri"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

@@ -3,12 +3,6 @@
 .source "LockFreeLinkedList.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLockFreeLinkedList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LockFreeLinkedList.kt\nkotlinx/coroutines/internal/LockFreeLinkedListHead\n*L\n1#1,658:1\n*E\n"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

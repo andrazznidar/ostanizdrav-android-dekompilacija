@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCertificatePinner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CertificatePinner.kt\nokhttp3/CertificatePinner\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,370:1\n620#2,8:371\n*E\n*S KotlinDebug\n*F\n+ 1 CertificatePinner.kt\nokhttp3/CertificatePinner\n*L\n216#1,8:371\n*E\n"
+    value = "SMAP\nCertificatePinner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CertificatePinner.kt\nokhttp3/CertificatePinner\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,370:1\n617#2,8:371\n*E\n*S KotlinDebug\n*F\n+ 1 CertificatePinner.kt\nokhttp3/CertificatePinner\n*L\n216#1,8:371\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Set;Lokhttp3/internal/tls/CertificateChainCleaner;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const-string v0, "pins"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -89,15 +91,6 @@
     iput-object p2, p0, Lokhttp3/CertificatePinner;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
 
     return-void
-
-    :cond_0
-    const-string p1, "pins"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public constructor <init>(Ljava/util/Set;Lokhttp3/internal/tls/CertificateChainCleaner;I)V
@@ -106,6 +99,10 @@
     and-int/lit8 p2, p3, 0x2
 
     const/4 p2, 0x0
+
+    const-string p3, "pins"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -119,7 +116,7 @@
 
 # virtual methods
 .method public final check$okhttp(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -133,9 +130,15 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "hostname"
 
-    if-eqz p1, :cond_d
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "cleanedPeerCertificatesFn"
+
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lokhttp3/CertificatePinner;->pins:Ljava/util/Set;
 
@@ -151,89 +154,101 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_7
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    move-object v4, v3
+    move-object v5, v3
 
-    check-cast v4, Lokhttp3/CertificatePinner$Pin;
+    check-cast v5, Lokhttp3/CertificatePinner$Pin;
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_6
 
-    const/4 v4, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x2
+    const/4 v5, 0x0
 
-    const-string v6, "**."
+    const/4 v6, 0x2
 
-    invoke-static {v0, v6, v4, v5}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    const-string v7, "**."
 
-    move-result v6
+    invoke-static {v4, v7, v5, v6}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
-    if-nez v6, :cond_4
+    move-result v7
 
-    const-string v6, "*."
+    if-nez v7, :cond_5
 
-    invoke-static {v0, v6, v4, v5}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    const-string v7, "*."
 
-    move-result v4
+    invoke-static {v4, v7, v5, v6}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
-    if-nez v4, :cond_3
+    move-result v5
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-nez v5, :cond_4
 
-    move-result v4
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v4, :cond_0
+    move-result v5
+
+    if-eqz v5, :cond_0
 
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     :cond_1
-    instance-of v4, v2, Lkotlin/jvm/internal/markers/KMappedMarker;
+    instance-of v5, v2, Lkotlin/jvm/internal/markers/KMappedMarker;
 
-    if-nez v4, :cond_2
+    if-eqz v5, :cond_3
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    instance-of v5, v2, Lkotlin/jvm/internal/markers/KMutableList;
 
-    goto :goto_0
+    if-eqz v5, :cond_2
+
+    goto :goto_1
 
     :cond_2
     const-string p1, "kotlin.collections.MutableList"
 
     invoke-static {v2, p1}, Lkotlin/jvm/internal/TypeIntrinsics;->throwCce(Ljava/lang/Object;Ljava/lang/String;)V
 
-    throw v0
+    throw v4
 
     :cond_3
-    throw v0
+    :goto_1
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 
     :cond_4
-    throw v0
+    throw v4
 
     :cond_5
-    throw v0
+    throw v4
 
     :cond_6
+    throw v4
+
+    :cond_7
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_7
+    if-eqz v0, :cond_8
 
     return-void
 
-    :cond_7
+    :cond_8
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object p2
@@ -242,50 +257,50 @@
 
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
+    move-result-object v0
+
+    :cond_9
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v1
 
-    :cond_8
+    check-cast v1, Ljava/security/cert/X509Certificate;
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_9
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/security/cert/X509Certificate;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_8
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lokhttp3/CertificatePinner$Pin;
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_a
 
-    throw v0
-
-    :cond_9
-    throw v0
+    throw v4
 
     :cond_a
+    throw v4
+
+    :cond_b
     const-string v0, "Certificate pinning failure!"
 
     const-string v1, "\n  Peer certificate chain:"
 
-    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -293,14 +308,14 @@
 
     move-result-object p2
 
-    :goto_1
+    :goto_2
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     const-string v3, "\n    "
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -328,7 +343,7 @@
 
     const-string v3, "element.subjectDN"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v1}, Ljava/security/Principal;->getName()Ljava/lang/String;
 
@@ -336,9 +351,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_b
+    :cond_c
     const-string p2, "\n  Pinned certificates for "
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -353,12 +368,12 @@
 
     move-result-object p1
 
-    :goto_2
+    :goto_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_d
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -370,29 +385,22 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_c
+    :cond_d
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     const-string p2, "StringBuilder().apply(builderAction).toString()"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p2, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     invoke-direct {p2, p1}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_d
-    const-string p1, "hostname"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -470,7 +478,9 @@
 .method public final withCertificateChainCleaner$okhttp(Lokhttp3/internal/tls/CertificateChainCleaner;)Lokhttp3/CertificatePinner;
     .locals 2
 
-    if-eqz p1, :cond_1
+    const-string v0, "certificateChainCleaner"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/CertificatePinner;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
 
@@ -493,13 +503,4 @@
 
     :goto_0
     return-object v0
-
-    :cond_1
-    const-string p1, "certificateChainCleaner"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

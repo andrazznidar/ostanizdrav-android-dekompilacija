@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final TAG:Ljava/lang/String;
+
 .field public static sDefaultInstance:Landroidx/work/impl/WorkManagerImpl;
 
 .field public static sDelegatedInstance:Landroidx/work/impl/WorkManagerImpl;
@@ -21,6 +23,8 @@
 .field public mPreferenceUtils:Landroidx/work/impl/utils/PreferenceUtils;
 
 .field public mProcessor:Landroidx/work/impl/Processor;
+
+.field public volatile mRemoteWorkManager:Landroidx/work/multiprocess/RemoteWorkManager;
 
 .field public mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
 
@@ -42,6 +46,20 @@
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
+
+    const-string v0, "WorkManagerImpl"
+
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/work/impl/WorkManagerImpl;->TAG:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    sput-object v0, Landroidx/work/impl/WorkManagerImpl;->sDelegatedInstance:Landroidx/work/impl/WorkManagerImpl;
+
+    sput-object v0, Landroidx/work/impl/WorkManagerImpl;->sDefaultInstance:Landroidx/work/impl/WorkManagerImpl;
 
     new-instance v0, Ljava/lang/Object;
 
@@ -116,7 +134,7 @@
 
     new-instance v3, Landroidx/work/impl/background/greedy/GreedyScheduler;
 
-    invoke-direct {v3, v1, p3, p0}, Landroidx/work/impl/background/greedy/GreedyScheduler;-><init>(Landroid/content/Context;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/impl/WorkManagerImpl;)V
+    invoke-direct {v3, v1, p2, p3, p0}, Landroidx/work/impl/background/greedy/GreedyScheduler;-><init>(Landroid/content/Context;Landroidx/work/Configuration;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/impl/WorkManagerImpl;)V
 
     const/4 v1, 0x1
 
@@ -166,6 +184,31 @@
 
     iput-boolean v9, p0, Landroidx/work/impl/WorkManagerImpl;->mForceStopRunnableCompleted:Z
 
+    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 p3, 0x18
+
+    if-lt p2, p3, :cond_1
+
+    invoke-virtual {p1}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Cannot initialize WorkManager in direct boot mode"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    :goto_0
     iget-object p2, p0, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 
     new-instance p3, Landroidx/work/impl/utils/ForceStopRunnable;
@@ -404,45 +447,6 @@
     return-object p1
 .end method
 
-.method public onForceStopRunnableCompleted()V
-    .locals 2
-
-    sget-object v0, Landroidx/work/impl/WorkManagerImpl;->sLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    const/4 v1, 0x1
-
-    :try_start_0
-    iput-boolean v1, p0, Landroidx/work/impl/WorkManagerImpl;->mForceStopRunnableCompleted:Z
-
-    iget-object v1, p0, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
-
-    invoke-virtual {v1}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
-
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
 .method public rescheduleEligibleWork()V
     .locals 4
 
@@ -539,5 +543,76 @@
 
     invoke-virtual {p1, v1}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
 
+    return-void
+.end method
+
+.method public final tryInitializeMultiProcessSupport()V
+    .locals 6
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    :try_start_0
+    const-string v2, "androidx.work.multiprocess.RemoteWorkManagerClient"
+
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    new-array v4, v3, [Ljava/lang/Class;
+
+    const-class v5, Landroid/content/Context;
+
+    aput-object v5, v4, v0
+
+    const-class v5, Landroidx/work/impl/WorkManagerImpl;
+
+    aput-object v5, v4, v1
+
+    invoke-virtual {v2, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    iget-object v4, p0, Landroidx/work/impl/WorkManagerImpl;->mContext:Landroid/content/Context;
+
+    aput-object v4, v3, v0
+
+    aput-object p0, v3, v1
+
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroidx/work/multiprocess/RemoteWorkManager;
+
+    iput-object v2, p0, Landroidx/work/impl/WorkManagerImpl;->mRemoteWorkManager:Landroidx/work/multiprocess/RemoteWorkManager;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v2
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v3
+
+    sget-object v4, Landroidx/work/impl/WorkManagerImpl;->TAG:Ljava/lang/String;
+
+    new-array v1, v1, [Ljava/lang/Throwable;
+
+    aput-object v2, v1, v0
+
+    const-string v0, "Unable to initialize multi-process support"
+
+    invoke-virtual {v3, v4, v0, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    :goto_0
     return-void
 .end method

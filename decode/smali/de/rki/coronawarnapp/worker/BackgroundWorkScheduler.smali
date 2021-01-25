@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackgroundWorkScheduler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,305:1\n9376#2:306\n9709#2,3:307\n*E\n*S KotlinDebug\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n*L\n143#1:306\n143#1,3:307\n*E\n"
+    value = "SMAP\nBackgroundWorkScheduler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,298:1\n11298#2:299\n11633#2,2:300\n11635#2:303\n1#3:302\n*E\n*S KotlinDebug\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n*L\n141#1:299\n141#1,2:300\n141#1:303\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$workManager$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$workManager$2;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -78,7 +78,7 @@
 
     const-string v0, "workManager.getWorkInfosByTag(tag)"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -120,7 +120,7 @@
 
     const-string v3, "info"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v3, v2, Landroidx/work/WorkInfo;->mState:Landroidx/work/WorkInfo$State;
 
@@ -171,25 +171,23 @@
 
     move-result p0
 
-    const-string v5, "OneTimeWorkRequestBuilde\u2026       )\n        .build()"
+    const-wide/16 v5, 0x1
 
-    const-wide/16 v6, 0x8
+    const-string v7, "OneTimeWorkRequestBuilde\u2026       )\n        .build()"
 
     const-string v8, "Constraints\n            \u2026TED)\n            .build()"
 
-    const-string v9, "it"
+    const-string v9, " scheduled."
 
-    const-wide/16 v10, 0x1
+    const-string v10, "it"
 
     if-eqz p0, :cond_4
 
-    const/4 v12, 0x1
+    const/4 v11, 0x1
 
-    const/16 v13, 0x78
+    const-string v12, "PeriodicWorkRequestBuild\u2026       )\n        .build()"
 
-    const-string v14, "PeriodicWorkRequestBuild\u2026       )\n        .build()"
-
-    if-eq p0, v12, :cond_3
+    if-eq p0, v11, :cond_3
 
     const/4 v1, 0x2
 
@@ -197,7 +195,7 @@
 
     const/4 v1, 0x3
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v13, 0x0
 
     if-eq p0, v1, :cond_1
 
@@ -213,57 +211,55 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    new-instance v12, Landroidx/work/OneTimeWorkRequest$Builder;
+    new-instance v11, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    const-class v13, Lde/rki/coronawarnapp/worker/BackgroundNoiseOneTimeWorker;
+    const-class v12, Lde/rki/coronawarnapp/worker/BackgroundNoiseOneTimeWorker;
 
-    invoke-direct {v12, v13}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v11, v12}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
 
-    sget-object v13, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->BACKGROUND_NOISE_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+    sget-object v12, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->BACKGROUND_NOISE_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
-    iget-object v13, v13, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
+    iget-object v12, v12, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    invoke-virtual {v12, v13}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v11, v12}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
 
-    move-result-object v12
+    move-result-object v11
 
-    check-cast v12, Landroidx/work/OneTimeWorkRequest$Builder;
+    check-cast v11, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    new-instance v13, Landroidx/work/Constraints$Builder;
+    new-instance v12, Landroidx/work/Constraints$Builder;
 
-    invoke-direct {v13}, Landroidx/work/Constraints$Builder;-><init>()V
+    invoke-direct {v12}, Landroidx/work/Constraints$Builder;-><init>()V
 
-    iput-object v3, v13, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iput-object v3, v12, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
     new-instance v3, Landroidx/work/Constraints;
 
-    invoke-direct {v3, v13}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
+    invoke-direct {v3, v12}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
 
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v8, v12, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v8, v11, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
     iput-object v3, v8, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
     sget-object v3, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
-    sget-object v3, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
+    invoke-virtual {v3, v13, v14, v13, v14}, Lkotlin/random/Random$Default;->nextLong(JJ)J
 
-    invoke-virtual {v3, v6, v7, v6, v7}, Lkotlin/random/Random;->nextLong(JJ)J
-
-    move-result-wide v6
+    move-result-wide v12
 
     sget-object v3, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v12, v6, v7, v3}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v11, v12, v13, v3}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v3
 
     check-cast v3, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v2, v10, v11, v6}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v3, v2, v5, v6, v8}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v2
 
@@ -273,7 +269,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Landroidx/work/OneTimeWorkRequest;
 
@@ -281,7 +277,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, v0
 
@@ -293,13 +289,31 @@
 
     invoke-direct {v2, p0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)V
 
-    sget-object p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
+    sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
 
-    invoke-virtual {v1, v2, p0}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string p0, "workManager.enqueueUniqu\u2026ND_NOISE_ONE_TIME_WORK) }"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -321,33 +335,33 @@
 
     sget-object v3, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v5, Landroidx/work/PeriodicWorkRequest$Builder;
+    new-instance v7, Landroidx/work/PeriodicWorkRequest$Builder;
 
     const-class v8, Lde/rki/coronawarnapp/worker/BackgroundNoisePeriodicWorker;
 
-    invoke-direct {v5, v8, v6, v7, v3}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
+    invoke-direct {v7, v8, v13, v14, v3}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
 
     sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->BACKGROUND_NOISE_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
     iget-object v3, v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    invoke-virtual {v5, v3}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v7, v3}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v3
 
     check-cast v3, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v10, v11, v5}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v3, v5, v6, v7}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v3
 
     check-cast v3, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v2, v10, v11, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v3, v2, v5, v6, v7}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v2
 
@@ -357,7 +371,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Landroidx/work/PeriodicWorkRequest;
 
@@ -365,7 +379,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, v0
 
@@ -377,13 +391,31 @@
 
     invoke-direct {v2, p0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)V
 
-    sget-object p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
+    sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
 
-    invoke-virtual {v1, v2, p0}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string p0, "workManager.enqueueUniqu\u2026ND_NOISE_PERIODIC_WORK) }"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -396,21 +428,23 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    int-to-long v5, v13
+    const/16 v5, 0x78
+
+    int-to-long v5, v5
 
     sget-object v7, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v12, Landroidx/work/PeriodicWorkRequest$Builder;
+    new-instance v11, Landroidx/work/PeriodicWorkRequest$Builder;
 
     const-class v13, Lde/rki/coronawarnapp/worker/DiagnosisTestResultRetrievalPeriodicWorker;
 
-    invoke-direct {v12, v13, v5, v6, v7}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
+    invoke-direct {v11, v13, v5, v6, v7}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
 
     sget-object v5, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_TEST_RESULT_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
     iget-object v5, v5, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    invoke-virtual {v12, v5}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v11, v5}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v5
 
@@ -426,7 +460,7 @@
 
     invoke-direct {v3, v6}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
 
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v6, v5, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
@@ -444,7 +478,9 @@
 
     sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v2, v10, v11, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    const-wide/16 v6, 0x1
+
+    invoke-virtual {v3, v2, v6, v7, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v2
 
@@ -454,7 +490,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Landroidx/work/PeriodicWorkRequest;
 
@@ -462,7 +498,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, v0
 
@@ -474,13 +510,31 @@
 
     invoke-direct {v2, p0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)V
 
-    sget-object p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
+    sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
 
-    invoke-virtual {v1, v2, p0}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string p0, "workManager.enqueueUniqu\u2026RESULT_PERIODIC_WORKER) }"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -493,15 +547,15 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    int-to-long v12, v13
-
     sget-object v3, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     new-instance v5, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    const-class v8, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalPeriodicWorker;
+    const-class v6, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalPeriodicWorker;
 
-    invoke-direct {v5, v8, v12, v13, v3}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
+    const-wide/16 v7, 0x3c
+
+    invoke-direct {v5, v6, v7, v8, v3}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
 
     sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_KEY_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
@@ -515,13 +569,17 @@
 
     sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v10, v11, v5}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    const-wide/16 v6, 0x1
+
+    invoke-virtual {v3, v6, v7, v5}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v3
 
     check-cast v3, Landroidx/work/PeriodicWorkRequest$Builder;
 
     sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v6, 0x8
 
     invoke-virtual {v3, v1, v6, v7, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
@@ -533,7 +591,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v14}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Landroidx/work/PeriodicWorkRequest;
 
@@ -541,7 +599,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, v0
 
@@ -553,13 +611,31 @@
 
     invoke-direct {v2, p0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)V
 
-    sget-object p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
+    sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
 
-    invoke-virtual {v1, v2, p0}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string p0, "workManager.enqueueUniqu\u2026CKGROUND_PERIODIC_WORK) }"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -572,49 +648,53 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    new-instance v12, Landroidx/work/OneTimeWorkRequest$Builder;
+    new-instance v5, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    const-class v13, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;
+    const-class v6, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;
 
-    invoke-direct {v12, v13}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v5, v6}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
 
-    sget-object v13, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_KEY_RETRIEVAL_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+    sget-object v6, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_KEY_RETRIEVAL_ONE_TIME_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
-    iget-object v13, v13, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
+    iget-object v6, v6, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    invoke-virtual {v12, v13}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v5, v6}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
 
-    move-result-object v12
+    move-result-object v5
 
-    check-cast v12, Landroidx/work/OneTimeWorkRequest$Builder;
+    check-cast v5, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    new-instance v13, Landroidx/work/Constraints$Builder;
+    new-instance v6, Landroidx/work/Constraints$Builder;
 
-    invoke-direct {v13}, Landroidx/work/Constraints$Builder;-><init>()V
+    invoke-direct {v6}, Landroidx/work/Constraints$Builder;-><init>()V
 
-    iput-object v3, v13, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iput-object v3, v6, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
     new-instance v3, Landroidx/work/Constraints;
 
-    invoke-direct {v3, v13}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
+    invoke-direct {v3, v6}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
 
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v8, v12, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v6, v5, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iput-object v3, v8, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
+    iput-object v3, v6, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
     sget-object v3, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v12, v10, v11, v3}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    const-wide/16 v11, 0x1
+
+    invoke-virtual {v5, v11, v12, v3}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v3
 
     check-cast v3, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    sget-object v8, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v3, v1, v6, v7, v8}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    const-wide/16 v11, 0x8
+
+    invoke-virtual {v3, v1, v11, v12, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v1
 
@@ -624,7 +704,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Landroidx/work/OneTimeWorkRequest;
 
@@ -632,7 +712,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v1, v0
 
@@ -644,231 +724,210 @@
 
     invoke-direct {v2, p0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)V
 
-    sget-object p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
+    sget-object v3, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationSchedule$2;
 
-    invoke-virtual {v1, v2, p0}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v2, p0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string p0, "workManager.enqueueUniqu\u2026CKGROUND_ONE_TIME_WORK) }"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     return-object v0
 .end method
 
 .method public static final startWorkScheduler()V
-    .locals 7
+    .locals 6
 
-    const-string v0, "Jobs starting: "
+    sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_KEY_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "Jobs starting: "
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    move-result-object v1
 
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->numberOfSuccessfulSubmissions()I
+    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    move-result v1
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/storage/LocalData;->numberOfSuccessfulSubmissions()I
 
-    if-lez v1, :cond_0
+    move-result v2
+
+    if-lez v2, :cond_0
 
     return-void
 
     :cond_0
-    sget-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_KEY_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+    iget-object v2, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
-
-    invoke-static {v1}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->isWorkActive(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    sget-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
-
-    invoke-static {v1}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->start(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
-
-    const-string v1, "[DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK] "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    sget-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_TEST_RESULT_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
-
-    invoke-static {v1}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->isWorkActive(Ljava/lang/String;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_2
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    sget-object v3, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    const v4, 0x7f12013b
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    sget-object v1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
-
-    invoke-static {v1}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->start(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v3
-
-    invoke-static {v3, v4}, Lde/rki/coronawarnapp/storage/LocalData;->initialPollingForTestResultTimeStamp(J)V
-
-    const-string v1, "[DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    const-string v1, "Background Job Starting"
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "notificationBody.toString()"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object v1, v3, v2
-
-    const/4 v4, 0x1
-
-    aput-object v0, v3, v4
-
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v6, "sendDebugNotification(title=%s, content=%s)"
-
-    invoke-virtual {v5, v6, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v3, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    sget-object v5, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const v6, 0x7f120120
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v3, v5, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v2}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->isWorkActive(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_3
+    iget-object v0, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
-    goto :goto_0
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    :cond_3
-    sget-object v2, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v1, v0, v4, v4}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
+    const-string v4, "Work type "
 
-    :goto_0
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, " is active: "
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v3, 0x0
+
+    new-array v4, v3, [Ljava/lang/Object;
+
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v5, v0, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    if-nez v2, :cond_1
+
+    sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->start(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
+
+    const-string v0, "[DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK] "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_TEST_RESULT_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->isWorkActive(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isTestResultNotificationSent()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->start(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
+
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    invoke-virtual {v0, v4, v5}, Lde/rki/coronawarnapp/storage/LocalData;->initialPollingForTestResultTimeStamp(J)V
+
+    const-string v0, "[DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER]"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v2, "Background Job Starting: %s"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
     return-void
 .end method
 
 .method public static final stop(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
     .locals 3
 
-    const/4 v0, 0x0
+    const-string v0, "$this$stop"
 
-    if-eqz p0, :cond_1
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->getWorkManager()Landroidx/work/WorkManager;
 
-    move-result-object v1
+    move-result-object v0
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    check-cast v1, Landroidx/work/impl/WorkManagerImpl;
+    check-cast v0, Landroidx/work/impl/WorkManagerImpl;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance v0, Landroidx/work/impl/utils/CancelWorkRunnable$3;
+    new-instance v1, Landroidx/work/impl/utils/CancelWorkRunnable$3;
 
     const/4 v2, 0x1
 
-    invoke-direct {v0, v1, p0, v2}, Landroidx/work/impl/utils/CancelWorkRunnable$3;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;Z)V
+    invoke-direct {v1, v0, p0, v2}, Landroidx/work/impl/utils/CancelWorkRunnable$3;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;Z)V
 
-    iget-object p0, v1, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+    iget-object p0, v0, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 
     check-cast p0, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
 
     iget-object p0, p0, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
 
-    invoke-virtual {p0, v0}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v1}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
 
-    iget-object p0, v0, Landroidx/work/impl/utils/CancelWorkRunnable;->mOperation:Landroidx/work/impl/OperationImpl;
+    iget-object p0, v1, Landroidx/work/impl/utils/CancelWorkRunnable;->mOperation:Landroidx/work/impl/OperationImpl;
 
     const-string v0, "workManager.cancelUniqueWork(this.uniqueName)"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
     :cond_0
-    throw v0
+    const/4 p0, 0x0
 
-    :cond_1
-    const-string p0, "$this$stop"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    throw p0
 .end method
 
 .method public static final stopWorkScheduler()V
-    .locals 9
+    .locals 10
 
     invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->values()[Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
@@ -921,7 +980,7 @@
 
     const-string v7, "it"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v7, v6, Landroidx/work/impl/OperationImpl;->mOperationFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
@@ -929,9 +988,31 @@
 
     invoke-direct {v8, v5}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationCancelByTag$1;-><init>(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;)V
 
-    sget-object v5, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationCancelByTag$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationCancelByTag$2;
+    sget-object v9, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationCancelByTag$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$logOperationCancelByTag$2;
 
-    invoke-virtual {v7, v8, v5}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v7, v8, v9}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Canceling all work with tag "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v5, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    new-array v7, v3, [Ljava/lang/Object;
+
+    sget-object v8, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v8, v5, v7}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {v1, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -945,55 +1026,13 @@
     throw v0
 
     :cond_1
-    const/4 v0, 0x2
+    new-array v0, v3, [Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    const-string v1, "All Background Jobs Stopped"
+    const-string v2, "All Background Jobs Stopped"
 
-    aput-object v1, v0, v3
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v5, "sendDebugNotification(title=%s, content=%s)"
-
-    invoke-virtual {v4, v5, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const v5, 0x7f120120
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v0, v4, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    sget-object v0, Lde/rki/coronawarnapp/notification/NotificationHelper;->INSTANCE:Lde/rki/coronawarnapp/notification/NotificationHelper;
-
-    invoke-virtual {v0, v1, v1, v2, v2}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(Ljava/lang/String;Ljava/lang/String;IZ)V
-
-    :goto_1
     return-void
 .end method

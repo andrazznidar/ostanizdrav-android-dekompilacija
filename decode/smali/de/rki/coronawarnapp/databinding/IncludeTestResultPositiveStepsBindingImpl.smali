@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090301
+    const v1, 0x7f090448
 
     const/4 v2, 0x1
 
@@ -31,17 +31,9 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090302
+    const v1, 0x7f090449
 
     const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090303
-
-    const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -49,11 +41,11 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 10
+    .locals 9
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x3
 
     const/4 v2, 0x0
 
@@ -77,14 +69,6 @@
 
     check-cast v8, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
-    const/4 v1, 0x3
-
-    aget-object v1, v0, v1
-
-    move-object v9, v1
-
-    check-cast v9, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
-
     const/4 v6, 0x0
 
     move-object v3, p0
@@ -93,7 +77,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
+    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
 
     const-wide/16 v3, -0x1
 

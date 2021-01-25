@@ -20,6 +20,15 @@
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/PrimitiveSet;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "primitives"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -4124,7 +4124,7 @@
 
     const-string v1, "invalid orientation:"
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

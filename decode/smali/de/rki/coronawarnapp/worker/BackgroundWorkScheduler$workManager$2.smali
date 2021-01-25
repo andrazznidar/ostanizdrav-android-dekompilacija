@@ -58,8 +58,6 @@
 .method public invoke()Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
     invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
 
     move-result-object v0

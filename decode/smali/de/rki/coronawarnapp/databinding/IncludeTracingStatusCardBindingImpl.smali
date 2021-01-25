@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09031a
+    const v1, 0x7f090465
 
     const/4 v2, 0x5
 
@@ -160,7 +160,7 @@
 
     iget-object v7, p0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;->mBody:Ljava/lang/String;
 
-    const-wide/16 v8, 0x21
+    const-wide/16 v8, 0x11
 
     and-long/2addr v8, v0
 
@@ -170,7 +170,7 @@
 
     if-eqz v8, :cond_0
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v10
 
@@ -184,13 +184,13 @@
     move v10, v9
 
     :goto_0
-    const-wide/16 v11, 0x22
+    const-wide/16 v11, 0x12
 
     and-long/2addr v11, v0
 
     cmp-long v11, v11, v2
 
-    const-wide/16 v12, 0x24
+    const-wide/16 v12, 0x14
 
     and-long/2addr v12, v0
 
@@ -198,12 +198,12 @@
 
     if-eqz v12, :cond_1
 
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v9
 
     :cond_1
-    const-wide/16 v13, 0x28
+    const-wide/16 v13, 0x18
 
     and-long/2addr v0, v13
 
@@ -310,7 +310,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x20
+    const-wide/16 v0, 0x10
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;->mDirtyFlags:J
@@ -362,7 +362,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -401,7 +401,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x4
+    const/4 p1, 0x7
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -440,7 +440,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xa
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -479,7 +479,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xd
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

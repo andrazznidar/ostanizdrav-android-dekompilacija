@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n+ 3 Runnable.kt\nkotlinx/coroutines/RunnableKt\n*L\n1#1,196:1\n197#2,8:197\n197#2,6:205\n203#2,2:212\n17#3:211\n*E\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n*L\n173#1,8:197\n178#1,6:205\n178#1,2:212\n178#1:211\n*E\n"
+    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n+ 3 Runnable.kt\nkotlinx/coroutines/RunnableKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,194:1\n308#2,11:195\n308#2,9:206\n317#2,2:216\n17#3:215\n1#4:218\n*E\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerDispatcherKt\n*L\n171#1,11:195\n176#1,9:206\n176#1,2:216\n177#1:215\n*E\n"
 .end annotation
 
 
@@ -13,48 +13,47 @@
 .method public static constructor <clinit>()V
     .locals 4
 
+    const/4 v0, 0x0
+
     :try_start_0
-    new-instance v0, Lkotlinx/coroutines/android/HandlerContext;
+    new-instance v1, Lkotlinx/coroutines/android/HandlerContext;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "Looper.getMainLooper()"
+    const/4 v3, 0x1
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlinx/coroutines/android/HandlerDispatcherKt;->asHandler(Landroid/os/Looper;Z)Landroid/os/Handler;
 
-    const/4 v2, 0x1
-
-    invoke-static {v1, v2}, Lkotlinx/coroutines/android/HandlerDispatcherKt;->asHandler(Landroid/os/Looper;Z)Landroid/os/Handler;
-
-    move-result-object v1
-
-    const-string v2, "Main"
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
+    invoke-direct {v1, v2, v0, v3}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_0
-    instance-of v1, v0, Lkotlin/Result$Failure;
+    instance-of v2, v1, Lkotlin/Result$Failure;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v0, 0x0
+    goto :goto_1
 
     :cond_0
+    move-object v0, v1
+
+    :goto_1
     check-cast v0, Lkotlinx/coroutines/android/HandlerDispatcher;
 
     return-void
@@ -71,19 +70,19 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     if-lt p1, v0, :cond_1
 
     const-class p1, Landroid/os/Handler;
 
-    new-array v0, v2, [Ljava/lang/Class;
+    new-array v0, v3, [Ljava/lang/Class;
 
     const-class v4, Landroid/os/Looper;
 
-    aput-object v4, v0, v1
+    aput-object v4, v0, v2
 
     const-string v4, "createAsync"
 
@@ -91,11 +90,11 @@
 
     move-result-object p1
 
-    new-array v0, v2, [Ljava/lang/Object;
+    new-array v0, v3, [Ljava/lang/Object;
 
-    aput-object p0, v0, v1
+    aput-object p0, v0, v2
 
-    invoke-virtual {p1, v3, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -106,11 +105,11 @@
     return-object p0
 
     :cond_0
-    new-instance p0, Lkotlin/TypeCastException;
+    new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "null cannot be cast to non-null type android.os.Handler"
 
-    invoke-direct {p0, p1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
@@ -124,11 +123,11 @@
 
     const-class v5, Landroid/os/Looper;
 
-    aput-object v5, v4, v1
+    aput-object v5, v4, v2
 
     const-class v5, Landroid/os/Handler$Callback;
 
-    aput-object v5, v4, v2
+    aput-object v5, v4, v3
 
     sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
@@ -139,18 +138,14 @@
     invoke-virtual {p1, v4}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object p1
-
-    const-string v4, "Handler::class.java.getD\u2026:class.javaPrimitiveType)"
-
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    aput-object p0, v0, v1
+    aput-object p0, v0, v2
 
-    aput-object v3, v0, v2
+    aput-object v1, v0, v3
 
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -159,10 +154,6 @@
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
-
-    const-string p1, "constructor.newInstance(this, null, true)"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p0, Landroid/os/Handler;
 

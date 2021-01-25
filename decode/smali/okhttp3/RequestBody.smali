@@ -45,7 +45,13 @@
 
     array-length v1, p1
 
-    if-eqz p1, :cond_0
+    const-string v2, "content"
+
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "$this$toRequestBody"
+
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     array-length v2, p1
 
@@ -62,15 +68,6 @@
     invoke-direct {v2, p1, p0, v1, v0}, Lokhttp3/RequestBody$Companion$toRequestBody$2;-><init>([BLokhttp3/MediaType;II)V
 
     return-object v2
-
-    :cond_0
-    const-string p0, "content"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 

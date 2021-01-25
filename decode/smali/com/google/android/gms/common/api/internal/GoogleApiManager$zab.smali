@@ -119,7 +119,7 @@
 
     iget-object v1, v1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     iget-object v1, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
 

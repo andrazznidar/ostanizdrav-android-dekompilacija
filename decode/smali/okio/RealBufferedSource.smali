@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRealBufferedSource.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealBufferedSource.kt\nokio/RealBufferedSource\n+ 2 RealBufferedSource.kt\nokio/internal/RealBufferedSourceKt\n+ 3 -Util.kt\nokio/-Util\n*L\n1#1,182:1\n61#1:187\n61#1:189\n61#1:194\n61#1:196\n61#1:199\n61#1:200\n61#1:206\n61#1:208\n61#1:212\n61#1:214\n61#1:216\n61#1:219\n61#1:224\n61#1:232\n61#1:235\n61#1:238\n61#1:240\n61#1:243\n61#1:250\n61#1:252\n61#1:253\n61#1:261\n61#1:266\n61#1:268\n61#1:273\n61#1:276\n61#1:277\n61#1:278\n61#1:279\n61#1:285\n61#1:290\n61#1:294\n61#1:296\n61#1:300\n61#1:302\n61#1:304\n61#1:306\n61#1:307\n61#1:310\n61#1:312\n61#1:315\n61#1:316\n61#1:317\n61#1:318\n61#1:323\n61#1:325\n61#1:330\n61#1:335\n61#1:339\n61#1:340\n61#1:342\n61#1:345\n61#1:346\n61#1:350\n61#1:355\n61#1:363\n61#1:366\n61#1:369\n61#1:372\n61#1:375\n61#1:378\n61#1:381\n61#1:387\n61#1:399\n61#1:405\n61#1:420\n61#1:425\n61#1:426\n61#1:430\n61#1:432\n61#1:442\n61#1:448\n61#1:450\n61#1:459\n61#1:463\n61#1:465\n61#1:472\n61#1:476\n61#1:478\n61#1:493\n61#1:500\n35#2,4:183\n39#2:188\n40#2,4:190\n44#2:195\n48#2,2:197\n53#2,2:201\n57#2,3:203\n60#2:207\n62#2:209\n66#2,2:210\n71#2:213\n72#2:215\n76#2,2:217\n81#2,4:220\n85#2,7:225\n95#2,2:233\n97#2:236\n104#2:237\n105#2:239\n109#2,2:241\n114#2,6:244\n120#2:251\n121#2,7:254\n128#2:262\n131#2,3:263\n134#2:267\n135#2,4:269\n139#2:275\n143#2,5:280\n148#2,4:286\n152#2:291\n155#2,2:292\n157#2:295\n158#2,3:297\n163#2:301\n164#2:303\n165#2:305\n167#2:308\n171#2:309\n172#2:311\n176#2,2:313\n181#2,4:319\n185#2:324\n187#2,4:326\n195#2,4:331\n199#2,3:336\n203#2:341\n205#2,2:343\n207#2,2:348\n209#2:351\n214#2,3:352\n217#2,7:356\n227#2,2:364\n232#2,2:367\n237#2,2:370\n242#2,2:373\n247#2,2:376\n252#2,2:379\n257#2,5:382\n262#2,11:388\n276#2,5:400\n281#2,14:406\n298#2,4:421\n302#2,3:427\n305#2:431\n306#2,3:433\n311#2,6:436\n317#2,5:443\n322#2:449\n325#2,3:451\n331#2,5:454\n336#2,3:460\n339#2:464\n342#2:466\n347#2,5:467\n352#2,3:473\n355#2:477\n358#2:479\n368#2,13:480\n382#2:494\n386#2:495\n390#2,4:496\n394#2:501\n396#2:502\n398#2:503\n78#3:274\n78#3:347\n*E\n*S KotlinDebug\n*F\n+ 1 RealBufferedSource.kt\nokio/RealBufferedSource\n*L\n65#1:187\n65#1:189\n65#1:194\n65#1:196\n66#1:199\n66#1:200\n68#1:206\n68#1:208\n69#1:212\n70#1:214\n70#1:216\n71#1:219\n72#1:224\n72#1:232\n72#1:235\n73#1:238\n73#1:240\n74#1:243\n76#1:250\n76#1:252\n76#1:253\n76#1:261\n78#1:266\n78#1:268\n78#1:273\n78#1:276\n81#1:277\n82#1:278\n86#1:279\n89#1:285\n89#1:290\n90#1:294\n90#1:296\n90#1:300\n90#1:302\n90#1:304\n90#1:306\n90#1:307\n91#1:310\n91#1:312\n92#1:315\n95#1:316\n96#1:317\n101#1:318\n104#1:323\n104#1:325\n104#1:330\n106#1:335\n106#1:339\n106#1:340\n106#1:342\n106#1:345\n106#1:346\n106#1:350\n107#1:355\n107#1:363\n108#1:366\n109#1:369\n110#1:372\n111#1:375\n112#1:378\n113#1:381\n114#1:387\n114#1:399\n115#1:405\n115#1:420\n116#1:425\n116#1:426\n116#1:430\n116#1:432\n120#1:442\n120#1:448\n120#1:450\n123#1:459\n123#1:463\n123#1:465\n126#1:472\n126#1:476\n126#1:478\n138#1:493\n178#1:500\n65#1,4:183\n65#1:188\n65#1,4:190\n65#1:195\n66#1,2:197\n67#1,2:201\n68#1,3:203\n68#1:207\n68#1:209\n69#1,2:210\n70#1:213\n70#1:215\n71#1,2:217\n72#1,4:220\n72#1,7:225\n72#1,2:233\n72#1:236\n73#1:237\n73#1:239\n74#1,2:241\n76#1,6:244\n76#1:251\n76#1,7:254\n76#1:262\n78#1,3:263\n78#1:267\n78#1,4:269\n78#1:275\n89#1,5:280\n89#1,4:286\n89#1:291\n90#1,2:292\n90#1:295\n90#1,3:297\n90#1:301\n90#1:303\n90#1:305\n90#1:308\n91#1:309\n91#1:311\n92#1,2:313\n104#1,4:319\n104#1:324\n104#1,4:326\n106#1,4:331\n106#1,3:336\n106#1:341\n106#1,2:343\n106#1,2:348\n106#1:351\n107#1,3:352\n107#1,7:356\n108#1,2:364\n109#1,2:367\n110#1,2:370\n111#1,2:373\n112#1,2:376\n113#1,2:379\n114#1,5:382\n114#1,11:388\n115#1,5:400\n115#1,14:406\n116#1,4:421\n116#1,3:427\n116#1:431\n116#1,3:433\n120#1,6:436\n120#1,5:443\n120#1:449\n120#1,3:451\n123#1,5:454\n123#1,3:460\n123#1:464\n123#1:466\n126#1,5:467\n126#1,3:473\n126#1:477\n126#1:479\n138#1,13:480\n138#1:494\n140#1:495\n178#1,4:496\n178#1:501\n179#1:502\n180#1:503\n78#1:274\n106#1:347\n*E\n"
+    value = "SMAP\nRealBufferedSource.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealBufferedSource.kt\nokio/RealBufferedSource\n+ 2 RealBufferedSource.kt\nokio/internal/RealBufferedSourceKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 -Util.kt\nokio/-Util\n*L\n1#1,182:1\n61#1:188\n61#1:198\n61#1:205\n61#1:211\n61#1:213\n61#1:217\n61#1:222\n61#1:237\n61#1:241\n61#1:248\n61#1:261\n61#1:269\n61#1:270\n61#1:271\n61#1:277\n61#1:285\n61#1:298\n61#1:302\n61#1:303\n61#1:304\n61#1:305\n61#1:310\n61#1:322\n61#1:338\n61#1:348\n61#1:351\n61#1:354\n61#1:357\n61#1:360\n61#1:363\n61#1:369\n61#1:386\n61#1:406\n61#1:421\n61#1:438\n61#1:451\n61#1:472\n61#1:479\n35#2:183\n36#2,3:185\n39#2,6:189\n48#2:195\n49#2:197\n53#2,2:199\n57#2:201\n58#2,2:203\n60#2,3:206\n66#2,2:209\n71#2:212\n72#2:214\n76#2,2:215\n81#2:218\n83#2,2:220\n85#2,13:223\n104#2:236\n105#2:238\n109#2,2:239\n114#2,6:242\n120#2,9:249\n131#2,3:258\n134#2,5:262\n139#2:268\n143#2,5:272\n148#2,5:278\n155#2,2:283\n157#2,11:286\n171#2:297\n172#2:299\n176#2,2:300\n181#2,4:306\n185#2,6:311\n195#2:317\n196#2,3:319\n199#2,8:323\n207#2,3:332\n214#2,3:335\n217#2,7:339\n227#2,2:346\n232#2,2:349\n237#2,2:352\n242#2,2:355\n247#2,2:358\n252#2,2:361\n257#2,5:364\n262#2,11:370\n276#2,5:381\n281#2,14:387\n298#2,2:401\n300#2,2:404\n302#2,7:407\n311#2,2:414\n313#2,4:417\n317#2,11:422\n331#2,2:433\n334#2,2:436\n336#2,7:439\n347#2,2:446\n350#2,2:449\n352#2,7:452\n368#2:459\n370#2,11:461\n382#2:473\n386#2:474\n390#2,4:475\n394#2:480\n396#2:481\n398#2:482\n1#3:184\n1#3:196\n1#3:202\n1#3:219\n1#3:318\n1#3:403\n1#3:416\n1#3:435\n1#3:448\n1#3:460\n78#4:267\n78#4:331\n*E\n*S KotlinDebug\n*F\n+ 1 RealBufferedSource.kt\nokio/RealBufferedSource\n*L\n65#1:188\n66#1:198\n68#1:205\n69#1:211\n70#1:213\n71#1:217\n72#1:222\n73#1:237\n74#1:241\n76#1:248\n78#1:261\n81#1:269\n82#1:270\n86#1:271\n89#1:277\n90#1:285\n91#1:298\n92#1:302\n95#1:303\n96#1:304\n101#1:305\n104#1:310\n106#1:322\n107#1:338\n108#1:348\n109#1:351\n110#1:354\n111#1:357\n112#1:360\n113#1:363\n114#1:369\n115#1:386\n116#1:406\n120#1:421\n123#1:438\n126#1:451\n138#1:472\n178#1:479\n65#1:183\n65#1,3:185\n65#1,6:189\n66#1:195\n66#1:197\n67#1,2:199\n68#1:201\n68#1,2:203\n68#1,3:206\n69#1,2:209\n70#1:212\n70#1:214\n71#1,2:215\n72#1:218\n72#1,2:220\n72#1,13:223\n73#1:236\n73#1:238\n74#1,2:239\n76#1,6:242\n76#1,9:249\n78#1,3:258\n78#1,5:262\n78#1:268\n89#1,5:272\n89#1,5:278\n90#1,2:283\n90#1,11:286\n91#1:297\n91#1:299\n92#1,2:300\n104#1,4:306\n104#1,6:311\n106#1:317\n106#1,3:319\n106#1,8:323\n106#1,3:332\n107#1,3:335\n107#1,7:339\n108#1,2:346\n109#1,2:349\n110#1,2:352\n111#1,2:355\n112#1,2:358\n113#1,2:361\n114#1,5:364\n114#1,11:370\n115#1,5:381\n115#1,14:387\n116#1,2:401\n116#1,2:404\n116#1,7:407\n120#1,2:414\n120#1,4:417\n120#1,11:422\n123#1,2:433\n123#1,2:436\n123#1,7:439\n126#1,2:446\n126#1,2:449\n126#1,7:452\n138#1:459\n138#1,11:461\n138#1:473\n140#1:474\n178#1,4:475\n178#1:480\n179#1:481\n180#1:482\n65#1:184\n66#1:196\n68#1:202\n72#1:219\n106#1:318\n116#1:403\n120#1:416\n123#1:435\n126#1:448\n138#1:460\n78#1:267\n106#1:331\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,11 @@
 
 # direct methods
 .method public constructor <init>(Lokio/Source;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -278,15 +282,19 @@
 .method public indexOfElement(Lokio/ByteString;)J
     .locals 10
 
-    if-eqz p1, :cond_3
+    const-string v0, "targetBytes"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-boolean v0, p0, Lokio/RealBufferedSource;->closed:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_2
 
     const-wide/16 v0, 0x0
-
-    iget-boolean v2, p0, Lokio/RealBufferedSource;->closed:Z
-
-    xor-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_2
 
     :goto_0
     iget-object v2, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
@@ -346,15 +354,6 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_3
-    const-string p1, "targetBytes"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public inputStream()Ljava/io/InputStream;
@@ -380,7 +379,9 @@
 .method public read(Ljava/nio/ByteBuffer;)I
     .locals 5
 
-    if-eqz p1, :cond_1
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
 
@@ -420,21 +421,14 @@
     move-result p1
 
     return p1
-
-    :cond_1
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public read(Lokio/Buffer;J)J
     .locals 7
 
-    if-eqz p1, :cond_4
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -520,7 +514,7 @@
     :cond_3
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -533,19 +527,14 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_4
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public readAll(Lokio/Sink;)J
     .locals 8
+
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -735,39 +724,39 @@
     goto :goto_2
 
     :cond_3
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/NumberFormatException;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v1, "Expected leading [0-9] or \'-\' character but was 0x"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "Expected leading [0-9] or \'-\' character but was 0x"
 
-    const/16 v1, 0x10
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->checkRadix(I)I
+    const/16 v2, 0x10
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->checkRadix(I)I
+    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
 
-    invoke-static {v8, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+
+    invoke-static {v8, v2}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+    invoke-direct {v0, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/NumberFormatException;
-
-    invoke-direct {v1, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw v0
 
     :cond_4
     :goto_2
@@ -860,39 +849,39 @@
     goto :goto_2
 
     :cond_4
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/NumberFormatException;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v1, "Expected leading [0-9a-fA-F] character but was 0x"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "Expected leading [0-9a-fA-F] character but was 0x"
 
-    const/16 v1, 0x10
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->checkRadix(I)I
+    const/16 v3, 0x10
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->checkRadix(I)I
+    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
 
-    invoke-static {v2, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+
+    invoke-static {v2, v3}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+    invoke-direct {v0, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/NumberFormatException;
-
-    invoke-direct {v1, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw v0
 
     :cond_5
     :goto_2
@@ -1131,27 +1120,27 @@
 
     invoke-virtual/range {v0 .. v5}, Lokio/Buffer;->copyTo(Lokio/Buffer;JJ)Lokio/Buffer;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v0, Ljava/io/EOFException;
 
     const-string v1, "\\n not found: limit="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
+    move-result-object v1
 
-    iget-wide v1, v1, Lokio/Buffer;->size:J
+    iget-object v2, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
 
-    invoke-static {v1, v2, p1, p2}, Ljava/lang/Math;->min(JJ)J
+    iget-wide v2, v2, Lokio/Buffer;->size:J
+
+    invoke-static {v2, v3, p1, p2}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string p1, " content="
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Lokio/Buffer;->readByteString()Lokio/ByteString;
 
@@ -1161,26 +1150,24 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p1, "\u2026"
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance p2, Ljava/io/EOFException;
+    invoke-direct {v0, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p2, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    throw v0
 
     :cond_4
     const-string v0, "limit < 0: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1273,7 +1260,7 @@
     :cond_4
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1310,7 +1297,9 @@
 .method public select(Lokio/Options;)I
     .locals 8
 
-    if-eqz p1, :cond_4
+    const-string v0, "options"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lokio/RealBufferedSource;->closed:Z
 
@@ -1386,15 +1375,6 @@
     move-result-object v0
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    const-string p1, "options"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
 
     throw p1
 .end method
@@ -1500,7 +1480,7 @@
 
     const-string v0, "buffer("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

@@ -3,12 +3,6 @@
 .source "Http2.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2.kt\nokhttp3/internal/http2/Http2\n*L\n1#1,147:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final BINARY:[Ljava/lang/String;
 
@@ -96,7 +90,7 @@
 
     const-string v7, "Integer.toBinaryString(it)"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v6, v5, v2
 
@@ -108,13 +102,17 @@
 
     const/16 v6, 0x30
 
+    const-string v7, "$this$replace"
+
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {v5, v4, v6}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v4
 
     const-string v5, "(this as java.lang.Strin\u2026replace(oldChar, newChar)"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v4, v1, v3
 
@@ -310,6 +308,8 @@
     :cond_5
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0x4
@@ -328,40 +328,54 @@
 
 
 # virtual methods
-.method public final frameLog(ZIIII)Ljava/lang/String;
-    .locals 9
+.method public final formattedType$okhttp(I)Ljava/lang/String;
+    .locals 2
 
     sget-object v0, Lokhttp3/internal/http2/Http2;->FRAME_NAMES:[Ljava/lang/String;
 
     array-length v1, v0
 
-    const/4 v2, 0x0
+    if-ge p1, v1, :cond_0
 
-    const/4 v3, 0x1
-
-    if-ge p4, v1, :cond_0
-
-    aget-object v0, v0, p4
+    aget-object p1, v0, p1
 
     goto :goto_0
 
     :cond_0
-    new-array v0, v3, [Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    aput-object v1, v0, v2
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const-string v1, "0x%02x"
+    move-result-object p1
 
-    invoke-static {v1, v0}, Lokhttp3/internal/Util;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object p1, v0, v1
+
+    const-string p1, "0x%02x"
+
+    invoke-static {p1, v0}, Lokhttp3/internal/Util;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    :goto_0
+    return-object p1
+.end method
+
+.method public final frameLog(ZIIII)Ljava/lang/String;
+    .locals 9
+
+    invoke-virtual {p0, p4}, Lokhttp3/internal/http2/Http2;->formattedType$okhttp(I)Ljava/lang/String;
 
     move-result-object v0
 
-    :goto_0
-    const/4 v1, 0x5
+    const/4 v1, 0x0
+
+    const/4 v2, 0x5
+
+    const/4 v3, 0x1
 
     const/4 v4, 0x3
 
@@ -369,127 +383,120 @@
 
     const/4 v6, 0x4
 
-    if-nez p5, :cond_1
+    if-nez p5, :cond_0
 
     const-string p4, ""
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_1
-    if-eq p4, v5, :cond_8
+    :cond_0
+    if-eq p4, v5, :cond_6
 
-    if-eq p4, v4, :cond_8
+    if-eq p4, v4, :cond_6
 
-    if-eq p4, v6, :cond_6
+    if-eq p4, v6, :cond_4
 
     const/4 v7, 0x6
 
-    if-eq p4, v7, :cond_6
+    if-eq p4, v7, :cond_4
 
     const/4 v7, 0x7
 
-    if-eq p4, v7, :cond_8
+    if-eq p4, v7, :cond_6
 
     const/16 v7, 0x8
 
-    if-eq p4, v7, :cond_8
+    if-eq p4, v7, :cond_6
 
     sget-object v7, Lokhttp3/internal/http2/Http2;->FLAGS:[Ljava/lang/String;
 
     array-length v8, v7
 
-    if-ge p5, v8, :cond_3
+    if-ge p5, v8, :cond_1
 
     aget-object v7, v7, p5
 
-    if-eqz v7, :cond_2
+    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
+    :cond_1
     sget-object v7, Lokhttp3/internal/http2/Http2;->BINARY:[Ljava/lang/String;
 
     aget-object v7, v7, p5
 
-    :goto_1
-    if-ne p4, v1, :cond_4
+    :goto_0
+    if-ne p4, v2, :cond_2
 
     and-int/lit8 v8, p5, 0x4
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_2
 
     const-string p4, "HEADERS"
 
     const-string p5, "PUSH_PROMISE"
 
-    invoke-static {v7, p4, p5, v2, v6}, Lkotlin/text/StringsKt__IndentKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
+    invoke-static {v7, p4, p5, v1, v6}, Lkotlin/text/StringsKt__IndentKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
 
     move-result-object p4
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_4
-    if-nez p4, :cond_5
+    :cond_2
+    if-nez p4, :cond_3
 
     and-int/lit8 p4, p5, 0x20
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_3
 
     const-string p4, "PRIORITY"
 
     const-string p5, "COMPRESSED"
 
-    invoke-static {v7, p4, p5, v2, v6}, Lkotlin/text/StringsKt__IndentKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
+    invoke-static {v7, p4, p5, v1, v6}, Lkotlin/text/StringsKt__IndentKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
 
     move-result-object p4
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_5
+    :cond_3
     move-object p4, v7
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_6
-    if-ne p5, v3, :cond_7
+    :cond_4
+    if-ne p5, v3, :cond_5
 
     const-string p4, "ACK"
+
+    goto :goto_1
+
+    :cond_5
+    sget-object p4, Lokhttp3/internal/http2/Http2;->BINARY:[Ljava/lang/String;
+
+    aget-object p4, p4, p5
+
+    goto :goto_1
+
+    :cond_6
+    sget-object p4, Lokhttp3/internal/http2/Http2;->BINARY:[Ljava/lang/String;
+
+    aget-object p4, p4, p5
+
+    :goto_1
+    if-eqz p1, :cond_7
+
+    const-string p1, "<<"
 
     goto :goto_2
 
     :cond_7
-    sget-object p4, Lokhttp3/internal/http2/Http2;->BINARY:[Ljava/lang/String;
-
-    aget-object p4, p4, p5
-
-    goto :goto_2
-
-    :cond_8
-    sget-object p4, Lokhttp3/internal/http2/Http2;->BINARY:[Ljava/lang/String;
-
-    aget-object p4, p4, p5
-
-    :goto_2
-    if-eqz p1, :cond_9
-
-    const-string p1, "<<"
-
-    goto :goto_3
-
-    :cond_9
     const-string p1, ">>"
 
-    :goto_3
-    new-array p5, v1, [Ljava/lang/Object;
+    :goto_2
+    new-array p5, v2, [Ljava/lang/Object;
 
-    aput-object p1, p5, v2
+    aput-object p1, p5, v1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

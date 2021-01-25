@@ -86,7 +86,7 @@
 
     iget v2, p3, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
-    invoke-static {v1, v2, p1}, Lcom/google/android/gms/common/internal/Preconditions;->lerp(FFF)F
+    invoke-static {v1, v2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->lerp(FFF)F
 
     move-result v1
 
@@ -94,7 +94,7 @@
 
     iget v3, p3, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
 
-    invoke-static {v2, v3, p1}, Lcom/google/android/gms/common/internal/Preconditions;->lerp(FFF)F
+    invoke-static {v2, v3, p1}, Landroidx/transition/ViewGroupUtilsApi14;->lerp(FFF)F
 
     move-result v2
 
@@ -102,7 +102,7 @@
 
     iget p3, p3, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/common/internal/Preconditions;->lerp(FFF)F
+    invoke-static {p2, p3, p1}, Landroidx/transition/ViewGroupUtilsApi14;->lerp(FFF)F
 
     move-result p1
 

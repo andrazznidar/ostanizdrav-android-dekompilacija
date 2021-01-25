@@ -45,7 +45,9 @@
 
     sget-object v5, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
 
-    if-eqz p1, :cond_6
+    const-string v6, "protocol"
+
+    invoke-static {p1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v6, v5, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
 
@@ -135,13 +137,4 @@
     invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_6
-    const-string p1, "protocol"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

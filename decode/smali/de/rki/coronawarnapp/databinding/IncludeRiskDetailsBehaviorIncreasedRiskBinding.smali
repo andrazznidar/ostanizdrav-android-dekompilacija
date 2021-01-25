@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+.field public mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
 .field public final riskDetailsBehaviorCoughSneeze:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
@@ -12,9 +12,13 @@
 
 .field public final riskDetailsBehaviorStayHome:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
+.field public final riskDetailsBehaviorWashHands:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
+.field public final riskDetailsBehaviorWearMask:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -40,10 +44,24 @@
     iput-object p0, p9, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorWashHands:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
+    if-eqz p10, :cond_3
+
+    iput-object p0, p10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    iput-object p11, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorIncreasedRiskBinding;->riskDetailsBehaviorWearMask:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+
+    if-eqz p11, :cond_4
+
+    iput-object p0, p11, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public abstract setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 .end method

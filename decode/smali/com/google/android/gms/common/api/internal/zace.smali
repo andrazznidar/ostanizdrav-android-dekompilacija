@@ -48,7 +48,7 @@
 
     iget-object v1, v1, Lcom/google/android/gms/signin/internal/zam;->zac:Lcom/google/android/gms/common/internal/zau;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v3, v1, Lcom/google/android/gms/common/internal/zau;->zac:Lcom/google/android/gms/common/ConnectionResult;
 

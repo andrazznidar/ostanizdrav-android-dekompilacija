@@ -12,24 +12,17 @@
 
 # direct methods
 .method public constructor <init>(Lokio/Source;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "delegate"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lokio/ForwardingSource;->delegate:Lokio/Source;
 
     return-void
-
-    :cond_0
-    const-string p1, "delegate"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -57,7 +50,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/ForwardingSource;->delegate:Lokio/Source;
 
@@ -66,15 +61,6 @@
     move-result-wide p1
 
     return-wide p1
-
-    :cond_0
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public timeout()Lokio/Timeout;

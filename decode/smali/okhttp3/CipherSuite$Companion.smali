@@ -13,10 +13,6 @@
     name = "Companion"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCipherSuite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CipherSuite.kt\nokhttp3/CipherSuite$Companion\n*L\n1#1,461:1\n*E\n"
-.end annotation
-
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -51,16 +47,14 @@
 
 # virtual methods
 .method public final declared-synchronized forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;
-    .locals 3
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
     const-string v0, "javaName"
 
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lokhttp3/CipherSuite;->INSTANCES:Ljava/util/Map;
 
@@ -76,9 +70,9 @@
 
     invoke-virtual {p0, p1}, Lokhttp3/CipherSuite$Companion;->secondaryName(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -87,6 +81,8 @@
     if-nez v0, :cond_0
 
     new-instance v0, Lokhttp3/CipherSuite;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lokhttp3/CipherSuite;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
@@ -101,14 +97,6 @@
     monitor-exit p0
 
     return-object v0
-
-    :cond_2
-    :try_start_1
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v1
 
     :catchall_0
     move-exception p1
@@ -139,7 +127,7 @@
 
     if-eqz v3, :cond_0
 
-    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -147,7 +135,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -164,7 +152,7 @@
 
     if-eqz v1, :cond_1
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -172,7 +160,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -6,8 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/internal/PlatformImplementations$ReflectAddSuppressedMethod;
+        Lkotlin/internal/PlatformImplementations$ReflectThrowable;
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,115:1\n1#2:116\n*E\n"
 .end annotation
 
 
@@ -25,7 +29,15 @@
 .method public addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
     .locals 3
 
-    sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectAddSuppressedMethod;->method:Ljava/lang/reflect/Method;
+    const-string v0, "cause"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "exception"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
 
@@ -41,4 +53,14 @@
 
     :cond_0
     return-void
+.end method
+
+.method public defaultPlatformRandom()Lkotlin/random/Random;
+    .locals 1
+
+    new-instance v0, Lkotlin/random/FallbackThreadLocalRandom;
+
+    invoke-direct {v0}, Lkotlin/random/FallbackThreadLocalRandom;-><init>()V
+
+    return-object v0
 .end method

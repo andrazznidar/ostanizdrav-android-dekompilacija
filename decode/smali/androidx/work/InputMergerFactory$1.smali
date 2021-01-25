@@ -1,4 +1,4 @@
-.class public final Landroidx/work/InputMergerFactory$1;
+.class public Landroidx/work/InputMergerFactory$1;
 .super Landroidx/work/InputMergerFactory;
 .source "InputMergerFactory.java"
 

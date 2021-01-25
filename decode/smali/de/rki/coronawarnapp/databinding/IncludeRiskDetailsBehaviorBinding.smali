@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+.field public mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
 .field public final riskDetailsBehaviorCoughSneeze:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
@@ -54,5 +54,5 @@
 
 
 # virtual methods
-.method public abstract setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public abstract setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 .end method

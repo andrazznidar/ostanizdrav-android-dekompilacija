@@ -44,7 +44,7 @@
 
     iget-wide v0, v0, Lcom/google/android/material/datepicker/Month;->timeInMillis:J
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->canonicalYearMonthDay(J)J
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
 
     move-result-wide v0
 
@@ -60,7 +60,7 @@
 
     iget-wide v0, v0, Lcom/google/android/material/datepicker/Month;->timeInMillis:J
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->canonicalYearMonthDay(J)J
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
 
     move-result-wide v0
 

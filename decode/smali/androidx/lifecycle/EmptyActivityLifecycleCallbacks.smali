@@ -17,6 +17,12 @@
 
 
 # virtual methods
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onActivityDestroyed(Landroid/app/Activity;)V
     .locals 0
 
@@ -42,6 +48,12 @@
 .end method
 
 .method public onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onActivityStopped(Landroid/app/Activity;)V
     .locals 0
 
     return-void

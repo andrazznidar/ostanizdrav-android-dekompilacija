@@ -40,16 +40,9 @@
 .method public timeout(JLjava/util/concurrent/TimeUnit;)Lokio/Timeout;
     .locals 0
 
-    if-eqz p3, :cond_0
-
-    return-object p0
-
-    :cond_0
     const-string p1, "unit"
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p0
 .end method

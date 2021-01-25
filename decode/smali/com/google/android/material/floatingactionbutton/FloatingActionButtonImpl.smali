@@ -488,7 +488,7 @@
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p1, p4}, Lcom/google/android/gms/common/internal/Preconditions;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p1, p4}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     return-object p1
 .end method

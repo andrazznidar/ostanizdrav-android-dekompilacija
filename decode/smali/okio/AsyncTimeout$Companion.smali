@@ -41,13 +41,13 @@
 
     sget-object v1, Lokio/AsyncTimeout;->head:Lokio/AsyncTimeout;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_5
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v1, v1, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
-    if-nez v1, :cond_2
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -59,7 +59,7 @@
 
     sget-object v0, Lokio/AsyncTimeout;->head:Lokio/AsyncTimeout;
 
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v0, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
@@ -83,11 +83,6 @@
     return-object v2
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_2
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v3
@@ -100,7 +95,7 @@
 
     cmp-long v3, v5, v3
 
-    if-lez v3, :cond_3
+    if-lez v3, :cond_2
 
     const-wide/32 v3, 0xf4240
 
@@ -116,10 +111,10 @@
 
     return-object v2
 
-    :cond_3
+    :cond_2
     sget-object v0, Lokio/AsyncTimeout;->head:Lokio/AsyncTimeout;
 
-    if-eqz v0, :cond_4
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v3, v1, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
@@ -128,14 +123,4 @@
     iput-object v2, v1, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
     return-object v1
-
-    :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
 .end method

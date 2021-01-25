@@ -102,23 +102,15 @@
     return-void
 
     :cond_2
-    iget p1, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
+    invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->hasActiveObservers()Z
 
-    if-lez p1, :cond_3
+    move-result p1
 
-    const/4 p1, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 p1, 0x0
-
-    :goto_1
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     invoke-virtual {v0}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
 
-    :cond_4
+    :cond_3
     return-void
 .end method
 

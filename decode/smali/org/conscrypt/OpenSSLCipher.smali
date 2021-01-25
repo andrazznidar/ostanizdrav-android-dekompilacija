@@ -103,7 +103,7 @@
 
     const-string v0, "Unsupported opmode "
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -849,7 +849,7 @@
 
     const-string p2, "calculated buffer size was wrong: "
 
-    invoke-static {p2, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 

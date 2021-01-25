@@ -175,11 +175,11 @@
     :goto_0
     const-string v3, "This API was constructed with a SimpleClientBuilder. Use getSimpleClientBuilder"
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
 
     iget-object v2, v1, Lcom/google/android/gms/common/api/Api;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v3, p2, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
 
@@ -451,7 +451,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa:Lcom/google/android/gms/common/api/Status;
 
@@ -459,7 +459,7 @@
 
     iget-object v1, v1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     const/4 v1, 0x0
 
@@ -696,7 +696,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaj:Lcom/google/android/gms/common/api/internal/zacc;
 
@@ -737,7 +737,7 @@
 
     iget-object p2, p2, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     invoke-virtual {p0, p1, v3, v2}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(Lcom/google/android/gms/common/api/Status;Ljava/lang/Exception;Z)V
 
@@ -763,7 +763,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     invoke-virtual {p0, v3, p2, v2}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(Lcom/google/android/gms/common/api/Status;Ljava/lang/Exception;Z)V
 
@@ -784,7 +784,7 @@
 
     iget-object p2, p2, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     invoke-virtual {p0, p1, v3, v2}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(Lcom/google/android/gms/common/api/Status;Ljava/lang/Exception;Z)V
 
@@ -871,7 +871,7 @@
 
     iget-object p2, p2, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     invoke-virtual {p0, p1, v3, v2}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(Lcom/google/android/gms/common/api/Status;Ljava/lang/Exception;Z)V
 
@@ -896,7 +896,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     const/4 v0, 0x1
 
@@ -985,7 +985,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
 
@@ -1060,7 +1060,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
 
@@ -1421,7 +1421,7 @@
 
     sget-object v1, Lcom/google/android/gms/common/ConnectionResult;->RESULT_SUCCESS:Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-static {p1, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -1578,7 +1578,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     const/4 v0, 0x0
 
@@ -1594,7 +1594,7 @@
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaq:Landroid/os/Handler;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkHandlerThread(Landroid/os/Handler;)V
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkHandlerThread(Landroid/os/Handler;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
 
@@ -1717,7 +1717,7 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaj:Lcom/google/android/gms/common/api/internal/zacc;
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast v2, Lcom/google/android/gms/common/api/internal/zacc;
 

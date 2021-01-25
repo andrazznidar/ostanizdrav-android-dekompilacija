@@ -30,7 +30,7 @@
     <string name="accessibility_back">Back</string>
     <string name="accessibility_button">Button</string>
     <string name="accessibility_close">Close</string>
-    <string name="accessibility_logo">Corona-Warn-App</string>
+    <string name="accessibility_logo">\#OstaniZdrav</string>
     <string name="accessibility_menu">Menu</string>
     <string name="accessibility_next">Next</string>
     <string name="app_name">\#OstaniZdrav</string>
@@ -39,7 +39,7 @@
     <string name="bottom_sheet_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="button_back">Back to previous page</string>
     <string name="button_menu">Menu</string>
-    <string name="button_proceed">Continue Button</string>
+    <string name="button_proceed">Continue</string>
     <string name="button_share">Share</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
@@ -64,67 +64,151 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="contact_diary_day_location_fab_title">Place</string>
+    <string name="contact_diary_day_location_tab_title">Places</string>
+    <string name="contact_diary_day_person_fab_title">Person</string>
+    <string name="contact_diary_day_person_tab_title">People</string>
+    <string name="contact_diary_delete_button_negative">Cancel</string>
+    <string name="contact_diary_delete_button_positive">Remove</string>
+    <string name="contact_diary_delete_icon_content_description">Delete Entry</string>
+    <string name="contact_diary_delete_location_title">Do you really want to remove this place?</string>
+    <string name="contact_diary_delete_locations_message">If you remove a place, all the entries for that place will be removed from your journal.</string>
+    <string name="contact_diary_delete_locations_title">Do you really want to remove all places?</string>
+    <string name="contact_diary_delete_person_title">Do you really want to remove this person?</string>
+    <string name="contact_diary_delete_persons_message">If you remove a person, all the entries for that person will be removed from your journal.</string>
+    <string name="contact_diary_delete_persons_title">Do you really want to remove all people?</string>
+    <string name="contact_diary_edit_icon_content_description">Edit Entry</string>
+    <string name="contact_diary_edit_locations_image_content_description">A building is marked with a location flag.</string>
+    <string name="contact_diary_edit_locations_title">Edit Places</string>
+    <string name="contact_diary_edit_persons_image_content_description">A silhouette of a woman who is walking across a meadow.</string>
+    <string name="contact_diary_edit_persons_title">Edit People</string>
+    <string name="contact_diary_export_intro_one">Kontakte der letzten 14 Tage (%1$s - %2$s)</string>
+    <string name="contact_diary_export_intro_two">Die nachfolgende Liste dient dem zuständigen Gesundheitsamt zur Kontaktnachverfolgung gem. § 25 IfSG.</string>
+    <string name="contact_diary_export_subject">Mein Kontakt-Tagebuch</string>
+    <string name="contact_diary_homescreen_card_body">Keep track of where you have been and whom you met.</string>
+    <string name="contact_diary_homescreen_card_button_text">Manage Journal</string>
+    <string name="contact_diary_homescreen_card_header">Contact Journal</string>
+    <string name="contact_diary_homescreen_card_image_content_description">A closed book with a bookmark</string>
+    <string name="contact_diary_information_card_title">Keep track of your contacts.</string>
+    <string name="contact_diary_location_bottom_sheet_save_button">Save</string>
+    <string name="contact_diary_location_bottom_sheet_text_input_hint">Description</string>
+    <string name="contact_diary_location_bottom_sheet_title">Place</string>
+    <string name="contact_diary_location_list_no_items_subtitle">Create a place and add it to your contact journal.</string>
+    <string name="contact_diary_location_list_no_items_title">No places defined yet</string>
+    <string name="contact_diary_onboarding_body">Create an overview of your contacts in the last 14 days, so you’ll have a complete list at hand quickly if needed.</string>
+    <string name="contact_diary_onboarding_button_text">Manage Journal</string>
+    <string name="contact_diary_onboarding_functionality_fifth_section">You can export your contact journal in plain text format and then print out the entries, edit them, or provide them to your public health authority as needed.</string>
+    <string name="contact_diary_onboarding_functionality_first_section">Enter the people you have met.</string>
+    <string name="contact_diary_onboarding_functionality_fourth_section">You can remove entries for people and places from your journal at any time. Journal entries will be deleted automatically after 16 days.</string>
+    <string name="contact_diary_onboarding_functionality_second_section">Enter the places where you’ve encountered others.</string>
+    <string name="contact_diary_onboarding_functionality_third_section">You are the only one who can access your journal entries. Your entries will be saved only on your smartphone.</string>
+    <string name="contact_diary_onboarding_image_content_description">Several people are outside, looking at their smartphones.</string>
+    <string name="contact_diary_onboarding_legal_information">For more information, please refer to the privacy notice.</string>
+    <string name="contact_diary_overview_header">Start Page</string>
+    <string name="contact_diary_overview_subtitle">Write down the people you have met and places you have visited.</string>
+    <string name="contact_diary_overview_title">Contact Journal</string>
+    <string name="contact_diary_person_bottom_sheet_save_button">Save</string>
+    <string name="contact_diary_person_bottom_sheet_text_input_hint">First name, last name</string>
+    <string name="contact_diary_person_bottom_sheet_title">Person</string>
+    <string name="contact_diary_person_list_no_items_subtitle">Create a person and add them to your contact journal.</string>
+    <string name="contact_diary_person_list_no_items_title">No people defined yet</string>
+    <string name="contact_diary_remove_all_button">Remove All</string>
+    <string name="contact_diary_title">Contact Journal</string>
     <string name="copy">Copy</string>
+    <string name="country_name_at">Austria</string>
+    <string name="country_name_be">Belgium</string>
+    <string name="country_name_bg">Bulgaria</string>
+    <string name="country_name_ch">Switzerland</string>
+    <string name="country_name_cy">Cyprus</string>
+    <string name="country_name_cz">Czech Republic</string>
+    <string name="country_name_de">Germany</string>
+    <string name="country_name_dk">Denmark</string>
+    <string name="country_name_ee">Estonia</string>
+    <string name="country_name_es">Spain</string>
+    <string name="country_name_fi">Finnland</string>
+    <string name="country_name_fr">France</string>
+    <string name="country_name_gr">Greece</string>
+    <string name="country_name_hr">Croatia</string>
+    <string name="country_name_hu">Hungary</string>
+    <string name="country_name_ie">Ireland</string>
+    <string name="country_name_is">Iceland</string>
+    <string name="country_name_it">Italy</string>
+    <string name="country_name_li">Liechtenstein</string>
+    <string name="country_name_lt">Lithuania</string>
+    <string name="country_name_lu">Luxembourg</string>
+    <string name="country_name_lv">Latvia</string>
+    <string name="country_name_mt">Malta</string>
+    <string name="country_name_nl">Netherlands</string>
+    <string name="country_name_no">Norway</string>
+    <string name="country_name_pl">Poland</string>
+    <string name="country_name_pt">Portugal</string>
+    <string name="country_name_ro">Romania</string>
+    <string name="country_name_se">Sweden</string>
+    <string name="country_name_si">Slovenia</string>
+    <string name="country_name_sk">Slovakia</string>
+    <string name="country_name_uk">United Kingdom</string>
     <string name="define_zxingandroidembedded" />
     <string name="error_icon_content_description">Error</string>
     <string name="errors_communication_with_api">Error during communication with Google interface</string>
-    <string name="errors_external_action">You cannot perform this action. Please contact the hotline.</string>
+    <string name="errors_external_action">You cannot perform this action. Please contact the Single Contact Centre.</string>
     <string name="errors_generic_button_negative">Details</string>
     <string name="errors_generic_button_positive">OK</string>
     <string name="errors_generic_details_headline">Cause</string>
     <string name="errors_generic_headline">Something went wrong.</string>
+    <string name="errors_generic_text_catastrophic_error_encryption_failure">https://www.gov.si/en/topics/coronavirus-disease-covid-19/the-ostanizdrav-mobile-application/</string>
+    <string name="errors_generic_text_catastrophic_error_recovery_via_reset">Your app was reset due to a technical problem. This has no effect exposure logging or your risk status. You will continue to be notified about exposures.</string>
     <string name="errors_generic_text_unknown_error_cause">An unknown error occurred.</string>
-    <string name="errors_google_api_error">The Corona-Warn-App is running correctly, but we cannot update your current risk status. Exposure logging remains active and is working correctly. For further information, please see our FAQ page: https://www.coronawarn.app/en/faq/</string>
-    <string name="errors_google_update_needed">"Your Corona-Warn-App is correctly installed, but the \"COVID-19 exposure notifications\" service is not available on your smartphone's operating system. This means that you cannot use the Corona-Warn-App. For further information, please see our FAQ page: https://www.coronawarn.app/en/faq/"</string>
+    <string name="errors_google_api_error">The #OstaniZdrav App is running correctly, but we cannot update your current risk status. Exposure logging remains active and is working correctly.</string>
+    <string name="errors_google_update_needed">Your #OstaniZdrav App is correctly installed, but it is not functioning properly. Please check Google Play for updates.</string>
     <string name="errors_no_network">You are not connected to the Internet.</string>
     <string name="errors_not_enough_device_storage">You do not have sufficient free memory.</string>
+    <string name="errors_risk_detection_limit_reached_description">You have reached the maximum number of exposure checks per day. Please check your risk status again tomorrow.</string>
+    <string name="errors_risk_detection_limit_reached_title">Limit of checks reached</string>
     <string name="expand_button_title">Advanced</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="hint_external_webpage">Here you can find answers to frequently asked questions about the Corona-Warn-App. You will be forwarded to an external website.</string>
+    <string name="hint_external_webpage">For more information about the #OstaniZdrav App please visit gov.si.</string>
     <string name="icon_content_description">Dialog Icon</string>
-    <string name="information_about_body">Whoever uses the app helps to trace and break chains of infection. The app saves encounters with other people locally on your device. You are notified if you have encountered people who were later diagnosed with COVID-19. Your identity and privacy are always protected.</string>
-    <string name="information_about_body_emphasized">Robert Koch Institute (RKI) is Germany’s federal public health body. The RKI publishes the Corona-Warn-App on behalf of the Federal Government. The app is intended as a digital complement to public health measures already introduced: social distancing, hygiene, and face masks.</string>
+    <string name="information_about_body">Whoever uses the app helps to trace and break the chain of infection. The app saves encounters with other persons locally on your smartphone. You are notified if you have encountered persons who were later confirmed with a SARS-CoV-2 infection. Your identity and privacy are always protected.</string>
+    <string name="information_about_body_emphasized">The National Institute of Public Health (NIJZ) is the central institution for health protection in Slovenia. The NIJZ provides professional or content support to the application managed and maintained by the Ministry of Public Administration of the Republic of Slovenia. In addition to strict adherence to measures to prevent SARS-CoV-2 infection, the spread of the disease can be further limited by using the application.</string>
     <string name="information_about_headline">"Let's fight coronavirus together"</string>
     <string name="information_about_illustration_description">A group of persons use their smartphones around town.</string>
     <string name="information_about_title">About the App</string>
-    <string name="information_contact_body">For technical questions about the Corona-Warn-App, please contact our hotline.</string>
-    <string name="information_contact_body_open">"Languages: German, English, Turkish
-Business hours:
-Monday to Saturday: 7am - 10pm
-(except national holidays)
-The call is free of charge."</string>
-    <string name="information_contact_body_other">If you have any health-related questions, please contact your general practitioner or the hotline for the medical emergency service, telephone: 116 117.</string>
-    <string name="information_contact_body_phone">Our customer service is here to help.</string>
-    <string name="information_contact_button_phone">+49 800 7540001</string>
-    <string name="information_contact_headline">How can we help you?</string>
+    <string name="information_contact_body">If you have any questions about the #OstaniZdrav App contact the Single Contact Centre. If you need psychological support, contact the psychological support hotline.</string>
+    <string name="information_contact_body_open">"Languages: Slovene and English
+Business hours: Monday to Sunday: 8am - 8pm
+The call is free of charge.
+For calls from abroad: +386 1 478 7557"</string>
+    <string name="information_contact_body_other">General information on COVID-19 is available on the website of the National Institute of Public Health and the Ministry of Health.</string>
+    <string name="information_contact_body_phone">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
+    <string name="information_contact_button_phone">080 17 87</string>
+    <string name="information_contact_button_phone1">080 51 00</string>
+    <string name="information_contact_headline">Phone for psychological support during the COVID-19 epidemic</string>
     <string name="information_contact_illustration_description">A man wears a headset while making a phone call.</string>
-    <string name="information_contact_phone_call_number">+49 800 7540001</string>
-    <string name="information_contact_subtitle_phone">Technical hotline:</string>
-    <string name="information_contact_title">Technical Hotline</string>
-    <string name="information_help_title">FAQ</string>
-    <string name="information_help_title_accessibility">Frequently asked questions. You will be forwarded to an external web site.</string>
-    <string name="information_legal_body_publisher">"Robert Koch Institute
-Nordufer 20
-13353 Berlin
-
-represented by its president"</string>
+    <string name="information_contact_phone_call_number">080 17 87</string>
+    <string name="information_contact_phone_call_number1">080 51 00</string>
+    <string name="information_contact_subtitle_phone">Single Contact Centre</string>
+    <string name="information_contact_title">User support</string>
+    <string name="information_help_title">More on the #OstaniZdrav App</string>
+    <string name="information_help_title_accessibility">More on the #OstaniZdrav App. You will be forwarded to an external web site.</string>
+    <string name="information_legal_body_publisher">The #OstaniZdrav App was prepared by the National Institute of Public Health and the Ministry of Public Administration, where the Institute is responsible for the content of the application and the Ministry for the technical part. Both are therefore common data controllers of the data processed for the #OstaniZdrav App.</string>
     <string name="information_legal_headline_contact">Contact</string>
     <string name="information_legal_headline_publisher">Published by</string>
-    <string name="information_legal_headline_taxid">VAT identification number</string>
+    <string name="information_legal_headline_taxid" />
     <string name="information_legal_illustration_description">A hand holds a smartphone displaying a large body of text on the screen. Next to the text is a section symbol representing the imprint.</string>
-    <string name="information_legal_subtitle_contact">E-mail: CoronaWarnApp@rki.de</string>
-    <string name="information_legal_subtitle_contact_form"><a href=""> </a></string>
-    <string name="information_legal_subtitle_contact_form_non_en_de">" "<a href=""></a><a href=""></a></string>
-    <string name="information_legal_subtitle_publisher">(responsible in accordance with § 5, para. 1 TMG, § 55 para. 1 RStV, DS-GVO, BDSG)</string>
-    <string name="information_legal_subtitle_taxid">DE 165 893 430</string>
+    <string name="information_legal_subtitle_contact">E-mail: ekc@gov.si Phone: 080 1787; from abroad: +386 1 478 7557</string>
+    <string name="information_legal_subtitle_contact_form_non_en_de" />
+    <string name="information_legal_subtitle_contact_label" />
+    <string name="information_legal_subtitle_contact_url" />
+    <string name="information_legal_subtitle_publisher" />
+    <string name="information_legal_subtitle_taxid" />
     <string name="information_legal_title">Imprint</string>
     <string name="information_privacy_html_path">privacy_en.html</string>
-    <string name="information_privacy_illustration_description">A woman uses the Corona-Warn-App on her smartphone. An icon showing a padlock on the background of a shield symbolizes encrypted data.</string>
+    <string name="information_privacy_illustration_description">A woman uses the #OstaniZdrav App on her smartphone. An icon showing a padlock on the background of a shield symbolizes encrypted data.</string>
     <string name="information_privacy_title">Data Privacy</string>
-    <string name="information_technical_html_path">technical_en.html</string>
+    <string name="information_technical_html_path">technical.html</string>
     <string name="information_technical_illustration_description">A hand holds a smartphone displaying a large body of text on the screen. Next to the text is a balance scale that symbolizes legal notices.</string>
     <string name="information_technical_title">Legal Notices</string>
     <string name="information_terms_headline">Content</string>
@@ -133,6 +217,47 @@ represented by its president"</string>
     <string name="information_terms_title">Terms of Use</string>
     <string name="information_title">App Information</string>
     <string name="information_version">Version: %1s</string>
+    <string name="interop_consent_body" />
+    <string name="interop_consent_headline">Consent</string>
+    <string name="interoperability_configuration_first_section">Several countries are working together to enable transnational alerts via a joint exchange server. For example, contacts with users of an official coronavirus app from other participating countries can also be taken into account for exposure logging.</string>
+    <string name="interoperability_configuration_information">The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.</string>
+    <string name="interoperability_configuration_list_title">The following countries currently participate in transnational exposure logging:</string>
+    <string name="interoperability_configuration_second_section">To do this, the app downloads a list, which is updated daily, of the random IDs of all users who have shared their random IDs via their own app. This list is then compared with the random IDs recorded by your smartphone.</string>
+    <string name="interoperability_configuration_title">Transnational Exposure Logging</string>
+    <string name="interoperability_eu_illustration_description">A hand holds a smartphone. Europe and the European flag are illustrated in the background.</string>
+    <string name="interoperability_onboarding_delta_expanded_terms_text_part_1">The terms of use have also been updated, to reflect the functional enhancements in the app.</string>
+    <string name="interoperability_onboarding_delta_expanded_terms_text_part_2">The Terms of Use and Privacy Policy can also be found in the menu under “App Information” and in the app description in your app store. The changes will not affect how you use the app. If you continue to use the app or reopen it, we will assume that you agree to the updated Terms of Use.</string>
+    <string name="interoperability_onboarding_delta_footerDescription">"You do not need to change anything to find out whether you have had possible exposures involving app users in the participating countries and are therefore at risk of infection yourself. You just need to make sure that the exposure logging feature is still enabled. Exposure logging will automatically warn you about any possible exposure you had with a user of the Corona-Warn-App or any other official coronavirus app.
+
+When COVID-19 Exposure Notifications are enabled, your Android smartphone continuously generates random IDs and sends them via Bluetooth so that they can be received by other smartphones near you. Your Android smartphone, in turn, receives the random IDs of other smartphones. Your own random IDs and those received from other smartphones are recorded by your Android smartphone and stored there for 14 days.
+
+For exposure logging, the app downloads a list, which is updated daily, of the random IDs of all users who have shared their random IDs via their official coronavirus app. This list is then compared with the random IDs of other users which have been recorded by your smartphone.
+
+The app will inform you if it detects a possible exposure. In this case, the app gains access to the data recorded by your smartphone about the possible exposure (date, duration and Bluetooth signal strength of the contact). The Bluetooth signal strength is used to derive the physical distance to the other user (the stronger the signal, the smaller the distance). The app analyses this information in order to calculate your risk of infection and to give you recommendations for what to do next. This analysis is only performed locally on your smartphone.
+
+Apart from you, nobody (not even the RKI or the health authorities of participating countries) will know whether a possible exposure has been detected and what risk of infection has been identified for you.
+
+The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under „App Information“ > „Data Privacy“."</string>
+    <string name="interoperability_onboarding_delta_footerTitle">Information on data processing</string>
+    <string name="interoperability_onboarding_delta_free_download" />
+    <string name="interoperability_onboarding_delta_randomid" />
+    <string name="interoperability_onboarding_delta_subtitle">The features of the #OstaniZdrav have been enhanced. Many countries have joined up to enable international warnings, based on a jointly-operated exchange server. Exposure to users of official corona apps in other participating countries can now be taken into account when calculating your exposure risk.</string>
+    <string name="interoperability_onboarding_delta_terms_link">Display terms of use</string>
+    <string name="interoperability_onboarding_delta_title">"Transnational
+Exposure Logging"</string>
+    <string name="interoperability_onboarding_first_section">Several countries have teamed up to enable transnational warnings. In other words, your potential exposure to users of the official coronavirus apps in all participating countries can now be taken into account.</string>
+    <string name="interoperability_onboarding_list_button_title_no_network">Open Device Settings</string>
+    <string name="interoperability_onboarding_list_subtitle_failrequest">You can view the participating countries in the exposure logging details.</string>
+    <string name="interoperability_onboarding_list_subtitle_failrequest_no_network">Your Internet connection may have been lost. Please ensure that you are connected to the Internet.</string>
+    <string name="interoperability_onboarding_list_title">The following countries currently participate:</string>
+    <string name="interoperability_onboarding_list_title_failrequest">Participating Countries</string>
+    <string name="interoperability_onboarding_list_title_riskdetection_no_network">Countries cannot be displayed now.</string>
+    <string name="interoperability_onboarding_randomid_download_free" />
+    <string name="interoperability_onboarding_second_section" />
+    <string name="interoperability_onboarding_title">"Transnational
+Exposure Logging"</string>
+    <string name="interoperability_title">"Transnational
+Exposure Logging"</string>
     <string name="library_android_database_sqlcipher_author">Zetetic, LLC</string>
     <string name="library_android_database_sqlcipher_authorWebsite">https://www.zetetic.net/sqlcipher/</string>
     <string name="library_android_database_sqlcipher_isOpenSource">true</string>
@@ -152,24 +277,24 @@ represented by its president"</string>
     <string name="library_zxingandroidembedded_licenseId">apache_2_0</string>
     <string name="library_zxingandroidembedded_repositoryLink">https://github.com/journeyapps/zxing-android-embedded</string>
     <string name="lorem_ipsum">Lorem Ipsum</string>
-    <string name="main_about_body">Here you can find answers to frequently asked questions about the Corona-Warn-App. You will be forwarded to an external website.</string>
-    <string name="main_about_headline">FAQ</string>
-    <string name="main_about_link">" "</string>
+    <string name="main_about_body">For more information about the #OstaniZdrav App please visit gov.si</string>
+    <string name="main_about_headline">More on #OstaniZdrav</string>
+    <string name="main_about_link">https://www.gov.si/en/topics/coronavirus-disease-covid-19/the-ostanizdrav-mobile-application/</string>
     <string name="main_overview_accessibility_title">Overview</string>
-    <string name="main_overview_body_glossary_calculation">Exposure log data is retrieved and synchronized with reported infections of other users. The exposure check is performed automatically about every two hours.</string>
-    <string name="main_overview_body_glossary_contact">Encounters over a longer duration and close proximity to people diagnosed with COVID-19.</string>
-    <string name="main_overview_body_glossary_keys">Random IDs are combinations of digits and letters generated randomly. They are exchanged between devices in close proximity. Random IDs cannot be traced to a specific person and are automatically deleted after 14 days. Persons diagnosed with COVID-19 can opt to share their random IDs of up to the last 14 days with other app users.</string>
-    <string name="main_overview_body_glossary_notification">The display of exposures in the Corona-Warn-App.</string>
+    <string name="main_overview_body_glossary_calculation">Exposure log data is retrieved and synchronized with reported infections of other users.</string>
+    <string name="main_overview_body_glossary_contact">Encounters over an extended period and in close proximity to a person with a confirmed SARS-CoV-2 infection.</string>
+    <string name="main_overview_body_glossary_keys">Random IDs are combinations of digits and letters generated randomly. They are exchanged between devices in close proximity. Random IDs cannot be traced to a specific person and are automatically deleted after 14 days. Persons with a confirmed infection with SARS-CoV-2 can opt to share their random IDs of up to the last 14 days with other app users.</string>
+    <string name="main_overview_body_glossary_notification">The display of exposures in the #OstaniZdrav App.</string>
     <string name="main_overview_body_glossary_tracing">List of received and temporary random IDs saved temporarily in the operating system storage. This list is read when the exposures are checked. All random IDs are automatically deleted after 14 days.</string>
-    <string name="main_overview_body_risk">If you have had contact within the last 14 days with a person who was diagnosed with COVID-19, the app calculates your personal risk of infection. It does this by measuring duration and proximity of the exposure.</string>
-    <string name="main_overview_body_test">Another central feature is registering your test and retrieving the result. If you are diagnosed with COVID-19, you can notify others and break the chain of infection.</string>
-    <string name="main_overview_body_tracing">"Exposure logging is one of the three central features of the app. When you activate it, encounters with people's devices are logged. You don't have to do anything else."</string>
+    <string name="main_overview_body_risk">If you have had contact within the last 14 days with a person who has a confirmed SARS-CoV-2 infection, the app evaluates your personal risk of infection. It does this by measuring duration and proximity of the exposure</string>
+    <string name="main_overview_body_test">Another central feature is anonimously sharing your positive test result. If you have a confirmed SARS-CoV-2 infection, you can notify others and break the chain of infection.</string>
+    <string name="main_overview_body_tracing">"Exposure logging is one of three central features of the app. Once you activate it, encounters with people's smartphones are logged. You don't have to do anything else."</string>
     <string name="main_overview_headline_glossary">Definition of Terms:</string>
     <string name="main_overview_headline_test">Notifying Other Users</string>
     <string name="main_overview_illustration_description">A smartphone displays various content, numbered 1 to 3.</string>
     <string name="main_overview_subtitle_glossary_calculation">Exposure Check</string>
-    <string name="main_overview_subtitle_glossary_contact">Exposures</string>
-    <string name="main_overview_subtitle_glossary_keys">Random IDs</string>
+    <string name="main_overview_subtitle_glossary_contact">Exposure Risk</string>
+    <string name="main_overview_subtitle_glossary_keys">Random ID</string>
     <string name="main_overview_subtitle_glossary_notification">Exposure Notification</string>
     <string name="main_overview_subtitle_glossary_tracing">Exposure Log</string>
     <string name="main_overview_subtitle_increased_risk">Increased Risk</string>
@@ -179,23 +304,25 @@ represented by its president"</string>
     <string name="main_overview_subtitle_tracing">Exposure Logging</string>
     <string name="main_overview_subtitle_unknown_risk">Unknown Risk</string>
     <string name="main_overview_title">Overview</string>
-    <string name="main_share_body">The more people who use the app, the faster we can break the infection chain. Please invite your family and friends to download the app.</string>
+    <string name="main_share_body">The more people who use the app, the faster we can break chains of infection. Please invite your family and friends to download the app.</string>
     <string name="main_share_button">Send Download Link</string>
-    <string name="main_share_headline">"Let's fight coronavirus together"</string>
-    <string name="main_share_illustration_description">A man shares the Corona-Warn-App with four other persons.</string>
+    <string name="main_share_headline">Let’s fight coronavirus together</string>
+    <string name="main_share_illustration_description">A man shares the #OstaniZdrav App with four other persons.</string>
     <string name="main_share_message">"Fighting coronavirus together
 I'm in on this, you too?
 https://www.corona-warn-app.de
 
 "</string>
-    <string name="main_share_title">Share the Corona-Warn-App</string>
-    <string name="main_title">Main page of the Corona-Warn-App</string>
+    <string name="main_share_title">Share the #OstaniZdrav App</string>
+    <string name="main_title">Main page of the #OstaniZdrav App</string>
+    <string name="menu_contact_diary_edit_locations">Edit Places</string>
+    <string name="menu_contact_diary_edit_persons">Edit People</string>
+    <string name="menu_contact_diary_information">Information</string>
+    <string name="menu_contact_export_entries">Export Entries</string>
     <string name="menu_help">Overview</string>
     <string name="menu_information">App Information</string>
     <string name="menu_settings">Settings</string>
-    <string name="menu_test_api">Test API</string>
     <string name="menu_test_notification">Test Notification</string>
-    <string name="menu_test_risk_level">Test Risk Level</string>
     <string name="mtrl_badge_numberless_content_description">New notification</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
     <string name="mtrl_exceed_max_badge_number_suffix">%1$d%2$s</string>
@@ -234,16 +361,20 @@ https://www.corona-warn-app.de
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="not_set">Not set</string>
     <string name="notification_body">You have new messages from your #OstaniZdrav.</string>
+    <string name="notification_body_share_positive_result">Is your test positive?</string>
+    <string name="notification_body_test_result_ready">You have new messages from your #OstaniZdrav App.</string>
     <string name="notification_channel_id">de.rki.coronawarnapp.notification.exposureNotificationChannelId</string>
     <string name="notification_description">Notifications from the #OstaniZdrav</string>
     <string name="notification_headline">\#OstaniZdrav</string>
+    <string name="notification_headline_share_positive_result">You can help!</string>
+    <string name="notification_headline_test_result_ready" />
     <string name="notification_id">1</string>
     <string name="notification_name">\#OstaniZdrav</string>
-    <string name="onboarding_background_fetch_dialog_body">You have deactivated background updates for the Corona-Warn-App. Please activate background updates to use automatic exposure logging. If you do not activate background updates, you can only start exposure logging manually in the app. You can activate background updates for the app in your device settings.</string>
+    <string name="onboarding_background_fetch_dialog_body">You have deactivated background updates for the #OstaniZdrav App. Please activate background updates to use automatic exposure logging. If you do not activate background updates, you can only start exposure logging manually in the app. You can activate background updates for the app in your device settings.</string>
     <string name="onboarding_background_fetch_dialog_button_negative">Start Exposure Logging Manually</string>
     <string name="onboarding_background_fetch_dialog_button_positive">Open Device Settings</string>
-    <string name="onboarding_background_fetch_dialog_headline">Background updates deactivated</string>
-    <string name="onboarding_body">"Turn your device into a coronavirus warning system. Get an overview of your risk status and find out whether you've had close contact with anyone diagnosed with COVID-19 in the last 14 days."</string>
+    <string name="onboarding_background_fetch_dialog_headline">Background app refresh deactivated</string>
+    <string name="onboarding_body">"Turn your smartphone into a novel coronavirus (SARS-CoV-2) warning system. Infection with this virus can cause the COVID-19 disease or pass without any symptoms. Get an overview of your risk status and find out whether you've had close contact with anyone confirmed with a SARS-CoV-2 infection in the last 14 days."</string>
     <string name="onboarding_body_emphasized">The app logs encounters between individuals by exchanging encrypted, random IDs between their devices, whereby no personal data whatsoever is accessed.</string>
     <string name="onboarding_button_back_description">Back</string>
     <string name="onboarding_button_cancel">Cancel</string>
@@ -251,83 +382,82 @@ https://www.corona-warn-app.de
     <string name="onboarding_button_enable">Activate</string>
     <string name="onboarding_button_next">Next</string>
     <string name="onboarding_button_start">Let’s Get Started</string>
-    <string name="onboarding_energy_optimized_dialog_body">"Enable prioritized background activity to allow the App to determine your risk status in the background any time (recommended). This disables battery life optimization for the Corona-Warn-App only. We do not expect this to cause a significant decrease in your device's battery life.
-
-If you do not allow this setting, we recommend you to open the App manually at least once every 24 hours."</string>
+    <string name="onboarding_energy_optimized_dialog_body">"Enable prioritised background activity to allow the App to determine your risk status in the background any time (recommended). This disables battery life optimisation for the #OstaniZdrav App only. We do not expect this to cause a significant decrease in your device's battery life. If you do not allow this setting, we recommend you to open the App manually at least once every 24 hours."</string>
     <string name="onboarding_energy_optimized_dialog_button_negative">Do Not Allow</string>
     <string name="onboarding_energy_optimized_dialog_button_positive">Allow</string>
     <string name="onboarding_energy_optimized_dialog_headline">Allow prioritized background activity</string>
-    <string name="onboarding_headline">"Let's fight coronavirus together"</string>
+    <string name="onboarding_headline">Let’s fight coronavirus together</string>
     <string name="onboarding_illustration_description">A group of persons use their smartphones around town.</string>
-    <string name="onboarding_manual_required_dialog_body">Please note that with prioritized background activity disabled, you have to open the App manually at least once every 24 hours to update your risk status. You can enable prioritized background activity in your settings any time.</string>
+    <string name="onboarding_manual_required_dialog_body">"Please note that with prioritized background activity disabled, you have to open the app manually at least once every 24 hours to update your risk status.
+
+You can enable prioritized background activity in your settings any time."</string>
     <string name="onboarding_manual_required_dialog_button">OK</string>
     <string name="onboarding_manual_required_dialog_headline">Prioritized background activity disabled</string>
-    <string name="onboarding_notifications_accessibility_title">Onboarding page 5 of 5: Receive warnings and identify risks</string>
-    <string name="onboarding_notifications_body">You can then self-isolate to protect others and find out where you can get tested.</string>
+    <string name="onboarding_notifications_accessibility_title">Onboarding page 6 of 6: Receive warnings and identify risks</string>
+    <string name="onboarding_notifications_body">If you allow the app to notify you, you may receive notifications of your risk of infection and recommendations for further action.</string>
     <string name="onboarding_notifications_headline">Receive warnings and identify risks</string>
-    <string name="onboarding_notifications_illustration_description">A woman receives a notification from her Corona-Warn-App.</string>
-    <string name="onboarding_notifications_subtitle">The app can notify you automatically about your risk status and warn you about new infections of people you have been exposed to. Allow the app now to notify you.</string>
-    <string name="onboarding_onboarding_accessibility_title">Onboarding page 1 of 5: Fighting coronavirus together</string>
-    <string name="onboarding_privacy_accessibility_title">Onboarding page 2 of 5: Data Privacy. A long text follows. To proceed at any time, use the button at the bottom of the screen.</string>
+    <string name="onboarding_notifications_illustration_description">A woman receives a notification from her #OstaniZdrav App.</string>
+    <string name="onboarding_notifications_subtitle">The app can notify you automatically about your risk status.</string>
+    <string name="onboarding_onboarding_accessibility_title">Onboarding page 1 of 6: Fighting coronavirus together</string>
+    <string name="onboarding_privacy_accessibility_title">Onboarding page 2 of 6: Data Privacy. A long text follows. To proceed at any time, use the button at the bottom of the screen.</string>
     <string name="onboarding_privacy_headline">Data Privacy</string>
-    <string name="onboarding_privacy_illustration_description">A woman uses the Corona-Warn-App on her smartphone. An icon showing a padlock on the background of a shield symbolizes encrypted data.</string>
-    <string name="onboarding_subtitle">More protection for you and for us all. By using the Corona-Warn-App we can break infection chains much quicker.</string>
-    <string name="onboarding_test_accessibility_title">Onboarding page 4 of 5: If you are diagnosed with COVID-19...</string>
-    <string name="onboarding_test_body">Your notification is encrypted securely and processed on a secure server. People whose encrypted random IDs your device has collected will now receive a warning along with information about what they should now do.</string>
-    <string name="onboarding_test_headline">If you are diagnosed with COVID-19…</string>
+    <string name="onboarding_privacy_illustration_description">A woman uses the #OstaniZdrav App on her smartphone. An icon showing a padlock on the background of a shield symbolizes encrypted data.</string>
+    <string name="onboarding_subtitle">More protection for you and for us all. By using the #OstaniZdrav App we can break infection chains much quicker.</string>
+    <string name="onboarding_test_accessibility_title">Onboarding page 4 of 5: If you have a confirmed infection with SARS-CoV-2...</string>
+    <string name="onboarding_test_body">Your notification is encrypted securely and processed on a secure server. People whose encrypted random IDs your smartphone has collected will now receive a warning along with information about what they should now do.</string>
+    <string name="onboarding_test_headline">If you have a confirmed SARS-CoV-2 infection...</string>
     <string name="onboarding_test_illustration_description">An encrypted positive test diagnosis is transmitted to the system, which will now warn other users.</string>
-    <string name="onboarding_test_subtitle">"… please report this in the Corona-Warn-App. Sharing your test results is voluntary and secure. Please do this for the sake of everyone's health."</string>
-    <string name="onboarding_tracing_accessibility_title">Onboarding page 3 of 5: How to Enable Exposure Logging</string>
-    <string name="onboarding_tracing_body">Exposure logging works by your device receiving, via Bluetooth, encrypted random IDs of other users and passing your own random ID to their devices. This feature can be deactivated at any time.</string>
-    <string name="onboarding_tracing_body_consent">"To find out whether you have been in contact with an infected person and whether there is a risk that you yourself have been infected, you need to enable the App’s exposure logging feature. By tapping on the “Enable” button, you agree to the enabling of the App’s exposure logging feature and the associated data processing.
+    <string name="onboarding_test_subtitle">"… please report this in the #OstaniZdrav App. Sharing information of a SARS-CoV-2 infection is voluntary and secure. Please do this for the sake of everyone's health."</string>
+    <string name="onboarding_tracing_accessibility_title">Onboarding page 3 of 6: How to Enable Exposure Logging</string>
+    <string name="onboarding_tracing_body">Exposure logging works by your smartphone receiving, via Bluetooth, encrypted random IDs of other users and passing your own random IDs to their smartphones. Exposure logging can be deactivated at any time.</string>
+    <string name="onboarding_tracing_body_consent">"You need to enable exposure logging to find out whether you have had possible exposures involving app users in the participating countries and are therefore at risk of infection yourself. By tapping on the “Enable exposure logging” button, you agree to enabling the exposure logging feature and to the associated data processing by the app.
 
-In order to use the App’s exposure logging feature, you will have to enable the COVID-19 Exposure Logging functionality provided by Google on your smartphone and grant the Corona-Warn-App permission to use this.
+In order to use the exposure logging feature, you will also have to enable the “Exposure Notifications” functionality provided by Google on your smartphone and grant the #OstaniZdrav App permission to use this.
 
-When exposure logging is enabled, your smartphone continuously generates and transmits random IDs via Bluetooth, which other Android or Apple smartphones in your vicinity can receive if exposure logging is also enabled on them. Your smartphone, in turn, receives the random IDs of the other smartphones. Your own random IDs and those received from other smartphones are recorded in the exposure log and stored there for 14 days.
+Your smartphone will then continuously generate random IDs and send them via Bluetooth so that they can be received by other smartphones near you. Your smartphone, in turn, receives the random IDs of other smartphones. Your own random IDs and those received from other smartphones are recorded by your smartphone and stored there for 14 days.
 
-To identify your risk of infection, the App loads a list – several times a day or on request – of the random IDs of all users who have told the App that they have been infected with the coronavirus. This list is then compared with the random IDs stored in the exposure log. If the App detects that you may have been in contact with an infected user, it will inform you of this and tell you that there is a risk that you are also infected. In this case, the App is also given access to other data stored in your smartphone’s exposure log (date, duration and Bluetooth signal strength of the contact).
+For exposure logging, the app downloads up-to-date lists every day of the random IDs of all users who have shared their test result (more precisely: their own random IDs) via their official coronavirus app in order to warn other users. These lists are then compared with the random IDs of other users which have been recorded by your smartphone.
 
-The Bluetooth signal strength is used to derive the physical distance (the stronger the signal, the smaller the distance). The App then analyses this information in order to assess your likelihood of having been infected with the coronavirus and to give you recommendations for what to do next. This analysis is only performed locally on your smartphone. Apart from you, nobody (not even the RKI) will know whether you have been in contact with an infected person and what risk has been identified for you.
+The app will inform you if it detects a possible exposure. In this case, the app gains access to the data recorded by your smartphone about the possible exposure (date, duration and Bluetooth signal strength of the contact). The Bluetooth signal strength is used to derive the physical distance to the other user (the stronger the signal, the smaller the distance). The app analyses this information in order to calculate your risk of infection and to give you recommendations for what to do next. This analysis is only performed locally on your smartphone.
 
-To withdraw your consent to the exposure logging feature, you can disable the feature using the toggle switch in the App or delete the App. If you decide to use the exposure logging feature again, you can toggle the feature back on or reinstall the App. If you disable the exposure logging feature, the App will no longer check whether you have been in contact with an infected user. If you also wish to stop your device sending and receiving random IDs, you will need to disable COVID-19 Exposure Logging in your smartphone settings. Please note that your own random IDs and those received from other smartphones which are stored in the exposure log will not be deleted in the App. You can only permanently delete the data stored in the exposure log in your smartphone settings.
+You can withdraw your consent to the exposure logging feature at any time by either disabling the feature using the toggle switch in the app or deleting the app. If you would like to use the exposure logging feature again, you can toggle the feature back on or reinstall the app. If you disable the exposure logging feature, the app will no longer check for possible exposures. If you also wish to stop your device sending and receiving random IDs, you will need to disable the “Exposure Notifications” functionality in your smartphone settings. Please note that the app will not delete your random IDs or those received from other smartphones which have been recorded by this functionality on your iPhone. You can only permanently delete these in your smartphone settings.
 
-The App’s privacy notice (including an explanation of the data processing carried out for the exposure logging feature) can be found in the menu under “Data Privacy Information”."</string>
-    <string name="onboarding_tracing_body_emphasized">The encrypted random IDs only pass information about date, duration and proximity (using signal strength) to other people. Personal data such as name, address, location is never recorded. Individuals cannot be identified.</string>
+The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”."</string>
+    <string name="onboarding_tracing_body_emphasized">The encrypted random IDs only pass information about date, duration, and proximity (calculated from signal strength) to other people. Personal data as in name, address and location are not being logged or exchanged. Individuals cannot be identified based on the random IDs.</string>
     <string name="onboarding_tracing_button_next">Activate Exposure Logging</string>
-    <string name="onboarding_tracing_dialog_body">This means the Corona-Warn-App cannot send or receive notifications about your COVID-19 risk status. You can deactivate this feature at any time.</string>
+    <string name="onboarding_tracing_dialog_body">This means the #OstaniZdrav App cannot send or receive notifications about your SARS-CoV-2 infection risk status. You can deactivate this feature at any time.</string>
     <string name="onboarding_tracing_dialog_button_negative">Back</string>
     <string name="onboarding_tracing_dialog_button_positive">Do Not Activate</string>
     <string name="onboarding_tracing_dialog_headline">Authorization</string>
-    <string name="onboarding_tracing_easy_language_explanation">" "</string>
+    <string name="onboarding_tracing_easy_language_explanation"><a href="https://arhiv.mm.gov.si/vlada/MJJ/TolmačkaAPPvodič.mp4">Presentation of the application in Slovene sign language.</a></string>
+    <string name="onboarding_tracing_easy_language_explanation_url">https://arhiv.mm.gov.si/vlada/MJJ/TolmačkaAPPvodič.mp4</string>
     <string name="onboarding_tracing_headline">How to Enable Exposure Logging</string>
     <string name="onboarding_tracing_headline_consent">Declaration of Consent</string>
-    <string name="onboarding_tracing_illustration_description">Three people have activated exposure logging on their devices, which will log their encounters with each other.</string>
-    <string name="onboarding_tracing_location_body">Your location services are disabled. In order for the App to function properly, Google and/or Android require location services to use the Bluetooth.</string>
+    <string name="onboarding_tracing_illustration_description">Three persons have activated exposure logging on their smartphones, which will log their encounters with each other.</string>
+    <string name="onboarding_tracing_location_body">Google and/or Android requires active location services for Bluetooth to work properly.</string>
     <string name="onboarding_tracing_location_button">Open Device Settings</string>
-    <string name="onboarding_tracing_location_headline">Enable location services</string>
-    <string name="onboarding_tracing_subtitle">To identify whether you are at risk of infection, you must activate the exposure logging feature.</string>
+    <string name="onboarding_tracing_location_headline">Location Services</string>
+    <string name="onboarding_tracing_subtitle" />
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
-    <string name="preference_auth_code">preference_auth_code</string>
+    <string name="preference_auth_code" />
     <string name="preference_background_check_done">preference_background_check_done</string>
     <string name="preference_background_job_allowed">preference_background_job_enabled</string>
-    <string name="preference_background_notification">preference_background_notification</string>
+    <string name="preference_background_notification" />
     <string name="preference_copied">\"%1$s\" copied to clipboard.</string>
     <string name="preference_database_password">preference_database_password</string>
     <string name="preference_device_pairing_successful_time">preference_device_pairing_successful_time</string>
     <string name="preference_initial_result_received_time">preference_initial_result_received_time</string>
     <string name="preference_initial_tracing_activation_time">preference_initial_tracing_activation_time</string>
+    <string name="preference_interoperability_all_countries_selected" />
+    <string name="preference_interoperability_selected_country_codes" />
     <string name="preference_is_allowed_to_submit_diagnosis_keys">preference_is_allowed_to_submit_diagnosis_keys</string>
     <string name="preference_last_non_active_tracing_timestamp">preference_last_non_active_tracing_timestamp</string>
-    <string name="preference_last_three_hours_from_server">preference_last_three_hours_from_server</string>
     <string name="preference_mobile_data_allowed">preference_mobile_data_enabled</string>
     <string name="preference_name">shared_preferences_cwa</string>
-    <string name="preference_notifications_enabled">preference_notifications_enabled</string>
-    <string name="preference_notifications_risk_enabled">preference_notifications_risk_enabled</string>
-    <string name="preference_notifications_test_enabled">preference_notifications_test_enabled</string>
     <string name="preference_number_successful_submissions">preference_number_successful_submissions</string>
     <string name="preference_onboarding_completed">preference_onboarding_completed</string>
     <string name="preference_onboarding_completed_timestamp">preference_onboarding_completed_timestamp</string>
@@ -336,96 +466,110 @@ The App’s privacy notice (including an explanation of the data processing carr
     <string name="preference_registration_token">preference_registration_token</string>
     <string name="preference_reset_app">preference_reset_app</string>
     <string name="preference_risk_days_explanation_shown">preference_risk_days_explanation_shown</string>
-    <string name="preference_risk_level_score">preference_risk_level_score</string>
-    <string name="preference_risk_level_score_successful">preference_risk_level_score_successful</string>
-    <string name="preference_string_google_api_token">preference_m_string_google_api_token</string>
-    <string name="preference_teletan">preference_teletan</string>
-    <string name="preference_test_guid">preference_test_guid</string>
+    <string name="preference_risk_level_score" />
+    <string name="preference_risk_level_score_successful" />
+    <string name="preference_string_google_api_token" />
+    <string name="preference_teletan" />
+    <string name="preference_test_guid" />
     <string name="preference_test_result_notification">preference_test_result_notification</string>
-    <string name="preference_timestamp_diagnosis_keys_fetch">preference_timestamp_diagnosis_keys_fetch</string>
     <string name="preference_timestamp_manual_diagnosis_keys_retrieval">preference_timestamp_manual_diagnosis_keys_retrieval</string>
-    <string name="preference_timestamp_risk_level_calculation">preference_timestamp_risk_level_calculation</string>
+    <string name="preference_timestamp_risk_level_calculation" />
     <string name="preference_total_non_active_tracing">preference_total_non_active_tracing</string>
     <string name="preference_tracing">preference_tracing</string>
-    <string name="risk_card_body_contact">No exposure up to now</string>
-    <string name="risk_card_body_next_update">Updated daily</string>
+    <string name="risk_card_body_contact" />
     <string name="risk_card_body_not_yet_fetched">Encounters have not yet been checked.</string>
     <string name="risk_card_body_open_daily">Note: Please open the app daily to update your risk status.</string>
     <string name="risk_card_body_saved_days">Exposure logging was active for %1$s of the past 14 days.</string>
     <string name="risk_card_body_saved_days_full">Exposure logging permanently active</string>
     <string name="risk_card_body_time_fetched">Updated: %1$s</string>
     <string name="risk_card_body_tracing_off">Activate exposure logging to evaluate your risk status today.</string>
-    <string name="risk_card_button_cooldown">Update in %1$s</string>
+    <string name="risk_card_button_cooldown" />
     <string name="risk_card_button_enable_tracing">Activate Exposure Logging</string>
     <string name="risk_card_button_update">Update</string>
+    <string name="risk_card_check_failed_no_internet_body">The synchronization of random IDs with the server failed. You can restart the synchronization manually.</string>
+    <string name="risk_card_check_failed_no_internet_headline">Exposure check failed</string>
+    <string name="risk_card_check_failed_no_internet_restart_button">Restart</string>
+    <string name="risk_card_high_risk_most_recent_body">Most recently on %1$s</string>
     <string name="risk_card_increased_risk_headline">Increased Risk</string>
-    <string name="risk_card_loading_body">"Current data is being downloaded and checked.
-This can take several minutes."</string>
-    <string name="risk_card_loading_headline">Check is running…</string>
     <string name="risk_card_low_risk_headline">Low Risk</string>
-    <string name="risk_card_no_calculation_possible_body_saved_risk">"Last exposure logging:
+    <string name="risk_card_low_risk_no_encounters_body">No exposures</string>
+    <string name="risk_card_no_calculation_possible_body_saved_risk">"Last exposure check:
 %1$s"</string>
     <string name="risk_card_no_calculation_possible_headline">Exposure logging stopped</string>
     <string name="risk_card_outdated_manual_risk_body">Your risk status has not been updated for more than 48 hours. Please update your risk status.</string>
     <string name="risk_card_outdated_risk_body">Your exposure logging could not be updated for more than 24 hours.</string>
     <string name="risk_card_outdated_risk_headline">Exposure logging is not possible</string>
+    <string name="risk_card_progress_calculation_body">Your exposure data is being checked. This may take several minutes. Thank you for your patience.</string>
+    <string name="risk_card_progress_calculation_headline">Check is running…</string>
+    <string name="risk_card_progress_download_body">This may take several minutes. Thank you for your patience.</string>
+    <string name="risk_card_progress_download_headline">Data is being downloaded…</string>
     <string name="risk_card_unknown_risk_body">Since you have not activated exposure logging for long enough, we could not calculate your risk of infection.</string>
-    <string name="risk_card_unknown_risk_headline">Unknown Risk</string>
+    <string name="risk_card_unknown_risk_headline" />
     <string name="risk_details_accessibility_title">Your Risk Status</string>
-    <string name="risk_details_additional_info_subtitle">Why your risk of infection is low</string>
-    <string name="risk_details_additional_info_text">"You encountered a person who was later diagnosed with SARS-CoV-2. Nevertheless, based on your exposure logging data, your risk of infection is low. The risk is low if your encounter was brief or occurred at a distance. You do not need to worry and there is no specific need for action. We recommend that you adhere to the recommendations for prevention of the spread of SARS-CoV-2.  "</string>
+    <string name="risk_details_additional_info_subtitle" />
+    <string name="risk_details_additional_info_text">You encountered a person who was later confirmed with a SARS-CoV-2 infection. Nevertheless, based on your exposure logging data, your risk of infection is low. The risk is low if your encounter was brief or occurred at a distance. You do not need to worry and there is no specific need for action. We recommend that you adhere to the current measures and recommendations in place to prevent the spread of SARS-CoV-2 infection.</string>
     <string name="risk_details_additional_info_title">Exposures with low risk</string>
-    <string name="risk_details_behavior_body_contact_doctor">If you have questions about symptoms, testing availability, or self-isolation, please contact one of the following:</string>
-    <string name="risk_details_behavior_body_cough_sneeze">Sneeze or cough into your elbow or a tissue.</string>
-    <string name="risk_details_behavior_body_stay_away">Keep at least 1.5 meters distance from other people.</string>
-    <string name="risk_details_behavior_body_stay_home">If possible, please go home and stay at home.</string>
-    <string name="risk_details_behavior_body_wash_hands">Wash your hands regularly, with soap, for 20 seconds.</string>
-    <string name="risk_details_behavior_body_wear_mask">Wear a face mask when you encounter other people.</string>
-    <string name="risk_details_behavior_increased_body_1">Your general practitioner</string>
-    <string name="risk_details_behavior_increased_body_2">General medical emergency service on telephone number 116117</string>
-    <string name="risk_details_behavior_increased_body_3">Your public health authority</string>
+    <string name="risk_details_behavior_body_contact_doctor">Monitor your health. If you experience any of the following symptoms or signs, stay at home and contact the emergency doctor:</string>
+    <string name="risk_details_behavior_body_cough_sneeze">Before coughing or sneezing, cover your mouth and nose with a tissue or cough or sneeze in the top of your sleeve.</string>
+    <string name="risk_details_behavior_body_stay_away">Keep at least 2 meters distance from other people and avoid closed spaces. Ventilate the premises regularly.</string>
+    <string name="risk_details_behavior_body_stay_home">We advise you to stay at home at a time when the app alerts you to an increased risk. You can obtain a home quarantine certificate on the eGovernment portal.</string>
+    <string name="risk_details_behavior_body_wash_hands">Wash your hands regularly and thoroughly with soap and water. Do not touch the eyes, nose and mouth with unclean hands.</string>
+    <string name="risk_details_behavior_body_wear_mask">The use of a mask is advised. Ventilate the premises regularly.</string>
+    <string name="risk_details_behavior_increased_body_1">Feeling unwell, symptoms of a cold, cough, fever, shortness of breath, headache, muscle aches, loss of smell or taste, sore throat.</string>
+    <string name="risk_details_behavior_increased_body_2">Continue to adhere to the measures in place to prevent the spread of infection.</string>
+    <string name="risk_details_behavior_increased_body_3" />
     <string name="risk_details_button_enable_tracing">@string/risk_card_button_enable_tracing</string>
     <string name="risk_details_button_update">@string/risk_card_button_update</string>
-    <string name="risk_details_explanation_dialog_faq_body">For further information, please see our FAQ page.</string>
+    <string name="risk_details_deadman_notification_body">Please remember to open the #OstaniZdrav App regularly to check your risk status.</string>
+    <string name="risk_details_deadman_notification_title">Your Risk Status</string>
+    <string name="risk_details_explanation_dialog_faq_body">For further information, please see our webpage.</string>
+    <string name="risk_details_explanation_dialog_gov_body">You can obtain a home quarantine certificate on the eGovernment portal.</string>
     <string name="risk_details_explanation_dialog_title">Information about exposure logging functionality</string>
+    <string name="risk_details_explanation_faq_link">https://www.nijz.si/sl/koronavirus-2019-ncov</string>
+    <string name="risk_details_explanation_gov_link">https://e-uprava.gov.si/podrocja/sociala-zdravje-smrt/zdravje/potrdilo-o-karanteni.html</string>
     <string name="risk_details_headline_behavior">Guidelines</string>
     <string name="risk_details_headline_infection_risk">Risk of Infection</string>
-    <string name="risk_details_headline_period_logged">Period logged</string>
-    <string name="risk_details_information_body_low_risk">You have a low risk of infection because no exposure to people later diagnosed with COVID-19 was logged, or because your encounters were only for a short time and at a greater distance.</string>
-    <string name="risk_details_information_body_low_risk_with_encounter">The risk of infection is assessed locally on your device, using exposure logging data. The calculation also takes into account distance and duration of any exposure to persons diagnosed with SARS-CoV-2. Your risk of infection cannot be seen by or passed on to anyone else.</string>
-    <string name="risk_details_information_body_notice">Your risk of infection is calculated from the exposure logging data (duration and proximity) locally on your device. Your risk of infection cannot be seen by, or passed on to, anyone else.</string>
-    <string name="risk_details_information_body_notice_increased">Therefore, your risk of infection has been ranked as increased. Your risk of infection is calculated from the exposure logging data (duration and proximity) locally on your device. Your risk of infection cannot be seen by, or passed on to, anyone else. When you get home, please also avoid close contact with members of your family or household.</string>
-    <string name="risk_details_information_body_notice_low">Therefore, your risk of infection has been ranked as low. Your risk of infection is calculated from the exposure logging data (duration and proximity) locally on your device. Your risk of infection cannot be seen by, or passed on to, anyone else.</string>
+    <string name="risk_details_headline_period_logged">Period Logged</string>
+    <string name="risk_details_information_body_low_risk">You have a low risk of infection because no exposure to people who were later confimed with a SARS-CoV-2 infection was logged.</string>
+    <string name="risk_details_information_body_low_risk_with_encounter">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
+    <string name="risk_details_information_body_notice">Your risk of infection is calculated from the exposure logging data (duration and proximity) locally on your smartphone. Your risk of infection cannot be seen by, or passed on to, anyone else.</string>
+    <string name="risk_details_information_body_notice_increased">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
     <string name="risk_details_information_body_outdated_risk">Your exposure logging could not be updated for more than 24 hours.</string>
     <string name="risk_details_information_body_period_logged">Your risk of infection can be calculated only for periods during which exposure logging was active. The logging feature should therefore remain active permanently.</string>
-    <string name="risk_details_information_body_period_logged_assessment">Exposure logging covers the past 14 days. During this time, the logging feature on your device was active for %1$s days. The app automatically deletes older logs, as these are no longer relevant for infection prevention.</string>
-    <string name="risk_details_information_body_unknown_risk">Since you have not activated exposure logging for long enough, we could not calculate your risk of infection.</string>
-    <string name="risk_details_subtitle_behavior">This is what you should do</string>
-    <string name="risk_details_subtitle_infection_risk">This is how your risk is calculated</string>
-    <string name="risk_details_subtitle_infection_risk_past">This is how your risk was calculated</string>
-    <string name="risk_details_subtitle_period_logged">This period is included in the calculation.</string>
+    <string name="risk_details_information_body_period_logged_assessment">Exposure logging covers the past 14 days. During this time, the logging feature on your smartphone was active for %1$s days. The app automatically deletes older logs, as these are no longer relevant for infection prevention.</string>
+    <string name="risk_details_information_body_unknown_risk" />
+    <string name="risk_details_subtitle_behavior">This is what you should do:</string>
+    <string name="risk_details_subtitle_infection_risk">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
+    <string name="risk_details_subtitle_infection_risk_past">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
+    <string name="risk_details_subtitle_period_logged">Exposure logging period</string>
     <string name="risk_details_title">Your Risk Status</string>
+    <string name="risk_lowered_dialog_body">The last exposure that resulted in your increased risk was more than 14 days ago. Therefore, your risk of infection has been ranked as low again. If you do not have any COVID-19 symptoms, continue to follow the prevailing measures and recommendations. However, if you have COVID-19 symptoms, we recommend that you contact your doctor and get tested.</string>
+    <string name="risk_lowered_dialog_button_cancel">More</string>
+    <string name="risk_lowered_dialog_button_confirm">Ok</string>
+    <string name="risk_lowered_dialog_headline">Change of Your Risk Status</string>
     <string name="search_menu_title">Search</string>
-    <string name="settings_background_priority_body">Corona-Warn-App runs in the background permanently if you activate prioritized background activity. This enables the app to determine your risk status any time.</string>
+    <string name="settings_background_priority_body">If you activate prioritized background activity, the App can determine your risk status at any time. To ensure that the #OstaniZdrav App functions properly, disable the optimisation of energy consumption in the app settings. This will enable the application to evaluate the risk of infection at any time.</string>
     <string name="settings_background_priority_body_description">Allow automatic risk status updates</string>
-    <string name="settings_background_priority_card_body">To disable prioritized background activity, please deactivate it in the device settings.</string>
+    <string name="settings_background_priority_card_body">You can activate and deactivate prioritized background activity in your device settings.</string>
     <string name="settings_background_priority_card_button">Open Device Settings</string>
-    <string name="settings_background_priority_card_headline">Disable prioritized background activity</string>
-    <string name="settings_background_priority_headline">Run Corona-Warn-App in Background</string>
-    <string name="settings_background_priority_illustration_description">"  x"</string>
+    <string name="settings_background_priority_card_headline">Change prioritized background activity</string>
+    <string name="settings_background_priority_headline">Update Risk Status Automatically</string>
+    <string name="settings_background_priority_illustration_description" />
     <string name="settings_background_priority_title">Prioritized Background Activity</string>
-    <string name="settings_notifications_body_active">Specify which areas you want to continue to receive notifications for.</string>
-    <string name="settings_notifications_body_description">Allow automatic notifications of COVID-19 risk status</string>
-    <string name="settings_notifications_body_inactive">To activate notifications, you must allow notifications for the Corona-Warn-App in your device settings.</string>
+    <string name="settings_interoperability_subtitle">Participating Countries</string>
+    <string name="settings_interoperability_title">Transnational Exposure Logging</string>
+    <string name="settings_notifications_body_active" />
+    <string name="settings_notifications_body_description">Allow automatic notifications of SARS-CoV-2 infection risk status</string>
+    <string name="settings_notifications_body_inactive">To activate notifications, you must allow notifications for the #OstaniZdrav App in your device settings.</string>
     <string name="settings_notifications_button_open_settings">Open Device Settings</string>
-    <string name="settings_notifications_headline_active">Do you want to activate notifications of your COVID-19 risk status?</string>
+    <string name="settings_notifications_headline_active">Do you want to activate notifications of your SARS-CoV-2 infection risk status?</string>
     <string name="settings_notifications_headline_card">Activate Notifications</string>
     <string name="settings_notifications_headline_inactive">Notifications are deactivated</string>
-    <string name="settings_notifications_illustration_description_active">A woman receives a notification from her Corona-Warn-App.</string>
-    <string name="settings_notifications_illustration_description_inactive">A woman has deactivated notifications for her Corona-Warn-App.</string>
+    <string name="settings_notifications_illustration_description_active">A woman receives a notification from her #OstaniZdrav App.</string>
+    <string name="settings_notifications_illustration_description_inactive">A woman has deactivated notifications for her #OstaniZdrav App.</string>
     <string name="settings_notifications_subtitle_notification">Notifications</string>
     <string name="settings_notifications_subtitle_update_risk">Your risk of infection changed</string>
-    <string name="settings_notifications_subtitle_update_test">Status of your COVID-19 test</string>
+    <string name="settings_notifications_subtitle_update_test">Status of your SARS-CoV-2 test</string>
     <string name="settings_notifications_title">Notifications</string>
     <string name="settings_off">Off</string>
     <string name="settings_on">On</string>
@@ -448,17 +592,15 @@ Log"</string>
     <string name="settings_tracing_body_active">Exposure Logging Active</string>
     <string name="settings_tracing_body_bluetooth_inactive">Bluetooth turned off</string>
     <string name="settings_tracing_body_connection_inactive">No Internet connection</string>
-    <string name="settings_tracing_body_description">Allow COVID-19 random IDs to be generated and shared.</string>
+    <string name="settings_tracing_body_description">Allow creation and sharing of random IDs for exposure logging.</string>
     <string name="settings_tracing_body_inactive">Exposure logging stopped</string>
     <string name="settings_tracing_body_inactive_location">Location services deactivated</string>
-    <string name="settings_tracing_body_text">"You have to activate the exposure logging feature to identify whether you are at risk of infection. Risk identification works by your device receiving, via Bluetooth, encrypted random IDs of other users and passing your random ID to their devices. You can disable this feature any time.
-
-Encrypted random IDs only pass information about date, duration, and proximity to other persons (calculated by signal strength). Personal data such as name, address, and location is never recorded. Individuals cannot be identified."</string>
+    <string name="settings_tracing_body_text">The exposure logging feature works by your smartphone receiving encrypted random IDs from other users via Bluetooth and passing your own random IDs to their smartphones. You can use the toggle switch to disable exposure logging at any time. The app never collects personal data such as your name, address or location, nor is this information passed on to other users. It is not possible to use random IDs to draw conclusions about individual persons.</string>
     <string name="settings_tracing_connection_illustration_description_inactive">A person has turned off the Internet connection on their smartphone, so an encounter with two other persons is not logged.</string>
-    <string name="settings_tracing_headline">This is how exposure logging works</string>
-    <string name="settings_tracing_illustration_description_active">Three people have activated exposure logging on their devices, which will log their encounters with each other.</string>
+    <string name="settings_tracing_headline">How exposure logging works</string>
+    <string name="settings_tracing_illustration_description_active">Three persons have activated exposure logging on their smartphones, which will log their encounters with each other.</string>
     <string name="settings_tracing_illustration_description_inactive">A person has deactivated exposure logging on their smartphone, so an encounter with two other persons is not logged.</string>
-    <string name="settings_tracing_location_illustration_description_inactive">x</string>
+    <string name="settings_tracing_location_illustration_description_inactive" />
     <string name="settings_tracing_status_active">Active</string>
     <string name="settings_tracing_status_bluetooth_body">Bluetooth must be turned on for exposure logging in order to log encounters. Please turn on Bluetooth in your device settings.</string>
     <string name="settings_tracing_status_bluetooth_button">Open Device Settings</string>
@@ -467,52 +609,90 @@ Encrypted random IDs only pass information about date, duration, and proximity t
     <string name="settings_tracing_status_connection_button">Open Device Settings</string>
     <string name="settings_tracing_status_connection_headline">Open Internet connection</string>
     <string name="settings_tracing_status_inactive">Stopped</string>
-    <string name="settings_tracing_status_location_body">"Your location cannot be accessed. Google and/or Android requires access to your device's location to use Bluetooth."</string>
+    <string name="settings_tracing_status_location_body">Activate your location services. Bluetooth Low Energy requires activated location services to calculate physical distances, but does not access your location. For further information, please see our FAQ page.</string>
+    <string name="settings_tracing_status_location_body_url">https://www.gov.si/en/topics/coronavirus-disease-covid-19/the-ostanizdrav-mobile-application/</string>
     <string name="settings_tracing_status_location_button">Open Device Settings</string>
-    <string name="settings_tracing_status_location_headline">Allow location access</string>
+    <string name="settings_tracing_status_location_headline">Enable location services</string>
     <string name="settings_tracing_status_restricted">Restricted</string>
     <string name="settings_tracing_title">Exposure Logging</string>
+    <string name="sixteen_description_text">This app is intended for persons who reside in the Republic of Slovenia and are at least 16 years of age.</string>
+    <string name="sixteen_title_text">Age Limit: 16 and Up</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="submission_contact_accessibility_title">x</string>
-    <string name="submission_contact_body">x</string>
-    <string name="submission_contact_button_call">x</string>
+    <string name="submission_accept_button">Agree</string>
+    <string name="submission_consent_call_test_result" />
+    <string name="submission_consent_call_test_result_body" />
+    <string name="submission_consent_call_test_result_scan_test_only_once" />
+    <string name="submission_consent_call_test_result_scan_your_test_only" />
+    <string name="submission_consent_help_by_warning_others_body">If you have been diagnosed with SARS-CoV-2, you can warn others through the app. The warning feature works in several countries. The following countries are currently participating:</string>
+    <string name="submission_consent_help_by_warning_others_headline">Please help others you have encountered by warning them!</string>
+    <string name="submission_consent_main_bottom_body">Detailed Information on Data Processing and Your Consent</string>
+    <string name="submission_consent_main_first_point">Your consent is voluntary.</string>
+    <string name="submission_consent_main_fourth_point">You must be at least 16 years old to grant your consent.</string>
+    <string name="submission_consent_main_headline">Your Consent</string>
+    <string name="submission_consent_main_headline_body">Your consent is needed before you can warn others.</string>
+    <string name="submission_consent_main_second_point">Share the information about your positive diagnosis and warn others.</string>
+    <string name="submission_consent_main_third_point">Your identity will remain secret.</string>
+    <string name="submission_consent_view_consent_given">"Consent
+“Warn others” granted"</string>
+    <string name="submission_consent_view_consent_not_given">"Consent
+“Warn others” not granted"</string>
+    <string name="submission_consent_your_consent_subsection_first_point">The app will retrieve your test result. If you change your mind later, you can delete the test in the app.</string>
+    <string name="submission_consent_your_consent_subsection_headline">Consent</string>
+    <string name="submission_consent_your_consent_subsection_second_point"><b>If you have tested positive for coronavirus, the app will share your test result in order to warn other users whom you have encountered. This includes users of the official coronavirus apps of the countries mentioned above. If you provide additional information about the onset of your symptoms, this will also be shared.</b></string>
+    <string name="submission_consent_your_consent_subsection_tapping_agree">By tapping on “Accept”, you consent to the following steps:</string>
+    <string name="submission_consent_your_consent_subsection_third_point">You can withdraw your consent at any time. The setting for this can be found under “Display Test”. Before sharing your test result, you will be reminded of your consent and asked to confirm your willingness to share your test result.</string>
+    <string name="submission_contact_accessibility_title">If you have not yet received the TAN code or it has expired, you can obtain it via the online form</string>
+    <string name="submission_contact_body" />
+    <string name="submission_contact_body_other" />
+    <string name="submission_contact_button_call">Open Form</string>
     <string name="submission_contact_button_enter">Enter TAN</string>
-    <string name="submission_contact_headline">How this works:</string>
-    <string name="submission_contact_number_dial">+49 800 7540002</string>
-    <string name="submission_contact_number_display">+49 800 7540002</string>
-    <string name="submission_contact_operating_hours_body">"Languages: 
-German, English, Turkish
-
-Business hours:
-Monday to Sunday: 24 hours
-
-The call is free of charge."</string>
-    <string name="submission_contact_step_1_body">x</string>
-    <string name="submission_contact_step_1_content">x</string>
+    <string name="submission_contact_headline">To obtain a TAN code:</string>
+    <string name="submission_contact_number_dial">https://www.nijz.si/koda</string>
+    <string name="submission_contact_number_display">NIJZ</string>
+    <string name="submission_contact_operating_hours_body" />
+    <string name="submission_contact_step_1_body">By entering the data in the online form, you will receive a TAN code via SMS.</string>
+    <string name="submission_contact_step_1_content">By entering the data in the online form, you will receive a TAN code via SMS.</string>
     <string name="submission_contact_step_2_body">Register the test by entering the TAN in the app.</string>
     <string name="submission_contact_step_2_content">In the second step, you register your test with your TAN in the app.</string>
-    <string name="submission_contact_title">x</string>
-    <string name="submission_dispatcher_accessibility_title">x</string>
-    <string name="submission_dispatcher_card_qr">" x"</string>
-    <string name="submission_dispatcher_card_tan_code">TAN</string>
-    <string name="submission_dispatcher_card_tan_tele">x</string>
-    <string name="submission_dispatcher_headline">Selection</string>
-    <string name="submission_dispatcher_qr_card_text">" x"</string>
-    <string name="submission_dispatcher_qr_privacy_dialog_body">x</string>
-    <string name="submission_dispatcher_qr_privacy_dialog_button_negative">Do Not Accept</string>
-    <string name="submission_dispatcher_qr_privacy_dialog_button_positive">Accept</string>
-    <string name="submission_dispatcher_qr_privacy_dialog_headline">Declaration of Consent</string>
-    <string name="submission_dispatcher_subheadline">" x"</string>
-    <string name="submission_dispatcher_tan_code_card_text">Register your test by entering your TAN manually.</string>
-    <string name="submission_dispatcher_tan_tele_card_text">x</string>
-    <string name="submission_done_body">You have made a valuable contribution. Thanks to your support, other people can now be warned and can react appropriately.</string>
+    <string name="submission_contact_title">Request TAN</string>
+    <string name="submission_country_no_selection_headline" />
+    <string name="submission_country_selection_button" />
+    <string name="submission_country_selection_data_faq_body" />
+    <string name="submission_country_selector_headline" />
+    <string name="submission_dispatcher_accessibility_title" />
+    <string name="submission_dispatcher_already_positive_subheadline" />
+    <string name="submission_dispatcher_card_qr">Test with QR Code</string>
+    <string name="submission_dispatcher_card_tan_code">Enter TAN</string>
+    <string name="submission_dispatcher_card_tan_tele">Request TAN</string>
+    <string name="submission_dispatcher_headline">Was your test positive?</string>
+    <string name="submission_dispatcher_needs_testing_subheadline" />
+    <string name="submission_dispatcher_qr_card_text" />
+    <string name="submission_dispatcher_qr_privacy_dialog_body" />
+    <string name="submission_dispatcher_qr_privacy_dialog_button_negative" />
+    <string name="submission_dispatcher_qr_privacy_dialog_button_positive" />
+    <string name="submission_dispatcher_qr_privacy_dialog_headline" />
+    <string name="submission_dispatcher_subheadline">Notifying via application is completely anonymous.</string>
+    <string name="submission_dispatcher_tan_code_card_text">Share the information about your SARS-CoV-2 infection by entering the TAN in the application.</string>
+    <string name="submission_dispatcher_tan_tele_card_text">If you have not yet received the TAN code or it has expired, you can obtain it via the online form.</string>
+    <string name="submission_done_body">Thanks to your support, other people can now be warned and respond appropriately.</string>
     <string name="submission_done_button_done">Done</string>
-    <string name="submission_done_contagious">You are infectious.</string>
+    <string name="submission_done_contagious">For psychological support during the COVID-19 epidemic please call 080 51 00. The call is free of charge and is available 24 hours a day, 7 days a week.</string>
     <string name="submission_done_further_info_title">Other information:</string>
-    <string name="submission_done_illustration_description">Everyone in the group is cheering because someone has shared the test result.</string>
-    <string name="submission_done_isolate">Please isolate yourself from other people.</string>
+    <string name="submission_done_illustration_description">Have you experienced one or more of the following symptoms in the past few days?</string>
+    <string name="submission_done_isolate">Please follow the isolation instructions received by the health service.</string>
+    <string name="submission_done_no_consent_body">You can now help to improve the accuracy of the warnings. To do so, in the next step, tell us when you first developed symptoms. You can cancel this step at any time.</string>
+    <string name="submission_done_no_consent_body_title">Warn others</string>
+    <string name="submission_done_no_consent_break_flow">Exit</string>
+    <string name="submission_done_no_consent_continue_with_symptom_recording">Next</string>
+    <string name="submission_done_no_consent_illustration_description">Several people are looking at their smartphones.</string>
+    <string name="submission_done_no_consent_subtitle" />
+    <string name="submission_done_no_consent_title">Thank you!</string>
     <string name="submission_done_subtitle">Please note:</string>
-    <string name="submission_done_title">Thank you</string>
+    <string name="submission_done_title">Thank you!</string>
+    <string name="submission_error_dialog_confirm_cancellation_body">Your entries will not be saved.</string>
+    <string name="submission_error_dialog_confirm_cancellation_button_negative">No</string>
+    <string name="submission_error_dialog_confirm_cancellation_button_positive">Yes</string>
+    <string name="submission_error_dialog_confirm_cancellation_title">Do you want to cancel entering your symptoms?</string>
     <string name="submission_error_dialog_web_generic_error_body">Connection could not be established. Please try again.</string>
     <string name="submission_error_dialog_web_generic_error_button_positive">Back</string>
     <string name="submission_error_dialog_web_generic_error_title">Error</string>
@@ -520,114 +700,206 @@ The call is free of charge."</string>
     <string name="submission_error_dialog_web_paring_invalid_body">A TAN for submission could not be generated. Please contact the technical hotline via App Information → Technical Hotline.</string>
     <string name="submission_error_dialog_web_paring_invalid_button_positive">Back</string>
     <string name="submission_error_dialog_web_paring_invalid_title">Error</string>
-    <string name="submission_error_dialog_web_tan_invalid_body">The generated TAN is invalid for submission. Please contact the technical hotline via App Information → Technical Hotline.</string>
+    <string name="submission_error_dialog_web_tan_invalid_body">We could not create the TAN number. Call the Single Contact Centre: Application info → Single Contact Centre.</string>
     <string name="submission_error_dialog_web_tan_invalid_button_positive">Back</string>
     <string name="submission_error_dialog_web_tan_invalid_title">Error</string>
-    <string name="submission_error_dialog_web_tan_redeemed_body">There was a problem evaluating your test. Your QR code has already expired.</string>
+    <string name="submission_error_dialog_web_tan_redeemed_body">Your test is more than 21 days old and can no longer be registered in the app. If you are tested again in future, please make sure to scan the QR code as soon as you get it.</string>
     <string name="submission_error_dialog_web_tan_redeemed_button_positive">OK</string>
-    <string name="submission_error_dialog_web_tan_redeemed_title">Test has errors</string>
-    <string name="submission_error_dialog_web_test_paired_body">The QR code/TAN is invalid or has been used already. Please try again or contact the technical hotline via App Information -> Technical Hotline.</string>
+    <string name="submission_error_dialog_web_tan_redeemed_title">QR code no longer valid</string>
+    <string name="submission_error_dialog_web_test_paired_body">The QR code is invalid or has been registered on another smartphone already. You will receive your test result from the test center or laboratory regardless of the validity of the QR code. If you are diagnosed with coronavirus, you will be notified by the public health authority.</string>
+    <string name="submission_error_dialog_web_test_paired_body_tan">The TAN is invalid or has already been used. For further information, call the number listed under “Request TAN”.</string>
     <string name="submission_error_dialog_web_test_paired_button_positive">Back</string>
-    <string name="submission_error_dialog_web_test_paired_title">Error</string>
-    <string name="submission_intro_accessibility_title">Have you been tested? This is how the Corona-Warn-App works</string>
+    <string name="submission_error_dialog_web_test_paired_title">QR code is invalid</string>
+    <string name="submission_error_dialog_web_test_paired_title_tan">TAN is invalid</string>
+    <string name="submission_interoperability_list_title">The following countries currently participate in transnational exposure logging:</string>
+    <string name="submission_intro_accessibility_title" />
     <string name="submission_intro_button_next">Next</string>
-    <string name="submission_intro_headline">This is how the Corona-Warn-App works</string>
-    <string name="submission_intro_illustration_description">An encrypted positive test diagnosis is transmitted to the system, which will now warn other users.</string>
-    <string name="submission_intro_text">"For the app to work well, we are relying on the support of people who were diagnosed with COVID-19.
+    <string name="submission_intro_headline" />
+    <string name="submission_intro_illustration_description" />
+    <string name="submission_intro_text" />
+    <string name="submission_intro_title" />
+    <string name="submission_no_consent_your_consent_subsection_body_first_part">By tapping on “Accept”, you consent to the following:</string>
+    <string name="submission_no_consent_your_consent_subsection_body_second_part">"The app will share your random ID's in order to warn other users of official coronavirus apps whom you have encountered. The warning will work in the countries mentioned above. If you provide additional information about the onset of your symptoms, this will also be shared. In the next step, please share your random IDs from the last 14 days by tapping on “Share”."</string>
+    <string name="submission_no_consent_your_consent_subsection_body_third_part">If you have already warned other users, you can withdraw your consent by deleting the app.</string>
+    <string name="submission_positive_country_selection_headline">Which countries have you visited in the last 14 days?</string>
+    <string name="submission_positive_country_selection_title">Europe-wide warnings</string>
+    <string name="submission_positive_other_illustration_description">A smartphone transmits an encrypted confirmed infection to the system.</string>
+    <string name="submission_positive_other_warning_body">"If you wish, you can now ensure that others are warned of possible infection.
 
-Since only encrypted random IDs are exchanged, you will remain anonymous. You can now proceed as follows:"</string>
-    <string name="submission_intro_title">Have you been tested?</string>
-    <string name="submission_positive_other_illustration_description">A device transmits an encrypted positive test diagnosis to the system.</string>
-    <string name="submission_positive_other_warning_body">"Next, you can make sure that the Corona-Warn-App shares your random IDs of the last 14 days with others. By doing this, you can warn other people and help to break the infection chain.
+To do so, you can transmit your own random IDs from the last 14 days – and, optionally, information about when you first noticed coronavirus symptoms – to the server operated jointly by the participating countries. From there, your random IDs and any additional information will be distributed to the users of the relevant official coronavirus apps. In this way, any other users with whom you have had contact can be warned of a possible infection.
 
-Since only impersonal random IDs are transmitted, your identity will remain anonymous."</string>
-    <string name="submission_positive_other_warning_button">Next</string>
+The only information transmitted will be your random IDs and any optional information you provide about the onset of your symptoms. No personal data such as your name, address or location will be disclosed."</string>
+    <string name="submission_positive_other_warning_button" />
     <string name="submission_positive_other_warning_headline">Please help all of us!</string>
-    <string name="submission_positive_other_warning_privacy_body">"By tapping on “Accept”, you consent to the App sending your positive test result to the App’s server system along with your random IDs from the last 14 days, so that other App users who have enabled the exposure logging feature can be automatically notified that they may have been exposed to a risk of infection. The random IDs transmitted for this purpose do not contain any information that would allow conclusions to be drawn about your identity or your person. 
+    <string name="submission_positive_other_warning_no_consent_body_first_part">Because you tested positive for coronavirus, you can now warn others through the app.</string>
+    <string name="submission_positive_other_warning_no_consent_body_second_part">The warning feature works in several countries. The following countries are currently participating:</string>
+    <string name="submission_positive_other_warning_privacy_body"><b>By tapping on „Accept“, you consent to your random IDs from the last 14 days, along with any optional information you provide about the onset of your symptoms, being transmitted to the app’s server system.</b>" This information will be used to assess the risk of infection for app users with whom you have come into contact, and to warn them if there is a risk that they are infected. In order to be able to warn the users of official coronavirus apps in other participating countries, the app’s server system will also make this information available to the joint exchange server operated by the participating countries.
 
-Transmitting your test result via the App is voluntary. You will not be penalized if you do not transmit your test result. Since it is not possible to trace or check whether and how you use the App, nobody but you will know whether you have transmitted the information that you are infected.
+Neither other users nor the RKI or the health authorities of participating countries can infer your identity, name or other personal information from the data transmitted.
 
-You can withdraw your consent at any time by deleting the App. This withdrawal of your consent will not affect the lawfulness of the processing carried out based on the consent prior to the withdrawal. Further information can be found in the menu under “Data Privacy Information”."</string>
-    <string name="submission_positive_other_warning_privacy_title">Data Privacy</string>
-    <string name="submission_positive_other_warning_title">Warning Others</string>
-    <string name="submission_qr_code_scan_body">"  x"</string>
-    <string name="submission_qr_code_scan_invalid_dialog_body">"  x"</string>
+Transmitting your random IDs and any information about the onset of your symptoms for transnational alerts is voluntary. You will not be penalised if you do not share this information. Since it is not possible to trace or check whether and how you use the app, nobody but you will know whether you provide your random IDs.
+
+You can withdraw your consent at any time by deleting the app. This withdrawal of your consent will not affect the lawfulness of the processing carried out on the basis of the consent prior to the withdrawal.
+
+Further information – including about the participating countries and their health authorities responsible for data protection matters – can be found in the menu under „App Information“ > „Data Privacy“."</string>
+    <string name="submission_positive_other_warning_privacy_title">Declaration of Consent</string>
+    <string name="submission_positive_other_warning_title">Warn Others</string>
+    <string name="submission_qr_code_scan_body">Position the QR code in the frame.</string>
+    <string name="submission_qr_code_scan_invalid_dialog_body">The QR code is invalid or has been registered on another smartphone already. You will receive your test result from the test center or laboratory regardless of the validity of the QR code. If you are diagnosed with coronavirus, the public health authority will be notified through the legally prescribed channel and will contact you.</string>
     <string name="submission_qr_code_scan_invalid_dialog_button_negative">Cancel</string>
     <string name="submission_qr_code_scan_invalid_dialog_button_positive">Please try again.</string>
-    <string name="submission_qr_code_scan_invalid_dialog_headline">" x"</string>
-    <string name="submission_qr_code_scan_permission_denied_dialog_body">" x"</string>
-    <string name="submission_qr_code_scan_permission_denied_dialog_button">OK</string>
-    <string name="submission_qr_code_scan_permission_denied_dialog_headline">" x"</string>
-    <string name="submission_qr_code_scan_permission_rationale_dialog_body">"  x"</string>
+    <string name="submission_qr_code_scan_invalid_dialog_headline" />
+    <string name="submission_qr_code_scan_permission_denied_dialog_body">Please call up the system settings and allow the app to use the camera to scan the QR code.</string>
+    <string name="submission_qr_code_scan_permission_denied_dialog_button">Ok</string>
+    <string name="submission_qr_code_scan_permission_denied_dialog_headline" />
+    <string name="submission_qr_code_scan_permission_rationale_dialog_body">Allow the app to use the camera to scan the QR code.</string>
     <string name="submission_qr_code_scan_permission_rationale_dialog_button_negative">Do Not Allow</string>
     <string name="submission_qr_code_scan_permission_rationale_dialog_button_positive">Allow</string>
-    <string name="submission_qr_code_scan_permission_rationale_dialog_headline">" x"</string>
-    <string name="submission_qr_code_scan_title">" x"</string>
-    <string name="submission_status_card_body_fetching">x</string>
+    <string name="submission_qr_code_scan_permission_rationale_dialog_headline" />
+    <string name="submission_qr_code_scan_title">Position the QR code in the frame.</string>
+    <string name="submission_qr_info_headline" />
+    <string name="submission_qr_info_point_1_body" />
+    <string name="submission_qr_info_point_2_body" />
+    <string name="submission_qr_info_point_3_body" />
+    <string name="submission_qr_info_point_4_body" />
+    <string name="submission_status_card_body_failed">Your test is more than 21 days old and is therefore no longer relevant. Please delete the test. You can then add another.</string>
+    <string name="submission_status_card_body_fetching">You result is being updated</string>
     <string name="submission_status_card_body_invalid">Your test could not be evaluated.</string>
     <string name="submission_status_card_body_negative">You have been diagnosed negative for SARS-CoV-2.</string>
     <string name="submission_status_card_body_pending">The evaluation of your test is not yet done.</string>
-    <string name="submission_status_card_body_positive">You have been diagnosed positive for SARS-CoV-2.</string>
-    <string name="submission_status_card_body_unregistered">Help to break the infection chain by notifying others.</string>
-    <string name="submission_status_card_button_show_results">x</string>
-    <string name="submission_status_card_button_unregistered">Learn More and Help</string>
-    <string name="submission_status_card_positive_result_contact">x</string>
-    <string name="submission_status_card_positive_result_contagious">You are infectious. Isolate yourself from other people.</string>
+    <string name="submission_status_card_body_positive" />
+    <string name="submission_status_card_body_ready" />
+    <string name="submission_status_card_body_unregistered">Help protect others and brake the chain of infection.</string>
+    <string name="submission_status_card_button_failed" />
+    <string name="submission_status_card_button_ready" />
+    <string name="submission_status_card_button_show_results" />
+    <string name="submission_status_card_button_unregistered">Enter TAN code</string>
+    <string name="submission_status_card_positive_result_contact">For psychological support during the COVID-19 epidemic please call 080 51 00, available 24 hours a day and 7 days a week and free of charge.</string>
+    <string name="submission_status_card_positive_result_contagious">Please follow the isolation instructions received by the health service.</string>
     <string name="submission_status_card_positive_result_share">Share your random IDs so that others can be warned.</string>
     <string name="submission_status_card_positive_result_subtitle">Please note:</string>
-    <string name="submission_status_card_subtitle_invalid">x</string>
-    <string name="submission_status_card_subtitle_negative">x</string>
-    <string name="submission_status_card_title_available">x</string>
-    <string name="submission_status_card_title_fetching">Data being retrieved....</string>
-    <string name="submission_status_card_title_pending">x</string>
-    <string name="submission_status_card_title_positive">Positive Diagnosis</string>
-    <string name="submission_status_card_title_unregistered">Have you been tested?</string>
-    <string name="submission_tan_accessibility_title">TAN entry</string>
+    <string name="submission_status_card_subtitle_invalid" />
+    <string name="submission_status_card_subtitle_negative" />
+    <string name="submission_status_card_subtitle_ready" />
+    <string name="submission_status_card_title_available" />
+    <string name="submission_status_card_title_failed" />
+    <string name="submission_status_card_title_fetching">Data being retrieved...</string>
+    <string name="submission_status_card_title_pending" />
+    <string name="submission_status_card_title_positive">Warn Others</string>
+    <string name="submission_status_card_title_ready" />
+    <string name="submission_status_card_title_unregistered">Was your test positive?</string>
+    <string name="submission_symptom_calendar_body">Please specify the date as accurately as possible.</string>
+    <string name="submission_symptom_calendar_headline">When did you first notice the symptoms?</string>
+    <string name="submission_symptom_calendar_title">Onset of Symptoms</string>
+    <string name="submission_symptom_further_button">Next</string>
+    <string name="submission_symptom_initial_explanation">If you do not want to provide information about your symptoms, select “Skip”.</string>
+    <string name="submission_symptom_initial_headline">Have you experienced one or more of the following symptoms in the last few days?</string>
+    <string name="submission_symptom_less_seven">In the last 7 days</string>
+    <string name="submission_symptom_more_two_weeks">More than 2 weeks ago</string>
+    <string name="submission_symptom_negative_button">No</string>
+    <string name="submission_symptom_no_information_button">No answer</string>
+    <string name="submission_symptom_one_two_weeks">1-2 weeks ago</string>
+    <string name="submission_symptom_positive_button">Yes</string>
+    <string name="submission_symptom_title">Symptoms</string>
+    <string name="submission_symptom_verify">Skip</string>
+    <string name="submission_tan_accessibility_title">Enter TAN</string>
     <string name="submission_tan_body">Please enter the 10-digit TAN that you were given.</string>
     <string name="submission_tan_button_text">Next</string>
-    <string name="submission_tan_character_error">Invalid entry. Please check your entry.</string>
-    <string name="submission_tan_error">Invalid TAN, please check your entry.</string>
+    <string name="submission_tan_character_error">Your entry contains invalid characters. Please check your entry.</string>
+    <string name="submission_tan_error">Invalid TAN. Please check your entry.</string>
     <string name="submission_tan_title">TAN entry</string>
-    <string name="submission_test_result_card_positive_body">You have been diagnosed with the SARS-CoV-2 virus.</string>
+    <string name="submission_test_result_available_close_dialog_body_consent_given">Your entries will not be saved.</string>
+    <string name="submission_test_result_available_close_dialog_body_consent_not_given">Do you really want to cancel the process?</string>
+    <string name="submission_test_result_available_close_dialog_cancel_button">Cancel</string>
+    <string name="submission_test_result_available_close_dialog_continue_button">Continue</string>
+    <string name="submission_test_result_available_close_dialog_title_consent_given">Do you want to cancel?</string>
+    <string name="submission_test_result_available_close_dialog_title_consent_not_given">Important: You are about to cancel this process. You have not warned others yet. Please complete the process and help to protect others.</string>
+    <string name="submission_test_result_available_illustration_description">A woman holds her smartphone in her hand. It is sending a signal to another smartphone.</string>
+    <string name="submission_test_result_available_text_consent_given">"Thank you for agreeing to share your test result and helping to warn others as a result. 
+
+"<b>In the next step, please share your test result by tapping “Share”.</b></string>
+    <string name="submission_test_result_available_text_consent_not_given">"You have chosen not to share your test result. Others will not be warned. 
+
+In the next step, you have the opportunity to change your mind and share your test result after all, to help stop the spread of coronavirus and protect others."</string>
+    <string name="submission_test_result_available_title">Your Test Result Is Available</string>
+    <string name="submission_test_result_card_positive_body" />
     <string name="submission_test_result_card_positive_title">SARS-CoV-2 positive</string>
+    <string name="submission_test_result_consent_given_body" />
+    <string name="submission_test_result_consent_given_breakup_button">Exit</string>
+    <string name="submission_test_result_consent_given_heading">Your Test Result</string>
+    <string name="submission_test_result_consent_given_subtitle" />
     <string name="submission_test_result_dialog_remove_test_button_negative">Cancel</string>
     <string name="submission_test_result_dialog_remove_test_button_positive">Remove</string>
-    <string name="submission_test_result_dialog_remove_test_message">If you remove the test, you can no longer retrieve your test result. You will receive your test result from the test center or laboratory regardless of the validity of the QR code. If you are diagnosed with COVID-19, the public health authority will be notified through the legally prescribed channel and will contact you.</string>
+    <string name="submission_test_result_dialog_remove_test_message">If you remove the test, you can no longer retrieve your test result. You will receive your test result from the test center or laboratory regardless of the validity of the QR code. If you are diagnosed with coronavirus, the public health authority will be notified through the legally prescribed channel and will contact you.</string>
     <string name="submission_test_result_dialog_remove_test_title">The test can only be scanned once.</string>
-    <string name="submission_test_result_dialog_tracing_required_button">OK</string>
+    <string name="submission_test_result_dialog_tracing_required_button">Ok</string>
     <string name="submission_test_result_dialog_tracing_required_message">Please activate exposure logging to warn other people.</string>
     <string name="submission_test_result_dialog_tracing_required_title">Exposure Logging required</string>
     <string name="submission_test_result_headline">Test Result</string>
-    <string name="submission_test_result_invalid_remove_test_button">Delete Test</string>
+    <string name="submission_test_result_invalid_remove_test_button">Remove test</string>
     <string name="submission_test_result_invalid_steps_invalid_body">"There was a problem evaluating your test. Please contact the test center or laboratory involved to find out how to proceed.
 
-Please delete the test from your Corona-Warn-App so that you will be able to save a new test code there, if necessary."</string>
+Please delete the test from your #OstaniZdrav so that you will be able to save a new test code there, if necessary."</string>
     <string name="submission_test_result_invalid_steps_invalid_heading">Your Test Result</string>
-    <string name="submission_test_result_negative_remove_test_button">" x"</string>
-    <string name="submission_test_result_negative_steps_negative_body">" x"</string>
-    <string name="submission_test_result_negative_steps_negative_heading">" x"</string>
+    <string name="submission_test_result_negative_remove_test_button">Delete Test</string>
+    <string name="submission_test_result_negative_steps_negative_body">"The laboratory result indicates no verification that you have the SARS-CoV-2 coronavirus.
+
+Please delete the test from the Corona-Warn-App, so that you can save a new test code here if necessary."</string>
+    <string name="submission_test_result_negative_steps_negative_heading">Negative Diagnosis</string>
     <string name="submission_test_result_pending_refresh_button">Update</string>
-    <string name="submission_test_result_pending_remove_test_button">"  x"</string>
-    <string name="submission_test_result_pending_steps_waiting_body">"  x"</string>
-    <string name="submission_test_result_pending_steps_waiting_heading">"  x"</string>
+    <string name="submission_test_result_pending_remove_test_button">Delete Test</string>
+    <string name="submission_test_result_pending_steps_waiting_body">"As soon as your test result becomes available, it will be displayed in the app.
+
+You will also receive your test result outside of the app. The public health authorities will notify you, should your test be positive.
+
+In you are notified of a positive test result outside the app, please remove the test currently registered in the app. Call the number shown under “Request TAN” to get a TAN. You can then use this TAN to register your result in the app and warn others."</string>
+    <string name="submission_test_result_pending_steps_waiting_heading">Your test result is not available yet.</string>
     <string name="submission_test_result_positive_continue_button">Next</string>
-    <string name="submission_test_result_positive_steps_positive_body">Your test result was verified as positive.</string>
-    <string name="submission_test_result_positive_steps_positive_heading">Your Test Result</string>
-    <string name="submission_test_result_positive_steps_warning_others_body">Share your random IDs of the last 14 days in order to protect others and break the chain of infection.</string>
-    <string name="submission_test_result_positive_steps_warning_others_heading">Warning Others</string>
-    <string name="submission_test_result_steps_added_body">Your test has been stored in the Corona-Warn-App.</string>
+    <string name="submission_test_result_positive_continue_button_with_symptoms">Enter Symptoms</string>
+    <string name="submission_test_result_positive_continue_button_wo_symptoms">Don’t Enter Symptoms</string>
+    <string name="submission_test_result_positive_no_consent_button_abort">Cancel</string>
+    <string name="submission_test_result_positive_no_consent_button_warn_others">Next</string>
+    <string name="submission_test_result_positive_no_consent_dialog_message">You have to share the information about your positive diagnosis if you want to warn others.</string>
+    <string name="submission_test_result_positive_no_consent_dialog_negative_button">Do not warn others</string>
+    <string name="submission_test_result_positive_no_consent_dialog_positive_button">Next</string>
+    <string name="submission_test_result_positive_no_consent_dialog_title">Don’t you want to send a warning?</string>
+    <string name="submission_test_result_positive_no_consent_subtitle">Please help all of us!</string>
+    <string name="submission_test_result_positive_no_consent_text_1"><b>Share the information about your positive diagnosis and warn others.</b></string>
+    <string name="submission_test_result_positive_no_consent_text_2">Your identity will remain secret.</string>
+    <string name="submission_test_result_positive_no_consent_text_3">Please be sure to follow the instructions from your public health authority and stay home, so you don’t infect others.</string>
+    <string name="submission_test_result_positive_steps_warning_others_body">"Share your random IDs and warn others.
+Help determine the risk of infection for others more accurately by also indicating when you first noticed any coronavirus symptoms."</string>
+    <string name="submission_test_result_positive_steps_warning_others_heading">Warn Others</string>
+    <string name="submission_test_result_steps_added_body">Your test has been stored in the #OstaniZdrav</string>
     <string name="submission_test_result_steps_added_heading">Test added successfully</string>
-    <string name="submission_test_result_subtitle">" x"</string>
+    <string name="submission_test_result_subtitle">How this works:</string>
+    <string name="submission_your_consent_about_agreement">You have granted the following consent:</string>
+    <string name="submission_your_consent_agreement_details">Detailed Information on Data Processing and Your Consent</string>
+    <string name="submission_your_consent_agreement_share_symptoms"><b>If you provide additional information about the onset of your symptoms, this will also be shared.</b>"
+
+You can withdraw your consent by disabling “Warn Others” above."</string>
+    <string name="submission_your_consent_agreement_share_symptoms_2"><b>If you provide additional information about the onset of your symptoms, this will also be shared.</b>"
+
+You can withdraw your consent by disabling “Warn others” above. Your test result will then be shown to you."</string>
+    <string name="submission_your_consent_agreement_share_test_results"><b>If you have tested positive for coronavirus, the app will share your test result in order to warn other users whom you have encountered.</b>"
+
+"<b>The warning will reach users of the official coronavirus apps of the following participating countries:</b></string>
+    <string name="submission_your_consent_agreement_title"><b>Consent</b></string>
+    <string name="submission_your_consent_switch_status_off">Stopped</string>
+    <string name="submission_your_consent_switch_status_on">Active</string>
+    <string name="submission_your_consent_switch_subtitle">Warn Others</string>
+    <string name="submission_your_consent_title">Your Consent</string>
     <string name="suffix_button">Button</string>
     <string name="suffix_image">Image</string>
     <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
-    <string name="test_api_body_attenuation">Attenuation Durations in Minutes: %1$s</string>
-    <string name="test_api_body_daysSinceLastExposure">Days since last exposure: %1$s</string>
-    <string name="test_api_body_matchedKeyCount">Matched key count: %1$s</string>
-    <string name="test_api_body_maximumRiskScore">Maximum risk score %1$s</string>
+    <string name="symptoms_calendar_exact_date_button">Date</string>
+    <string name="test_api_body_attenuation" />
+    <string name="test_api_body_daysSinceLastExposure" />
+    <string name="test_api_body_matchedKeyCount" />
+    <string name="test_api_body_maximumRiskScore" />
     <string name="test_api_body_my_keys">My keys (count: %1$d)</string>
     <string name="test_api_body_other_keys">Other key</string>
-    <string name="test_api_body_summation_risk">Summation Risk Score: %1$s</string>
+    <string name="test_api_body_summation_risk" />
     <string name="test_api_button_api_launch">Android API Test(Manual Test)</string>
     <string name="test_api_button_check_exposure">Check Exposure Summary</string>
     <string name="test_api_button_enter_other_keys">Submit Exposure Key</string>
@@ -638,19 +910,19 @@ Please delete the test from your Corona-Warn-App so that you will be able to sav
     <string name="test_api_button_start">Start (Broadcast/Receive Bluetooth)</string>
     <string name="test_api_button_submit_keys">Submit keys to Server</string>
     <string name="test_api_calculate_risk_level">Calculate Risk Level</string>
-    <string name="test_api_exposure_summary_headline">Exposure summary</string>
-    <string name="test_api_switch_background_notifications">Background Notifications</string>
+    <string name="test_api_exposure_summary_headline">Exposure Windows</string>
+    <string name="test_api_switch_background_notifications" />
     <string name="test_api_switch_last_three_hours_from_server">Last 3 Hours Mode</string>
-    <string name="test_result_card_headline">Your diagnosis:</string>
+    <string name="test_result_card_headline" />
     <string name="test_result_card_negative_further_info_title">Other information:</string>
     <string name="test_result_card_registered_at_text">Registered on %s</string>
-    <string name="test_result_card_status_invalid">x</string>
-    <string name="test_result_card_status_negative">x</string>
-    <string name="test_result_card_status_pending">x</string>
+    <string name="test_result_card_status_invalid">Evaluation is not possible</string>
+    <string name="test_result_card_status_negative">Negative</string>
+    <string name="test_result_card_status_pending">Your result is not yet available</string>
     <string name="test_result_card_status_positive">Positive</string>
     <string name="test_result_card_virus_name_text">SARS-CoV-2</string>
     <string name="update_dialog_button">Update</string>
-    <string name="update_dialog_message">Please note, you can only use the Corona-Warn-App again once you have installed the latest update.</string>
+    <string name="update_dialog_message">Please note, you can only use the #OstaniZdrav App again once you have installed the latest update.</string>
     <string name="update_dialog_title">Update available</string>
     <string name="v7_preference_off">OFF</string>
     <string name="v7_preference_on">ON</string>

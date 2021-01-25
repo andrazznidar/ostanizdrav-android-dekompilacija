@@ -48,19 +48,27 @@
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/tasks/zzu;)V
+.method public final zza(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "TTResult;>;)V"
         }
     .end annotation
 
-    invoke-virtual {p1}, Lcom/google/android/gms/tasks/zzu;->isSuccessful()Z
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isSuccessful()Z
 
     move-result v0
+
+    if-nez v0, :cond_1
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/android/gms/tasks/zzu;
+
+    iget-boolean v0, v0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
 
     if-nez v0, :cond_1
 
@@ -86,7 +94,7 @@
 
     new-instance v1, Lcom/google/android/gms/tasks/zzk;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzk;-><init>(Lcom/google/android/gms/tasks/zzl;Lcom/google/android/gms/tasks/zzu;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzk;-><init>(Lcom/google/android/gms/tasks/zzl;Lcom/google/android/gms/tasks/Task;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 

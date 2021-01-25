@@ -20,7 +20,7 @@
             "()",
             "Ljava/util/Map<",
             "Ljava/lang/Integer;",
-            "Lcom/google/crypto/tink/subtle/prf/PrfImpl;",
+            "Lcom/google/crypto/tink/prf/Prf;",
             ">;"
         }
     .end annotation

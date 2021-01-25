@@ -123,14 +123,14 @@
     goto :goto_0
 
     :cond_3
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v8
 
     goto :goto_0
 
     :cond_4
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v7
 

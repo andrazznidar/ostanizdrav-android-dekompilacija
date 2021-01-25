@@ -1,5 +1,5 @@
 .class public final Lkotlinx/coroutines/RemoveOnCancel;
-.super Lkotlinx/coroutines/CancelHandler;
+.super Lkotlinx/coroutines/BeforeResumeCancelHandler;
 .source "CancellableContinuation.kt"
 
 
@@ -11,7 +11,7 @@
 .method public constructor <init>(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
     .locals 0
 
-    invoke-direct {p0}, Lkotlinx/coroutines/CancelHandler;-><init>()V
+    invoke-direct {p0}, Lkotlinx/coroutines/BeforeResumeCancelHandler;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/RemoveOnCancel;->node:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
@@ -49,7 +49,7 @@
 
     const-string v0, "RemoveOnCancel["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

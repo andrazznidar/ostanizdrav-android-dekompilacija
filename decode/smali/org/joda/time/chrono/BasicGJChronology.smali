@@ -409,6 +409,82 @@
     return-wide v0
 .end method
 
+.method public getYearDifference(JJ)J
+    .locals 7
+
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getYear(J)I
+
+    move-result v0
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/BasicChronology;->getYear(J)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Lorg/joda/time/chrono/BasicChronology;->getYearMillis(I)J
+
+    move-result-wide v2
+
+    sub-long/2addr p1, v2
+
+    invoke-virtual {p0, v1}, Lorg/joda/time/chrono/BasicChronology;->getYearMillis(I)J
+
+    move-result-wide v2
+
+    sub-long/2addr p3, v2
+
+    const-wide v2, 0x12fd73400L
+
+    cmp-long v4, p3, v2
+
+    if-ltz v4, :cond_1
+
+    invoke-virtual {p0, v1}, Lorg/joda/time/chrono/BasicChronology;->isLeapYear(I)Z
+
+    move-result v4
+
+    const-wide/32 v5, 0x5265c00
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {p0, v0}, Lorg/joda/time/chrono/BasicChronology;->isLeapYear(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    sub-long/2addr p3, v5
+
+    goto :goto_0
+
+    :cond_0
+    cmp-long v2, p1, v2
+
+    if-ltz v2, :cond_1
+
+    invoke-virtual {p0, v0}, Lorg/joda/time/chrono/BasicChronology;->isLeapYear(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sub-long/2addr p1, v5
+
+    :cond_1
+    :goto_0
+    sub-int/2addr v0, v1
+
+    cmp-long p1, p1, p3
+
+    if-gez p1, :cond_2
+
+    add-int/lit8 v0, v0, -0x1
+
+    :cond_2
+    int-to-long p1, v0
+
+    return-wide p1
+.end method
+
 .method public isLeapDay(J)Z
     .locals 2
 

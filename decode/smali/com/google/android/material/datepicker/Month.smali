@@ -71,7 +71,7 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object p1
 
@@ -121,7 +121,7 @@
 
     invoke-direct {v0, v1, p1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTimeZone()Ljava/util/TimeZone;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object p1
 
@@ -153,7 +153,7 @@
 .method public static create(II)Lcom/google/android/material/datepicker/Month;
     .locals 2
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -175,7 +175,7 @@
 .method public static create(J)Lcom/google/android/material/datepicker/Month;
     .locals 1
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -193,7 +193,7 @@
 
     new-instance v0, Lcom/google/android/material/datepicker/Month;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object v1
 
@@ -348,7 +348,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v0
 

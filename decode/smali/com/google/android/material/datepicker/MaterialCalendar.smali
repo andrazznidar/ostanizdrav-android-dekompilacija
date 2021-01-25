@@ -464,7 +464,7 @@
 
     move-result p3
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_3
 
     new-instance p3, Landroidx/recyclerview/widget/LinearSnapHelper;
 
@@ -472,77 +472,9 @@
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    iget-object v1, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    if-ne v1, v0, :cond_3
-
-    goto :goto_1
+    invoke-virtual {p3, v0}, Landroidx/recyclerview/widget/SnapHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
     :cond_3
-    if-eqz v1, :cond_4
-
-    iget-object v2, p3, Landroidx/recyclerview/widget/SnapHelper;->mScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
-
-    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->removeOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
-
-    iget-object v1, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setOnFlingListener(Landroidx/recyclerview/widget/RecyclerView$OnFlingListener;)V
-
-    :cond_4
-    iput-object v0, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    if-eqz v0, :cond_6
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getOnFlingListener()Landroidx/recyclerview/widget/RecyclerView$OnFlingListener;
-
-    move-result-object v0
-
-    if-nez v0, :cond_5
-
-    iget-object v0, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget-object v1, p3, Landroidx/recyclerview/widget/SnapHelper;->mScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
-
-    iget-object v0, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v0, p3}, Landroidx/recyclerview/widget/RecyclerView;->setOnFlingListener(Landroidx/recyclerview/widget/RecyclerView$OnFlingListener;)V
-
-    new-instance v0, Landroid/widget/Scroller;
-
-    iget-object v1, p3, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-direct {v2}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
-
-    invoke-direct {v0, v1, v2}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-
-    iput-object v0, p3, Landroidx/recyclerview/widget/SnapHelper;->mGravityScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {p3}, Landroidx/recyclerview/widget/SnapHelper;->snapToTargetExistingView()V
-
-    goto :goto_1
-
-    :cond_5
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "An instance of OnFlingListener already set."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_6
-    :goto_1
     iget-object p3, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->current:Lcom/google/android/material/datepicker/Month;

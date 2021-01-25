@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09018a
+    const v1, 0x7f090246
 
     const/4 v2, 0x3
 
@@ -134,7 +134,7 @@
 
     iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;->mSubtitle:Ljava/lang/String;
 
-    const-wide/16 v7, 0x9
+    const-wide/16 v7, 0x5
 
     and-long/2addr v7, v0
 
@@ -142,7 +142,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -151,7 +151,7 @@
     move-result v5
 
     :cond_0
-    const-wide/16 v8, 0xa
+    const-wide/16 v8, 0x6
 
     and-long/2addr v0, v8
 
@@ -230,7 +230,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x8
+    const-wide/16 v0, 0x4
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;->mDirtyFlags:J
@@ -282,7 +282,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1d
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

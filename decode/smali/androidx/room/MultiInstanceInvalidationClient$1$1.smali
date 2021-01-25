@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Landroidx/room/MultiInstanceInvalidationClient$1$1;->this$1:Landroidx/room/MultiInstanceInvalidationClient$1;
 
@@ -47,9 +47,11 @@
 
     iget-object v0, v0, Landroidx/room/MultiInstanceInvalidationClient;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    iget-object v1, v0, Landroidx/room/InvalidationTracker;->mObserverMap:Landroidx/arch/core/internal/SafeIterableMap;
+    iget-object v1, p0, Landroidx/room/MultiInstanceInvalidationClient$1$1;->val$tables:[Ljava/lang/String;
 
-    monitor-enter v1
+    iget-object v2, v0, Landroidx/room/InvalidationTracker;->mObserverMap:Landroidx/arch/core/internal/SafeIterableMap;
+
+    monitor-enter v2
 
     :try_start_0
     iget-object v0, v0, Landroidx/room/InvalidationTracker;->mObserverMap:Landroidx/arch/core/internal/SafeIterableMap;
@@ -60,50 +62,56 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :cond_0
     :goto_0
-    move-object v2, v0
+    move-object v3, v0
 
-    check-cast v2, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;
+    check-cast v3, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;
 
     :try_start_1
-    invoke-virtual {v2}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;->hasNext()Z
+    invoke-virtual {v3}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    invoke-virtual {v2}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;->next()Ljava/lang/Object;
+    invoke-virtual {v3}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v3, Ljava/util/Map$Entry;
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Landroidx/room/InvalidationTracker$Observer;
+    check-cast v4, Landroidx/room/InvalidationTracker$Observer;
 
-    check-cast v2, Landroidx/room/MultiInstanceInvalidationClient$6;
+    invoke-virtual {v4}, Landroidx/room/InvalidationTracker$Observer;->isRemote()Z
 
-    if-eqz v2, :cond_0
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/room/InvalidationTracker$ObserverWrapper;
+
+    invoke-virtual {v3, v1}, Landroidx/room/InvalidationTracker$ObserverWrapper;->notifyByTableNames([Ljava/lang/String;)V
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
-
     :cond_1
-    monitor-exit v1
+    monitor-exit v2
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v1
+    monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

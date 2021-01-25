@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090286
+    const v1, 0x7f090395
 
     const/4 v2, 0x4
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c5
+    const v1, 0x7f090164
 
     const/4 v2, 0x5
 
@@ -84,9 +84,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c006a
-        0x7f0c007f
+        0x7f0c0077
+        0x7f0c009a
+        0x7f0c00ab
     .end array-data
 .end method
 
@@ -215,9 +215,9 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f08008c
+    const v2, 0x7f080099
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBinding;->submissionDoneHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;

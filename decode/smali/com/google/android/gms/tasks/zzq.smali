@@ -47,56 +47,12 @@
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/tasks/zzr;)V
+.method public final zza(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/tasks/zzr<",
-            "TTResult;>;)V"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzq;->zza:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayDeque;
-
-    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
-
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
-
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final zza(Lcom/google/android/gms/tasks/zzu;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "TTResult;>;)V"
         }
     .end annotation
@@ -154,7 +110,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzu;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
 
     goto :goto_0
 
@@ -181,6 +137,50 @@
     monitor-exit v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p1
+.end method
+
+.method public final zza(Lcom/google/android/gms/tasks/zzr;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/tasks/zzr<",
+            "TTResult;>;)V"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzq;->zza:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/util/ArrayDeque;
+
+    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
+
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzq;->zzb:Ljava/util/Queue;
+
+    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

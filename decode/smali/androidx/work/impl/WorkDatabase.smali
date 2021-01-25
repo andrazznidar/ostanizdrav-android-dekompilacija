@@ -13,7 +13,7 @@
 
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v1, 0x7
+    const-wide/16 v1, 0x1
 
     invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
@@ -208,7 +208,7 @@
 
     const-string v0, "DELETE FROM workspec WHERE state IN (2, 3, 5) AND (period_start_time + minimum_retention_duration) < "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -242,6 +242,9 @@
 .end method
 
 .method public abstract systemIdInfoDao()Landroidx/work/impl/model/SystemIdInfoDao;
+.end method
+
+.method public abstract workNameDao()Landroidx/work/impl/model/WorkNameDao;
 .end method
 
 .method public abstract workProgressDao()Landroidx/work/impl/model/WorkProgressDao;

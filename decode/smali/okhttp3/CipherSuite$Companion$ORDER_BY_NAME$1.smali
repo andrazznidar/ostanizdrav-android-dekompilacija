@@ -25,10 +25,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCipherSuite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CipherSuite.kt\nokhttp3/CipherSuite$Companion$ORDER_BY_NAME$1\n*L\n1#1,461:1\n*E\n"
-.end annotation
-
 
 # direct methods
 .method public constructor <init>()V
@@ -48,44 +44,50 @@
 
     check-cast p2, Ljava/lang/String;
 
-    const/4 v0, 0x0
+    const-string v0, "a"
 
-    if-eqz p1, :cond_5
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_4
+    const-string v0, "b"
 
-    const/4 v0, 0x4
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    move-result v2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
-
     move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    const/4 v1, 0x4
 
     :goto_0
     const/4 v2, -0x1
 
     const/4 v3, 0x1
 
-    if-ge v0, v1, :cond_2
+    if-ge v1, v0, :cond_2
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
 
     if-eq v4, v5, :cond_1
 
-    if-ge v4, v5, :cond_0
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+
+    move-result p1
+
+    if-gez p1, :cond_0
 
     goto :goto_1
 
@@ -95,7 +97,7 @@
     goto :goto_1
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -119,18 +121,4 @@
 
     :goto_1
     return v2
-
-    :cond_4
-    const-string p1, "b"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_5
-    const-string p1, "a"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

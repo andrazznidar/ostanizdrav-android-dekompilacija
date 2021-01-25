@@ -79,6 +79,156 @@
     return p1
 .end method
 
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->isSupported(Lorg/joda/time/DateTimeFieldType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->get(Lorg/joda/time/DateTimeFieldType;)I
+
+    move-result v0
+
+    sget-object v1, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->isSupported(Lorg/joda/time/DateTimeFieldType;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->get(Lorg/joda/time/DateTimeFieldType;)I
+
+    move-result p1
+
+    iget-object v1, p0, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v1, p1, v0}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYearMonth(II)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iget-object p1, p0, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    check-cast p1, Lorg/joda/time/chrono/BasicGJChronology;
+
+    if-eqz p1, :cond_1
+
+    sget-object p1, Lorg/joda/time/chrono/BasicGJChronology;->MAX_DAYS_PER_MONTH_ARRAY:[I
+
+    add-int/lit8 v0, v0, -0x1
+
+    aget p1, p1, v0
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_2
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->getMaximumValue()I
+
+    const/16 p1, 0x1f
+
+    return p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 5
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_4
+
+    invoke-interface {p1, v2}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v3
+
+    sget-object v4, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    if-ne v3, v4, :cond_3
+
+    aget v2, p2, v2
+
+    :goto_1
+    if-ge v1, v0, :cond_1
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v3
+
+    sget-object v4, Lorg/joda/time/DateTimeFieldType;->YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    if-ne v3, v4, :cond_0
+
+    aget p1, p2, v1
+
+    iget-object p2, p0, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {p2, p1, v2}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYearMonth(II)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object p1, p0, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    check-cast p1, Lorg/joda/time/chrono/BasicGJChronology;
+
+    if-eqz p1, :cond_2
+
+    sget-object p1, Lorg/joda/time/chrono/BasicGJChronology;->MAX_DAYS_PER_MONTH_ARRAY:[I
+
+    add-int/lit8 v2, v2, -0x1
+
+    aget p1, p1, v2
+
+    return p1
+
+    :cond_2
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BasicDayOfMonthDateTimeField;->getMaximumValue()I
+
+    const/16 p1, 0x1f
+
+    return p1
+.end method
+
 .method public getMaximumValueForSet(JI)I
     .locals 3
 

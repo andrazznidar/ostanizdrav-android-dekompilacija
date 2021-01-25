@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDispatchedTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTask\n+ 2 CoroutineContext.kt\nkotlinx/coroutines/CoroutineContextKt\n+ 3 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTaskKt\n+ 4 StackTraceRecovery.kt\nkotlinx/coroutines/internal/StackTraceRecoveryKt\n+ 5 Exceptions.kt\nkotlinx/coroutines/ExceptionsKt\n*L\n1#1,168:1\n43#2,3:169\n47#2:176\n166#3:172\n167#3:175\n57#4,2:173\n75#5:177\n*E\n*S KotlinDebug\n*F\n+ 1 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTask\n*L\n42#1,3:169\n42#1:176\n42#1:172\n42#1:175\n42#1,2:173\n89#1:177\n*E\n"
+    value = "SMAP\nDispatchedTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTask\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 CoroutineContext.kt\nkotlinx/coroutines/CoroutineContextKt\n+ 4 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTaskKt\n+ 5 StackTraceRecovery.kt\nkotlinx/coroutines/internal/StackTraceRecoveryKt\n+ 6 Exceptions.kt\nkotlinx/coroutines/ExceptionsKt\n*L\n1#1,221:1\n1#2:222\n43#3,3:223\n47#3:230\n219#4:226\n220#4:229\n57#5,2:227\n75#6:231\n*E\n*S KotlinDebug\n*F\n+ 1 DispatchedTask.kt\nkotlinx/coroutines/DispatchedTask\n*L\n90#1,3:223\n90#1:230\n101#1:226\n101#1:229\n101#1,2:227\n140#1:231\n*E\n"
 .end annotation
 
 
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public cancelResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
+.method public cancelCompletedResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
     .locals 0
 
     return-void
@@ -49,6 +49,28 @@
             "TT;>;"
         }
     .end annotation
+.end method
+
+.method public getExceptionalResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Throwable;
+    .locals 2
+
+    instance-of v0, p1, Lkotlinx/coroutines/CompletedExceptionally;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    move-object p1, v1
+
+    :cond_0
+    check-cast p1, Lkotlinx/coroutines/CompletedExceptionally;
+
+    if-eqz p1, :cond_1
+
+    iget-object v1, p1, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
+
+    :cond_1
+    return-object v1
 .end method
 
 .method public getSuccessfulResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Object;
@@ -80,7 +102,7 @@
 
     if-eqz p2, :cond_1
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     :cond_1
     if-eqz p1, :cond_2
@@ -115,7 +137,7 @@
 
     move-result-object v0
 
-    if-eqz p1, :cond_3
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-direct {p2, v0, p1}, Lkotlinx/coroutines/CoroutinesInternalError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -127,16 +149,9 @@
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     return-void
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final run()V
@@ -149,11 +164,11 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_3
 
-    check-cast v1, Lkotlinx/coroutines/DispatchedContinuation;
+    check-cast v1, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    iget-object v2, v1, Lkotlinx/coroutines/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
+    iget-object v2, v1, Lkotlinx/coroutines/internal/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
 
     invoke-interface {v2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
@@ -163,7 +178,7 @@
 
     move-result-object v4
 
-    iget-object v1, v1, Lkotlinx/coroutines/DispatchedContinuation;->countOrElement:Ljava/lang/Object;
+    iget-object v1, v1, Lkotlinx/coroutines/internal/DispatchedContinuation;->countOrElement:Ljava/lang/Object;
 
     invoke-static {v3, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -172,39 +187,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     :try_start_1
-    instance-of v5, v4, Lkotlinx/coroutines/CompletedExceptionally;
+    invoke-virtual {p0, v4}, Lkotlinx/coroutines/DispatchedTask;->getExceptionalResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Throwable;
+
+    move-result-object v5
 
     const/4 v6, 0x0
 
     if-nez v5, :cond_0
 
-    move-object v5, v6
-
-    goto :goto_0
-
-    :cond_0
-    move-object v5, v4
-
-    :goto_0
-    check-cast v5, Lkotlinx/coroutines/CompletedExceptionally;
-
-    if-eqz v5, :cond_1
-
-    iget-object v5, v5, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
-
-    goto :goto_1
-
-    :cond_1
-    move-object v5, v6
-
-    :goto_1
     iget v7, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
 
-    invoke-static {v7}, Lkotlin/collections/MapsKt___MapsKt;->isCancellableMode(I)Z
+    invoke-static {v7}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isCancellableMode(I)Z
 
     move-result v7
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_0
 
     sget-object v7, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
@@ -214,69 +211,46 @@
 
     check-cast v7, Lkotlinx/coroutines/Job;
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2
+    :cond_0
     move-object v7, v6
 
-    :goto_2
-    if-nez v5, :cond_5
-
-    if-eqz v7, :cond_5
+    :goto_0
+    if-eqz v7, :cond_1
 
     invoke-interface {v7}, Lkotlinx/coroutines/Job;->isActive()Z
 
     move-result v8
 
-    if-nez v8, :cond_5
+    if-nez v8, :cond_1
 
     invoke-interface {v7}, Lkotlinx/coroutines/Job;->getCancellationException()Ljava/util/concurrent/CancellationException;
 
     move-result-object v5
 
-    invoke-virtual {p0, v4, v5}, Lkotlinx/coroutines/DispatchedTask;->cancelResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v4, v5}, Lkotlinx/coroutines/DispatchedTask;->cancelCompletedResult$kotlinx_coroutines_core(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    sget-boolean v4, Lkotlinx/coroutines/DebugKt;->RECOVER_STACK_TRACES:Z
-
-    if-eqz v4, :cond_4
-
-    instance-of v4, v2, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
-
-    if-nez v4, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move-object v4, v2
-
-    check-cast v4, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
-
-    invoke-static {v5, v4}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->access$recoverFromStackFrame(Ljava/lang/Throwable;Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;)Ljava/lang/Throwable;
-
-    move-result-object v5
-
-    :cond_4
-    :goto_3
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-interface {v2, v4}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_1
 
-    :cond_5
-    if-eqz v5, :cond_6
+    :cond_1
+    if-eqz v5, :cond_2
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-interface {v2, v4}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_1
 
-    :cond_6
+    :cond_2
     invoke-virtual {p0, v4}, Lkotlinx/coroutines/DispatchedTask;->getSuccessfulResult$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -285,7 +259,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :goto_4
+    :goto_1
     :try_start_2
     invoke-static {v3, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
     :try_end_2
@@ -298,23 +272,23 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_5
+    goto :goto_2
 
     :catchall_0
     move-exception v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_5
+    :goto_2
     invoke-static {v0}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v0
 
     invoke-virtual {p0, v6, v0}, Lkotlinx/coroutines/DispatchedTask;->handleFatalException$kotlinx_coroutines_core(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    goto :goto_7
+    goto :goto_4
 
     :catchall_1
     move-exception v2
@@ -324,12 +298,12 @@
 
     throw v2
 
-    :cond_7
-    new-instance v1, Lkotlin/TypeCastException;
+    :cond_3
+    new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "null cannot be cast to non-null type kotlinx.coroutines.DispatchedContinuation<T>"
+    const-string v2, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T>"
 
-    invoke-direct {v1, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v1
     :try_end_4
@@ -345,23 +319,23 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
-    goto :goto_6
+    goto :goto_3
 
     :catchall_3
     move-exception v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_6
+    :goto_3
     invoke-static {v0}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v0
 
     invoke-virtual {p0, v1, v0}, Lkotlinx/coroutines/DispatchedTask;->handleFatalException$kotlinx_coroutines_core(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    :goto_7
+    :goto_4
     return-void
 .end method
 

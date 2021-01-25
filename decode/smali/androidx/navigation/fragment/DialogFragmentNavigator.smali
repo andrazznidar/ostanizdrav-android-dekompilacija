@@ -159,7 +159,7 @@
 
     const-string p3, "Dialog destination "
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 
@@ -201,7 +201,7 @@
 
     const-string p4, "androidx-nav-fragment:navigator:dialog:"
 
-    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
@@ -291,7 +291,7 @@
 
     const-string v2, " doesn\'t exist in the FragmentManager"
 
-    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -329,7 +329,7 @@
 .end method
 
 .method public popBackStack()Z
-    .locals 5
+    .locals 4
 
     iget v0, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mDialogCount:I
 
@@ -359,27 +359,27 @@
     :cond_1
     iget-object v0, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    const-string v2, "androidx-nav-fragment:navigator:dialog:"
+    const-string v1, "androidx-nav-fragment:navigator:dialog:"
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget v3, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mDialogCount:I
+    iget v2, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mDialogCount:I
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v2, v3
 
-    iput v3, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mDialogCount:I
+    iput v2, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mDialogCount:I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
@@ -387,20 +387,20 @@
 
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mObserver:Landroidx/lifecycle/LifecycleEventObserver;
+    iget-object v2, p0, Landroidx/navigation/fragment/DialogFragmentNavigator;->mObserver:Landroidx/lifecycle/LifecycleEventObserver;
 
-    check-cast v2, Landroidx/lifecycle/LifecycleRegistry;
+    check-cast v1, Landroidx/lifecycle/LifecycleRegistry;
 
-    iget-object v2, v2, Landroidx/lifecycle/LifecycleRegistry;->mObserverMap:Landroidx/arch/core/internal/FastSafeIterableMap;
+    iget-object v1, v1, Landroidx/lifecycle/LifecycleRegistry;->mObserverMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
-    invoke-virtual {v2, v3}, Landroidx/arch/core/internal/FastSafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroidx/arch/core/internal/FastSafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast v0, Landroidx/fragment/app/DialogFragment;
 
-    invoke-virtual {v0, v1, v1}, Landroidx/fragment/app/DialogFragment;->dismissInternal(ZZ)V
+    invoke-virtual {v0}, Landroidx/fragment/app/DialogFragment;->dismiss()V
 
     :cond_2
-    return v4
+    return v3
 .end method

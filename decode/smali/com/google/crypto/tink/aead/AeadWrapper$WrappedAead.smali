@@ -44,6 +44,17 @@
 # virtual methods
 .method public decrypt([B[B)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -111,7 +122,7 @@
 
     const-string v4, "ciphertext prefix matches a key, but cannot decrypt: "
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -178,6 +189,17 @@
 
 .method public encrypt([B[B)[B
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -216,7 +238,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 

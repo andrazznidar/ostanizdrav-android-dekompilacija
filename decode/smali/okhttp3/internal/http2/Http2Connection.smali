@@ -16,7 +16,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection\n+ 2 Util.kt\nokhttp3/internal/Util\n+ 3 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,1006:1\n554#2:1007\n548#2:1008\n548#2:1031\n606#2,4:1032\n398#2,5:1036\n398#2,5:1044\n398#2,5:1050\n398#2,5:1055\n92#3,11:1009\n92#3,11:1020\n92#3,11:1060\n92#3,11:1071\n92#3,11:1082\n92#3,11:1093\n92#3,11:1104\n92#3,11:1115\n84#3,4:1126\n37#4,2:1041\n11416#5:1043\n11417#5:1049\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection\n*L\n183#1:1007\n311#1:1008\n402#1:1031\n446#1,4:1032\n448#1,5:1036\n460#1,5:1044\n467#1,5:1050\n472#1,5:1055\n340#1,11:1009\n361#1,11:1020\n506#1,11:1060\n554#1,11:1071\n893#1,11:1082\n911#1,11:1093\n938#1,11:1104\n952#1,11:1115\n152#1,4:1126\n453#1,2:1041\n460#1:1043\n460#1:1049\n*E\n"
+    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection\n+ 2 Util.kt\nokhttp3/internal/Util\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 5 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,1006:1\n551#2:1007\n545#2:1009\n545#2:1032\n603#2,4:1033\n395#2,5:1037\n395#2,5:1045\n395#2,5:1051\n395#2,5:1056\n1#3:1008\n92#4,11:1010\n92#4,11:1021\n92#4,11:1061\n92#4,11:1072\n92#4,11:1083\n92#4,11:1094\n92#4,11:1105\n92#4,11:1116\n84#4,4:1127\n37#5,2:1042\n13416#6:1044\n13417#6:1050\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection\n*L\n183#1:1007\n319#1:1009\n402#1:1032\n446#1,4:1033\n448#1,5:1037\n461#1,5:1045\n467#1,5:1051\n472#1,5:1056\n340#1,11:1010\n361#1,11:1021\n506#1,11:1061\n554#1,11:1072\n893#1,11:1083\n911#1,11:1094\n938#1,11:1105\n952#1,11:1116\n152#1,4:1127\n455#1,2:1042\n460#1:1044\n460#1:1050\n*E\n"
 .end annotation
 
 
@@ -128,6 +128,10 @@
 
 .method public constructor <init>(Lokhttp3/internal/http2/Http2Connection$Builder;)V
     .locals 9
+
+    const-string v0, "builder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -357,6 +361,14 @@
 .method public final close$okhttp(Lokhttp3/internal/http2/ErrorCode;Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
     .locals 3
 
+    const-string v0, "connectionCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "streamCode"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
     if-eqz v0, :cond_1
@@ -374,7 +386,7 @@
 
     const-string p2, "Thread "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -384,7 +396,7 @@
 
     const-string v0, "Thread.currentThread()"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p3}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -414,20 +426,22 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    const/4 p1, 0x0
+
     monitor-enter p0
 
     :try_start_1
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Connection;->streams:Ljava/util/Map;
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection;->streams:Ljava/util/Map;
 
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
-    move-result p1
+    move-result v0
 
-    xor-int/lit8 p1, p1, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Connection;->streams:Ljava/util/Map;
 
@@ -435,9 +449,9 @@
 
     move-result-object p1
 
-    new-array v1, v0, [Lokhttp3/internal/http2/Http2Stream;
+    new-array v0, v1, [Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-interface {p1, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
 
@@ -445,37 +459,35 @@
 
     check-cast p1, [Lokhttp3/internal/http2/Http2Stream;
 
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Connection;->streams:Ljava/util/Map;
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection;->streams:Ljava/util/Map;
 
-    invoke-interface {v1}, Ljava/util/Map;->clear()V
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     goto :goto_1
 
     :cond_2
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "null cannot be cast to non-null type kotlin.Array<T>"
 
-    invoke-direct {p1, p2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_3
-    const/4 p1, 0x0
-
     :goto_1
     monitor-exit p0
 
     if-eqz p1, :cond_4
 
-    array-length v1, p1
+    array-length v0, p1
 
     :goto_2
-    if-ge v0, v1, :cond_4
+    if-ge v1, v0, :cond_4
 
-    aget-object v2, p1, v0
+    aget-object v2, p1, v1
 
     :try_start_2
     invoke-virtual {v2, p2, p3}, Lokhttp3/internal/http2/Http2Stream;->close(Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
@@ -483,7 +495,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     :catch_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
@@ -619,6 +631,10 @@
             Ljava/io/IOException;
         }
     .end annotation
+
+    const-string v0, "statusCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
 
@@ -845,9 +861,7 @@
 
     monitor-exit p0
 
-    int-to-long v4, v2
-
-    sub-long/2addr p4, v4
+    sub-long/2addr p4, v6
 
     iget-object v4, p0, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
 
@@ -923,7 +937,11 @@
 .end method
 
 .method public final writeSynResetLater$okhttp(ILokhttp3/internal/http2/ErrorCode;)V
-    .locals 12
+    .locals 11
+
+    const-string v0, "errorCode"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection;->writerQueue:Lokhttp3/internal/concurrent/TaskQueue;
 
@@ -949,13 +967,11 @@
 
     move-result-object v6
 
-    const-wide/16 v1, 0x0
+    new-instance v1, Lokhttp3/internal/http2/Http2Connection$writeSynResetLater$$inlined$execute$1;
 
     const/4 v7, 0x1
 
-    new-instance v11, Lokhttp3/internal/http2/Http2Connection$writeSynResetLater$$inlined$execute$1;
-
-    move-object v3, v11
+    move-object v3, v1
 
     move-object v4, v6
 
@@ -969,7 +985,9 @@
 
     invoke-direct/range {v3 .. v10}, Lokhttp3/internal/http2/Http2Connection$writeSynResetLater$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection;ILokhttp3/internal/http2/ErrorCode;)V
 
-    invoke-virtual {v0, v11, v1, v2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    const-wide/16 p1, 0x0
+
+    invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
 
     return-void
 .end method

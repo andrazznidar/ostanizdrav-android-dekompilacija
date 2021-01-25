@@ -516,7 +516,7 @@
 .end method
 
 .method public printTo(Ljava/lang/Appendable;Lorg/joda/time/ReadablePartial;Ljava/util/Locale;)V
-    .locals 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -527,52 +527,17 @@
 
     move-result-object p3
 
-    check-cast p3, Lorg/joda/time/chrono/BaseChronology;
+    const-wide/16 v0, 0x0
 
-    if-eqz p3, :cond_1
+    invoke-virtual {p3, p2, v0, v1}, Lorg/joda/time/Chronology;->set(Lorg/joda/time/ReadablePartial;J)J
 
-    invoke-interface {p2}, Lorg/joda/time/ReadablePartial;->size()I
+    move-result-wide v0
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    invoke-interface {p2, v1}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p3}, Lorg/joda/time/DateTimeFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DateTimeField;
-
-    move-result-object v4
-
-    invoke-interface {p2, v1}, Lorg/joda/time/ReadablePartial;->getValue(I)I
-
-    move-result v5
-
-    invoke-virtual {v4, v2, v3, v5}, Lorg/joda/time/DateTimeField;->set(JI)J
-
-    move-result-wide v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p2}, Lorg/joda/time/ReadablePartial;->getChronology()Lorg/joda/time/Chronology;
 
     move-result-object p2
 
-    invoke-virtual {p0, p1, v2, v3, p2}, Lorg/joda/time/format/DateTimeFormatterBuilder$Fraction;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
+    invoke-virtual {p0, p1, v0, v1, p2}, Lorg/joda/time/format/DateTimeFormatterBuilder$Fraction;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
 
     return-void
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
 .end method

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingIntervalRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingIntervalRepository.kt\nde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion\n*L\n1#1,73:1\n*E\n"
+    value = "SMAP\nTracingIntervalRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingIntervalRepository.kt\nde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,73:1\n1#2:74\n*E\n"
 .end annotation
 
 
@@ -32,6 +32,10 @@
 .method public final getDateRepository(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;
     .locals 2
 
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object v0, Lde/rki/coronawarnapp/storage/AppDatabase;->Companion:Lde/rki/coronawarnapp/storage/AppDatabase$Companion;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -40,7 +44,7 @@
 
     const-string v1, "context.applicationContext"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/storage/AppDatabase$Companion;->getInstance(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/AppDatabase;
 

@@ -31,11 +31,11 @@
 
     const-string v4, "include_divider"
 
-    const-string v5, "include_risk_details_behavior_row"
+    const-string v5, "include_submission_behaviour_row"
 
-    const-string v6, "include_risk_details_behavior_row"
+    const-string v6, "include_submission_behaviour_row"
 
-    const-string v7, "include_risk_details_behavior_row"
+    const-string v7, "include_submission_behaviour_row"
 
     filled-new-array/range {v2 .. v7}, [Ljava/lang/String;
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902c0
+    const v1, 0x7f0903d7
 
     const/4 v2, 0x7
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902bf
+    const v1, 0x7f0903d6
 
     const/16 v2, 0x8
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902b9
+    const v1, 0x7f0903d0
 
     const/16 v2, 0x9
 
@@ -99,12 +99,12 @@
 
     :array_1
     .array-data 4
-        0x7f0c004d
-        0x7f0c0078
-        0x7f0c0050
-        0x7f0c005f
-        0x7f0c005f
-        0x7f0c005f
+        0x7f0c006d
+        0x7f0c00a6
+        0x7f0c0076
+        0x7f0c0093
+        0x7f0c0093
+        0x7f0c0093
     .end array-data
 .end method
 
@@ -173,7 +173,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     const/4 v1, 0x5
 
@@ -181,7 +181,7 @@
 
     move-object v10, v1
 
-    check-cast v10, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast v10, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     const/4 v1, 0x6
 
@@ -189,7 +189,7 @@
 
     move-object v11, v1
 
-    check-cast v11, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast v11, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     const/16 v1, 0x8
 
@@ -217,7 +217,7 @@
 
     move/from16 v3, v16
 
-    invoke-direct/range {v0 .. v13}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeDividerBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v0 .. v13}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeDividerBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 
@@ -256,7 +256,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x80
+    const-wide/16 v4, 0x40
 
     and-long/2addr v0, v4
 
@@ -272,7 +272,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08008e
+    const v2, 0x7f0800c7
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -296,7 +296,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->setIconDescription(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -304,15 +304,15 @@
 
     move-result-object v1
 
-    const v2, 0x7f12020e
+    const v2, 0x7f1202d4
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setBody(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setBody(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -320,103 +320,77 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800bb
+    const v2, 0x7f0800fe
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f12020f
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setBody(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f0800d9
-
-    invoke-static {v2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f120210
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setBody(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f0800e0
-
-    invoke-static {v2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
+    const v2, 0x7f1202d5
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setBody(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f080128
+
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f1202d6
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setBody(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f08012f
+
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveNext:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
@@ -431,15 +405,15 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -514,7 +488,7 @@
     return v1
 
     :cond_3
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -525,7 +499,7 @@
     return v1
 
     :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -536,7 +510,7 @@
     return v1
 
     :cond_5
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -567,7 +541,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x80
+    const-wide/16 v0, 0x40
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBindingImpl;->mDirtyFlags:J
@@ -588,15 +562,15 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -645,7 +619,7 @@
     return v0
 
     :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     if-nez p3, :cond_1
 
@@ -715,7 +689,7 @@
     return v0
 
     :cond_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     if-nez p3, :cond_5
 
@@ -750,7 +724,7 @@
     return v0
 
     :cond_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     if-nez p3, :cond_7
 
@@ -872,15 +846,15 @@
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardPositiveBinding;->submissionStatusCardPositiveResultShare:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

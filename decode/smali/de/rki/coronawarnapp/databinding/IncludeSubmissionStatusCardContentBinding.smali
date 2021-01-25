@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mDeviceUIState:Lde/rki/coronawarnapp/util/DeviceUIState;
+.field public mSubmissionCard:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;
 
 .field public final submissionStatusCardContent:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -42,5 +42,5 @@
 
 
 # virtual methods
-.method public abstract setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
+.method public abstract setSubmissionCard(Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;)V
 .end method

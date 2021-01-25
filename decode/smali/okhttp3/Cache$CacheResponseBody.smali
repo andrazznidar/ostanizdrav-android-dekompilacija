@@ -26,7 +26,11 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/cache/DiskLruCache$Snapshot;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "snapshot"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V
 
@@ -36,9 +40,9 @@
 
     iput-object p3, p0, Lokhttp3/Cache$CacheResponseBody;->contentLength:Ljava/lang/String;
 
-    const/4 p2, 0x1
-
     iget-object p1, p1, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:Ljava/util/List;
+
+    const/4 p2, 0x1
 
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -50,7 +54,7 @@
 
     invoke-direct {p2, p0, p1, p1}, Lokhttp3/Cache$CacheResponseBody$1;-><init>(Lokhttp3/Cache$CacheResponseBody;Lokio/Source;Lokio/Source;)V
 
-    invoke-static {p2}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object p1
 
@@ -86,6 +90,10 @@
     if-eqz v0, :cond_0
 
     sget-object v1, Lokhttp3/MediaType;->Companion:Lokhttp3/MediaType$Companion;
+
+    const-string v1, "$this$toMediaTypeOrNull"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     invoke-static {v0}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;

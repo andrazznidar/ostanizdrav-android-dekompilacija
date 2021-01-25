@@ -614,6 +614,47 @@
     return-wide p1
 .end method
 
+.method public getDateTimeMillis(JIIII)J
+    .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/joda/time/chrono/AssembledChronology;->iBase:Lorg/joda/time/Chronology;
+
+    iget-object v1, p0, Lorg/joda/time/chrono/AssembledChronology;->iParam:Ljava/lang/Object;
+
+    check-cast v1, Lorg/joda/time/DateTimeZone;
+
+    invoke-virtual {v1, p1, p2}, Lorg/joda/time/DateTimeZone;->getOffset(J)I
+
+    move-result v1
+
+    int-to-long v1, v1
+
+    add-long/2addr v1, p1
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    move v6, p6
+
+    invoke-virtual/range {v0 .. v6}, Lorg/joda/time/Chronology;->getDateTimeMillis(JIIII)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/ZonedChronology;->localToUTC(J)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getZone()Lorg/joda/time/DateTimeZone;
     .locals 1
 
@@ -738,7 +779,7 @@
 
     const-string v0, "ZonedChronology["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

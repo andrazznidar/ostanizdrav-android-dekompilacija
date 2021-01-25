@@ -41,7 +41,7 @@
 
     iput p1, p0, Lkotlin/ranges/IntProgression;->first:I
 
-    invoke-static {p1, p2, p3}, Lkotlin/collections/MapsKt___MapsKt;->getProgressionLastElement(III)I
+    invoke-static {p1, p2, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getProgressionLastElement(III)I
 
     move-result p1
 

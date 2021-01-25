@@ -16,10 +16,6 @@
     name = "RealCacheRequest"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Cache.kt\nokhttp3/Cache$RealCacheRequest\n*L\n1#1,784:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final body:Lokio/Sink;
@@ -35,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,6 +39,10 @@
             ")V"
         }
     .end annotation
+
+    const-string v0, "editor"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/Cache$RealCacheRequest;->this$0:Lokhttp3/Cache;
 

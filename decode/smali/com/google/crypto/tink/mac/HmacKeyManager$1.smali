@@ -26,6 +26,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "clazz"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Lcom/google/crypto/tink/KeyTypeManager$PrimitiveFactory;-><init>(Ljava/lang/Class;)V
 
@@ -36,6 +44,15 @@
 # virtual methods
 .method public getPrimitive(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -90,11 +107,15 @@
 
     if-ne v0, v1, :cond_0
 
-    new-instance v0, Lcom/google/crypto/tink/subtle/MacJce;
+    new-instance v0, Lcom/google/crypto/tink/subtle/PrfMac;
 
-    const-string v1, "HMACSHA512"
+    new-instance v1, Lcom/google/crypto/tink/subtle/PrfHmacJce;
 
-    invoke-direct {v0, v1, v2, p1}, Lcom/google/crypto/tink/subtle/MacJce;-><init>(Ljava/lang/String;Ljava/security/Key;I)V
+    const-string v3, "HMACSHA512"
+
+    invoke-direct {v1, v3, v2}, Lcom/google/crypto/tink/subtle/PrfHmacJce;-><init>(Ljava/lang/String;Ljava/security/Key;)V
+
+    invoke-direct {v0, v1, p1}, Lcom/google/crypto/tink/subtle/PrfMac;-><init>(Lcom/google/crypto/tink/prf/Prf;I)V
 
     goto :goto_0
 
@@ -108,20 +129,28 @@
     throw p1
 
     :cond_1
-    new-instance v0, Lcom/google/crypto/tink/subtle/MacJce;
+    new-instance v0, Lcom/google/crypto/tink/subtle/PrfMac;
 
-    const-string v1, "HMACSHA256"
+    new-instance v1, Lcom/google/crypto/tink/subtle/PrfHmacJce;
 
-    invoke-direct {v0, v1, v2, p1}, Lcom/google/crypto/tink/subtle/MacJce;-><init>(Ljava/lang/String;Ljava/security/Key;I)V
+    const-string v3, "HMACSHA256"
+
+    invoke-direct {v1, v3, v2}, Lcom/google/crypto/tink/subtle/PrfHmacJce;-><init>(Ljava/lang/String;Ljava/security/Key;)V
+
+    invoke-direct {v0, v1, p1}, Lcom/google/crypto/tink/subtle/PrfMac;-><init>(Lcom/google/crypto/tink/prf/Prf;I)V
 
     goto :goto_0
 
     :cond_2
-    new-instance v0, Lcom/google/crypto/tink/subtle/MacJce;
+    new-instance v0, Lcom/google/crypto/tink/subtle/PrfMac;
 
-    const-string v1, "HMACSHA1"
+    new-instance v1, Lcom/google/crypto/tink/subtle/PrfHmacJce;
 
-    invoke-direct {v0, v1, v2, p1}, Lcom/google/crypto/tink/subtle/MacJce;-><init>(Ljava/lang/String;Ljava/security/Key;I)V
+    const-string v3, "HMACSHA1"
+
+    invoke-direct {v1, v3, v2}, Lcom/google/crypto/tink/subtle/PrfHmacJce;-><init>(Ljava/lang/String;Ljava/security/Key;)V
+
+    invoke-direct {v0, v1, p1}, Lcom/google/crypto/tink/subtle/PrfMac;-><init>(Lcom/google/crypto/tink/prf/Prf;I)V
 
     :goto_0
     return-object v0

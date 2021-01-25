@@ -13,10 +13,6 @@
     name = "Reader"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHpack.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Hpack.kt\nokhttp3/internal/http2/Hpack$Reader\n*L\n1#1,620:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public dynamicTable:[Lokhttp3/internal/http2/Header;
@@ -55,6 +51,10 @@
     move p3, p2
 
     :cond_0
+    const-string p4, "source"
+
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p2, p0, Lokhttp3/internal/http2/Hpack$Reader;->headerTableSizeSetting:I
@@ -67,7 +67,7 @@
 
     iput-object p2, p0, Lokhttp3/internal/http2/Hpack$Reader;->headerList:Ljava/util/List;
 
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object p1
 
@@ -133,7 +133,7 @@
 
     const/4 v0, 0x0
 
-    if-lez p1, :cond_2
+    if-lez p1, :cond_1
 
     iget-object v1, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
@@ -144,15 +144,15 @@
     :goto_0
     iget v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->nextHeaderIndex:I
 
-    if-lt v1, v2, :cond_1
+    if-lt v1, v2, :cond_0
 
-    if-lez p1, :cond_1
+    if-lez p1, :cond_0
 
     iget-object v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
     aget-object v2, v2, v1
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v2, v2, Lokhttp3/internal/http2/Header;->hpackSize:I
 
@@ -177,13 +177,6 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     iget-object p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
     iget v1, p0, Lokhttp3/internal/http2/Hpack$Reader;->nextHeaderIndex:I
@@ -204,7 +197,7 @@
 
     iput p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->nextHeaderIndex:I
 
-    :cond_2
+    :cond_1
     return v0
 .end method
 
@@ -263,17 +256,17 @@
 
     move-result v1
 
-    if-ltz v1, :cond_3
+    if-ltz v1, :cond_2
 
     iget-object v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
     array-length v3, v2
 
-    if-ge v1, v3, :cond_3
+    if-ge v1, v3, :cond_2
 
     aget-object p1, v2, v1
 
-    if-eqz p1, :cond_2
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object p1, p1, Lokhttp3/internal/http2/Header;->name:Lokio/ByteString;
 
@@ -281,18 +274,11 @@
     return-object p1
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
     new-instance v1, Ljava/io/IOException;
 
     const-string v2, "Header index too large "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -320,7 +306,7 @@
 
     const/4 v1, -0x1
 
-    if-eq p1, v1, :cond_1
+    if-eq p1, v1, :cond_0
 
     iget-object v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
@@ -332,32 +318,22 @@
 
     aget-object v2, v2, v3
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget v2, v2, Lokhttp3/internal/http2/Header;->hpackSize:I
 
     sub-int/2addr v0, v2
 
-    goto :goto_0
-
     :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
-    :goto_0
     iget v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->maxDynamicTableByteCount:I
 
-    if-le v0, v2, :cond_2
+    if-le v0, v2, :cond_1
 
     invoke-virtual {p0}, Lokhttp3/internal/http2/Hpack$Reader;->clearDynamicTable()V
 
     return-void
 
-    :cond_2
+    :cond_1
     iget v3, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTableByteCount:I
 
     add-int/2addr v3, v0
@@ -368,7 +344,7 @@
 
     move-result v2
 
-    if-ne p1, v1, :cond_4
+    if-ne p1, v1, :cond_3
 
     iget p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->headerCount:I
 
@@ -378,7 +354,7 @@
 
     array-length v3, v2
 
-    if-le p1, v3, :cond_3
+    if-le p1, v3, :cond_2
 
     array-length p1, v2
 
@@ -404,7 +380,7 @@
 
     iput-object p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
-    :cond_3
+    :cond_2
     iget p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->nextHeaderIndex:I
 
     add-int/lit8 v1, p1, -0x1
@@ -421,9 +397,9 @@
 
     iput p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->headerCount:I
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4
+    :cond_3
     iget v1, p0, Lokhttp3/internal/http2/Hpack$Reader;->nextHeaderIndex:I
 
     add-int/lit8 v1, v1, 0x1
@@ -438,7 +414,7 @@
 
     aput-object p2, p1, v1
 
-    :goto_1
+    :goto_0
     iget p1, p0, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTableByteCount:I
 
     add-int/2addr p1, v0
@@ -449,7 +425,7 @@
 .end method
 
 .method public final readByteString()Lokio/ByteString;
-    .locals 13
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -492,7 +468,7 @@
 
     int-to-long v5, v0
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_6
 
     new-instance v0, Lokio/Buffer;
 
@@ -502,97 +478,89 @@
 
     iget-object v2, p0, Lokhttp3/internal/http2/Hpack$Reader;->source:Lokio/BufferedSource;
 
-    const/4 v3, 0x0
+    const-string v3, "source"
 
-    if-eqz v2, :cond_a
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v7, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
+    const-string v3, "sink"
 
-    const-wide/16 v8, 0x0
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-wide v9, v8
+    sget-object v3, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
 
-    move-object v8, v7
+    const-wide/16 v7, 0x0
+
+    move-wide v8, v7
 
     move v7, v4
 
     :goto_1
-    cmp-long v11, v9, v5
+    cmp-long v10, v8, v5
 
-    if-gez v11, :cond_5
+    if-gez v10, :cond_3
 
     invoke-interface {v2}, Lokio/BufferedSource;->readByte()B
 
-    move-result v11
+    move-result v10
 
-    and-int/2addr v11, v1
+    and-int/2addr v10, v1
 
     shl-int/lit8 v4, v4, 0x8
 
-    or-int/2addr v4, v11
+    or-int/2addr v4, v10
 
     add-int/lit8 v7, v7, 0x8
 
     :goto_2
-    const/16 v11, 0x8
+    const/16 v10, 0x8
 
-    if-lt v7, v11, :cond_4
+    if-lt v7, v10, :cond_2
 
-    add-int/lit8 v11, v7, -0x8
+    add-int/lit8 v10, v7, -0x8
 
-    ushr-int v12, v4, v11
+    ushr-int v11, v4, v10
 
-    and-int/2addr v12, v1
+    and-int/2addr v11, v1
 
-    iget-object v8, v8, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
+    iget-object v3, v3, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-eqz v8, :cond_3
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    aget-object v8, v8, v12
+    aget-object v3, v3, v11
 
-    if-eqz v8, :cond_2
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-object v12, v8, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
+    iget-object v11, v3, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-nez v12, :cond_1
+    if-nez v11, :cond_1
 
-    iget v11, v8, Lokhttp3/internal/http2/Huffman$Node;->symbol:I
+    iget v10, v3, Lokhttp3/internal/http2/Huffman$Node;->symbol:I
 
-    invoke-virtual {v0, v11}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
+    invoke-virtual {v0, v10}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
 
-    iget v8, v8, Lokhttp3/internal/http2/Huffman$Node;->terminalBitCount:I
+    iget v3, v3, Lokhttp3/internal/http2/Huffman$Node;->terminalBitCount:I
 
-    sub-int/2addr v7, v8
+    sub-int/2addr v7, v3
 
-    sget-object v8, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
+    sget-object v3, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
 
     goto :goto_2
 
     :cond_1
-    move v7, v11
+    move v7, v10
 
     goto :goto_2
 
     :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    const-wide/16 v10, 0x1
 
-    throw v3
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v3
-
-    :cond_4
-    const-wide/16 v11, 0x1
-
-    add-long/2addr v9, v11
+    add-long/2addr v8, v10
 
     goto :goto_1
 
-    :cond_5
+    :cond_3
     :goto_3
-    if-lez v7, :cond_9
+    if-lez v7, :cond_5
 
     rsub-int/lit8 v2, v7, 0x8
 
@@ -600,48 +568,38 @@
 
     and-int/2addr v2, v1
 
-    iget-object v5, v8, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
+    iget-object v3, v3, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-eqz v5, :cond_8
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    aget-object v2, v5, v2
+    aget-object v2, v3, v2
 
-    if-eqz v2, :cond_7
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-object v5, v2, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
+    iget-object v3, v2, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-nez v5, :cond_9
+    if-nez v3, :cond_5
 
-    iget v5, v2, Lokhttp3/internal/http2/Huffman$Node;->terminalBitCount:I
+    iget v3, v2, Lokhttp3/internal/http2/Huffman$Node;->terminalBitCount:I
 
-    if-le v5, v7, :cond_6
+    if-le v3, v7, :cond_4
 
     goto :goto_4
 
-    :cond_6
-    iget v5, v2, Lokhttp3/internal/http2/Huffman$Node;->symbol:I
+    :cond_4
+    iget v3, v2, Lokhttp3/internal/http2/Huffman$Node;->symbol:I
 
-    invoke-virtual {v0, v5}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
+    invoke-virtual {v0, v3}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
 
     iget v2, v2, Lokhttp3/internal/http2/Huffman$Node;->terminalBitCount:I
 
     sub-int/2addr v7, v2
 
-    sget-object v8, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
+    sget-object v3, Lokhttp3/internal/http2/Huffman;->root:Lokhttp3/internal/http2/Huffman$Node;
 
     goto :goto_3
 
-    :cond_7
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v3
-
-    :cond_8
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v3
-
-    :cond_9
+    :cond_5
     :goto_4
     invoke-virtual {v0}, Lokio/Buffer;->readByteString()Lokio/ByteString;
 
@@ -649,14 +607,7 @@
 
     goto :goto_5
 
-    :cond_a
-    const-string v0, "source"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v3
-
-    :cond_b
+    :cond_6
     iget-object v0, p0, Lokhttp3/internal/http2/Hpack$Reader;->source:Lokio/BufferedSource;
 
     invoke-interface {v0, v5, v6}, Lokio/BufferedSource;->readByteString(J)Lokio/ByteString;

@@ -25,7 +25,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901e4
+    const v1, 0x7f0902b6
 
     const/4 v2, 0x3
 
@@ -63,7 +63,7 @@
 
     check-cast v8, Lde/rki/coronawarnapp/ui/view/CircleProgress;
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     move-object v3, p0
 
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 10
+    .locals 8
 
     monitor-enter p0
 
@@ -128,95 +128,74 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBinding;->mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
-    const-wide/16 v5, 0xd
+    const/4 v5, 0x0
 
-    and-long/2addr v0, v5
+    const-wide/16 v6, 0x3
+
+    and-long/2addr v0, v6
 
     cmp-long v0, v0, v2
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     if-eqz v4, :cond_0
 
-    iget-object v2, v4, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->activeTracingDaysInRetentionPeriod:Landroidx/lifecycle/MutableLiveData;
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v1
-
-    :goto_0
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v3, v2}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Long;
+    const-string v2, "c"
 
-    :cond_1
-    invoke-static {v1}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Long;)J
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-wide v1
+    const v2, 0x7f1201f5
 
-    sget-object v4, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    move-result-object v1
 
-    move-result-object v4
+    const-string v2, "c.getString(\n        R.s\u2026d_logged_assessment\n    )"
 
-    const v5, 0x7f120172
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v4
+    new-array v3, v2, [Ljava/lang/Object;
 
-    const-string v5, "appContext.getString(\n  \u2026period_logged_assessment)"
+    iget-wide v5, v4, Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;->activeTracingDaysInRetentionPeriod:J
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v5, 0x1
+    move-result-object v5
 
-    new-array v6, v5, [Ljava/lang/Object;
+    const/4 v6, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    aput-object v5, v3, v6
 
-    move-result-object v7
+    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    aput-object v7, v6, v3
+    move-result-object v2
 
-    invoke-static {v6, v5}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, "java.lang.String.format(this, *args)"
 
-    move-result-object v3
+    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "java.lang.String.format(this, *args)"
+    iget-wide v2, v4, Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;->activeTracingDaysInRetentionPeriod:J
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    move-wide v8, v1
-
-    move-object v1, v3
-
-    move-wide v2, v8
-
-    :cond_2
-    if-eqz v0, :cond_3
+    :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->mboundView2:Landroid/widget/TextView;
 
-    invoke-static {v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBinding;->riskDetailsInvestigationPeriodCircleProgress:Lde/rki/coronawarnapp/ui/view/CircleProgress;
 
@@ -224,7 +203,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/ui/view/CircleProgress;->setProgress(F)V
 
-    :cond_3
+    :cond_1
     return-void
 
     :catchall_0
@@ -280,7 +259,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x8
+    const-wide/16 v0, 0x2
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->mDirtyFlags:J
@@ -305,61 +284,24 @@
 .end method
 
 .method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    if-eqz p1, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Landroidx/lifecycle/MutableLiveData;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v0, 0x1
-
-    or-long/2addr p1, v0
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
+    return p1
 .end method
 
-.method public setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
     .locals 4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBinding;->mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
     monitor-enter p0
 
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsPeriodLoggedProgressBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x4
+    const-wide/16 v2, 0x1
 
     or-long/2addr v0, v2
 
@@ -369,7 +311,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1f
+    const/16 p1, 0x35
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

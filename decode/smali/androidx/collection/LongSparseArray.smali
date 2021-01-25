@@ -285,6 +285,37 @@
     return-object v0
 .end method
 
+.method public containsKey(J)Z
+    .locals 2
+
+    iget-boolean v0, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/collection/LongSparseArray;->gc()V
+
+    :cond_0
+    iget-object v0, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
+
+    iget v1, p0, Landroidx/collection/LongSparseArray;->mSize:I
+
+    invoke-static {v0, v1, p1, p2}, Landroidx/collection/ContainerHelpers;->binarySearch([JIJ)I
+
+    move-result p1
+
+    if-ltz p1, :cond_1
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public final gc()V
     .locals 9
 
@@ -390,6 +421,26 @@
     :cond_1
     :goto_0
     return-object p3
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/collection/LongSparseArray;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
 
 .method public keyAt(I)J
@@ -557,6 +608,74 @@
     iput p1, p0, Landroidx/collection/LongSparseArray;->mSize:I
 
     :goto_0
+    return-void
+.end method
+
+.method public putAll(Landroidx/collection/LongSparseArray;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/collection/LongSparseArray<",
+            "+TE;>;)V"
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    invoke-virtual {p1, v1}, Landroidx/collection/LongSparseArray;->keyAt(I)J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v2, v3, v4}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public remove(J)V
+    .locals 2
+
+    iget-object v0, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
+
+    iget v1, p0, Landroidx/collection/LongSparseArray;->mSize:I
+
+    invoke-static {v0, v1, p1, p2}, Landroidx/collection/ContainerHelpers;->binarySearch([JIJ)I
+
+    move-result p1
+
+    if-ltz p1, :cond_0
+
+    iget-object p2, p0, Landroidx/collection/LongSparseArray;->mValues:[Ljava/lang/Object;
+
+    aget-object v0, p2, p1
+
+    sget-object v1, Landroidx/collection/LongSparseArray;->DELETED:Ljava/lang/Object;
+
+    if-eq v0, v1, :cond_0
+
+    aput-object v1, p2, p1
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
+
+    :cond_0
     return-void
 .end method
 

@@ -3,29 +3,90 @@
 .source "SegmentPool.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSegmentPool.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SegmentPool.kt\nokio/SegmentPool\n+ 2 -Platform.kt\nokio/-Platform\n*L\n1#1,62:1\n28#2:63\n28#2:64\n*E\n*S KotlinDebug\n*F\n+ 1 SegmentPool.kt\nokio/SegmentPool\n*L\n37#1:63\n52#1:64\n*E\n"
-.end annotation
-
-
 # static fields
+.field public static final HASH_BUCKET_COUNT:I
+
 .field public static final INSTANCE:Lokio/SegmentPool;
 
-.field public static byteCount:J
+.field public static final LOCK:Lokio/Segment;
 
-.field public static next:Lokio/Segment;
+.field public static final hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Ljava/util/concurrent/atomic/AtomicReference<",
+            "Lokio/Segment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 8
 
     new-instance v0, Lokio/SegmentPool;
 
     invoke-direct {v0}, Lokio/SegmentPool;-><init>()V
 
     sput-object v0, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
+
+    new-instance v0, Lokio/Segment;
+
+    const/4 v7, 0x0
+
+    new-array v2, v7, [B
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lokio/Segment;-><init>([BIIZZ)V
+
+    sput-object v0, Lokio/SegmentPool;->LOCK:Lokio/Segment;
+
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x2
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
+
+    move-result v0
+
+    sput v0, Lokio/SegmentPool;->HASH_BUCKET_COUNT:I
+
+    new-array v1, v0, [Ljava/util/concurrent/atomic/AtomicReference;
+
+    :goto_0
+    if-ge v7, v0, :cond_0
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    aput-object v2, v1, v7
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    sput-object v1, Lokio/SegmentPool;->hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
@@ -38,18 +99,20 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final recycle(Lokio/Segment;)V
+.method public static final recycle(Lokio/Segment;)V
     .locals 8
 
-    iget-object v0, p1, Lokio/Segment;->next:Lokio/Segment;
+    const-string v0, "segment"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lokio/Segment;->next:Lokio/Segment;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    iget-object v0, p1, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v0, p0, Lokio/Segment;->prev:Lokio/Segment;
 
     if-nez v0, :cond_0
 
@@ -61,119 +124,150 @@
     move v0, v1
 
     :goto_0
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_6
 
-    iget-boolean v0, p1, Lokio/Segment;->shared:Z
+    iget-boolean v0, p0, Lokio/Segment;->shared:Z
 
     if-eqz v0, :cond_1
 
     return-void
 
     :cond_1
-    monitor-enter p0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    :try_start_0
-    sget-wide v2, Lokio/SegmentPool;->byteCount:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    const/16 v0, 0x2000
+    const-string v2, "Thread.currentThread()"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+
+    move-result-wide v2
+
+    sget v0, Lokio/SegmentPool;->HASH_BUCKET_COUNT:I
 
     int-to-long v4, v0
 
-    add-long/2addr v2, v4
+    const-wide/16 v6, 0x1
 
-    const-wide/32 v6, 0x10000
+    sub-long/2addr v4, v6
 
-    cmp-long v0, v2, v6
+    and-long/2addr v2, v4
 
-    if-lez v0, :cond_2
+    long-to-int v0, v2
 
-    monitor-exit p0
+    sget-object v2, Lokio/SegmentPool;->hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
+
+    aget-object v0, v2, v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lokio/Segment;
+
+    sget-object v3, Lokio/SegmentPool;->LOCK:Lokio/Segment;
+
+    if-ne v2, v3, :cond_2
 
     return-void
 
     :cond_2
-    :try_start_1
-    sget-wide v2, Lokio/SegmentPool;->byteCount:J
+    if-eqz v2, :cond_3
 
-    add-long/2addr v2, v4
+    iget v3, v2, Lokio/Segment;->limit:I
 
-    sput-wide v2, Lokio/SegmentPool;->byteCount:J
+    goto :goto_1
 
-    sget-object v0, Lokio/SegmentPool;->next:Lokio/Segment;
+    :cond_3
+    move v3, v1
 
-    iput-object v0, p1, Lokio/Segment;->next:Lokio/Segment;
+    :goto_1
+    const/high16 v4, 0x10000
 
-    iput v1, p1, Lokio/Segment;->limit:I
-
-    iput v1, p1, Lokio/Segment;->pos:I
-
-    sput-object p1, Lokio/SegmentPool;->next:Lokio/Segment;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
+    if-lt v3, v4, :cond_4
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_4
+    iput-object v2, p0, Lokio/Segment;->next:Lokio/Segment;
 
-    monitor-exit p0
+    iput v1, p0, Lokio/Segment;->pos:I
 
-    throw p1
+    add-int/lit16 v3, v3, 0x2000
 
-    :cond_3
-    const-string p1, "Failed requirement."
+    iput v3, p0, Lokio/Segment;->limit:I
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {v0, v2, p0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object p1
+    if-nez v0, :cond_5
 
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    throw v0
+    iput-object v0, p0, Lokio/Segment;->next:Lokio/Segment;
+
+    :cond_5
+    return-void
+
+    :cond_6
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Failed requirement."
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final take()Lokio/Segment;
-    .locals 5
+.method public static final take()Lokio/Segment;
+    .locals 6
 
-    monitor-enter p0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    :try_start_0
-    sget-object v0, Lokio/SegmentPool;->next:Lokio/Segment;
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "Thread.currentThread()"
 
-    iget-object v1, v0, Lokio/Segment;->next:Lokio/Segment;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v1, Lokio/SegmentPool;->next:Lokio/Segment;
+    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
 
-    const/4 v1, 0x0
+    move-result-wide v0
 
-    iput-object v1, v0, Lokio/Segment;->next:Lokio/Segment;
+    sget v2, Lokio/SegmentPool;->HASH_BUCKET_COUNT:I
 
-    sget-wide v1, Lokio/SegmentPool;->byteCount:J
+    int-to-long v2, v2
 
-    const/16 v3, 0x2000
+    const-wide/16 v4, 0x1
 
-    int-to-long v3, v3
+    sub-long/2addr v2, v4
 
-    sub-long/2addr v1, v3
+    and-long/2addr v0, v2
 
-    sput-wide v1, Lokio/SegmentPool;->byteCount:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    long-to-int v0, v0
 
-    monitor-exit p0
+    sget-object v1, Lokio/SegmentPool;->hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
 
-    return-object v0
+    aget-object v0, v1, v0
 
-    :cond_0
-    monitor-exit p0
+    sget-object v1, Lokio/SegmentPool;->LOCK:Lokio/Segment;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lokio/Segment;
+
+    sget-object v2, Lokio/SegmentPool;->LOCK:Lokio/Segment;
+
+    if-ne v1, v2, :cond_0
 
     new-instance v0, Lokio/Segment;
 
@@ -181,10 +275,29 @@
 
     return-object v0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    const/4 v2, 0x0
 
-    monitor-exit p0
+    if-nez v1, :cond_1
 
-    throw v0
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    new-instance v0, Lokio/Segment;
+
+    invoke-direct {v0}, Lokio/Segment;-><init>()V
+
+    return-object v0
+
+    :cond_1
+    iget-object v3, v1, Lokio/Segment;->next:Lokio/Segment;
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    iput-object v2, v1, Lokio/Segment;->next:Lokio/Segment;
+
+    const/4 v0, 0x0
+
+    iput v0, v1, Lokio/Segment;->limit:I
+
+    return-object v1
 .end method

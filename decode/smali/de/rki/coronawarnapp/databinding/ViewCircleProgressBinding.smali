@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "ViewCircleProgressBinding.java"
 
+# interfaces
+.implements Landroidx/viewbinding/ViewBinding;
+
 
 # instance fields
 .field public final circleProgressBody:Landroid/widget/TextView;

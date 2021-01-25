@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation android:id="@id/nav_graph" app:startDestination="@id/mainFragment"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <fragment android:label="MainFragment" android:name="de.rki.coronawarnapp.ui.main.MainFragment" android:id="@id/mainFragment">
+    <include app:graph="@navigation/test_nav_graph" />
+    <fragment android:label="HomeFragment" android:name="de.rki.coronawarnapp.ui.main.home.HomeFragment" android:id="@id/mainFragment">
         <action android:id="@id/action_mainFragment_to_settingsTracingFragment" app:destination="@id/settingsTracingFragment" />
         <action android:id="@id/action_mainFragment_to_riskDetailsFragment" app:destination="@id/riskDetailsFragment" />
         <action android:id="@id/action_mainFragment_to_settingsFragment" app:destination="@id/settingsFragment" />
         <action android:id="@id/action_mainFragment_to_informationFragment" app:destination="@id/informationFragment" />
         <action android:id="@id/action_mainFragment_to_mainSharingFragment" app:destination="@id/mainSharingFragment" />
-        <action android:id="@id/action_mainFragment_to_submissionIntroFragment" app:destination="@id/submissionIntroFragment" />
-        <action android:id="@id/action_mainFragment_to_submissionResultFragment" app:destination="@id/submissionResultFragment" />
-        <action android:id="@id/action_mainFragment_to_submissionDoneFragment" app:destination="@id/submissionDoneFragment" />
+        <action android:id="@id/action_mainFragment_to_submissionTestResultPendingFragment" app:destination="@id/submissionTestResultPendingFragment" />
+        <action android:id="@id/action_mainFragment_to_submissionTestResultNegativeFragment" app:destination="@id/submissionTestResultNegativeFragment" />
+        <action android:id="@id/action_mainFragment_to_submissionTestResultInvalidFragment" app:destination="@id/submissionTestResultInvalidFragment" />
+        <action android:id="@id/action_mainFragment_to_submissionResultPositiveOtherWarningNoConsentFragment" app:destination="@id/submissionResultPositiveOtherWarningNoConsentFragment" />
         <action android:id="@id/action_mainFragment_to_mainOverviewFragment" app:destination="@id/mainOverviewFragment" />
-        <action android:id="@id/action_mainFragment_to_testRiskLevelCalculation" app:destination="@id/testRiskLevelCalculation" />
+        <action android:id="@id/action_mainFragment_to_submissionDispatcher" app:destination="@id/submissionDispatcherFragment" />
+        <action android:id="@id/action_mainFragment_to_onboardingDeltaInteroperabilityFragment" app:destination="@id/onboardingDeltaInteroperabilityFragment" />
+        <action android:id="@id/action_mainFragment_to_test_nav_graph" app:destination="@id/test_nav_graph" />
+        <action android:id="@id/action_mainFragment_to_submissionTestResultAvailableFragment" app:destination="@id/submissionTestResultAvailableFragment" />
     </fragment>
-    <fragment android:label="@layout/fragment_main_share" android:name="de.rki.coronawarnapp.ui.main.MainShareFragment" android:id="@id/mainSharingFragment" />
-    <fragment android:label="@layout/fragment_main_overview" android:name="de.rki.coronawarnapp.ui.main.MainOverviewFragment" android:id="@id/mainOverviewFragment" />
-    <fragment android:label="@layout/fragment_settings" android:name="de.rki.coronawarnapp.ui.settings.SettingsFragment" android:id="@id/settingsFragment">
+    <fragment android:label="@layout/fragment_main_share" android:name="de.rki.coronawarnapp.ui.main.share.MainShareFragment" android:id="@id/mainSharingFragment" />
+    <fragment android:label="@layout/fragment_main_overview" android:name="de.rki.coronawarnapp.ui.main.overview.MainOverviewFragment" android:id="@id/mainOverviewFragment" />
+    <fragment android:label="@layout/fragment_settings" android:name="de.rki.coronawarnapp.ui.settings.start.SettingsFragment" android:id="@id/settingsFragment">
         <action android:id="@id/action_settingsFragment_to_settingsResetFragment" app:destination="@id/settingsResetFragment" />
         <action android:id="@id/action_settingsFragment_to_settingsTracingFragment" app:destination="@id/settingsTracingFragment" />
         <action android:id="@id/action_settingsFragment_self" app:destination="@id/settingsFragment" />
         <action android:id="@id/action_settingsFragment_to_settingsNotificationFragment" app:destination="@id/settingsNotificationFragment" />
         <action android:id="@id/action_settingsFragment_to_settingsBackgroundPriorityFragment" app:destination="@id/settingsBackgroundPriorityFragment" />
     </fragment>
-    <fragment android:label="@layout/fragment_settings_tracing" android:name="de.rki.coronawarnapp.ui.settings.SettingsTracingFragment" android:id="@id/settingsTracingFragment" />
-    <fragment android:label="SettingsNotificationFragment" android:name="de.rki.coronawarnapp.ui.settings.SettingsNotificationFragment" android:id="@id/settingsNotificationFragment" />
+    <fragment android:label="@layout/fragment_settings_tracing" android:name="de.rki.coronawarnapp.ui.tracing.settings.SettingsTracingFragment" android:id="@id/settingsTracingFragment">
+        <action android:id="@id/action_settingsTracingFragment_to_interopCountryConfigurationFragment" app:destination="@id/interopCountryConfigurationFragment" />
+    </fragment>
+    <fragment android:label="OnboardingDeltaInteroperabilityFragment" android:name="de.rki.coronawarnapp.ui.onboarding.OnboardingDeltaInteroperabilityFragment" android:id="@id/onboardingDeltaInteroperabilityFragment">
+        <action android:id="@id/action_onboardingDeltaInteroperabilityFragment_to_informationTermsFragment" app:destination="@id/informationTermsFragment" />
+    </fragment>
+    <fragment android:label="InteropCountryConfigurationFragment" android:name="de.rki.coronawarnapp.ui.interoperability.InteroperabilityConfigurationFragment" android:id="@id/interopCountryConfigurationFragment">
+        <action android:id="@id/action_interopCountryConfigurationFragment_to_settingTracingFragment" app:destination="@id/settingsTracingFragment" />
+    </fragment>
+    <fragment android:label="SettingsNotificationFragment" android:name="de.rki.coronawarnapp.ui.settings.notifications.NotificationSettingsFragment" android:id="@id/settingsNotificationFragment" />
     <fragment android:label="SettingsBackgroundPriorityFragment" android:name="de.rki.coronawarnapp.ui.settings.SettingsBackgroundPriorityFragment" android:id="@id/settingsBackgroundPriorityFragment" />
     <fragment android:label="@layout/fragment_settings_reset" android:name="de.rki.coronawarnapp.ui.settings.SettingsResetFragment" android:id="@id/settingsResetFragment">
         <action android:id="@id/action_settingsResetFragment_to_mainFragment" app:destination="@id/mainFragment" />
@@ -42,42 +55,82 @@
     <fragment android:label="@layout/fragment_information_contact" android:name="de.rki.coronawarnapp.ui.information.InformationContactFragment" android:id="@id/informationContactFragment" />
     <fragment android:label="@layout/fragment_information_legal" android:name="de.rki.coronawarnapp.ui.information.InformationLegalFragment" android:id="@id/informationLegalFragment" />
     <fragment android:label="InformationTechnicalFragment" android:name="de.rki.coronawarnapp.ui.information.InformationTechnicalFragment" android:id="@id/informationTechnicalFragment" />
-    <fragment android:label="@layout/fragment_risk_details" android:name="de.rki.coronawarnapp.ui.riskdetails.RiskDetailsFragment" android:id="@id/riskDetailsFragment">
+    <fragment android:label="@layout/fragment_risk_details" android:name="de.rki.coronawarnapp.ui.tracing.details.RiskDetailsFragment" android:id="@id/riskDetailsFragment">
         <action android:id="@id/action_riskDetailsFragment_to_settingsTracingFragment" app:destination="@id/settingsTracingFragment" />
     </fragment>
-    <fragment android:label="fragment_submission_dispatcher" android:name="de.rki.coronawarnapp.ui.submission.SubmissionDispatcherFragment" android:id="@id/submissionDispatcherFragment">
+    <fragment android:label="fragment_submission_dispatcher" android:name="de.rki.coronawarnapp.ui.submission.fragment.SubmissionDispatcherFragment" android:id="@id/submissionDispatcherFragment">
         <action android:id="@id/action_submissionDispatcherFragment_to_submissionTanFragment" app:destination="@id/submissionTanFragment" />
-        <action android:id="@id/action_submissionDispatcherFragment_to_submissionQRCodeScanFragment" app:destination="@id/submissionQRCodeScanFragment" />
         <action android:id="@id/action_submissionDispatcherFragment_to_submissionContactFragment" app:destination="@id/submissionContactFragment" />
+        <action android:id="@id/action_submissionDispatcherFragment_to_submissionConsentFragment" app:destination="@id/submissionConsentFragment" />
     </fragment>
-    <fragment android:label="fragment_submission_result_positive_other_warning" android:name="de.rki.coronawarnapp.ui.submission.SubmissionResultPositiveOtherWarningFragment" android:id="@id/submissionResultPositiveOtherWarningFragment">
-        <action android:id="@id/action_submissionResultPositiveOtherWarningFragment_to_submissionResultFragment" app:destination="@id/submissionResultFragment" app:popUpTo="@id/submissionResultFragment" app:popUpToInclusive="true" />
-        <action android:id="@id/action_submissionResultPositiveOtherWarningFragment_to_submissionDoneFragment" app:destination="@id/submissionDoneFragment" app:popUpTo="@id/submissionDoneFragment" app:popUpToInclusive="true" />
+    <fragment android:label="fragment_submission_result_positive_other_no_consent_warning" android:name="de.rki.coronawarnapp.ui.submission.warnothers.SubmissionResultPositiveOtherWarningNoConsentFragment" android:id="@id/submissionResultPositiveOtherWarningNoConsentFragment">
+        <action android:id="@id/action_submissionResultPositiveOtherWarningNoConsentFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionResultPositiveOtherWarningNoConsentFragment_to_informationPrivacyFragment" app:destination="@id/informationPrivacyFragment" />
+        <action android:id="@id/action_submissionResultPositiveOtherWarningNoConsentFragment_to_submissionResultReadyFragment" app:destination="@id/submissionResultReadyFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
     </fragment>
-    <fragment android:label="fragment_submission_result" android:name="de.rki.coronawarnapp.ui.submission.SubmissionTestResultFragment" android:id="@id/submissionResultFragment">
-        <action android:id="@id/action_submissionResultFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="true" />
-        <action android:id="@id/action_submissionResultFragment_to_submissionResultPositiveOtherWarningFragment" app:destination="@id/submissionResultPositiveOtherWarningFragment" />
+    <fragment android:label="SubmissionTestResultPendingFragment" android:name="de.rki.coronawarnapp.ui.submission.testresult.pending.SubmissionTestResultPendingFragment" android:id="@id/submissionTestResultPendingFragment">
+        <argument android:name="skipInitialTestResultRefresh" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_submissionResultFragment_to_submissionYourConsentFragment" app:destination="@id/submissionYourConsentFragment" />
+        <action android:id="@id/action_submissionTestResultPendingFragment_to_submissionTestResultNegativeFragment" app:destination="@id/submissionTestResultNegativeFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+        <action android:id="@id/action_submissionTestResultPendingFragment_to_submissionTestResultInvalidFragment" app:destination="@id/submissionTestResultInvalidFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+        <action android:id="@id/action_submissionTestResultPendingFragment_to_submissionTestResultAvailableFragment" app:destination="@id/submissionTestResultAvailableFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
     </fragment>
-    <fragment android:label="fragment_submission_tan" android:name="de.rki.coronawarnapp.ui.submission.SubmissionTanFragment" android:id="@id/submissionTanFragment">
-        <action android:id="@id/action_submissionTanFragment_to_submissionDispatcherFragment" app:destination="@id/submissionDispatcherFragment" app:popUpTo="@id/submissionDispatcherFragment" app:popUpToInclusive="true" />
-        <action android:id="@id/action_submissionTanFragment_to_submissionResultFragment" app:destination="@id/submissionResultFragment" app:popUpTo="@id/submissionResultFragment" app:popUpToInclusive="true" />
+    <fragment android:label="fragment_submission_tan" android:name="de.rki.coronawarnapp.ui.submission.tan.SubmissionTanFragment" android:id="@id/submissionTanFragment">
+        <action android:id="@id/action_submissionTanFragment_to_submissionTestResultPendingFragment" app:destination="@id/submissionTestResultPendingFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false">
+            <argument android:name="skipInitialTestResultRefresh" android:defaultValue="true" app:argType="boolean" />
+        </action>
+        <action android:id="@id/action_submissionTanFragment_to_submissionTestResultNoConsentFragment" app:destination="@id/submissionTestResultNoConsentFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
     </fragment>
-    <fragment android:label="SubmissionIntroFragment" android:name="de.rki.coronawarnapp.ui.submission.SubmissionIntroFragment" android:id="@id/submissionIntroFragment">
-        <action android:id="@id/action_submissionIntroFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="true" />
-        <action android:id="@id/action_submissionIntroFragment_to_submissionDispatcherFragment" app:destination="@id/submissionDispatcherFragment" />
-    </fragment>
-    <activity android:label="LauncherActivity" android:name="de.rki.coronawarnapp.ui.LauncherActivity" android:id="@id/launcherActivity">
+    <activity android:label="LauncherActivity" android:name="de.rki.coronawarnapp.ui.launcher.LauncherActivity" android:id="@id/launcherActivity">
         <deepLink android:id="@id/deepLink" app:uri="coronawarnapp://launch" />
     </activity>
-    <fragment android:label="SubmissionQRCodeScanFragment" android:name="de.rki.coronawarnapp.ui.submission.SubmissionQRCodeScanFragment" android:id="@id/submissionQRCodeScanFragment">
-        <action android:id="@id/action_submissionQRCodeScanFragment_to_submissionDispatcherFragment" app:destination="@id/submissionDispatcherFragment" app:popUpTo="@id/submissionDispatcherFragment" app:popUpToInclusive="true" />
-        <action android:id="@id/action_submissionQRCodeScanFragment_to_submissionResultFragment" app:destination="@id/submissionResultFragment" app:popUpTo="@id/submissionResultFragment" />
+    <fragment android:label="SubmissionQRCodeScanFragment" android:name="de.rki.coronawarnapp.ui.submission.qrcode.scan.SubmissionQRCodeScanFragment" android:id="@id/submissionQRCodeScanFragment">
+        <action android:id="@id/action_submissionQRCodeScanFragment_to_submissionDispatcherFragment" app:popUpTo="@id/submissionQRCodeScanFragment" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionQRCodeScanFragment_to_submissionTestResultPendingFragment" app:destination="@id/submissionTestResultPendingFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false">
+            <argument android:name="skipInitialTestResultRefresh" android:defaultValue="true" app:argType="boolean" />
+        </action>
+        <action android:id="@id/action_submissionQRCodeScanFragment_to_submissionTestResultAvailableFragment" app:destination="@id/submissionTestResultAvailableFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
     </fragment>
-    <fragment android:label="SubmissionDoneFragment" android:name="de.rki.coronawarnapp.ui.submission.SubmissionDoneFragment" android:id="@id/submissionDoneFragment">
-        <action android:id="@id/action_submissionDoneFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="true" />
+    <fragment android:label="SubmissionResultReadyFragment" android:name="de.rki.coronawarnapp.ui.submission.resultready.SubmissionResultReadyFragment" android:id="@id/submissionResultReadyFragment">
+        <action android:id="@id/action_submissionResultReadyFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionResultReadyFragment_to_submissionSymptomIntroductionFragment" app:destination="@id/submissionSymptomIntroductionFragment" />
     </fragment>
-    <fragment android:label="SubmissionContactFragment" android:name="de.rki.coronawarnapp.ui.submission.SubmissionContactFragment" android:id="@id/submissionContactFragment">
+    <fragment android:label="SubmissionContactFragment" android:name="de.rki.coronawarnapp.ui.submission.fragment.SubmissionContactFragment" android:id="@id/submissionContactFragment">
         <action android:id="@id/action_submissionContactFragment_to_submissionTanFragment" app:destination="@id/submissionTanFragment" />
     </fragment>
-    <fragment android:label="fragment_test_risk_level_calculation" android:name="de.rki.coronawarnapp.TestRiskLevelCalculation" android:id="@id/testRiskLevelCalculation" />
+    <fragment android:label="SubmissionSymptomIntroductionFragment" android:name="de.rki.coronawarnapp.ui.submission.symptoms.introduction.SubmissionSymptomIntroductionFragment" android:id="@id/submissionSymptomIntroductionFragment">
+        <action android:id="@id/action_submissionSymptomIntroductionFragment_to_submissionSymptomCalendarFragment" app:destination="@id/submissionSymptomCalendarFragment" />
+        <action android:id="@id/action_submissionSymptomIntroductionFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="SubmissionSymptomCalendarFragment" android:name="de.rki.coronawarnapp.ui.submission.symptoms.calendar.SubmissionSymptomCalendarFragment" android:id="@id/submissionSymptomCalendarFragment">
+        <argument android:name="symptomIndication" app:argType="de.rki.coronawarnapp.submission.Symptoms$Indication" />
+        <action android:id="@id/action_submissionCalendarFragment_to_submissionSymptomIntroductionFragment" app:destination="@id/submissionSymptomIntroductionFragment" />
+        <action android:id="@id/action_submissionSymptomCalendarFragment_to_submissionResultPositiveOtherWarningFragment" app:destination="@id/submissionResultPositiveOtherWarningNoConsentFragment" />
+        <action android:id="@id/action_submissionSymptomCalendarFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="SubmissionConsentFragment" android:name="de.rki.coronawarnapp.ui.submission.qrcode.consent.SubmissionConsentFragment" android:id="@id/submissionConsentFragment">
+        <action android:id="@id/action_submissionConsentFragment_to_submissionQRCodeScanFragment" app:destination="@id/submissionQRCodeScanFragment" />
+        <action android:id="@id/action_submissionConsentFragment_to_homeFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+        <action android:id="@id/action_submissionConsentFragment_to_informationPrivacyFragment" app:destination="@id/informationPrivacyFragment" />
+    </fragment>
+    <fragment android:label="SubmissionTestResultConsentFragment" android:name="de.rki.coronawarnapp.ui.submission.testresult.positive.SubmissionTestResultConsentGivenFragment" android:id="@id/submissionTestResultConsentGivenFragment">
+        <action android:id="@id/action_submissionTestResultConsentGivenFragment_to_homeFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionTestResultConsentGivenFragment_to_submissionSymptomIntroductionFragment" app:destination="@id/submissionSymptomIntroductionFragment" />
+    </fragment>
+    <fragment android:label="SubmissionTestResultNoConsentFragment" android:name="de.rki.coronawarnapp.ui.submission.testresult.positive.SubmissionTestResultNoConsentFragment" android:id="@id/submissionTestResultNoConsentFragment">
+        <action android:id="@id/action_submissionTestResultNoConsentFragment_to_homeFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionTestResultNoConsentFragment_to_submissionResultPositiveOtherWarningNoConsentFragment" app:destination="@id/submissionResultPositiveOtherWarningNoConsentFragment" />
+    </fragment>
+    <fragment android:label="SubmissionYourConsentFragment" android:name="de.rki.coronawarnapp.ui.submission.yourconsent.SubmissionYourConsentFragment" android:id="@id/submissionYourConsentFragment">
+        <argument android:name="isTestResultAvailable" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_submissionYourConsentFragment_to_informationPrivacyFragment" app:destination="@id/informationPrivacyFragment" />
+    </fragment>
+    <fragment android:label="SubmissionTestResultAvailableFragment" android:name="de.rki.coronawarnapp.ui.submission.resultavailable.SubmissionTestResultAvailableFragment" android:id="@id/submissionTestResultAvailableFragment">
+        <action android:id="@id/action_submissionTestResultAvailableFragment_to_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_submissionTestResultAvailableFragment_to_submissionYourConsentFragment" app:destination="@id/submissionYourConsentFragment" />
+        <action android:id="@id/action_submissionTestResultAvailableFragment_to_submissionTestResultConsentGivenFragment" app:destination="@id/submissionTestResultConsentGivenFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+        <action android:id="@id/action_submissionTestResultAvailableFragment_to_submissionTestResultNoConsentFragment" app:destination="@id/submissionTestResultNoConsentFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+    </fragment>
+    <fragment android:label="SubmissionTestResultNegativeFragment" android:name="de.rki.coronawarnapp.ui.submission.testresult.negative.SubmissionTestResultNegativeFragment" android:id="@id/submissionTestResultNegativeFragment" />
+    <fragment android:label="SubmissionTestResultInvalidFragment" android:name="de.rki.coronawarnapp.ui.submission.testresult.invalid.SubmissionTestResultInvalidFragment" android:id="@id/submissionTestResultInvalidFragment" />
 </navigation>

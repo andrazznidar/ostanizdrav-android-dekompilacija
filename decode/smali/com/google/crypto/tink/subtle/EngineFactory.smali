@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->logger:Ljava/util/logging/Logger;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAndroid()Z
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAndroid()Z
 
     move-result v0
 
@@ -273,6 +273,15 @@
 
 .method public constructor <init>(Lcom/google/crypto/tink/subtle/EngineWrapper;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "instanceBuilder"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT_WRAPPER;)V"
@@ -298,6 +307,15 @@
 # virtual methods
 .method public getInstance(Ljava/lang/String;)Ljava/lang/Object;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "algorithm"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

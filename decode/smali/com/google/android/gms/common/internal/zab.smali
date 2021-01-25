@@ -673,7 +673,7 @@
     return-object p0
 
     :cond_5
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result p0
 

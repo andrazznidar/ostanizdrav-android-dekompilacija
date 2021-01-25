@@ -10,10 +10,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRouteSelector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RouteSelector.kt\nokhttp3/internal/connection/RouteSelector\n*L\n1#1,203:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final address:Lokhttp3/Address;
@@ -61,19 +57,23 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/Call;Lokhttp3/EventListener;)V
-    .locals 2
+    .locals 4
 
-    const/4 v0, 0x0
+    const-string v0, "address"
 
-    if-eqz p1, :cond_d
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_c
+    const-string v0, "routeDatabase"
 
-    const-string v1, "call"
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p3, :cond_b
+    const-string v0, "call"
 
-    if-eqz p4, :cond_a
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "eventListener"
+
+    invoke-static {p4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -107,17 +107,21 @@
 
     iget-object p4, p0, Lokhttp3/internal/connection/RouteSelector;->call:Lokhttp3/Call;
 
-    if-eqz p3, :cond_9
+    const/4 v1, 0x0
 
-    if-eqz p4, :cond_8
+    if-eqz p3, :cond_6
 
-    if-eqz p2, :cond_7
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p3, 0x0
+    const-string p3, "url"
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p4, 0x0
 
     if-eqz p1, :cond_0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
@@ -130,17 +134,17 @@
 
     invoke-virtual {p1}, Ljava/net/URI;->getHost()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    const/4 p4, 0x1
+    const/4 v3, 0x1
 
-    if-nez p2, :cond_1
+    if-nez v2, :cond_1
 
-    new-array p1, p4, [Ljava/net/Proxy;
+    new-array p1, v3, [Ljava/net/Proxy;
 
-    sget-object p2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+    sget-object v2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
-    aput-object p2, p1, p3
+    aput-object v2, p1, p4
 
     invoke-static {p1}, Lokhttp3/internal/Util;->immutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -149,11 +153,11 @@
     goto :goto_2
 
     :cond_1
-    iget-object p2, p0, Lokhttp3/internal/connection/RouteSelector;->address:Lokhttp3/Address;
+    iget-object v2, p0, Lokhttp3/internal/connection/RouteSelector;->address:Lokhttp3/Address;
 
-    iget-object p2, p2, Lokhttp3/Address;->proxySelector:Ljava/net/ProxySelector;
+    iget-object v2, v2, Lokhttp3/Address;->proxySelector:Ljava/net/ProxySelector;
 
-    invoke-virtual {p2, p1}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
+    invoke-virtual {v2, p1}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
 
     move-result-object p1
 
@@ -161,29 +165,29 @@
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result p2
+    move-result v2
 
-    if-eqz p2, :cond_2
+    if-eqz v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    move p2, p3
+    move v2, p4
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    move p2, p4
+    move v2, v3
 
     :goto_1
-    if-eqz p2, :cond_4
+    if-eqz v2, :cond_4
 
-    new-array p1, p4, [Ljava/net/Proxy;
+    new-array p1, v3, [Ljava/net/Proxy;
 
-    sget-object p2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+    sget-object v2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
-    aput-object p2, p1, p3
+    aput-object v2, p1, p4
 
     invoke-static {p1}, Lokhttp3/internal/Util;->immutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -199,66 +203,29 @@
     :goto_2
     iput-object p1, p0, Lokhttp3/internal/connection/RouteSelector;->proxies:Ljava/util/List;
 
-    iput p3, p0, Lokhttp3/internal/connection/RouteSelector;->nextProxyIndex:I
+    iput p4, p0, Lokhttp3/internal/connection/RouteSelector;->nextProxyIndex:I
 
-    iget-object p1, p0, Lokhttp3/internal/connection/RouteSelector;->eventListener:Lokhttp3/EventListener;
+    iget-object p4, p0, Lokhttp3/internal/connection/RouteSelector;->eventListener:Lokhttp3/EventListener;
 
-    iget-object p2, p0, Lokhttp3/internal/connection/RouteSelector;->call:Lokhttp3/Call;
+    iget-object v2, p0, Lokhttp3/internal/connection/RouteSelector;->call:Lokhttp3/Call;
 
-    if-eqz p1, :cond_6
+    if-eqz p4, :cond_5
 
-    if-eqz p2, :cond_5
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "proxies"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 
     :cond_5
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    throw v1
 
     :cond_6
-    throw v0
-
-    :cond_7
-    const-string p1, "url"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_8
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_9
-    throw v0
-
-    :cond_a
-    const-string p1, "eventListener"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_b
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    const-string p1, "routeDatabase"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_d
-    const-string p1, "address"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    throw v1
 .end method
 
 

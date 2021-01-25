@@ -3,12 +3,31 @@
 .source "DateTimeFormat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lorg/joda/time/format/DateTimeFormat$StyleFormatterCacheKey;,
+        Lorg/joda/time/format/DateTimeFormat$StyleFormatter;
+    }
+.end annotation
+
+
 # static fields
 .field public static final cPatternCache:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
             "Ljava/lang/String;",
+            "Lorg/joda/time/format/DateTimeFormatter;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final cStyleCache:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/atomic/AtomicReferenceArray<",
             "Lorg/joda/time/format/DateTimeFormatter;",
             ">;"
         }
@@ -32,11 +51,48 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
 
+    sput-object v0, Lorg/joda/time/format/DateTimeFormat;->cStyleCache:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
     return-void
+.end method
+
+.method public static createDateTimeFormatter(II)Lorg/joda/time/format/DateTimeFormatter;
+    .locals 2
+
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, v0, :cond_1
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x2
+
+    :goto_0
+    new-instance v1, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;
+
+    invoke-direct {v1, p0, p1, v0}, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;-><init>(III)V
+
+    new-instance p0, Lorg/joda/time/format/DateTimeFormatter;
+
+    invoke-direct {p0, v1, v1}, Lorg/joda/time/format/DateTimeFormatter;-><init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;)V
+
+    return-object p0
 .end method
 
 .method public static forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
     .locals 15
+
+    if-eqz p0, :cond_21
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -362,13 +418,17 @@
 
     invoke-direct {v1}, Lorg/joda/time/DateTime;-><init>()V
 
-    iget-object v3, v1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    invoke-virtual {v1}, Lorg/joda/time/base/BaseDateTime;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Lorg/joda/time/Chronology;->year()Lorg/joda/time/DateTimeField;
 
     move-result-object v3
 
-    iget-wide v4, v1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+    invoke-virtual {v1}, Lorg/joda/time/base/BaseDateTime;->getMillis()J
+
+    move-result-wide v4
 
     invoke-virtual {v3, v4, v5}, Lorg/joda/time/DateTimeField;->get(J)I
 
@@ -399,13 +459,17 @@
 
     invoke-direct {v1}, Lorg/joda/time/DateTime;-><init>()V
 
-    iget-object v3, v1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    invoke-virtual {v1}, Lorg/joda/time/base/BaseDateTime;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Lorg/joda/time/Chronology;->weekyear()Lorg/joda/time/DateTimeField;
 
     move-result-object v3
 
-    iget-wide v4, v1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+    invoke-virtual {v1}, Lorg/joda/time/base/BaseDateTime;->getMillis()J
+
+    move-result-wide v4
 
     invoke-virtual {v3, v4, v5}, Lorg/joda/time/DateTimeField;->get(J)I
 

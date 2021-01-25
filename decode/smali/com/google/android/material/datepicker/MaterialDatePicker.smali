@@ -225,7 +225,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v0
 
@@ -402,7 +402,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {v0, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v1
 
@@ -426,15 +426,7 @@
 
     iput-object v2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->background:Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    iget-object v3, v2, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
-
-    new-instance v4, Lcom/google/android/material/elevation/ElevationOverlayProvider;
-
-    invoke-direct {v4, v0}, Lcom/google/android/material/elevation/ElevationOverlayProvider;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, v3, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevationOverlayProvider:Lcom/google/android/material/elevation/ElevationOverlayProvider;
-
-    invoke-virtual {v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->updateZ()V
+    invoke-virtual {v2, v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->initializeElevationOverlay(Landroid/content/Context;)V
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->background:Lcom/google/android/material/shape/MaterialShapeDrawable;
 
@@ -1162,7 +1154,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     new-instance v2, Landroidx/fragment/app/BackStackRecord;
 
@@ -1172,23 +1164,13 @@
 
     iget-object v3, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->pickerFragment:Lcom/google/android/material/datepicker/PickerFragment;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     const/4 v4, 0x2
 
     invoke-virtual {v2, v0, v3, v1, v4}, Landroidx/fragment/app/FragmentTransaction;->doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
 
-    iget-boolean v0, v2, Landroidx/fragment/app/FragmentTransaction;->mAddToBackStack:Z
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, v2, Landroidx/fragment/app/FragmentTransaction;->mAllowAddToBackStack:Z
-
-    iget-object v1, v2, Landroidx/fragment/app/BackStackRecord;->mManager:Landroidx/fragment/app/FragmentManager;
-
-    invoke-virtual {v1, v2, v0}, Landroidx/fragment/app/FragmentManager;->execSingleAction(Landroidx/fragment/app/FragmentManager$OpGenerator;Z)V
+    invoke-virtual {v2}, Landroidx/fragment/app/FragmentTransaction;->commitNow()V
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->pickerFragment:Lcom/google/android/material/datepicker/PickerFragment;
 
@@ -1203,15 +1185,6 @@
     return-void
 
     :cond_2
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "This transaction is already being added to the back stack"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Must use non-zero containerViewId"
@@ -1220,7 +1193,7 @@
 
     throw v0
 
-    :cond_4
+    :cond_3
     throw v1
 .end method
 

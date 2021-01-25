@@ -64,6 +64,78 @@
     return p1
 .end method
 
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 1
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->isSupported(Lorg/joda/time/DateTimeFieldType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePartial;->get(Lorg/joda/time/DateTimeFieldType;)I
+
+    move-result p1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/BasicWeekOfWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/chrono/BasicChronology;->getWeeksInYear(I)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    const/16 p1, 0x35
+
+    return p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 4
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v2
+
+    sget-object v3, Lorg/joda/time/DateTimeFieldType;->WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    if-ne v2, v3, :cond_0
+
+    aget p1, p2, v1
+
+    iget-object p2, p0, Lorg/joda/time/chrono/BasicWeekOfWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {p2, p1}, Lorg/joda/time/chrono/BasicChronology;->getWeeksInYear(I)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/16 p1, 0x35
+
+    return p1
+.end method
+
 .method public getMaximumValueForSet(JI)I
     .locals 1
 

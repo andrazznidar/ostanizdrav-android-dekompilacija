@@ -13,10 +13,6 @@
     name = "Entry"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Cache.kt\nokhttp3/Cache$Entry\n*L\n1#1,784:1\n*E\n"
-.end annotation
-
 
 # static fields
 .field public static final RECEIVED_MILLIS:Ljava/lang/String;
@@ -84,6 +80,10 @@
 .method public constructor <init>(Lokhttp3/Response;)V
     .locals 7
 
+    const-string v0, "response"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iget-object v0, p1, Lokhttp3/Response;->request:Lokhttp3/Request;
@@ -94,9 +94,13 @@
 
     iput-object v0, p0, Lokhttp3/Cache$Entry;->url:Ljava/lang/String;
 
+    const-string v0, "$this$varyHeaders"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p1, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;
 
-    if-eqz v0, :cond_3
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v0, v0, Lokhttp3/Response;->request:Lokhttp3/Request;
 
@@ -196,13 +200,6 @@
     iput-wide v0, p0, Lokhttp3/Cache$Entry;->receivedResponseMillis:J
 
     return-void
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public constructor <init>(Lokio/Source;)V
@@ -215,76 +212,80 @@
 
     move-object/from16 v1, p0
 
-    const/4 v0, 0x0
+    const-string v0, "source"
 
-    if-eqz p1, :cond_c
+    const-string v2, "rawSource"
+
+    move-object/from16 v3, p1
+
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     :try_start_0
-    invoke-static/range {p1 .. p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static/range {p1 .. p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-object v3, v2
+    move-object v4, v2
 
-    check-cast v3, Lokio/RealBufferedSource;
+    check-cast v4, Lokio/RealBufferedSource;
 
     :try_start_1
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, v1, Lokhttp3/Cache$Entry;->url:Ljava/lang/String;
+    iput-object v5, v1, Lokhttp3/Cache$Entry;->url:Ljava/lang/String;
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, v1, Lokhttp3/Cache$Entry;->requestMethod:Ljava/lang/String;
+    iput-object v5, v1, Lokhttp3/Cache$Entry;->requestMethod:Ljava/lang/String;
 
-    new-instance v4, Lokhttp3/Headers$Builder;
+    new-instance v5, Lokhttp3/Headers$Builder;
 
-    invoke-direct {v4}, Lokhttp3/Headers$Builder;-><init>()V
+    invoke-direct {v5}, Lokhttp3/Headers$Builder;-><init>()V
+
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readDecimalLong()J
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readDecimalLong()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
     :try_end_2
     .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v9, 0x0
 
-    cmp-long v10, v5, v8
+    cmp-long v11, v6, v9
 
-    const-string v11, "expected an int but was \""
+    const-string v12, "expected an int but was \""
 
-    const/16 v12, 0x22
+    if-ltz v11, :cond_b
 
-    if-ltz v10, :cond_b
+    const v11, 0x7fffffff
 
-    const v10, 0x7fffffff
+    int-to-long v13, v11
 
-    int-to-long v13, v10
+    cmp-long v11, v6, v13
 
-    cmp-long v10, v5, v13
-
-    if-gtz v10, :cond_b
+    if-gtz v11, :cond_b
 
     :try_start_3
-    invoke-interface {v7}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v8}, Ljava/lang/CharSequence;->length()I
 
-    move-result v10
+    move-result v11
     :try_end_3
     .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -293,276 +294,296 @@
 
     const/16 v16, 0x1
 
-    if-lez v10, :cond_0
+    if-lez v11, :cond_0
 
-    move/from16 v10, v16
+    move/from16 v11, v16
 
     goto :goto_0
 
     :cond_0
-    move v10, v15
+    move v11, v15
 
     :goto_0
-    if-nez v10, :cond_b
+    if-nez v11, :cond_b
 
-    long-to-int v5, v5
+    long-to-int v6, v6
 
-    move v6, v15
+    move v7, v15
 
     :goto_1
-    if-ge v6, v5, :cond_1
+    if-ge v7, v6, :cond_1
 
     :try_start_4
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v4, v7}, Lokhttp3/Headers$Builder;->addLenient$okhttp(Ljava/lang/String;)Lokhttp3/Headers$Builder;
+    invoke-virtual {v5, v8}, Lokhttp3/Headers$Builder;->addLenient$okhttp(Ljava/lang/String;)Lokhttp3/Headers$Builder;
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v4}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
+    invoke-virtual {v5}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, v1, Lokhttp3/Cache$Entry;->varyHeaders:Lokhttp3/Headers;
+    iput-object v5, v1, Lokhttp3/Cache$Entry;->varyHeaders:Lokhttp3/Headers;
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Lokhttp3/internal/http/StatusLine;->parse(Ljava/lang/String;)Lokhttp3/internal/http/StatusLine;
+    invoke-static {v5}, Lokhttp3/internal/http/StatusLine;->parse(Ljava/lang/String;)Lokhttp3/internal/http/StatusLine;
 
-    move-result-object v4
+    move-result-object v5
 
-    iget-object v5, v4, Lokhttp3/internal/http/StatusLine;->protocol:Lokhttp3/Protocol;
+    iget-object v6, v5, Lokhttp3/internal/http/StatusLine;->protocol:Lokhttp3/Protocol;
 
-    iput-object v5, v1, Lokhttp3/Cache$Entry;->protocol:Lokhttp3/Protocol;
+    iput-object v6, v1, Lokhttp3/Cache$Entry;->protocol:Lokhttp3/Protocol;
 
-    iget v5, v4, Lokhttp3/internal/http/StatusLine;->code:I
+    iget v6, v5, Lokhttp3/internal/http/StatusLine;->code:I
 
-    iput v5, v1, Lokhttp3/Cache$Entry;->code:I
+    iput v6, v1, Lokhttp3/Cache$Entry;->code:I
 
-    iget-object v4, v4, Lokhttp3/internal/http/StatusLine;->message:Ljava/lang/String;
+    iget-object v5, v5, Lokhttp3/internal/http/StatusLine;->message:Ljava/lang/String;
 
-    iput-object v4, v1, Lokhttp3/Cache$Entry;->message:Ljava/lang/String;
+    iput-object v5, v1, Lokhttp3/Cache$Entry;->message:Ljava/lang/String;
 
-    new-instance v4, Lokhttp3/Headers$Builder;
+    new-instance v5, Lokhttp3/Headers$Builder;
 
-    invoke-direct {v4}, Lokhttp3/Headers$Builder;-><init>()V
+    invoke-direct {v5}, Lokhttp3/Headers$Builder;-><init>()V
+
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :try_start_5
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readDecimalLong()J
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readDecimalLong()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    cmp-long v10, v5, v8
+    cmp-long v8, v6, v9
 
-    if-ltz v10, :cond_a
+    if-ltz v8, :cond_a
 
-    cmp-long v10, v5, v13
+    cmp-long v8, v6, v13
 
-    if-gtz v10, :cond_a
+    if-gtz v8, :cond_a
 
-    invoke-interface {v7}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
-    move-result v10
+    move-result v8
     :try_end_5
     .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    if-lez v10, :cond_2
+    if-lez v8, :cond_2
 
-    move/from16 v10, v16
+    move/from16 v8, v16
 
     goto :goto_2
 
     :cond_2
-    move v10, v15
+    move v8, v15
 
     :goto_2
-    if-nez v10, :cond_a
+    if-nez v8, :cond_a
 
-    long-to-int v5, v5
+    long-to-int v0, v6
 
     move v6, v15
 
     :goto_3
-    if-ge v6, v5, :cond_3
+    if-ge v6, v0, :cond_3
 
     :try_start_6
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v4, v7}, Lokhttp3/Headers$Builder;->addLenient$okhttp(Ljava/lang/String;)Lokhttp3/Headers$Builder;
+    invoke-virtual {v5, v7}, Lokhttp3/Headers$Builder;->addLenient$okhttp(Ljava/lang/String;)Lokhttp3/Headers$Builder;
 
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
     :cond_3
-    sget-object v5, Lokhttp3/Cache$Entry;->SENT_MILLIS:Ljava/lang/String;
+    sget-object v0, Lokhttp3/Cache$Entry;->SENT_MILLIS:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Lokhttp3/Headers$Builder;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v0}, Lokhttp3/Headers$Builder;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
     sget-object v6, Lokhttp3/Cache$Entry;->RECEIVED_MILLIS:Ljava/lang/String;
 
-    invoke-virtual {v4, v6}, Lokhttp3/Headers$Builder;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lokhttp3/Headers$Builder;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     sget-object v7, Lokhttp3/Cache$Entry;->SENT_MILLIS:Ljava/lang/String;
 
-    invoke-virtual {v4, v7}, Lokhttp3/Headers$Builder;->removeAll(Ljava/lang/String;)Lokhttp3/Headers$Builder;
+    invoke-virtual {v5, v7}, Lokhttp3/Headers$Builder;->removeAll(Ljava/lang/String;)Lokhttp3/Headers$Builder;
 
     sget-object v7, Lokhttp3/Cache$Entry;->RECEIVED_MILLIS:Ljava/lang/String;
 
-    invoke-virtual {v4, v7}, Lokhttp3/Headers$Builder;->removeAll(Ljava/lang/String;)Lokhttp3/Headers$Builder;
+    invoke-virtual {v5, v7}, Lokhttp3/Headers$Builder;->removeAll(Ljava/lang/String;)Lokhttp3/Headers$Builder;
 
-    if-eqz v5, :cond_4
+    if-eqz v0, :cond_4
 
-    invoke-static {v5}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v10
+    move-result-wide v7
 
     goto :goto_4
 
     :cond_4
-    move-wide v10, v8
+    move-wide v7, v9
 
     :goto_4
-    iput-wide v10, v1, Lokhttp3/Cache$Entry;->sentRequestMillis:J
+    iput-wide v7, v1, Lokhttp3/Cache$Entry;->sentRequestMillis:J
 
     if-eqz v6, :cond_5
 
     invoke-static {v6}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v8
+    move-result-wide v9
 
     :cond_5
-    iput-wide v8, v1, Lokhttp3/Cache$Entry;->receivedResponseMillis:J
+    iput-wide v9, v1, Lokhttp3/Cache$Entry;->receivedResponseMillis:J
 
-    invoke-virtual {v4}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
+    invoke-virtual {v5}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
 
-    move-result-object v4
+    move-result-object v0
 
-    iput-object v4, v1, Lokhttp3/Cache$Entry;->responseHeaders:Lokhttp3/Headers;
+    iput-object v0, v1, Lokhttp3/Cache$Entry;->responseHeaders:Lokhttp3/Headers;
 
-    iget-object v4, v1, Lokhttp3/Cache$Entry;->url:Ljava/lang/String;
+    iget-object v0, v1, Lokhttp3/Cache$Entry;->url:Ljava/lang/String;
 
     const-string v5, "https://"
 
     const/4 v6, 0x2
 
-    invoke-static {v4, v5, v15, v6}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    invoke-static {v0, v5, v15, v6}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_9
+    if-eqz v0, :cond_9
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
-    move-result v4
+    move-result v5
 
-    if-lez v4, :cond_6
+    if-lez v5, :cond_6
 
     move/from16 v15, v16
 
     :cond_6
     if-nez v15, :cond_8
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
     move-result-object v0
 
-    sget-object v4, Lokhttp3/CipherSuite;->Companion:Lokhttp3/CipherSuite$Companion;
+    sget-object v5, Lokhttp3/CipherSuite;->Companion:Lokhttp3/CipherSuite$Companion;
 
-    invoke-virtual {v4, v0}, Lokhttp3/CipherSuite$Companion;->forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;
+    invoke-virtual {v5, v0}, Lokhttp3/CipherSuite$Companion;->forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;
 
     move-result-object v0
 
     invoke-virtual {v1, v2}, Lokhttp3/Cache$Entry;->readCertificateList(Lokio/BufferedSource;)Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v5
 
     invoke-virtual {v1, v2}, Lokhttp3/Cache$Entry;->readCertificateList(Lokio/BufferedSource;)Ljava/util/List;
 
     move-result-object v2
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->exhausted()Z
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->exhausted()Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_7
+    if-nez v6, :cond_7
 
-    sget-object v5, Lokhttp3/TlsVersion;->Companion:Lokhttp3/TlsVersion$Companion;
+    sget-object v6, Lokhttp3/TlsVersion;->Companion:Lokhttp3/TlsVersion$Companion;
 
-    invoke-virtual {v3}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
+    invoke-virtual {v4}, Lokio/RealBufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v5, v3}, Lokhttp3/TlsVersion$Companion;->forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;
+    invoke-virtual {v6, v4}, Lokhttp3/TlsVersion$Companion;->forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;
 
-    move-result-object v3
+    move-result-object v4
 
     goto :goto_5
 
     :cond_7
-    sget-object v3, Lokhttp3/TlsVersion;->SSL_3_0:Lokhttp3/TlsVersion;
+    sget-object v4, Lokhttp3/TlsVersion;->SSL_3_0:Lokhttp3/TlsVersion;
 
     :goto_5
-    invoke-static {v4}, Lokhttp3/internal/Util;->toImmutableList(Ljava/util/List;)Ljava/util/List;
+    const-string v6, "tlsVersion"
 
-    move-result-object v4
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v5, Lokhttp3/Handshake;
+    const-string v6, "cipherSuite"
+
+    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v6, "peerCertificates"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v6, "localCertificates"
+
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v5}, Lokhttp3/internal/Util;->toImmutableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v5
+
+    new-instance v6, Lokhttp3/Handshake;
 
     invoke-static {v2}, Lokhttp3/internal/Util;->toImmutableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v2
 
-    new-instance v6, Lokhttp3/Handshake$Companion$get$1;
+    new-instance v7, Lokhttp3/Handshake$Companion$get$1;
 
-    invoke-direct {v6, v4}, Lokhttp3/Handshake$Companion$get$1;-><init>(Ljava/util/List;)V
+    invoke-direct {v7, v5}, Lokhttp3/Handshake$Companion$get$1;-><init>(Ljava/util/List;)V
 
-    invoke-direct {v5, v3, v0, v2, v6}, Lokhttp3/Handshake;-><init>(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v6, v4, v0, v2, v7}, Lokhttp3/Handshake;-><init>(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Lkotlin/jvm/functions/Function0;)V
 
-    iput-object v5, v1, Lokhttp3/Cache$Entry;->handshake:Lokhttp3/Handshake;
+    iput-object v6, v1, Lokhttp3/Cache$Entry;->handshake:Lokhttp3/Handshake;
 
     goto :goto_6
 
     :cond_8
     new-instance v2, Ljava/io/IOException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "expected \"\" but was \""
+    const-string v5, "expected \"\" but was \""
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v0, 0x22
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -571,6 +592,8 @@
     throw v2
 
     :cond_9
+    const/4 v0, 0x0
+
     iput-object v0, v1, Lokhttp3/Cache$Entry;->handshake:Lokhttp3/Handshake;
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
@@ -582,27 +605,29 @@
 
     :cond_a
     :try_start_7
-    new-instance v0, Ljava/io/IOException;
+    new-instance v2, Ljava/io/IOException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v0, 0x22
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    invoke-direct {v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v2
     :try_end_7
     .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
@@ -631,13 +656,15 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v4, 0x22
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -672,19 +699,12 @@
     invoke-interface/range {p1 .. p1}, Lokio/Source;->close()V
 
     throw v0
-
-    :cond_c
-    const-string v2, "rawSource"
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
 # virtual methods
 .method public final readCertificateList(Lokio/BufferedSource;)Ljava/util/List;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -702,6 +722,10 @@
         }
     .end annotation
 
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     :try_start_0
     invoke-interface {p1}, Lokio/BufferedSource;->readDecimalLong()J
 
@@ -715,7 +739,7 @@
 
     cmp-long v3, v0, v3
 
-    if-ltz v3, :cond_6
+    if-ltz v3, :cond_4
 
     const v3, 0x7fffffff
 
@@ -723,7 +747,7 @@
 
     cmp-long v3, v0, v3
 
-    if-gtz v3, :cond_6
+    if-gtz v3, :cond_4
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -743,7 +767,7 @@
     move v3, v4
 
     :goto_0
-    if-nez v3, :cond_6
+    if-nez v3, :cond_4
 
     long-to-int v0, v0
 
@@ -768,7 +792,7 @@
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_1
-    if-ge v4, v0, :cond_5
+    if-ge v4, v0, :cond_3
 
     invoke-interface {p1}, Lokio/BufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
@@ -780,9 +804,9 @@
 
     sget-object v6, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
-    const/4 v6, 0x0
+    const-string v6, "$this$decodeBase64"
 
-    if-eqz v3, :cond_4
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v3}, Lokio/-Base64;->decodeBase64ToArray(Ljava/lang/String;)[B
 
@@ -790,19 +814,19 @@
 
     if-eqz v3, :cond_2
 
-    new-instance v7, Lokio/ByteString;
+    new-instance v6, Lokio/ByteString;
 
-    invoke-direct {v7, v3}, Lokio/ByteString;-><init>([B)V
+    invoke-direct {v6, v3}, Lokio/ByteString;-><init>([B)V
 
     goto :goto_2
 
     :cond_2
-    move-object v7, v6
+    const/4 v6, 0x0
 
     :goto_2
-    if-eqz v7, :cond_3
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v5, v7}, Lokio/Buffer;->write(Lokio/ByteString;)Lokio/Buffer;
+    invoke-virtual {v5, v6}, Lokio/Buffer;->write(Lokio/ByteString;)Lokio/Buffer;
 
     new-instance v3, Lokio/Buffer$inputStream$1;
 
@@ -813,29 +837,14 @@
     move-result-object v3
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catch Ljava/security/cert/CertificateException; {:try_start_1 .. :try_end_1} :catch_0
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
     :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_1
-    .catch Ljava/security/cert/CertificateException; {:try_start_1 .. :try_end_1} :catch_0
-
-    throw v6
-
-    :cond_4
-    :try_start_2
-    const-string p1, "$this$decodeBase64"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/security/cert/CertificateException; {:try_start_2 .. :try_end_2} :catch_0
-
-    throw v6
-
-    :cond_5
     return-object v2
 
     :catch_0
@@ -851,8 +860,8 @@
 
     throw v0
 
-    :cond_6
-    :try_start_3
+    :cond_4
+    :try_start_2
     new-instance p1, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -878,8 +887,8 @@
     invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_3
-    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_1
+    :try_end_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_1
 
     :catch_1
     move-exception p1
@@ -954,7 +963,7 @@
 
     const-string v6, "bytes"
 
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v6, 0x3
 
@@ -1003,13 +1012,17 @@
         }
     .end annotation
 
+    const-string v0, "editor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lokhttp3/internal/cache/DiskLruCache$Editor;->newSink(I)Lokio/Sink;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object p1
 
@@ -1224,15 +1237,13 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-virtual {v2, v3}, Lokio/RealBufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     iget-object v0, p0, Lokhttp3/Cache$Entry;->handshake:Lokhttp3/Handshake;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v0, v0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;
 
@@ -1269,19 +1280,13 @@
     move-result-object v0
 
     invoke-interface {v0, v3}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
-
-    goto :goto_2
-
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    throw v1
+    :cond_2
+    const/4 v0, 0x0
 
-    :cond_3
-    :goto_2
-    invoke-static {p1, v1}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -1296,7 +1301,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-static {p1, v0}, Lkotlin/collections/MapsKt___MapsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 .end method

@@ -29,6 +29,7 @@ doNotCompress:
 - META-INF/androidx.lifecycle_lifecycle-extensions.version
 - META-INF/androidx.lifecycle_lifecycle-livedata-core-ktx.version
 - META-INF/androidx.lifecycle_lifecycle-livedata-core.version
+- META-INF/androidx.lifecycle_lifecycle-livedata-ktx.version
 - META-INF/androidx.lifecycle_lifecycle-livedata.version
 - META-INF/androidx.lifecycle_lifecycle-process.version
 - META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version
@@ -50,6 +51,7 @@ doNotCompress:
 - META-INF/androidx.navigation_navigation-ui.version
 - META-INF/androidx.preference_preference.version
 - META-INF/androidx.print_print.version
+- META-INF/androidx.recyclerview_recyclerview-selection.version
 - META-INF/androidx.recyclerview_recyclerview.version
 - META-INF/androidx.room_room-guava.version
 - META-INF/androidx.room_room-ktx.version
@@ -69,6 +71,10 @@ doNotCompress:
 - META-INF/androidx.work_work-runtime-ktx.version
 - META-INF/androidx.work_work-runtime.version
 - META-INF/com.google.android.material_material.version
+- META-INF/com.google.dagger_dagger-android-support.version
+- META-INF/com.google.dagger_dagger-android.version
+- META-INF/com.google.dagger_dagger-lint-aar.version
+- META-INF/com.google.dagger_dagger.version
 - png
 - ogg
 isFrameworkApk: false
@@ -83,15 +89,36 @@ sparseResources: false
 unknownFiles:
   DebugProbesKt.bin: '8'
   appleLegacyKeyExchange.proto: '8'
-  applicationConfiguration.proto: '8'
-  build-data.properties: '0'
-  keyExportFormat.proto: '8'
+  build-data.properties: '8'
   play-services-base.properties: '8'
   play-services-basement.properties: '8'
   play-services-nearby.properties: '8'
   play-services-safetynet.properties: '8'
   play-services-tasks.properties: '8'
-  qrCode.proto: '8'
+  stamp-cert-sha256: '8'
+  external/exposurenotification/diagnosis_key_batch.proto: '8'
+  external/exposurenotification/temporary_exposure_key_export.proto: '8'
+  external/exposurenotification/temporary_exposure_key_signature_list.proto: '8'
+  internal/app_config.proto: '8'
+  internal/app_features.proto: '8'
+  internal/app_version_config.proto: '8'
+  internal/attenuation_duration.proto: '8'
+  internal/exposure_detection_parameters.proto: '8'
+  internal/key_download_parameters.proto: '8'
+  internal/risk_level.proto: '8'
+  internal/risk_score_classification.proto: '8'
+  internal/risk_score_parameters.proto: '8'
+  internal/submission_payload.proto: '8'
+  internal/stats/card_header.proto: '8'
+  internal/stats/key_figure_card.proto: '8'
+  internal/stats/statistics.proto: '8'
+  internal/v2/app_config_android.proto: '8'
+  internal/v2/app_config_ios.proto: '8'
+  internal/v2/app_features.proto: '8'
+  internal/v2/exposure_detection_parameters.proto: '8'
+  internal/v2/key_download_parameters.proto: '8'
+  internal/v2/risk_calculation_parameters.proto: '8'
+  internal/v2/semantic_version.proto: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
   okhttp3/internal/publicsuffix/publicsuffixes.gz: '0'
   org/conscrypt/conscrypt.properties: '8'
@@ -586,5 +613,5 @@ usesFramework:
   tag: null
 version: 2.5.0
 versionInfo:
-  versionCode: '57'
-  versionName: 1.3.1
+  versionCode: '59'
+  versionName: 1.10.1

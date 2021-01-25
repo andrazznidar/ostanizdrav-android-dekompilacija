@@ -60,13 +60,13 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Lcom/google/protobuf/MessageLiteOrBuilder;->isInitialized()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     instance-of v0, p1, Lcom/google/protobuf/AbstractMessageLite;
 
@@ -74,9 +74,9 @@
 
     check-cast p1, Lcom/google/protobuf/AbstractMessageLite;
 
-    new-instance p1, Lcom/google/protobuf/UninitializedMessageException;
+    invoke-virtual {p1}, Lcom/google/protobuf/AbstractMessageLite;->newUninitializedMessageException()Lcom/google/protobuf/UninitializedMessageException;
 
-    invoke-direct {p1}, Lcom/google/protobuf/UninitializedMessageException;-><init>()V
+    move-result-object p1
 
     goto :goto_0
 
@@ -86,6 +86,8 @@
     invoke-direct {p1}, Lcom/google/protobuf/UninitializedMessageException;-><init>()V
 
     :goto_0
+    if-eqz p1, :cond_1
+
     new-instance v0, Lcom/google/protobuf/InvalidProtocolBufferException;
 
     invoke-virtual {p1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
@@ -97,11 +99,16 @@
     throw v0
 
     :cond_1
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_2
     return-object p1
 .end method
 
 .method public parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,28 +124,26 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/google/protobuf/CodedInputStream;
-
-    const/16 v1, 0x1000
-
-    invoke-direct {v0, p1, v1}, Lcom/google/protobuf/CodedInputStream;-><init>(Ljava/io/InputStream;I)V
-
-    invoke-interface {p0, v0, p2}, Lcom/google/protobuf/Parser;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/protobuf/MessageLite;
+    invoke-interface {p0, p1, p2}, Lcom/google/protobuf/Parser;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
 
-    const/4 p2, 0x0
+    move-result-object p2
+
+    check-cast p2, Lcom/google/protobuf/MessageLite;
+
+    const/4 v0, 0x0
 
     :try_start_0
-    invoke-virtual {v0, p2}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
     :try_end_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractParser;->checkMessageInitialized(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
+    invoke-virtual {p0, p2}, Lcom/google/protobuf/AbstractParser;->checkMessageInitialized(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
 
-    return-object p1
+    return-object p2
 
     :catch_0
     move-exception p1

@@ -127,7 +127,7 @@
     goto :goto_1
 
     :cond_4
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v7
 

@@ -559,7 +559,7 @@
 
     sget v2, Lcom/google/android/material/R$styleable;->TextInputLayout_boxBackgroundColor:I
 
-    invoke-static {v10, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -667,7 +667,7 @@
     :cond_7
     sget v2, Lcom/google/android/material/R$styleable;->TextInputLayout_boxStrokeColor:I
 
-    invoke-static {v10, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -839,7 +839,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->TextInputLayout_errorIconTint:I
 
-    invoke-static {v10, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v4
 
@@ -860,7 +860,7 @@
 
     move-result v4
 
-    invoke-static {v4, v7}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v4, v7}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v4
 
@@ -1029,7 +1029,7 @@
 
     sget v5, Lcom/google/android/material/R$styleable;->TextInputLayout_startIconTint:I
 
-    invoke-static {v10, v1, v5}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v5
 
@@ -1052,7 +1052,7 @@
 
     move-result v5
 
-    invoke-static {v5, v7}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v5, v7}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v5
 
@@ -1349,7 +1349,7 @@
 
     sget v2, Lcom/google/android/material/R$styleable;->TextInputLayout_passwordToggleTint:I
 
-    invoke-static {v10, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -1372,7 +1372,7 @@
 
     move-result v2
 
-    invoke-static {v2, v7}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v2, v7}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v2
 
@@ -1398,7 +1398,7 @@
 
     sget v2, Lcom/google/android/material/R$styleable;->TextInputLayout_endIconTint:I
 
-    invoke-static {v10, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v10, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -1421,7 +1421,7 @@
 
     move-result v2
 
-    invoke-static {v2, v7}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v2, v7}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v2
 
@@ -2126,7 +2126,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/content/Context;II)I
+    invoke-static {v1, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -4489,7 +4489,7 @@
 
     const-string v1, "The current box background mode "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

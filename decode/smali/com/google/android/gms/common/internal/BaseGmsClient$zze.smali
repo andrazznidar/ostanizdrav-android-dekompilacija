@@ -42,7 +42,7 @@
 
     const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 

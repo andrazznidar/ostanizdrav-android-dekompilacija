@@ -4,14 +4,24 @@
 
 
 # instance fields
-.field public final synthetic val$prf:Lcom/google/crypto/tink/subtle/prf/PrfImpl;
+.field public final synthetic val$prf:Lcom/google/crypto/tink/prf/Prf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2;Lcom/google/crypto/tink/subtle/prf/PrfImpl;)V
+.method public constructor <init>(Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2;Lcom/google/crypto/tink/prf/Prf;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x1010
+        }
+        names = {
+            "this$1",
+            "val$prf"
+        }
+    .end annotation
 
-    iput-object p2, p0, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2$1;->val$prf:Lcom/google/crypto/tink/subtle/prf/PrfImpl;
+    iput-object p2, p0, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2$1;->val$prf:Lcom/google/crypto/tink/prf/Prf;
 
     invoke-direct {p0}, Lcom/google/crypto/tink/prf/PrfSet;-><init>()V
 
@@ -27,7 +37,7 @@
             "()",
             "Ljava/util/Map<",
             "Ljava/lang/Integer;",
-            "Lcom/google/crypto/tink/subtle/prf/PrfImpl;",
+            "Lcom/google/crypto/tink/prf/Prf;",
             ">;"
         }
     .end annotation
@@ -38,7 +48,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2$1;->val$prf:Lcom/google/crypto/tink/subtle/prf/PrfImpl;
+    iget-object v1, p0, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager$2$1;->val$prf:Lcom/google/crypto/tink/prf/Prf;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
 

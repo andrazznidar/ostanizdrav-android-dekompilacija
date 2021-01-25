@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902eb
+    const v1, 0x7f09042e
 
     const/4 v2, 0x1
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ec
+    const v1, 0x7f09042f
 
     const/4 v2, 0x2
 
@@ -39,7 +39,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ed
+    const v1, 0x7f090430
 
     const/4 v2, 0x3
 
@@ -47,7 +47,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup4BindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ee
+    const v1, 0x7f090431
 
     const/4 v2, 0x4
 

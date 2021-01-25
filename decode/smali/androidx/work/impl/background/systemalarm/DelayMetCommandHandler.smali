@@ -593,7 +593,7 @@
 
     const/4 v4, 0x0
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_1
 
     iput v2, p0, Landroidx/work/impl/background/systemalarm/DelayMetCommandHandler;->mCurrentState:I
 
@@ -657,48 +657,12 @@
 
     iget-object v2, p0, Landroidx/work/impl/background/systemalarm/DelayMetCommandHandler;->mWorkSpecId:Ljava/lang/String;
 
-    iget-object v5, v1, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
-
-    monitor-enter v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    iget-object v6, v1, Landroidx/work/impl/Processor;->mEnqueuedWorkMap:Ljava/util/Map;
-
-    invoke-interface {v6, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    iget-object v1, v1, Landroidx/work/impl/Processor;->mForegroundWorkMap:Ljava/util/Map;
-
-    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroidx/work/impl/Processor;->isEnqueued(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
-    move v1, v4
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    move v1, v3
-
-    :goto_1
-    monitor-exit v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-eqz v1, :cond_2
-
-    :try_start_2
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v1
@@ -743,9 +707,9 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2
+    :cond_0
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v1
@@ -767,23 +731,10 @@
     new-array v4, v4, [Ljava/lang/Throwable;
 
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    goto :goto_2
+    goto :goto_0
 
-    :catchall_0
-    move-exception v1
-
-    :try_start_3
-    monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v1
-
-    :cond_3
+    :cond_1
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v1
@@ -806,17 +757,17 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    :goto_2
+    :goto_0
     monitor-exit v0
 
     return-void
 
-    :catchall_1
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

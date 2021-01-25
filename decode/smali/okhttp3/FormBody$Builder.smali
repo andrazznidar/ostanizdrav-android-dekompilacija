@@ -13,10 +13,6 @@
     name = "Builder"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormBody.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormBody.kt\nokhttp3/FormBody$Builder\n*L\n1#1,127:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final charset:Ljava/nio/charset/Charset;

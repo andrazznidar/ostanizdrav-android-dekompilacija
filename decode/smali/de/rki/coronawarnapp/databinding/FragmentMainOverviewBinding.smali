@@ -26,6 +26,8 @@
 
 .field public final mainOverviewRiskLowRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
 
+.field public final mainOverviewRiskMediumRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
+
 .field public final mainOverviewRiskSubtitle:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final mainOverviewRiskUnknownRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
@@ -36,10 +38,10 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;)V
-    .locals 15
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;)V
+    .locals 16
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
     move-object/from16 v1, p6
 
@@ -61,17 +63,19 @@
 
     move-object/from16 v10, p17
 
-    move-object/from16 v11, p19
+    move-object/from16 v11, p18
 
     move-object/from16 v12, p20
 
     move-object/from16 v13, p21
 
+    move-object/from16 v14, p22
+
     invoke-direct/range {p0 .. p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    move-object/from16 v14, p5
+    move-object/from16 v15, p5
 
-    iput-object v14, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object v15, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewGlossaryCalculation:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBinding;
 
@@ -143,46 +147,49 @@
     iput-object v0, v10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_9
-    move-object/from16 v1, p18
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewRiskSubtitle:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object v11, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewRiskUnknownRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
+    iput-object v11, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewRiskMediumRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
 
     if-eqz v11, :cond_a
 
     iput-object v0, v11, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_a
-    iput-object v12, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewTest:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewRiskSubtitle:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    iput-object v12, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewRiskUnknownRisk:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBinding;
 
     if-eqz v12, :cond_b
 
     iput-object v0, v12, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_b
-    iput-object v13, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewTracing:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;
+    iput-object v13, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewTest:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;
 
     if-eqz v13, :cond_c
 
     iput-object v0, v13, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_c
+    iput-object v14, v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;->mainOverviewTracing:Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBinding;
+
+    if-eqz v14, :cond_d
+
+    iput-object v0, v14, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_d
     return-void
 .end method
 
-.method public static inflate(Landroid/view/LayoutInflater;)Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;
-    .locals 4
+.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBinding;
+    .locals 2
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c0037
+    const v1, 0x7f0c0048
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {p0, v1, v2, v3, v0}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 

@@ -3,12 +3,6 @@
 .source "DiskLruCache.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiskLruCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiskLruCache.kt\nokhttp3/internal/cache/DiskLruCache$Entry$newSource$1\n*L\n1#1,1065:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public closed:Z
 

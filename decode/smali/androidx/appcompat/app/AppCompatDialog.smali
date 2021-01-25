@@ -309,3 +309,17 @@
 
     return p1
 .end method
+
+.method public supportRequestWindowFeature(I)Z
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/app/AppCompatDelegate;->requestWindowFeature(I)Z
+
+    move-result p1
+
+    return p1
+.end method

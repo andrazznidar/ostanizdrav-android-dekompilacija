@@ -23,8 +23,12 @@
 
 
 # virtual methods
-.method public create(Lokhttp3/Call;)Lokhttp3/EventListener;
-    .locals 0
+.method public final create(Lokhttp3/Call;)Lokhttp3/EventListener;
+    .locals 1
+
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p0, Lokhttp3/internal/Util$asFactory$1;->$this_asFactory:Lokhttp3/EventListener;
 

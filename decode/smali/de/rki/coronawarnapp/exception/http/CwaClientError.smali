@@ -3,34 +3,36 @@
 .source "CwaWebException.kt"
 
 
-# instance fields
-.field public final statusCode:I
-
-
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(I)V
+    const/4 p3, 0x0
 
-    iput p1, p0, Lde/rki/coronawarnapp/exception/http/CwaClientError;->statusCode:I
+    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    const/16 v0, 0x190
+    const/16 p2, 0x190
 
-    if-gt v0, p1, :cond_0
+    if-gt p2, p1, :cond_0
 
-    const/16 v0, 0x1f3
+    const/16 p2, 0x1f3
 
-    if-lt v0, p1, :cond_0
+    if-lt p2, p1, :cond_0
 
     return-void
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "a client error has to have code 4xx"
+    const-string p3, "Invalid HTTP client error code "
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const-string p4, " (!= 4xx)"
 
-    throw p1
+    invoke-static {p3, p1, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
 .end method

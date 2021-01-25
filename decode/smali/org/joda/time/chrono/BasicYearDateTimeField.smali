@@ -59,7 +59,7 @@
 
     const-string v1, " + "
 
-    invoke-static {p2, v0, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, v0, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -79,7 +79,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeToInt(J)I
+    invoke-static {p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
 
     move-result p3
 
@@ -100,6 +100,33 @@
     move-result p1
 
     return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    cmp-long v0, p1, p3
+
+    if-gez v0, :cond_0
+
+    iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p3, p4, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getYearDifference(JJ)J
+
+    move-result-wide p1
+
+    neg-long p1, p1
+
+    return-wide p1
+
+    :cond_0
+    iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/chrono/BasicChronology;->getYearDifference(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
 .end method
 
 .method public getLeapDurationField()Lorg/joda/time/DurationField;
@@ -248,7 +275,7 @@
 
     move-result v1
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 
@@ -278,7 +305,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

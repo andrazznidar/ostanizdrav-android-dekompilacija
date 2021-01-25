@@ -15,6 +15,15 @@
 # direct methods
 .method public constructor <init>([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;
@@ -44,6 +53,16 @@
 
 .method public static macDataRfc8439([BLjava/nio/ByteBuffer;)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "aad",
+            "ciphertext"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -128,6 +147,17 @@
 # virtual methods
 .method public decrypt([B[B)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -214,11 +244,11 @@
 
     move-result-object p2
 
-    invoke-static {v3, p2}, Lcom/google/android/gms/common/internal/Preconditions;->computeMac([B[B)[B
+    invoke-static {v3, p2}, Landroidx/transition/ViewGroupUtilsApi14;->computeMac([B[B)[B
 
     move-result-object p2
 
-    invoke-static {p2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result p2
     :try_end_0
@@ -273,6 +303,17 @@
 
 .method public encrypt([B[B)[B
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -380,7 +421,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/Preconditions;->computeMac([B[B)[B
+    invoke-static {v1, p1}, Landroidx/transition/ViewGroupUtilsApi14;->computeMac([B[B)[B
 
     move-result-object p1
 
@@ -420,6 +461,17 @@
 .end method
 
 .method public abstract newChaCha20Instance([BI)Lcom/google/crypto/tink/subtle/ChaCha20Base;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "initialCounter"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;

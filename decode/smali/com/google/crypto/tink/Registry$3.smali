@@ -15,6 +15,16 @@
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/PrivateKeyTypeManager;Lcom/google/crypto/tink/KeyTypeManager;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "val$localPrivateKeyManager",
+            "val$localPublicKeyManager"
+        }
+    .end annotation
 
     iput-object p1, p0, Lcom/google/crypto/tink/Registry$3;->val$localPrivateKeyManager:Lcom/google/crypto/tink/PrivateKeyTypeManager;
 
@@ -48,6 +58,15 @@
 
 .method public getKeyManager(Ljava/lang/Class;)Lcom/google/crypto/tink/KeyManager;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "primitiveClass"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Q:",

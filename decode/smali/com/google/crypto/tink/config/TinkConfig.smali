@@ -142,9 +142,11 @@
 
     invoke-static {}, Lcom/google/crypto/tink/hybrid/HybridConfig;->register()V
 
+    invoke-static {}, Lcom/google/crypto/tink/prf/PrfConfig;->register()V
+
     invoke-static {}, Lcom/google/crypto/tink/signature/SignatureConfig;->register()V
 
-    invoke-static {}, Lcom/google/crypto/tink/prf/PrfConfig;->register()V
+    invoke-static {}, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->register()V
 
     return-void
 .end method

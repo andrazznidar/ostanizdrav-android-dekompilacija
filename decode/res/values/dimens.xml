@@ -88,12 +88,23 @@
     <dimen name="button_icon_margin">8.0dip</dimen>
     <item type="dimen" name="button_padding_start_end">@dimen/spacing_normal</item>
     <item type="dimen" name="button_padding_top_bottom">@dimen/spacing_small</item>
+    <dimen name="calendar_day_size">40.0dip</dimen>
+    <dimen name="calendar_day_spacing">4.0dip</dimen>
+    <dimen name="calendar_header_bottom_radius">4.0dip</dimen>
+    <dimen name="calendar_header_height">72.0dip</dimen>
+    <dimen name="calendar_header_initial_radius">1.0dip</dimen>
+    <dimen name="calendar_header_top_radius">4.0dip</dimen>
+    <dimen name="calendar_layout_stroke">2.0dip</dimen>
     <dimen name="card_divider">1.0dip</dimen>
     <item type="dimen" name="card_padding">@dimen/spacing_normal</item>
     <dimen name="cardview_compat_inset_shadow">1.0dip</dimen>
     <dimen name="cardview_default_elevation">2.0dip</dimen>
     <dimen name="cardview_default_radius">2.0dip</dimen>
     <item type="dimen" name="circle_big">@dimen/spacing_huge</item>
+    <dimen name="circle_icon">32.0dip</dimen>
+    <dimen name="circle_icon_big">40.0dip</dimen>
+    <dimen name="circle_icon_big_padding">8.0dip</dimen>
+    <dimen name="circle_icon_padding">6.0dip</dimen>
     <item type="dimen" name="circle_large_width">10.0</item>
     <dimen name="circle_small">23.0dip</dimen>
     <item type="dimen" name="circle_small_width">5.0</item>
@@ -104,6 +115,7 @@
     <dimen name="compat_control_corner_material">2.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_height">320.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_width">320.0dip</dimen>
+    <dimen name="contact_diary_list_item">65.0dip</dimen>
     <dimen name="default_dimension">100.0dip</dimen>
     <dimen name="design_appbar_elevation">4.0dip</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168.0dip</dimen>
@@ -384,6 +396,7 @@
     <dimen name="spacing_normal">24.0dip</dimen>
     <dimen name="spacing_small">16.0dip</dimen>
     <dimen name="spacing_tiny">8.0dip</dimen>
+    <dimen name="submission_country_selection_country_icon_size">40.0dip</dimen>
     <item type="dimen" name="submission_guideline_button">@dimen/spacing_large</item>
     <dimen name="submission_scan_qr_code_viewfinder_center_offset">120.0dip</dimen>
     <dimen name="submission_scan_qr_code_viewfinder_size">240.0dip</dimen>

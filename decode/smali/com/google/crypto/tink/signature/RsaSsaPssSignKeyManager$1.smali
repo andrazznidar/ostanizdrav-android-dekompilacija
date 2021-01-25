@@ -26,6 +26,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "clazz"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Lcom/google/crypto/tink/KeyTypeManager$PrimitiveFactory;-><init>(Ljava/lang/Class;)V
 
@@ -36,6 +44,15 @@
 # virtual methods
 .method public getPrimitive(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 12
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "keyProto"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -186,7 +203,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v4
 
@@ -194,7 +211,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/Preconditions;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v5
 
@@ -252,7 +269,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v1
 
@@ -260,7 +277,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v4
 

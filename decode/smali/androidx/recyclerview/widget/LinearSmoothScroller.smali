@@ -127,6 +127,28 @@
     return v0
 .end method
 
+.method public calculateTimeForDeceleration(I)I
+    .locals 4
+
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForScrolling(I)I
+
+    move-result p1
+
+    int-to-double v0, p1
+
+    const-wide v2, 0x3fd57a786c22680aL    # 0.3356
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int p1, v0
+
+    return p1
+.end method
+
 .method public calculateTimeForScrolling(I)I
     .locals 2
 
@@ -366,21 +388,9 @@
 
     double-to-int p1, v0
 
-    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForScrolling(I)I
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForDeceleration(I)I
 
     move-result p1
-
-    int-to-double v0, p1
-
-    const-wide v4, 0x3fd57a786c22680aL    # 0.3356
-
-    div-double/2addr v0, v4
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v0
-
-    double-to-int p1, v0
 
     if-lez p1, :cond_a
 

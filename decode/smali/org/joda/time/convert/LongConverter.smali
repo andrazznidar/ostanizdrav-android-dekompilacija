@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lorg/joda/time/convert/InstantConverter;
+.implements Lorg/joda/time/convert/PartialConverter;
 .implements Lorg/joda/time/convert/Converter;
 
 

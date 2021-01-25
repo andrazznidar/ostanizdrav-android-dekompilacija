@@ -4,10 +4,6 @@
 
 
 # instance fields
-.field public mDeviceUIState:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-.field public mRegisterDate:Ljava/util/Date;
-
 .field public final testResultCard:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final testResultCardContent:Landroid/widget/TextView;
@@ -32,12 +28,4 @@
     iput-object p8, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Landroid/widget/ImageView;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public abstract setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
-.end method
-
-.method public abstract setRegisterDate(Ljava/util/Date;)V
 .end method

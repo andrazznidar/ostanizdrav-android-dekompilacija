@@ -751,3 +751,47 @@
 
     return-void
 .end method
+
+.method public static newFactory(Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<TT:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/gson/reflect/TypeToken<",
+            "TTT;>;",
+            "Lcom/google/gson/TypeAdapter<",
+            "TTT;>;)",
+            "Lcom/google/gson/TypeAdapterFactory;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$31;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$31;-><init>(Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapter;)V
+
+    return-object v0
+.end method
+
+.method public static newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<TT:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class<",
+            "TTT;>;",
+            "Lcom/google/gson/TypeAdapter<",
+            "TTT;>;)",
+            "Lcom/google/gson/TypeAdapterFactory;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$32;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+
+    return-object v0
+.end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     new-instance v0, Lkotlinx/coroutines/scheduling/DefaultScheduler;
 
@@ -19,72 +19,45 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/DefaultScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultScheduler;
 
-    sget v1, Lkotlinx/coroutines/internal/SystemPropsKt__SystemPropsKt;->AVAILABLE_PROCESSORS:I
+    new-instance v1, Lkotlinx/coroutines/scheduling/LimitingDispatcher;
 
-    const/16 v2, 0x40
+    sget v2, Lkotlinx/coroutines/internal/SystemPropsKt__SystemPropsKt;->AVAILABLE_PROCESSORS:I
 
-    if-ge v2, v1, :cond_0
+    const/16 v3, 0x40
 
-    move v4, v1
+    if-ge v3, v2, :cond_0
+
+    move v5, v2
 
     goto :goto_0
 
     :cond_0
-    move v4, v2
+    move v5, v3
 
     :goto_0
-    const/4 v5, 0x0
-
     const/4 v6, 0x0
 
-    const/16 v7, 0xc
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/16 v8, 0xc
 
-    const-string v3, "kotlinx.coroutines.io.parallelism"
+    const/4 v9, 0x0
 
-    invoke-static/range {v3 .. v8}, Lkotlin/collections/MapsKt___MapsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    const-string v4, "kotlinx.coroutines.io.parallelism"
 
-    move-result v1
+    invoke-static/range {v4 .. v9}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    if-lez v1, :cond_1
+    const/4 v3, 0x1
 
-    move v3, v2
+    const-string v4, "Dispatchers.IO"
 
-    goto :goto_1
+    invoke-direct {v1, v0, v2, v4, v3}, Lkotlinx/coroutines/scheduling/LimitingDispatcher;-><init>(Lkotlinx/coroutines/scheduling/ExperimentalCoroutineDispatcher;ILjava/lang/String;I)V
 
-    :cond_1
-    const/4 v3, 0x0
-
-    :goto_1
-    if-eqz v3, :cond_2
-
-    new-instance v3, Lkotlinx/coroutines/scheduling/LimitingDispatcher;
-
-    invoke-direct {v3, v0, v1, v2}, Lkotlinx/coroutines/scheduling/LimitingDispatcher;-><init>(Lkotlinx/coroutines/scheduling/ExperimentalCoroutineDispatcher;II)V
-
-    sput-object v3, Lkotlinx/coroutines/scheduling/DefaultScheduler;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+    sput-object v1, Lkotlinx/coroutines/scheduling/DefaultScheduler;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-void
-
-    :cond_2
-    const-string v0, "Expected positive parallelism level, but have "
-
-    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public constructor <init>()V
@@ -108,7 +81,7 @@
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "DefaultDispatcher cannot be closed"
+    const-string v1, "Dispatchers.Default cannot be closed"
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -118,7 +91,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "DefaultDispatcher"
+    const-string v0, "Dispatchers.Default"
 
     return-object v0
 .end method

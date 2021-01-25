@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;
 .super Lcom/google/android/gms/internal/nearby/zzi;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # annotations
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/nearby/exposurenotification/zzg;)V
+.method public constructor <init>(Lcom/google/android/gms/nearby/exposurenotification/zzp;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzi;-><init>()V

@@ -83,7 +83,7 @@
 
     :cond_3
     :goto_2
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument1(Z)V
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
 
     :cond_4
     if-nez p1, :cond_5
@@ -123,7 +123,7 @@
 
     aget-object p2, p2, v1
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull1(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull2(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p2, p0, Lcom/google/gson/internal/$Gson$Types$ParameterizedTypeImpl;->typeArguments:[Ljava/lang/reflect/Type;
 

@@ -4,6 +4,58 @@
 
 
 # direct methods
+.method public static final createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<R:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroidx/room/RoomDatabase;",
+            "Z[",
+            "Ljava/lang/String;",
+            "Ljava/util/concurrent/Callable<",
+            "TR;>;)",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "TR;>;"
+        }
+    .end annotation
+
+    const-string v0, "db"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "tableNames"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "callable"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;
+
+    const/4 v6, 0x0
+
+    move-object v1, v0
+
+    move-object v2, p2
+
+    move v3, p1
+
+    move-object v4, p0
+
+    move-object v5, p3
+
+    invoke-direct/range {v1 .. v6}, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;-><init>([Ljava/lang/String;ZLandroidx/room/RoomDatabase;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
+
+    new-instance p0, Lkotlinx/coroutines/flow/SafeFlow;
+
+    invoke-direct {p0, v0}, Lkotlinx/coroutines/flow/SafeFlow;-><init>(Lkotlin/jvm/functions/Function2;)V
+
+    return-object p0
+.end method
+
 .method public static final execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -37,7 +89,7 @@
 
     move-result-object p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     invoke-interface {p3}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -52,78 +104,42 @@
 
     check-cast v0, Landroidx/room/TransactionElement;
 
-    const-string v0, "backingFieldMap"
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_2
+    iget-object v0, v0, Landroidx/room/TransactionElement;->transactionDispatcher:Lkotlin/coroutines/ContinuationInterceptor;
 
-    iget-object p1, p0, Landroidx/room/RoomDatabase;->mBackingFieldMap:Ljava/util/Map;
+    if-eqz v0, :cond_1
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "TransactionDispatcher"
-
-    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mTransactionExecutor:Ljava/util/concurrent/Executor;
-
-    const-string v1, "transactionExecutor"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->from(Ljava/util/concurrent/Executor;)Lkotlinx/coroutines/CoroutineDispatcher;
-
-    move-result-object v1
-
-    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_1
 
     :cond_1
-    check-cast v1, Lkotlinx/coroutines/CoroutineDispatcher;
+    if-eqz p1, :cond_2
+
+    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+
+    move-result-object p0
 
     goto :goto_0
 
     :cond_2
-    iget-object p1, p0, Landroidx/room/RoomDatabase;->mBackingFieldMap:Ljava/util/Map;
+    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "QueryDispatcher"
-
-    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_3
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mQueryExecutor:Ljava/util/concurrent/Executor;
-
-    const-string v1, "queryExecutor"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->from(Ljava/util/concurrent/Executor;)Lkotlinx/coroutines/CoroutineDispatcher;
-
-    move-result-object v1
-
-    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_3
-    check-cast v1, Lkotlinx/coroutines/CoroutineDispatcher;
+    move-result-object p0
 
     :goto_0
+    move-object v0, p0
+
+    :goto_1
     new-instance p0, Landroidx/room/CoroutinesRoom$Companion$execute$2;
 
     const/4 p1, 0x0
 
     invoke-direct {p0, p2, p1}, Landroidx/room/CoroutinesRoom$Companion$execute$2;-><init>(Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v1, p0, p3}, Lkotlin/collections/MapsKt___MapsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p0, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :goto_1
+    :goto_2
     return-object p0
 .end method

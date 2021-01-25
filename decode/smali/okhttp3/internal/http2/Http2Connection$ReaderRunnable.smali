@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$ReaderRunnable\n+ 2 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 Util.kt\nokhttp3/internal/Util\n*L\n1#1,1006:1\n92#2,11:1007\n92#2,11:1018\n92#2,11:1031\n92#2,11:1043\n37#3,2:1029\n37#3,2:1054\n554#4:1042\n554#4:1056\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$ReaderRunnable\n*L\n667#1,11:1007\n715#1,11:1018\n737#1,11:1031\n806#1,11:1043\n737#1,2:1029\n823#1,2:1054\n787#1:1042\n839#1:1056\n*E\n"
+    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$ReaderRunnable\n+ 2 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 Util.kt\nokhttp3/internal/Util\n*L\n1#1,1006:1\n92#2,11:1007\n92#2,11:1018\n92#2,11:1031\n92#2,11:1043\n37#3,2:1029\n37#3,2:1054\n551#4:1042\n551#4:1056\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$ReaderRunnable\n*L\n687#1,11:1007\n715#1,11:1018\n758#1,11:1031\n806#1,11:1043\n753#1,2:1029\n824#1,2:1054\n797#1:1042\n841#1:1056\n*E\n"
 .end annotation
 
 
@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/http2/Http2Connection;Lokhttp3/internal/http2/Http2Reader;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,6 +48,10 @@
             ")V"
         }
     .end annotation
+
+    const-string v0, "reader"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -84,9 +88,7 @@
 
     const-string v3, "source"
 
-    const/4 v4, 0x0
-
-    if-eqz v2, :cond_11
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v3, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -96,11 +98,17 @@
 
     const-wide/16 v12, 0x0
 
+    const/4 v4, 0x0
+
     if-eqz v3, :cond_1
 
     iget-object v7, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
     if-eqz v7, :cond_0
+
+    const-string v3, "source"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v9, Lokio/Buffer;
 
@@ -136,9 +144,9 @@
 
     move-result-object v5
 
-    const/4 v6, 0x1
-
     new-instance v15, Lokhttp3/internal/http2/Http2Connection$pushDataLater$$inlined$execute$1;
+
+    const/4 v6, 0x1
 
     move-object v2, v15
 
@@ -187,6 +195,10 @@
     return-void
 
     :cond_2
+    const-string v0, "source"
+
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
     if-eqz v0, :cond_4
@@ -204,7 +216,7 @@
 
     const-string v2, "Thread "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -214,7 +226,7 @@
 
     const-string v5, "Thread.currentThread()"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v4}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -240,15 +252,21 @@
     :goto_0
     iget-object v0, v3, Lokhttp3/internal/http2/Http2Stream;->source:Lokhttp3/internal/http2/Http2Stream$FramingSource;
 
-    int-to-long v4, v10
+    int-to-long v5, v10
 
-    iget-object v6, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    if-eqz v0, :cond_11
+
+    const-string v4, "source"
+
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
     sget-boolean v7, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
     if-eqz v7, :cond_6
 
-    invoke-static {v6}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
+    invoke-static {v4}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -261,7 +279,7 @@
 
     const-string v2, "Thread "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -269,9 +287,9 @@
 
     move-result-object v3
 
-    const-string v4, "Thread.currentThread()"
+    const-string v5, "Thread.currentThread()"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -283,7 +301,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -295,15 +313,15 @@
 
     :cond_6
     :goto_1
-    cmp-long v6, v4, v12
+    cmp-long v4, v5, v12
 
     const/4 v7, 0x1
 
-    if-lez v6, :cond_f
+    if-lez v4, :cond_f
 
-    iget-object v6, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    monitor-enter v6
+    monitor-enter v4
 
     :try_start_0
     iget-boolean v8, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z
@@ -312,7 +330,7 @@
 
     iget-wide v9, v9, Lokio/Buffer;->size:J
 
-    add-long/2addr v9, v4
+    add-long/2addr v9, v5
 
     iget-wide v14, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J
     :try_end_0
@@ -332,11 +350,11 @@
     move v9, v10
 
     :goto_2
-    monitor-exit v6
+    monitor-exit v4
 
     if-eqz v9, :cond_8
 
-    invoke-interface {v2, v4, v5}, Lokio/BufferedSource;->skip(J)V
+    invoke-interface {v2, v5, v6}, Lokio/BufferedSource;->skip(J)V
 
     iget-object v0, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
@@ -349,28 +367,28 @@
     :cond_8
     if-eqz v8, :cond_9
 
-    invoke-interface {v2, v4, v5}, Lokio/BufferedSource;->skip(J)V
+    invoke-interface {v2, v5, v6}, Lokio/BufferedSource;->skip(J)V
 
     goto :goto_6
 
     :cond_9
-    iget-object v6, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lokio/Buffer;
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lokio/Buffer;
 
-    invoke-interface {v2, v6, v4, v5}, Lokio/Source;->read(Lokio/Buffer;J)J
+    invoke-interface {v2, v4, v5, v6}, Lokio/Source;->read(Lokio/Buffer;J)J
 
     move-result-wide v8
 
     const-wide/16 v14, -0x1
 
-    cmp-long v6, v8, v14
+    cmp-long v4, v8, v14
 
-    if-eqz v6, :cond_e
+    if-eqz v4, :cond_e
 
-    sub-long/2addr v4, v8
+    sub-long/2addr v5, v8
 
-    iget-object v6, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    monitor-enter v6
+    monitor-enter v4
 
     :try_start_1
     iget-boolean v8, v0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z
@@ -421,11 +439,11 @@
     goto :goto_4
 
     :cond_c
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v2, "null cannot be cast to non-null type java.lang.Object"
 
-    invoke-direct {v0, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
     :try_end_1
@@ -436,11 +454,11 @@
     move-wide v7, v12
 
     :goto_5
-    monitor-exit v6
+    monitor-exit v4
 
-    cmp-long v6, v7, v12
+    cmp-long v4, v7, v12
 
-    if-lez v6, :cond_6
+    if-lez v4, :cond_6
 
     invoke-virtual {v0, v7, v8}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V
 
@@ -449,7 +467,7 @@
     :catchall_0
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v4
 
     throw v0
 
@@ -463,7 +481,7 @@
     :catchall_1
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v4
 
     throw v0
 
@@ -479,8 +497,6 @@
     return-void
 
     :cond_11
-    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
     throw v4
 .end method
 
@@ -489,13 +505,11 @@
 
     const-string v0, "errorCode"
 
-    const/4 v1, 0x0
-
-    if-eqz p2, :cond_4
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p2, "debugData"
 
-    if-eqz p3, :cond_3
+    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p3}, Lokio/ByteString;->getSize$okio()I
 
@@ -571,11 +585,11 @@
 
     :cond_2
     :try_start_1
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p3, "null cannot be cast to non-null type kotlin.Array<T>"
 
-    invoke-direct {p1, p3}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
     :try_end_1
@@ -587,16 +601,6 @@
     monitor-exit p2
 
     throw p1
-
-    :cond_3
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_4
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public headers(ZIILjava/util/List;)V
@@ -614,21 +618,33 @@
 
     move/from16 v0, p2
 
+    move-object/from16 v10, p4
+
+    const-string v1, "headerBlock"
+
+    invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v1, v12, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
     invoke-virtual {v1, v0}, Lokhttp3/internal/http2/Http2Connection;->pushedStream$okhttp(I)Z
 
     move-result v1
 
-    const/16 v7, 0x5b
-
     const-wide/16 v13, 0x0
 
-    if-eqz v1, :cond_0
+    const/16 v7, 0x5b
+
+    if-eqz v1, :cond_1
 
     iget-object v6, v12, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    iget-object v10, v6, Lokhttp3/internal/http2/Http2Connection;->pushQueue:Lokhttp3/internal/concurrent/TaskQueue;
+    if-eqz v6, :cond_0
+
+    const-string v1, "requestHeaders"
+
+    invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v11, v6, Lokhttp3/internal/http2/Http2Connection;->pushQueue:Lokhttp3/internal/concurrent/TaskQueue;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -650,11 +666,11 @@
 
     move-result-object v4
 
+    new-instance v15, Lokhttp3/internal/http2/Http2Connection$pushHeadersLater$$inlined$execute$1;
+
     const/4 v5, 0x1
 
-    new-instance v11, Lokhttp3/internal/http2/Http2Connection$pushHeadersLater$$inlined$execute$1;
-
-    move-object v1, v11
+    move-object v1, v15
 
     move-object v2, v4
 
@@ -668,11 +684,16 @@
 
     invoke-direct/range {v1 .. v9}, Lokhttp3/internal/http2/Http2Connection$pushHeadersLater$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection;ILjava/util/List;Z)V
 
-    invoke-virtual {v10, v11, v13, v14}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    invoke-virtual {v11, v15, v13, v14}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
 
     return-void
 
     :cond_0
+    const/4 v0, 0x0
+
+    throw v0
+
+    :cond_1
     iget-object v15, v12, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
     monitor-enter v15
@@ -684,7 +705,7 @@
 
     move-result-object v8
 
-    if-nez v8, :cond_4
+    if-nez v8, :cond_5
 
     iget-object v1, v12, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -692,13 +713,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     monitor-exit v15
 
     return-void
 
-    :cond_1
+    :cond_2
     :try_start_1
     iget-object v1, v12, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -706,13 +727,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-gt v0, v1, :cond_2
+    if-gt v0, v1, :cond_3
 
     monitor-exit v15
 
     return-void
 
-    :cond_2
+    :cond_3
     :try_start_2
     rem-int/lit8 v1, v0, 0x2
 
@@ -724,13 +745,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-ne v1, v2, :cond_3
+    if-ne v1, v2, :cond_4
 
     monitor-exit v15
 
     return-void
 
-    :cond_3
+    :cond_4
     :try_start_3
     invoke-static/range {p4 .. p4}, Lokhttp3/internal/Util;->toHeaders(Ljava/util/List;)Lokhttp3/Headers;
 
@@ -796,9 +817,9 @@
 
     const/4 v5, 0x1
 
-    new-instance v10, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$headers$$inlined$synchronized$lambda$1;
+    new-instance v7, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$headers$$inlined$synchronized$lambda$1;
 
-    move-object v1, v10
+    move-object v1, v7
 
     move-object v2, v4
 
@@ -806,15 +827,17 @@
 
     move-object v6, v9
 
+    move-object v9, v7
+
     move-object/from16 v7, p0
+
+    move-object v13, v9
 
     move/from16 v9, p2
 
-    move-object v0, v10
-
     move-object/from16 v10, p4
 
-    move-object v13, v11
+    move-object v0, v11
 
     move/from16 v11, p1
 
@@ -822,7 +845,7 @@
 
     const-wide/16 v1, 0x0
 
-    invoke-virtual {v13, v0, v1, v2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    invoke-virtual {v0, v13, v1, v2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -830,7 +853,7 @@
 
     return-void
 
-    :cond_4
+    :cond_5
     monitor-exit v15
 
     invoke-static/range {p4 .. p4}, Lokhttp3/internal/Util;->toHeaders(Ljava/util/List;)Lokhttp3/Headers;
@@ -978,11 +1001,11 @@
     goto :goto_0
 
     :cond_1
-    new-instance p2, Lkotlin/TypeCastException;
+    new-instance p2, Ljava/lang/NullPointerException;
 
     const-string p3, "null cannot be cast to non-null type java.lang.Object"
 
-    invoke-direct {p2, p3}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p2
 
@@ -1082,7 +1105,17 @@
         }
     .end annotation
 
+    const-string p1, "requestHeaders"
+
+    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v5, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+
+    if-eqz v5, :cond_1
+
+    const-string p1, "requestHeaders"
+
+    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     monitor-enter v5
 
@@ -1176,30 +1209,41 @@
     monitor-exit v5
 
     throw p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
 .method public rstStream(ILokhttp3/internal/http2/ErrorCode;)V
-    .locals 12
+    .locals 10
 
-    if-eqz p2, :cond_2
+    const-string v0, "errorCode"
 
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v0, p1}, Lokhttp3/internal/http2/Http2Connection;->pushedStream$okhttp(I)Z
+    iget-object v1, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    move-result v0
+    invoke-virtual {v1, p1}, Lokhttp3/internal/http2/Http2Connection;->pushedStream$okhttp(I)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v6, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    if-eqz v1, :cond_1
 
-    iget-object v0, v6, Lokhttp3/internal/http2/Http2Connection;->pushQueue:Lokhttp3/internal/concurrent/TaskQueue;
+    iget-object v7, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+
+    if-eqz v7, :cond_0
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, v7, Lokhttp3/internal/http2/Http2Connection;->pushQueue:Lokhttp3/internal/concurrent/TaskQueue;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, v6, Lokhttp3/internal/http2/Http2Connection;->connectionName:Ljava/lang/String;
+    iget-object v2, v7, Lokhttp3/internal/http2/Http2Connection;->connectionName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1215,56 +1259,56 @@
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-wide/16 v9, 0x0
+    new-instance v1, Lokhttp3/internal/http2/Http2Connection$pushResetLater$$inlined$execute$1;
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    new-instance v11, Lokhttp3/internal/http2/Http2Connection$pushResetLater$$inlined$execute$1;
+    move-object v2, v1
 
-    move-object v1, v11
+    move-object v3, v5
 
-    move-object v2, v4
+    move v4, v6
 
-    move v3, v5
+    move v8, p1
 
-    move v7, p1
+    move-object v9, p2
 
-    move-object v8, p2
+    invoke-direct/range {v2 .. v9}, Lokhttp3/internal/http2/Http2Connection$pushResetLater$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection;ILokhttp3/internal/http2/ErrorCode;)V
 
-    invoke-direct/range {v1 .. v8}, Lokhttp3/internal/http2/Http2Connection$pushResetLater$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection;ILokhttp3/internal/http2/ErrorCode;)V
+    const-wide/16 p1, 0x0
 
-    invoke-virtual {v0, v11, v9, v10}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
 
     return-void
 
     :cond_0
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_1
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
     invoke-virtual {v0, p1}, Lokhttp3/internal/http2/Http2Connection;->removeStream$okhttp(I)Lokhttp3/internal/http2/Http2Stream;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1, p2}, Lokhttp3/internal/http2/Http2Stream;->receiveRstStream(Lokhttp3/internal/http2/ErrorCode;)V
 
-    :cond_1
-    return-void
-
     :cond_2
-    const-string p1, "errorCode"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method
 
 .method public settings(ZLokhttp3/internal/http2/Settings;)V
     .locals 12
+
+    const-string v0, "settings"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -1284,13 +1328,11 @@
 
     move-result-object v7
 
-    const-wide/16 v1, 0x0
+    new-instance v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;
 
     const/4 v8, 0x1
 
-    new-instance v3, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;
-
-    move-object v4, v3
+    move-object v4, v1
 
     move-object v5, v7
 
@@ -1304,7 +1346,9 @@
 
     invoke-direct/range {v4 .. v11}, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection$ReaderRunnable;ZLokhttp3/internal/http2/Settings;)V
 
-    invoke-virtual {v0, v3, v1, v2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    const-wide/16 p1, 0x0
+
+    invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
 
     return-void
 .end method
@@ -1341,11 +1385,11 @@
 
     :cond_0
     :try_start_1
-    new-instance p2, Lkotlin/TypeCastException;
+    new-instance p2, Ljava/lang/NullPointerException;
 
     const-string p3, "null cannot be cast to non-null type java.lang.Object"
 
-    invoke-direct {p2, p3}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p2
     :try_end_1

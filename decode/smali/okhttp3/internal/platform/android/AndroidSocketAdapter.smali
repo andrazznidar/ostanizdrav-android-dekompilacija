@@ -7,9 +7,17 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAndroidSocketAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AndroidSocketAdapter.kt\nokhttp3/internal/platform/android/AndroidSocketAdapter\n*L\n1#1,108:1\n*E\n"
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;
+    }
 .end annotation
+
+
+# static fields
+.field public static final Companion:Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;
+
+.field public static final playProviderFactory:Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
 
 
 # instance fields
@@ -34,6 +42,37 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->Companion:Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion;
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "com.google.android.gms.org.conscrypt"
+
+    const-string v1, "packageName"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion$factory$1;
+
+    invoke-direct {v1, v0}, Lokhttp3/internal/platform/android/AndroidSocketAdapter$Companion$factory$1;-><init>(Ljava/lang/String;)V
+
+    sput-object v1, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->playProviderFactory:Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
+
+    return-void
+
+    :cond_0
+    throw v1
+.end method
+
 .method public constructor <init>(Ljava/lang/Class;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -46,7 +85,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const-string v0, "sslSocketClass"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -70,7 +111,7 @@
 
     const-string v1, "sslSocketClass.getDeclar\u2026:class.javaPrimitiveType)"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->setUseSessionTickets:Ljava/lang/reflect/Method;
 
@@ -119,15 +160,6 @@
     iput-object p1, p0, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->setAlpnProtocols:Ljava/lang/reflect/Method;
 
     return-void
-
-    :cond_0
-    const-string p1, "sslSocketClass"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -145,6 +177,14 @@
             ">;)V"
         }
     .end annotation
+
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "protocols"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, p1}, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
 
@@ -223,6 +263,10 @@
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 3
 
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {p0, p1}, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
 
     move-result v0
@@ -253,7 +297,7 @@
 
     const-string v2, "StandardCharsets.UTF_8"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v2, Ljava/lang/String;
 
@@ -320,6 +364,10 @@
 
 .method public matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
     .locals 1
+
+    const-string v0, "sslSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/platform/android/AndroidSocketAdapter;->sslSocketClass:Ljava/lang/Class;
 

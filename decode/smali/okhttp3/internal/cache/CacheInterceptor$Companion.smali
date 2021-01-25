@@ -24,7 +24,7 @@
 .end method
 
 .method public static final access$stripBody(Lokhttp3/internal/cache/CacheInterceptor$Companion;Lokhttp3/Response;)Lokhttp3/Response;
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p1
 
@@ -44,15 +44,19 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v4, v0, Lokhttp3/Response;->request:Lokhttp3/Request;
+    const-string v1, "response"
 
-    iget-object v5, v0, Lokhttp3/Response;->protocol:Lokhttp3/Protocol;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v7, v0, Lokhttp3/Response;->code:I
+    iget-object v3, v0, Lokhttp3/Response;->request:Lokhttp3/Request;
 
-    iget-object v6, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+    iget-object v4, v0, Lokhttp3/Response;->protocol:Lokhttp3/Protocol;
 
-    iget-object v8, v0, Lokhttp3/Response;->handshake:Lokhttp3/Handshake;
+    iget v6, v0, Lokhttp3/Response;->code:I
+
+    iget-object v5, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+
+    iget-object v7, v0, Lokhttp3/Response;->handshake:Lokhttp3/Handshake;
 
     iget-object v1, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
@@ -60,57 +64,59 @@
 
     move-result-object v1
 
-    iget-object v11, v0, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;
+    iget-object v10, v0, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;
 
-    iget-object v12, v0, Lokhttp3/Response;->cacheResponse:Lokhttp3/Response;
+    iget-object v11, v0, Lokhttp3/Response;->cacheResponse:Lokhttp3/Response;
 
-    iget-object v13, v0, Lokhttp3/Response;->priorResponse:Lokhttp3/Response;
+    iget-object v12, v0, Lokhttp3/Response;->priorResponse:Lokhttp3/Response;
 
-    iget-wide v14, v0, Lokhttp3/Response;->sentRequestAtMillis:J
+    iget-wide v13, v0, Lokhttp3/Response;->sentRequestAtMillis:J
 
-    iget-wide v9, v0, Lokhttp3/Response;->receivedResponseAtMillis:J
+    iget-wide v8, v0, Lokhttp3/Response;->receivedResponseAtMillis:J
 
     iget-object v0, v0, Lokhttp3/Response;->exchange:Lokhttp3/internal/connection/Exchange;
 
-    const/4 v2, 0x0
+    const/4 v15, 0x0
 
-    if-ltz v7, :cond_1
+    if-ltz v6, :cond_1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :goto_1
-    if-eqz v3, :cond_5
+    if-eqz v2, :cond_5
 
-    if-eqz v4, :cond_4
+    if-eqz v3, :cond_4
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
     invoke-virtual {v1}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
 
     move-result-object v1
 
-    new-instance v19, Lokhttp3/Response;
+    new-instance v18, Lokhttp3/Response;
 
-    move-object/from16 v3, v19
+    move-object/from16 v2, v18
 
-    move-wide/from16 v16, v9
+    move-wide/from16 v16, v8
 
-    move-object v9, v1
+    move-object v8, v1
 
-    move-object v10, v2
+    move-object v9, v15
 
-    move-object/from16 v18, v0
+    move-wide/from16 v15, v16
 
-    invoke-direct/range {v3 .. v18}, Lokhttp3/Response;-><init>(Lokhttp3/Request;Lokhttp3/Protocol;Ljava/lang/String;ILokhttp3/Handshake;Lokhttp3/Headers;Lokhttp3/ResponseBody;Lokhttp3/Response;Lokhttp3/Response;Lokhttp3/Response;JJLokhttp3/internal/connection/Exchange;)V
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, v19
+    invoke-direct/range {v2 .. v17}, Lokhttp3/Response;-><init>(Lokhttp3/Request;Lokhttp3/Protocol;Ljava/lang/String;ILokhttp3/Handshake;Lokhttp3/Headers;Lokhttp3/ResponseBody;Lokhttp3/Response;Lokhttp3/Response;Lokhttp3/Response;JJLokhttp3/internal/connection/Exchange;)V
+
+    move-object/from16 v0, v18
 
     goto :goto_2
 
@@ -156,7 +162,7 @@
     :cond_5
     const-string v0, "code < 0: "
 
-    invoke-static {v0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

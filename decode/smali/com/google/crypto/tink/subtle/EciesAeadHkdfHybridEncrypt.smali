@@ -15,6 +15,23 @@
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/ECPublicKey;[BLjava/lang/String;Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;Lcom/google/crypto/tink/subtle/EciesAeadHkdfDemHelper;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "recipientPublicKey",
+            "hkdfSalt",
+            "hkdfHmacAlgo",
+            "ecPointFormat",
+            "demHelper"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -35,7 +52,7 @@
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
+    invoke-static {p2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
 
     iput-object p3, p0, Lcom/google/crypto/tink/subtle/EciesAeadHkdfHybridEncrypt;->hkdfHmacAlgo:Ljava/lang/String;
 

@@ -12,6 +12,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "keysetName",
+            "prefFilename"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -76,14 +89,14 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->decode(Ljava/lang/String;)[B
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->decode(Ljava/lang/String;)[B
 
     move-result-object v0
 
     return-object v0
 
     :cond_0
-    new-instance v2, Ljava/io/IOException;
+    new-instance v2, Ljava/io/FileNotFoundException;
 
     const-string v3, "can\'t read keyset; the pref value %s does not exist"
 
@@ -97,29 +110,21 @@
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
     :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    move-exception v2
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v2
-
-    :goto_0
-    new-instance v3, Ljava/io/IOException;
+    new-instance v2, Ljava/io/CharConversionException;
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/google/crypto/tink/integration/android/SharedPrefKeysetReader;->keysetName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/crypto/tink/integration/android/SharedPrefKeysetReader;->keysetName:Ljava/lang/String;
 
-    aput-object v4, v1, v0
+    aput-object v3, v1, v0
 
     const-string v0, "can\'t read keyset; the pref value %s is not a valid hex string"
 
@@ -127,7 +132,7 @@
 
     move-result-object v0
 
-    invoke-direct {v3, v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, v0}, Ljava/io/CharConversionException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v2
 .end method

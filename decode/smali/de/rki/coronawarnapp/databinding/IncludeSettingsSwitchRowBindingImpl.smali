@@ -45,7 +45,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c0050
+    const v4, 0x7f0c0076
 
     aput v4, v2, v5
 
@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090238
+    const v1, 0x7f090313
 
     const/4 v2, 0x5
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09023a
+    const v1, 0x7f090314
 
     const/4 v2, 0x6
 
@@ -73,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d0
+    const v1, 0x7f09016f
 
     const/4 v2, 0x7
 
@@ -81,7 +81,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cc
+    const v1, 0x7f09016b
 
     const/16 v2, 0x8
 
@@ -225,7 +225,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 19
+    .locals 18
 
     move-object/from16 v1, p0
 
@@ -252,35 +252,41 @@
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->mEnabled:Ljava/lang/Boolean;
 
-    const-wide/16 v10, 0x42
+    const-wide/16 v10, 0x52
 
     and-long/2addr v10, v2
 
     cmp-long v10, v10, v4
 
-    const-wide/16 v11, 0x44
+    const/4 v11, 0x0
 
-    and-long/2addr v11, v2
+    if-eqz v10, :cond_0
 
-    cmp-long v11, v11, v4
+    const-string v12, " "
 
-    if-eqz v11, :cond_0
+    invoke-static {v8, v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    move-result-object v12
 
-    move-result v6
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v6
+    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move-object v12, v11
 
     :goto_0
-    const-wide/16 v13, 0x58
+    const-wide/16 v13, 0x44
 
     and-long/2addr v13, v2
 
@@ -288,108 +294,91 @@
 
     const/4 v14, 0x0
 
-    if-eqz v13, :cond_3
+    if-eqz v13, :cond_1
 
-    if-eqz v8, :cond_2
+    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
-    if-eqz v7, :cond_1
+    move-result v6
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    xor-int/lit8 v6, v6, 0x1
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v15, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    const/16 v12, 0x20
+    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
-    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
+    move-result v6
 
     goto :goto_1
 
     :cond_1
-    const-string v0, "status"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v14
-
-    :cond_2
-    const-string v0, "subtitle"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v14
-
-    :cond_3
-    move-object v12, v14
+    move v6, v14
 
     :goto_1
-    const-wide/16 v17, 0x60
+    const-wide/16 v15, 0x48
 
-    and-long v17, v2, v17
+    and-long/2addr v15, v2
 
-    cmp-long v15, v17, v4
+    cmp-long v15, v15, v4
 
-    if-eqz v15, :cond_4
-
-    invoke-static {v9}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
-
-    move-result v9
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v9, 0x0
-
-    :goto_2
-    if-eqz v11, :cond_5
-
-    iget-object v11, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
-
-    iget-object v11, v11, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v11, v6}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_5
-    const-wide/16 v16, 0x48
+    const-wide/16 v16, 0x60
 
     and-long v16, v2, v16
 
-    cmp-long v6, v16, v4
+    cmp-long v16, v16, v4
 
-    if-eqz v6, :cond_6
+    if-eqz v16, :cond_2
+
+    invoke-static {v9}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+
+    move-result v14
+
+    :cond_2
+    if-eqz v13, :cond_3
+
+    iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+
+    iget-object v9, v9, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-static {v9, v6}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+
+    :cond_3
+    if-eqz v15, :cond_4
 
     iget-object v6, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowHeaderBody:Landroid/widget/TextView;
 
     invoke-static {v6, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_6
+    :cond_4
     const-wide/16 v6, 0x50
+
+    and-long/2addr v6, v2
+
+    cmp-long v6, v6, v4
+
+    if-eqz v6, :cond_5
+
+    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowHeaderSubtitle:Landroid/widget/TextView;
+
+    invoke-static {v6, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    :cond_5
+    const-wide/16 v6, 0x42
 
     and-long/2addr v2, v6
 
     cmp-long v2, v2, v4
 
-    if-eqz v2, :cond_7
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowHeaderSubtitle:Landroid/widget/TextView;
-
-    invoke-static {v2, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    :cond_7
-    if-eqz v10, :cond_9
+    if-eqz v2, :cond_6
 
     iget-object v2, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowSwitch:Landroid/widget/Switch;
 
-    if-eqz v2, :cond_8
+    const-string v3, "switch"
 
-    if-eqz v0, :cond_9
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz v0, :cond_6
 
     const-string v3, "ignore"
 
@@ -401,39 +390,29 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    invoke-virtual {v2, v14}, Landroid/widget/Switch;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v2, v11}, Landroid/widget/Switch;->setTag(Ljava/lang/Object;)V
 
-    goto :goto_3
-
-    :cond_8
-    const-string v0, "switch"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v14
-
-    :cond_9
-    :goto_3
-    if-eqz v15, :cond_a
+    :cond_6
+    if-eqz v16, :cond_7
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowSwitch:Landroid/widget/Switch;
 
-    invoke-virtual {v0, v9}, Landroid/widget/Switch;->setEnabled(Z)V
+    invoke-virtual {v0, v14}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    :cond_a
-    if-eqz v13, :cond_b
+    :cond_7
+    if-eqz v10, :cond_8
 
     sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
     const/4 v2, 0x4
 
-    if-lt v0, v2, :cond_b
+    if-lt v0, v2, :cond_8
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->settingsSwitchRowSwitch:Landroid/widget/Switch;
 
     invoke-virtual {v0, v12}, Landroid/widget/Switch;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_b
+    :cond_8
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -600,7 +579,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x9
+    const/16 p1, 0x10
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -651,7 +630,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x29
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -690,7 +669,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1a
+    const/16 p1, 0x2c
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -729,7 +708,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x2d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -768,7 +747,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1d
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

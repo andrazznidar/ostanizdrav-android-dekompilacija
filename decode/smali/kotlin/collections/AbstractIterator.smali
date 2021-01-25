@@ -20,10 +20,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractIterator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractIterator.kt\nkotlin/collections/AbstractIterator\n*L\n1#1,75:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public nextValue:Ljava/lang/Object;

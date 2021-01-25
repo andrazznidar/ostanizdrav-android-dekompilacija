@@ -153,3 +153,89 @@
 
     throw v0
 .end method
+
+.method public log(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 4
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result p4
+
+    const/4 v0, 0x7
+
+    const/16 v1, 0xfa0
+
+    if-ge p4, v1, :cond_1
+
+    if-ne p1, v0, :cond_0
+
+    invoke-static {p2, p3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1, p2, p3}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+
+    :cond_1
+    const/4 p4, 0x0
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    :goto_1
+    if-ge p4, v1, :cond_5
+
+    const/16 v2, 0xa
+
+    invoke-virtual {p3, v2, p4}, Ljava/lang/String;->indexOf(II)I
+
+    move-result v2
+
+    const/4 v3, -0x1
+
+    if-eq v2, v3, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v2, v1
+
+    :goto_2
+    add-int/lit16 v3, p4, 0xfa0
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    invoke-virtual {p3, p4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p4
+
+    if-ne p1, v0, :cond_3
+
+    invoke-static {p2, p4}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+
+    :cond_3
+    invoke-static {p1, p2, p4}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+
+    :goto_3
+    if-lt v3, v2, :cond_4
+
+    add-int/lit8 p4, v3, 0x1
+
+    goto :goto_1
+
+    :cond_4
+    move p4, v3
+
+    goto :goto_2
+
+    :cond_5
+    return-void
+.end method

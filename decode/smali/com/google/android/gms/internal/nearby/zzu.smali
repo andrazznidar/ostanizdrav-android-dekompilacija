@@ -1,6 +1,6 @@
 .class public final synthetic Lcom/google/android/gms/internal/nearby/zzu;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/RemoteCall;
@@ -30,25 +30,25 @@
 
     check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzad;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzak;
 
-    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/nearby/zzad;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/nearby/zzak;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzbq;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdv;
 
-    new-instance p2, Lcom/google/android/gms/internal/nearby/zzbz;
+    new-instance p2, Lcom/google/android/gms/internal/nearby/zzci;
 
     const/4 v1, 0x0
 
-    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzbz;-><init>(Lcom/google/android/gms/internal/nearby/zzby;)V
+    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzci;-><init>(Lcom/google/android/gms/internal/nearby/zzcl;)V
 
-    iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzbz;->zzb:Lcom/google/android/gms/internal/nearby/zzay;
+    iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzci;->zza:Lcom/google/android/gms/internal/nearby/zzdq;
 
-    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzbq;->zza(Lcom/google/android/gms/internal/nearby/zzbz;)V
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzci;)V
 
     return-void
 .end method

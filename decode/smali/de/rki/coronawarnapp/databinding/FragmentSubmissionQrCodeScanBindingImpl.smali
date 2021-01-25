@@ -14,6 +14,8 @@
 
 .field public final mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
+.field public final mboundView1:Landroid/widget/ImageView;
+
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -21,7 +23,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -37,17 +39,19 @@
 
     new-array v3, v2, [I
 
-    const/4 v4, 0x0
+    const/4 v4, 0x2
 
-    aput v2, v3, v4
+    const/4 v5, 0x0
+
+    aput v4, v3, v5
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c007f
+    const v4, 0x7f0c00ab
 
-    aput v5, v2, v4
+    aput v4, v2, v5
 
-    invoke-virtual {v0, v4, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
+    invoke-virtual {v0, v5, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     new-instance v0, Landroid/util/SparseIntArray;
 
@@ -55,15 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a7
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0902aa
+    const v1, 0x7f0903ba
 
     const/4 v2, 0x3
 
@@ -71,7 +67,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a2
+    const v1, 0x7f0903bd
 
     const/4 v2, 0x4
 
@@ -79,7 +75,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a8
+    const v1, 0x7f0903b5
 
     const/4 v2, 0x5
 
@@ -87,7 +83,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a3
+    const v1, 0x7f0903bb
 
     const/4 v2, 0x6
 
@@ -95,7 +91,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a9
+    const v1, 0x7f0903b6
 
     const/4 v2, 0x7
 
@@ -103,7 +99,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a6
+    const v1, 0x7f0903bc
 
     const/16 v2, 0x8
 
@@ -111,9 +107,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902a5
+    const v1, 0x7f0903b9
 
     const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f0903b8
+
+    const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -131,7 +135,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
     move-object/from16 v3, p1
 
@@ -139,7 +143,7 @@
 
     move-result-object v15
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     aget-object v0, v15, v0
 
@@ -147,7 +151,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    const/4 v0, 0x6
+    const/4 v0, 0x7
 
     aget-object v0, v15, v0
 
@@ -163,7 +167,7 @@
 
     check-cast v6, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/16 v0, 0x9
+    const/16 v0, 0xa
 
     aget-object v0, v15, v0
 
@@ -171,7 +175,7 @@
 
     check-cast v7, Landroidx/constraintlayout/widget/Guideline;
 
-    const/16 v0, 0x8
+    const/16 v0, 0x9
 
     aget-object v0, v15, v0
 
@@ -179,7 +183,7 @@
 
     check-cast v8, Landroidx/constraintlayout/widget/Guideline;
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     aget-object v0, v15, v0
 
@@ -187,7 +191,7 @@
 
     check-cast v9, Lcom/journeyapps/barcodescanner/BarcodeView;
 
-    const/4 v0, 0x5
+    const/4 v0, 0x6
 
     aget-object v0, v15, v0
 
@@ -195,7 +199,7 @@
 
     check-cast v10, Landroid/widget/ProgressBar;
 
-    const/4 v0, 0x7
+    const/16 v0, 0x8
 
     aget-object v0, v15, v0
 
@@ -203,7 +207,7 @@
 
     check-cast v11, Landroid/widget/ToggleButton;
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     aget-object v0, v15, v0
 
@@ -227,7 +231,7 @@
 
     iput-wide v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mDirtyFlags:J
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     aget-object v0, v15, v0
 
@@ -240,9 +244,19 @@
     iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBinding;->submissionQrCodeScanContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    const/4 v0, 0x1
+
+    aget-object v0, v15, v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mboundView1:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
+
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBinding;->submissionQrCodeScanContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -258,19 +272,44 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 2
+    .locals 6
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x0
-
     :try_start_0
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mDirtyFlags:J
+    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mDirtyFlags:J
+
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    const-wide/16 v4, 0x1
+
+    and-long/2addr v0, v4
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mboundView1:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f12001d
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+
+    :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V

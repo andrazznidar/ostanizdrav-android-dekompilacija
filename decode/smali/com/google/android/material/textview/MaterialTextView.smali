@@ -15,7 +15,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->resolveBoolean(Landroid/content/Context;IZ)Z
+    invoke-static {p1, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->resolveBoolean(Landroid/content/Context;IZ)Z
 
     move-result v1
 
@@ -219,7 +219,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->resolveBoolean(Landroid/content/Context;IZ)Z
+    invoke-static {p1, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->resolveBoolean(Landroid/content/Context;IZ)Z
 
     move-result v0
 

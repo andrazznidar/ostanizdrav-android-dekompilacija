@@ -47,7 +47,7 @@
 
     const-string v1, "Logger.getLogger(Http2::class.java.name)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sput-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
 
@@ -56,6 +56,10 @@
 
 .method public constructor <init>(Lokio/BufferedSource;Z)V
     .locals 3
+
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -102,235 +106,255 @@
 .end method
 
 .method public final nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z
-    .locals 13
+    .locals 16
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v0, 0x0
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    const-string v2, "handler"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v2, 0x0
 
     :try_start_0
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v3, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    const-wide/16 v2, 0x9
+    const-wide/16 v4, 0x9
 
-    invoke-interface {v1, v2, v3}, Lokio/BufferedSource;->require(J)V
+    invoke-interface {v3, v4, v5}, Lokio/BufferedSource;->require(J)V
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v3, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-static {v1}, Lokhttp3/internal/Util;->readMedium(Lokio/BufferedSource;)I
+    invoke-static {v3}, Lokhttp3/internal/Util;->readMedium(Lokio/BufferedSource;)I
 
-    move-result v1
+    move-result v3
 
-    const/16 v2, 0x4000
+    const/16 v10, 0x4000
 
-    if-gt v1, v2, :cond_36
+    if-gt v3, v10, :cond_36
 
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v2}, Lokio/BufferedSource;->readByte()B
+    invoke-interface {v4}, Lokio/BufferedSource;->readByte()B
 
-    move-result v2
+    move-result v4
 
-    and-int/lit16 v8, v2, 0xff
+    and-int/lit16 v11, v4, 0xff
 
-    const/4 v9, 0x4
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    if-eqz p1, :cond_1
+    invoke-interface {v4}, Lokio/BufferedSource;->readByte()B
 
-    if-ne v8, v9, :cond_0
+    move-result v4
+
+    and-int/lit16 v12, v4, 0xff
+
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+
+    invoke-interface {v4}, Lokio/BufferedSource;->readInt()I
+
+    move-result v4
+
+    const v13, 0x7fffffff
+
+    and-int v14, v4, v13
+
+    sget-object v4, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
+
+    sget-object v5, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
+
+    invoke-virtual {v4, v5}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    sget-object v15, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
+
+    sget-object v4, Lokhttp3/internal/http2/Http2;->INSTANCE:Lokhttp3/internal/http2/Http2;
+
+    const/4 v5, 0x1
+
+    move v6, v14
+
+    move v7, v3
+
+    move v8, v11
+
+    move v9, v12
+
+    invoke-virtual/range {v4 .. v9}, Lokhttp3/internal/http2/Http2;->frameLog(ZIIII)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v15, v4}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
+
+    :cond_0
+    const/4 v4, 0x4
+
+    if-eqz p1, :cond_2
+
+    if-ne v11, v4, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p1, Ljava/io/IOException;
-
-    const-string p2, "Expected a SETTINGS frame but was "
-
-    invoke-static {p2, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     :cond_1
-    :goto_0
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    new-instance v1, Ljava/io/IOException;
 
-    invoke-interface {p1}, Lokio/BufferedSource;->readByte()B
+    const-string v2, "Expected a SETTINGS frame but was "
 
-    move-result p1
-
-    and-int/lit16 p1, p1, 0xff
-
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
-
-    invoke-interface {v2}, Lokio/BufferedSource;->readInt()I
-
-    move-result v2
-
-    const v10, 0x7fffffff
-
-    and-int v11, v2, v10
-
-    sget-object v2, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
-
-    sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
-
-    invoke-virtual {v2, v3}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    sget-object v12, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
-
-    sget-object v2, Lokhttp3/internal/http2/Http2;->INSTANCE:Lokhttp3/internal/http2/Http2;
-
-    const/4 v3, 0x1
-
-    move v4, v11
-
-    move v5, v1
-
-    move v6, v8
-
-    move v7, p1
-
-    invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/http2/Http2;->frameLog(ZIIII)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v12, v2}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
+    sget-object v3, Lokhttp3/internal/http2/Http2;->INSTANCE:Lokhttp3/internal/http2/Http2;
+
+    invoke-virtual {v3, v11}, Lokhttp3/internal/http2/Http2;->formattedType$okhttp(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 
     :cond_2
-    const/4 v2, 0x5
-
-    const-string v3, " > remaining length "
-
-    const-string v4, "PROTOCOL_ERROR padding "
-
+    :goto_0
     const/4 v5, 0x0
 
-    const/16 v6, 0x8
+    const/4 v6, 0x5
 
-    const/4 v7, 0x1
+    const-string v7, " > remaining length "
 
-    packed-switch v8, :pswitch_data_0
+    const-string v8, "PROTOCOL_ERROR padding "
 
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    const/16 v9, 0x8
 
-    int-to-long v0, v1
+    const/4 v15, 0x1
 
-    invoke-interface {p1, v0, v1}, Lokio/BufferedSource;->skip(J)V
+    packed-switch v11, :pswitch_data_0
+
+    iget-object v1, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+
+    int-to-long v2, v3
+
+    invoke-interface {v1, v2, v3}, Lokio/BufferedSource;->skip(J)V
 
     goto/16 :goto_c
 
     :pswitch_0
-    if-ne v1, v9, :cond_4
+    if-ne v3, v4, :cond_4
 
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
-
-    invoke-interface {p1}, Lokio/BufferedSource;->readInt()I
-
-    move-result p1
-
-    const-wide/32 v0, 0x7fffffff
-
-    int-to-long v2, p1
-
-    and-long/2addr v0, v2
-
-    const-wide/16 v2, 0x0
-
-    cmp-long p1, v0, v2
-
-    if-eqz p1, :cond_3
-
-    invoke-interface {p2, v11, v0, v1}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V
-
-    goto/16 :goto_c
-
-    :cond_3
-    new-instance p1, Ljava/io/IOException;
-
-    const-string p2, "windowSizeIncrement was 0"
-
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    new-instance p1, Ljava/io/IOException;
-
-    const-string p2, "TYPE_WINDOW_UPDATE length !=4: "
-
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1
-    if-lt v1, v6, :cond_b
-
-    if-nez v11, :cond_a
-
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
-
-    invoke-interface {p1}, Lokio/BufferedSource;->readInt()I
-
-    move-result p1
-
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v2, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
     invoke-interface {v2}, Lokio/BufferedSource;->readInt()I
 
     move-result v2
 
-    sub-int/2addr v1, v6
+    const-wide/32 v3, 0x7fffffff
+
+    int-to-long v5, v2
+
+    and-long v2, v5, v3
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v4, v2, v4
+
+    if-eqz v4, :cond_3
+
+    invoke-interface {v1, v14, v2, v3}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V
+
+    goto/16 :goto_c
+
+    :cond_3
+    new-instance v1, Ljava/io/IOException;
+
+    const-string v2, "windowSizeIncrement was 0"
+
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_4
+    new-instance v1, Ljava/io/IOException;
+
+    const-string v2, "TYPE_WINDOW_UPDATE length !=4: "
+
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :pswitch_1
+    if-lt v3, v9, :cond_b
+
+    if-nez v14, :cond_a
+
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+
+    invoke-interface {v4}, Lokio/BufferedSource;->readInt()I
+
+    move-result v4
+
+    iget-object v6, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+
+    invoke-interface {v6}, Lokio/BufferedSource;->readInt()I
+
+    move-result v6
+
+    sub-int/2addr v3, v9
 
     invoke-static {}, Lokhttp3/internal/http2/ErrorCode;->values()[Lokhttp3/internal/http2/ErrorCode;
 
-    move-result-object v3
+    move-result-object v7
 
-    array-length v4, v3
+    array-length v8, v7
 
-    move v6, v0
+    move v9, v2
 
     :goto_1
-    if-ge v6, v4, :cond_7
+    if-ge v9, v8, :cond_7
 
-    aget-object v8, v3, v6
+    aget-object v10, v7, v9
 
-    iget v9, v8, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
+    iget v11, v10, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
-    if-ne v9, v2, :cond_5
+    if-ne v11, v6, :cond_5
 
-    move v9, v7
+    move v11, v15
 
     goto :goto_2
 
     :cond_5
-    move v9, v0
+    move v11, v2
 
     :goto_2
-    if-eqz v9, :cond_6
+    if-eqz v11, :cond_6
 
-    move-object v5, v8
+    move-object v5, v10
 
     goto :goto_3
 
     :cond_6
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
@@ -338,400 +362,398 @@
     :goto_3
     if-eqz v5, :cond_9
 
-    sget-object v0, Lokio/ByteString;->EMPTY:Lokio/ByteString;
+    sget-object v2, Lokio/ByteString;->EMPTY:Lokio/ByteString;
 
-    if-lez v1, :cond_8
+    if-lez v3, :cond_8
 
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v2, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    int-to-long v1, v1
+    int-to-long v6, v3
 
-    invoke-interface {v0, v1, v2}, Lokio/BufferedSource;->readByteString(J)Lokio/ByteString;
+    invoke-interface {v2, v6, v7}, Lokio/BufferedSource;->readByteString(J)Lokio/ByteString;
 
-    move-result-object v0
+    move-result-object v2
 
     :cond_8
-    invoke-interface {p2, p1, v5, v0}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lokio/ByteString;)V
+    invoke-interface {v1, v4, v5, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lokio/ByteString;)V
 
     goto/16 :goto_c
 
     :cond_9
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_GOAWAY unexpected error code: "
+    const-string v2, "TYPE_GOAWAY unexpected error code: "
 
-    invoke-static {p2, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_a
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_GOAWAY streamId != 0"
+    const-string v2, "TYPE_GOAWAY streamId != 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_b
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_GOAWAY length < 8: "
+    const-string v2, "TYPE_GOAWAY length < 8: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_2
-    if-ne v1, v6, :cond_e
+    if-ne v3, v9, :cond_e
 
-    if-nez v11, :cond_d
+    if-nez v14, :cond_d
 
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v3, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v1}, Lokio/BufferedSource;->readInt()I
+    invoke-interface {v3}, Lokio/BufferedSource;->readInt()I
 
-    move-result v1
+    move-result v3
 
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v4, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v2}, Lokio/BufferedSource;->readInt()I
+    invoke-interface {v4}, Lokio/BufferedSource;->readInt()I
 
-    move-result v2
+    move-result v4
 
-    and-int/lit8 p1, p1, 0x1
+    and-int/lit8 v5, v12, 0x1
 
-    if-eqz p1, :cond_c
+    if-eqz v5, :cond_c
 
-    move v0, v7
+    move v2, v15
 
     :cond_c
-    invoke-interface {p2, v0, v1, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->ping(ZII)V
+    invoke-interface {v1, v2, v3, v4}, Lokhttp3/internal/http2/Http2Reader$Handler;->ping(ZII)V
 
     goto/16 :goto_c
 
     :cond_d
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_PING streamId != 0"
+    const-string v2, "TYPE_PING streamId != 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_e
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_PING length != 8: "
+    const-string v2, "TYPE_PING length != 8: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_3
-    if-eqz v11, :cond_12
+    if-eqz v14, :cond_12
 
-    and-int/lit8 v2, p1, 0x8
+    and-int/lit8 v4, v12, 0x8
 
-    if-eqz v2, :cond_f
+    if-eqz v4, :cond_f
 
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v2, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v0}, Lokio/BufferedSource;->readByte()B
+    invoke-interface {v2}, Lokio/BufferedSource;->readByte()B
 
-    move-result v0
+    move-result v2
 
-    and-int/lit16 v0, v0, 0xff
+    and-int/lit16 v2, v2, 0xff
 
     :cond_f
-    iget-object v5, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v5, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
     invoke-interface {v5}, Lokio/BufferedSource;->readInt()I
 
     move-result v5
 
-    and-int/2addr v5, v10
+    and-int/2addr v5, v13
 
-    add-int/lit8 v1, v1, -0x4
+    add-int/lit8 v3, v3, -0x4
 
-    if-eqz v2, :cond_10
+    if-eqz v4, :cond_10
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v3, v3, -0x1
 
     :cond_10
-    if-gt v0, v1, :cond_11
+    if-gt v2, v3, :cond_11
 
-    sub-int/2addr v1, v0
+    sub-int/2addr v3, v2
 
-    invoke-virtual {p0, v1, v0, p1, v11}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(IIII)Ljava/util/List;
+    invoke-virtual {v0, v3, v2, v12, v14}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(IIII)Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v2
 
-    invoke-interface {p2, v11, v5, p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->pushPromise(IILjava/util/List;)V
+    invoke-interface {v1, v14, v5, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->pushPromise(IILjava/util/List;)V
 
     goto/16 :goto_c
 
     :cond_11
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    invoke-static {v4, v0, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v2, v7, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_12
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0"
+    const-string v2, "PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_4
-    if-nez v11, :cond_20
+    if-nez v14, :cond_20
 
-    and-int/lit8 p1, p1, 0x1
+    and-int/lit8 v5, v12, 0x1
 
-    if-eqz p1, :cond_14
+    if-eqz v5, :cond_14
 
-    if-nez v1, :cond_13
+    if-nez v3, :cond_13
 
-    invoke-interface {p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->ackSettings()V
+    invoke-interface/range {p2 .. p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->ackSettings()V
 
     goto/16 :goto_c
 
     :cond_13
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "FRAME_SIZE_ERROR ack frame should be empty!"
+    const-string v2, "FRAME_SIZE_ERROR ack frame should be empty!"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_14
-    rem-int/lit8 p1, v1, 0x6
+    rem-int/lit8 v5, v3, 0x6
 
-    if-nez p1, :cond_1f
+    if-nez v5, :cond_1f
 
-    new-instance p1, Lokhttp3/internal/http2/Settings;
+    new-instance v5, Lokhttp3/internal/http2/Settings;
 
-    invoke-direct {p1}, Lokhttp3/internal/http2/Settings;-><init>()V
+    invoke-direct {v5}, Lokhttp3/internal/http2/Settings;-><init>()V
 
-    invoke-static {v0, v1}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
+    invoke-static {v2, v3}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v3, 0x6
+    const/4 v7, 0x6
 
-    invoke-static {v1, v3}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
+    invoke-static {v3, v7}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
 
-    move-result-object v1
+    move-result-object v3
 
-    iget v3, v1, Lkotlin/ranges/IntProgression;->first:I
+    iget v7, v3, Lkotlin/ranges/IntProgression;->first:I
 
-    iget v4, v1, Lkotlin/ranges/IntProgression;->last:I
+    iget v8, v3, Lkotlin/ranges/IntProgression;->last:I
 
-    iget v1, v1, Lkotlin/ranges/IntProgression;->step:I
+    iget v3, v3, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz v1, :cond_15
+    if-ltz v3, :cond_15
 
-    if-gt v3, v4, :cond_1e
+    if-gt v7, v8, :cond_1e
 
     goto :goto_4
 
     :cond_15
-    if-lt v3, v4, :cond_1e
+    if-lt v7, v8, :cond_1e
 
     :goto_4
-    iget-object v5, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v9, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v5}, Lokio/BufferedSource;->readShort()S
+    invoke-interface {v9}, Lokio/BufferedSource;->readShort()S
 
-    move-result v5
+    move-result v9
 
-    const v6, 0xffff
+    const v11, 0xffff
 
-    and-int/2addr v5, v6
+    and-int/2addr v9, v11
 
-    iget-object v6, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v11, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v6}, Lokio/BufferedSource;->readInt()I
+    invoke-interface {v11}, Lokio/BufferedSource;->readInt()I
 
-    move-result v6
+    move-result v11
 
-    const/4 v8, 0x2
+    const/4 v12, 0x2
 
-    if-eq v5, v8, :cond_1b
+    if-eq v9, v12, :cond_1b
 
-    const/4 v8, 0x3
+    const/4 v12, 0x3
 
-    if-eq v5, v8, :cond_1a
+    if-eq v9, v12, :cond_1a
 
-    if-eq v5, v9, :cond_18
+    if-eq v9, v4, :cond_18
 
-    const/16 v8, 0x4000
-
-    if-eq v5, v2, :cond_16
+    if-eq v9, v6, :cond_16
 
     goto :goto_5
 
     :cond_16
-    if-lt v6, v8, :cond_17
+    if-lt v11, v10, :cond_17
 
-    const v8, 0xffffff
+    const v12, 0xffffff
 
-    if-gt v6, v8, :cond_17
+    if-gt v11, v12, :cond_17
 
     goto :goto_5
 
     :cond_17
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR SETTINGS_MAX_FRAME_SIZE: "
+    const-string v2, "PROTOCOL_ERROR SETTINGS_MAX_FRAME_SIZE: "
 
-    invoke-static {p2, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_18
-    const/4 v5, 0x7
+    const/4 v9, 0x7
 
-    if-ltz v6, :cond_19
+    if-ltz v11, :cond_19
 
     goto :goto_5
 
     :cond_19
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1"
+    const-string v2, "PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_1a
-    move v5, v9
+    move v9, v4
 
     goto :goto_5
 
     :cond_1b
-    if-eqz v6, :cond_1d
+    if-eqz v11, :cond_1d
 
-    if-ne v6, v7, :cond_1c
+    if-ne v11, v15, :cond_1c
 
     goto :goto_5
 
     :cond_1c
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1"
+    const-string v2, "PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_1d
     :goto_5
-    invoke-virtual {p1, v5, v6}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;
+    invoke-virtual {v5, v9, v11}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;
 
-    if-eq v3, v4, :cond_1e
+    if-eq v7, v8, :cond_1e
 
-    add-int/2addr v3, v1
+    add-int/2addr v7, v3
 
     goto :goto_4
 
     :cond_1e
-    invoke-interface {p2, v0, p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->settings(ZLokhttp3/internal/http2/Settings;)V
+    invoke-interface {v1, v2, v5}, Lokhttp3/internal/http2/Http2Reader$Handler;->settings(ZLokhttp3/internal/http2/Settings;)V
 
     goto/16 :goto_c
 
     :cond_1f
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_SETTINGS length % 6 != 0: "
+    const-string v2, "TYPE_SETTINGS length % 6 != 0: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_20
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_SETTINGS streamId != 0"
+    const-string v2, "TYPE_SETTINGS streamId != 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_5
-    if-ne v1, v9, :cond_26
+    if-ne v3, v4, :cond_26
 
-    if-eqz v11, :cond_25
+    if-eqz v14, :cond_25
 
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v3, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {p1}, Lokio/BufferedSource;->readInt()I
+    invoke-interface {v3}, Lokio/BufferedSource;->readInt()I
 
-    move-result p1
+    move-result v3
 
     invoke-static {}, Lokhttp3/internal/http2/ErrorCode;->values()[Lokhttp3/internal/http2/ErrorCode;
 
-    move-result-object v1
+    move-result-object v4
 
-    array-length v2, v1
+    array-length v6, v4
 
-    move v3, v0
+    move v7, v2
 
     :goto_6
-    if-ge v3, v2, :cond_23
+    if-ge v7, v6, :cond_23
 
-    aget-object v4, v1, v3
+    aget-object v8, v4, v7
 
-    iget v6, v4, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
+    iget v9, v8, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
-    if-ne v6, p1, :cond_21
+    if-ne v9, v3, :cond_21
 
-    move v6, v7
+    move v9, v15
 
     goto :goto_7
 
     :cond_21
-    move v6, v0
+    move v9, v2
 
     :goto_7
-    if-eqz v6, :cond_22
+    if-eqz v9, :cond_22
 
-    move-object v5, v4
+    move-object v5, v8
 
     goto :goto_8
 
     :cond_22
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_6
 
@@ -739,266 +761,268 @@
     :goto_8
     if-eqz v5, :cond_24
 
-    invoke-interface {p2, v11, v5}, Lokhttp3/internal/http2/Http2Reader$Handler;->rstStream(ILokhttp3/internal/http2/ErrorCode;)V
+    invoke-interface {v1, v14, v5}, Lokhttp3/internal/http2/Http2Reader$Handler;->rstStream(ILokhttp3/internal/http2/ErrorCode;)V
 
     goto/16 :goto_c
 
     :cond_24
-    new-instance p2, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string v0, "TYPE_RST_STREAM unexpected error code: "
+    const-string v2, "TYPE_RST_STREAM unexpected error code: "
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v2
 
-    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p2
+    throw v1
 
     :cond_25
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_RST_STREAM streamId == 0"
+    const-string v2, "TYPE_RST_STREAM streamId == 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_26
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_RST_STREAM length: "
+    const-string v2, "TYPE_RST_STREAM length: "
 
-    const-string v0, " != 4"
+    const-string v4, " != 4"
 
-    invoke-static {p2, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_6
-    if-ne v1, v2, :cond_28
+    if-ne v3, v6, :cond_28
 
-    if-eqz v11, :cond_27
+    if-eqz v14, :cond_27
 
-    invoke-virtual {p0, p2, v11}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
+    invoke-virtual {v0, v1, v14}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
 
     goto/16 :goto_c
 
     :cond_27
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_PRIORITY streamId == 0"
+    const-string v2, "TYPE_PRIORITY streamId == 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_28
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "TYPE_PRIORITY length: "
+    const-string v2, "TYPE_PRIORITY length: "
 
-    const-string v0, " != 5"
+    const-string v4, " != 5"
 
-    invoke-static {p2, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_7
-    if-eqz v11, :cond_2e
+    if-eqz v14, :cond_2e
 
-    and-int/lit8 v2, p1, 0x1
+    and-int/lit8 v4, v12, 0x1
 
-    if-eqz v2, :cond_29
+    if-eqz v4, :cond_29
 
-    move v2, v7
+    move v4, v15
 
     goto :goto_9
 
     :cond_29
-    move v2, v0
+    move v4, v2
 
     :goto_9
-    and-int/lit8 v5, p1, 0x8
+    and-int/lit8 v5, v12, 0x8
 
     if-eqz v5, :cond_2a
 
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v2, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v0}, Lokio/BufferedSource;->readByte()B
+    invoke-interface {v2}, Lokio/BufferedSource;->readByte()B
 
-    move-result v0
+    move-result v2
 
-    and-int/lit16 v0, v0, 0xff
+    and-int/lit16 v2, v2, 0xff
 
     :cond_2a
-    and-int/lit8 v6, p1, 0x20
+    and-int/lit8 v6, v12, 0x20
 
     if-eqz v6, :cond_2b
 
-    invoke-virtual {p0, p2, v11}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
+    invoke-virtual {v0, v1, v14}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
 
-    add-int/lit8 v1, v1, -0x5
+    add-int/lit8 v3, v3, -0x5
 
     :cond_2b
     if-eqz v5, :cond_2c
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v3, v3, -0x1
 
     :cond_2c
-    if-gt v0, v1, :cond_2d
+    if-gt v2, v3, :cond_2d
 
-    sub-int/2addr v1, v0
+    sub-int/2addr v3, v2
 
-    invoke-virtual {p0, v1, v0, p1, v11}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(IIII)Ljava/util/List;
+    invoke-virtual {v0, v3, v2, v12, v14}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(IIII)Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v2
 
-    const/4 v0, -0x1
+    const/4 v3, -0x1
 
-    invoke-interface {p2, v2, v11, v0, p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->headers(ZIILjava/util/List;)V
+    invoke-interface {v1, v4, v14, v3, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->headers(ZIILjava/util/List;)V
 
     goto :goto_c
 
     :cond_2d
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    invoke-static {v4, v0, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v2, v7, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_2e
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR: TYPE_HEADERS streamId == 0"
+    const-string v2, "PROTOCOL_ERROR: TYPE_HEADERS streamId == 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :pswitch_8
-    if-eqz v11, :cond_35
+    if-eqz v14, :cond_35
 
-    and-int/lit8 v2, p1, 0x1
+    and-int/lit8 v4, v12, 0x1
 
-    if-eqz v2, :cond_2f
+    if-eqz v4, :cond_2f
 
-    move v2, v7
+    move v4, v15
 
     goto :goto_a
 
     :cond_2f
-    move v2, v0
+    move v4, v2
 
     :goto_a
-    and-int/lit8 v5, p1, 0x20
+    and-int/lit8 v5, v12, 0x20
 
     if-eqz v5, :cond_30
 
-    move v5, v7
+    move v5, v15
 
     goto :goto_b
 
     :cond_30
-    move v5, v0
+    move v5, v2
 
     :goto_b
     if-nez v5, :cond_34
 
-    and-int/lit8 p1, p1, 0x8
+    and-int/lit8 v5, v12, 0x8
 
-    if-eqz p1, :cond_31
+    if-eqz v5, :cond_31
 
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v2, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {v0}, Lokio/BufferedSource;->readByte()B
+    invoke-interface {v2}, Lokio/BufferedSource;->readByte()B
 
-    move-result v0
+    move-result v2
 
-    and-int/lit16 v0, v0, 0xff
+    and-int/lit16 v2, v2, 0xff
 
     :cond_31
-    if-eqz p1, :cond_32
+    if-eqz v5, :cond_32
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v3, v3, -0x1
 
     :cond_32
-    if-gt v0, v1, :cond_33
+    if-gt v2, v3, :cond_33
 
-    sub-int/2addr v1, v0
+    sub-int/2addr v3, v2
 
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v5, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    invoke-interface {p2, v2, v11, p1, v1}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILokio/BufferedSource;I)V
+    invoke-interface {v1, v4, v14, v5, v3}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILokio/BufferedSource;I)V
 
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
+    iget-object v1, v0, Lokhttp3/internal/http2/Http2Reader;->source:Lokio/BufferedSource;
 
-    int-to-long v0, v0
+    int-to-long v2, v2
 
-    invoke-interface {p1, v0, v1}, Lokio/BufferedSource;->skip(J)V
+    invoke-interface {v1, v2, v3}, Lokio/BufferedSource;->skip(J)V
 
     goto :goto_c
 
     :cond_33
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    invoke-static {v4, v0, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v2, v7, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_34
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA"
+    const-string v2, "PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_35
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "PROTOCOL_ERROR: TYPE_DATA streamId == 0"
+    const-string v2, "PROTOCOL_ERROR: TYPE_DATA streamId == 0"
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :goto_c
-    return v7
+    return v15
 
     :cond_36
-    new-instance p1, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
-    const-string p2, "FRAME_SIZE_ERROR: "
+    const-string v2, "FRAME_SIZE_ERROR: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :catch_0
-    return v0
+    return v2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1021,6 +1045,10 @@
             Ljava/io/IOException;
         }
     .end annotation
+
+    const-string v0, "handler"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z
 
@@ -1074,7 +1102,7 @@
 
     const-string v2, "<< CONNECTION "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1117,7 +1145,7 @@
 
     const-string v1, "Expected a connection header but was "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1175,7 +1203,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_e
+    if-nez p2, :cond_d
 
     iget-object p2, p1, Lokhttp3/internal/http2/Hpack$Reader;->source:Lokio/BufferedSource;
 
@@ -1191,13 +1219,13 @@
 
     const/16 p3, 0x80
 
-    if-eq p2, p3, :cond_d
+    if-eq p2, p3, :cond_c
 
     and-int/lit16 p4, p2, 0x80
 
     const/4 v0, 0x1
 
-    if-ne p4, p3, :cond_5
+    if-ne p4, p3, :cond_4
 
     const/16 p3, 0x7f
 
@@ -1254,37 +1282,30 @@
 
     move-result p3
 
-    if-ltz p3, :cond_4
+    if-ltz p3, :cond_3
 
     iget-object p4, p1, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTable:[Lokhttp3/internal/http2/Header;
 
     array-length v1, p4
 
-    if-ge p3, v1, :cond_4
+    if-ge p3, v1, :cond_3
 
     iget-object p2, p1, Lokhttp3/internal/http2/Hpack$Reader;->headerList:Ljava/util/List;
 
     aget-object p3, p4, p3
 
-    if-eqz p3, :cond_3
+    invoke-static {p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-interface {p2, p3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_4
     new-instance p1, Ljava/io/IOException;
 
     const-string p3, "Header index too large "
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 
@@ -1300,12 +1321,12 @@
 
     throw p1
 
-    :cond_5
+    :cond_4
     const/4 p3, -0x1
 
     const/16 p4, 0x40
 
-    if-ne p2, p4, :cond_6
+    if-ne p2, p4, :cond_5
 
     sget-object p2, Lokhttp3/internal/http2/Hpack;->INSTANCE:Lokhttp3/internal/http2/Hpack;
 
@@ -1327,10 +1348,10 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_5
     and-int/lit8 v1, p2, 0x40
 
-    if-ne v1, p4, :cond_7
+    if-ne v1, p4, :cond_6
 
     const/16 p4, 0x3f
 
@@ -1356,12 +1377,12 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_6
     and-int/lit8 p3, p2, 0x20
 
     const/16 p4, 0x20
 
-    if-ne p3, p4, :cond_a
+    if-ne p3, p4, :cond_9
 
     const/16 p3, 0x1f
 
@@ -1371,35 +1392,35 @@
 
     iput p2, p1, Lokhttp3/internal/http2/Hpack$Reader;->maxDynamicTableByteCount:I
 
-    if-ltz p2, :cond_9
+    if-ltz p2, :cond_8
 
     iget p3, p1, Lokhttp3/internal/http2/Hpack$Reader;->headerTableSizeSetting:I
 
-    if-gt p2, p3, :cond_9
+    if-gt p2, p3, :cond_8
 
     iget p3, p1, Lokhttp3/internal/http2/Hpack$Reader;->dynamicTableByteCount:I
 
     if-ge p2, p3, :cond_0
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_7
 
     invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->clearDynamicTable()V
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_7
     sub-int/2addr p3, p2
 
     invoke-virtual {p1, p3}, Lokhttp3/internal/http2/Hpack$Reader;->evictToRecoverBytes(I)I
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_8
     new-instance p2, Ljava/io/IOException;
 
     const-string p3, "Invalid dynamic table size update "
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 
@@ -1415,16 +1436,16 @@
 
     throw p2
 
-    :cond_a
+    :cond_9
     const/16 p3, 0x10
 
-    if-eq p2, p3, :cond_c
+    if-eq p2, p3, :cond_b
 
-    if-nez p2, :cond_b
+    if-nez p2, :cond_a
 
     goto :goto_2
 
-    :cond_b
+    :cond_a
     const/16 p3, 0xf
 
     invoke-virtual {p1, p2, p3}, Lokhttp3/internal/http2/Hpack$Reader;->readInt(II)I
@@ -1451,7 +1472,7 @@
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_b
     :goto_2
     sget-object p2, Lokhttp3/internal/http2/Hpack;->INSTANCE:Lokhttp3/internal/http2/Hpack;
 
@@ -1475,7 +1496,7 @@
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_c
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "index == 0"
@@ -1484,7 +1505,7 @@
 
     throw p1
 
-    :cond_e
+    :cond_d
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
 
     iget-object p2, p1, Lokhttp3/internal/http2/Hpack$Reader;->headerList:Ljava/util/List;

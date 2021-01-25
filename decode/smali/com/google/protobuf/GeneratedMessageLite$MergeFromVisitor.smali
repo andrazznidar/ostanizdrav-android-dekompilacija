@@ -44,6 +44,17 @@
 
 
 # virtual methods
+.method public visitBoolean(ZZZZ)Z
+    .locals 0
+
+    if-eqz p3, :cond_0
+
+    move p2, p4
+
+    :cond_0
+    return p2
+.end method
+
 .method public visitByteString(ZLcom/google/protobuf/ByteString;ZLcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
     .locals 0
 
@@ -64,6 +75,49 @@
 
     :cond_0
     return-wide p2
+.end method
+
+.method public visitDoubleList(Lcom/google/protobuf/Internal$DoubleList;Lcom/google/protobuf/Internal$DoubleList;)Lcom/google/protobuf/Internal$DoubleList;
+    .locals 3
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-lez v0, :cond_1
+
+    if-lez v1, :cond_1
+
+    move-object v2, p1
+
+    check-cast v2, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v2, v2, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v2, :cond_0
+
+    add-int/2addr v1, v0
+
+    check-cast p1, Lcom/google/protobuf/DoubleArrayList;
+
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/DoubleArrayList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$DoubleList;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    :cond_1
+    if-lez v0, :cond_2
+
+    move-object p2, p1
+
+    :cond_2
+    return-object p2
 .end method
 
 .method public visitExtensions(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/FieldSet;)Lcom/google/protobuf/FieldSet;
@@ -158,6 +212,49 @@
     return p2
 .end method
 
+.method public visitIntList(Lcom/google/protobuf/Internal$IntList;Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
+    .locals 3
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-lez v0, :cond_1
+
+    if-lez v1, :cond_1
+
+    move-object v2, p1
+
+    check-cast v2, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v2, v2, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v2, :cond_0
+
+    add-int/2addr v1, v0
+
+    check-cast p1, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/IntArrayList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$IntList;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    :cond_1
+    if-lez v0, :cond_2
+
+    move-object p2, p1
+
+    :cond_2
+    return-object p2
+.end method
+
 .method public visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -196,9 +293,7 @@
 
     add-int/2addr v1, v0
 
-    check-cast p1, Lcom/google/protobuf/ProtobufArrayList;
-
-    invoke-virtual {p1, v1}, Lcom/google/protobuf/ProtobufArrayList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$ProtobufList;
+    invoke-interface {p1, v1}, Lcom/google/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object p1
 
@@ -214,8 +309,58 @@
     return-object p2
 .end method
 
+.method public visitLong(ZJZJ)J
+    .locals 0
+
+    if-eqz p4, :cond_0
+
+    move-wide p2, p5
+
+    :cond_0
+    return-wide p2
+.end method
+
+.method public visitMap(Lcom/google/protobuf/MapFieldLite;Lcom/google/protobuf/MapFieldLite;)Lcom/google/protobuf/MapFieldLite;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;)",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;"
+        }
+    .end annotation
+
+    invoke-virtual {p2}, Ljava/util/LinkedHashMap;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-boolean v0, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-virtual {p1, p2}, Lcom/google/protobuf/MapFieldLite;->mergeFrom(Lcom/google/protobuf/MapFieldLite;)V
+
+    :cond_1
+    return-object p1
+.end method
+
 .method public visitMessage(Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
-    .locals 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -224,70 +369,30 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_0
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_0
 
     invoke-interface {p1}, Lcom/google/protobuf/MessageLite;->toBuilder()Lcom/google/protobuf/MessageLite$Builder;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/protobuf/AbstractMessageLite$Builder;
+    invoke-interface {p1, p2}, Lcom/google/protobuf/MessageLite$Builder;->mergeFrom(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite$Builder;
 
-    if-eqz p1, :cond_1
+    move-result-object p1
 
-    check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$Builder;
-
-    iget-object v0, p1, Lcom/google/protobuf/GeneratedMessageLite$Builder;->defaultInstance:Lcom/google/protobuf/GeneratedMessageLite;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    check-cast p2, Lcom/google/protobuf/AbstractMessageLite;
-
-    check-cast p2, Lcom/google/protobuf/GeneratedMessageLite;
-
-    invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
-
-    iget-object v0, p1, Lcom/google/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/protobuf/GeneratedMessageLite;
-
-    sget-object v1, Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;->INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;
-
-    invoke-virtual {v0, v1, p2}, Lcom/google/protobuf/GeneratedMessageLite;->visit(Lcom/google/protobuf/GeneratedMessageLite$Visitor;Lcom/google/protobuf/GeneratedMessageLite;)V
-
-    invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+    invoke-interface {p1}, Lcom/google/protobuf/MessageLite$Builder;->build()Lcom/google/protobuf/MessageLite;
 
     move-result-object p1
 
     return-object p1
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "mergeFrom(MessageLite) can only merge messages of the same type."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_1
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     move-object p1, p2
 
     :goto_0
@@ -306,7 +411,7 @@
 .end method
 
 .method public visitUnknownFields(Lcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/UnknownFieldSetLite;)Lcom/google/protobuf/UnknownFieldSetLite;
-    .locals 6
+    .locals 1
 
     sget-object v0, Lcom/google/protobuf/UnknownFieldSetLite;->DEFAULT_INSTANCE:Lcom/google/protobuf/UnknownFieldSetLite;
 
@@ -315,47 +420,9 @@
     goto :goto_0
 
     :cond_0
-    iget v0, p1, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
+    invoke-static {p1, p2}, Lcom/google/protobuf/UnknownFieldSetLite;->mutableCopyOf(Lcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/UnknownFieldSetLite;)Lcom/google/protobuf/UnknownFieldSetLite;
 
-    iget v1, p2, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
-
-    add-int/2addr v0, v1
-
-    iget-object v1, p1, Lcom/google/protobuf/UnknownFieldSetLite;->tags:[I
-
-    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([II)[I
-
-    move-result-object v1
-
-    iget-object v2, p2, Lcom/google/protobuf/UnknownFieldSetLite;->tags:[I
-
-    iget v3, p1, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
-
-    iget v4, p2, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
-
-    const/4 v5, 0x0
-
-    invoke-static {v2, v5, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v2, p1, Lcom/google/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
-
-    invoke-static {v2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    iget-object v3, p2, Lcom/google/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
-
-    iget p1, p1, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
-
-    iget p2, p2, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
-
-    invoke-static {v3, v5, v2, p1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    new-instance p1, Lcom/google/protobuf/UnknownFieldSetLite;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p1, v0, v1, v2, p2}, Lcom/google/protobuf/UnknownFieldSetLite;-><init>(I[I[Ljava/lang/Object;Z)V
+    move-result-object p1
 
     :goto_0
     return-object p1

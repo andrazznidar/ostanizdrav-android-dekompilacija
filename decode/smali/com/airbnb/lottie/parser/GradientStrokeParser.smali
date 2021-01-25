@@ -187,7 +187,7 @@
     goto :goto_3
 
     :cond_0
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v3
 
@@ -345,21 +345,21 @@
     goto/16 :goto_0
 
     :pswitch_5
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v10
 
     goto/16 :goto_0
 
     :pswitch_6
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v9
 
     goto/16 :goto_0
 
     :pswitch_7
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v8
 
@@ -387,7 +387,7 @@
     goto/16 :goto_0
 
     :pswitch_9
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v7
 
@@ -434,7 +434,7 @@
 
     invoke-direct {v6, v2}, Lcom/airbnb/lottie/parser/GradientColorParser;-><init>(I)V
 
-    invoke-static {v0, v1, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
+    invoke-static {v0, v1, v6}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Lcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
 
     move-result-object v6
 

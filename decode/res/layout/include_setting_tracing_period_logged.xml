@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/include_setting_tracing_period_logged_0" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/risk_details_period_logged_layout" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
-        <TextView android:id="@id/risk_details_period_logged_body_notice" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/risk_details_information_body_period_logged" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/subtitleMedium" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
     <include android:focusable="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/risk_details_period_logged_layout" layout="@layout/include_risk_details_period_logged_progress" />
 </androidx.constraintlayout.widget.ConstraintLayout>

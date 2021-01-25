@@ -169,7 +169,7 @@
 
     iget-object p3, p4, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-static {p3, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline6(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    invoke-static {p3, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline5(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -256,7 +256,7 @@
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline6(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline5(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object v0
 

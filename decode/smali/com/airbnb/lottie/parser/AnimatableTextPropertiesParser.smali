@@ -126,28 +126,28 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v4
 
     goto :goto_1
 
     :cond_2
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v3
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v2
 
     goto :goto_1
 
     :cond_4
-    invoke-static {p0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v1
 

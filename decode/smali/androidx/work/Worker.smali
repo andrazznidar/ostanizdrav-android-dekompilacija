@@ -34,6 +34,9 @@
 
 
 # virtual methods
+.method public abstract doWork()Landroidx/work/ListenableWorker$Result;
+.end method
+
 .method public final startWork()Lcom/google/common/util/concurrent/ListenableFuture;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;

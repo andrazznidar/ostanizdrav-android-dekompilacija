@@ -45,7 +45,9 @@
 .method public publish(Ljava/util/logging/LogRecord;)V
     .locals 9
 
-    if-eqz p1, :cond_7
+    const-string v0, "record"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lokhttp3/internal/platform/android/AndroidLog;->INSTANCE:Lokhttp3/internal/platform/android/AndroidLog;
 
@@ -55,7 +57,7 @@
 
     const-string v1, "record.loggerName"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/util/logging/LogRecord;->getLevel()Ljava/util/logging/Level;
 
@@ -110,11 +112,19 @@
 
     const-string v4, "record.message"
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/util/logging/LogRecord;->getThrown()Ljava/lang/Throwable;
 
     move-result-object p1
+
+    const-string v4, "loggerName"
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v4, "message"
+
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v4, Lokhttp3/internal/platform/android/AndroidLog;->knownLoggers:Ljava/util/Map;
 
@@ -126,30 +136,37 @@
 
     if-eqz v4, :cond_2
 
-    move-object v0, v4
+    goto :goto_1
 
     :cond_2
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    const/16 v4, 0x17
 
-    move-result v4
+    invoke-static {v0, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->take(Ljava/lang/String;I)Ljava/lang/String;
 
-    if-eqz v4, :cond_6
+    move-result-object v4
+
+    :goto_1
+    invoke-static {v4, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
 
     if-eqz p1, :cond_3
 
-    const-string v4, "\n"
+    const-string v0, "\n"
 
-    invoke-static {v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -158,16 +175,16 @@
 
     move-result p1
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    move v5, v4
+    move v5, v0
 
-    :goto_1
+    :goto_2
     if-ge v5, p1, :cond_6
 
     const/16 v6, 0xa
 
-    invoke-static {v2, v6, v5, v4, v3}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;CIZI)I
+    invoke-static {v2, v6, v5, v0, v3}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;CIZI)I
 
     move-result v6
 
@@ -175,12 +192,12 @@
 
     if-eq v6, v7, :cond_4
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_4
     move v6, p1
 
-    :goto_2
+    :goto_3
     add-int/lit16 v7, v5, 0xfa0
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
@@ -193,30 +210,21 @@
 
     const-string v8, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v0, v5}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4, v5}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
 
     if-lt v7, v6, :cond_5
 
     add-int/lit8 v5, v7, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     move v5, v7
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_6
     return-void
-
-    :cond_7
-    const-string p1, "record"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

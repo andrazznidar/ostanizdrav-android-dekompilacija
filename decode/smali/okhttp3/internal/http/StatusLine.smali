@@ -3,12 +3,6 @@
 .source "StatusLine.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStatusLine.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatusLine.kt\nokhttp3/internal/http/StatusLine\n*L\n1#1,107:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public final code:I
 
@@ -21,11 +15,13 @@
 .method public constructor <init>(Lokhttp3/Protocol;ILjava/lang/String;)V
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "protocol"
 
-    if-eqz p1, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p3, :cond_0
+    const-string v0, "message"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,20 +32,6 @@
     iput-object p3, p0, Lokhttp3/internal/http/StatusLine;->message:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const-string p1, "message"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "protocol"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final parse(Ljava/lang/String;)Lokhttp3/internal/http/StatusLine;
@@ -62,7 +44,9 @@
 
     sget-object v0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
 
-    if-eqz p0, :cond_8
+    const-string v1, "statusLine"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v1, "HTTP/1."
 
@@ -168,7 +152,7 @@
 
     const-string v3, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -196,7 +180,7 @@
 
     const-string v2, "(this as java.lang.String).substring(startIndex)"
 
-    invoke-static {p0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -253,15 +237,6 @@
     invoke-direct {v0, p0}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_8
-    const-string p0, "statusLine"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 
@@ -311,7 +286,7 @@
 
     const-string v1, "StringBuilder().apply(builderAction).toString()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

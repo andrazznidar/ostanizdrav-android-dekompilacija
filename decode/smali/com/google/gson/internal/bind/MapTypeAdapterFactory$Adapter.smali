@@ -326,7 +326,7 @@
 
     const-string v1, "Expected a name but was "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -364,7 +364,7 @@
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -470,7 +470,7 @@
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_6
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -484,26 +484,9 @@
 
     move-result-object v7
 
-    if-eqz v6, :cond_7
+    invoke-virtual {v6, v7}, Lcom/google/gson/TypeAdapter;->toJsonTree(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 
-    :try_start_0
-    new-instance v8, Lcom/google/gson/internal/bind/JsonTreeWriter;
-
-    invoke-direct {v8}, Lcom/google/gson/internal/bind/JsonTreeWriter;-><init>()V
-
-    invoke-virtual {v6, v8, v7}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-
-    iget-object v6, v8, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
-
-    iget-object v6, v8, Lcom/google/gson/internal/bind/JsonTreeWriter;->product:Lcom/google/gson/JsonElement;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v6
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -543,45 +526,7 @@
     throw v5
 
     :cond_6
-    :try_start_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Expected one JSON element but was "
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, v8, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :catch_0
-    move-exception p1
-
-    new-instance p2, Lcom/google/gson/JsonIOException;
-
-    invoke-direct {p2, p1}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p2
-
-    :cond_7
-    throw v5
-
-    :cond_8
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_8
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
@@ -590,7 +535,7 @@
     move-result p2
 
     :goto_4
-    if-ge v2, p2, :cond_9
+    if-ge v2, p2, :cond_7
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
@@ -618,12 +563,12 @@
 
     goto :goto_4
 
-    :cond_9
+    :cond_7
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 
     goto :goto_7
 
-    :cond_a
+    :cond_8
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginObject()Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -631,7 +576,7 @@
     move-result p2
 
     :goto_5
-    if-ge v2, p2, :cond_11
+    if-ge v2, p2, :cond_f
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -639,11 +584,11 @@
 
     check-cast v3, Lcom/google/gson/JsonElement;
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_e
 
     instance-of v4, v3, Lcom/google/gson/JsonPrimitive;
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_c
 
     invoke-virtual {v3}, Lcom/google/gson/JsonElement;->getAsJsonPrimitive()Lcom/google/gson/JsonPrimitive;
 
@@ -653,7 +598,7 @@
 
     instance-of v6, v4, Ljava/lang/Number;
 
-    if-eqz v6, :cond_b
+    if-eqz v6, :cond_9
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsNumber()Ljava/lang/Number;
 
@@ -665,10 +610,10 @@
 
     goto :goto_6
 
-    :cond_b
+    :cond_9
     instance-of v6, v4, Ljava/lang/Boolean;
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_a
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsBoolean()Z
 
@@ -680,10 +625,10 @@
 
     goto :goto_6
 
-    :cond_c
+    :cond_a
     instance-of v4, v4, Ljava/lang/String;
 
-    if-eqz v4, :cond_d
+    if-eqz v4, :cond_b
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsString()Ljava/lang/String;
 
@@ -691,17 +636,17 @@
 
     goto :goto_6
 
-    :cond_d
+    :cond_b
     new-instance p1, Ljava/lang/AssertionError;
 
     invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
 
     throw p1
 
-    :cond_e
+    :cond_c
     instance-of v3, v3, Lcom/google/gson/JsonNull;
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_d
 
     const-string v3, "null"
 
@@ -720,17 +665,17 @@
 
     goto :goto_5
 
-    :cond_f
+    :cond_d
     new-instance p1, Ljava/lang/AssertionError;
 
     invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
 
     throw p1
 
-    :cond_10
+    :cond_e
     throw v5
 
-    :cond_11
+    :cond_f
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endObject()Lcom/google/gson/stream/JsonWriter;
 
     :goto_7

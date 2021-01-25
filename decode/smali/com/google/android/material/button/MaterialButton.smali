@@ -90,13 +90,23 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 1
+
+    sget v0, Lcom/google/android/material/R$attr;->materialButtonStyle:I
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/material/button/MaterialButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 20
 
     move-object/from16 v0, p0
 
     move-object/from16 v7, p2
 
-    sget v8, Lcom/google/android/material/R$attr;->materialButtonStyle:I
+    move/from16 v8, p3
 
     sget v1, Lcom/google/android/material/button/MaterialButton;->DEF_STYLE_RES:I
 
@@ -134,7 +144,7 @@
 
     move-object/from16 v2, p2
 
-    move v4, v8
+    move/from16 v4, p3
 
     invoke-static/range {v1 .. v6}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
 
@@ -158,7 +168,7 @@
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {v2, v4}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v2, v4}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v2
 
@@ -170,7 +180,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->MaterialButton_iconTint:I
 
-    invoke-static {v2, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v2, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -182,7 +192,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->MaterialButton_icon:I
 
-    invoke-static {v2, v1, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -221,6 +231,8 @@
     invoke-direct {v5, v0, v2}, Lcom/google/android/material/button/MaterialButtonHelper;-><init>(Lcom/google/android/material/button/MaterialButton;Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
     iput-object v5, v0, Lcom/google/android/material/button/MaterialButton;->materialButtonHelper:Lcom/google/android/material/button/MaterialButtonHelper;
+
+    if-eqz v5, :cond_5
 
     sget v2, Lcom/google/android/material/R$styleable;->MaterialButton_android_insetLeft:I
 
@@ -299,7 +311,7 @@
 
     sget-object v6, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {v2, v6}, Lcom/google/android/gms/common/internal/Preconditions;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v2, v6}, Landroidx/transition/ViewGroupUtilsApi14;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v2
 
@@ -313,7 +325,7 @@
 
     sget v6, Lcom/google/android/material/R$styleable;->MaterialButton_backgroundTint:I
 
-    invoke-static {v2, v1, v6}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v2, v1, v6}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -327,7 +339,7 @@
 
     sget v6, Lcom/google/android/material/R$styleable;->MaterialButton_strokeColor:I
 
-    invoke-static {v2, v1, v6}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v2, v1, v6}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -341,7 +353,7 @@
 
     sget v6, Lcom/google/android/material/R$styleable;->MaterialButton_rippleColor:I
 
-    invoke-static {v2, v1, v6}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v2, v1, v6}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
@@ -440,7 +452,7 @@
 
     sget v4, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {v15, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/view/View;I)I
+    invoke-static {v15, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
 
     move-result v4
 
@@ -568,6 +580,11 @@
     invoke-virtual {v0, v9}, Lcom/google/android/material/button/MaterialButton;->updateIcon(Z)V
 
     return-void
+
+    :cond_5
+    const/4 v1, 0x0
+
+    throw v1
 .end method
 
 .method private getA11yClassName()Ljava/lang/String;
@@ -886,7 +903,7 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     return-void
 .end method

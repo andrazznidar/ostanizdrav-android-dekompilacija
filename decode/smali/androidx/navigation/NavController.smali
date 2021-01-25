@@ -933,127 +933,135 @@
 .end method
 
 .method public setGraph(ILandroid/os/Bundle;)V
-    .locals 19
+    .locals 3
 
-    move-object/from16 v1, p0
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
+    iget-object v0, p0, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
 
     if-nez v0, :cond_0
 
     new-instance v0, Landroidx/navigation/NavInflater;
 
-    iget-object v2, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
-    iget-object v3, v1, Landroidx/navigation/NavController;->mNavigatorProvider:Landroidx/navigation/NavigatorProvider;
+    iget-object v2, p0, Landroidx/navigation/NavController;->mNavigatorProvider:Landroidx/navigation/NavigatorProvider;
 
-    invoke-direct {v0, v2, v3}, Landroidx/navigation/NavInflater;-><init>(Landroid/content/Context;Landroidx/navigation/NavigatorProvider;)V
+    invoke-direct {v0, v1, v2}, Landroidx/navigation/NavInflater;-><init>(Landroid/content/Context;Landroidx/navigation/NavigatorProvider;)V
 
-    iput-object v0, v1, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
+    iput-object v0, p0, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
 
     :cond_0
-    iget-object v0, v1, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
+    iget-object v0, p0, Landroidx/navigation/NavController;->mInflater:Landroidx/navigation/NavInflater;
 
-    move/from16 v2, p1
+    invoke-virtual {v0, p1}, Landroidx/navigation/NavInflater;->inflate(I)Landroidx/navigation/NavGraph;
 
-    invoke-virtual {v0, v2}, Landroidx/navigation/NavInflater;->inflate(I)Landroidx/navigation/NavGraph;
+    move-result-object p1
 
-    move-result-object v0
+    invoke-virtual {p0, p1, p2}, Landroidx/navigation/NavController;->setGraph(Landroidx/navigation/NavGraph;Landroid/os/Bundle;)V
 
-    iget-object v2, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    return-void
+.end method
 
-    const/4 v3, 0x1
+.method public setGraph(Landroidx/navigation/NavGraph;Landroid/os/Bundle;)V
+    .locals 19
 
-    if-eqz v2, :cond_1
+    move-object/from16 v0, p0
 
-    iget v2, v2, Landroidx/navigation/NavDestination;->mId:I
+    iget-object v1, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    invoke-virtual {v1, v2, v3}, Landroidx/navigation/NavController;->popBackStackInternal(IZ)Z
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    iget v1, v1, Landroidx/navigation/NavDestination;->mId:I
+
+    invoke-virtual {v0, v1, v2}, Landroidx/navigation/NavController;->popBackStackInternal(IZ)Z
+
+    :cond_0
+    move-object/from16 v1, p1
+
+    iput-object v1, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+
+    iget-object v1, v0, Landroidx/navigation/NavController;->mNavigatorStateToRestore:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_2
+
+    const-string v3, "android-support-nav:controller:navigatorState:names"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :cond_1
-    iput-object v0, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mNavigatorStateToRestore:Landroid/os/Bundle;
-
-    if-eqz v0, :cond_3
-
-    const-string v2, "android-support-nav:controller:navigatorState:names"
-
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_2
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_3
+    if-eqz v3, :cond_2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v3, Ljava/lang/String;
 
-    iget-object v4, v1, Landroidx/navigation/NavController;->mNavigatorProvider:Landroidx/navigation/NavigatorProvider;
+    iget-object v4, v0, Landroidx/navigation/NavController;->mNavigatorProvider:Landroidx/navigation/NavigatorProvider;
 
-    invoke-virtual {v4, v2}, Landroidx/navigation/NavigatorProvider;->getNavigator(Ljava/lang/String;)Landroidx/navigation/Navigator;
+    invoke-virtual {v4, v3}, Landroidx/navigation/NavigatorProvider;->getNavigator(Ljava/lang/String;)Landroidx/navigation/Navigator;
 
     move-result-object v4
 
-    iget-object v5, v1, Landroidx/navigation/NavController;->mNavigatorStateToRestore:Landroid/os/Bundle;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mNavigatorStateToRestore:Landroid/os/Bundle;
 
-    invoke-virtual {v5, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {v5, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v2
+    move-result-object v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v4, v2}, Landroidx/navigation/Navigator;->onRestoreState(Landroid/os/Bundle;)V
+    invoke-virtual {v4, v3}, Landroidx/navigation/Navigator;->onRestoreState(Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    :cond_3
-    iget-object v0, v1, Landroidx/navigation/NavController;->mBackStackToRestore:[Landroid/os/Parcelable;
+    :cond_2
+    iget-object v1, v0, Landroidx/navigation/NavController;->mBackStackToRestore:[Landroid/os/Parcelable;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_7
+    if-eqz v1, :cond_6
 
-    array-length v5, v0
+    array-length v5, v1
 
-    move v6, v2
+    move v6, v3
 
     :goto_1
-    if-ge v6, v5, :cond_6
+    if-ge v6, v5, :cond_5
 
-    aget-object v7, v0, v6
+    aget-object v7, v1, v6
 
     check-cast v7, Landroidx/navigation/NavBackStackEntryState;
 
     iget v8, v7, Landroidx/navigation/NavBackStackEntryState;->mDestinationId:I
 
-    invoke-virtual {v1, v8}, Landroidx/navigation/NavController;->findDestination(I)Landroidx/navigation/NavDestination;
+    invoke-virtual {v0, v8}, Landroidx/navigation/NavController;->findDestination(I)Landroidx/navigation/NavDestination;
 
     move-result-object v11
 
-    if-eqz v11, :cond_5
+    if-eqz v11, :cond_4
 
     iget-object v12, v7, Landroidx/navigation/NavBackStackEntryState;->mArgs:Landroid/os/Bundle;
 
-    if-eqz v12, :cond_4
+    if-eqz v12, :cond_3
 
-    iget-object v8, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v8, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -1061,14 +1069,14 @@
 
     invoke-virtual {v12, v8}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    :cond_4
+    :cond_3
     new-instance v8, Landroidx/navigation/NavBackStackEntry;
 
-    iget-object v10, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v10, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
-    iget-object v13, v1, Landroidx/navigation/NavController;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
+    iget-object v13, v0, Landroidx/navigation/NavController;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    iget-object v14, v1, Landroidx/navigation/NavController;->mViewModel:Landroidx/navigation/NavControllerViewModel;
+    iget-object v14, v0, Landroidx/navigation/NavController;->mViewModel:Landroidx/navigation/NavControllerViewModel;
 
     iget-object v15, v7, Landroidx/navigation/NavBackStackEntryState;->mUUID:Ljava/util/UUID;
 
@@ -1080,7 +1088,7 @@
 
     invoke-direct/range {v9 .. v16}, Landroidx/navigation/NavBackStackEntry;-><init>(Landroid/content/Context;Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/lifecycle/LifecycleOwner;Landroidx/navigation/NavControllerViewModel;Ljava/util/UUID;Landroid/os/Bundle;)V
 
-    iget-object v7, v1, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
+    iget-object v7, v0, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
 
     invoke-interface {v7, v8}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
 
@@ -1088,16 +1096,16 @@
 
     goto :goto_1
 
-    :cond_5
-    new-instance v0, Ljava/lang/IllegalStateException;
+    :cond_4
+    new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "unknown destination during restore: "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget-object v3, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v3, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1115,50 +1123,50 @@
 
     move-result-object v2
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 
-    :cond_6
+    :cond_5
     invoke-virtual/range {p0 .. p0}, Landroidx/navigation/NavController;->updateOnBackPressedCallbackEnabled()V
 
-    iput-object v4, v1, Landroidx/navigation/NavController;->mBackStackToRestore:[Landroid/os/Parcelable;
+    iput-object v4, v0, Landroidx/navigation/NavController;->mBackStackToRestore:[Landroid/os/Parcelable;
+
+    :cond_6
+    iget-object v1, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+
+    if-eqz v1, :cond_21
+
+    iget-object v1, v0, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
+
+    invoke-interface {v1}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_21
+
+    iget-boolean v1, v0, Landroidx/navigation/NavController;->mDeepLinkHandled:Z
+
+    if-nez v1, :cond_20
+
+    iget-object v1, v0, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
+
+    if-eqz v1, :cond_20
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v1
+
+    if-nez v1, :cond_7
+
+    goto/16 :goto_e
 
     :cond_7
-    iget-object v0, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
-
-    if-eqz v0, :cond_2a
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
-
-    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2a
-
-    iget-boolean v0, v1, Landroidx/navigation/NavController;->mDeepLinkHandled:Z
-
-    if-nez v0, :cond_29
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
-
-    if-eqz v0, :cond_29
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    if-nez v0, :cond_8
-
-    goto/16 :goto_12
-
-    :cond_8
-    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+    invoke-virtual {v1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v5
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_8
 
     const-string v6, "android-support-nav:controller:deepLinkIds"
 
@@ -1168,7 +1176,7 @@
 
     goto :goto_2
 
-    :cond_9
+    :cond_8
     move-object v6, v4
 
     :goto_2
@@ -1176,7 +1184,7 @@
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_9
 
     const-string v8, "android-support-nav:controller:deepLinkExtras"
 
@@ -1186,31 +1194,31 @@
 
     goto :goto_3
 
-    :cond_a
+    :cond_9
     move-object v5, v4
 
     :goto_3
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_a
 
     invoke-virtual {v7, v5}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    :cond_b
-    if-eqz v6, :cond_c
+    :cond_a
+    if-eqz v6, :cond_b
 
     array-length v5, v6
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_c
 
-    :cond_c
-    invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+    :cond_b
+    invoke-virtual {v1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v5
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_c
 
-    iget-object v5, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+    invoke-virtual {v1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v8
 
@@ -1218,146 +1226,80 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_c
 
     iget-object v6, v5, Landroidx/navigation/NavDestination$DeepLinkMatch;->mDestination:Landroidx/navigation/NavDestination;
 
-    if-eqz v6, :cond_11
+    invoke-virtual {v6}, Landroidx/navigation/NavDestination;->buildDeepLinkIds()[I
 
-    new-instance v8, Ljava/util/ArrayDeque;
+    move-result-object v6
 
-    invoke-direct {v8}, Ljava/util/ArrayDeque;-><init>()V
-
-    :goto_4
-    iget-object v9, v6, Landroidx/navigation/NavDestination;->mParent:Landroidx/navigation/NavGraph;
-
-    if-eqz v9, :cond_d
-
-    iget v10, v9, Landroidx/navigation/NavGraph;->mStartDestId:I
-
-    iget v11, v6, Landroidx/navigation/NavDestination;->mId:I
-
-    if-eq v10, v11, :cond_e
-
-    :cond_d
-    invoke-virtual {v8, v6}, Ljava/util/ArrayDeque;->addFirst(Ljava/lang/Object;)V
-
-    :cond_e
-    if-nez v9, :cond_10
-
-    invoke-virtual {v8}, Ljava/util/ArrayDeque;->size()I
-
-    move-result v6
-
-    new-array v6, v6, [I
-
-    invoke-virtual {v8}, Ljava/util/ArrayDeque;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    move v9, v2
-
-    :goto_5
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_f
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Landroidx/navigation/NavDestination;
-
-    add-int/lit8 v11, v9, 0x1
-
-    iget v10, v10, Landroidx/navigation/NavDestination;->mId:I
-
-    aput v10, v6, v9
-
-    move v9, v11
-
-    goto :goto_5
-
-    :cond_f
     iget-object v5, v5, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
 
     invoke-virtual {v7, v5}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    goto :goto_6
-
-    :cond_10
-    move-object v6, v9
-
-    goto :goto_4
-
-    :cond_11
-    throw v4
-
-    :cond_12
-    :goto_6
-    if-eqz v6, :cond_28
+    :cond_c
+    if-eqz v6, :cond_1f
 
     array-length v5, v6
 
-    if-nez v5, :cond_13
+    if-nez v5, :cond_d
 
-    goto/16 :goto_12
+    goto/16 :goto_e
 
-    :cond_13
-    iget-object v5, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    :cond_d
+    iget-object v5, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    move v8, v2
+    move v8, v3
 
-    :goto_7
+    :goto_4
     array-length v9, v6
 
-    if-ge v8, v9, :cond_19
+    if-ge v8, v9, :cond_13
 
     aget v9, v6, v8
 
-    if-nez v8, :cond_15
+    if-nez v8, :cond_f
 
-    iget-object v10, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v10, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
     iget v11, v10, Landroidx/navigation/NavDestination;->mId:I
 
-    if-ne v11, v9, :cond_14
+    if-ne v11, v9, :cond_e
 
-    goto :goto_8
+    goto :goto_5
 
-    :cond_14
+    :cond_e
     move-object v10, v4
 
-    goto :goto_8
+    goto :goto_5
 
-    :cond_15
-    invoke-virtual {v5, v9, v2}, Landroidx/navigation/NavGraph;->findNode(IZ)Landroidx/navigation/NavDestination;
+    :cond_f
+    invoke-virtual {v5, v9, v3}, Landroidx/navigation/NavGraph;->findNode(IZ)Landroidx/navigation/NavDestination;
 
     move-result-object v10
 
-    :goto_8
-    if-nez v10, :cond_16
+    :goto_5
+    if-nez v10, :cond_10
 
-    iget-object v5, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
     invoke-static {v5, v9}, Landroidx/navigation/NavDestination;->getDisplayName(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v5
 
-    goto :goto_a
+    goto :goto_7
 
-    :cond_16
+    :cond_10
     array-length v9, v6
 
     add-int/lit8 v9, v9, -0x1
 
-    if-eq v8, v9, :cond_18
+    if-eq v8, v9, :cond_12
 
     check-cast v10, Landroidx/navigation/NavGraph;
 
-    :goto_9
+    :goto_6
     iget v5, v10, Landroidx/navigation/NavGraph;->mStartDestId:I
 
     invoke-virtual {v10, v5}, Landroidx/navigation/NavGraph;->findNode(I)Landroidx/navigation/NavDestination;
@@ -1366,7 +1308,7 @@
 
     instance-of v5, v5, Landroidx/navigation/NavGraph;
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_11
 
     iget v5, v10, Landroidx/navigation/NavGraph;->mStartDestId:I
 
@@ -1378,21 +1320,21 @@
 
     check-cast v10, Landroidx/navigation/NavGraph;
 
-    goto :goto_9
+    goto :goto_6
 
-    :cond_17
+    :cond_11
     move-object v5, v10
 
-    :cond_18
+    :cond_12
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_7
+    goto :goto_4
 
-    :cond_19
+    :cond_13
     move-object v5, v4
 
-    :goto_a
-    if-eqz v5, :cond_1a
+    :goto_7
+    if-eqz v5, :cond_14
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1408,24 +1350,24 @@
 
     invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v5, "NavController"
 
-    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_12
+    goto/16 :goto_e
 
-    :cond_1a
+    :cond_14
     const-string v5, "android-support-nav:controller:deepLinkIntent"
 
-    invoke-virtual {v7, v5, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v7, v5, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getFlags()I
+    invoke-virtual {v1}, Landroid/content/Intent;->getFlags()I
 
     move-result v5
 
@@ -1433,174 +1375,74 @@
 
     and-int/2addr v8, v5
 
-    if-eqz v8, :cond_1e
+    if-eqz v8, :cond_15
 
     const v9, 0x8000
 
     and-int/2addr v5, v9
 
-    if-nez v5, :cond_1e
+    if-nez v5, :cond_15
 
-    invoke-virtual {v0, v9}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v9}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    iget-object v5, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v6, Landroidx/core/app/TaskStackBuilder;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6, v5}, Landroidx/core/app/TaskStackBuilder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v6, v1}, Landroidx/core/app/TaskStackBuilder;->addNextIntentWithParentStack(Landroid/content/Intent;)Landroidx/core/app/TaskStackBuilder;
 
-    move-result-object v7
+    invoke-virtual {v6}, Landroidx/core/app/TaskStackBuilder;->startActivities()V
 
-    if-nez v7, :cond_1b
+    iget-object v1, v0, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    if-eqz v1, :cond_1e
 
-    move-result-object v7
+    invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
-    invoke-virtual {v0, v7}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+    iget-object v1, v0, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
 
-    move-result-object v7
+    invoke-virtual {v1, v3, v3}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    :cond_1b
-    if-eqz v7, :cond_1c
+    goto/16 :goto_d
 
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    :cond_15
+    const-string v1, "unknown destination during deep link: "
 
-    move-result v8
+    if-eqz v8, :cond_18
 
-    :try_start_0
-    invoke-static {v5, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getParentActivityIntent(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object v7
-
-    :goto_b
-    if-eqz v7, :cond_1c
-
-    invoke-virtual {v6, v8, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    invoke-virtual {v7}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getParentActivityIntent(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object v7
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_b
-
-    :catch_0
-    move-exception v0
-
-    const-string v2, "TaskStackBuilder"
-
-    const-string v3, "Bad ComponentName while traversing activity parent metadata"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v2
-
-    :cond_1c
-    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1d
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [Landroid/content/Intent;
-
-    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Landroid/content/Intent;
-
-    new-instance v6, Landroid/content/Intent;
-
-    aget-object v7, v0, v2
-
-    invoke-direct {v6, v7}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
-
-    const v7, 0x1000c000
-
-    invoke-virtual {v6, v7}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v6
-
-    aput-object v6, v0, v2
-
-    invoke-static {v5, v0, v4}, Landroidx/core/content/ContextCompat;->startActivities(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)Z
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
-
-    if-eqz v0, :cond_27
-
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
-
-    iget-object v0, v1, Landroidx/navigation/NavController;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v0, v2, v2}, Landroid/app/Activity;->overridePendingTransition(II)V
-
-    goto/16 :goto_11
-
-    :cond_1d
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v2, "No intents added to TaskStackBuilder; cannot startActivities"
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1e
-    const-string v0, "unknown destination during deep link: "
-
-    if-eqz v8, :cond_21
-
-    iget-object v5, v1, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
 
     invoke-interface {v5}, Ljava/util/Deque;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_1f
+    if-nez v5, :cond_16
 
-    iget-object v5, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v5, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
     iget v5, v5, Landroidx/navigation/NavDestination;->mId:I
 
-    invoke-virtual {v1, v5, v3}, Landroidx/navigation/NavController;->popBackStackInternal(IZ)Z
+    invoke-virtual {v0, v5, v2}, Landroidx/navigation/NavController;->popBackStackInternal(IZ)Z
 
-    :cond_1f
-    move v5, v2
+    :cond_16
+    move v5, v3
 
-    :goto_c
+    :goto_8
     array-length v8, v6
 
-    if-ge v5, v8, :cond_27
+    if-ge v5, v8, :cond_1e
 
     add-int/lit8 v8, v5, 0x1
 
     aget v5, v6, v5
 
-    invoke-virtual {v1, v5}, Landroidx/navigation/NavController;->findDestination(I)Landroidx/navigation/NavDestination;
+    invoke-virtual {v0, v5}, Landroidx/navigation/NavController;->findDestination(I)Landroidx/navigation/NavDestination;
 
     move-result-object v9
 
-    if-eqz v9, :cond_20
+    if-eqz v9, :cond_17
 
     const/4 v13, 0x0
 
@@ -1622,70 +1464,70 @@
 
     invoke-direct/range {v10 .. v17}, Landroidx/navigation/NavOptions;-><init>(ZIZIIII)V
 
-    invoke-virtual {v1, v9, v7, v5, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
+    invoke-virtual {v0, v9, v7, v5, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
 
     move v5, v8
 
-    goto :goto_c
+    goto :goto_8
 
-    :cond_20
+    :cond_17
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v3, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v3, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v5}, Landroidx/navigation/NavDestination;->getDisplayName(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    :cond_21
-    iget-object v5, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    :cond_18
+    iget-object v5, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    move v8, v2
+    move v8, v3
 
-    :goto_d
+    :goto_9
     array-length v9, v6
 
-    if-ge v8, v9, :cond_26
+    if-ge v8, v9, :cond_1d
 
     aget v9, v6, v8
 
-    if-nez v8, :cond_22
+    if-nez v8, :cond_19
 
-    iget-object v10, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v10, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    goto :goto_e
+    goto :goto_a
 
-    :cond_22
+    :cond_19
     invoke-virtual {v5, v9}, Landroidx/navigation/NavGraph;->findNode(I)Landroidx/navigation/NavDestination;
 
     move-result-object v10
 
-    :goto_e
-    if-eqz v10, :cond_25
+    :goto_a
+    if-eqz v10, :cond_1c
 
     array-length v9, v6
 
-    sub-int/2addr v9, v3
+    sub-int/2addr v9, v2
 
-    if-eq v8, v9, :cond_24
+    if-eq v8, v9, :cond_1b
 
     check-cast v10, Landroidx/navigation/NavGraph;
 
-    :goto_f
+    :goto_b
     iget v5, v10, Landroidx/navigation/NavGraph;->mStartDestId:I
 
     invoke-virtual {v10, v5}, Landroidx/navigation/NavGraph;->findNode(I)Landroidx/navigation/NavDestination;
@@ -1694,7 +1536,7 @@
 
     instance-of v5, v5, Landroidx/navigation/NavGraph;
 
-    if-eqz v5, :cond_23
+    if-eqz v5, :cond_1a
 
     iget v5, v10, Landroidx/navigation/NavGraph;->mStartDestId:I
 
@@ -1706,14 +1548,14 @@
 
     check-cast v10, Landroidx/navigation/NavGraph;
 
-    goto :goto_f
+    goto :goto_b
 
-    :cond_23
+    :cond_1a
     move-object v5, v10
 
-    goto :goto_10
+    goto :goto_c
 
-    :cond_24
+    :cond_1b
     invoke-virtual {v10, v7}, Landroidx/navigation/NavDestination;->addInDefaultArgs(Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object v9
@@ -1722,7 +1564,7 @@
 
     const/16 v18, -0x1
 
-    iget-object v11, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v11, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
     iget v13, v11, Landroidx/navigation/NavDestination;->mId:I
 
@@ -1740,67 +1582,67 @@
 
     invoke-direct/range {v11 .. v18}, Landroidx/navigation/NavOptions;-><init>(ZIZIIII)V
 
-    invoke-virtual {v1, v10, v9, v11, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
+    invoke-virtual {v0, v10, v9, v11, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
 
-    :goto_10
+    :goto_c
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_d
+    goto :goto_9
 
-    :cond_25
+    :cond_1c
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v3, v1, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
+    iget-object v3, v0, Landroidx/navigation/NavController;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v9}, Landroidx/navigation/NavDestination;->getDisplayName(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    :cond_26
-    iput-boolean v3, v1, Landroidx/navigation/NavController;->mDeepLinkHandled:Z
+    :cond_1d
+    iput-boolean v2, v0, Landroidx/navigation/NavController;->mDeepLinkHandled:Z
 
-    :cond_27
-    :goto_11
-    move v0, v3
+    :cond_1e
+    :goto_d
+    move v1, v2
 
-    goto :goto_13
+    goto :goto_f
 
-    :cond_28
-    :goto_12
-    move v0, v2
+    :cond_1f
+    :goto_e
+    move v1, v3
 
-    :goto_13
-    if-eqz v0, :cond_29
+    :goto_f
+    if-eqz v1, :cond_20
 
-    goto :goto_14
+    goto :goto_10
 
-    :cond_29
-    move v3, v2
+    :cond_20
+    move v2, v3
 
-    :goto_14
-    if-nez v3, :cond_2a
+    :goto_10
+    if-nez v2, :cond_21
 
-    iget-object v0, v1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    iget-object v1, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
     move-object/from16 v2, p2
 
-    invoke-virtual {v1, v0, v2, v4, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
+    invoke-virtual {v0, v1, v2, v4, v4}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
 
-    :cond_2a
+    :cond_21
     return-void
 .end method
 

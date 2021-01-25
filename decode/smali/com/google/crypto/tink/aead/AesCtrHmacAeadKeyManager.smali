@@ -79,6 +79,15 @@
 
 .method public parseKey(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "byteString"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
@@ -97,7 +106,16 @@
 .end method
 
 .method public validateKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
-    .locals 1
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -108,11 +126,31 @@
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/AesCtrHmacAeadKey;->getVersion()I
 
-    move-result p1
+    move-result v0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {p1, v0}, Lcom/google/crypto/tink/subtle/Validators;->validateVersion(II)V
+    invoke-static {v0, v1}, Lcom/google/crypto/tink/subtle/Validators;->validateVersion(II)V
+
+    new-instance v0, Lcom/google/crypto/tink/aead/AesCtrKeyManager;
+
+    invoke-direct {v0}, Lcom/google/crypto/tink/aead/AesCtrKeyManager;-><init>()V
+
+    invoke-virtual {p1}, Lcom/google/crypto/tink/proto/AesCtrHmacAeadKey;->getAesCtrKey()Lcom/google/crypto/tink/proto/AesCtrKey;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/crypto/tink/aead/AesCtrKeyManager;->validateKey(Lcom/google/crypto/tink/proto/AesCtrKey;)V
+
+    new-instance v0, Lcom/google/crypto/tink/mac/HmacKeyManager;
+
+    invoke-direct {v0}, Lcom/google/crypto/tink/mac/HmacKeyManager;-><init>()V
+
+    invoke-virtual {p1}, Lcom/google/crypto/tink/proto/AesCtrHmacAeadKey;->getHmacKey()Lcom/google/crypto/tink/proto/HmacKey;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/mac/HmacKeyManager;->validateKey(Lcom/google/crypto/tink/proto/HmacKey;)V
 
     return-void
 .end method

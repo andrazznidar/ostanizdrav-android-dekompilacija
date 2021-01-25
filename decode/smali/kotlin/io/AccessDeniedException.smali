@@ -17,14 +17,16 @@
 
     and-int/lit8 p2, p4, 0x4
 
-    const/4 p4, 0x0
-
     if-eqz p2, :cond_0
 
-    move-object p3, p4
+    const/4 p3, 0x0
 
     :cond_0
-    if-eqz p1, :cond_2
+    const-string p2, "file"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -59,7 +61,7 @@
 
     const-string p4, "sb.toString()"
 
-    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -68,11 +70,4 @@
     iput-object p3, p0, Lkotlin/io/AccessDeniedException;->reason:Ljava/lang/String;
 
     return-void
-
-    :cond_2
-    const-string p1, "file"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p4
 .end method

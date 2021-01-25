@@ -43,6 +43,10 @@
 
     if-eqz p1, :cond_0
 
+    const/4 p2, 0x1
+
+    iput-boolean p2, p1, Lkotlinx/coroutines/YieldContext;->dispatcherWasUnconfined:Z
+
     return-void
 
     :cond_0
@@ -66,7 +70,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "Unconfined"
+    const-string v0, "Dispatchers.Unconfined"
 
     return-object v0
 .end method

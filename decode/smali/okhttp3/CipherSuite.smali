@@ -10,10 +10,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCipherSuite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CipherSuite.kt\nokhttp3/CipherSuite\n*L\n1#1,461:1\n*E\n"
-.end annotation
-
 
 # static fields
 .field public static final Companion:Lokhttp3/CipherSuite$Companion;

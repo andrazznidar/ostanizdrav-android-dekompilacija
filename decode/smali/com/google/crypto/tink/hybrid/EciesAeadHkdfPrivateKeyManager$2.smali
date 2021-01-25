@@ -30,6 +30,16 @@
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager;Ljava/lang/Class;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "clazz"
+        }
+    .end annotation
 
     iput-object p1, p0, Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager$2;->this$0:Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager;
 
@@ -42,6 +52,15 @@
 # virtual methods
 .method public createKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Ljava/lang/Object;
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "eciesKeyFormat"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -62,11 +81,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
 
     move-result-object v0
 
@@ -225,6 +244,15 @@
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "byteString"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
@@ -244,6 +272,15 @@
 
 .method public validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "eciesKeyFormat"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -256,7 +293,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
 
     return-void
 .end method

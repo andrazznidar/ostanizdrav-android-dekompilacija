@@ -40,21 +40,15 @@
     :try_start_0
     iget-object v0, p0, Landroidx/work/Worker$1;->this$0:Landroidx/work/Worker;
 
-    check-cast v0, Landroidx/work/impl/workers/CombineContinuationsWorker;
+    invoke-virtual {v0}, Landroidx/work/Worker;->doWork()Landroidx/work/ListenableWorker$Result;
 
-    iget-object v0, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+    move-result-object v0
 
-    iget-object v0, v0, Landroidx/work/WorkerParameters;->mInputData:Landroidx/work/Data;
+    iget-object v1, p0, Landroidx/work/Worker$1;->this$0:Landroidx/work/Worker;
 
-    new-instance v1, Landroidx/work/ListenableWorker$Result$Success;
+    iget-object v1, v1, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
-    invoke-direct {v1, v0}, Landroidx/work/ListenableWorker$Result$Success;-><init>(Landroidx/work/Data;)V
-
-    iget-object v0, p0, Landroidx/work/Worker$1;->this$0:Landroidx/work/Worker;
-
-    iget-object v0, v0, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
-
-    invoke-virtual {v0, v1}, Landroidx/work/impl/utils/futures/SettableFuture;->set(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Landroidx/work/impl/utils/futures/SettableFuture;->set(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

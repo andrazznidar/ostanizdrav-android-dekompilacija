@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRealCall.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealCall.kt\nokhttp3/internal/connection/RealCall$AsyncCall\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,536:1\n606#2,4:537\n405#2,9:541\n*E\n*S KotlinDebug\n*F\n+ 1 RealCall.kt\nokhttp3/internal/connection/RealCall$AsyncCall\n*L\n479#1,4:537\n498#1,9:541\n*E\n"
+    value = "SMAP\nRealCall.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RealCall.kt\nokhttp3/internal/connection/RealCall$AsyncCall\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,551:1\n603#2,4:552\n402#2,9:556\n*E\n*S KotlinDebug\n*F\n+ 1 RealCall.kt\nokhttp3/internal/connection/RealCall$AsyncCall\n*L\n494#1,4:552\n513#1,9:556\n*E\n"
 .end annotation
 
 
@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/connection/RealCall;Lokhttp3/Callback;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,6 +39,10 @@
             ")V"
         }
     .end annotation
+
+    const-string v0, "responseCallback"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
 
@@ -78,7 +82,7 @@
 
     const-string v0, "OkHttp "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -104,7 +108,7 @@
 
     const-string v2, "currentThread"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -212,7 +216,7 @@
 
     invoke-direct {v0, v4}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Ljava/io/IOException;->addSuppressed(Ljava/lang/Throwable;)V
+    invoke-static {v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     iget-object v4, p0, Lokhttp3/internal/connection/RealCall$AsyncCall;->responseCallback:Lokhttp3/Callback;
 

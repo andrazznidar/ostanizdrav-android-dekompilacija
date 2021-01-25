@@ -146,7 +146,7 @@
 
     iget v1, p0, Lorg/joda/time/field/OffsetDateTimeField;->iMax:I
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     return-wide p1
 .end method
@@ -154,7 +154,11 @@
 .method public add(JJ)J
     .locals 1
 
-    invoke-super {p0, p1, p2, p3, p4}, Lorg/joda/time/field/BaseDateTimeField;->add(JJ)J
+    invoke-virtual {p0}, Lorg/joda/time/DateTimeField;->getDurationField()Lorg/joda/time/DurationField;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->add(JJ)J
 
     move-result-wide p1
 
@@ -166,7 +170,7 @@
 
     iget v0, p0, Lorg/joda/time/field/OffsetDateTimeField;->iMax:I
 
-    invoke-static {p0, p3, p4, v0}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, p4, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     return-wide p1
 .end method
@@ -268,7 +272,7 @@
 
     iget v1, p0, Lorg/joda/time/field/OffsetDateTimeField;->iMax:I
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget v0, p0, Lorg/joda/time/field/OffsetDateTimeField;->iOffset:I
 

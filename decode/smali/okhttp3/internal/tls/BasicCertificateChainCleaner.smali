@@ -3,42 +3,29 @@
 .source "BasicCertificateChainCleaner.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBasicCertificateChainCleaner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BasicCertificateChainCleaner.kt\nokhttp3/internal/tls/BasicCertificateChainCleaner\n*L\n1#1,127:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public final trustRootIndex:Lokhttp3/internal/tls/TrustRootIndex;
 
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/tls/TrustRootIndex;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "trustRootIndex"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lokhttp3/internal/tls/CertificateChainCleaner;-><init>()V
 
     iput-object p1, p0, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->trustRootIndex:Lokhttp3/internal/tls/TrustRootIndex;
 
     return-void
-
-    :cond_0
-    const-string p1, "trustRootIndex"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
 .method public clean(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,11 +47,13 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "chain"
 
-    if-eqz p1, :cond_b
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_a
+    const-string v0, "hostname"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p2, Ljava/util/ArrayDeque;
 
@@ -80,124 +69,124 @@
 
     const-string v1, "queue.removeFirst()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/16 v0, 0x9
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    move v2, v1
+    move v1, v0
 
     :goto_0
-    if-ge v1, v0, :cond_9
+    const/16 v2, 0x9
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    const/4 v4, 0x1
-
-    sub-int/2addr v3, v4
-
-    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    const-string v5, "null cannot be cast to non-null type java.security.cert.X509Certificate"
-
-    if-eqz v3, :cond_8
-
-    check-cast v3, Ljava/security/cert/X509Certificate;
-
-    iget-object v6, p0, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->trustRootIndex:Lokhttp3/internal/tls/TrustRootIndex;
-
-    invoke-interface {v6, v3}, Lokhttp3/internal/tls/TrustRootIndex;->findByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_3
+    if-ge v0, v2, :cond_9
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-gt v2, v4, :cond_0
+    const/4 v3, 0x1
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sub-int/2addr v2, v3
 
-    move-result v2
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    xor-int/2addr v2, v4
+    move-result-object v2
 
-    if-eqz v2, :cond_1
+    const-string v4, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+
+    if-eqz v2, :cond_8
+
+    check-cast v2, Ljava/security/cert/X509Certificate;
+
+    iget-object v5, p0, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->trustRootIndex:Lokhttp3/internal/tls/TrustRootIndex;
+
+    invoke-interface {v5, v2}, Lokhttp3/internal/tls/TrustRootIndex;->findByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_3
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-gt v1, v3, :cond_0
+
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    xor-int/2addr v1, v3
+
+    if-eqz v1, :cond_1
 
     :cond_0
-    invoke-interface {p1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    invoke-virtual {p0, v6, v6}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->verifySignature(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z
+    invoke-virtual {p0, v5, v5}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->verifySignature(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     return-object p1
 
     :cond_2
-    move v2, v4
+    move v1, v3
 
     goto :goto_1
 
     :cond_3
     invoke-interface {p2}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v6, "queue.iterator()"
+    const-string v5, "queue.iterator()"
 
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_4
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_6
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_5
+
+    check-cast v5, Ljava/security/cert/X509Certificate;
+
+    invoke-virtual {p0, v2, v5}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->verifySignature(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_4
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
-    move-result-object v6
-
-    if-eqz v6, :cond_5
-
-    check-cast v6, Ljava/security/cert/X509Certificate;
-
-    invoke-virtual {p0, v3, v6}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;->verifySignature(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    invoke-interface {v4}, Ljava/util/Iterator;->remove()V
-
-    invoke-interface {p1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_5
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {p1, v5}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_6
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     return-object p1
 
@@ -212,7 +201,7 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -223,9 +212,9 @@
     throw p1
 
     :cond_8
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {p1, v5}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -249,20 +238,6 @@
     invoke-direct {p2, p1}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_a
-    const-string p1, "hostname"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_b
-    const-string p1, "chain"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z

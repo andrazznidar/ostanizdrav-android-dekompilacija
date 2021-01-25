@@ -13,10 +13,6 @@
     name = "Builder"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Connection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Connection.kt\nokhttp3/internal/http2/Http2Connection$Builder\n*L\n1#1,1006:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public client:Z
@@ -40,9 +36,11 @@
 
 # direct methods
 .method public constructor <init>(ZLokhttp3/internal/concurrent/TaskRunner;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p2, :cond_0
+    const-string v0, "taskRunner"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -59,13 +57,4 @@
     iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$Builder;->pushObserver:Lokhttp3/internal/http2/PushObserver;
 
     return-void
-
-    :cond_0
-    const-string p1, "taskRunner"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

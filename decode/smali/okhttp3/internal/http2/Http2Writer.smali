@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Writer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Writer.kt\nokhttp3/internal/http2/Http2Writer\n*L\n1#1,317:1\n*E\n"
+    value = "SMAP\nHttp2Writer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Writer.kt\nokhttp3/internal/http2/Http2Writer\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,317:1\n1#2:318\n*E\n"
 .end annotation
 
 
@@ -52,6 +52,10 @@
 .method public constructor <init>(Lokio/BufferedSink;Z)V
     .locals 2
 
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lokio/BufferedSink;
@@ -70,11 +74,11 @@
 
     new-instance p2, Lokhttp3/internal/http2/Hpack$Writer;
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    invoke-direct {p2, v1, v1, p1, v0}, Lokhttp3/internal/http2/Hpack$Writer;-><init>(IZLokio/Buffer;I)V
+    invoke-direct {p2, v0, v0, p1, v1}, Lokhttp3/internal/http2/Hpack$Writer;-><init>(IZLokio/Buffer;I)V
 
     iput-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
@@ -96,7 +100,7 @@
     :try_start_0
     const-string v0, "peerSettings"
 
-    if-eqz p1, :cond_8
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
@@ -226,15 +230,8 @@
     invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_8
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :catchall_0
     move-exception p1
@@ -290,7 +287,7 @@
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const/4 v0, 0x0
 
@@ -306,34 +303,24 @@
     :goto_0
     invoke-virtual {p0, p2, p4, v0, p1}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIII)V
 
-    if-lez p4, :cond_2
+    if-lez p4, :cond_1
 
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lokio/BufferedSink;
 
-    if-eqz p3, :cond_1
+    invoke-static {p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     int-to-long v0, p4
 
     invoke-interface {p1, p3, v0, v1}, Lokio/Sink;->write(Lokio/Buffer;J)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
-    :goto_1
+    :cond_1
     monitor-exit p0
 
     return-void
 
-    :cond_3
+    :cond_2
     :try_start_1
     new-instance p1, Ljava/io/IOException;
 
@@ -500,7 +487,7 @@
     :cond_3
     const-string p2, "reserved bit set: "
 
-    invoke-static {p2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -517,7 +504,7 @@
     :cond_4
     const-string p1, "FRAME_SIZE_ERROR length > "
 
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -557,6 +544,14 @@
     monitor-enter p0
 
     :try_start_0
+    const-string v0, "errorCode"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "debugData"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_4
@@ -680,7 +675,7 @@
     :try_start_0
     const-string v0, "headerBlock"
 
-    if-eqz p3, :cond_4
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
@@ -753,15 +748,8 @@
     invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_4
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :catchall_0
     move-exception p1
@@ -853,6 +841,10 @@
     monitor-enter p0
 
     :try_start_0
+    const-string v0, "errorCode"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_2

@@ -20,6 +20,7 @@
         <item name="colorPrimaryDark">@color/colorStableDark</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.ContactDiary" parent="@style/MaterialAppTheme.NoActionBar" />
     <style name="AppTheme.Launcher" parent="@style/AppTheme.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
@@ -1160,7 +1161,7 @@
         <item name="android:textColor">?editTextColor</item>
         <item name="android:background">?editTextBackground</item>
         <item name="android:dropDownSelector">?listChoiceBackgroundIndicator</item>
-        <item name="android:popupBackground">@drawable/APKTOOL_DUMMY_3f</item>
+        <item name="android:popupBackground">@drawable/APKTOOL_DUMMY_40</item>
         <item name="android:textCursorDrawable">@drawable/abc_text_cursor_material</item>
     </style>
     <style name="Base.V7.Widget.AppCompat.EditText" parent="@android:style/Widget.EditText">
@@ -1526,6 +1527,17 @@
     <style name="MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked" parent="@style/Base.MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:layout_gravity">center</item>
         <item name="android:textAlignment">center</item>
+    </style>
+    <style name="MaterialAppTheme" parent="@style/Theme.MaterialComponents.Light">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="alertDialogTheme">@style/diaryDialog</item>
+        <item name="colorPrimary">@color/colorBrandSecondary</item>
+        <item name="colorPrimaryDark">@color/colorStableDark</item>
+    </style>
+    <style name="MaterialAppTheme.NoActionBar" parent="@style/MaterialAppTheme">
+        <item name="dialogTheme">@style/diaryDialog</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
     <style name="Platform.AppCompat" parent="@style/Platform.V21.AppCompat" />
     <style name="Platform.AppCompat.Light" parent="@style/Platform.V21.AppCompat.Light" />
@@ -2243,6 +2255,11 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
+    <style name="ThemeOverlay.App.ExtendedFloatingActionButton" parent="">
+        <item name="colorOnSecondary">@color/colorTextEmphasizedButton</item>
+        <item name="colorOnSurface">@color/colorAccentTintButtonPressed</item>
+        <item name="colorSecondary">@color/colorAccentTintButton</item>
+    </style>
     <style name="ThemeOverlay.AppCompat" parent="@style/Base.ThemeOverlay.AppCompat" />
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="@style/Base.ThemeOverlay.AppCompat.ActionBar" />
     <style name="ThemeOverlay.AppCompat.Dark" parent="@style/Base.ThemeOverlay.AppCompat.Dark" />
@@ -2395,6 +2412,9 @@
     <style name="ThemeOverlay.MaterialComponents.Toolbar.Surface" parent="">
         <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
         <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
+    </style>
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.ExtendedFloatingActionButton</item>
     </style>
     <style name="Widget.AppCompat.ActionBar" parent="@style/Base.Widget.AppCompat.ActionBar" />
     <style name="Widget.AppCompat.ActionBar.Solid" parent="@style/Base.Widget.AppCompat.ActionBar.Solid" />
@@ -3138,6 +3158,24 @@
         <item name="android:paddingEnd">@dimen/spacing_small</item>
         <item name="android:backgroundTint">@color/button_main_tracing</item>
     </style>
+    <style name="calendarMonthText">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/colorCalendarMonthText</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+    <style name="calendarWeekDayNormal">
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/colorTextPrimary2</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+    <style name="calendarWeekDaySelected">
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/colorCalendarTodayText</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">2.0</item>
+    </style>
     <style name="card">
         <item name="android:background">@drawable/card</item>
         <item name="android:padding">@dimen/card_padding</item>
@@ -3155,6 +3193,13 @@
         <item name="android:padding">@dimen/card_padding</item>
         <item name="android:backgroundTint">@color/colorSurface2</item>
     </style>
+    <style name="contactDiaryCard">
+        <item name="android:background">@drawable/contact_diary_card</item>
+    </style>
+    <style name="contactDiaryListItem" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorTextPrimary1</item>
+    </style>
     <style name="dialog" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
         <item name="buttonBarNegativeButtonStyle">@style/dialogNegativeButtonStyle</item>
         <item name="buttonBarPositiveButtonStyle">@style/dialogPositiveButtonStyle</item>
@@ -3164,6 +3209,14 @@
     </style>
     <style name="dialogPositiveButtonStyle" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/colorTextTint</item>
+    </style>
+    <style name="diaryButtonNegative" parent="@style/Widget.MaterialComponents.Button.TextButton" />
+    <style name="diaryDialog" parent="@style/Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/diaryDialogButton</item>
+        <item name="buttonBarPositiveButtonStyle">@style/diaryDialogButton</item>
+    </style>
+    <style name="diaryDialogButton" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorAccentTintButton</item>
     </style>
     <style name="fadingScrollView">
         <item name="android:fadingEdgeLength">50.0dip</item>
@@ -3183,11 +3236,17 @@
     <style name="headline5" parent="@style/TextAppearance.MaterialComponents.Headline5">
         <item name="android:textColor">@color/colorTextPrimary1</item>
     </style>
+    <style name="headline5Bold" parent="@style/TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="headline5Tint" parent="@style/headline5">
         <item name="android:textColor">@color/colorTextTint</item>
     </style>
     <style name="headline6" parent="@style/TextAppearance.MaterialComponents.Headline6">
         <item name="android:textColor">@color/colorTextPrimary1</item>
+    </style>
+    <style name="headline6Sixteen" parent="@style/TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/colorTextSixteen</item>
     </style>
     <style name="icon">
         <item name="android:tint">@color/colorTextPrimary1</item>
@@ -3221,6 +3280,17 @@
     <style name="rowSettings" parent="@style/row">
         <item name="android:paddingStart">@dimen/match_constraint</item>
     </style>
+    <style name="selectionButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">left</item>
+        <item name="android:background">@drawable/card</item>
+        <item name="android:padding">@dimen/card_padding</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.0125</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
     <style name="subtitle" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textColor">@color/colorTextPrimary1</item>
     </style>
@@ -3229,6 +3299,9 @@
     </style>
     <style name="subtitleSemanticRed" parent="@style/subtitle">
         <item name="android:textColor">@color/colorTextSemanticRed</item>
+    </style>
+    <style name="subtitleSixteen" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/colorTextSixteen</item>
     </style>
     <style name="switchBase" parent="@style/Widget.AppCompat.CompoundButton.Switch">
         <item name="android:colorControlActivated">@color/colorAccentTintIcon</item>
@@ -3256,6 +3329,10 @@
         <item name="android:singleLine">true</item>
         <item name="android:inputType">textPassword</item>
         <item name="android:alpha">0.0</item>
+    </style>
+    <style name="targetLayout">
+        <item name="android:background">@drawable/card</item>
+        <item name="android:padding">@dimen/card_padding</item>
     </style>
     <style name="zxing_CaptureTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
 </resources>

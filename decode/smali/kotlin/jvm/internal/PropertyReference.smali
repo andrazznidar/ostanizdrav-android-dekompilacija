@@ -15,10 +15,42 @@
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 7
+
+    const/4 v0, 0x1
+
+    and-int/2addr p5, v0
+
+    if-ne p5, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    move v6, v0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v1 .. v6}, Lkotlin/jvm/internal/CallableReference;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 6
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -35,41 +67,33 @@
 
     check-cast p1, Lkotlin/jvm/internal/PropertyReference;
 
-    move-object v1, p0
+    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
-    check-cast v1, Lkotlin/jvm/internal/PropertyReference1Impl;
+    move-result-object v1
 
-    iget-object v3, v1, Lkotlin/jvm/internal/PropertyReference1Impl;->owner:Lkotlin/reflect/KDeclarationContainer;
+    invoke-virtual {p1}, Lkotlin/jvm/internal/CallableReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
-    move-object v4, p1
+    move-result-object v3
 
-    check-cast v4, Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v4, v4, Lkotlin/jvm/internal/PropertyReference1Impl;->owner:Lkotlin/reflect/KDeclarationContainer;
+    move-result v1
 
-    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    if-eqz v1, :cond_1
 
-    move-result v3
+    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->name:Ljava/lang/String;
 
-    if-eqz v3, :cond_1
+    iget-object v3, p1, Lkotlin/jvm/internal/CallableReference;->name:Ljava/lang/String;
 
-    iget-object v3, v1, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object v4, p1
+    move-result v1
 
-    check-cast v4, Lkotlin/jvm/internal/PropertyReference1Impl;
+    if-eqz v1, :cond_1
 
-    iget-object v5, v4, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
+    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->signature:Ljava/lang/String;
 
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    iget-object v1, v1, Lkotlin/jvm/internal/PropertyReference1Impl;->signature:Ljava/lang/String;
-
-    iget-object v3, v4, Lkotlin/jvm/internal/PropertyReference1Impl;->signature:Ljava/lang/String;
+    iget-object v3, p1, Lkotlin/jvm/internal/CallableReference;->signature:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -139,37 +163,35 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
-    move-object v0, p0
+    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
-    check-cast v0, Lkotlin/jvm/internal/PropertyReference1Impl;
+    move-result-object v0
 
-    iget-object v1, v0, Lkotlin/jvm/internal/PropertyReference1Impl;->owner:Lkotlin/reflect/KDeclarationContainer;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->name:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
+    add-int/2addr v1, v0
+
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v2, v0, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v1
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v0, v0, Lkotlin/jvm/internal/PropertyReference1Impl;->signature:Ljava/lang/String;
+    iget-object v0, p0, Lkotlin/jvm/internal/CallableReference;->signature:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     return v0
 .end method
@@ -192,15 +214,11 @@
     :cond_0
     const-string v0, "property "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    move-object v1, p0
-
-    check-cast v1, Lkotlin/jvm/internal/PropertyReference1Impl;
-
-    iget-object v1, v1, Lkotlin/jvm/internal/PropertyReference1Impl;->name:Ljava/lang/String;
+    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->name:Ljava/lang/String;
 
     const-string v2, " (Kotlin reflection is not available)"
 

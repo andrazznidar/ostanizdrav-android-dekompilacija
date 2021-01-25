@@ -206,9 +206,29 @@
     invoke-virtual/range {v2 .. v7}, Landroidx/appcompat/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;Landroid/graphics/drawable/Drawable;)V
 
     :goto_2
+    iget-object v4, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mNeutralButtonText:Ljava/lang/CharSequence;
+
+    if-nez v4, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    const/4 v3, -0x3
+
+    iget-object v5, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mNeutralButtonListener:Landroid/content/DialogInterface$OnClickListener;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v2, v8
+
+    invoke-virtual/range {v2 .. v7}, Landroidx/appcompat/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;Landroid/graphics/drawable/Drawable;)V
+
+    :goto_3
     iget-object v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mAdapter:Landroid/widget/ListAdapter;
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_e
 
     iget-object v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mInflater:Landroid/view/LayoutInflater;
 
@@ -222,23 +242,23 @@
 
     iget-boolean v3, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mIsSingleChoice:Z
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_a
 
     iget v3, v8, Landroidx/appcompat/app/AlertController;->mSingleChoiceItemLayout:I
-
-    goto :goto_3
-
-    :cond_9
-    iget v3, v8, Landroidx/appcompat/app/AlertController;->mListItemLayout:I
-
-    :goto_3
-    iget-object v4, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mAdapter:Landroid/widget/ListAdapter;
-
-    if-eqz v4, :cond_a
 
     goto :goto_4
 
     :cond_a
+    iget v3, v8, Landroidx/appcompat/app/AlertController;->mListItemLayout:I
+
+    :goto_4
+    iget-object v4, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mAdapter:Landroid/widget/ListAdapter;
+
+    if-eqz v4, :cond_b
+
+    goto :goto_5
+
+    :cond_b
     new-instance v4, Landroidx/appcompat/app/AlertController$CheckedItemAdapter;
 
     iget-object v5, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
@@ -247,7 +267,7 @@
 
     invoke-direct {v4, v5, v3, v6, v9}, Landroidx/appcompat/app/AlertController$CheckedItemAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/CharSequence;)V
 
-    :goto_4
+    :goto_5
     iput-object v4, v8, Landroidx/appcompat/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
 
     iget v3, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCheckedItem:I
@@ -256,7 +276,7 @@
 
     iget-object v3, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnClickListener:Landroid/content/DialogInterface$OnClickListener;
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
     new-instance v3, Landroidx/appcompat/app/AlertController$AlertParams$3;
 
@@ -264,24 +284,24 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    :cond_b
+    :cond_c
     iget-boolean v3, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mIsSingleChoice:Z
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
     invoke-virtual {v2, v11}, Landroid/widget/ListView;->setChoiceMode(I)V
 
-    :cond_c
+    :cond_d
     iput-object v2, v8, Landroidx/appcompat/app/AlertController;->mListView:Landroid/widget/ListView;
 
-    :cond_d
+    :cond_e
     iget-object v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_10
 
     iget-boolean v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mViewSpacingSpecified:Z
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_f
 
     iput-object v2, v8, Landroidx/appcompat/app/AlertController;->mView:Landroid/view/View;
 
@@ -297,21 +317,21 @@
 
     iput v10, v8, Landroidx/appcompat/app/AlertController;->mViewSpacingBottom:I
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_e
+    :cond_f
     iput-object v2, v8, Landroidx/appcompat/app/AlertController;->mView:Landroid/view/View;
 
     iput v10, v8, Landroidx/appcompat/app/AlertController;->mViewLayoutResId:I
 
     iput-boolean v10, v8, Landroidx/appcompat/app/AlertController;->mViewSpacingSpecified:Z
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_f
+    :cond_10
     iget v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mViewLayoutResId:I
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_11
 
     iput-object v9, v8, Landroidx/appcompat/app/AlertController;->mView:Landroid/view/View;
 
@@ -319,8 +339,8 @@
 
     iput-boolean v10, v8, Landroidx/appcompat/app/AlertController;->mViewSpacingSpecified:Z
 
-    :cond_10
-    :goto_5
+    :cond_11
+    :goto_6
     iget-object v1, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
 
     iget-boolean v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
@@ -331,11 +351,11 @@
 
     iget-boolean v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_12
 
     invoke-virtual {v0, v11}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    :cond_11
+    :cond_12
     iget-object v1, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
 
     iget-object v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnCancelListener:Landroid/content/DialogInterface$OnCancelListener;
@@ -352,10 +372,62 @@
 
     iget-object v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnKeyListener:Landroid/content/DialogInterface$OnKeyListener;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    :cond_12
+    :cond_13
     return-object v0
+.end method
+
+.method public setMessage(I)Landroidx/appcompat/app/AlertDialog$Builder;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+
+    iget-object v1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
+
+    return-object p0
+.end method
+
+.method public setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroidx/appcompat/app/AlertDialog$Builder;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+
+    iget-object v1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
+
+    iget-object p1, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+
+    iput-object p2, p1, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
+
+    return-object p0
+.end method
+
+.method public setTitle(I)Landroidx/appcompat/app/AlertDialog$Builder;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+
+    iget-object v1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
+
+    return-object p0
 .end method

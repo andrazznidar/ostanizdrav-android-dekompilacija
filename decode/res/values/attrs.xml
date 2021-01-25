@@ -1037,6 +1037,10 @@
     <attr name="tabTextColor" format="color" />
     <attr name="tabUnboundedRipple" format="boolean" />
     <attr name="targetPackage" format="string" />
+    <attr name="test_result_section_content" format="string" />
+    <attr name="test_result_section_headline" format="string" />
+    <attr name="test_result_section_registered_at_text" format="string" />
+    <attr name="test_result_section_status_icon" format="reference" />
     <attr name="textAllCaps" format="reference|boolean" />
     <attr name="textAppearanceBody1" format="reference" />
     <attr name="textAppearanceBody2" format="reference" />

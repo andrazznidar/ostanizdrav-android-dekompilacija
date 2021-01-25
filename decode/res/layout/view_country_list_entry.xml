@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginBottom="@dimen/spacing_tiny"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/country_list_entry_image" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_country_eu" />
+    <TextView android:id="@id/country_list_entry_label" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="TextView" android:layout_marginStart="48.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/subtitle" />
+    <include android:id="@id/divider" android:layout_width="0.0dip" android:layout_height="@dimen/card_divider" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" layout="@layout/include_divider" />
+</androidx.constraintlayout.widget.ConstraintLayout>

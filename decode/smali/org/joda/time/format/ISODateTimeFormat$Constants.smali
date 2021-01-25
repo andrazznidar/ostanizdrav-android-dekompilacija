@@ -357,7 +357,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -386,7 +388,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -417,7 +421,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -448,7 +454,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -479,7 +487,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -534,7 +544,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
@@ -559,7 +571,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->append(Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 

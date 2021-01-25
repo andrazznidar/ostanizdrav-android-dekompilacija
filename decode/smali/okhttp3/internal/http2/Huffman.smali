@@ -622,9 +622,7 @@
     :goto_0
     const/16 v1, 0x8
 
-    const/4 v2, 0x0
-
-    if-le p3, v1, :cond_2
+    if-le p3, v1, :cond_1
 
     add-int/lit8 p3, p3, -0x8
 
@@ -634,7 +632,7 @@
 
     iget-object p1, p1, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-eqz p1, :cond_1
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     aget-object v2, p1, v1
 
@@ -652,11 +650,6 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
-
-    :cond_2
     sub-int/2addr v1, p3
 
     shl-int/2addr p2, v1
@@ -669,16 +662,11 @@
 
     iget-object p1, p1, Lokhttp3/internal/http2/Huffman$Node;->children:[Lokhttp3/internal/http2/Huffman$Node;
 
-    if-eqz p1, :cond_3
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     add-int/2addr p3, p2
 
-    invoke-static {p1, p2, p3, v0}, Ljava/util/Arrays;->fill([Ljava/lang/Object;IILjava/lang/Object;)V
+    invoke-static {p1, v0, p2, p3}, Lkotlin/collections/ArraysKt___ArraysKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
 
     return-void
-
-    :cond_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v2
 .end method

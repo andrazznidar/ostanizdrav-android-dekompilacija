@@ -174,6 +174,18 @@
     return p0
 .end method
 
+.method public static encode(Ljava/lang/CharSequence;[BII)I
+    .locals 1
+
+    sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
+
+    invoke-virtual {v0, p0, p1, p2, p3}, Lcom/google/protobuf/Utf8$Processor;->encodeUtf8(Ljava/lang/CharSequence;[BII)I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static encodedLength(Ljava/lang/CharSequence;)I
     .locals 8
 
@@ -295,7 +307,7 @@
 
     const-string v0, "UTF-8 length does not fit in int: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

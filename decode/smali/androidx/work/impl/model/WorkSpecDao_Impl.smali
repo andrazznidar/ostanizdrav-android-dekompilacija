@@ -557,6 +557,650 @@
     throw p1
 .end method
 
+.method public delete(Ljava/lang/String;)V
+    .locals 2
+
+    iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    if-nez p1, :cond_0
+
+    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, v1, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    :goto_0
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    :try_start_0
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
+
+    iget-object v1, p1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    if-ne v0, v1, :cond_1
+
+    iget-object p1, p1, Landroidx/room/SharedSQLiteStatement;->mLock:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    :cond_1
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    throw p1
+.end method
+
+.method public getAllEligibleWorkSpecsForScheduling(I)Ljava/util/List;
+    .locals 33
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List<",
+            "Landroidx/work/impl/model/WorkSpec;",
+            ">;"
+        }
+    .end annotation
+
+    move-object/from16 v1, p0
+
+    const-string v0, "SELECT `required_network_type`, `requires_charging`, `requires_device_idle`, `requires_battery_not_low`, `requires_storage_not_low`, `trigger_content_update_delay`, `trigger_max_content_delay`, `content_uri_triggers`, `WorkSpec`.`id` AS `id`, `WorkSpec`.`state` AS `state`, `WorkSpec`.`worker_class_name` AS `worker_class_name`, `WorkSpec`.`input_merger_class_name` AS `input_merger_class_name`, `WorkSpec`.`input` AS `input`, `WorkSpec`.`output` AS `output`, `WorkSpec`.`initial_delay` AS `initial_delay`, `WorkSpec`.`interval_duration` AS `interval_duration`, `WorkSpec`.`flex_duration` AS `flex_duration`, `WorkSpec`.`run_attempt_count` AS `run_attempt_count`, `WorkSpec`.`backoff_policy` AS `backoff_policy`, `WorkSpec`.`backoff_delay_duration` AS `backoff_delay_duration`, `WorkSpec`.`period_start_time` AS `period_start_time`, `WorkSpec`.`minimum_retention_duration` AS `minimum_retention_duration`, `WorkSpec`.`schedule_requested_at` AS `schedule_requested_at`, `WorkSpec`.`run_in_foreground` AS `run_in_foreground` FROM workspec WHERE state=0 ORDER BY period_start_time LIMIT ?"
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v3
+
+    move/from16 v0, p1
+
+    int-to-long v4, v0
+
+    invoke-virtual {v3, v2, v4, v5}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
+
+    iget-object v0, v1, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object v0, v1, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-static {v0, v3, v4, v5}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+
+    move-result-object v5
+
+    :try_start_0
+    const-string v0, "required_network_type"
+
+    invoke-static {v5, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v0
+
+    const-string v6, "requires_charging"
+
+    invoke-static {v5, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v6
+
+    const-string v7, "requires_device_idle"
+
+    invoke-static {v5, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v7
+
+    const-string v8, "requires_battery_not_low"
+
+    invoke-static {v5, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v8
+
+    const-string v9, "requires_storage_not_low"
+
+    invoke-static {v5, v9}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v9
+
+    const-string v10, "trigger_content_update_delay"
+
+    invoke-static {v5, v10}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v10
+
+    const-string v11, "trigger_max_content_delay"
+
+    invoke-static {v5, v11}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v11
+
+    const-string v12, "content_uri_triggers"
+
+    invoke-static {v5, v12}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v12
+
+    const-string v13, "id"
+
+    invoke-static {v5, v13}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v13
+
+    const-string v14, "state"
+
+    invoke-static {v5, v14}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v14
+
+    const-string v15, "worker_class_name"
+
+    invoke-static {v5, v15}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v15
+
+    const-string v2, "input_merger_class_name"
+
+    invoke-static {v5, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v2
+
+    const-string v4, "input"
+
+    invoke-static {v5, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v4
+
+    const-string v1, "output"
+
+    invoke-static {v5, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    move-object/from16 v16, v3
+
+    :try_start_1
+    const-string v3, "initial_delay"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v17, v3
+
+    const-string v3, "interval_duration"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v18, v3
+
+    const-string v3, "flex_duration"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v19, v3
+
+    const-string v3, "run_attempt_count"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v20, v3
+
+    const-string v3, "backoff_policy"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v21, v3
+
+    const-string v3, "backoff_delay_duration"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v22, v3
+
+    const-string v3, "period_start_time"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v23, v3
+
+    const-string v3, "minimum_retention_duration"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v24, v3
+
+    const-string v3, "schedule_requested_at"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v25, v3
+
+    const-string v3, "run_in_foreground"
+
+    invoke-static {v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    move/from16 v26, v3
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    move/from16 v27, v1
+
+    invoke-interface {v5}, Landroid/database/Cursor;->getCount()I
+
+    move-result v1
+
+    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    :goto_0
+    invoke-interface {v5}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-interface {v5, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    move/from16 v28, v13
+
+    invoke-interface {v5, v15}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    move/from16 v29, v15
+
+    new-instance v15, Landroidx/work/Constraints;
+
+    invoke-direct {v15}, Landroidx/work/Constraints;-><init>()V
+
+    invoke-interface {v5, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v30
+
+    move/from16 v31, v0
+
+    invoke-static/range {v30 .. v30}, Landroidx/transition/ViewGroupUtilsApi14;->intToNetworkType(I)Landroidx/work/NetworkType;
+
+    move-result-object v0
+
+    iput-object v0, v15, Landroidx/work/Constraints;->mRequiredNetworkType:Landroidx/work/NetworkType;
+
+    invoke-interface {v5, v6}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_1
+    iput-boolean v0, v15, Landroidx/work/Constraints;->mRequiresCharging:Z
+
+    invoke-interface {v5, v7}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_2
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_2
+    iput-boolean v0, v15, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
+
+    invoke-interface {v5, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const/4 v0, 0x1
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_3
+    iput-boolean v0, v15, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
+
+    invoke-interface {v5, v9}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x1
+
+    goto :goto_4
+
+    :cond_3
+    const/4 v0, 0x0
+
+    :goto_4
+    iput-boolean v0, v15, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
+
+    move v0, v6
+
+    move/from16 v30, v7
+
+    invoke-interface {v5, v10}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v6
+
+    iput-wide v6, v15, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
+
+    invoke-interface {v5, v11}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v6
+
+    iput-wide v6, v15, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
+
+    invoke-interface {v5, v12}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v6
+
+    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+
+    move-result-object v6
+
+    iput-object v6, v15, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
+
+    new-instance v6, Landroidx/work/impl/model/WorkSpec;
+
+    invoke-direct {v6, v1, v13}, Landroidx/work/impl/model/WorkSpec;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {v5, v14}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v1
+
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
+
+    move-result-object v1
+
+    iput-object v1, v6, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+
+    invoke-interface {v5, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v6, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
+
+    invoke-interface {v5, v4}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
+
+    move-result-object v1
+
+    iput-object v1, v6, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
+
+    move/from16 v1, v27
+
+    invoke-interface {v5, v1}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v7
+
+    invoke-static {v7}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
+
+    move-result-object v7
+
+    iput-object v7, v6, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
+
+    move v13, v0
+
+    move/from16 v27, v1
+
+    move/from16 v7, v17
+
+    invoke-interface {v5, v7}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    iput-wide v0, v6, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
+
+    move/from16 v17, v2
+
+    move/from16 v0, v18
+
+    invoke-interface {v5, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v1
+
+    iput-wide v1, v6, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+
+    move/from16 v18, v7
+
+    move v2, v8
+
+    move/from16 v1, v19
+
+    invoke-interface {v5, v1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v7
+
+    iput-wide v7, v6, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
+
+    move/from16 v7, v20
+
+    invoke-interface {v5, v7}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    iput v8, v6, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
+
+    move/from16 v8, v21
+
+    invoke-interface {v5, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v19
+
+    move/from16 v20, v0
+
+    invoke-static/range {v19 .. v19}, Landroidx/transition/ViewGroupUtilsApi14;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+
+    move-result-object v0
+
+    iput-object v0, v6, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+
+    move/from16 v19, v1
+
+    move/from16 v21, v2
+
+    move/from16 v0, v22
+
+    invoke-interface {v5, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v1
+
+    iput-wide v1, v6, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
+
+    move v2, v7
+
+    move/from16 v22, v8
+
+    move/from16 v1, v23
+
+    invoke-interface {v5, v1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v7
+
+    iput-wide v7, v6, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+
+    move v8, v0
+
+    move/from16 v23, v1
+
+    move/from16 v7, v24
+
+    invoke-interface {v5, v7}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    iput-wide v0, v6, Landroidx/work/impl/model/WorkSpec;->minimumRetentionDuration:J
+
+    move/from16 v24, v2
+
+    move/from16 v0, v25
+
+    invoke-interface {v5, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v1
+
+    iput-wide v1, v6, Landroidx/work/impl/model/WorkSpec;->scheduleRequestedAt:J
+
+    move/from16 v1, v26
+
+    invoke-interface {v5, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    const/4 v2, 0x1
+
+    goto :goto_5
+
+    :cond_4
+    const/4 v2, 0x0
+
+    :goto_5
+    iput-boolean v2, v6, Landroidx/work/impl/model/WorkSpec;->runInForeground:Z
+
+    iput-object v15, v6, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
+
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move/from16 v25, v0
+
+    move/from16 v26, v1
+
+    move v6, v13
+
+    move/from16 v2, v17
+
+    move/from16 v17, v18
+
+    move/from16 v18, v20
+
+    move/from16 v20, v24
+
+    move/from16 v13, v28
+
+    move/from16 v15, v29
+
+    move/from16 v0, v31
+
+    move/from16 v24, v7
+
+    move/from16 v7, v30
+
+    move/from16 v32, v22
+
+    move/from16 v22, v8
+
+    move/from16 v8, v21
+
+    move/from16 v21, v32
+
+    goto/16 :goto_0
+
+    :cond_5
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual/range {v16 .. v16}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    return-object v3
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_6
+
+    :catchall_1
+    move-exception v0
+
+    move-object/from16 v16, v3
+
+    :goto_6
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual/range {v16 .. v16}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    throw v0
+.end method
+
 .method public getAllUnfinishedWork()Ljava/util/List;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
@@ -881,7 +1525,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/transition/ViewGroupUtilsApi14;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -971,7 +1615,7 @@
 
     move-result-object v6
 
-    invoke-static {v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v6
 
@@ -985,7 +1629,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -1069,7 +1713,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/transition/ViewGroupUtilsApi14;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -1446,7 +2090,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/transition/ViewGroupUtilsApi14;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -1538,7 +2182,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v5
 
@@ -1552,7 +2196,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -1636,7 +2280,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/transition/ViewGroupUtilsApi14;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -2013,7 +2657,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/transition/ViewGroupUtilsApi14;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -2105,7 +2749,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v5
 
@@ -2119,7 +2763,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -2203,7 +2847,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/transition/ViewGroupUtilsApi14;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -2384,7 +3028,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v2
     :try_end_0
@@ -2814,7 +3458,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -2900,7 +3544,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v0
 
@@ -2914,7 +3558,7 @@
 
     move-result v3
 
-    invoke-static {v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v3
 
@@ -2984,7 +3628,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v1
 
@@ -3074,6 +3718,122 @@
     invoke-virtual/range {v16 .. v16}, Landroidx/room/RoomSQLiteQuery;->release()V
 
     throw v0
+.end method
+
+.method public getWorkSpecIdAndStatesForName(Ljava/lang/String;)Ljava/util/List;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List<",
+            "Landroidx/work/impl/model/WorkSpec$IdAndState;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "SELECT id, state FROM workspec WHERE id IN (SELECT work_spec_id FROM workname WHERE name=?)"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v0
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {v0, v1}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, v1, p1}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
+
+    :goto_0
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v1, v2}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+
+    move-result-object p1
+
+    :try_start_0
+    const-string v1, "id"
+
+    invoke-static {p1, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v1
+
+    const-string v2, "state"
+
+    invoke-static {p1, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v2
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Landroid/database/Cursor;->getCount()I
+
+    move-result v4
+
+    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
+
+    :goto_1
+    invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    new-instance v4, Landroidx/work/impl/model/WorkSpec$IdAndState;
+
+    invoke-direct {v4}, Landroidx/work/impl/model/WorkSpec$IdAndState;-><init>()V
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, v4, Landroidx/work/impl/model/WorkSpec$IdAndState;->id:Ljava/lang/String;
+
+    invoke-interface {p1, v2}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v5
+
+    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
+
+    move-result-object v5
+
+    iput-object v5, v4, Landroidx/work/impl/model/WorkSpec$IdAndState;->state:Landroidx/work/WorkInfo$State;
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-interface {p1}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    return-object v3
+
+    :catchall_0
+    move-exception v1
+
+    invoke-interface {p1}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    throw v1
 .end method
 
 .method public incrementWorkSpecRunAttemptCount(Ljava/lang/String;)I
@@ -3319,7 +4079,7 @@
 
     move-result-object v0
 
-    invoke-static {p2}, Landroidx/work/Data;->toByteArray(Landroidx/work/Data;)[B
+    invoke-static {p2}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
     move-result-object p2
 
@@ -3526,7 +4286,7 @@
 
     move-result-object v0
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->stateToInt(Landroidx/work/WorkInfo$State;)I
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->stateToInt(Landroidx/work/WorkInfo$State;)I
 
     move-result p1
 

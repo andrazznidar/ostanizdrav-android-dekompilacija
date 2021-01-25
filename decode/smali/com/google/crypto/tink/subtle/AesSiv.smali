@@ -89,6 +89,15 @@
 
 .method public constructor <init>([B)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -148,7 +157,7 @@
 
     const-string v1, "invalid key size: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -169,6 +178,17 @@
 # virtual methods
 .method public decryptDeterministically([B[B)[B
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -255,7 +275,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAndroid()Z
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAndroid()Z
 
     move-result p1
 
@@ -276,7 +296,7 @@
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {v3, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result p1
 
@@ -305,6 +325,17 @@
 
 .method public encryptDeterministically([B[B)[B
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -393,7 +424,7 @@
 
     aput-object p1, v0, p2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 
@@ -411,6 +442,15 @@
 
 .method public final varargs s2v([[B)[B
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "s"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -463,7 +503,7 @@
     aget-object v3, p1, v2
 
     :goto_1
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->dbl([B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
 
     move-result-object v0
 
@@ -473,7 +513,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->xor([B[B)[B
+    invoke-static {v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
 
     move-result-object v0
 
@@ -543,15 +583,15 @@
     throw p1
 
     :cond_4
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->cmacPad([B)[B
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->cmacPad([B)[B
 
     move-result-object p1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->dbl([B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->xor([B[B)[B
+    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
 
     move-result-object p1
 

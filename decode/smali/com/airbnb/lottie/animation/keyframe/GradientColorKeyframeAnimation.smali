@@ -129,7 +129,7 @@
 
     aget v5, v5, v2
 
-    invoke-static {p2, v4, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->evaluate(FII)I
+    invoke-static {p2, v4, v5}, Landroidx/transition/ViewGroupUtilsApi14;->evaluate(FII)I
 
     move-result v4
 
@@ -149,7 +149,7 @@
 
     const-string v0, "Cannot interpolate between gradients. Lengths vary ("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2\n*L\n1#1,1291:1\n*E\n"
+    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1291:1\n1#2:1292\n*E\n"
 .end annotation
 
 
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     check-cast p1, Ljava/lang/CharSequence;
 
@@ -61,19 +61,21 @@
 
     move-result p2
 
-    const/4 v0, 0x0
+    const-string v0, "$receiver"
 
-    if-eqz p1, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$delimiters:[C
+    iget-object v0, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$delimiters:[C
 
-    iget-boolean v2, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$ignoreCase:Z
+    iget-boolean v1, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$ignoreCase:Z
 
-    invoke-static {p1, v1, p2, v2}, Lkotlin/text/StringsKt__IndentKt;->indexOfAny(Ljava/lang/CharSequence;[CIZ)I
+    invoke-static {p1, v0, p2, v1}, Lkotlin/text/StringsKt__IndentKt;->indexOfAny(Ljava/lang/CharSequence;[CIZ)I
 
     move-result p1
 
     if-gez p1, :cond_0
+
+    const/4 p1, 0x0
 
     goto :goto_0
 
@@ -92,13 +94,8 @@
 
     invoke-direct {v0, p1, p2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
+    move-object p1, v0
+
     :goto_0
-    return-object v0
-
-    :cond_1
-    const-string p1, "$receiver"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    return-object p1
 .end method

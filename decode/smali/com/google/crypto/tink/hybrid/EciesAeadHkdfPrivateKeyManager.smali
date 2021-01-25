@@ -82,6 +82,15 @@
 
 .method public parseKey(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "byteString"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
@@ -101,6 +110,15 @@
 
 .method public validateKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "keyProto"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -145,7 +163,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
 
     return-void
 

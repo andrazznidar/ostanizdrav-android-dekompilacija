@@ -91,7 +91,7 @@
 
     const-string v3, "status"
 
-    invoke-static {v3, v2}, Lcom/google/android/gms/common/internal/Preconditions;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -103,7 +103,7 @@
 
     iget v0, v0, Lcom/google/android/play/core/assetpacks/cn;->c:I
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->a(II)Z
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(II)Z
 
     move-result v0
 

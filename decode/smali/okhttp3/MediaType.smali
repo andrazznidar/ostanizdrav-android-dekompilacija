@@ -81,37 +81,47 @@
 
 # virtual methods
 .method public final charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-    .locals 7
+    .locals 6
 
-    iget-object v0, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
+    const-string v0, "charset"
 
-    const/4 v1, 0x0
+    const-string v1, "name"
 
-    if-eqz v0, :cond_4
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
+
+    const-string v2, "$this$indices"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v2, Lkotlin/ranges/IntRange;
 
+    const-string v3, "$this$lastIndex"
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v1, v1
+
+    add-int/lit8 v1, v1, -0x1
+
     const/4 v3, 0x0
 
-    array-length v0, v0
+    invoke-direct {v2, v3, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    add-int/lit8 v0, v0, -0x1
+    const/4 v1, 0x2
 
-    invoke-direct {v2, v3, v0}, Lkotlin/ranges/IntRange;-><init>(II)V
+    invoke-static {v2, v1}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
 
-    const/4 v0, 0x2
+    move-result-object v1
 
-    invoke-static {v2, v0}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
+    iget v2, v1, Lkotlin/ranges/IntProgression;->first:I
 
-    move-result-object v0
+    iget v3, v1, Lkotlin/ranges/IntProgression;->last:I
 
-    iget v2, v0, Lkotlin/ranges/IntProgression;->first:I
+    iget v1, v1, Lkotlin/ranges/IntProgression;->step:I
 
-    iget v3, v0, Lkotlin/ranges/IntProgression;->last:I
-
-    iget v0, v0, Lkotlin/ranges/IntProgression;->step:I
-
-    if-ltz v0, :cond_0
+    if-ltz v1, :cond_0
 
     if-gt v2, v3, :cond_2
 
@@ -127,9 +137,7 @@
 
     const/4 v5, 0x1
 
-    const-string v6, "charset"
-
-    invoke-static {v4, v6, v5}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {v4, v0, v5}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v4
 
@@ -139,23 +147,25 @@
 
     add-int/2addr v2, v5
 
-    aget-object v1, v0, v2
+    aget-object v0, v0, v2
 
     goto :goto_1
 
     :cond_1
     if-eq v2, v3, :cond_2
 
-    add-int/2addr v2, v0
+    add-int/2addr v2, v1
 
     goto :goto_0
 
     :cond_2
+    const/4 v0, 0x0
+
     :goto_1
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
     :try_start_0
-    invoke-static {v1}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object p1
     :try_end_0
@@ -164,13 +174,6 @@
     :catch_0
     :cond_3
     return-object p1
-
-    :cond_4
-    const-string p1, "$this$indices"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z

@@ -11,7 +11,9 @@
 .method public constructor <init>(Lokhttp3/internal/http2/ErrorCode;)V
     .locals 2
 
-    if-eqz p1, :cond_0
+    const-string v0, "errorCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -32,13 +34,4 @@
     iput-object p1, p0, Lokhttp3/internal/http2/StreamResetException;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
     return-void
-
-    :cond_0
-    const-string p1, "errorCode"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

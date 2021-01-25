@@ -44,6 +44,23 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;[BLcom/google/crypto/tink/proto/KeyStatusType;Lcom/google/crypto/tink/proto/OutputPrefixType;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x10,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "primitive",
+            "identifier",
+            "status",
+            "outputPrefixType",
+            "keyId"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TP;[B",

@@ -7,6 +7,9 @@
 
 
 # virtual methods
+.method public abstract getChronology(Ljava/lang/Object;Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+.end method
+
 .method public abstract getChronology(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
 .end method
 

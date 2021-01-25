@@ -121,7 +121,7 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
@@ -129,7 +129,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->zzb:Ljava/lang/String;
 
@@ -137,9 +137,9 @@
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

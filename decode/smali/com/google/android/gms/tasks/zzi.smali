@@ -63,12 +63,12 @@
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/tasks/zzu;)V
+.method public final zza(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "TTResult;>;)V"
         }
     .end annotation
@@ -95,7 +95,7 @@
 
     new-instance v1, Lcom/google/android/gms/tasks/zzj;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzj;-><init>(Lcom/google/android/gms/tasks/zzi;Lcom/google/android/gms/tasks/zzu;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzj;-><init>(Lcom/google/android/gms/tasks/zzi;Lcom/google/android/gms/tasks/Task;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 

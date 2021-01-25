@@ -227,6 +227,30 @@
     return-object p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/GJChronology$CutoverField;->iGregorianField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/GJChronology$CutoverField;->iGregorianField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 
@@ -333,6 +357,91 @@
     return v0
 .end method
 
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 3
+
+    sget-object v0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+
+    sget-object v1, Lorg/joda/time/chrono/GJChronology;->DEFAULT_CUTOVER:Lorg/joda/time/Instant;
+
+    const/4 v2, 0x4
+
+    invoke-static {v0, v1, v2}, Lorg/joda/time/chrono/GJChronology;->getInstance(Lorg/joda/time/DateTimeZone;Lorg/joda/time/ReadableInstant;I)Lorg/joda/time/chrono/GJChronology;
+
+    move-result-object v0
+
+    const-wide/16 v1, 0x0
+
+    invoke-virtual {v0, p1, v1, v2}, Lorg/joda/time/chrono/BaseChronology;->set(Lorg/joda/time/ReadablePartial;J)J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, v0, v1}, Lorg/joda/time/chrono/GJChronology$CutoverField;->getMaximumValue(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 8
+
+    sget-object v0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+
+    sget-object v1, Lorg/joda/time/chrono/GJChronology;->DEFAULT_CUTOVER:Lorg/joda/time/Instant;
+
+    const/4 v2, 0x4
+
+    invoke-static {v0, v1, v2}, Lorg/joda/time/chrono/GJChronology;->getInstance(Lorg/joda/time/DateTimeZone;Lorg/joda/time/ReadableInstant;I)Lorg/joda/time/chrono/GJChronology;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v1
+
+    const-wide/16 v2, 0x0
+
+    const/4 v4, 0x0
+
+    :goto_0
+    if-ge v4, v1, :cond_1
+
+    invoke-interface {p1, v4}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Lorg/joda/time/DateTimeFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DateTimeField;
+
+    move-result-object v5
+
+    aget v6, p2, v4
+
+    invoke-virtual {v5, v2, v3}, Lorg/joda/time/DateTimeField;->getMaximumValue(J)I
+
+    move-result v7
+
+    if-gt v6, v7, :cond_0
+
+    aget v6, p2, v4
+
+    invoke-virtual {v5, v2, v3, v6}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide v2
+
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, v2, v3}, Lorg/joda/time/chrono/GJChronology$CutoverField;->getMaximumValue(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getMinimumValue()I
     .locals 1
 
@@ -343,6 +452,30 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/GJChronology$CutoverField;->iJulianField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/DateTimeField;->getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/GJChronology$CutoverField;->iJulianField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2}, Lorg/joda/time/DateTimeField;->getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public getRangeDurationField()Lorg/joda/time/DurationField;

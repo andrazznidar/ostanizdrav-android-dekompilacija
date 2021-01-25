@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lkotlin/reflect/KCallable;
+.implements Lkotlin/Function;
 
 
 # annotations
@@ -15,7 +16,7 @@
         "Ljava/lang/Object;",
         "Lkotlin/reflect/KCallable<",
         "TR;>;",
-        "Ljava/lang/Object<",
+        "Lkotlin/Function<",
         "TR;>;"
     }
 .end annotation

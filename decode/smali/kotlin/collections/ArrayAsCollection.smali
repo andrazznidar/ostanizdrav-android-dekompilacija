@@ -21,7 +21,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/ArrayAsCollection\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,447:1\n1535#2,3:448\n*E\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/ArrayAsCollection\n*L\n60#1,3:448\n*E\n"
+    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/ArrayAsCollection\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,467:1\n1690#2,3:468\n*E\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/ArrayAsCollection\n*L\n61#1,3:468\n*E\n"
 .end annotation
 
 
@@ -39,12 +39,16 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;Z)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TT;Z)V"
         }
     .end annotation
+
+    const-string v0, "values"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -106,14 +110,28 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/collections/ArrayAsCollection;->values:[Ljava/lang/Object;
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->contains1([Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-string v1, "$this$contains"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result p1
 
+    if-ltz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
     return p1
 .end method
 
@@ -129,7 +147,9 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    const-string v0, "elements"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -168,15 +188,6 @@
     :cond_2
     :goto_0
     return v1
-
-    :cond_3
-    const-string p1, "elements"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public isEmpty()Z
@@ -211,22 +222,15 @@
 
     iget-object v0, p0, Lkotlin/collections/ArrayAsCollection;->values:[Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    const-string v1, "array"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Lkotlin/jvm/internal/ArrayIterator;
 
     invoke-direct {v1, v0}, Lkotlin/jvm/internal/ArrayIterator;-><init>([Ljava/lang/Object;)V
 
     return-object v1
-
-    :cond_0
-    const-string v0, "array"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
@@ -294,7 +298,7 @@
 .end method
 
 .method public final toArray()[Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lkotlin/collections/ArrayAsCollection;->values:[Ljava/lang/Object;
 
@@ -302,7 +306,9 @@
 
     const-class v2, [Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    const-string v3, "$this$copyToArrayOfAny"
+
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz v1, :cond_0
 
@@ -325,21 +331,12 @@
 
     move-result-object v0
 
-    const-string v1, "java.util.Arrays.copyOf(\u2026 Array<Any?>::class.java)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
     :goto_0
+    const-string v1, "if (isVarargs && this.ja\u2026 Array<Any?>::class.java)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-object v0
-
-    :cond_1
-    const-string v0, "$this$copyToArrayOfAny"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;

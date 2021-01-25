@@ -12,9 +12,7 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
-
-.field public final mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+.field public final mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
 
 # direct methods
@@ -59,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090273
+    const v1, 0x7f090370
 
     const/4 v2, 0x4
 
@@ -67,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090274
+    const v1, 0x7f090371
 
     const/4 v2, 0x5
 
@@ -75,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c9
+    const v1, 0x7f090168
 
     const/4 v2, 0x6
 
@@ -92,14 +90,14 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c0068
-        0x7f0c007f
+        0x7f0c0077
+        0x7f0c0096
+        0x7f0c00ab
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 11
+    .locals 12
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -119,15 +117,15 @@
 
     check-cast v6, Landroidx/constraintlayout/widget/Guideline;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x2
 
     aget-object v1, v0, v1
 
     move-object v7, v1
 
-    check-cast v7, Landroid/widget/Button;
+    check-cast v7, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
@@ -135,23 +133,31 @@
 
     check-cast v8, Landroid/widget/Button;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
     move-object v9, v1
 
-    check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast v9, Landroid/widget/Button;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     aget-object v1, v0, v1
 
     move-object v10, v1
 
-    check-cast v10, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v10, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    const/4 v5, 0x1
+    const/4 v1, 0x0
+
+    aget-object v1, v0, v1
+
+    move-object v11, v1
+
+    check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const/4 v5, 0x2
 
     move-object v2, p0
 
@@ -159,38 +165,25 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;Landroid/widget/Button;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
     const-wide/16 v1, -0x1
 
     iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
 
-    const/4 p1, 0x2
-
-    aget-object p1, v0, p1
-
-    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
-
-    if-eqz p1, :cond_0
-
-    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     const/4 p1, 0x3
 
     aget-object p1, v0, p1
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
-    :cond_1
+    :cond_0
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->submissionContactRoot:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v0, 0x0
@@ -224,7 +217,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x2
+    const-wide/16 v4, 0x4
 
     and-long/2addr v0, v4
 
@@ -236,28 +229,28 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080089
+    const v2, 0x7f080094
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->submissionContactHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f1201c6
+    const v2, 0x7f120268
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->submissionContactHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->includeSubmissionContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -310,7 +303,7 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->includeSubmissionContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -321,7 +314,7 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -352,7 +345,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x2
+    const-wide/16 v0, 0x4
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
@@ -365,11 +358,11 @@
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->includeSubmissionContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -389,16 +382,20 @@
 .end method
 
 .method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 2
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
+    const/4 v1, 0x1
+
+    if-eqz p1, :cond_2
+
+    if-eq p1, v1, :cond_0
 
     return v0
 
     :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
     if-nez p3, :cond_1
 
@@ -407,15 +404,15 @@
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v0, 0x1
+    const-wide/16 v2, 0x2
 
-    or-long/2addr p1, v0
+    or-long/2addr p1, v2
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -431,6 +428,41 @@
     :cond_1
     :goto_0
     return v0
+
+    :cond_2
+    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    if-nez p3, :cond_3
+
+    monitor-enter p0
+
+    :try_start_1
+    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
+
+    const-wide/16 v2, 0x1
+
+    or-long/2addr p1, v2
+
+    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mDirtyFlags:J
+
+    monitor-exit p0
+
+    move v0, v1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw p1
+
+    :cond_3
+    :goto_1
+    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
@@ -442,11 +474,11 @@
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->includeSubmissionContact:Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

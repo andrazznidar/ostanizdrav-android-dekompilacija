@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="submission_done_further_info_bullet_points">
-        <item>Your quarantine period is usually 14 days. Please observe your symptoms and monitor how they develop.</item>
-        <item>You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.</item>
+        <item>The duration of the isolation shall be determined by your treating doctor.</item>
+        <item>In case your disease worsens, please call your selected GP or an emergency doctor.</item>
+        <item>In case of emergencies, call 112. Tell them that you have a confirmed SARS-CoV-2 infection.</item>
+        <item>Once the isolation is complete, reset the app in the settings so you can use it again.</item>
     </string-array>
     <string-array name="submission_intro_bullet_points">
-        <item>If you have been diagnosed with COVID-19, you can notify others.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="submission_symptom_symptom_bullets">
+        <item>Increased temperature or fever</item>
+        <item>Shortness of breath</item>
+        <item>Loss of sense of smell/taste</item>
+        <item>Cough</item>
+        <item>Runny nose</item>
+        <item>Sore throat</item>
+        <item>Headache and aching limbs</item>
+        <item>General weakness and exhaustion</item>
     </string-array>
     <string-array name="test_result_card_negative_further_info_bullet_points">
         <item>Still feeling unwell? If you feel very poorly and/or your symptoms have worsened, please contact your general practitioner.</item>
         <item>Remain at home until you feel well again. If you were to get infected with coronavirus (SARS-CoV-2) whilst weakened from another infection, this could lead to a serious illness.</item>
-        <item>Do not go to work if you feel unwell to ensure you do not put other people at risk. If your symptoms worsen, you might need a further SARS-CoV-2 test.</item>
+        <item>Do not go to work if you feel unwell to ensure you do not put other people at risk.</item>
+        <item>If your symptoms worsen, you might need a further SARS-CoV-2 test.</item>
     </string-array>
 </resources>

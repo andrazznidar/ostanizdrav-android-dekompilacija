@@ -3,12 +3,6 @@
 .source "-Base64.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n-Base64.kt\nKotlin\n*S Kotlin\n*F\n+ 1 -Base64.kt\nokio/-Base64\n*L\n1#1,149:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final BASE64:[B
 
@@ -41,6 +35,10 @@
 .method public static final decodeBase64ToArray(Ljava/lang/String;)[B
     .locals 15
 
+    const-string v0, "$this$decodeBase64ToArray"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -60,24 +58,24 @@
 
     invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
 
-    move-result v6
+    move-result v5
 
-    const/16 v7, 0x3d
+    const/16 v6, 0x3d
 
-    if-eq v6, v7, :cond_0
+    if-eq v5, v6, :cond_0
 
-    if-eq v6, v4, :cond_0
+    if-eq v5, v4, :cond_0
 
-    if-eq v6, v3, :cond_0
+    if-eq v5, v3, :cond_0
 
-    if-eq v6, v2, :cond_0
+    if-eq v5, v2, :cond_0
 
-    if-eq v6, v1, :cond_0
+    if-eq v5, v1, :cond_0
 
     goto :goto_1
 
     :cond_0
-    move v0, v5
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
@@ -314,7 +312,7 @@
 
     const-string v0, "java.util.Arrays.copyOf(this, newSize)"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
@@ -329,8 +327,6 @@
 
     and-int/2addr p2, p1
 
-    const/4 v0, 0x0
-
     if-eqz p2, :cond_0
 
     sget-object p2, Lokio/-Base64;->BASE64:[B
@@ -338,12 +334,16 @@
     goto :goto_0
 
     :cond_0
-    move-object p2, v0
+    const/4 p2, 0x0
 
     :goto_0
-    if-eqz p0, :cond_5
+    const-string v0, "$this$encodeBase64"
 
-    if-eqz p2, :cond_4
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "map"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     array-length v0, p0
 
@@ -532,6 +532,10 @@
     aput-byte p1, v0, p0
 
     :goto_2
+    const-string p0, "$this$toUtf8String"
+
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object p0, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     new-instance p1, Ljava/lang/String;
@@ -539,18 +543,4 @@
     invoke-direct {p1, v0, p0}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     return-object p1
-
-    :cond_4
-    const-string p0, "map"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_5
-    const-string p0, "$this$encodeBase64"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

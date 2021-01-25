@@ -6,6 +6,17 @@
 # direct methods
 .method public constructor <init>([BI)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "initialCounter"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;
@@ -21,6 +32,16 @@
 # virtual methods
 .method public createInitialState([II)[I
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "nonce",
+            "counter"
+        }
+    .end annotation
 
     array-length v0, p1
 

@@ -49,35 +49,23 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "call"
 
-    if-eqz p1, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_0
+    const-string p1, "t"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p0, Lretrofit2/KotlinExtensions$await$2$2;->$continuation:Lkotlinx/coroutines/CancellableContinuation;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p2
 
     invoke-interface {p1, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const-string p1, "t"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
@@ -92,27 +80,37 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "call"
 
-    if-eqz p1, :cond_4
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_3
+    const-string v0, "response"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p2}, Lretrofit2/Response;->isSuccessful()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object p2, p2, Lretrofit2/Response;->body:Ljava/lang/Object;
 
-    if-nez p2, :cond_1
+    if-nez p2, :cond_2
 
     invoke-interface {p1}, Lretrofit2/Call;->request()Lokhttp3/Request;
 
     move-result-object p1
 
     const-class p2, Lretrofit2/Invocation;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
+
+    const-string v1, "type"
+
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lokhttp3/Request;->tags:Ljava/util/Map;
 
@@ -184,7 +182,7 @@
 
     iget-object p1, p0, Lretrofit2/KotlinExtensions$await$2$2;->$continuation:Lkotlinx/coroutines/CancellableContinuation;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -198,20 +196,23 @@
     throw v0
 
     :cond_1
+    throw v0
+
+    :cond_2
     iget-object p1, p0, Lretrofit2/KotlinExtensions$await$2$2;->$continuation:Lkotlinx/coroutines/CancellableContinuation;
 
     invoke-interface {p1, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object p1, p0, Lretrofit2/KotlinExtensions$await$2$2;->$continuation:Lkotlinx/coroutines/CancellableContinuation;
 
     new-instance v0, Lretrofit2/HttpException;
 
     invoke-direct {v0, p2}, Lretrofit2/HttpException;-><init>(Lretrofit2/Response;)V
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -219,18 +220,4 @@
 
     :goto_0
     return-void
-
-    :cond_3
-    const-string p1, "response"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    const-string p1, "call"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

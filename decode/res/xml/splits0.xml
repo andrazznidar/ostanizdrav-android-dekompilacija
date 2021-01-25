@@ -3,8 +3,6 @@
     <module name="">
         <language>
             <entry key="en" split="config.en" />
-            <entry key="hu" split="config.hu" />
-            <entry key="it" split="config.it" />
             <entry key="sl" split="config.sl" />
         </language>
     </module>

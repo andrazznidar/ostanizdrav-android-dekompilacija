@@ -1,4 +1,4 @@
-.class public final Landroidx/work/impl/utils/StatusRunnable$3;
+.class public Landroidx/work/impl/utils/StatusRunnable$3;
 .super Landroidx/work/impl/utils/StatusRunnable;
 .source "StatusRunnable.java"
 
@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_c
 
     const/4 v3, 0x1
 
@@ -277,7 +277,7 @@
 
     move-result v14
 
-    invoke-static {v14}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v14}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v14
 
@@ -308,9 +308,9 @@
     goto :goto_2
 
     :cond_8
-    iget-object v2, v0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v3, v0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v3}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -327,13 +327,92 @@
 
     sget-object v0, Landroidx/work/impl/model/WorkSpec;->WORK_INFO_MAPPER:Landroidx/arch/core/util/Function;
 
-    invoke-interface {v0, v10}, Landroidx/arch/core/util/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Landroidx/work/impl/model/WorkSpec$1;
 
-    move-result-object v0
+    if-eqz v0, :cond_b
 
-    check-cast v0, Ljava/util/List;
+    new-instance v0, Ljava/util/ArrayList;
 
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_5
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;
+
+    iget-object v3, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->progress:Ljava/util/List;
+
+    if-eqz v3, :cond_9
+
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_9
+
+    iget-object v3, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->progress:Ljava/util/List;
+
+    const/4 v4, 0x0
+
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/work/Data;
+
+    goto :goto_6
+
+    :cond_9
+    sget-object v3, Landroidx/work/Data;->EMPTY:Landroidx/work/Data;
+
+    :goto_6
+    move-object v9, v3
+
+    new-instance v3, Landroidx/work/WorkInfo;
+
+    iget-object v4, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->id:Ljava/lang/String;
+
+    invoke-static {v4}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+
+    move-result-object v5
+
+    iget-object v6, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->state:Landroidx/work/WorkInfo$State;
+
+    iget-object v7, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->output:Landroidx/work/Data;
+
+    iget-object v8, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->tags:Ljava/util/List;
+
+    iget v10, v2, Landroidx/work/impl/model/WorkSpec$WorkInfoPojo;->runAttemptCount:I
+
+    move-object v4, v3
+
+    invoke-direct/range {v4 .. v10}, Landroidx/work/WorkInfo;-><init>(Ljava/util/UUID;Landroidx/work/WorkInfo$State;Landroidx/work/Data;Ljava/util/List;Landroidx/work/Data;I)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_5
+
+    :cond_a
     return-object v0
+
+    :cond_b
+    throw v2
 
     :catchall_0
     move-exception v2
@@ -356,6 +435,6 @@
 
     throw v1
 
-    :cond_9
+    :cond_c
     throw v2
 .end method

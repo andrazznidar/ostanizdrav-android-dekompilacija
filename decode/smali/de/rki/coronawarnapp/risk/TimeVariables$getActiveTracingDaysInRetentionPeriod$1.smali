@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.risk.TimeVariables"
     f = "TimeVariables.kt"
     l = {
-        0xb9,
-        0xc0
+        0x97,
+        0x9e
     }
     m = "getActiveTracingDaysInRetentionPeriod"
 .end annotation
@@ -26,6 +26,12 @@
 
 # instance fields
 .field public J$0:J
+
+.field public J$1:J
+
+.field public J$2:J
+
+.field public J$3:J
 
 .field public L$0:Ljava/lang/Object;
 

@@ -1,13 +1,13 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzr;
 .super Lcom/google/android/gms/common/internal/GmsClient;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/android/gms/common/internal/GmsClient<",
-        "Lcom/google/android/gms/internal/nearby/zzbq;",
+        "Lcom/google/android/gms/internal/nearby/zzdv;",
         ">;"
     }
 .end annotation
@@ -54,18 +54,18 @@
 
     move-result-object v0
 
-    instance-of v1, v0, Lcom/google/android/gms/internal/nearby/zzbq;
+    instance-of v1, v0, Lcom/google/android/gms/internal/nearby/zzdv;
 
     if-eqz v1, :cond_1
 
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zzbq;
+    check-cast v0, Lcom/google/android/gms/internal/nearby/zzdv;
 
     return-object v0
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzbt;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzdu;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/nearby/zzbt;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/nearby/zzdu;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 .end method
@@ -73,7 +73,7 @@
 .method public final getApiFeatures()[Lcom/google/android/gms/common/Feature;
     .locals 3
 
-    const/4 v0, 0x2
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/google/android/gms/common/Feature;
 
@@ -86,6 +86,48 @@
     sget-object v1, Lcom/google/android/gms/nearby/zza;->zzc:Lcom/google/android/gms/common/Feature;
 
     const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzd:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zze:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzf:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzh:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzg:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzi:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzj:Lcom/google/android/gms/common/Feature;
+
+    const/16 v2, 0x8
 
     aput-object v1, v0, v2
 

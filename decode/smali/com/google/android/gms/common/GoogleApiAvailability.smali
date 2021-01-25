@@ -239,7 +239,7 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/common/SupportErrorDialogFragment;-><init>()V
 
-    invoke-static {p2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p2, v0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
@@ -262,7 +262,7 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/common/ErrorDialogFragment;-><init>()V
 
-    invoke-static {p2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p2, v0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
@@ -424,11 +424,7 @@
 
     invoke-virtual {v8, v3}, Landroidx/core/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroidx/core/app/NotificationCompat$Builder;
 
-    invoke-static {v2}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    iput-object v2, v8, Landroidx/core/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
+    invoke-virtual {v8, v2}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     new-instance v2, Landroidx/core/app/NotificationCompat$BigTextStyle;
 
@@ -442,7 +438,7 @@
 
     invoke-virtual {v8, v2}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->isWearable(Landroid/content/Context;)Z
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->isWearable(Landroid/content/Context;)Z
 
     move-result v2
 
@@ -460,7 +456,7 @@
 
     iput v1, v8, Landroidx/core/app/NotificationCompat$Builder;->mPriority:I
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -520,20 +516,16 @@
 
     iput-object p3, v8, Landroidx/core/app/NotificationCompat$Builder;->mContentIntent:Landroid/app/PendingIntent;
 
-    invoke-static {v0}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p3
-
-    iput-object p3, v8, Landroidx/core/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
+    invoke-virtual {v8, v0}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     :goto_3
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAtLeastO()Z
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAtLeastO()Z
 
     move-result p3
 
     if-eqz p3, :cond_c
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->isAtLeastO()Z
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAtLeastO()Z
 
     move-result p3
 

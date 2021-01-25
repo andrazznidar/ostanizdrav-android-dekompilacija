@@ -25,7 +25,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0xb
+    const/16 v1, 0xa
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c007f
+    const v6, 0x7f0c00ab
 
     aput v6, v4, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090272
+    const v1, 0x7f09036f
 
     const/4 v2, 0x4
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090276
+    const v1, 0x7f090373
 
     const/4 v2, 0x5
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09027a
+    const v1, 0x7f090376
 
     const/4 v2, 0x6
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09027b
+    const v1, 0x7f090377
 
     const/4 v2, 0x7
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09027c
+    const v1, 0x7f090378
 
     const/16 v2, 0x8
 
@@ -101,17 +101,9 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090278
+    const v1, 0x7f090379
 
     const/16 v2, 0x9
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09027d
-
-    const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -119,148 +111,132 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 16
-
-    move-object/from16 v12, p0
-
-    move-object/from16 v13, p2
+    .locals 13
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     sget-object v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v2, 0xb
+    const/16 v2, 0xa
 
-    move-object/from16 v3, p1
+    invoke-static {p1, p2, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
-    invoke-static {v3, v13, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v14
+    const/4 v1, 0x4
 
-    const/4 v0, 0x4
+    aget-object v1, v0, v1
 
-    aget-object v0, v14, v0
+    move-object v6, v1
 
-    move-object v4, v0
+    check-cast v6, Landroid/widget/TextView;
 
-    check-cast v4, Landroid/widget/TextView;
+    const/4 v1, 0x5
 
-    const/4 v0, 0x5
+    aget-object v1, v0, v1
 
-    aget-object v0, v14, v0
-
-    move-object v5, v0
-
-    check-cast v5, Landroid/widget/TextView;
-
-    const/4 v0, 0x2
-
-    aget-object v0, v14, v0
-
-    move-object v6, v0
-
-    check-cast v6, Landroid/widget/ImageView;
-
-    const/16 v0, 0x9
-
-    aget-object v0, v14, v0
-
-    move-object v7, v0
+    move-object v7, v1
 
     check-cast v7, Landroid/widget/TextView;
 
-    const/4 v0, 0x6
+    const/4 v1, 0x2
 
-    aget-object v0, v14, v0
+    aget-object v1, v0, v1
 
-    move-object v8, v0
+    move-object v8, v1
 
-    check-cast v8, Lde/rki/coronawarnapp/ui/view/StepEntry;
+    check-cast v8, Landroid/widget/ImageView;
 
-    const/4 v0, 0x7
+    const/4 v1, 0x6
 
-    aget-object v0, v14, v0
+    aget-object v1, v0, v1
 
-    move-object v9, v0
+    move-object v9, v1
 
-    check-cast v9, Landroid/widget/TextView;
+    check-cast v9, Lde/rki/coronawarnapp/ui/view/StepEntry;
 
-    const/16 v0, 0x8
+    const/4 v1, 0x7
 
-    aget-object v0, v14, v0
+    aget-object v1, v0, v1
 
-    move-object v10, v0
+    move-object v10, v1
 
     check-cast v10, Landroid/widget/TextView;
 
-    const/16 v0, 0xa
+    const/16 v1, 0x8
 
-    aget-object v0, v14, v0
+    aget-object v1, v0, v1
 
-    move-object v11, v0
+    move-object v11, v1
 
-    check-cast v11, Lde/rki/coronawarnapp/ui/view/StepEntry;
+    check-cast v11, Landroid/widget/TextView;
 
-    const/4 v15, 0x0
+    const/16 v1, 0x9
 
-    move-object/from16 v0, p0
+    aget-object v1, v0, v1
 
-    move-object/from16 v1, p1
+    move-object v12, v1
 
-    move-object/from16 v2, p2
+    check-cast v12, Lde/rki/coronawarnapp/ui/view/StepEntry;
 
-    move v3, v15
+    const/4 v5, 0x0
 
-    invoke-direct/range {v0 .. v11}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/StepEntry;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/StepEntry;)V
+    move-object v2, p0
 
-    const-wide/16 v0, -0x1
+    move-object v3, p1
 
-    iput-wide v0, v12, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mDirtyFlags:J
+    move-object v4, p2
 
-    const/4 v0, 0x0
+    invoke-direct/range {v2 .. v12}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/ui/view/StepEntry;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/StepEntry;)V
 
-    aget-object v0, v14, v0
+    const-wide/16 v1, -0x1
 
-    check-cast v0, Landroid/widget/ScrollView;
+    iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mDirtyFlags:J
 
-    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView0:Landroid/widget/ScrollView;
+    const/4 p1, 0x0
+
+    aget-object p1, v0, p1
+
+    check-cast p1, Landroid/widget/ScrollView;
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView0:Landroid/widget/ScrollView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    aget-object v0, v14, v0
+    aget-object p1, v0, p1
 
-    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const/4 v0, 0x3
+    const/4 p1, 0x3
 
-    aget-object v0, v14, v0
+    aget-object p1, v0, p1
 
-    check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    check-cast p1, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
-    iput-object v12, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    iget-object v0, v12, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;->submissionContactIllustration:Landroid/widget/ImageView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;->submissionContactIllustration:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
-    invoke-virtual {v13, v0, v12}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    invoke-virtual/range {p0 .. p0}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->invalidateAll()V
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->invalidateAll()V
 
     return-void
 .end method
@@ -291,29 +267,19 @@
 
     if-eqz v0, :cond_0
 
-    sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/4 v1, 0x4
-
-    if-lt v0, v1, :cond_0
-
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;->submissionContactIllustration:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f120060
+    const v2, 0x7f1200b7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->formatImage(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;

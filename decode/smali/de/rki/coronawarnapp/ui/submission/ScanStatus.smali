@@ -18,8 +18,6 @@
 
 .field public static final enum INVALID:Lde/rki/coronawarnapp/ui/submission/ScanStatus;
 
-.field public static final enum STARTED:Lde/rki/coronawarnapp/ui/submission/ScanStatus;
-
 .field public static final enum SUCCESS:Lde/rki/coronawarnapp/ui/submission/ScanStatus;
 
 
@@ -38,8 +36,6 @@
     const/4 v3, 0x0
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/ui/submission/ScanStatus;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/ui/submission/ScanStatus;->STARTED:Lde/rki/coronawarnapp/ui/submission/ScanStatus;
 
     aput-object v1, v0, v3
 

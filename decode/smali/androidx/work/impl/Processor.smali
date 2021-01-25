@@ -303,6 +303,56 @@
     throw p1
 .end method
 
+.method public isEnqueued(Ljava/lang/String;)Z
+    .locals 2
+
+    iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Landroidx/work/impl/Processor;->mEnqueuedWorkMap:Ljava/util/Map;
+
+    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Landroidx/work/impl/Processor;->mForegroundWorkMap:Ljava/util/Map;
+
+    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    monitor-exit v0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
 .method public onExecuted(Ljava/lang/String;Z)V
     .locals 8
 
@@ -431,9 +481,7 @@
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Landroidx/work/impl/Processor;->mEnqueuedWorkMap:Ljava/util/Map;
-
-    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Landroidx/work/impl/Processor;->isEnqueued(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -573,7 +621,7 @@
 .end method
 
 .method public final stopForegroundService()V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -586,55 +634,53 @@
 
     move-result v1
 
-    xor-int/lit8 v1, v1, 0x1
+    const/4 v2, 0x1
 
-    if-nez v1, :cond_1
+    xor-int/2addr v1, v2
 
-    sget-object v1, Landroidx/work/impl/foreground/SystemForegroundService;->sForegroundService:Landroidx/work/impl/foreground/SystemForegroundService;
+    if-nez v1, :cond_0
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Landroidx/work/impl/Processor;->mAppContext:Landroid/content/Context;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->createStopForegroundIntent(Landroid/content/Context;)Landroid/content/Intent;
 
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v3, p0, Landroidx/work/impl/Processor;->mAppContext:Landroid/content/Context;
+
+    invoke-virtual {v3, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_2
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v3
 
     sget-object v4, Landroidx/work/impl/Processor;->TAG:Ljava/lang/String;
 
-    const-string v5, "No more foreground work. Stopping SystemForegroundService"
+    const-string v5, "Unable to stop foreground service"
 
     new-array v2, v2, [Ljava/lang/Throwable;
 
-    invoke-virtual {v3, v4, v5, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    const/4 v6, 0x0
 
-    iget-object v2, v1, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
+    aput-object v1, v2, v6
 
-    new-instance v3, Landroidx/work/impl/foreground/SystemForegroundService$1;
-
-    invoke-direct {v3, v1}, Landroidx/work/impl/foreground/SystemForegroundService$1;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;)V
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object v1
-
-    sget-object v3, Landroidx/work/impl/Processor;->TAG:Ljava/lang/String;
-
-    const-string v4, "No more foreground work. SystemForegroundService is already stopped"
-
-    new-array v2, v2, [Ljava/lang/Throwable;
-
-    invoke-virtual {v1, v3, v4, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v3, v4, v5, v2}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     :goto_0
     iget-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     iget-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
 
@@ -644,17 +690,17 @@
 
     iput-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
 
-    :cond_1
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_0
+    :catchall_1
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw v1
 .end method

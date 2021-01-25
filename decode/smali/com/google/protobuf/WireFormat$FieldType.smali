@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/protobuf/WireFormat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x4009
+    name = "FieldType"
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -55,6 +64,8 @@
 
 # instance fields
 .field public final javaType:Lcom/google/protobuf/WireFormat$JavaType;
+
+.field public final wireType:I
 
 
 # direct methods
@@ -380,6 +391,8 @@
 
     iput-object p3, p0, Lcom/google/protobuf/WireFormat$FieldType;->javaType:Lcom/google/protobuf/WireFormat$JavaType;
 
+    iput p4, p0, Lcom/google/protobuf/WireFormat$FieldType;->wireType:I
+
     return-void
 .end method
 
@@ -389,6 +402,8 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput-object p3, p0, Lcom/google/protobuf/WireFormat$FieldType;->javaType:Lcom/google/protobuf/WireFormat$JavaType;
+
+    iput p4, p0, Lcom/google/protobuf/WireFormat$FieldType;->wireType:I
 
     return-void
 .end method

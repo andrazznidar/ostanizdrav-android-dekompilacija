@@ -58,7 +58,7 @@
     :goto_0
     iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    invoke-static {v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->stateToInt(Landroidx/work/WorkInfo$State;)I
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->stateToInt(Landroidx/work/WorkInfo$State;)I
 
     move-result v2
 
@@ -98,7 +98,7 @@
     :goto_2
     iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
 
-    invoke-static {v4}, Landroidx/work/Data;->toByteArray(Landroidx/work/Data;)[B
+    invoke-static {v4}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
     move-result-object v4
 
@@ -116,7 +116,7 @@
     :goto_3
     iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
 
-    invoke-static {v4}, Landroidx/work/Data;->toByteArray(Landroidx/work/Data;)[B
+    invoke-static {v4}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
     move-result-object v4
 

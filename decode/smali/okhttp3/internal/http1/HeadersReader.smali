@@ -3,12 +3,6 @@
 .source "HeadersReader.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHeadersReader.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HeadersReader.kt\nokhttp3/internal/http1/HeadersReader\n*L\n1#1,49:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public headerLimit:J
 
@@ -18,6 +12,10 @@
 # direct methods
 .method public constructor <init>(Lokio/BufferedSource;)V
     .locals 2
+
+    const-string v0, "source"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

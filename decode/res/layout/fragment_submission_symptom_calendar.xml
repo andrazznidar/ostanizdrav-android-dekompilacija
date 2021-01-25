@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/fragment_submission_symptom_calendar_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/submission_symptom_calendar_header" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true" android:layout_marginStart="@dimen/spacing_normal" android:layout_marginEnd="@dimen/spacing_normal">
+            <TextView android:id="@id/submission_symptom_calendar_headline" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/submission_symptom_calendar_headline" android:accessibilityHeading="true" style="@style/headline6" />
+            <TextView android:id="@id/submission_symptom_calendar_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/submission_symptom_calendar_body" android:accessibilityHeading="true" style="@style/body1" />
+            <de.rki.coronawarnapp.ui.calendar.CalendarView android:id="@id/symptom_calendar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" />
+            <Button android:enabled="true" android:id="@id/calendar_button_seven_days" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:text="@string/submission_symptom_less_seven" style="@style/selectionButton" />
+            <Button android:enabled="true" android:id="@id/calendar_button_one_two_weeks" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:text="@string/submission_symptom_one_two_weeks" style="@style/selectionButton" />
+            <Button android:enabled="true" android:id="@id/calendar_button_more_than_two_weeks" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:text="@string/submission_symptom_more_two_weeks" style="@style/selectionButton" />
+            <Button android:enabled="true" android:id="@id/target_button_verify" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:layout_marginBottom="@dimen/spacing_small" android:text="@string/submission_symptom_verify" style="@style/selectionButton" />
+            <Button android:id="@id/symptom_button_next" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_small" android:text="@string/submission_done_button_done" style="@style/buttonPrimary" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

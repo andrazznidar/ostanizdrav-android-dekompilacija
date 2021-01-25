@@ -125,20 +125,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "content"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$toRequestBody"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Lokhttp3/RequestBody$Companion$toRequestBody$1;
 
     invoke-direct {v1, v0, p1}, Lokhttp3/RequestBody$Companion$toRequestBody$1;-><init>(Lokio/ByteString;Lokhttp3/MediaType;)V
 
     return-object v1
-
-    :cond_0
-    const-string p1, "content"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

@@ -134,7 +134,7 @@
     goto :goto_1
 
     :cond_1
-    if-eqz p8, :cond_5
+    if-eqz p8, :cond_4
 
     new-instance p1, Lokhttp3/MultipartBody$Builder;
 
@@ -144,11 +144,11 @@
 
     sget-object p2, Lokhttp3/MultipartBody;->FORM:Lokhttp3/MediaType;
 
-    const/4 p3, 0x0
+    if-eqz p1, :cond_3
 
-    if-eqz p1, :cond_4
+    const-string p3, "type"
 
-    if-eqz p2, :cond_3
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p3, p2, Lokhttp3/MediaType;->type:Ljava/lang/String;
 
@@ -190,16 +190,11 @@
     throw p2
 
     :cond_3
-    const-string p1, "type"
+    const/4 p1, 0x0
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
+    throw p1
 
     :cond_4
-    throw p3
-
-    :cond_5
     :goto_1
     return-void
 .end method
@@ -207,41 +202,51 @@
 
 # virtual methods
 .method public addFormField(Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 25
+    .locals 22
 
     move-object/from16 v0, p0
 
-    const/4 v1, 0x0
+    move-object/from16 v2, p1
 
-    const-string v2, "name"
+    move-object/from16 v12, p2
 
-    if-eqz p3, :cond_1
+    const-string v1, "value"
 
-    iget-object v12, v0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
-
-    if-eqz p1, :cond_0
-
-    iget-object v13, v12, Lokhttp3/FormBody$Builder;->names:Ljava/util/List;
-
-    sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
-
-    const/16 v17, 0x0
+    const-string v3, "name"
 
     const/4 v4, 0x0
 
-    const/16 v19, 0x1
+    if-eqz p3, :cond_1
 
-    const/16 v20, 0x0
+    iget-object v13, v0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
 
-    const/16 v21, 0x1
+    if-eqz v13, :cond_0
 
-    const/16 v22, 0x0
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v10, v12, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+    invoke-static {v12, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 v24, 0x53
+    iget-object v14, v13, Lokhttp3/FormBody$Builder;->names:Ljava/util/List;
 
-    const/16 v16, 0x0
+    sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+
+    iget-object v10, v13, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+
+    const/4 v15, 0x0
+
+    const/4 v4, 0x0
+
+    const/16 v16, 0x1
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x1
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x53
+
+    const/16 v21, 0x0
 
     const/4 v3, 0x0
 
@@ -263,61 +268,75 @@
 
     move-result-object v1
 
-    invoke-interface {v13, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v14, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, v12, Lokhttp3/FormBody$Builder;->values:Ljava/util/List;
+    iget-object v14, v13, Lokhttp3/FormBody$Builder;->values:Ljava/util/List;
 
-    sget-object v14, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+    sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
-    iget-object v2, v12, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+    iget-object v10, v13, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
 
-    const-string v18, " \"\':;<=>@[]^`{}|/\\?#&!$(),~"
+    const-string v5, " \"\':;<=>@[]^`{}|/\\?#&!$(),~"
 
-    move-object/from16 v15, p2
+    move-object/from16 v2, p2
 
-    move-object/from16 v23, v2
+    move/from16 v3, v21
 
-    invoke-static/range {v14 .. v24}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+    move v4, v15
 
-    move-result-object v2
+    move/from16 v6, v16
 
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    move/from16 v7, v17
+
+    move/from16 v8, v18
+
+    move/from16 v9, v19
+
+    move/from16 v11, v20
+
+    invoke-static/range {v1 .. v11}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v14, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
+    throw v4
 
     :cond_1
-    iget-object v12, v0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
+    iget-object v13, v0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
 
-    if-eqz p1, :cond_2
+    if-eqz v13, :cond_2
 
-    iget-object v13, v12, Lokhttp3/FormBody$Builder;->names:Ljava/util/List;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v12, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v14, v13, Lokhttp3/FormBody$Builder;->names:Ljava/util/List;
 
     sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
-    const/16 v17, 0x0
+    iget-object v10, v13, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+
+    const/4 v15, 0x0
 
     const/4 v4, 0x0
 
-    const/16 v20, 0x0
+    const/16 v16, 0x0
 
     const/4 v7, 0x0
 
-    const/16 v21, 0x1
+    const/16 v17, 0x1
 
-    const/16 v22, 0x0
+    const/16 v18, 0x0
 
-    iget-object v10, v12, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+    const/16 v19, 0x5b
 
-    const/16 v24, 0x5b
+    const/16 v20, 0x0
 
-    const/16 v16, 0x0
-
-    const/16 v19, 0x0
+    const/16 v21, 0x0
 
     const/4 v3, 0x0
 
@@ -337,33 +356,43 @@
 
     move-result-object v1
 
-    invoke-interface {v13, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v14, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, v12, Lokhttp3/FormBody$Builder;->values:Ljava/util/List;
+    iget-object v14, v13, Lokhttp3/FormBody$Builder;->values:Ljava/util/List;
 
-    sget-object v14, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+    sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
-    iget-object v2, v12, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
+    iget-object v10, v13, Lokhttp3/FormBody$Builder;->charset:Ljava/nio/charset/Charset;
 
-    const-string v18, " \"\':;<=>@[]^`{}|/\\?#&!$(),~"
+    const-string v5, " \"\':;<=>@[]^`{}|/\\?#&!$(),~"
 
-    move-object/from16 v15, p2
+    move-object/from16 v2, p2
 
-    move-object/from16 v23, v2
+    move/from16 v3, v20
 
-    invoke-static/range {v14 .. v24}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+    move v4, v15
 
-    move-result-object v2
+    move/from16 v6, v21
 
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    move/from16 v7, v16
+
+    move/from16 v8, v17
+
+    move/from16 v9, v18
+
+    move/from16 v11, v19
+
+    invoke-static/range {v1 .. v11}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v14, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :goto_0
     return-void
 
     :cond_2
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
+    throw v4
 .end method
 
 .method public addHeader(Ljava/lang/String;Ljava/lang/String;)V
@@ -419,9 +448,13 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    if-eqz p2, :cond_6
+    const-string v2, "body"
+
+    invoke-static {p2, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p2, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -481,6 +514,10 @@
 
     invoke-direct {v2, p1, p2, v1}, Lokhttp3/MultipartBody$Part;-><init>(Lokhttp3/Headers;Lokhttp3/RequestBody;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
+    const-string p1, "part"
+
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object p1, v0, Lokhttp3/MultipartBody$Builder;->parts:Ljava/util/List;
 
     invoke-interface {p1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
@@ -514,13 +551,6 @@
     throw p1
 
     :cond_6
-    const-string p1, "body"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_7
     throw v1
 .end method
 
@@ -529,15 +559,17 @@
 
     move-object v0, p0
 
+    move-object/from16 v2, p1
+
     iget-object v1, v0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;
 
     const/4 v12, 0x0
 
     if-eqz v1, :cond_1
 
-    iget-object v2, v0, Lretrofit2/RequestBuilder;->baseUrl:Lokhttp3/HttpUrl;
+    iget-object v3, v0, Lretrofit2/RequestBuilder;->baseUrl:Lokhttp3/HttpUrl;
 
-    invoke-virtual {v2, v1}, Lokhttp3/HttpUrl;->newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+    invoke-virtual {v3, v1}, Lokhttp3/HttpUrl;->newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
 
     move-result-object v1
 
@@ -554,7 +586,7 @@
 
     const-string v2, "Malformed URL. Base: "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -580,11 +612,15 @@
 
     :cond_1
     :goto_0
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_5
 
     iget-object v13, v0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
-    if-eqz p1, :cond_6
+    if-eqz v13, :cond_4
+
+    const-string v1, "encodedName"
+
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
@@ -599,7 +635,7 @@
     :cond_2
     iget-object v14, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    if-eqz v14, :cond_5
+    invoke-static {v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
@@ -631,7 +667,7 @@
 
     iget-object v13, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    if-eqz v13, :cond_4
+    invoke-static {v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     if-eqz p2, :cond_3
 
@@ -667,30 +703,20 @@
     goto :goto_1
 
     :cond_4
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
     throw v12
 
     :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v12
-
-    :cond_6
-    const-string v1, "encodedName"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v12
-
-    :cond_7
     iget-object v13, v0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
-    if-eqz p1, :cond_c
+    if-eqz v13, :cond_8
+
+    const-string v1, "name"
+
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_6
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -698,10 +724,10 @@
 
     iput-object v1, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    :cond_8
+    :cond_6
     iget-object v14, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    if-eqz v14, :cond_b
+    invoke-static {v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
@@ -733,9 +759,9 @@
 
     iget-object v13, v13, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
-    if-eqz v13, :cond_a
+    invoke-static {v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_7
 
     sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
@@ -763,26 +789,12 @@
 
     move-result-object v12
 
-    :cond_9
+    :cond_7
     invoke-interface {v13, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
     return-void
 
-    :cond_a
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v12
-
-    :cond_b
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v12
-
-    :cond_c
-    const-string v1, "name"
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
+    :cond_8
     throw v12
 .end method

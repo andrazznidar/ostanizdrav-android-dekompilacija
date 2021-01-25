@@ -98,7 +98,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -159,6 +159,32 @@
     return v1
 .end method
 
+.method public isAfter(Lorg/joda/time/ReadableInstant;)Z
+    .locals 4
+
+    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getInstantMillis(Lorg/joda/time/ReadableInstant;)J
+
+    move-result-wide v0
+
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getMillis()J
+
+    move-result-wide v2
+
+    cmp-long p1, v2, v0
+
+    if-lez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public isBefore(Lorg/joda/time/ReadableInstant;)Z
     .locals 4
 
@@ -199,6 +225,32 @@
     move-result-object v3
 
     invoke-direct {v0, v1, v2, v3}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/DateTimeZone;)V
+
+    return-object v0
+.end method
+
+.method public toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    .locals 3
+
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/Chronology;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
+
+    move-result-object p1
+
+    new-instance v0, Lorg/joda/time/DateTime;
+
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getMillis()J
+
+    move-result-wide v1
+
+    invoke-direct {v0, v1, v2, p1}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/Chronology;)V
 
     return-object v0
 .end method

@@ -11,3 +11,19 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public doWork()Landroidx/work/ListenableWorker$Result;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
+
+    iget-object v0, v0, Landroidx/work/WorkerParameters;->mInputData:Landroidx/work/Data;
+
+    new-instance v1, Landroidx/work/ListenableWorker$Result$Success;
+
+    invoke-direct {v1, v0}, Landroidx/work/ListenableWorker$Result$Success;-><init>(Landroidx/work/Data;)V
+
+    return-object v1
+.end method

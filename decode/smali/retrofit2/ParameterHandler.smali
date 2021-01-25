@@ -16,8 +16,7 @@
         Lretrofit2/ParameterHandler$QueryName;,
         Lretrofit2/ParameterHandler$Query;,
         Lretrofit2/ParameterHandler$Path;,
-        Lretrofit2/ParameterHandler$Header;,
-        Lretrofit2/ParameterHandler$RelativeUrl;
+        Lretrofit2/ParameterHandler$Header;
     }
 .end annotation
 

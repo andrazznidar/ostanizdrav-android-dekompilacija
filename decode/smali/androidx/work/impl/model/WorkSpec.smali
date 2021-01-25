@@ -242,28 +242,42 @@
 
 # virtual methods
 .method public calculateNextRunTime()J
-    .locals 11
+    .locals 10
 
-    invoke-virtual {p0}, Landroidx/work/impl/model/WorkSpec;->isBackedOff()Z
+    iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    move-result v0
+    sget-object v1, Landroidx/work/WorkInfo$State;->ENQUEUED:Landroidx/work/WorkInfo$State;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-eqz v0, :cond_2
+    if-ne v0, v1, :cond_0
+
+    iget v0, p0, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
+
+    if-lez v0, :cond_0
+
+    move v0, v3
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
 
-    sget-object v3, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    sget-object v1, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
 
-    if-ne v0, v3, :cond_0
+    if-ne v0, v1, :cond_1
 
-    move v1, v2
+    move v2, v3
 
-    :cond_0
-    if-eqz v1, :cond_1
+    :cond_1
+    if-eqz v2, :cond_2
 
     iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
 
@@ -273,16 +287,16 @@
 
     mul-long/2addr v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_2
     iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
 
     long-to-float v0, v0
 
     iget v1, p0, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v1, v3
 
     invoke-static {v0, v1}, Ljava/lang/Math;->scalb(FI)F
 
@@ -290,7 +304,7 @@
 
     float-to-long v0, v0
 
-    :goto_0
+    :goto_1
     iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
     const-wide/32 v4, 0x112a880
@@ -299,101 +313,101 @@
 
     move-result-wide v0
 
-    :goto_1
-    add-long/2addr v0, v2
+    goto :goto_3
 
-    return-wide v0
-
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
 
     move-result v0
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    if-eqz v0, :cond_8
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    iget-wide v7, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
-
-    cmp-long v0, v7, v3
-
-    if-nez v0, :cond_3
-
-    iget-wide v7, p0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
-
-    add-long/2addr v7, v5
-
-    :cond_3
-    iget-wide v5, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
-
-    iget-wide v9, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
-
-    cmp-long v0, v5, v9
-
-    if-eqz v0, :cond_4
-
-    move v1, v2
-
-    :cond_4
-    if-eqz v1, :cond_6
-
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
-
-    cmp-long v0, v0, v3
-
-    if-nez v0, :cond_5
-
-    const-wide/16 v0, -0x1
-
-    iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
-
-    mul-long v3, v2, v0
-
-    :cond_5
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
-
-    add-long/2addr v7, v0
-
-    add-long/2addr v7, v3
-
-    return-wide v7
-
-    :cond_6
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
-
-    cmp-long v0, v0, v3
-
-    if-nez v0, :cond_7
-
-    goto :goto_2
-
-    :cond_7
-    iget-wide v3, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
-
-    :goto_2
-    add-long/2addr v7, v3
-
-    return-wide v7
-
-    :cond_8
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
-
-    cmp-long v2, v0, v3
-
-    if-nez v2, :cond_9
+    if-eqz v0, :cond_9
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
+    iget-wide v6, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+
+    cmp-long v8, v6, v4
+
+    if-nez v8, :cond_4
+
+    iget-wide v6, p0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
+
+    add-long/2addr v6, v0
+
+    :cond_4
+    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
+
+    iget-wide v8, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+
+    cmp-long v0, v0, v8
+
+    if-eqz v0, :cond_5
+
+    move v2, v3
+
+    :cond_5
+    if-eqz v2, :cond_7
+
+    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+
+    cmp-long v0, v0, v4
+
+    if-nez v0, :cond_6
+
+    const-wide/16 v0, -0x1
+
+    iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
+
+    mul-long v4, v2, v0
+
+    :cond_6
+    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+
+    add-long/2addr v6, v0
+
+    add-long/2addr v6, v4
+
+    return-wide v6
+
+    :cond_7
+    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+
+    cmp-long v0, v0, v4
+
+    if-nez v0, :cond_8
+
+    goto :goto_2
+
+    :cond_8
+    iget-wide v4, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+
+    :goto_2
+    add-long/2addr v6, v4
+
+    return-wide v6
+
     :cond_9
+    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+
+    cmp-long v2, v0, v4
+
+    if-nez v2, :cond_a
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    :cond_a
     iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
 
-    goto :goto_1
+    :goto_3
+    add-long/2addr v0, v2
+
+    return-wide v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -828,30 +842,6 @@
     return v0
 .end method
 
-.method public isBackedOff()Z
-    .locals 2
-
-    iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
-
-    sget-object v1, Landroidx/work/WorkInfo$State;->ENQUEUED:Landroidx/work/WorkInfo$State;
-
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
 .method public isPeriodic()Z
     .locals 4
 
@@ -879,7 +869,7 @@
 
     const-string v0, "{WorkSpec: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

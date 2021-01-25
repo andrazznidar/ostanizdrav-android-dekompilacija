@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lorg/joda/time/convert/InstantConverter;
-.implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PartialConverter;
 
 
 # static fields

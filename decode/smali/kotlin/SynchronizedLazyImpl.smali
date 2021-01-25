@@ -20,10 +20,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLazyJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LazyJVM.kt\nkotlin/SynchronizedLazyImpl\n*L\n1#1,130:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public volatile _value:Ljava/lang/Object;
@@ -45,6 +41,10 @@
     .locals 0
 
     and-int/lit8 p2, p3, 0x2
+
+    const-string p2, "initializer"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -94,15 +94,15 @@
     :cond_1
     iget-object v1, p0, Lkotlin/SynchronizedLazyImpl;->initializer:Lkotlin/jvm/functions/Function0;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-interface {v1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
 
     iput-object v1, p0, Lkotlin/SynchronizedLazyImpl;->_value:Ljava/lang/Object;
+
+    const/4 v2, 0x0
 
     iput-object v2, p0, Lkotlin/SynchronizedLazyImpl;->initializer:Lkotlin/jvm/functions/Function0;
     :try_end_0
@@ -112,14 +112,6 @@
     monitor-exit v0
 
     return-object v1
-
-    :cond_2
-    :try_start_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v2
 
     :catchall_0
     move-exception v1

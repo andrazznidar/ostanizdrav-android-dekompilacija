@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAsyncTimeout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout\n*L\n1#1,327:1\n*E\n"
+    value = "SMAP\nAsyncTimeout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,327:1\n1#2:328\n*E\n"
 .end annotation
 
 
@@ -88,7 +88,7 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_8
 
     iget-wide v2, p0, Lokio/Timeout;->timeoutNanos:J
 
@@ -163,7 +163,7 @@
     goto :goto_0
 
     :cond_3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_7
 
     invoke-virtual {p0}, Lokio/Timeout;->deadlineNanoTime()J
 
@@ -178,54 +178,36 @@
 
     sget-object v0, Lokio/AsyncTimeout;->head:Lokio/AsyncTimeout;
 
-    const/4 v4, 0x0
-
-    if-eqz v0, :cond_9
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     :goto_1
-    iget-object v7, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
+    iget-object v4, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
-    if-eqz v7, :cond_7
+    if-eqz v4, :cond_5
 
-    iget-object v7, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
+    iget-object v4, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
-    if-eqz v7, :cond_6
+    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-wide v7, v7, Lokio/AsyncTimeout;->timeoutAt:J
+    iget-wide v7, v4, Lokio/AsyncTimeout;->timeoutAt:J
 
     sub-long/2addr v7, v5
 
-    cmp-long v7, v2, v7
+    cmp-long v4, v2, v7
 
-    if-gez v7, :cond_4
+    if-gez v4, :cond_4
 
     goto :goto_2
 
     :cond_4
     iget-object v0, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
-    if-eqz v0, :cond_5
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v4
-
-    :cond_6
-    :try_start_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v4
-
-    :cond_7
     :goto_2
-    :try_start_2
     iget-object v2, v0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
     iput-object v2, p0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
@@ -234,34 +216,26 @@
 
     sget-object v2, Lokio/AsyncTimeout;->head:Lokio/AsyncTimeout;
 
-    if-ne v0, v2, :cond_8
+    if-ne v0, v2, :cond_6
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_8
+    :cond_6
     monitor-exit v1
 
     return-void
 
-    :cond_9
-    :try_start_3
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    throw v4
-
-    :cond_a
-    :try_start_4
+    :cond_7
+    :try_start_1
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
     move-exception v0
@@ -270,7 +244,7 @@
 
     throw v0
 
-    :cond_b
+    :cond_8
     const-string v0, "Unbalanced enter/exit"
 
     new-instance v1, Ljava/lang/IllegalStateException;

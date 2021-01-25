@@ -426,6 +426,157 @@
     return-object p1
 .end method
 
+.method public findTargetSnapPosition(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;II)I
+    .locals 8
+
+    instance-of v0, p1, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$ScrollVectorProvider;
+
+    const/4 v1, -0x1
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    return v1
+
+    :cond_1
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSnapHelper;->findSnapView(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroid/view/View;
+
+    move-result-object v2
+
+    if-nez v2, :cond_2
+
+    return v1
+
+    :cond_2
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getPosition(Landroid/view/View;)I
+
+    move-result v2
+
+    if-ne v2, v1, :cond_3
+
+    return v1
+
+    :cond_3
+    move-object v3, p1
+
+    check-cast v3, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$ScrollVectorProvider;
+
+    add-int/lit8 v4, v0, -0x1
+
+    invoke-interface {v3, v4}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$ScrollVectorProvider;->computeScrollVectorForPosition(I)Landroid/graphics/PointF;
+
+    move-result-object v3
+
+    if-nez v3, :cond_4
+
+    return v1
+
+    :cond_4
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->canScrollHorizontally()Z
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    if-eqz v5, :cond_5
+
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSnapHelper;->getHorizontalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
+
+    move-result-object v5
+
+    invoke-virtual {p0, p1, v5, p2, v7}, Landroidx/recyclerview/widget/LinearSnapHelper;->estimateNextPositionDiffForFling(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroidx/recyclerview/widget/OrientationHelper;II)I
+
+    move-result p2
+
+    iget v5, v3, Landroid/graphics/PointF;->x:F
+
+    cmpg-float v5, v5, v6
+
+    if-gez v5, :cond_6
+
+    neg-int p2, p2
+
+    goto :goto_0
+
+    :cond_5
+    move p2, v7
+
+    :cond_6
+    :goto_0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->canScrollVertically()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7
+
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/LinearSnapHelper;->getVerticalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
+
+    move-result-object v5
+
+    invoke-virtual {p0, p1, v5, v7, p3}, Landroidx/recyclerview/widget/LinearSnapHelper;->estimateNextPositionDiffForFling(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;Landroidx/recyclerview/widget/OrientationHelper;II)I
+
+    move-result p3
+
+    iget v3, v3, Landroid/graphics/PointF;->y:F
+
+    cmpg-float v3, v3, v6
+
+    if-gez v3, :cond_8
+
+    neg-int p3, p3
+
+    goto :goto_1
+
+    :cond_7
+    move p3, v7
+
+    :cond_8
+    :goto_1
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->canScrollVertically()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_9
+
+    move p2, p3
+
+    :cond_9
+    if-nez p2, :cond_a
+
+    return v1
+
+    :cond_a
+    add-int/2addr v2, p2
+
+    if-gez v2, :cond_b
+
+    goto :goto_2
+
+    :cond_b
+    move v7, v2
+
+    :goto_2
+    if-lt v7, v0, :cond_c
+
+    goto :goto_3
+
+    :cond_c
+    move v4, v7
+
+    :goto_3
+    return v4
+.end method
+
 .method public final getHorizontalHelper(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/OrientationHelper;
     .locals 1
 

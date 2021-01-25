@@ -2,22 +2,15 @@
 .super Ljava/util/concurrent/CancellationException;
 .source "Exceptions.kt"
 
-# interfaces
-.implements Lkotlinx/coroutines/CopyableThrowable;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/util/concurrent/CancellationException;",
-        "Lkotlinx/coroutines/CopyableThrowable<",
+        "Ljava/lang/Object<",
         "Lkotlinx/coroutines/JobCancellationException;",
         ">;"
     }
-.end annotation
-
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExceptions.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Exceptions.kt\nkotlinx/coroutines/JobCancellationException\n*L\n1#1,76:1\n*E\n"
 .end annotation
 
 
@@ -43,41 +36,6 @@
 
 
 # virtual methods
-.method public createCopy()Ljava/lang/Throwable;
-    .locals 3
-
-    sget-boolean v0, Lkotlinx/coroutines/DebugKt;->DEBUG:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lkotlinx/coroutines/JobCancellationException;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CancellationException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v1, p0, Lkotlinx/coroutines/JobCancellationException;->job:Lkotlinx/coroutines/Job;
-
-    invoke-direct {v0, v2, p0, v1}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
-
-    move-object v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v1
-
-    :cond_1
-    :goto_0
-    return-object v1
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
 
@@ -145,17 +103,6 @@
 .method public fillInStackTrace()Ljava/lang/Throwable;
     .locals 1
 
-    sget-boolean v0, Lkotlinx/coroutines/DebugKt;->DEBUG:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0}, Ljava/util/concurrent/CancellationException;->fillInStackTrace()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/StackTraceElement;
@@ -172,7 +119,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -209,13 +156,6 @@
     add-int/2addr v1, v0
 
     return v1
-
-    :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public toString()Ljava/lang/String;

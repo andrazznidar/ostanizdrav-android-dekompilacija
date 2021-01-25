@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEventLoop.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EventLoop.common.kt\nkotlinx/coroutines/EventLoopImplBase\n+ 2 ThreadSafeHeap.kt\nkotlinx/coroutines/internal/ThreadSafeHeap\n+ 3 Synchronized.kt\nkotlinx/coroutines/internal/SynchronizedKt\n+ 4 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n*L\n1#1,529:1\n51#2:530\n52#2,7:532\n20#3:531\n92#4,2:539\n92#4,2:541\n92#4,2:543\n*E\n*S KotlinDebug\n*F\n+ 1 EventLoop.common.kt\nkotlinx/coroutines/EventLoopImplBase\n*L\n263#1:530\n263#1,7:532\n263#1:531\n293#1,2:539\n320#1,2:541\n338#1,2:543\n*E\n"
+    value = "SMAP\nEventLoop.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EventLoop.common.kt\nkotlinx/coroutines/EventLoopImplBase\n+ 2 ThreadSafeHeap.kt\nkotlinx/coroutines/internal/ThreadSafeHeap\n+ 3 Synchronized.kt\nkotlinx/coroutines/internal/SynchronizedKt\n+ 4 AtomicFU.common.kt\nkotlinx/atomicfu/AtomicFU_commonKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,529:1\n51#2:530\n52#2,7:532\n20#3:531\n92#4,2:539\n92#4,2:541\n92#4,2:544\n1#5:543\n*E\n*S KotlinDebug\n*F\n+ 1 EventLoop.common.kt\nkotlinx/coroutines/EventLoopImplBase\n*L\n263#1:530\n263#1,7:532\n263#1:531\n293#1,2:539\n320#1,2:541\n338#1,2:544\n*E\n"
 .end annotation
 
 
@@ -228,12 +228,12 @@
     return v1
 .end method
 
-.method public invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
+.method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
     .locals 1
 
     sget-object v0, Lkotlinx/coroutines/DefaultExecutorKt;->DefaultDelay:Lkotlinx/coroutines/Delay;
 
-    invoke-interface {v0, p1, p2, p3}, Lkotlinx/coroutines/Delay;->invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-interface {v0, p1, p2, p3, p4}, Lkotlinx/coroutines/Delay;->invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p1
 
@@ -650,9 +650,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     const/4 v4, 0x1
 
@@ -676,11 +676,11 @@
 
     invoke-direct {v5, p1, p2}, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;-><init>(J)V
 
-    invoke-virtual {v0, p0, v1, v5}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0, v3, v5}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     iget-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase;->_delayed:Ljava/lang/Object;
 
-    if-eqz v0, :cond_e
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     check-cast v0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;
 
@@ -698,7 +698,7 @@
 
     monitor-exit p3
 
-    move v0, v3
+    move v0, v2
 
     goto :goto_3
 
@@ -793,14 +793,14 @@
 
     monitor-exit p3
 
-    move v0, v2
+    move v0, v1
 
     :goto_3
     if-eqz v0, :cond_a
 
     if-eq v0, v4, :cond_9
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v2, :cond_8
 
     goto :goto_5
 
@@ -818,7 +818,9 @@
     throw p2
 
     :cond_9
-    invoke-virtual {p0, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplPlatform;->reschedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
+    sget-object v0, Lkotlinx/coroutines/DefaultExecutor;->INSTANCE:Lkotlinx/coroutines/DefaultExecutor;
+
+    invoke-virtual {v0, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase;->schedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
 
     goto :goto_5
 
@@ -840,9 +842,9 @@
 
     monitor-exit p1
 
-    move-object v1, p2
+    move-object v3, p2
 
-    check-cast v1, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;
+    check-cast v3, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;
 
     goto :goto_4
 
@@ -855,12 +857,12 @@
 
     :cond_b
     :goto_4
-    if-ne v1, p3, :cond_c
+    if-ne v3, p3, :cond_c
 
-    move v2, v4
+    move v1, v4
 
     :cond_c
-    if-eqz v2, :cond_d
+    if-eqz v1, :cond_d
 
     invoke-virtual {p0}, Lkotlinx/coroutines/EventLoopImplPlatform;->getThread()Ljava/lang/Thread;
 
@@ -894,11 +896,6 @@
     monitor-exit p3
 
     throw p1
-
-    :cond_e
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v1
 .end method
 
 .method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V

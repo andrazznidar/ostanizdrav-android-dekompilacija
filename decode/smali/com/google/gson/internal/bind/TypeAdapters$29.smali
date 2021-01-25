@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -147,9 +147,7 @@
 
     move-result-object v2
 
-    iget-object v3, v0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
-
-    invoke-virtual {v3, v1, v2}, Lcom/google/gson/internal/LinkedTreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
 
     goto :goto_0
 
@@ -211,7 +209,7 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_9
 
     instance-of v0, p2, Lcom/google/gson/JsonNull;
 
@@ -299,7 +297,7 @@
     :cond_4
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -325,17 +323,15 @@
     :cond_6
     instance-of v0, p2, Lcom/google/gson/JsonObject;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginObject()Lcom/google/gson/stream/JsonWriter;
 
-    if-eqz v0, :cond_8
+    invoke-virtual {p2}, Lcom/google/gson/JsonElement;->getAsJsonObject()Lcom/google/gson/JsonObject;
 
-    check-cast p2, Lcom/google/gson/JsonObject;
+    move-result-object p2
 
-    iget-object p2, p2, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
-
-    invoke-virtual {p2}, Lcom/google/gson/internal/LinkedTreeMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {p2}, Lcom/google/gson/JsonObject;->entrySet()Ljava/util/Set;
 
     move-result-object p2
 
@@ -380,32 +376,11 @@
     goto :goto_3
 
     :cond_8
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Not a JSON Object: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Couldn\'t write "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -423,7 +398,7 @@
 
     throw p1
 
-    :cond_a
+    :cond_9
     :goto_2
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 

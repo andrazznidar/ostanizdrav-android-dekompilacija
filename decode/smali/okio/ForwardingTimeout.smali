@@ -9,24 +9,17 @@
 
 # direct methods
 .method public constructor <init>(Lokio/Timeout;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "delegate"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lokio/Timeout;-><init>()V
 
     iput-object p1, p0, Lokio/ForwardingTimeout;->delegate:Lokio/Timeout;
 
     return-void
-
-    :cond_0
-    const-string p1, "delegate"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -109,7 +102,9 @@
 .method public timeout(JLjava/util/concurrent/TimeUnit;)Lokio/Timeout;
     .locals 1
 
-    if-eqz p3, :cond_0
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokio/ForwardingTimeout;->delegate:Lokio/Timeout;
 
@@ -118,13 +113,4 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_0
-    const-string p1, "unit"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

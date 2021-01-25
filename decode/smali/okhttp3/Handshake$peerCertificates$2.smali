@@ -27,10 +27,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHandshake.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Handshake.kt\nokhttp3/Handshake$peerCertificates$2\n*L\n1#1,200:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic $peerCertificatesFn:Lkotlin/jvm/functions/Function0;

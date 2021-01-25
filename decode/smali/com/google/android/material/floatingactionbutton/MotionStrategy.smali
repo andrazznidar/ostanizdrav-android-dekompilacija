@@ -7,15 +7,7 @@
 .method public abstract createAnimator()Landroid/animation/AnimatorSet;
 .end method
 
-.method public abstract getListeners()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Landroid/animation/Animator$AnimatorListener;",
-            ">;"
-        }
-    .end annotation
+.method public abstract getDefaultMotionSpecResource()I
 .end method
 
 .method public abstract onAnimationCancel()V

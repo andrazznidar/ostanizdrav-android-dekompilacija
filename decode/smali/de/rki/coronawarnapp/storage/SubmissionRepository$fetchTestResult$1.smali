@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/storage/SubmissionRepository;->fetchTestResult(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/storage/SubmissionRepository;->fetchTestResult(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.storage.SubmissionRepository"
     f = "SubmissionRepository.kt"
     l = {
-        0x25
+        0xbb
     }
     m = "fetchTestResult"
 .end annotation
@@ -61,7 +61,9 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/SubmissionRepository$fetchTestResult$1;->this$0:Lde/rki/coronawarnapp/storage/SubmissionRepository;
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/storage/SubmissionRepository;->fetchTestResult(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/storage/SubmissionRepository;->fetchTestResult(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -20,6 +20,8 @@
 
 .field public static final enum EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
+.field public static final enum HTTP:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+
 .field public static final enum INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
 .field public static final enum UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
@@ -62,6 +64,8 @@
     const/4 v3, 0x2
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->HTTP:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
     aput-object v1, v0, v3
 

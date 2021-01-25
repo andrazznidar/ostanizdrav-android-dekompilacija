@@ -21,10 +21,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\ndates.kt\nKotlin\n*S Kotlin\n*F\n+ 1 dates.kt\nokhttp3/internal/http/DatesKt$STANDARD_DATE_FORMAT$1\n*L\n1#1,107:1\n*E\n"
-.end annotation
-
 
 # direct methods
 .method public constructor <init>()V

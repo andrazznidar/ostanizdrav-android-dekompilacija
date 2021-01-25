@@ -196,6 +196,82 @@
     return v2
 .end method
 
+.method public getDifference(JJ)I
+    .locals 4
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->getOffsetToAdd(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->iField:Lorg/joda/time/DurationField;
+
+    iget-boolean v2, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->iTimeField:Z
+
+    if-eqz v2, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->getOffsetToAdd(J)I
+
+    move-result v2
+
+    :goto_0
+    int-to-long v2, v2
+
+    add-long/2addr p1, v2
+
+    int-to-long v2, v0
+
+    add-long/2addr p3, v2
+
+    invoke-virtual {v1, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 4
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->getOffsetToAdd(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->iField:Lorg/joda/time/DurationField;
+
+    iget-boolean v2, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->iTimeField:Z
+
+    if-eqz v2, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/ZonedChronology$ZonedDurationField;->getOffsetToAdd(J)I
+
+    move-result v2
+
+    :goto_0
+    int-to-long v2, v2
+
+    add-long/2addr p1, v2
+
+    int-to-long v2, v0
+
+    add-long/2addr p3, v2
+
+    invoke-virtual {v1, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public final getOffsetFromLocalToSubtract(J)I
     .locals 7
 

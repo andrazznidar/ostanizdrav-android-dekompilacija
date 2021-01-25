@@ -79,9 +79,9 @@
 
     const-string v3, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService"
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v2, v1, Lcom/google/android/gms/common/internal/BaseGmsClient$zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 

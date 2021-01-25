@@ -79,6 +79,15 @@
 
 .method public parseKey(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "byteString"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
@@ -96,15 +105,22 @@
     return-object p1
 .end method
 
-.method public validateKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
+.method public validateKey(Lcom/google/crypto/tink/proto/AesCtrKey;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
         }
     .end annotation
-
-    check-cast p1, Lcom/google/crypto/tink/proto/AesCtrKey;
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/AesCtrKey;->getVersion()I
 
@@ -133,8 +149,41 @@
     return-void
 .end method
 
+.method public bridge synthetic validateKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    check-cast p1, Lcom/google/crypto/tink/proto/AesCtrKey;
+
+    invoke-virtual {p0, p1}, Lcom/google/crypto/tink/aead/AesCtrKeyManager;->validateKey(Lcom/google/crypto/tink/proto/AesCtrKey;)V
+
+    return-void
+.end method
+
 .method public final validateParams(Lcom/google/crypto/tink/proto/AesCtrParams;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "params"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

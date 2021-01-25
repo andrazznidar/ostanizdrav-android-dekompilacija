@@ -75,6 +75,10 @@
 
     invoke-virtual {p0}, Landroidx/security/crypto/EncryptedSharedPreferences$Editor;->notifyListeners()V
 
+    iget-object v0, p0, Landroidx/security/crypto/EncryptedSharedPreferences$Editor;->mKeysChanged:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
     return-void
 .end method
 
@@ -348,7 +352,7 @@
 
     const-string v0, "Could not encrypt data: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

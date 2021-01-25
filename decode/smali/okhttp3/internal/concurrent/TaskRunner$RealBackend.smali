@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTaskRunner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner$RealBackend\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,314:1\n551#2:315\n*E\n*S KotlinDebug\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner$RealBackend\n*L\n281#1:315\n*E\n"
+    value = "SMAP\nTaskRunner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner$RealBackend\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,314:1\n548#2:315\n*E\n*S KotlinDebug\n*F\n+ 1 TaskRunner.kt\nokhttp3/internal/concurrent/TaskRunner$RealBackend\n*L\n281#1:315\n*E\n"
 .end annotation
 
 
@@ -29,29 +29,33 @@
 .method public constructor <init>(Ljava/util/concurrent/ThreadFactory;)V
     .locals 9
 
+    const-string v0, "threadFactory"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    const/4 v1, 0x0
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const v2, 0x7fffffff
+    new-instance v7, Ljava/util/concurrent/SynchronousQueue;
 
-    const-wide/16 v3, 0x3c
+    invoke-direct {v7}, Ljava/util/concurrent/SynchronousQueue;-><init>()V
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    const/4 v2, 0x0
 
-    new-instance v6, Ljava/util/concurrent/SynchronousQueue;
+    const v3, 0x7fffffff
 
-    invoke-direct {v6}, Ljava/util/concurrent/SynchronousQueue;-><init>()V
+    const-wide/16 v4, 0x3c
 
-    move-object v0, v8
+    move-object v1, v0
 
-    move-object v7, p1
+    move-object v8, p1
 
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    iput-object v8, p0, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;->executor:Ljava/util/concurrent/ThreadPoolExecutor;
+    iput-object v0, p0, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;->executor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     return-void
 .end method
@@ -59,7 +63,11 @@
 
 # virtual methods
 .method public coordinatorNotify(Lokhttp3/internal/concurrent/TaskRunner;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "taskRunner"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->notify()V
 
@@ -73,6 +81,10 @@
             Ljava/lang/InterruptedException;
         }
     .end annotation
+
+    const-string v0, "taskRunner"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/32 v0, 0xf4240
 
@@ -104,22 +116,15 @@
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "runnable"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskRunner$RealBackend;->executor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
 
     return-void
-
-    :cond_0
-    const-string p1, "runnable"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public nanoTime()J

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n*L\n1#1,353:1\n*E\n"
+    value = "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,377:1\n1#2:378\n*E\n"
 .end annotation
 
 
@@ -35,18 +35,13 @@
 
     sget-object v0, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Lkotlin/internal/PlatformImplementations;->defaultPlatformRandom()Lkotlin/random/Random;
 
-    new-instance v0, Lkotlin/random/FallbackThreadLocalRandom;
-
-    invoke-direct {v0}, Lkotlin/random/FallbackThreadLocalRandom;-><init>()V
+    move-result-object v0
 
     sput-object v0, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
 
     return-void
-
-    :cond_0
-    throw v1
 .end method
 
 .method public constructor <init>()V
@@ -121,7 +116,7 @@
 
     if-ne p2, v1, :cond_4
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->fastLog2(I)I
+    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
 
     move-result p2
 
@@ -164,7 +159,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lkotlin/collections/MapsKt___MapsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -229,7 +224,7 @@
 
     if-eqz p3, :cond_1
 
-    invoke-static {p3}, Lkotlin/collections/MapsKt___MapsKt;->fastLog2(I)I
+    invoke-static {p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
 
     move-result p3
 
@@ -254,7 +249,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->fastLog2(I)I
+    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
 
     move-result p3
 
@@ -332,7 +327,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lkotlin/collections/MapsKt___MapsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

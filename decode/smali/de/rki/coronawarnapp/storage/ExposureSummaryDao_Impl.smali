@@ -7,19 +7,9 @@
 
 
 # instance fields
-.field public final __converters:Lde/rki/coronawarnapp/util/Converters;
+.field public final __commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
 
 .field public final __db:Landroidx/room/RoomDatabase;
-
-.field public final __insertionAdapterOfExposureSummaryEntity:Landroidx/room/EntityInsertionAdapter;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/storage/ExposureSummaryEntity;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # direct methods
@@ -28,19 +18,19 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lde/rki/coronawarnapp/util/Converters;
+    new-instance v0, Lde/rki/coronawarnapp/util/database/CommonConverters;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/util/Converters;-><init>()V
+    invoke-direct {v0}, Lde/rki/coronawarnapp/util/database/CommonConverters;-><init>()V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__converters:Lde/rki/coronawarnapp/util/Converters;
+    iput-object v0, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    new-instance v0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$1;
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl$1;-><init>(Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;Landroidx/room/RoomDatabase;)V
+    const/4 v0, 0x0
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/storage/ExposureSummaryDao_Impl;->__insertionAdapterOfExposureSummaryEntity:Landroidx/room/EntityInsertionAdapter;
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     return-void
 .end method

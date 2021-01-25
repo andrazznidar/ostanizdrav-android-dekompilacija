@@ -63,6 +63,30 @@
     return p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getMaximumValue()I
     .locals 1
 
@@ -138,7 +162,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, p3, v1, v0}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/GJYearOfEraDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

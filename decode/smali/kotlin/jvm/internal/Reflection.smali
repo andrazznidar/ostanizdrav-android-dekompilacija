@@ -67,3 +67,18 @@
 
     throw p0
 .end method
+
+.method public static property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+    .locals 1
+
+    sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
+
+    if-eqz v0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    throw p0
+.end method

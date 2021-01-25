@@ -617,7 +617,7 @@
 
     iget-object v3, p1, Lorg/joda/time/chrono/LimitChronology;->iLowerLimit:Lorg/joda/time/DateTime;
 
-    invoke-static {v1, v3}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -627,7 +627,7 @@
 
     iget-object p1, p1, Lorg/joda/time/chrono/LimitChronology;->iUpperLimit:Lorg/joda/time/DateTime;
 
-    invoke-static {v1, p1}, Lkotlin/collections/MapsKt___MapsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -698,6 +698,41 @@
     return-wide p1
 .end method
 
+.method public getDateTimeMillis(JIIII)J
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, v0}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    iget-object v1, p0, Lorg/joda/time/chrono/AssembledChronology;->iBase:Lorg/joda/time/Chronology;
+
+    move-wide v2, p1
+
+    move v4, p3
+
+    move v5, p4
+
+    move v6, p5
+
+    move v7, p6
+
+    invoke-virtual/range {v1 .. v7}, Lorg/joda/time/Chronology;->getDateTimeMillis(JIIII)J
+
+    move-result-wide p1
+
+    const-string p3, "resulting"
+
+    invoke-virtual {p0, p1, p2, p3}, Lorg/joda/time/chrono/LimitChronology;->checkLimits(JLjava/lang/String;)V
+
+    return-wide p1
+.end method
+
 .method public hashCode()I
     .locals 3
 
@@ -750,7 +785,7 @@
 
     const-string v0, "LimitChronology["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

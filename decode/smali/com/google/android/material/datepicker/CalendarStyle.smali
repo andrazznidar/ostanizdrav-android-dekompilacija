@@ -35,7 +35,7 @@
 
     move-result-object v1
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {p1, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v0
 
@@ -97,7 +97,7 @@
 
     sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_rangeFillColor:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 

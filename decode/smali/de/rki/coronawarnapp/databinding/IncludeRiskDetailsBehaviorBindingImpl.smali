@@ -65,10 +65,10 @@
 
     :array_1
     .array-data 4
-        0x7f0c005f
-        0x7f0c005f
-        0x7f0c005f
-        0x7f0c005f
+        0x7f0c0089
+        0x7f0c0089
+        0x7f0c0089
+        0x7f0c0089
     .end array-data
 .end method
 
@@ -117,7 +117,7 @@
 
     check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
-    const/4 v5, 0x5
+    const/4 v5, 0x4
 
     move-object v2, p0
 
@@ -155,7 +155,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 9
+    .locals 8
 
     monitor-enter p0
 
@@ -170,50 +170,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
-    const-wide/16 v5, 0x61
+    const-wide/16 v5, 0x30
 
     and-long/2addr v5, v0
 
     cmp-long v5, v5, v2
 
-    const/4 v6, 0x0
+    const-wide/16 v6, 0x20
 
-    if-eqz v5, :cond_1
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;->riskLevel:Landroidx/lifecycle/LiveData;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v4, v6
-
-    :goto_0
-    const/4 v7, 0x0
-
-    invoke-virtual {p0, v7, v4}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
-
-    move-result-object v4
-
-    move-object v6, v4
-
-    check-cast v6, Ljava/lang/Integer;
-
-    :cond_1
-    const-wide/16 v7, 0x40
-
-    and-long/2addr v0, v7
+    and-long/2addr v0, v6
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorCoughSneeze:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
@@ -223,7 +194,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12015c
+    const v2, 0x7f1201db
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -239,7 +210,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800bf
+    const v2, 0x7f080102
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -255,7 +226,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12015d
+    const v2, 0x7f1201dc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -271,7 +242,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800bc
+    const v2, 0x7f0800ff
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -287,7 +258,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12015f
+    const v2, 0x7f1201de
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -303,7 +274,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800c0
+    const v2, 0x7f080103
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -319,7 +290,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120160
+    const v2, 0x7f1201df
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -335,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800be
+    const v2, 0x7f080101
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -343,26 +314,26 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_2
-    if-eqz v5, :cond_3
+    :cond_0
+    if-eqz v5, :cond_1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorCoughSneeze:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
-    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorStayAway:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
-    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorWashHands:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
-    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorWearMask:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
-    invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setRiskLevel(Ljava/lang/Integer;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;->setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
 
-    :cond_3
+    :cond_1
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->riskDetailsBehaviorWashHands:Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -481,7 +452,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x40
+    const-wide/16 v0, 0x20
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
@@ -528,19 +499,15 @@
 
     const/4 v1, 0x1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_6
 
-    if-eq p1, v1, :cond_6
+    if-eq p1, v1, :cond_4
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_4
-
-    const/4 v2, 0x3
-
     if-eq p1, v2, :cond_2
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
     if-eq p1, v2, :cond_0
 
@@ -556,7 +523,7 @@
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x10
+    const-wide/16 v2, 0x8
 
     or-long/2addr p1, v2
 
@@ -591,7 +558,7 @@
     :try_start_1
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x8
+    const-wide/16 v2, 0x4
 
     or-long/2addr p1, v2
 
@@ -626,7 +593,7 @@
     :try_start_2
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x4
+    const-wide/16 v2, 0x2
 
     or-long/2addr p1, v2
 
@@ -661,7 +628,7 @@
     :try_start_3
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x2
+    const-wide/16 v2, 0x1
 
     or-long/2addr p1, v2
 
@@ -684,41 +651,6 @@
 
     :cond_7
     :goto_3
-    return v0
-
-    :cond_8
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_9
-
-    monitor-enter p0
-
-    :try_start_4
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw p1
-
-    :cond_9
-    :goto_4
     return v0
 .end method
 
@@ -746,17 +678,17 @@
     return-void
 .end method
 
-.method public setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public setTracingDetails(Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;)V
     .locals 4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBinding;->mTracingDetails:Lde/rki/coronawarnapp/ui/tracing/details/TracingDetailsState;
 
     monitor-enter p0
 
     :try_start_0
     iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRiskDetailsBehaviorBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x20
+    const-wide/16 v2, 0x10
 
     or-long/2addr v0, v2
 
@@ -766,7 +698,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1f
+    const/16 p1, 0x35
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

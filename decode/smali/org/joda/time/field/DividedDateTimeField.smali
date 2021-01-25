@@ -170,6 +170,40 @@
     return p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    iget p2, p0, Lorg/joda/time/field/DividedDateTimeField;->iDivisor:I
+
+    div-int/2addr p1, p2
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    iget p3, p0, Lorg/joda/time/field/DividedDateTimeField;->iDivisor:I
+
+    int-to-long p3, p3
+
+    div-long/2addr p1, p3
+
+    return-wide p1
+.end method
+
 .method public getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 
@@ -262,7 +296,7 @@
 
     iget v1, p0, Lorg/joda/time/field/DividedDateTimeField;->iMax:I
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/field/DecoratedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
 

@@ -3,6 +3,17 @@
 .source "ViewModelProvider.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/lifecycle/ViewModelProvider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "OnRequeryFactory"
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0

@@ -1,40 +1,46 @@
-.class public final Lcom/google/android/gms/internal/nearby/zzac;
-.super Lcom/google/android/gms/internal/nearby/zzbx;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.class public final synthetic Lcom/google/android/gms/internal/nearby/zzac;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
-# instance fields
-.field public final synthetic zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+# static fields
+.field public static final zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzac;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/nearby/zzac;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzbx;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/Status;",
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
-            ">;)V"
-        }
-    .end annotation
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
 
-    invoke-static {p1, p2, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/nearby/zzt;->zza(Lcom/google/android/gms/internal/nearby/zzr;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     return-void
 .end method

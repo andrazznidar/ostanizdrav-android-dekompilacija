@@ -17,7 +17,7 @@
 .method public static isMathematicalInteger(D)Z
     .locals 6
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->isFinite(D)Z
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
 
     move-result v0
 
@@ -31,7 +31,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->isFinite(D)Z
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
 
     move-result v0
 
@@ -97,7 +97,7 @@
 .method public static roundToLong(DLjava/math/RoundingMode;)J
     .locals 8
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/Preconditions;->isFinite(D)Z
+    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
 
     move-result v0
 
@@ -310,23 +310,33 @@
     :cond_8
     new-instance v0, Ljava/lang/ArithmeticException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object p2
 
-    const-string v2, "rounded value is out of range for input "
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    add-int/lit8 v1, v1, 0x53
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "rounded value is out of range for input "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const-string p0, " and rounding mode "
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

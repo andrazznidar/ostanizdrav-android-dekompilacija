@@ -61,3 +61,21 @@
 
     return p0
 .end method
+
+.method public static lerp(IIF)I
+    .locals 0
+
+    sub-int/2addr p1, p0
+
+    int-to-float p1, p1
+
+    mul-float/2addr p2, p1
+
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method

@@ -129,7 +129,7 @@
 
     const-string v1, "Can\'t load animation resource ID #0x"
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -334,6 +334,93 @@
     return p1
 .end method
 
+.method public getAnimator(Ljava/lang/String;Ljava/lang/Object;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/String;",
+            "TT;",
+            "Landroid/util/Property<",
+            "TT;*>;)",
+            "Landroid/animation/ObjectAnimator;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lcom/google/android/material/animation/MotionSpec;->getPropertyValues(Ljava/lang/String;)[Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v0
+
+    invoke-static {p2, v0}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p3}, Landroid/animation/ObjectAnimator;->setProperty(Landroid/util/Property;)V
+
+    invoke-virtual {p0, p1}, Lcom/google/android/material/animation/MotionSpec;->getTiming(Ljava/lang/String;)Lcom/google/android/material/animation/MotionTiming;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lcom/google/android/material/animation/MotionTiming;->apply(Landroid/animation/Animator;)V
+
+    return-object p2
+.end method
+
+.method public getPropertyValues(Ljava/lang/String;)[Landroid/animation/PropertyValuesHolder;
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lcom/google/android/material/animation/MotionSpec;->hasPropertyValues(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/material/animation/MotionSpec;->propertyValues:Landroidx/collection/SimpleArrayMap;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Landroid/animation/PropertyValuesHolder;
+
+    array-length v0, p1
+
+    new-array v0, v0, [Landroid/animation/PropertyValuesHolder;
+
+    const/4 v1, 0x0
+
+    :goto_0
+    array-length v2, p1
+
+    if-ge v1, v2, :cond_0
+
+    aget-object v2, p1, v1
+
+    invoke-virtual {v2}, Landroid/animation/PropertyValuesHolder;->clone()Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p1
+.end method
+
 .method public getTiming(Ljava/lang/String;)Lcom/google/android/material/animation/MotionTiming;
     .locals 2
 
@@ -373,6 +460,30 @@
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p1
+.end method
+
+.method public hasPropertyValues(Ljava/lang/String;)Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/material/animation/MotionSpec;->propertyValues:Landroidx/collection/SimpleArrayMap;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
 .method public hashCode()I

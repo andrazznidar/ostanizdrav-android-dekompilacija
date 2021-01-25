@@ -14,6 +14,8 @@
 # static fields
 .field public static final MAIN_THREAD:Ljava/util/concurrent/Executor;
 
+.field public static final zza:Ljava/util/concurrent/Executor;
+
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -24,6 +26,12 @@
     invoke-direct {v0}, Lcom/google/android/gms/tasks/TaskExecutors$zza;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
+
+    new-instance v0, Lcom/google/android/gms/tasks/zzt;
+
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzt;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->zza:Ljava/util/concurrent/Executor;
 
     return-void
 .end method

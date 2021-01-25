@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/include_risk_card_row_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:id="@id/risk_card_row_icon" android:tag="binding_1" android:layout_width="@dimen/icon_size_risk_card" android:layout_height="@dimen/icon_size_risk_card" android:importantForAccessibility="no" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <TextView android:id="@id/risk_card_row_body" android:tag="binding_2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/risk_card_row_icon" app:layout_constraintTop_toTopOf="parent" style="@style/subtitle" />
-</androidx.constraintlayout.widget.ConstraintLayout>

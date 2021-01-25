@@ -2275,6 +2275,16 @@
 
 .field public static final TabLayout_tabUnboundedRipple:I = 0x18
 
+.field public static final TestResultSection:[I
+
+.field public static final TestResultSection_test_result_section_content:I = 0x0
+
+.field public static final TestResultSection_test_result_section_headline:I = 0x1
+
+.field public static final TestResultSection_test_result_section_registered_at_text:I = 0x2
+
+.field public static final TestResultSection_test_result_section_status_icon:I = 0x3
+
 .field public static final TextAppearance:[I
 
 .field public static final TextAppearance_android_fontFamily:I = 0xa
@@ -2850,7 +2860,7 @@
 
     new-array v5, v0, [I
 
-    const v12, 0x7f0402fb
+    const v12, 0x7f0402ff
 
     aput v12, v5, v3
 
@@ -3036,7 +3046,7 @@
 
     new-array v14, v0, [I
 
-    const v15, 0x7f0402fa
+    const v15, 0x7f0402fe
 
     aput v15, v14, v3
 
@@ -3338,9 +3348,15 @@
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->TabLayout:[I
 
-    new-array v1, v10, [I
+    new-array v1, v6, [I
 
     fill-array-data v1, :array_62
+
+    sput-object v1, Lde/rki/coronawarnapp/R$styleable;->TestResultSection:[I
+
+    new-array v1, v10, [I
+
+    fill-array-data v1, :array_63
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->TextAppearance:[I
 
@@ -3348,13 +3364,13 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_63
+    fill-array-data v1, :array_64
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->TextInputLayout:[I
 
     new-array v1, v11, [I
 
-    fill-array-data v1, :array_64
+    fill-array-data v1, :array_65
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->ThemeEnforcement:[I
 
@@ -3362,19 +3378,19 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_65
+    fill-array-data v1, :array_66
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->Toolbar:[I
 
     new-array v1, v4, [I
 
-    fill-array-data v1, :array_66
+    fill-array-data v1, :array_67
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->View:[I
 
     new-array v1, v11, [I
 
-    fill-array-data v1, :array_67
+    fill-array-data v1, :array_68
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->ViewBackgroundHelper:[I
 
@@ -3386,31 +3402,33 @@
 
     new-array v1, v11, [I
 
-    fill-array-data v1, :array_68
+    fill-array-data v1, :array_69
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->ViewStubCompat:[I
 
     new-array v1, v6, [I
 
-    fill-array-data v1, :array_69
+    fill-array-data v1, :array_6a
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->zxing_camera_preview:[I
 
     new-array v1, v4, [I
 
-    fill-array-data v1, :array_6a
+    fill-array-data v1, :array_6b
 
     sput-object v1, Lde/rki/coronawarnapp/R$styleable;->zxing_finder:[I
 
     new-array v0, v0, [I
 
-    const v1, 0x7f040311
+    const v1, 0x7f040315
 
     aput v1, v0, v3
 
     sput-object v0, Lde/rki/coronawarnapp/R$styleable;->zxing_view:[I
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -3441,8 +3459,8 @@
         0x7f040244
         0x7f04028e
         0x7f040291
-        0x7f0402e2
-        0x7f0402ec
+        0x7f0402e6
+        0x7f0402f0
     .end array-data
 
     :array_1
@@ -3452,7 +3470,7 @@
         0x7f0400a3
         0x7f040152
         0x7f040291
-        0x7f0402ec
+        0x7f0402f0
     .end array-data
 
     :array_2
@@ -3536,16 +3554,16 @@
     .array-data 4
         0x1010119
         0x7f040277
-        0x7f0402e0
-        0x7f0402e1
+        0x7f0402e4
+        0x7f0402e5
     .end array-data
 
     :array_c
     .array-data 4
         0x1010142
-        0x7f0402dd
-        0x7f0402de
-        0x7f0402df
+        0x7f0402e1
+        0x7f0402e2
+        0x7f0402e3
     .end array-data
 
     :array_d
@@ -3580,8 +3598,8 @@
         0x7f04014a
         0x7f040190
         0x7f0401d2
-        0x7f0402b9
-        0x7f0402d5
+        0x7f0402bd
+        0x7f0402d9
     .end array-data
 
     :array_f
@@ -3686,31 +3704,31 @@
         0x7f040274
         0x7f040275
         0x7f04029a
-        0x7f0402c4
-        0x7f0402c6
-        0x7f0402c7
         0x7f0402c8
         0x7f0402ca
         0x7f0402cb
         0x7f0402cc
-        0x7f0402cd
+        0x7f0402ce
+        0x7f0402cf
+        0x7f0402d0
         0x7f0402d1
-        0x7f0402d2
-        0x7f0402ee
-        0x7f0402ef
-        0x7f0402f0
-        0x7f0402f1
-        0x7f0402fc
-        0x7f0402ff
+        0x7f0402d5
+        0x7f0402d6
+        0x7f0402f2
+        0x7f0402f3
+        0x7f0402f4
+        0x7f0402f5
         0x7f040300
-        0x7f040301
-        0x7f040302
         0x7f040303
         0x7f040304
         0x7f040305
         0x7f040306
         0x7f040307
         0x7f040308
+        0x7f040309
+        0x7f04030a
+        0x7f04030b
+        0x7f04030c
     .end array-data
 
     :array_10
@@ -3838,8 +3856,8 @@
         0x7f04025d
         0x7f040260
         0x7f040265
-        0x7f0402d3
-        0x7f0402d6
+        0x7f0402d7
+        0x7f0402da
     .end array-data
 
     :array_18
@@ -3859,7 +3877,7 @@
         0x7f0400f8
         0x7f040242
         0x7f040245
-        0x7f0402d0
+        0x7f0402d4
     .end array-data
 
     :array_1a
@@ -3877,9 +3895,9 @@
         0x7f040251
         0x7f040253
         0x7f040287
-        0x7f0402e2
-        0x7f0402e3
-        0x7f0402ed
+        0x7f0402e6
+        0x7f0402e7
+        0x7f0402f1
     .end array-data
 
     :array_1b
@@ -4099,7 +4117,7 @@
         0x7f040102
         0x7f04014e
         0x7f040273
-        0x7f0402d9
+        0x7f0402dd
     .end array-data
 
     :array_25
@@ -4134,7 +4152,7 @@
         0x7f04025d
         0x7f040260
         0x7f040265
-        0x7f0402f9
+        0x7f0402fd
     .end array-data
 
     :array_28
@@ -4164,7 +4182,7 @@
         0x7f040149
         0x7f04014a
         0x7f04014b
-        0x7f0402f6
+        0x7f0402fa
     .end array-data
 
     :array_2b
@@ -4242,7 +4260,7 @@
         0x10101f8
         0x7f04011f
         0x7f040120
-        0x7f0402fb
+        0x7f0402ff
     .end array-data
 
     :array_34
@@ -4327,9 +4345,9 @@
         0x7f0400e8
         0x7f0400e9
         0x7f040249
-        0x7f040309
-        0x7f04030a
-        0x7f04030b
+        0x7f04030d
+        0x7f04030e
+        0x7f04030f
     .end array-data
 
     :array_3b
@@ -4363,7 +4381,7 @@
     :array_3d
     .array-data 4
         0x7f040071
-        0x7f0402fa
+        0x7f0402fe
     .end array-data
 
     :array_3e
@@ -4419,7 +4437,7 @@
         0x7f040169
         0x7f04021d
         0x7f040263
-        0x7f0402f2
+        0x7f0402f6
     .end array-data
 
     :array_43
@@ -4467,7 +4485,7 @@
     :array_47
     .array-data 4
         0x10104ee
-        0x7f0402f8
+        0x7f0402fc
     .end array-data
 
     :array_48
@@ -4544,8 +4562,8 @@
         0x7f040262
         0x7f04026e
         0x7f040293
-        0x7f0402e2
-        0x7f0402fe
+        0x7f0402e6
+        0x7f040302
     .end array-data
 
     :array_4c
@@ -4639,7 +4657,7 @@
         0x7f040255
         0x7f04028d
         0x7f040292
-        0x7f0402fd
+        0x7f040301
     .end array-data
 
     :array_54
@@ -4650,7 +4668,7 @@
         0x7f040212
         0x7f040257
         0x7f040266
-        0x7f0402f7
+        0x7f0402fb
     .end array-data
 
     :array_55
@@ -4731,12 +4749,12 @@
         0x7f040296
         0x7f040297
         0x7f04029b
-        0x7f0402da
-        0x7f0402db
-        0x7f0402dc
-        0x7f0402f3
-        0x7f0402f4
-        0x7f0402f5
+        0x7f0402de
+        0x7f0402df
+        0x7f0402e0
+        0x7f0402f7
+        0x7f0402f8
+        0x7f0402f9
     .end array-data
 
     :array_5e
@@ -4805,6 +4823,14 @@
 
     :array_62
     .array-data 4
+        0x7f0402b9
+        0x7f0402ba
+        0x7f0402bb
+        0x7f0402bc
+    .end array-data
+
+    :array_63
+    .array-data 4
         0x1010095
         0x1010096
         0x1010097
@@ -4819,11 +4845,11 @@
         0x1010585
         0x7f040142
         0x7f04014a
-        0x7f0402b9
-        0x7f0402d5
+        0x7f0402bd
+        0x7f0402d9
     .end array-data
 
-    :array_63
+    :array_64
     .array-data 4
         0x101009a
         0x1010150
@@ -4877,14 +4903,14 @@
         0x7f04027e
     .end array-data
 
-    :array_64
+    :array_65
     .array-data 4
         0x1010034
         0x7f04011b
         0x7f04011c
     .end array-data
 
-    :array_65
+    :array_66
     .array-data 4
         0x10100af
         0x1010140
@@ -4907,54 +4933,54 @@
         0x7f04028e
         0x7f04028f
         0x7f040290
-        0x7f0402e2
-        0x7f0402e4
-        0x7f0402e5
         0x7f0402e6
-        0x7f0402e7
         0x7f0402e8
         0x7f0402e9
         0x7f0402ea
         0x7f0402eb
+        0x7f0402ec
+        0x7f0402ed
+        0x7f0402ee
+        0x7f0402ef
     .end array-data
 
-    :array_66
+    :array_67
     .array-data 4
         0x1010000
         0x10100da
         0x7f040222
         0x7f040223
-        0x7f0402d7
+        0x7f0402db
     .end array-data
 
-    :array_67
+    :array_68
     .array-data 4
         0x10100d4
         0x7f040043
         0x7f040044
     .end array-data
 
-    :array_68
+    :array_69
     .array-data 4
         0x10100d0
         0x10100f2
         0x10100f3
     .end array-data
 
-    :array_69
-    .array-data 4
-        0x7f04030c
-        0x7f04030d
-        0x7f04030f
-        0x7f040312
-    .end array-data
-
     :array_6a
     .array-data 4
-        0x7f04030e
         0x7f040310
+        0x7f040311
         0x7f040313
+        0x7f040316
+    .end array-data
+
+    :array_6b
+    .array-data 4
+        0x7f040312
         0x7f040314
-        0x7f040315
+        0x7f040317
+        0x7f040318
+        0x7f040319
     .end array-data
 .end method

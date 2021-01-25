@@ -4,12 +4,25 @@
 
 # interfaces
 .implements Landroidx/lifecycle/LifecycleObserver;
+.implements Ldagger/android/HasAndroidInjector;
 
 
 # static fields
 .field public static final Companion:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
 .field public static final TAG:Ljava/lang/String;
+
+
+# instance fields
+.field public dispatchingAndroidInjector:Ldagger/android/DispatchingAndroidInjector;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ldagger/android/DispatchingAndroidInjector<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -43,6 +56,33 @@
 
 
 # virtual methods
+.method public androidInjector()Ldagger/android/AndroidInjector;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ldagger/android/AndroidInjector<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->dispatchingAndroidInjector:Ldagger/android/DispatchingAndroidInjector;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const-string v0, "dispatchingAndroidInjector"
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 2
 
@@ -54,7 +94,7 @@
 
     const-string v1, "supportFragmentManager"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mPrimaryNav:Landroidx/fragment/app/Fragment;
 
@@ -93,7 +133,11 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 0
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/util/di/AppInjector;->INSTANCE:Lde/rki/coronawarnapp/util/di/AppInjector;
+
+    invoke-virtual {v0, p0}, Lde/rki/coronawarnapp/util/di/AppInjector;->setup(Landroid/app/Activity;)V
 
     invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 

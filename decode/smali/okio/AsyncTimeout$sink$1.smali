@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAsyncTimeout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout$sink$1\n+ 2 AsyncTimeout.kt\nokio/AsyncTimeout\n*L\n1#1,327:1\n147#2,11:328\n153#2,2:339\n147#2,11:341\n153#2,2:352\n147#2,11:354\n153#2,2:365\n*E\n*S KotlinDebug\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout$sink$1\n*L\n103#1,11:328\n103#1,2:339\n109#1,11:341\n109#1,2:352\n113#1,11:354\n113#1,2:365\n*E\n"
+    value = "SMAP\nAsyncTimeout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout$sink$1\n+ 2 AsyncTimeout.kt\nokio/AsyncTimeout\n*L\n1#1,327:1\n147#2,11:328\n147#2,11:339\n147#2,11:350\n*E\n*S KotlinDebug\n*F\n+ 1 AsyncTimeout.kt\nokio/AsyncTimeout$sink$1\n*L\n103#1,11:328\n109#1,11:339\n113#1,11:350\n*E\n"
 .end annotation
 
 
@@ -187,7 +187,7 @@
 
     const-string v0, "AsyncTimeout.sink("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -209,9 +209,9 @@
 .method public write(Lokio/Buffer;J)V
     .locals 7
 
-    const/4 v0, 0x0
+    const-string v0, "source"
 
-    if-eqz p1, :cond_7
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-wide v1, p1, Lokio/Buffer;->size:J
 
@@ -219,84 +219,81 @@
 
     move-wide v5, p2
 
-    invoke-static/range {v1 .. v6}, Lkotlin/collections/MapsKt___MapsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
 
     :goto_0
-    const-wide/16 v1, 0x0
+    const-wide/16 v0, 0x0
 
-    cmp-long v3, p2, v1
+    cmp-long v2, p2, v0
 
-    if-lez v3, :cond_6
+    if-lez v2, :cond_4
 
-    iget-object v3, p1, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    if-eqz v3, :cond_5
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     :goto_1
-    const/high16 v4, 0x10000
+    const/high16 v3, 0x10000
 
-    int-to-long v4, v4
+    int-to-long v3, v3
 
-    cmp-long v4, v1, v4
+    cmp-long v3, v0, v3
 
-    if-gez v4, :cond_2
+    if-gez v3, :cond_1
 
-    iget v4, v3, Lokio/Segment;->limit:I
+    iget v3, v2, Lokio/Segment;->limit:I
 
-    iget v5, v3, Lokio/Segment;->pos:I
+    iget v4, v2, Lokio/Segment;->pos:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v3, v4
 
-    int-to-long v4, v4
+    int-to-long v3, v3
 
-    add-long/2addr v1, v4
+    add-long/2addr v0, v3
 
-    cmp-long v4, v1, p2
+    cmp-long v3, v0, p2
 
-    if-ltz v4, :cond_0
+    if-ltz v3, :cond_0
 
-    move-wide v1, p2
+    move-wide v0, p2
 
     goto :goto_2
 
     :cond_0
-    iget-object v3, v3, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v2, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v3, :cond_1
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_2
     :goto_2
-    iget-object v3, p0, Lokio/AsyncTimeout$sink$1;->this$0:Lokio/AsyncTimeout;
+    iget-object v2, p0, Lokio/AsyncTimeout$sink$1;->this$0:Lokio/AsyncTimeout;
 
-    invoke-virtual {v3}, Lokio/AsyncTimeout;->enter()V
+    invoke-virtual {v2}, Lokio/AsyncTimeout;->enter()V
 
     :try_start_0
-    iget-object v4, p0, Lokio/AsyncTimeout$sink$1;->$sink:Lokio/Sink;
+    iget-object v3, p0, Lokio/AsyncTimeout$sink$1;->$sink:Lokio/Sink;
 
-    invoke-interface {v4, p1, v1, v2}, Lokio/Sink;->write(Lokio/Buffer;J)V
+    invoke-interface {v3, p1, v0, v1}, Lokio/Sink;->write(Lokio/Buffer;J)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v3}, Lokio/AsyncTimeout;->exit()Z
+    invoke-virtual {v2}, Lokio/AsyncTimeout;->exit()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_3
+    if-nez v3, :cond_2
 
-    sub-long/2addr p2, v1
+    sub-long/2addr p2, v0
 
     goto :goto_0
 
-    :cond_3
-    invoke-virtual {v3, v0}, Lokio/AsyncTimeout;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
+    :cond_2
+    const/4 p1, 0x0
+
+    invoke-virtual {v2, p1}, Lokio/AsyncTimeout;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
 
     move-result-object p1
 
@@ -311,16 +308,16 @@
     move-exception p1
 
     :try_start_1
-    invoke-virtual {v3}, Lokio/AsyncTimeout;->exit()Z
+    invoke-virtual {v2}, Lokio/AsyncTimeout;->exit()Z
 
     move-result p2
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     goto :goto_3
 
-    :cond_4
-    invoke-virtual {v3, p1}, Lokio/AsyncTimeout;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
+    :cond_3
+    invoke-virtual {v2, p1}, Lokio/AsyncTimeout;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
 
     move-result-object p1
 
@@ -330,24 +327,12 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_4
-    invoke-virtual {v3}, Lokio/AsyncTimeout;->exit()Z
+    invoke-virtual {v2}, Lokio/AsyncTimeout;->exit()Z
 
     move-result p2
 
     throw p1
 
-    :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v0
-
-    :cond_6
+    :cond_4
     return-void
-
-    :cond_7
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

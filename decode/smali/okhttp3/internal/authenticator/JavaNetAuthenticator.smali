@@ -6,12 +6,6 @@
 .implements Lokhttp3/Authenticator;
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nJavaNetAuthenticator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 JavaNetAuthenticator.kt\nokhttp3/internal/authenticator/JavaNetAuthenticator\n*L\n1#1,95:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public final defaultDns:Lokhttp3/Dns;
 
@@ -22,8 +16,6 @@
 
     and-int/lit8 p1, p2, 0x1
 
-    const/4 p2, 0x0
-
     if-eqz p1, :cond_0
 
     sget-object p1, Lokhttp3/Dns;->SYSTEM:Lokhttp3/Dns;
@@ -31,29 +23,24 @@
     goto :goto_0
 
     :cond_0
-    move-object p1, p2
+    const/4 p1, 0x0
 
     :goto_0
-    if-eqz p1, :cond_1
+    const-string p2, "defaultDns"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lokhttp3/internal/authenticator/JavaNetAuthenticator;->defaultDns:Lokhttp3/Dns;
 
     return-void
-
-    :cond_1
-    const-string p1, "defaultDns"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
 .end method
 
 
 # virtual methods
 .method public authenticate(Lokhttp3/Route;Lokhttp3/Response;)Lokhttp3/Request;
-    .locals 21
+    .locals 20
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -65,6 +52,10 @@
     move-object/from16 v0, p1
 
     move-object/from16 v2, p2
+
+    const-string v3, "response"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v3, v2, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
@@ -135,7 +126,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_10
+    if-eqz v8, :cond_d
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -143,11 +134,11 @@
 
     check-cast v8, Lokhttp3/Challenge;
 
-    iget-object v10, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
+    iget-object v9, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
-    const-string v11, "Basic"
+    const-string v10, "Basic"
 
-    invoke-static {v11, v10, v7}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {v10, v9, v7}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v7
 
@@ -172,66 +163,64 @@
     iget-object v7, v1, Lokhttp3/internal/authenticator/JavaNetAuthenticator;->defaultDns:Lokhttp3/Dns;
 
     :goto_5
-    const-string v10, "realm"
+    const-string v9, "realm"
 
-    const-string v11, "proxy"
+    const-string v10, "proxy"
 
     if-eqz v2, :cond_7
 
     invoke-virtual {v6}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
 
+    move-result-object v11
+
+    if-eqz v11, :cond_6
+
+    check-cast v11, Ljava/net/InetSocketAddress;
+
+    invoke-virtual {v11}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
+
     move-result-object v12
 
-    if-eqz v12, :cond_6
-
-    check-cast v12, Ljava/net/InetSocketAddress;
-
-    invoke-virtual {v12}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v6, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1, v6, v5, v7}, Lokhttp3/internal/authenticator/JavaNetAuthenticator;->connectToInetAddress(Ljava/net/Proxy;Lokhttp3/HttpUrl;Lokhttp3/Dns;)Ljava/net/InetAddress;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v12}, Ljava/net/InetSocketAddress;->getPort()I
+    invoke-virtual {v11}, Ljava/net/InetSocketAddress;->getPort()I
 
-    move-result v15
+    move-result v14
 
-    iget-object v7, v5, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+    iget-object v15, v5, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
 
-    iget-object v11, v8, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
+    iget-object v7, v8, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
-    invoke-interface {v11, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v7, v9}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
-
-    move-object/from16 v17, v10
-
-    check-cast v17, Ljava/lang/String;
-
-    iget-object v10, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
-
-    :try_start_0
-    new-instance v11, Ljava/net/URL;
-
-    iget-object v12, v5, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-
-    invoke-direct {v11, v12}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
-
-    sget-object v20, Ljava/net/Authenticator$RequestorType;->PROXY:Ljava/net/Authenticator$RequestorType;
+    move-result-object v7
 
     move-object/from16 v16, v7
 
-    move-object/from16 v18, v10
+    check-cast v16, Ljava/lang/String;
 
-    move-object/from16 v19, v11
+    iget-object v7, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
-    invoke-static/range {v13 .. v20}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
+    :try_start_0
+    new-instance v9, Ljava/net/URL;
+
+    iget-object v10, v5, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
+
+    invoke-direct {v9, v10}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
+
+    sget-object v19, Ljava/net/Authenticator$RequestorType;->PROXY:Ljava/net/Authenticator$RequestorType;
+
+    move-object/from16 v17, v7
+
+    move-object/from16 v18, v9
+
+    invoke-static/range {v12 .. v19}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
 
     move-result-object v7
 
@@ -247,64 +236,60 @@
     throw v2
 
     :cond_6
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v2, "null cannot be cast to non-null type java.net.InetSocketAddress"
 
-    invoke-direct {v0, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_7
-    iget-object v12, v5, Lokhttp3/HttpUrl;->host:Ljava/lang/String;
+    iget-object v11, v5, Lokhttp3/HttpUrl;->host:Ljava/lang/String;
 
-    invoke-static {v6, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1, v6, v5, v7}, Lokhttp3/internal/authenticator/JavaNetAuthenticator;->connectToInetAddress(Ljava/net/Proxy;Lokhttp3/HttpUrl;Lokhttp3/Dns;)Ljava/net/InetAddress;
 
-    move-result-object v11
+    move-result-object v10
 
     iget v7, v5, Lokhttp3/HttpUrl;->port:I
 
-    iget-object v13, v5, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+    iget-object v12, v5, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
 
-    iget-object v14, v8, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
+    iget-object v13, v8, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
-    invoke-interface {v14, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v13, v9}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v9
 
-    move-object v14, v10
+    move-object v13, v9
 
-    check-cast v14, Ljava/lang/String;
+    check-cast v13, Ljava/lang/String;
 
-    iget-object v15, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
+    iget-object v14, v8, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
     :try_start_1
-    new-instance v10, Ljava/net/URL;
+    new-instance v15, Ljava/net/URL;
 
     iget-object v9, v5, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    invoke-direct {v10, v9}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    invoke-direct {v15, v9}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/net/MalformedURLException; {:try_start_1 .. :try_end_1} :catch_2
 
-    sget-object v17, Ljava/net/Authenticator$RequestorType;->SERVER:Ljava/net/Authenticator$RequestorType;
+    sget-object v16, Ljava/net/Authenticator$RequestorType;->SERVER:Ljava/net/Authenticator$RequestorType;
 
-    move-object v9, v10
+    move-object v9, v11
 
-    move-object v10, v12
+    move v11, v7
 
-    move v12, v7
-
-    move-object/from16 v16, v9
-
-    invoke-static/range {v10 .. v17}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
+    invoke-static/range {v9 .. v16}, Ljava/net/Authenticator;->requestPasswordAuthentication(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;
 
     move-result-object v7
 
     :goto_6
-    if-eqz v7, :cond_f
+    if-eqz v7, :cond_c
 
     if-eqz v2, :cond_8
 
@@ -322,7 +307,7 @@
 
     const-string v3, "auth.userName"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v7}, Ljava/net/PasswordAuthentication;->getPassword()[C
 
@@ -330,7 +315,7 @@
 
     const-string v5, "auth.password"
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v5, Ljava/lang/String;
 
@@ -353,9 +338,9 @@
 
     move-result-object v3
 
-    const-string v6, "Charset.forName(charset)"
+    const-string v7, "Charset.forName(charset)"
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -365,30 +350,46 @@
     :cond_9
     sget-object v3, Ljava/nio/charset/StandardCharsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    const-string v6, "ISO_8859_1"
+    const-string v7, "ISO_8859_1"
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_8
-    new-instance v6, Ljava/lang/StringBuilder;
+    const-string v7, "username"
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, "password"
+
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v2, 0x3a
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     sget-object v5, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
-    if-eqz v2, :cond_e
+    const-string v5, "$this$encode"
+
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v5, Lokio/ByteString;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
@@ -396,21 +397,31 @@
 
     const-string v3, "(this as java.lang.String).getBytes(charset)"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v3, Lokio/ByteString;
+    invoke-direct {v5, v2}, Lokio/ByteString;-><init>([B)V
 
-    invoke-direct {v3, v2}, Lokio/ByteString;-><init>([B)V
-
-    invoke-virtual {v3}, Lokio/ByteString;->base64()Ljava/lang/String;
+    invoke-virtual {v5}, Lokio/ByteString;->base64()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "Basic "
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Basic "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v3, "request"
+
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v3, Ljava/util/LinkedHashMap;
 
@@ -439,13 +450,9 @@
     :cond_a
     iget-object v3, v4, Lokhttp3/Request;->tags:Ljava/util/Map;
 
-    if-eqz v3, :cond_d
+    invoke-static {v3}, Lkotlin/collections/ArraysKt___ArraysKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
-    new-instance v5, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v5, v3}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
-    move-object v3, v5
+    move-result-object v3
 
     :goto_9
     iget-object v4, v4, Lokhttp3/Request;->headers:Lokhttp3/Headers;
@@ -454,7 +461,13 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_c
+    const-string v5, "name"
+
+    invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v5, "value"
+
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v4, v0, v2}, Lokhttp3/Headers$Builder;->set(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
 
@@ -490,33 +503,6 @@
     throw v0
 
     :cond_c
-    const-string v0, "value"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_d
-    const/4 v0, 0x0
-
-    const-string v2, "$this$toMutableMap"
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    const-string v2, "$this$encode"
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_f
     :goto_a
     const/4 v7, 0x1
 
@@ -531,7 +517,7 @@
 
     throw v2
 
-    :cond_10
+    :cond_d
     const/4 v0, 0x0
 
     return-object v0
@@ -581,16 +567,16 @@
 
     const-string p2, "(address() as InetSocketAddress).address"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_1
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "null cannot be cast to non-null type java.net.InetSocketAddress"
 
-    invoke-direct {p1, p2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 

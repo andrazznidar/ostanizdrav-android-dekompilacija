@@ -124,7 +124,7 @@
 
     const-string p1, "Unknown trim path type "
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -148,21 +148,21 @@
     goto :goto_0
 
     :cond_5
-    invoke-static {p0, p1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v7
 
     goto :goto_0
 
     :cond_6
-    invoke-static {p0, p1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v6
 
     goto :goto_0
 
     :cond_7
-    invoke-static {p0, p1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v5
 

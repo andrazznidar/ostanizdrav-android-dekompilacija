@@ -275,7 +275,7 @@
 
     sget v3, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->getColor(Landroid/view/View;I)I
+    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
 
     move-result v2
 

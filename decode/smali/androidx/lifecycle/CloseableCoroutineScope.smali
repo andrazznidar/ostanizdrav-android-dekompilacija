@@ -13,24 +13,17 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Landroidx/lifecycle/CloseableCoroutineScope;->coroutineContext:Lkotlin/coroutines/CoroutineContext;
 
     return-void
-
-    :cond_0
-    const-string p1, "context"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -44,7 +37,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2, v1, v2}, Lkotlin/collections/MapsKt___MapsKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {v0, v2, v1, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     return-void
 .end method

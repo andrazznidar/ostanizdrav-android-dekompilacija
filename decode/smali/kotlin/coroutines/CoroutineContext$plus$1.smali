@@ -55,11 +55,13 @@
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
 
-    const/4 v0, 0x0
+    const-string v0, "acc"
 
-    if-eqz p1, :cond_4
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_3
+    const-string v0, "element"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p2}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
 
@@ -126,18 +128,4 @@
 
     :goto_0
     return-object p2
-
-    :cond_3
-    const-string p1, "element"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    const-string p1, "acc"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

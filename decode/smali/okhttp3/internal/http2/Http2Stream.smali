@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Stream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Stream.kt\nokhttp3/internal/http2/Http2Stream\n+ 2 Util.kt\nokhttp3/internal/Util\n*L\n1#1,690:1\n606#2,4:691\n606#2,4:695\n554#2:699\n606#2,4:700\n606#2,4:704\n554#2:708\n554#2:709\n606#2,4:710\n554#2:714\n548#2:715\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Stream.kt\nokhttp3/internal/http2/Http2Stream\n*L\n176#1,4:691\n255#1,4:695\n257#1:699\n274#1,4:700\n284#1,4:704\n287#1:708\n308#1:709\n494#1,4:710\n639#1:714\n659#1:715\n*E\n"
+    value = "SMAP\nHttp2Stream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Stream.kt\nokhttp3/internal/http2/Http2Stream\n+ 2 Util.kt\nokhttp3/internal/Util\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,690:1\n603#2,4:691\n603#2,4:696\n551#2:700\n603#2,4:701\n603#2,4:705\n551#2:709\n551#2:710\n603#2,4:711\n551#2:715\n545#2:716\n1#3:695\n*E\n*S KotlinDebug\n*F\n+ 1 Http2Stream.kt\nokhttp3/internal/http2/Http2Stream\n*L\n176#1,4:691\n255#1,4:696\n266#1:700\n274#1,4:701\n284#1,4:705\n298#1:709\n308#1:710\n494#1,4:711\n639#1:715\n659#1:716\n*E\n"
 .end annotation
 
 
@@ -59,7 +59,9 @@
 .method public constructor <init>(ILokhttp3/internal/http2/Http2Connection;ZZLokhttp3/Headers;)V
     .locals 2
 
-    if-eqz p2, :cond_3
+    const-string v0, "connection"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -168,15 +170,6 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_3
-    const-string p1, "connection"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -206,7 +199,7 @@
 
     const-string v1, "Thread "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -216,7 +209,7 @@
 
     const-string v3, "Thread.currentThread()"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -327,42 +320,38 @@
 
     iget-boolean v1, v0, Lokhttp3/internal/http2/Http2Stream$FramingSink;->closed:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
     iget-boolean v0, v0, Lokhttp3/internal/http2/Http2Stream$FramingSink;->finished:Z
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream;->errorException:Ljava/io/IOException;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     new-instance v0, Lokhttp3/internal/http2/StreamResetException;
 
     iget-object v1, p0, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
-    if-nez v1, :cond_0
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_0
     invoke-direct {v0, v1}, Lokhttp3/internal/http2/StreamResetException;-><init>(Lokhttp3/internal/http2/ErrorCode;)V
 
-    :cond_1
+    :goto_0
     throw v0
 
-    :cond_2
+    :cond_1
     return-void
 
-    :cond_3
+    :cond_2
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "stream finished"
@@ -371,7 +360,7 @@
 
     throw v0
 
-    :cond_4
+    :cond_3
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "stream closed"
@@ -382,12 +371,16 @@
 .end method
 
 .method public final close(Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
+
+    const-string v0, "rstStatusCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, p1, p2}, Lokhttp3/internal/http2/Http2Stream;->closeInternal(Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)Z
 
@@ -402,11 +395,22 @@
 
     iget v0, p0, Lokhttp3/internal/http2/Http2Stream;->id:I
 
+    if-eqz p2, :cond_1
+
+    const-string v1, "statusCode"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object p2, p2, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
 
     invoke-virtual {p2, v0, p1}, Lokhttp3/internal/http2/Http2Writer;->rstStream(ILokhttp3/internal/http2/ErrorCode;)V
 
     return-void
+
+    :cond_1
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
 .method public final closeInternal(Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)Z
@@ -429,7 +433,7 @@
 
     const-string p2, "Thread "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -439,7 +443,7 @@
 
     const-string v1, "Thread.currentThread()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -530,6 +534,10 @@
 
 .method public final closeLater(Lokhttp3/internal/http2/ErrorCode;)V
     .locals 2
+
+    const-string v0, "errorCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -743,13 +751,11 @@
 .end method
 
 .method public final receiveHeaders(Lokhttp3/Headers;Z)V
-    .locals 3
+    .locals 2
 
     const-string v0, "headers"
 
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_7
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
@@ -768,7 +774,7 @@
 
     const-string p2, "Thread "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -778,7 +784,7 @@
 
     const-string v1, "Thread.currentThread()"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -807,7 +813,7 @@
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Stream;->hasResponseHeaders:Z
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_4
 
@@ -823,11 +829,13 @@
     goto :goto_2
 
     :cond_3
-    throw v1
+    const/4 p1, 0x0
+
+    throw p1
 
     :cond_4
     :goto_1
-    iput-boolean v2, p0, Lokhttp3/internal/http2/Http2Stream;->hasResponseHeaders:Z
+    iput-boolean v1, p0, Lokhttp3/internal/http2/Http2Stream;->hasResponseHeaders:Z
 
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream;->headersQueue:Ljava/util/ArrayDeque;
 
@@ -838,7 +846,7 @@
 
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Stream;->source:Lokhttp3/internal/http2/Http2Stream$FramingSource;
 
-    iput-boolean v2, p1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z
+    iput-boolean v1, p1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z
 
     :cond_5
     invoke-virtual {p0}, Lokhttp3/internal/http2/Http2Stream;->isOpen()Z
@@ -868,11 +876,6 @@
     monitor-exit p0
 
     throw p1
-
-    :cond_7
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public final declared-synchronized receiveRstStream(Lokhttp3/internal/http2/ErrorCode;)V
@@ -881,6 +884,10 @@
     monitor-enter p0
 
     :try_start_0
+    const-string v0, "errorCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
     if-nez v0, :cond_0

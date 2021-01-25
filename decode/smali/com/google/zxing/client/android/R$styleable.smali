@@ -208,7 +208,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f040311
+    const v2, 0x7f040315
 
     aput v2, v0, v1
 
@@ -263,7 +263,7 @@
         0x7f040149
         0x7f04014a
         0x7f04014b
-        0x7f0402f6
+        0x7f0402fa
     .end array-data
 
     :array_5
@@ -290,18 +290,18 @@
 
     :array_7
     .array-data 4
-        0x7f04030c
-        0x7f04030d
-        0x7f04030f
-        0x7f040312
+        0x7f040310
+        0x7f040311
+        0x7f040313
+        0x7f040316
     .end array-data
 
     :array_8
     .array-data 4
-        0x7f04030e
-        0x7f040310
-        0x7f040313
+        0x7f040312
         0x7f040314
-        0x7f040315
+        0x7f040317
+        0x7f040318
+        0x7f040319
     .end array-data
 .end method

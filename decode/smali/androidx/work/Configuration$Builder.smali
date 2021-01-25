@@ -23,6 +23,8 @@
 
 .field public mMinJobSchedulerId:I
 
+.field public mWorkerFactory:Landroidx/work/WorkerFactory;
+
 
 # direct methods
 .method public constructor <init>()V

@@ -3,12 +3,6 @@
 .source "CircleProgress.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCircleProgress.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CircleProgress.kt\nde/rki/coronawarnapp/ui/view/CircleProgress\n*L\n1#1,152:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final DEFAULT_MAX_PROGRESS:F
 
@@ -39,8 +33,6 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    sget-object v0, Lde/rki/coronawarnapp/risk/TimeVariables;->INSTANCE:Lde/rki/coronawarnapp/risk/TimeVariables;
-
     const/16 v0, 0xe
 
     int-to-float v0, v0
@@ -55,7 +47,9 @@
 
     const/4 v0, 0x4
 
-    if-eqz p1, :cond_1
+    const-string v1, "context"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
@@ -73,11 +67,11 @@
 
     move-result-object v2
 
-    const v3, 0x7f0c00cd
+    const v3, 0x7f0c00fb
 
     invoke-virtual {v2, v3, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v2, 0x7f090086
+    const v2, 0x7f0900b8
 
     invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -87,7 +81,7 @@
 
     if-eqz v3, :cond_0
 
-    const v2, 0x7f090087
+    const v2, 0x7f0900b9
 
     invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -103,7 +97,7 @@
 
     const-string v3, "ViewCircleProgressBindin\u2026ater.from(context), this)"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object v2, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->binding:Lde/rki/coronawarnapp/databinding/ViewCircleProgressBinding;
 
@@ -113,7 +107,7 @@
 
     move-result-object p2
 
-    const v2, 0x7f060059
+    const v2, 0x7f060066
 
     invoke-static {p1, v2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -123,7 +117,7 @@
 
     move-result v2
 
-    const v3, 0x7f06003e
+    const v3, 0x7f06003f
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getColor(I)I
 
@@ -135,7 +129,7 @@
 
     const/4 v3, 0x5
 
-    const v4, 0x7f06005d
+    const v4, 0x7f06006c
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getColor(I)I
 
@@ -179,7 +173,7 @@
 
     const-string v4, "binding.circleProgressBody"
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -189,7 +183,7 @@
 
     const-string v1, "binding.circleProgressIcon"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
@@ -259,15 +253,6 @@
     invoke-direct {p2, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_1
-    const-string p1, "context"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -379,7 +364,7 @@
 
     const-string v1, "binding.circleProgressBody"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->binding:Lde/rki/coronawarnapp/databinding/ViewCircleProgressBinding;
 
@@ -387,7 +372,7 @@
 
     const-string v2, "binding.circleProgressIcon"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v2, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->disableText:Z
 

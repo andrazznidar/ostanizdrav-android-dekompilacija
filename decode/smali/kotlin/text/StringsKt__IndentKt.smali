@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nIndent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,121:1\n111#1,9:122\n118#1:131\n113#1,4:145\n111#1,9:164\n118#1:173\n113#1,4:187\n1386#2,11:132\n1657#2,2:143\n1659#2:155\n1397#2:156\n706#2:157\n783#2,2:158\n1366#2:160\n1435#2,3:161\n1386#2,11:174\n1657#2,2:185\n1659#2:191\n1397#2:192\n1386#2,11:199\n1657#2,3:210\n1397#2:213\n114#3,6:149\n114#3,6:193\n*E\n*S KotlinDebug\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n*L\n37#1,9:122\n37#1:131\n37#1,4:145\n76#1,9:164\n76#1:173\n76#1,4:187\n37#1,11:132\n37#1,2:143\n37#1:155\n37#1:156\n72#1:157\n72#1,2:158\n73#1:160\n73#1,3:161\n76#1,11:174\n76#1,2:185\n76#1:191\n76#1:192\n112#1,11:199\n112#1,3:210\n112#1:213\n37#1,6:149\n99#1,6:193\n*E\n"
+    value = "SMAP\nIndent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,121:1\n111#1,9:123\n111#1,9:161\n1#2:122\n1#2:151\n1#2:183\n1#2:205\n1537#3,11:132\n1828#3,2:143\n1830#3:152\n1548#3:153\n734#3:154\n825#3,2:155\n1517#3:157\n1588#3,3:158\n1537#3,11:170\n1828#3,2:181\n1830#3:184\n1548#3:185\n1537#3,11:192\n1828#3,2:203\n1830#3:206\n1548#3:207\n120#4,6:145\n120#4,6:186\n*E\n*S KotlinDebug\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n*L\n37#1,9:123\n76#1,9:161\n37#1:151\n76#1:183\n112#1:205\n37#1,11:132\n37#1,2:143\n37#1:152\n37#1:153\n72#1:154\n72#1,2:155\n73#1:157\n73#1,3:158\n76#1,11:170\n76#1,2:181\n76#1:184\n76#1:185\n112#1,11:192\n112#1,2:203\n112#1:206\n112#1:207\n38#1,6:145\n99#1,6:186\n*E\n"
 .end annotation
 
 
@@ -24,7 +24,9 @@
     move p2, v1
 
     :cond_0
-    if-eqz p0, :cond_2
+    const-string p3, "$this$contains"
+
+    invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p0, p1, v1, p2, v0}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;CIZI)I
 
@@ -36,19 +38,10 @@
 
     :cond_1
     return v1
-
-    :cond_2
-    const-string p0, "$this$contains"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
-    .locals 2
+    .locals 9
 
     const/4 v0, 0x2
 
@@ -58,34 +51,64 @@
 
     if-eqz p3, :cond_0
 
-    move p2, v1
+    move v6, v1
+
+    goto :goto_0
 
     :cond_0
-    if-eqz p0, :cond_2
+    move v6, p2
+
+    :goto_0
+    const-string p2, "$this$contains"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "other"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    instance-of p2, p1, Ljava/lang/String;
 
     const/4 p3, 0x1
 
+    if-eqz p2, :cond_1
+
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {p0, p1, v1, p2, v0}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+    invoke-static {p0, p1, v1, v6, v0}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
 
     move-result p0
 
-    if-ltz p0, :cond_1
+    if-ltz p0, :cond_2
 
-    move v1, p3
+    goto :goto_1
 
     :cond_1
-    return v1
+    const/4 v4, 0x0
+
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v5
+
+    const/4 v7, 0x0
+
+    const/16 v8, 0x10
+
+    move-object v2, p0
+
+    move-object v3, p1
+
+    invoke-static/range {v2 .. v8}, Lkotlin/text/StringsKt__IndentKt;->indexOf$StringsKt__StringsKt$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZZI)I
+
+    move-result p0
+
+    if-ltz p0, :cond_2
+
+    :goto_1
+    move v1, p3
 
     :cond_2
-    const-string p0, "$this$contains"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
+    return v1
 .end method
 
 .method public static endsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
@@ -98,11 +121,13 @@
     const/4 p2, 0x0
 
     :cond_0
-    const/4 p3, 0x0
+    const-string p3, "$this$endsWith"
 
-    if-eqz p0, :cond_3
+    invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_2
+    const-string p3, "suffix"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p2, :cond_1
 
@@ -141,20 +166,6 @@
 
     :goto_0
     return p0
-
-    :cond_2
-    const-string p0, "suffix"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
-
-    :cond_3
-    const-string p0, "$this$endsWith"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
 .end method
 
 .method public static final equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -192,10 +203,57 @@
     return p0
 .end method
 
-.method public static final getLastIndex(Ljava/lang/CharSequence;)I
-    .locals 0
+.method public static final getIndentFunction$StringsKt__IndentKt(Ljava/lang/String;)Lkotlin/jvm/functions/Function1;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    if-eqz p0, :cond_0
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    sget-object p0, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$1;->INSTANCE:Lkotlin/text/StringsKt__IndentKt$getIndentFunction$1;
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$2;
+
+    invoke-direct {v0, p0}, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$2;-><init>(Ljava/lang/String;)V
+
+    move-object p0, v0
+
+    :goto_1
+    return-object p0
+.end method
+
+.method public static final getLastIndex(Ljava/lang/CharSequence;)I
+    .locals 1
+
+    const-string v0, "$this$lastIndex"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -204,25 +262,18 @@
     add-int/lit8 p0, p0, -0x1
 
     return p0
-
-    :cond_0
-    const-string p0, "$this$lastIndex"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static final indexOf(Ljava/lang/CharSequence;Ljava/lang/String;IZ)I
     .locals 7
 
-    const/4 v0, 0x0
+    const-string v0, "$this$indexOf"
 
-    if-eqz p0, :cond_3
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_2
+    const-string v0, "string"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p3, :cond_1
 
@@ -265,20 +316,6 @@
 
     :goto_1
     return p0
-
-    :cond_2
-    const-string p0, "string"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
-    const-string p0, "$this$indexOf"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final indexOf$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZZ)I
@@ -485,7 +522,9 @@
     move p3, v1
 
     :cond_1
-    if-eqz p0, :cond_4
+    const-string p4, "$this$indexOf"
+
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p3, :cond_3
 
@@ -518,15 +557,6 @@
 
     :goto_1
     return p0
-
-    :cond_4
-    const-string p0, "$this$indexOf"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static synthetic indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
@@ -558,7 +588,13 @@
 .method public static final indexOfAny(Ljava/lang/CharSequence;[CIZ)I
     .locals 7
 
-    if-eqz p1, :cond_6
+    const-string v0, "$this$indexOfAny"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "chars"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -572,7 +608,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->single([C)C
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->single([C)C
 
     move-result p1
 
@@ -612,7 +648,7 @@
 
     aget-char v6, p1, v5
 
-    invoke-static {v6, v3, p3}, Lkotlin/collections/MapsKt___MapsKt;->equals(CCZ)Z
+    invoke-static {v6, v3, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(CCZ)Z
 
     move-result v6
 
@@ -646,21 +682,14 @@
     const/4 p0, -0x1
 
     return p0
-
-    :cond_6
-    const-string p0, "chars"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static final isBlank(Ljava/lang/CharSequence;)Z
     .locals 4
 
-    if-eqz p0, :cond_5
+    const-string v0, "$this$isBlank"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -671,6 +700,10 @@
     const/4 v2, 0x1
 
     if-eqz v0, :cond_3
+
+    const-string v0, "$this$indices"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lkotlin/ranges/IntRange;
 
@@ -724,7 +757,7 @@
 
     move-result v3
 
-    invoke-static {v3}, Lkotlin/collections/MapsKt___MapsKt;->isWhitespace(C)Z
+    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isWhitespace(C)Z
 
     move-result v3
 
@@ -746,15 +779,6 @@
 
     :cond_4
     return v1
-
-    :cond_5
-    const-string p0, "$this$isBlank"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
@@ -778,7 +802,9 @@
     move p3, v0
 
     :cond_1
-    if-eqz p0, :cond_a
+    const-string p4, "$this$lastIndexOf"
+
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p3, :cond_3
 
@@ -805,13 +831,21 @@
 
     aput-char p1, v1, v0
 
+    const-string p1, "$this$lastIndexOfAny"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "chars"
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     if-nez p3, :cond_4
 
     instance-of p1, p0, Ljava/lang/String;
 
     if-eqz p1, :cond_4
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->single([C)C
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->single([C)C
 
     move-result p1
 
@@ -847,7 +881,7 @@
 
     aget-char v3, v1, v2
 
-    invoke-static {v3, p1, p3}, Lkotlin/collections/MapsKt___MapsKt;->equals(CCZ)Z
+    invoke-static {v3, p1, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(CCZ)Z
 
     move-result v3
 
@@ -882,166 +916,82 @@
 
     :goto_4
     return p0
-
-    :cond_a
-    const-string p0, "$this$lastIndexOf"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
-.method public static lastIndexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
-    .locals 6
+.method public static final lines(Ljava/lang/CharSequence;)Ljava/util/List;
+    .locals 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/CharSequence;",
+            ")",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    and-int/lit8 v0, p4, 0x2
+    const-string v0, "$this$lines"
 
-    if-eqz v0, :cond_0
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0}, Lkotlin/text/StringsKt__IndentKt;->getLastIndex(Ljava/lang/CharSequence;)I
+    const-string v0, "$this$lineSequence"
 
-    move-result p2
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
-    move v2, p2
+    const-string v0, "\r\n"
 
-    and-int/lit8 p2, p4, 0x4
+    const-string v1, "\n"
 
-    if-eqz p2, :cond_1
+    const-string v2, "\r"
 
-    const/4 p3, 0x0
+    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
-    :cond_1
-    move v4, p3
+    move-result-object v4
 
-    const/4 p2, 0x0
+    const-string v0, "$this$splitToSequence"
 
-    if-eqz p0, :cond_5
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_4
+    const-string v0, "delimiters"
 
-    if-nez v4, :cond_3
+    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    instance-of p2, p0, Ljava/lang/String;
+    const/4 v5, 0x0
 
-    if-nez p2, :cond_2
+    const/4 v6, 0x0
 
-    goto :goto_0
+    const/4 v7, 0x0
 
-    :cond_2
-    check-cast p0, Ljava/lang/String;
+    const/4 v8, 0x2
 
-    invoke-virtual {p0, p1, v2}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;I)I
+    move-object v3, p0
 
-    move-result p0
+    invoke-static/range {v3 .. v8}, Lkotlin/text/StringsKt__IndentKt;->rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[Ljava/lang/String;IZII)Lkotlin/sequences/Sequence;
 
-    goto :goto_1
+    move-result-object v0
 
-    :cond_3
-    :goto_0
-    const/4 v3, 0x0
+    new-instance v1, Lkotlin/text/StringsKt__StringsKt$splitToSequence$1;
 
-    const/4 v5, 0x1
+    invoke-direct {v1, p0}, Lkotlin/text/StringsKt__StringsKt$splitToSequence$1;-><init>(Ljava/lang/CharSequence;)V
 
-    move-object v0, p0
+    const-string p0, "$this$map"
 
-    move-object v1, p1
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt__IndentKt;->indexOf$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZZ)I
+    const-string p0, "transform"
 
-    move-result p0
+    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_1
-    return p0
+    new-instance p0, Lkotlin/sequences/TransformingSequence;
 
-    :cond_4
-    const-string p0, "string"
+    invoke-direct {p0, v0, v1}, Lkotlin/sequences/TransformingSequence;-><init>(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)V
 
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
-
-    :cond_5
-    const-string p0, "$this$lastIndexOf"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
-.end method
-
-.method public static rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[CIZII)Lkotlin/sequences/Sequence;
-    .locals 2
-
-    and-int/lit8 v0, p5, 0x2
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move p2, v1
-
-    :cond_0
-    and-int/lit8 v0, p5, 0x4
-
-    if-eqz v0, :cond_1
-
-    move p3, v1
-
-    :cond_1
-    and-int/lit8 p5, p5, 0x8
-
-    if-eqz p5, :cond_2
-
-    move p4, v1
-
-    :cond_2
-    if-ltz p4, :cond_3
-
-    const/4 v1, 0x1
-
-    :cond_3
-    if-eqz v1, :cond_4
-
-    new-instance p5, Lkotlin/text/DelimitedRangesSequence;
-
-    new-instance v0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;
-
-    invoke-direct {v0, p1, p3}, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;-><init>([CZ)V
-
-    invoke-direct {p5, p0, p2, p4, v0}, Lkotlin/text/DelimitedRangesSequence;-><init>(Ljava/lang/CharSequence;IILkotlin/jvm/functions/Function2;)V
-
-    return-object p5
-
-    :cond_4
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p1, "Limit must be non-negative, but was "
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 p1, 0x2e
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object p0
 
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object p0
 .end method
 
 .method public static rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[Ljava/lang/String;IZII)Lkotlin/sequences/Sequence;
@@ -1124,11 +1074,13 @@
 .method public static final regionMatches(Ljava/lang/String;ILjava/lang/String;IIZ)Z
     .locals 6
 
-    const/4 v0, 0x0
+    const-string v0, "$this$regionMatches"
 
-    if-eqz p0, :cond_2
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_1
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p5, :cond_0
 
@@ -1157,30 +1109,18 @@
 
     :goto_0
     return p0
-
-    :cond_1
-    const-string p0, "other"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p0, "$this$regionMatches"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final regionMatchesImpl(Ljava/lang/CharSequence;ILjava/lang/CharSequence;IIZ)Z
     .locals 4
 
-    const/4 v0, 0x0
+    const-string v0, "$this$regionMatchesImpl"
 
-    if-eqz p0, :cond_5
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_4
+    const-string v0, "other"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -1224,7 +1164,7 @@
 
     move-result v3
 
-    invoke-static {v2, v3, p5}, Lkotlin/collections/MapsKt___MapsKt;->equals(CCZ)Z
+    invoke-static {v2, v3, p5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(CCZ)Z
 
     move-result v2
 
@@ -1245,34 +1185,34 @@
     :cond_3
     :goto_1
     return v0
-
-    :cond_4
-    const-string p0, "other"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_5
-    const-string p0, "$this$regionMatchesImpl"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final removePrefix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 3
 
-    const/4 v0, 0x2
+    const-string v0, "$this$removePrefix"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "prefix"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$startsWith"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v0, p1
+
+    check-cast v0, Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    move-object v2, p1
+    const/4 v2, 0x2
 
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {p0, v2, v1, v0}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    invoke-static {p0, v0, v1, v2}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
     move-result v0
 
@@ -1288,64 +1228,235 @@
 
     const-string p1, "(this as java.lang.String).substring(startIndex)"
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public static final removeSuffix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
+    .locals 3
+
+    const-string v0, "$this$removeSuffix"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "suffix"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$endsWith"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v0, p1
+
+    check-cast v0, Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    invoke-static {p0, v0, v1, v2}, Lkotlin/text/StringsKt__IndentKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p1
+
+    sub-int/2addr v0, p1
+
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
     return-object p0
 .end method
 
 .method public static replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
-    .locals 10
+    .locals 6
 
-    const/4 v0, 0x4
+    and-int/lit8 p4, p4, 0x4
 
-    and-int/2addr p4, v0
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-eqz p4, :cond_0
 
-    move p3, v1
+    move p3, v0
 
     :cond_0
-    if-eqz p0, :cond_1
+    const-string p4, "$this$replace"
 
-    const/4 p4, 0x1
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-array p4, p4, [Ljava/lang/String;
+    const-string p4, "oldValue"
 
-    aput-object p1, p4, v1
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0, p4, p3, v1, v0}, Lkotlin/text/StringsKt__IndentKt;->splitToSequence$default(Ljava/lang/CharSequence;[Ljava/lang/String;ZII)Lkotlin/sequences/Sequence;
+    const-string p4, "newValue"
 
-    move-result-object v2
+    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v4, 0x0
+    const-string p4, "stringBuilder.append(this, i, length).toString()"
 
-    const/4 v5, 0x0
+    if-eqz p3, :cond_3
 
-    const/4 v6, 0x0
+    const/16 p3, 0x12
 
-    const/4 v7, 0x0
+    invoke-static {p1, p3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    const/4 v8, 0x0
+    move-result-object p1
 
-    const/16 v9, 0x3e
+    invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-object v3, p2
+    move-result-object v1
 
-    invoke-static/range {v2 .. v9}, Lkotlin/collections/MapsKt___MapsKt;->joinToString$default(Lkotlin/sequences/Sequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    goto/16 :goto_2
+
+    :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    :cond_2
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
+
+    move-result p1
+
+    invoke-virtual {v2, p0, v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v0
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    invoke-virtual {v2, p0, v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :cond_3
+    invoke-static {p0, p1, v0, p3}, Lkotlin/text/StringsKt__IndentKt;->indexOf(Ljava/lang/CharSequence;Ljava/lang/String;IZ)I
+
+    move-result v1
+
+    if-gez v1, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ge v2, v3, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    move v3, v2
+
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    sub-int/2addr v4, v2
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v5, v4
+
+    if-ltz v5, :cond_8
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    :cond_6
+    invoke-virtual {v4, p0, v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int v0, v1, v2
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-lt v1, v5, :cond_7
+
+    goto :goto_1
+
+    :cond_7
+    add-int/2addr v1, v3
+
+    invoke-static {p0, p1, v1, p3}, Lkotlin/text/StringsKt__IndentKt;->indexOf(Ljava/lang/CharSequence;Ljava/lang/String;IZ)I
+
+    move-result v1
+
+    if-gtz v1, :cond_6
+
+    :goto_1
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    invoke-virtual {v4, p0, v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_2
     return-object p0
 
-    :cond_1
-    const-string p0, "$this$replace"
+    :cond_8
+    new-instance p0, Ljava/lang/OutOfMemoryError;
 
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/OutOfMemoryError;-><init>()V
 
     throw p0
 .end method
@@ -1477,7 +1588,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/Preconditions;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
@@ -1514,7 +1625,7 @@
 .end method
 
 .method public static split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
-    .locals 8
+    .locals 2
 
     and-int/lit8 v0, p4, 0x2
 
@@ -1522,33 +1633,29 @@
 
     if-eqz v0, :cond_0
 
-    move v5, v1
-
-    goto :goto_0
+    move p2, v1
 
     :cond_0
-    move v5, p2
+    and-int/lit8 p4, p4, 0x4
 
-    :goto_0
-    and-int/lit8 p2, p4, 0x4
+    if-eqz p4, :cond_1
 
-    if-eqz p2, :cond_1
-
-    move v6, v1
-
-    goto :goto_1
+    move p3, v1
 
     :cond_1
-    move v6, p3
+    const-string p4, "$this$split"
 
-    :goto_1
-    if-eqz p0, :cond_4
+    invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    array-length p2, p1
+    const-string p4, "delimiters"
 
-    const/4 p3, 0x1
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ne p2, p3, :cond_2
+    array-length p4, p1
+
+    const/4 v0, 0x1
+
+    if-ne p4, v0, :cond_2
 
     aget-char p1, p1, v1
 
@@ -1556,173 +1663,61 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1, v5, v6}, Lkotlin/text/StringsKt__IndentKt;->split$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/String;ZI)Ljava/util/List;
+    invoke-static {p0, p1, p2, p3}, Lkotlin/text/StringsKt__IndentKt;->split$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/String;ZI)Ljava/util/List;
 
     move-result-object p0
-
-    goto :goto_3
-
-    :cond_2
-    const/4 v4, 0x0
-
-    const/4 v7, 0x2
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    invoke-static/range {v2 .. v7}, Lkotlin/text/StringsKt__IndentKt;->rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[CIZII)Lkotlin/sequences/Sequence;
-
-    move-result-object p1
-
-    new-instance p2, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;
-
-    invoke-direct {p2, p1}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;-><init>(Lkotlin/sequences/Sequence;)V
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    const/16 p3, 0xa
-
-    invoke-static {p2, p3}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result p3
-
-    invoke-direct {p1, p3}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {p2}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    :goto_2
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_3
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lkotlin/ranges/IntRange;
-
-    invoke-static {p0, p3}, Lkotlin/text/StringsKt__IndentKt;->substring(Ljava/lang/CharSequence;Lkotlin/ranges/IntRange;)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    :cond_3
-    move-object p0, p1
-
-    :goto_3
-    return-object p0
-
-    :cond_4
-    const-string p0, "$this$split"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public static split$default(Ljava/lang/CharSequence;[Ljava/lang/String;ZII)Ljava/util/List;
-    .locals 8
-
-    and-int/lit8 v0, p4, 0x2
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move v5, v1
+    :cond_2
+    if-ltz p3, :cond_3
 
     goto :goto_0
 
-    :cond_0
-    move v5, p2
+    :cond_3
+    move v0, v1
 
     :goto_0
-    and-int/lit8 p2, p4, 0x4
+    if-eqz v0, :cond_5
 
-    if-eqz p2, :cond_1
+    new-instance p4, Lkotlin/text/DelimitedRangesSequence;
 
-    move v6, v1
+    new-instance v0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;
 
-    goto :goto_1
+    invoke-direct {v0, p1, p2}, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;-><init>([CZ)V
 
-    :cond_1
-    move v6, p3
+    invoke-direct {p4, p0, v1, p3, v0}, Lkotlin/text/DelimitedRangesSequence;-><init>(Ljava/lang/CharSequence;IILkotlin/jvm/functions/Function2;)V
 
-    :goto_1
-    array-length p2, p1
+    const-string p1, "$this$asIterable"
 
-    const/4 p3, 0x1
+    invoke-static {p4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ne p2, p3, :cond_3
+    new-instance p1, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;
 
-    aget-object p2, p1, v1
+    invoke-direct {p1, p4}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;-><init>(Lkotlin/sequences/Sequence;)V
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result p4
-
-    if-nez p4, :cond_2
-
-    move v1, p3
-
-    :cond_2
-    if-nez v1, :cond_3
-
-    invoke-static {p0, p2, v5, v6}, Lkotlin/text/StringsKt__IndentKt;->split$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/String;ZI)Ljava/util/List;
-
-    move-result-object p0
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v4, 0x0
-
-    const/4 v7, 0x2
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    invoke-static/range {v2 .. v7}, Lkotlin/text/StringsKt__IndentKt;->rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[Ljava/lang/String;IZII)Lkotlin/sequences/Sequence;
-
-    move-result-object p1
-
-    new-instance p2, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;
-
-    invoke-direct {p2, p1}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;-><init>(Lkotlin/sequences/Sequence;)V
-
-    new-instance p1, Ljava/util/ArrayList;
+    new-instance p2, Ljava/util/ArrayList;
 
     const/16 p3, 0xa
 
-    invoke-static {p2, p3}, Lcom/google/android/gms/common/internal/Preconditions;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, p3}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result p3
 
-    invoke-direct {p1, p3}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {p2, p3}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {p2}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;->iterator()Ljava/util/Iterator;
 
-    move-result-object p2
+    move-result-object p1
 
-    :goto_2
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
     if-eqz p3, :cond_4
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p3
 
@@ -1732,77 +1727,56 @@
 
     move-result-object p3
 
-    invoke-virtual {p1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_4
-    move-object p0, p1
-
-    :goto_3
-    return-object p0
-.end method
-
-.method public static splitToSequence$default(Ljava/lang/CharSequence;[Ljava/lang/String;ZII)Lkotlin/sequences/Sequence;
-    .locals 8
-
-    and-int/lit8 v0, p4, 0x2
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move v5, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v5, p2
-
-    :goto_0
-    and-int/lit8 p2, p4, 0x4
-
-    if-eqz p2, :cond_1
-
-    move v6, v1
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_1
-    move v6, p3
+    :cond_4
+    move-object p0, p2
 
-    :goto_1
-    const/4 v4, 0x0
+    :goto_2
+    return-object p0
 
-    const/4 v7, 0x2
+    :cond_5
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    move-object v2, p0
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object v3, p1
+    const-string p1, "Limit must be non-negative, but was "
 
-    invoke-static/range {v2 .. v7}, Lkotlin/text/StringsKt__IndentKt;->rangesDelimitedBy$StringsKt__StringsKt$default(Ljava/lang/CharSequence;[Ljava/lang/String;IZII)Lkotlin/sequences/Sequence;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    new-instance p2, Lkotlin/text/StringsKt__StringsKt$splitToSequence$1;
+    const/16 p1, 0x2e
 
-    invoke-direct {p2, p0}, Lkotlin/text/StringsKt__StringsKt$splitToSequence$1;-><init>(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p1, p2}, Lkotlin/collections/MapsKt___MapsKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    return-object p0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public static final startsWith(Ljava/lang/String;Ljava/lang/String;IZ)Z
     .locals 6
 
-    const/4 v0, 0x0
+    const-string v0, "$this$startsWith"
 
-    if-eqz p0, :cond_2
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
+    const-string v0, "prefix"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p3, :cond_0
 
@@ -1832,30 +1806,18 @@
     move-result p0
 
     return p0
-
-    :cond_1
-    const-string p0, "prefix"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p0, "$this$startsWith"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final startsWith(Ljava/lang/String;Ljava/lang/String;Z)Z
     .locals 6
 
-    const/4 v0, 0x0
+    const-string v0, "$this$startsWith"
 
-    if-eqz p0, :cond_2
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
+    const-string v0, "prefix"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-nez p2, :cond_0
 
@@ -1885,20 +1847,6 @@
     move-result p0
 
     return p0
-
-    :cond_1
-    const-string p0, "prefix"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p0, "$this$startsWith"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static synthetic startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
@@ -1938,11 +1886,13 @@
 .method public static final substring(Ljava/lang/CharSequence;Lkotlin/ranges/IntRange;)Ljava/lang/String;
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "$this$substring"
 
-    if-eqz p0, :cond_1
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_0
+    const-string v0, "range"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget v0, p1, Lkotlin/ranges/IntProgression;->first:I
 
@@ -1975,28 +1925,12 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const-string p0, "range"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p0, "$this$substring"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
 
     and-int/lit8 p2, p3, 0x2
-
-    const/4 p3, 0x0
 
     if-eqz p2, :cond_0
 
@@ -2005,20 +1939,26 @@
     goto :goto_0
 
     :cond_0
-    move-object p2, p3
+    const/4 p2, 0x0
 
     :goto_0
-    if-eqz p0, :cond_4
+    const-string p3, "$this$substringAfter"
 
-    if-eqz p1, :cond_3
+    invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_2
+    const-string p3, "delimiter"
 
-    const/4 p3, 0x6
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const-string p3, "missingDelimiterValue"
 
-    invoke-static {p0, p1, v0, v0, p3}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p3, 0x0
+
+    const/4 v0, 0x6
+
+    invoke-static {p0, p1, p3, p3, v0}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
 
     move-result p3
 
@@ -2045,57 +1985,50 @@
 
     const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_1
     return-object p2
-
-    :cond_2
-    const-string p0, "missingDelimiterValue"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
-
-    :cond_3
-    const-string p0, "delimiter"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
-
-    :cond_4
-    const-string p0, "$this$substringAfter"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p3
 .end method
 
-.method public static final substringAfterLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
-    .locals 2
+.method public static substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
+    .locals 1
 
-    const/4 v0, 0x0
+    and-int/lit8 p2, p3, 0x2
 
-    if-eqz p0, :cond_2
+    if-eqz p2, :cond_0
 
-    if-eqz p2, :cond_1
-
-    const/4 v0, 0x6
-
-    const/4 v1, 0x0
-
-    invoke-static {p0, p1, v1, v1, v0}, Lkotlin/text/StringsKt__IndentKt;->lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
-
-    move-result p1
-
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_0
+    move-object p2, p0
 
     goto :goto_0
 
     :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    const-string p3, "$this$substringAfterLast"
+
+    invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p3, "missingDelimiterValue"
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p3, 0x0
+
+    const/4 v0, 0x6
+
+    invoke-static {p0, p1, p3, p3, v0}, Lkotlin/text/StringsKt__IndentKt;->lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
+
+    move-result p1
+
+    const/4 p3, -0x1
+
+    if-ne p1, p3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -2108,42 +2041,32 @@
 
     const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_0
+    :goto_1
     return-object p2
-
-    :cond_1
-    const-string p0, "missingDelimiterValue"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p0, "$this$substringAfterLast"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final toIntOrNull(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 11
 
-    const/4 v0, 0x0
+    const-string v0, "$this$toIntOrNull"
 
-    if-eqz p0, :cond_a
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 v1, 0xa
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->checkRadix(I)I
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
 
     goto :goto_3
 
@@ -2156,13 +2079,17 @@
 
     const/16 v5, 0x30
 
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+
+    move-result v5
+
     const v6, -0x7fffffff
 
     const/4 v7, 0x1
 
-    if-ge v4, v5, :cond_3
+    if-gez v5, :cond_3
 
-    if-ne v2, v7, :cond_1
+    if-ne v1, v7, :cond_1
 
     goto :goto_3
 
@@ -2199,13 +2126,13 @@
     move v8, v5
 
     :goto_1
-    if-ge v4, v2, :cond_7
+    if-ge v4, v1, :cond_7
 
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v9
 
-    invoke-static {v9, v1}, Ljava/lang/Character;->digit(II)I
+    invoke-static {v9, v0}, Ljava/lang/Character;->digit(II)I
 
     move-result v9
 
@@ -2243,38 +2170,27 @@
     :cond_7
     if-eqz v7, :cond_8
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
     goto :goto_2
 
     :cond_8
-    neg-int p0, v3
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
+    neg-int v3, v3
 
     :goto_2
-    move-object v0, p0
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
 
     :cond_9
     :goto_3
-    return-object v0
-
-    :cond_a
-    const-string p0, "$this$toIntOrNull"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
+    return-object v2
 .end method
 
 .method public static final trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 5
 
-    if-eqz p0, :cond_5
+    const-string v0, "$this$trim"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -2305,7 +2221,7 @@
 
     move-result v4
 
-    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->isWhitespace(C)Z
+    invoke-static {v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isWhitespace(C)Z
 
     move-result v4
 
@@ -2341,19 +2257,394 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static final trimIndent(Ljava/lang/String;)Ljava/lang/String;
+    .locals 17
+
+    move-object/from16 v0, p0
+
+    const-string v1, "$this$trimIndent"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$replaceIndent"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, ""
+
+    const-string v2, "newIndent"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static/range {p0 .. p0}, Lkotlin/text/StringsKt__IndentKt;->lines(Ljava/lang/CharSequence;)Ljava/util/List;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_0
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-eqz v5, :cond_1
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v7, v5
+
+    check-cast v7, Ljava/lang/String;
+
+    invoke-static {v7}, Lkotlin/text/StringsKt__IndentKt;->isBlank(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    xor-int/2addr v6, v7
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v4, Ljava/util/ArrayList;
+
+    const/16 v5, 0xa
+
+    invoke-static {v3, v5}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v5
+
+    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    const/4 v7, 0x0
+
+    if-eqz v5, :cond_5
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    :goto_2
+    const/4 v9, -0x1
+
+    if-ge v7, v8, :cond_3
+
+    invoke-virtual {v5, v7}, Ljava/lang/String;->charAt(I)C
+
+    move-result v10
+
+    invoke-static {v10}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isWhitespace(C)Z
+
+    move-result v10
+
+    xor-int/2addr v10, v6
+
+    if-eqz v10, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    move v7, v9
+
+    :goto_3
+    if-ne v7, v9, :cond_4
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    :cond_4
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
 
     :cond_5
-    const-string p0, "$this$trim"
+    const-string v3, "$this$minOrNull"
 
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p0, 0x0
+    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    throw p0
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    if-nez v4, :cond_6
+
+    move-object v4, v5
+
+    goto :goto_5
+
+    :cond_6
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Comparable;
+
+    :cond_7
+    :goto_4
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_8
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/Comparable;
+
+    invoke-interface {v4, v8}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    move-result v9
+
+    if-lez v9, :cond_7
+
+    move-object v4, v8
+
+    goto :goto_4
+
+    :cond_8
+    :goto_5
+    check-cast v4, Ljava/lang/Integer;
+
+    if-eqz v4, :cond_9
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    goto :goto_6
+
+    :cond_9
+    move v3, v7
+
+    :goto_6
+    invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    mul-int/2addr v4, v7
+
+    add-int/2addr v4, v0
+
+    invoke-static {v1}, Lkotlin/text/StringsKt__IndentKt;->getIndentFunction$StringsKt__IndentKt(Ljava/lang/String;)Lkotlin/jvm/functions/Function1;
+
+    move-result-object v0
+
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->getLastIndex(Ljava/util/List;)I
+
+    move-result v1
+
+    new-instance v8, Ljava/util/ArrayList;
+
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    move v9, v7
+
+    :goto_7
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_12
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v10
+
+    add-int/lit8 v11, v9, 0x1
+
+    if-ltz v9, :cond_11
+
+    check-cast v10, Ljava/lang/String;
+
+    if-eqz v9, :cond_a
+
+    if-ne v9, v1, :cond_b
+
+    :cond_a
+    invoke-static {v10}, Lkotlin/text/StringsKt__IndentKt;->isBlank(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_b
+
+    move-object v10, v5
+
+    goto :goto_a
+
+    :cond_b
+    const-string v9, "$this$drop"
+
+    invoke-static {v10, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-ltz v3, :cond_c
+
+    move v9, v6
+
+    goto :goto_8
+
+    :cond_c
+    move v9, v7
+
+    :goto_8
+    if-eqz v9, :cond_10
+
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    if-le v3, v9, :cond_d
+
+    goto :goto_9
+
+    :cond_d
+    move v9, v3
+
+    :goto_9
+    invoke-virtual {v10, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    const-string v12, "(this as java.lang.String).substring(startIndex)"
+
+    invoke-static {v9, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0, v9}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/String;
+
+    if-eqz v9, :cond_e
+
+    move-object v10, v9
+
+    :cond_e
+    :goto_a
+    if-eqz v10, :cond_f
+
+    invoke-virtual {v8, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_f
+    move v9, v11
+
+    goto :goto_7
+
+    :cond_10
+    const-string v0, "Requested character count "
+
+    const-string v1, " is less than zero."
+
+    invoke-static {v0, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_11
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
+
+    throw v5
+
+    :cond_12
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x7c
+
+    const-string v10, "\n"
+
+    move-object v9, v0
+
+    invoke-static/range {v8 .. v16}, Lkotlin/collections/ArraysKt___ArraysKt;->joinTo$default(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Appendable;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "mapIndexedNotNull { inde\u2026\"\\n\")\n        .toString()"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 .method public static trimMargin$default(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-    .locals 12
+    .locals 13
 
     and-int/lit8 p1, p2, 0x1
 
@@ -2369,9 +2660,25 @@
     move-object p1, p2
 
     :goto_0
-    if-eqz p0, :cond_d
+    const-string v0, "$this$trimMargin"
 
-    if-eqz p1, :cond_c
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "marginPrefix"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "$this$replaceIndentByMargin"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, ""
+
+    const-string v2, "newIndent"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lkotlin/text/StringsKt__IndentKt;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -2381,25 +2688,7 @@
 
     if-eqz v0, :cond_b
 
-    const-string v0, "\r\n"
-
-    const-string v1, "\n"
-
-    const-string v2, "\r"
-
-    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x6
-
-    const/4 v2, 0x0
-
-    invoke-static {p0, v0, v2, v2, v1}, Lkotlin/text/StringsKt__IndentKt;->splitToSequence$default(Ljava/lang/CharSequence;[Ljava/lang/String;ZII)Lkotlin/sequences/Sequence;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {p0}, Lkotlin/text/StringsKt__IndentKt;->lines(Ljava/lang/CharSequence;)Ljava/util/List;
 
     move-result-object v0
 
@@ -2409,19 +2698,21 @@
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
+    move-result v2
+
+    const/4 v3, 0x0
+
+    mul-int/2addr v2, v3
+
+    add-int/2addr v2, p0
+
+    invoke-static {v1}, Lkotlin/text/StringsKt__IndentKt;->getIndentFunction$StringsKt__IndentKt(Ljava/lang/String;)Lkotlin/jvm/functions/Function1;
+
+    move-result-object p0
+
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->getLastIndex(Ljava/util/List;)I
+
     move-result v1
-
-    mul-int/2addr v1, v2
-
-    add-int/2addr v1, p0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    const/4 v3, -0x1
-
-    add-int/2addr p0, v3
 
     new-instance v4, Ljava/util/ArrayList;
 
@@ -2431,7 +2722,7 @@
 
     move-result-object v0
 
-    move v5, v2
+    move v5, v3
 
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -2452,7 +2743,7 @@
 
     if-eqz v5, :cond_1
 
-    if-ne v5, p0, :cond_2
+    if-ne v5, v1, :cond_2
 
     :cond_1
     invoke-static {v6}, Lkotlin/text/StringsKt__IndentKt;->isBlank(Ljava/lang/CharSequence;)Z
@@ -2470,22 +2761,24 @@
 
     move-result v5
 
-    move v8, v2
+    move v8, v3
 
     :goto_2
+    const/4 v9, -0x1
+
     if-ge v8, v5, :cond_4
 
     invoke-virtual {v6, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v10
 
-    invoke-static {v9}, Lkotlin/collections/MapsKt___MapsKt;->isWhitespace(C)Z
+    invoke-static {v10}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isWhitespace(C)Z
 
-    move-result v9
+    move-result v10
 
-    xor-int/lit8 v9, v9, 0x1
+    xor-int/lit8 v10, v10, 0x1
 
-    if-eqz v9, :cond_3
+    if-eqz v10, :cond_3
 
     goto :goto_3
 
@@ -2495,17 +2788,17 @@
     goto :goto_2
 
     :cond_4
-    move v8, v3
+    move v8, v9
 
     :goto_3
-    if-ne v8, v3, :cond_5
+    if-ne v8, v9, :cond_5
 
     goto :goto_4
 
     :cond_5
     const/4 v5, 0x4
 
-    invoke-static {v6, p1, v8, v2, v5}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
+    invoke-static {v6, p1, v8, v3, v5}, Lkotlin/text/StringsKt__IndentKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
 
     move-result v5
 
@@ -2523,7 +2816,7 @@
 
     const-string v8, "(this as java.lang.String).substring(startIndex)"
 
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_5
 
@@ -2532,6 +2825,14 @@
     move-object v5, p2
 
     :goto_5
+    if-eqz v5, :cond_7
+
+    invoke-interface {p0, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
     if-eqz v5, :cond_7
 
     move-object v6, v5
@@ -2548,30 +2849,32 @@
     goto :goto_1
 
     :cond_9
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->throwIndexOverflow()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
 
     throw p2
 
     :cond_a
     new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {p0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v9, -0x1
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
+    const/16 v12, 0x7c
+
     const-string v6, "\n"
-
-    const-string v8, ""
-
-    const-string v10, "..."
 
     move-object v5, p0
 
-    move-object v7, v8
-
-    invoke-static/range {v4 .. v11}, Lkotlin/collections/ArraysKt___ArraysKt;->joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
+    invoke-static/range {v4 .. v12}, Lkotlin/collections/ArraysKt___ArraysKt;->joinTo$default(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Appendable;
 
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2579,7 +2882,7 @@
 
     const-string p1, "mapIndexedNotNull { inde\u2026\"\\n\")\n        .toString()"
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
@@ -2595,18 +2898,4 @@
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
-
-    :cond_c
-    const-string p0, "marginPrefix"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
-
-    :cond_d
-    const-string p0, "$this$trimMargin"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw p2
 .end method

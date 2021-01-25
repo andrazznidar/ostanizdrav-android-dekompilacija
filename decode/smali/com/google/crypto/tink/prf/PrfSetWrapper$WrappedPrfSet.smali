@@ -20,7 +20,7 @@
         value = {
             "Ljava/util/Map<",
             "Ljava/lang/Integer;",
-            "Lcom/google/crypto/tink/subtle/prf/PrfImpl;",
+            "Lcom/google/crypto/tink/prf/Prf;",
             ">;"
         }
     .end annotation
@@ -139,6 +139,8 @@
 
     move-result-object v0
 
+    check-cast v0, Lcom/google/crypto/tink/prf/Prf;
+
     invoke-virtual {p2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
@@ -148,7 +150,7 @@
 
     const-string p2, "More PRFs than expected in KeyTypeManager for key "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -169,7 +171,7 @@
 
     const-string p2, "Key "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -222,7 +224,7 @@
             "()",
             "Ljava/util/Map<",
             "Ljava/lang/Integer;",
-            "Lcom/google/crypto/tink/subtle/prf/PrfImpl;",
+            "Lcom/google/crypto/tink/prf/Prf;",
             ">;"
         }
     .end annotation

@@ -255,7 +255,7 @@
 
     sget v2, Lcom/google/android/material/R$styleable;->Chip_chipSurfaceColor:I
 
-    invoke-static {v1, v0, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v1, v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -276,7 +276,7 @@
 
     sget v2, Lcom/google/android/material/R$styleable;->Chip_chipBackgroundColor:I
 
-    invoke-static {v1, v0, v2}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v1, v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -313,7 +313,7 @@
 
     sget v3, Lcom/google/android/material/R$styleable;->Chip_chipStrokeColor:I
 
-    invoke-static {v1, v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v1, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -331,7 +331,7 @@
 
     sget v3, Lcom/google/android/material/R$styleable;->Chip_rippleColor:I
 
-    invoke-static {v1, v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v1, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -452,7 +452,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->Chip_chipIcon:I
 
-    invoke-static {v3, v0, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v0, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -470,7 +470,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->Chip_chipIconTint:I
 
-    invoke-static {v3, v0, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v3, v0, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v3
 
@@ -524,7 +524,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->Chip_closeIcon:I
 
-    invoke-static {v3, v0, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v0, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -534,7 +534,7 @@
 
     sget v4, Lcom/google/android/material/R$styleable;->Chip_closeIconTint:I
 
-    invoke-static {v3, v0, v4}, Lcom/google/android/gms/common/internal/Preconditions;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v3, v0, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v3
 
@@ -595,7 +595,7 @@
 
     sget v3, Lcom/google/android/material/R$styleable;->Chip_checkedIcon:I
 
-    invoke-static {v1, v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -725,19 +725,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
     const/16 v2, 0x30
 
-    int-to-float v2, v2
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    invoke-static {v8, v2, v1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->dpToPx(Landroid/content/Context;I)F
 
     move-result v1
 
@@ -2351,7 +2341,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     return-void
 .end method
@@ -4646,7 +4636,11 @@
 
     invoke-direct {v1, v2, p1}, Lcom/google/android/material/resources/TextAppearance;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/material/chip/ChipDrawable;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;)V
+    iget-object p1, v0, Lcom/google/android/material/chip/ChipDrawable;->textDrawableHelper:Lcom/google/android/material/internal/TextDrawableHelper;
+
+    iget-object v0, v0, Lcom/google/android/material/chip/ChipDrawable;->context:Landroid/content/Context;
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/material/internal/TextDrawableHelper;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;Landroid/content/Context;)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/material/chip/Chip;->updateTextPaintDrawState()V
@@ -4669,7 +4663,11 @@
 
     invoke-direct {v0, v1, p2}, Lcom/google/android/material/resources/TextAppearance;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/material/chip/ChipDrawable;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;)V
+    iget-object p2, p1, Lcom/google/android/material/chip/ChipDrawable;->textDrawableHelper:Lcom/google/android/material/internal/TextDrawableHelper;
+
+    iget-object p1, p1, Lcom/google/android/material/chip/ChipDrawable;->context:Landroid/content/Context;
+
+    invoke-virtual {p2, v0, p1}, Lcom/google/android/material/internal/TextDrawableHelper;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;Landroid/content/Context;)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/material/chip/Chip;->updateTextPaintDrawState()V
@@ -4678,13 +4676,17 @@
 .end method
 
 .method public setTextAppearance(Lcom/google/android/material/resources/TextAppearance;)V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p1}, Lcom/google/android/material/chip/ChipDrawable;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;)V
+    iget-object v1, v0, Lcom/google/android/material/chip/ChipDrawable;->textDrawableHelper:Lcom/google/android/material/internal/TextDrawableHelper;
+
+    iget-object v0, v0, Lcom/google/android/material/chip/ChipDrawable;->context:Landroid/content/Context;
+
+    invoke-virtual {v1, p1, v0}, Lcom/google/android/material/internal/TextDrawableHelper;->setTextAppearance(Lcom/google/android/material/resources/TextAppearance;Landroid/content/Context;)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/material/chip/Chip;->updateTextPaintDrawState()V

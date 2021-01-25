@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/nearby/Nearby;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     const-string v0, "gms:nearby:requires_gms_check"
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/internal/nearby/zzkz;->zza(Landroid/content/ContentResolver;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/google/android/gms/internal/nearby/zznj;->zza(Landroid/content/ContentResolver;Ljava/lang/String;)Z
 
     move-result p0
 

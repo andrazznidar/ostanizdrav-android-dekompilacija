@@ -56,6 +56,15 @@
 # virtual methods
 .method public computeMac([B)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -110,7 +119,7 @@
 
     aput-object p1, v3, v1
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 
@@ -120,7 +129,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 
@@ -153,7 +162,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 
@@ -161,7 +170,18 @@
 .end method
 
 .method public verifyMac([B[B)V
-    .locals 7
+    .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "mac",
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -174,110 +194,111 @@
 
     if-le v0, v1, :cond_3
 
-    const/4 v0, 0x0
+    invoke-static {p1, v1}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    invoke-static {p1, v0, v1}, Ljava/util/Arrays;->copyOfRange([BII)[B
+    move-result-object v0
 
-    move-result-object v2
+    array-length v2, p1
 
-    array-length v3, p1
-
-    invoke-static {p1, v1, v3}, Ljava/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {p1, v1, v2}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/google/crypto/tink/mac/MacWrapper$WrappedMac;->primitives:Lcom/google/crypto/tink/PrimitiveSet;
+    iget-object v2, p0, Lcom/google/crypto/tink/mac/MacWrapper$WrappedMac;->primitives:Lcom/google/crypto/tink/PrimitiveSet;
 
-    invoke-virtual {v3, v2}, Lcom/google/crypto/tink/PrimitiveSet;->getPrimitive([B)Ljava/util/List;
+    invoke-virtual {v2, v0}, Lcom/google/crypto/tink/PrimitiveSet;->getPrimitive([B)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/crypto/tink/PrimitiveSet$Entry;
+
+    :try_start_0
+    iget-object v3, v2, Lcom/google/crypto/tink/PrimitiveSet$Entry;->outputPrefixType:Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    sget-object v4, Lcom/google/crypto/tink/proto/OutputPrefixType;->LEGACY:Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    invoke-virtual {v3, v4}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v2, v2, Lcom/google/crypto/tink/PrimitiveSet$Entry;->primitive:Ljava/lang/Object;
+
+    check-cast v2, Lcom/google/crypto/tink/Mac;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [[B
+
+    const/4 v4, 0x0
+
+    aput-object p2, v3, v4
+
+    const/4 v4, 0x1
+
+    iget-object v5, p0, Lcom/google/crypto/tink/mac/MacWrapper$WrappedMac;->formatVersion:[B
+
+    aput-object v5, v3, v4
+
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/crypto/tink/PrimitiveSet$Entry;
-
-    :try_start_0
-    iget-object v4, v3, Lcom/google/crypto/tink/PrimitiveSet$Entry;->outputPrefixType:Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    sget-object v5, Lcom/google/crypto/tink/proto/OutputPrefixType;->LEGACY:Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    invoke-virtual {v4, v5}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    iget-object v3, v3, Lcom/google/crypto/tink/PrimitiveSet$Entry;->primitive:Ljava/lang/Object;
-
-    check-cast v3, Lcom/google/crypto/tink/Mac;
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [[B
-
-    aput-object p2, v4, v0
-
-    const/4 v5, 0x1
-
-    iget-object v6, p0, Lcom/google/crypto/tink/mac/MacWrapper$WrappedMac;->formatVersion:[B
-
-    aput-object v6, v4, v5
-
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
-
-    move-result-object v4
-
-    invoke-interface {v3, v1, v4}, Lcom/google/crypto/tink/Mac;->verifyMac([B[B)V
+    invoke-interface {v2, v1, v3}, Lcom/google/crypto/tink/Mac;->verifyMac([B[B)V
 
     goto :goto_1
 
+    :catch_0
+    move-exception v2
+
+    goto :goto_2
+
     :cond_0
-    iget-object v3, v3, Lcom/google/crypto/tink/PrimitiveSet$Entry;->primitive:Ljava/lang/Object;
+    iget-object v2, v2, Lcom/google/crypto/tink/PrimitiveSet$Entry;->primitive:Ljava/lang/Object;
 
-    check-cast v3, Lcom/google/crypto/tink/Mac;
+    check-cast v2, Lcom/google/crypto/tink/Mac;
 
-    invoke-interface {v3, v1, p2}, Lcom/google/crypto/tink/Mac;->verifyMac([B[B)V
+    invoke-interface {v2, v1, p2}, Lcom/google/crypto/tink/Mac;->verifyMac([B[B)V
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_1
     return-void
 
-    :catch_0
-    move-exception v3
+    :goto_2
+    sget-object v3, Lcom/google/crypto/tink/mac/MacWrapper;->logger:Ljava/util/logging/Logger;
 
-    sget-object v4, Lcom/google/crypto/tink/mac/MacWrapper;->logger:Ljava/util/logging/Logger;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v5, "tag prefix matches a key, but cannot verify: "
 
-    invoke-static {v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/security/GeneralSecurityException;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v4, v3}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
 
     goto :goto_0
 

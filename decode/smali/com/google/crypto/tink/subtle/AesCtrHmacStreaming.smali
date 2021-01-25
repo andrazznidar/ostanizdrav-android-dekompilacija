@@ -12,6 +12,27 @@
 # direct methods
 .method public constructor <init>([BLjava/lang/String;ILjava/lang/String;III)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "ikm",
+            "hkdfAlgo",
+            "keySizeInBytes",
+            "tagAlgo",
+            "tagSizeInBytes",
+            "ciphertextSegmentSize",
+            "firstSegmentOffset"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidAlgorithmParameterException;
@@ -121,7 +142,7 @@
 
     const-string p2, "tag size too small "
 
-    invoke-static {p2, p5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, p5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -134,7 +155,7 @@
 
     const-string p2, "ikm too short, must be >= "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 

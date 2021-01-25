@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public getActiveNetworkState()Landroidx/work/impl/constraints/NetworkState;
-    .locals 6
+    .locals 8
 
     iget-object v0, p0, Landroidx/work/impl/constraints/trackers/NetworkStateTracker;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
@@ -140,6 +140,7 @@
     move v3, v2
 
     :goto_0
+    :try_start_0
     iget-object v4, p0, Landroidx/work/impl/constraints/trackers/NetworkStateTracker;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v4}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
@@ -159,17 +160,41 @@
     invoke-virtual {v4, v5}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
 
     move-result v4
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz v4, :cond_1
 
     move v4, v1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
+    :goto_1
     move v4, v2
 
-    :goto_1
+    goto :goto_2
+
+    :catch_0
+    move-exception v4
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v5
+
+    sget-object v6, Landroidx/work/impl/constraints/trackers/NetworkStateTracker;->TAG:Ljava/lang/String;
+
+    new-array v7, v1, [Ljava/lang/Throwable;
+
+    aput-object v4, v7, v2
+
+    const-string v4, "Unable to validate active network"
+
+    invoke-virtual {v5, v6, v4, v7}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :goto_2
     iget-object v5, p0, Landroidx/work/impl/constraints/trackers/NetworkStateTracker;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v5}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z
@@ -184,12 +209,12 @@
 
     if-nez v0, :cond_2
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     move v1, v2
 
-    :goto_2
+    :goto_3
     new-instance v0, Landroidx/work/impl/constraints/NetworkState;
 
     invoke-direct {v0, v3, v4, v5, v1}, Landroidx/work/impl/constraints/NetworkState;-><init>(ZZZZ)V
@@ -237,13 +262,20 @@
 
     invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    :goto_0
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v2
@@ -256,11 +288,11 @@
 
     aput-object v0, v4, v1
 
-    const-string v0, "Received exception while unregistering network callback"
+    const-string v0, "Received exception while registering network callback"
 
     invoke-virtual {v2, v3, v0, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
@@ -287,7 +319,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    :goto_0
+    :goto_1
     return-void
 .end method
 
@@ -321,13 +353,20 @@
 
     invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->unregisterNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    :goto_0
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v2
@@ -344,7 +383,7 @@
 
     invoke-virtual {v2, v3, v0, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
@@ -365,6 +404,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

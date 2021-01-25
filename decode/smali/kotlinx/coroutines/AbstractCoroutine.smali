@@ -105,7 +105,7 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v0, p1}, Lkotlin/collections/MapsKt___MapsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -139,48 +139,34 @@
 .end method
 
 .method public nameString$kotlinx_coroutines_core()Ljava/lang/String;
-    .locals 3
+    .locals 1
 
     iget-object v0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-static {v0}, Lkotlinx/coroutines/CoroutineContextKt;->getCoroutineName(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/String;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v2, 0x22
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\":"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-super {p0}, Lkotlinx/coroutines/JobSupport;->nameString$kotlinx_coroutines_core()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
     invoke-super {p0}, Lkotlinx/coroutines/JobSupport;->nameString$kotlinx_coroutines_core()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public onCancelled(Ljava/lang/Throwable;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onCompleted(Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+
+    return-void
 .end method
 
 .method public final onCompletionInternal(Ljava/lang/Object;)V
@@ -196,7 +182,14 @@
 
     iget p1, p1, Lkotlinx/coroutines/CompletedExceptionally;->_handled:I
 
+    invoke-virtual {p0, v0, p1}, Lkotlinx/coroutines/AbstractCoroutine;->onCancelled(Ljava/lang/Throwable;Z)V
+
+    goto :goto_0
+
     :cond_0
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/AbstractCoroutine;->onCompleted(Ljava/lang/Object;)V
+
+    :goto_0
     return-void
 .end method
 
@@ -215,9 +208,13 @@
 .end method
 
 .method public final resumeWith(Ljava/lang/Object;)V
-    .locals 1
+    .locals 2
 
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toState(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-static {p1, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -238,7 +235,7 @@
 .end method
 
 .method public final start(Lkotlinx/coroutines/CoroutineStart;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -261,37 +258,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    if-eqz p1, :cond_3
 
-    if-eq p1, v0, :cond_5
+    const/4 v1, 0x1
 
-    const/4 v0, 0x2
+    if-eq p1, v1, :cond_4
 
-    const/4 v1, 0x0
+    const-string v1, "completion"
 
-    if-eq p1, v0, :cond_2
+    const/4 v2, 0x2
 
-    const/4 v2, 0x3
+    if-eq p1, v2, :cond_2
 
-    if-ne p1, v2, :cond_1
+    const/4 v3, 0x3
+
+    if-ne p1, v3, :cond_1
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     invoke-interface {p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     if-eqz p3, :cond_0
 
     :try_start_1
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/TypeIntrinsics;->beforeCheckcastToFunctionOfArity(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-static {p3, v2}, Lkotlin/jvm/internal/TypeIntrinsics;->beforeCheckcastToFunctionOfArity(Ljava/lang/Object;I)Ljava/lang/Object;
 
     invoke-interface {p3, p2, p0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -300,13 +301,13 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
+    invoke-static {p1, v0}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     sget-object p1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    if-eq p2, p1, :cond_5
+    if-eq p2, p1, :cond_4
 
     invoke-interface {p0, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
@@ -314,11 +315,11 @@
 
     :cond_0
     :try_start_3
-    new-instance p2, Lkotlin/TypeCastException;
+    new-instance p2, Ljava/lang/NullPointerException;
 
     const-string p3, "null cannot be cast to non-null type (R, kotlin.coroutines.Continuation<T>) -> kotlin.Any?"
 
-    invoke-direct {p2, p3}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p2
     :try_end_3
@@ -328,7 +329,7 @@
     move-exception p2
 
     :try_start_4
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
+    invoke-static {p1, v0}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
     throw p2
     :try_end_4
@@ -337,7 +338,7 @@
     :catchall_1
     move-exception p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -353,13 +354,17 @@
     throw p1
 
     :cond_2
-    if-eqz p3, :cond_3
+    const-string p1, "$this$startCoroutine"
 
-    invoke-static {p3, p2, p0}, Lkotlin/collections/MapsKt___MapsKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p3, p2, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -370,16 +375,11 @@
     goto :goto_0
 
     :cond_3
-    const-string p1, "$this$startCoroutine"
+    const/4 p1, 0x4
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
+    invoke-static {p3, p2, p0, v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->startCoroutineCancellable$default(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function1;I)V
 
     :cond_4
-    invoke-static {p3, p2, p0}, Lkotlin/collections/MapsKt___MapsKt;->startCoroutineCancellable(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
-
-    :cond_5
     :goto_0
     return-void
 .end method

@@ -29,7 +29,7 @@
 
     mul-long/2addr v0, v2
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -135,7 +135,7 @@
     move-wide p3, v2
 
     :goto_1
-    invoke-static {p1, p2, p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -184,6 +184,20 @@
 
     :cond_2
     return v2
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 0
+
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+
+    move-result-wide p1
+
+    iget-wide p3, p0, Lorg/joda/time/field/PreciseDurationField;->iUnitMillis:J
+
+    div-long/2addr p1, p3
+
+    return-wide p1
 .end method
 
 .method public final getUnitMillis()J

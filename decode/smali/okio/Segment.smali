@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSegment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Segment.kt\nokio/Segment\n*L\n1#1,178:1\n*E\n"
+    value = "SMAP\nSegment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Segment.kt\nokio/Segment\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,183:1\n1#2:184\n*E\n"
 .end annotation
 
 
@@ -49,9 +49,11 @@
 .end method
 
 .method public constructor <init>([BIIZZ)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "data"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,15 +68,6 @@
     iput-boolean p5, p0, Lokio/Segment;->owner:Z
 
     return-void
-
-    :cond_0
-    const-string p1, "data"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -96,37 +89,33 @@
     :goto_0
     iget-object v2, p0, Lokio/Segment;->prev:Lokio/Segment;
 
-    if-eqz v2, :cond_2
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v3, p0, Lokio/Segment;->next:Lokio/Segment;
 
     iput-object v3, v2, Lokio/Segment;->next:Lokio/Segment;
 
-    iget-object v3, p0, Lokio/Segment;->next:Lokio/Segment;
+    iget-object v2, p0, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v3, :cond_1
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iput-object v2, v3, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v3, p0, Lokio/Segment;->prev:Lokio/Segment;
+
+    iput-object v3, v2, Lokio/Segment;->prev:Lokio/Segment;
 
     iput-object v1, p0, Lokio/Segment;->next:Lokio/Segment;
 
     iput-object v1, p0, Lokio/Segment;->prev:Lokio/Segment;
 
     return-object v0
-
-    :cond_1
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v1
-
-    :cond_2
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    throw v1
 .end method
 
 .method public final push(Lokio/Segment;)Lokio/Segment;
     .locals 1
+
+    const-string v0, "segment"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p0, p1, Lokio/Segment;->prev:Lokio/Segment;
 
@@ -136,20 +125,13 @@
 
     iget-object v0, p0, Lokio/Segment;->next:Lokio/Segment;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iput-object p1, v0, Lokio/Segment;->prev:Lokio/Segment;
 
     iput-object p1, p0, Lokio/Segment;->next:Lokio/Segment;
 
     return-object p1
-
-    :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final sharedCopy()Lokio/Segment;
@@ -181,7 +163,9 @@
 .method public final writeTo(Lokio/Segment;I)V
     .locals 7
 
-    if-eqz p1, :cond_4
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v0, p1, Lokio/Segment;->owner:Z
 
@@ -283,15 +267,6 @@
     move-result-object p2
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
 
     throw p1
 .end method

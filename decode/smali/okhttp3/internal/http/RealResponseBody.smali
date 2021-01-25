@@ -13,7 +13,11 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JLokio/BufferedSource;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "source"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V
 
@@ -44,6 +48,10 @@
     if-eqz v0, :cond_0
 
     sget-object v1, Lokhttp3/MediaType;->Companion:Lokhttp3/MediaType$Companion;
+
+    const-string v1, "$this$toMediaTypeOrNull"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     invoke-static {v0}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;

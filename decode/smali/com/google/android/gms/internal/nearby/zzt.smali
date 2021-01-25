@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzt;
 .super Lcom/google/android/gms/common/api/GoogleApi;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
 .implements Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
@@ -35,9 +35,9 @@
 
     new-instance v0, Lcom/google/android/gms/common/api/Api;
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaa;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzal;
 
-    invoke-direct {v1}, Lcom/google/android/gms/internal/nearby/zzaa;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/gms/internal/nearby/zzal;-><init>()V
 
     new-instance v2, Lcom/google/android/gms/common/api/Api$ClientKey;
 
@@ -78,21 +78,21 @@
 
     move-result-object p0
 
-    check-cast p0, Lcom/google/android/gms/internal/nearby/zzbq;
+    check-cast p0, Lcom/google/android/gms/internal/nearby/zzdv;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzcl;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzev;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzcl;-><init>(Lcom/google/android/gms/internal/nearby/zzck;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzev;-><init>(Lcom/google/android/gms/internal/nearby/zzeu;)V
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaj;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaq;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzaj;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzaq;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzcl;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzev;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
 
-    invoke-interface {p0, v0}, Lcom/google/android/gms/internal/nearby/zzbq;->zza(Lcom/google/android/gms/internal/nearby/zzcl;)V
+    invoke-interface {p0, v0}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzev;)V
 
     return-void
 .end method
@@ -109,36 +109,64 @@
 
     move-result-object p0
 
-    check-cast p0, Lcom/google/android/gms/internal/nearby/zzbq;
+    check-cast p0, Lcom/google/android/gms/internal/nearby/zzdv;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzch;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzer;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzch;-><init>(Lcom/google/android/gms/internal/nearby/zzcg;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzer;-><init>(Lcom/google/android/gms/internal/nearby/zzeq;)V
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaj;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaq;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzaj;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzaq;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzch;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzer;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
 
-    invoke-interface {p0, v0}, Lcom/google/android/gms/internal/nearby/zzbq;->zza(Lcom/google/android/gms/internal/nearby/zzch;)V
+    invoke-interface {p0, v0}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzer;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getExposureSummary(Ljava/lang/String;)Lcom/google/android/gms/tasks/zzu;
+.method public final deviceSupportsLocationlessScanning()Z
     .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x15
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "bluetooth_sanitized_exposure_notification_supported"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    return v1
+
+    :cond_0
+    return v2
+.end method
+
+.method public final getDiagnosisKeysDataMapping()Lcom/google/android/gms/tasks/Task;
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Lcom/google/android/gms/tasks/zzu<",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureSummary;",
+            "()",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;",
             ">;"
         }
     .end annotation
@@ -149,41 +177,41 @@
 
     new-instance v1, Lcom/google/android/gms/internal/nearby/zzy;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/internal/nearby/zzy;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/lang/String;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzy;-><init>(Lcom/google/android/gms/internal/nearby/zzt;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
-    const/4 p1, 0x1
+    const/4 v1, 0x1
 
-    new-array p1, p1, [Lcom/google/android/gms/common/Feature;
+    new-array v1, v1, [Lcom/google/android/gms/common/Feature;
 
-    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
+    sget-object v2, Lcom/google/android/gms/nearby/zza;->zzh:Lcom/google/android/gms/common/Feature;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object v1, p1, v2
+    aput-object v2, v1, v3
 
-    iput-object p1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method
 
-.method public final getTemporaryExposureKeyHistory()Lcom/google/android/gms/tasks/zzu;
+.method public final getExposureWindows()Lcom/google/android/gms/tasks/Task;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "Ljava/util/List<",
-            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
             ">;>;"
         }
     .end annotation
@@ -192,9 +220,11 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzx;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaj;
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzx;-><init>(Lcom/google/android/gms/internal/nearby/zzt;)V
+    const-string v2, "TYZWQ32170AXEUVCDW7A"
+
+    invoke-direct {v1, p0, v2}, Lcom/google/android/gms/internal/nearby/zzaj;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/lang/String;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -214,20 +244,65 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final isEnabled()Lcom/google/android/gms/tasks/zzu;
+.method public final getTemporaryExposureKeyHistory()Lcom/google/android/gms/tasks/Task;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/android/gms/tasks/zzu<",
-            "Ljava/lang/Boolean;",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;>;"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzae;
+
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzae;-><init>(Lcom/google/android/gms/internal/nearby/zzt;)V
+
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lcom/google/android/gms/common/Feature;
+
+    sget-object v2, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getVersion()Lcom/google/android/gms/tasks/Task;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Long;",
             ">;"
         }
     .end annotation
@@ -246,6 +321,50 @@
 
     new-array v1, v1, [Lcom/google/android/gms/common/Feature;
 
+    sget-object v2, Lcom/google/android/gms/nearby/zza;->zzd:Lcom/google/android/gms/common/Feature;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final isEnabled()Lcom/google/android/gms/tasks/Task;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzaf;
+
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzaf;-><init>(Lcom/google/android/gms/internal/nearby/zzt;)V
+
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lcom/google/android/gms/common/Feature;
+
     sget-object v2, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
 
     const/4 v3, 0x0
@@ -258,25 +377,113 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final provideDiagnosisKeys(Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)Lcom/google/android/gms/tasks/zzu;
+.method public final provideDiagnosisKeys(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;
+
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;->build()Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+
+    move-result-object v0
+
+    const-string v1, "TYZWQ32170AXEUVCDW7A"
+
+    invoke-virtual {p0, p1, v0, v1}, Lcom/google/android/gms/internal/nearby/zzt;->zza(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final provideDiagnosisKeys(Ljava/util/List;)Lcom/google/android/gms/tasks/Task;
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
             "Ljava/io/File;",
-            ">;",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;",
-            "Ljava/lang/String;",
+            ">;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;
+
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;->build()Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zzt;->getVersion()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/gms/internal/nearby/zzah;
+
+    const-string v3, "TYZWQ32170AXEUVCDW7A"
+
+    invoke-direct {v2, p0, p1, v0, v3}, Lcom/google/android/gms/internal/nearby/zzah;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
+
+    check-cast v1, Lcom/google/android/gms/tasks/zzu;
+
+    if-eqz v1, :cond_0
+
+    sget-object p1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
+
+    new-instance v0, Lcom/google/android/gms/tasks/zzu;
+
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzu;-><init>()V
+
+    iget-object v3, v1, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    new-instance v4, Lcom/google/android/gms/tasks/zzd;
+
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    invoke-direct {v4, p1, v2, v0}, Lcom/google/android/gms/tasks/zzd;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/internal/nearby/zzah;Lcom/google/android/gms/tasks/zzu;)V
+
+    invoke-virtual {v3, v4}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    invoke-virtual {v1}, Lcom/google/android/gms/tasks/zzu;->zze()V
+
+    return-object v0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final setDiagnosisKeysDataMapping(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)Lcom/google/android/gms/tasks/Task;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;",
             ")",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "Ljava/lang/Void;",
             ">;"
         }
@@ -286,41 +493,41 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzw;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzz;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/android/gms/internal/nearby/zzw;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzz;-><init>(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     const/4 p1, 0x1
 
-    new-array p2, p1, [Lcom/google/android/gms/common/Feature;
+    new-array v1, p1, [Lcom/google/android/gms/common/Feature;
 
-    sget-object p3, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    sget-object v3, Lcom/google/android/gms/nearby/zza;->zzh:Lcom/google/android/gms/common/Feature;
 
-    aput-object p3, p2, v1
+    aput-object v3, v1, v2
 
-    iput-object p2, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final start()Lcom/google/android/gms/tasks/zzu;
+.method public final start()Lcom/google/android/gms/tasks/Task;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "Ljava/lang/Void;",
             ">;"
         }
@@ -350,19 +557,19 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final stop()Lcom/google/android/gms/tasks/zzu;
+.method public final stop()Lcom/google/android/gms/tasks/Task;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "Ljava/lang/Void;",
             ">;"
         }
@@ -372,7 +579,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/gms/internal/nearby/zzv;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    sget-object v1, Lcom/google/android/gms/internal/nearby/zzac;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -392,9 +599,57 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final zza(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)Lcom/google/android/gms/tasks/Task;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;",
+            "Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;",
+            "Ljava/lang/String;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzag;
+
+    invoke-direct {v1, p0, p2, p1, p3}, Lcom/google/android/gms/internal/nearby/zzag;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Ljava/lang/String;)V
+
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    const/4 p1, 0x1
+
+    new-array p2, p1, [Lcom/google/android/gms/common/Feature;
+
+    const/4 p3, 0x0
+
+    sget-object v1, Lcom/google/android/gms/nearby/zza;->zzi:Lcom/google/android/gms/common/Feature;
+
+    aput-object v1, p2, p3
+
+    iput-object p2, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    return-object p1
 .end method

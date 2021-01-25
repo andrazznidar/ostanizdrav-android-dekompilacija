@@ -108,7 +108,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->formatContactForm(Ljava/lang/Boolean;)I
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 
@@ -118,7 +118,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->formatContactForm(Ljava/lang/Boolean;)I
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 

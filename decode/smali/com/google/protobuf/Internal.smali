@@ -6,7 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/protobuf/Internal$FloatList;,
+        Lcom/google/protobuf/Internal$DoubleList;,
+        Lcom/google/protobuf/Internal$LongList;,
+        Lcom/google/protobuf/Internal$BooleanList;,
+        Lcom/google/protobuf/Internal$IntList;,
         Lcom/google/protobuf/Internal$ProtobufList;,
+        Lcom/google/protobuf/Internal$EnumLiteMap;,
         Lcom/google/protobuf/Internal$EnumLite;
     }
 .end annotation
@@ -20,7 +26,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     const-string v0, "UTF-8"
 
@@ -46,25 +52,60 @@
 
     array-length v2, v1
 
-    new-instance v3, Lcom/google/protobuf/CodedInputStream;
-
-    invoke-direct {v3, v1, v0, v2, v0}, Lcom/google/protobuf/CodedInputStream;-><init>([BIIZ)V
-
-    :try_start_0
-    invoke-virtual {v3, v2}, Lcom/google/protobuf/CodedInputStream;->pushLimit(I)I
-    :try_end_0
-    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v1, v0, v2}, Lcom/google/protobuf/CodedInputStream;->newInstance([BII)Lcom/google/protobuf/CodedInputStream;
 
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public static hashBoolean(Z)I
+    .locals 0
 
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    if-eqz p0, :cond_0
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+    const/16 p0, 0x4cf
 
-    throw v1
+    goto :goto_0
+
+    :cond_0
+    const/16 p0, 0x4d5
+
+    :goto_0
+    return p0
+.end method
+
+.method public static hashCode([B)I
+    .locals 5
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    move v3, v0
+
+    move v2, v1
+
+    :goto_0
+    add-int v4, v1, v0
+
+    if-ge v2, v4, :cond_0
+
+    mul-int/lit8 v3, v3, 0x1f
+
+    aget-byte v4, p0, v2
+
+    add-int/2addr v3, v4
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    if-nez v3, :cond_1
+
+    const/4 v3, 0x1
+
+    :cond_1
+    return v3
 .end method
 
 .method public static hashLong(J)I

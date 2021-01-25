@@ -31,6 +31,14 @@
 
 
 # virtual methods
+.method public isRemote()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public onInvalidated(Ljava/util/Set;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;

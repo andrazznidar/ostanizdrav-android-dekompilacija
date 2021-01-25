@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
+.method public abstract invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
 .end method
 
 .method public abstract scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V

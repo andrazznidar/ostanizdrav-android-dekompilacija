@@ -56,77 +56,14 @@
 .end method
 
 .method public add(JJ)J
-    .locals 8
+    .locals 1
 
     iget v0, p0, Lorg/joda/time/field/ScaledDurationField;->iScalar:I
 
-    const/4 v1, -0x1
+    invoke-static {p3, p4, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeMultiply(JI)J
 
-    const-string v2, " * "
+    move-result-wide p3
 
-    const-string v3, "Multiplication overflows a long: "
-
-    if-eq v0, v1, :cond_2
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_3
-
-    int-to-long v4, v0
-
-    mul-long v6, p3, v4
-
-    div-long v4, v6, v4
-
-    cmp-long v1, v4, p3
-
-    if-nez v1, :cond_0
-
-    move-wide p3, v6
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/ArithmeticException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    const-wide/16 p3, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    const-wide/high16 v4, -0x8000000000000000L
-
-    cmp-long v1, p3, v4
-
-    if-eqz v1, :cond_4
-
-    neg-long p3, p3
-
-    :cond_3
-    :goto_0
     iget-object v0, p0, Lorg/joda/time/field/DecoratedDurationField;->iField:Lorg/joda/time/DurationField;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->add(JJ)J
@@ -134,29 +71,6 @@
     move-result-wide p1
 
     return-wide p1
-
-    :cond_4
-    new-instance p1, Ljava/lang/ArithmeticException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -209,6 +123,40 @@
 
     :cond_2
     return v2
+.end method
+
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDurationField;->iField:Lorg/joda/time/DurationField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+
+    move-result p1
+
+    iget p2, p0, Lorg/joda/time/field/ScaledDurationField;->iScalar:I
+
+    div-int/2addr p1, p2
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/DecoratedDurationField;->iField:Lorg/joda/time/DurationField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    iget p3, p0, Lorg/joda/time/field/ScaledDurationField;->iScalar:I
+
+    int-to-long p3, p3
+
+    div-long/2addr p1, p3
+
+    return-wide p1
 .end method
 
 .method public getUnitMillis()J

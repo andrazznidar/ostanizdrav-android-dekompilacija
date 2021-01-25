@@ -42,7 +42,9 @@
 
     check-cast p1, Lkotlin/ranges/IntRange;
 
-    if-eqz p1, :cond_0
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lkotlin/text/StringsKt__StringsKt$splitToSequence$1;->$this_splitToSequence:Ljava/lang/CharSequence;
 
@@ -51,13 +53,4 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_0
-    const-string p1, "it"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

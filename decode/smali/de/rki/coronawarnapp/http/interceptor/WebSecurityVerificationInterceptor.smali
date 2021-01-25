@@ -20,6 +20,10 @@
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
     .locals 1
 
+    const-string v0, "chain"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     :try_start_0
     invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;
 

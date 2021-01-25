@@ -7,6 +7,10 @@
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 7
 
+    const-string v0, "cause"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->CWA_WEB_SECURITY_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
     iget v0, v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
@@ -15,11 +19,11 @@
 
     move-result-object v2
 
+    const-string v3, "an error occurred while trying to establish a secure connection to the server"
+
     const/4 v5, 0x0
 
     const/16 v6, 0x8
-
-    const-string v3, "an error occurred while trying to establish a secure connection to the server"
 
     move-object v1, p0
 

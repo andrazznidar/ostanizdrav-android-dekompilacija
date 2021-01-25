@@ -15,6 +15,17 @@
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "pubKey",
+            "hash"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -46,6 +57,17 @@
 # virtual methods
 .method public verify([B[B)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "signature",
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -92,7 +114,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->integer2Bytes(Ljava/math/BigInteger;I)[B
+    invoke-static {p1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->integer2Bytes(Ljava/math/BigInteger;I)[B
 
     move-result-object p1
 
@@ -104,7 +126,7 @@
 
     iget-object v3, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce;->hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -132,7 +154,7 @@
 
     const-string v0, "3051300d060960864801650304020305000440"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->decode(Ljava/lang/String;)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->decode(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -162,7 +184,7 @@
     :cond_1
     const-string v0, "3031300d060960864801650304020105000420"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->decode(Ljava/lang/String;)[B
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->decode(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -225,7 +247,7 @@
 
     invoke-static {p2, v6, v5, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {p1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result p1
 

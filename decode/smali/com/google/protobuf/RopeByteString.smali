@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/protobuf/RopeByteString$RopeInputStream;,
         Lcom/google/protobuf/RopeByteString$PieceIterator;,
         Lcom/google/protobuf/RopeByteString$Balancer;
     }
@@ -650,6 +651,51 @@
     return v0
 .end method
 
+.method public isValidUtf8()Z
+    .locals 4
+
+    iget-object v0, p0, Lcom/google/protobuf/RopeByteString;->left:Lcom/google/protobuf/ByteString;
+
+    iget v1, p0, Lcom/google/protobuf/RopeByteString;->leftLength:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v2, v1}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/google/protobuf/RopeByteString;->right:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {v1}, Lcom/google/protobuf/ByteString;->size()I
+
+    move-result v3
+
+    invoke-virtual {v1, v0, v2, v3}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    return v2
+.end method
+
+.method public newCodedInput()Lcom/google/protobuf/CodedInputStream;
+    .locals 1
+
+    new-instance v0, Lcom/google/protobuf/RopeByteString$RopeInputStream;
+
+    invoke-direct {v0, p0}, Lcom/google/protobuf/RopeByteString$RopeInputStream;-><init>(Lcom/google/protobuf/RopeByteString;)V
+
+    invoke-static {v0}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public partialHash(III)I
     .locals 2
 
@@ -696,6 +742,58 @@
     sub-int/2addr p3, v1
 
     invoke-virtual {p2, p1, v0, p3}, Lcom/google/protobuf/ByteString;->partialHash(III)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public partialIsValidUtf8(III)I
+    .locals 2
+
+    add-int v0, p2, p3
+
+    iget v1, p0, Lcom/google/protobuf/RopeByteString;->leftLength:I
+
+    if-gt v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/google/protobuf/RopeByteString;->left:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    if-lt p2, v1, :cond_1
+
+    iget-object v0, p0, Lcom/google/protobuf/RopeByteString;->right:Lcom/google/protobuf/ByteString;
+
+    sub-int/2addr p2, v1
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    sub-int/2addr v1, p2
+
+    iget-object v0, p0, Lcom/google/protobuf/RopeByteString;->left:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {v0, p1, p2, v1}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
+
+    move-result p1
+
+    iget-object p2, p0, Lcom/google/protobuf/RopeByteString;->right:Lcom/google/protobuf/ByteString;
+
+    const/4 v0, 0x0
+
+    sub-int/2addr p3, v1
+
+    invoke-virtual {p2, p1, v0, p3}, Lcom/google/protobuf/ByteString;->partialIsValidUtf8(III)I
 
     move-result p1
 
@@ -786,6 +884,34 @@
     new-instance v0, Lcom/google/protobuf/RopeByteString;
 
     invoke-direct {v0, p1, p2}, Lcom/google/protobuf/RopeByteString;-><init>(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ByteString;)V
+
+    return-object v0
+.end method
+
+.method public toStringInternal(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    .locals 4
+
+    new-instance v0, Ljava/lang/String;
+
+    iget v1, p0, Lcom/google/protobuf/RopeByteString;->totalLength:I
+
+    if-nez v1, :cond_0
+
+    sget-object v1, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
+
+    goto :goto_0
+
+    :cond_0
+    new-array v2, v1, [B
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p0, v2, v3, v3, v1}, Lcom/google/protobuf/ByteString;->copyToInternal([BIII)V
+
+    move-object v1, v2
+
+    :goto_0
+    invoke-direct {v0, v1, p1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     return-object v0
 .end method

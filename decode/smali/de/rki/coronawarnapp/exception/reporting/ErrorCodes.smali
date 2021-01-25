@@ -28,23 +28,13 @@
 
 .field public static final enum CWA_WEB_SECURITY_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
-.field public static final enum EN_PERMISSION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
 .field public static final enum EXTERNAL_NAVIGATION:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-.field public static final enum NOT_ENOUGH_AVAILABLE_SPACE_ON_DISK:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
 .field public static final enum REPORTED_EXCEPTION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
 .field public static final enum REPORTED_EXCEPTION_UNKNOWN_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
 .field public static final enum REPORTED_IO_EXCEPTION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-.field public static final enum RISK_LEVEL_CALCULATION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-.field public static final enum ROLLBACK_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-.field public static final enum TRANSACTION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
 .field public static final enum WRONG_RECEIVER_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
@@ -85,8 +75,6 @@
 
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;-><init>(Ljava/lang/String;II)V
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->TRANSACTION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
     aput-object v1, v0, v3
 
     new-instance v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
@@ -98,8 +86,6 @@
     const/16 v5, 0x1fe
 
     invoke-direct {v1, v2, v4, v5}, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->ROLLBACK_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
     aput-object v1, v0, v4
 
@@ -181,8 +167,6 @@
 
     invoke-direct {v1, v2, v6, v7}, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;-><init>(Ljava/lang/String;II)V
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->RISK_LEVEL_CALCULATION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
     aput-object v1, v0, v6
 
     new-instance v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
@@ -208,8 +192,6 @@
     const/16 v7, 0x1b58
 
     invoke-direct {v1, v2, v6, v7}, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->EN_PERMISSION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
     aput-object v1, v0, v6
 
@@ -284,8 +266,6 @@
     const/16 v3, 0x10
 
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->NOT_ENOUGH_AVAILABLE_SPACE_ON_DISK:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
 
     aput-object v1, v0, v3
 

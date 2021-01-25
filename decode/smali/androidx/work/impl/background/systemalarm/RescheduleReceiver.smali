@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 6
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
@@ -45,17 +45,17 @@
 
     const/4 v3, 0x1
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aput-object p2, v3, v4
+    aput-object p2, v4, v5
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    new-array v2, v4, [Ljava/lang/Throwable;
+    new-array v2, v5, [Ljava/lang/Throwable;
 
     invoke-virtual {v0, v1, p2, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
@@ -110,17 +110,21 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_0
 
     :catch_0
+    move-exception p1
+
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
-    move-result-object p1
+    move-result-object p2
 
-    sget-object p2, Landroidx/work/impl/background/systemalarm/RescheduleReceiver;->TAG:Ljava/lang/String;
+    sget-object v0, Landroidx/work/impl/background/systemalarm/RescheduleReceiver;->TAG:Ljava/lang/String;
 
-    const-string v0, "Cannot reschedule jobs. WorkManager needs to be initialized via a ContentProvider#onCreate() or an Application#onCreate()."
+    const-string v1, "Cannot reschedule jobs. WorkManager needs to be initialized via a ContentProvider#onCreate() or an Application#onCreate()."
 
-    new-array v1, v4, [Ljava/lang/Throwable;
+    new-array v2, v3, [Ljava/lang/Throwable;
 
-    invoke-virtual {p1, p2, v0, v1}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    aput-object p1, v2, v5
+
+    invoke-virtual {p2, v0, v1, v2}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     :goto_0
     return-void

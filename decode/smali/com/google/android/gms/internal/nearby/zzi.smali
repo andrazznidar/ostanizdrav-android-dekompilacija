@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/internal/nearby/zzi;
 .super Landroid/os/Handler;
-.source "com.google.android.gms:play-services-nearby@@18.0.3-eap"
+.source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # direct methods

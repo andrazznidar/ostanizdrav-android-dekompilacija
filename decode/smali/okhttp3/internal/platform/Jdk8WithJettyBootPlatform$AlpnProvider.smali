@@ -16,10 +16,6 @@
     name = "AlpnProvider"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nJdk8WithJettyBootPlatform.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Jdk8WithJettyBootPlatform.kt\nokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider\n*L\n1#1,154:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final protocols:Ljava/util/List;
@@ -39,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,6 +44,10 @@
             ">;)V"
         }
     .end annotation
+
+    const-string v0, "protocols"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,11 +66,13 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-string v0, "proxy"
 
-    if-eqz p1, :cond_f
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_e
+    const-string p1, "method"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
@@ -84,119 +86,121 @@
     :goto_0
     invoke-virtual {p2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p2}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "supports"
+    const-string v2, "supports"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     return-object p1
 
     :cond_1
-    const-string v3, "unsupported"
+    const-string v2, "unsupported"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    sget-object v3, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     iput-boolean v4, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;->unsupported:Z
 
-    return-object v0
+    return-object v3
 
     :cond_2
-    const-string v3, "protocols"
+    const-string v2, "protocols"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
-    array-length v3, p3
+    array-length v2, p3
 
-    if-nez v3, :cond_3
+    if-nez v2, :cond_3
 
-    move v3, v4
+    move v2, v4
 
     goto :goto_1
 
     :cond_3
-    move v3, p1
+    move v2, p1
 
     :goto_1
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     iget-object p1, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;->protocols:Ljava/util/List;
 
     return-object p1
 
     :cond_4
-    const-string v3, "selectProtocol"
+    const-string v2, "selectProtocol"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
     const-string v5, "null cannot be cast to non-null type kotlin.String"
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
-    const-string v3, "select"
+    const-string v2, "select"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a
-
-    :cond_5
-    const-class v3, Ljava/lang/String;
-
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_a
 
-    array-length v2, p3
+    :cond_5
+    const-class v2, Ljava/lang/String;
 
-    if-ne v2, v4, :cond_a
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    aget-object v2, p3, p1
+    move-result v1
 
-    instance-of v2, v2, Ljava/util/List;
+    if-eqz v1, :cond_a
 
-    if-eqz v2, :cond_a
+    array-length v1, p3
+
+    if-ne v1, v4, :cond_a
+
+    aget-object v1, p3, p1
+
+    instance-of v1, v1, Ljava/util/List;
+
+    if-eqz v1, :cond_a
 
     aget-object p2, p3, p1
 
@@ -241,9 +245,9 @@
     goto :goto_2
 
     :cond_7
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {p1, v5}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -261,35 +265,35 @@
     return-object p1
 
     :cond_9
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "null cannot be cast to non-null type kotlin.collections.List<*>"
 
-    invoke-direct {p1, p2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_a
-    const-string v2, "protocolSelected"
+    const-string v1, "protocolSelected"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_b
-
-    const-string v2, "selected"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-nez v1, :cond_b
+
+    const-string v1, "selected"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
 
     :cond_b
-    array-length v1, p3
+    array-length v0, p3
 
-    if-ne v1, v4, :cond_d
+    if-ne v0, v4, :cond_d
 
     aget-object p1, p3, p1
 
@@ -299,12 +303,12 @@
 
     iput-object p1, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;->selected:Ljava/lang/String;
 
-    return-object v0
+    return-object v3
 
     :cond_c
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {p1, v5}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -320,18 +324,4 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_e
-    const-string p1, "method"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_f
-    const-string p1, "proxy"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

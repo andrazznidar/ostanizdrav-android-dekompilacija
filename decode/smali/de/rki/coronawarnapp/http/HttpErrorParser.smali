@@ -18,330 +18,371 @@
 
 # virtual methods
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
-    .locals 6
+    .locals 7
+
+    const-string v0, "chain"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     :try_start_0
     invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface {p1, v0}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
+    invoke-interface {p1, v2}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
 
     move-result-object p1
+    :try_end_0
+    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_1
 
-    iget v0, p1, Lokhttp3/Response;->code:I
+    :try_start_1
+    invoke-virtual {p1}, Lokhttp3/Response;->isSuccessful()Z
 
-    const/16 v1, 0xc8
+    move-result v2
 
-    if-ne v0, v1, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0xc9
-
-    if-ne v0, v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v2, 0xca
-
-    if-ne v0, v2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/16 v2, 0xcc
-
-    if-ne v0, v2, :cond_3
-
-    :goto_0
-    return-object p1
-
-    :cond_3
-    const/16 p1, 0x190
-
-    if-eq v0, p1, :cond_1d
-
-    const/16 v2, 0x191
-
-    if-eq v0, v2, :cond_1c
-
-    const/16 v2, 0x193
-
-    if-eq v0, v2, :cond_1b
-
-    const/16 v2, 0x194
-
-    if-eq v0, v2, :cond_1a
-
-    const/16 v2, 0x199
-
-    if-eq v0, v2, :cond_19
-
-    const/16 v2, 0x19a
-
-    if-eq v0, v2, :cond_18
-
-    const/16 v2, 0x19f
-
-    if-eq v0, v2, :cond_17
-
-    const/16 v2, 0x1ad
-
-    if-eq v0, v2, :cond_16
-
-    const/16 v2, 0x1f4
-
-    if-eq v0, v2, :cond_15
-
-    const/16 v3, 0x1f5
-
-    if-eq v0, v3, :cond_14
-
-    const/16 v3, 0x1f6
-
-    if-eq v0, v3, :cond_13
-
-    const/16 v3, 0x1f7
-
-    if-eq v0, v3, :cond_12
-
-    const/16 v3, 0x1f8
-
-    if-eq v0, v3, :cond_11
-
-    const/16 v3, 0x1f9
-
-    if-eq v0, v3, :cond_10
-
-    const/16 v3, 0x1ff
-
-    if-eq v0, v3, :cond_f
-
-    const/16 v3, 0x256
-
-    if-eq v0, v3, :cond_e
-
-    const/16 v3, 0x257
-
-    if-eq v0, v3, :cond_d
-
-    const/16 v4, 0xc7
-
-    const/16 v5, 0x64
-
-    if-le v5, v0, :cond_4
+    iget-object v2, p1, Lokhttp3/Response;->message:Ljava/lang/String;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
-    :cond_4
-    if-ge v4, v0, :cond_c
+    :catch_0
+    :try_start_2
+    const-string v2, "Failed to get http error message."
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v4, v2, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    :goto_0
+    move-object v2, v1
 
     :goto_1
-    const/16 v4, 0x12b
+    iget v3, p1, Lokhttp3/Response;->code:I
 
-    if-le v1, v0, :cond_5
+    const/16 v4, 0xcc
+
+    if-eq v3, v4, :cond_15
+
+    const/16 v4, 0x19f
+
+    if-eq v3, v4, :cond_14
+
+    const/16 v4, 0x1ad
+
+    if-eq v3, v4, :cond_13
+
+    const/16 v4, 0x1ff
+
+    if-eq v3, v4, :cond_12
+
+    const/16 v4, 0x190
+
+    if-eq v3, v4, :cond_11
+
+    const/16 v5, 0x191
+
+    if-eq v3, v5, :cond_10
+
+    const/16 v5, 0x193
+
+    if-eq v3, v5, :cond_f
+
+    const/16 v5, 0x194
+
+    if-eq v3, v5, :cond_e
+
+    const/16 v5, 0x199
+
+    if-eq v3, v5, :cond_d
+
+    const/16 v5, 0x19a
+
+    if-eq v3, v5, :cond_c
+
+    const/16 v5, 0x256
+
+    if-eq v3, v5, :cond_b
+
+    const/16 v5, 0x257
+
+    if-eq v3, v5, :cond_a
+
+    packed-switch v3, :pswitch_data_0
+
+    packed-switch v3, :pswitch_data_1
+
+    const/16 p1, 0xc7
+
+    const/16 v6, 0x64
+
+    if-le v6, v3, :cond_1
 
     goto :goto_2
 
-    :cond_5
-    if-ge v4, v0, :cond_b
+    :pswitch_0
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/HTTPVersionNotSupported;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/HTTPVersionNotSupported;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/GatewayTimeoutException;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/GatewayTimeoutException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/ServiceUnavailableException;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/ServiceUnavailableException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_3
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/BadGatewayException;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/BadGatewayException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_4
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/NotImplementedException;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/NotImplementedException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_5
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/InternalServerErrorException;
+
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/InternalServerErrorException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    if-ge p1, v3, :cond_9
 
     :goto_2
-    const/16 v1, 0x18f
+    const/16 p1, 0x12b
 
-    const/16 v4, 0x12c
+    const/16 v6, 0xc8
 
-    if-le v4, v0, :cond_6
+    if-le v6, v3, :cond_2
 
     goto :goto_3
 
-    :cond_6
-    if-ge v1, v0, :cond_a
+    :cond_2
+    if-ge p1, v3, :cond_8
 
     :goto_3
-    const/16 v1, 0x1f3
+    const/16 p1, 0x18f
 
-    if-le p1, v0, :cond_7
+    const/16 v6, 0x12c
+
+    if-le v6, v3, :cond_3
 
     goto :goto_4
 
-    :cond_7
-    if-ge v1, v0, :cond_9
+    :cond_3
+    if-ge p1, v3, :cond_7
 
     :goto_4
-    if-gt v2, v0, :cond_8
+    const/16 p1, 0x1f3
 
-    if-lt v3, v0, :cond_8
+    const/4 v6, 0x4
+
+    if-le v4, v3, :cond_4
+
+    goto :goto_5
+
+    :cond_4
+    if-ge p1, v3, :cond_6
+
+    :goto_5
+    const/16 p1, 0x1f4
+
+    if-gt p1, v3, :cond_5
+
+    if-lt v5, v3, :cond_5
 
     new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaServerError;-><init>(I)V
+    invoke-direct {p1, v3, v2, v1, v6}, Lde/rki/coronawarnapp/exception/http/CwaServerError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+
+    throw p1
+
+    :cond_5
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaWebException;
+
+    invoke-direct {p1, v3, v2, v1, v6}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+
+    throw p1
+
+    :cond_6
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaClientError;
+
+    invoke-direct {p1, v3, v2, v1, v6}, Lde/rki/coronawarnapp/exception/http/CwaClientError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+
+    throw p1
+
+    :cond_7
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaRedirectNotSupportedError;
+
+    invoke-direct {p1, v3, v2}, Lde/rki/coronawarnapp/exception/http/CwaRedirectNotSupportedError;-><init>(ILjava/lang/String;)V
 
     throw p1
 
     :cond_8
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaWebException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaSuccessResponseWithCodeMismatchNotSupportedError;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(I)V
+    invoke-direct {p1, v3, v2}, Lde/rki/coronawarnapp/exception/http/CwaSuccessResponseWithCodeMismatchNotSupportedError;-><init>(ILjava/lang/String;)V
 
     throw p1
 
     :cond_9
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaClientError;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaInformationalNotSupportedError;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaClientError;-><init>(I)V
+    invoke-direct {p1, v3, v2}, Lde/rki/coronawarnapp/exception/http/CwaInformationalNotSupportedError;-><init>(ILjava/lang/String;)V
 
     throw p1
 
     :cond_a
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaRedirectNotSupportedError;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaRedirectNotSupportedError;-><init>(I)V
+    const/4 v3, 0x2
+
+    invoke-direct {p1, v2, v1, v3}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw p1
 
     :cond_b
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaSuccessResponseWithCodeMismatchNotSupportedError;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkReadTimeoutException;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaSuccessResponseWithCodeMismatchNotSupportedError;-><init>(I)V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/NetworkReadTimeoutException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_c
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaInformationalNotSupportedError;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/GoneException;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaInformationalNotSupportedError;-><init>(I)V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/GoneException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_d
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/ConflictException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/ConflictException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_e
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkReadTimeoutException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/NotFoundException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/NetworkReadTimeoutException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/NotFoundException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_f
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkAuthenticationRequiredException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/ForbiddenException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/NetworkAuthenticationRequiredException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/ForbiddenException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_10
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/HTTPVersionNotSupported;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/UnauthorizedException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/HTTPVersionNotSupported;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/UnauthorizedException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_11
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/GatewayTimeoutException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/BadRequestException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/GatewayTimeoutException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/BadRequestException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_12
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/ServiceUnavailableException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/NetworkAuthenticationRequiredException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/ServiceUnavailableException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/NetworkAuthenticationRequiredException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_13
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/BadGatewayException;
+    new-instance p1, Lde/rki/coronawarnapp/exception/http/TooManyRequestsException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/BadGatewayException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/TooManyRequestsException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_14
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/NotImplementedException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/NotImplementedException;-><init>()V
-
-    throw p1
-
-    :cond_15
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/InternalServerErrorException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/InternalServerErrorException;-><init>()V
-
-    throw p1
-
-    :cond_16
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/TooManyRequestsException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/TooManyRequestsException;-><init>()V
-
-    throw p1
-
-    :cond_17
     new-instance p1, Lde/rki/coronawarnapp/exception/http/UnsupportedMediaTypeException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/UnsupportedMediaTypeException;-><init>()V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/UnsupportedMediaTypeException;-><init>(Ljava/lang/String;)V
 
     throw p1
+    :try_end_2
+    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_1
 
-    :cond_18
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/GoneException;
+    :cond_15
+    :pswitch_6
+    return-object p1
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/GoneException;-><init>()V
+    :catch_1
+    move-exception p1
 
-    throw p1
+    new-instance v2, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;
 
-    :cond_19
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/ConflictException;
+    invoke-direct {v2, v1, p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/ConflictException;-><init>()V
+    throw v2
 
-    throw p1
+    :catch_2
+    move-exception p1
 
-    :cond_1a
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/NotFoundException;
+    new-instance v2, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/NotFoundException;-><init>()V
+    invoke-direct {v2, v1, p1, v0}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
-    throw p1
+    throw v2
 
-    :cond_1b
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/ForbiddenException;
+    nop
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/ForbiddenException;-><init>()V
+    :pswitch_data_0
+    .packed-switch 0xc8
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+    .end packed-switch
 
-    throw p1
-
-    :cond_1c
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/UnauthorizedException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/UnauthorizedException;-><init>()V
-
-    throw p1
-
-    :cond_1d
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/BadRequestException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/BadRequestException;-><init>()V
-
-    throw p1
-    :try_end_0
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;-><init>()V
-
-    throw p1
+    :pswitch_data_1
+    .packed-switch 0x1f4
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

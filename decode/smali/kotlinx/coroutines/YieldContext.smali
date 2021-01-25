@@ -15,6 +15,10 @@
 .field public static final Key:Lkotlinx/coroutines/YieldContext$Key;
 
 
+# instance fields
+.field public dispatcherWasUnconfined:Z
+
+
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2

@@ -19,6 +19,21 @@
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "pubKey",
+            "sigHash",
+            "mgf1Hash",
+            "saltLength"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -54,6 +69,17 @@
 # virtual methods
 .method public verify([B[B)V
     .locals 18
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "signature",
+            "data"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -116,7 +142,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v6}, Lcom/google/android/gms/common/internal/Preconditions;->integer2Bytes(Ljava/math/BigInteger;I)[B
+    invoke-static {v1, v6}, Landroidx/transition/ViewGroupUtilsApi14;->integer2Bytes(Ljava/math/BigInteger;I)[B
 
     move-result-object v1
 
@@ -134,7 +160,7 @@
 
     iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -253,7 +279,7 @@
     :cond_1
     iget-object v2, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v1, v11, v2}, Lcom/google/android/gms/common/internal/Preconditions;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v1, v11, v2}, Landroidx/transition/ViewGroupUtilsApi14;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
 
     move-result-object v2
 
@@ -378,7 +404,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->equal([B[B)Z
+    invoke-static {v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
 
     move-result v1
 

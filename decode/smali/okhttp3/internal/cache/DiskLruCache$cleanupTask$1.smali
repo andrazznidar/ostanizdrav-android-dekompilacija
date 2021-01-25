@@ -13,10 +13,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiskLruCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiskLruCache.kt\nokhttp3/internal/cache/DiskLruCache$cleanupTask$1\n*L\n1#1,1065:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic this$0:Lokhttp3/internal/cache/DiskLruCache;
@@ -128,7 +124,7 @@
 
     invoke-direct {v4}, Lokio/BlackholeSink;-><init>()V
 
-    invoke-static {v4}, Lkotlin/collections/MapsKt___MapsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v4
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTaskQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 2 TaskLogger.kt\nokhttp3/internal/concurrent/TaskLoggerKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Util.kt\nokhttp3/internal/Util\n*L\n1#1,218:1\n84#1,19:227\n25#2,4:219\n25#2,4:223\n25#2,4:246\n25#2,4:250\n25#2,4:269\n310#3,7:254\n606#4,4:261\n606#4,4:265\n*E\n*S KotlinDebug\n*F\n+ 1 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n*L\n62#1,4:219\n62#1,4:223\n153#1,4:246\n159#1,4:250\n208#1,4:269\n165#1,7:254\n179#1,4:261\n189#1,4:265\n*E\n"
+    value = "SMAP\nTaskQueue.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 TaskLogger.kt\nokhttp3/internal/concurrent/TaskLoggerKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Util.kt\nokhttp3/internal/Util\n*L\n1#1,218:1\n1#2:219\n25#3,4:220\n25#3,4:224\n25#3,4:228\n25#3,4:232\n25#3,4:251\n318#4,7:236\n603#5,4:243\n603#5,4:247\n*E\n*S KotlinDebug\n*F\n+ 1 TaskQueue.kt\nokhttp3/internal/concurrent/TaskQueue\n*L\n65#1,4:220\n68#1,4:224\n153#1,4:228\n159#1,4:232\n208#1,4:251\n165#1,7:236\n179#1,4:243\n189#1,4:247\n*E\n"
 .end annotation
 
 
@@ -33,9 +33,15 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/internal/concurrent/TaskRunner;Ljava/lang/String;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p2, :cond_0
+    const-string v0, "taskRunner"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "name"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,15 +56,6 @@
     iput-object p1, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
     return-void
-
-    :cond_0
-    const-string p1, "name"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public static synthetic schedule$default(Lokhttp3/internal/concurrent/TaskQueue;Lokhttp3/internal/concurrent/Task;JI)V
@@ -98,7 +95,7 @@
 
     const-string v1, "Thread "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -108,7 +105,7 @@
 
     const-string v3, "Thread.currentThread()"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -169,27 +166,17 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1
-
     if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-boolean v0, v0, Lokhttp3/internal/concurrent/Task;->cancelable:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iput-boolean v1, p0, Lokhttp3/internal/concurrent/TaskQueue;->cancelActiveTask:Z
 
-    goto :goto_0
-
     :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_1
-    :goto_0
     const/4 v0, 0x0
 
     iget-object v2, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -200,8 +187,8 @@
 
     sub-int/2addr v2, v1
 
-    :goto_1
-    if-ltz v2, :cond_4
+    :goto_0
+    if-ltz v2, :cond_3
 
     iget-object v3, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
@@ -213,7 +200,7 @@
 
     iget-boolean v3, v3, Lokhttp3/internal/concurrent/Task;->cancelable:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
@@ -233,25 +220,25 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     const-string v3, "canceled"
 
-    invoke-static {v0, p0, v3}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v0, p0, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move v0, v1
 
-    :cond_3
+    :cond_2
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4
+    :cond_3
     return v0
 .end method
 
@@ -260,7 +247,7 @@
 
     const-string v0, "task"
 
-    if-eqz p1, :cond_5
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskQueue;->taskRunner:Lokhttp3/internal/concurrent/TaskRunner;
 
@@ -289,7 +276,7 @@
 
     const-string p2, "schedule canceled (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -314,7 +301,7 @@
 
     const-string p2, "schedule failed (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
@@ -349,23 +336,24 @@
     monitor-exit v0
 
     throw p1
-
-    :cond_5
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final scheduleAndDecide$okhttp(Lokhttp3/internal/concurrent/Task;JZ)Z
     .locals 10
 
+    const-string v0, "task"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "queue"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p1, Lokhttp3/internal/concurrent/Task;->queue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     if-ne v0, p0, :cond_0
 
@@ -374,12 +362,12 @@
     :cond_0
     if-nez v0, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    move v0, v1
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_c
@@ -427,10 +415,10 @@
 
     const-string p2, "already scheduled"
 
-    invoke-static {p1, p0, p2}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
-    return v1
+    return v2
 
     :cond_3
     iget-object v8, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -456,13 +444,13 @@
 
     const-string p4, "run again after "
 
-    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -477,13 +465,13 @@
     :cond_5
     const-string p4, "scheduled after "
 
-    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lkotlin/collections/MapsKt___MapsKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -494,7 +482,7 @@
     move-result-object p4
 
     :goto_2
-    invoke-static {p1, p0, p4}, Lkotlin/collections/MapsKt___MapsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_6
     iget-object p4, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -503,7 +491,7 @@
 
     move-result-object p4
 
-    move v0, v1
+    move v0, v2
 
     :goto_3
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
@@ -526,12 +514,12 @@
 
     if-lez v5, :cond_7
 
-    move v5, v2
+    move v5, v1
 
     goto :goto_4
 
     :cond_7
-    move v5, v1
+    move v5, v2
 
     :goto_4
     if-eqz v5, :cond_8
@@ -562,9 +550,12 @@
 
     if-nez v0, :cond_b
 
-    move v1, v2
+    goto :goto_6
 
     :cond_b
+    move v1, v2
+
+    :goto_6
     return v1
 
     :cond_c
@@ -601,7 +592,7 @@
 
     const-string v1, "Thread "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -611,7 +602,7 @@
 
     const-string v3, "Thread.currentThread()"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 

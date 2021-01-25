@@ -7,7 +7,9 @@
 .method public static final permitsRequestBody(Ljava/lang/String;)Z
     .locals 1
 
-    if-eqz p0, :cond_1
+    const-string v0, "method"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "GET"
 
@@ -34,13 +36,4 @@
 
     :goto_0
     return p0
-
-    :cond_1
-    const-string p0, "method"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method

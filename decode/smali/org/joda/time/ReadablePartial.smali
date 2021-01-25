@@ -24,6 +24,9 @@
 .method public abstract getChronology()Lorg/joda/time/Chronology;
 .end method
 
+.method public abstract getField(I)Lorg/joda/time/DateTimeField;
+.end method
+
 .method public abstract getFieldType(I)Lorg/joda/time/DateTimeFieldType;
 .end method
 

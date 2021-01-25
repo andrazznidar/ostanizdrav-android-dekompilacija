@@ -39,6 +39,17 @@
 # virtual methods
 .method public getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000,
+            0x1000
+        }
+        names = {
+            "algorithm",
+            "provider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

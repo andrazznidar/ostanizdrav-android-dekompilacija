@@ -33,6 +33,43 @@
 
 
 # virtual methods
+.method public add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+
+    if-nez p2, :cond_0
+
+    sget-object p2, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    :cond_0
+    invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/LinkedTreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public entrySet()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/util/Map$Entry<",
+            "Ljava/lang/String;",
+            "Lcom/google/gson/JsonElement;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+
+    invoke-virtual {v0}, Lcom/google/gson/internal/LinkedTreeMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 

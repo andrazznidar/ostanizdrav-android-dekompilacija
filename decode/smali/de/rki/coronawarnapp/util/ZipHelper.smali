@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nZipHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,89:1\n1648#2,2:90\n*E\n*S KotlinDebug\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n*L\n66#1,2:90\n*E\n"
+    value = "SMAP\nZipHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,94:1\n1819#2,2:95\n1227#3,3:97\n*E\n*S KotlinDebug\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n*L\n65#1,2:95\n90#1,3:97\n*E\n"
 .end annotation
 
 
@@ -18,12 +18,6 @@
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
-
-    new-instance v0, Lde/rki/coronawarnapp/util/ZipHelper;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/util/ZipHelper;-><init>()V
-
-    sput-object v0, Lde/rki/coronawarnapp/util/ZipHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ZipHelper;
 
     const-class v0, Lde/rki/coronawarnapp/util/ZipHelper;
 
@@ -38,14 +32,6 @@
     move-result-object v0
 
     sput-object v0, Lde/rki/coronawarnapp/util/ZipHelper;->TAG:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

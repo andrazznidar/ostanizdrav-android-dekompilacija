@@ -1,9 +1,9 @@
 .class public final Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "InternalExposureNotificationClient.kt"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/OnSuccessListener;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,18 +18,12 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<TResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnSuccessListener<",
-        "Ljava/lang/Void;",
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/Boolean;",
+        "Lkotlin/Unit;",
         ">;"
     }
-.end annotation
-
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInternalExposureNotificationClient.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InternalExposureNotificationClient.kt\nde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$1\n*L\n1#1,164:1\n*E\n"
 .end annotation
 
 
@@ -43,21 +37,29 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$1;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onSuccess(Ljava/lang/Object;)V
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    check-cast p1, Ljava/lang/Void;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$1;->$cont:Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-interface {v0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient$asyncStop$2$1;->$cont:Lkotlin/coroutines/Continuation;
 
-    return-void
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-interface {p1, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

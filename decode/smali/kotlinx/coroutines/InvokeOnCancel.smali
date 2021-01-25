@@ -68,13 +68,13 @@
 
     const-string v0, "InvokeOnCancel["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     iget-object v1, p0, Lkotlinx/coroutines/InvokeOnCancel;->handler:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

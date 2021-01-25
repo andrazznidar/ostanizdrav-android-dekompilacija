@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public runOnce()J
-    .locals 3
+    .locals 4
 
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$writeSynResetLater$$inlined$execute$1;->this$0:Lokhttp3/internal/http2/Http2Connection;
@@ -57,7 +57,11 @@
 
     iget-object v2, p0, Lokhttp3/internal/http2/Http2Connection$writeSynResetLater$$inlined$execute$1;->$errorCode$inlined:Lokhttp3/internal/http2/ErrorCode;
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
+
+    const-string v3, "statusCode"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
 
@@ -66,15 +70,11 @@
     goto :goto_0
 
     :cond_0
-    const-string v0, "statusCode"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
     const/4 v0, 0x0
 
     throw v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     move-exception v0

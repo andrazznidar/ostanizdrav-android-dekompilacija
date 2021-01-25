@@ -134,11 +134,11 @@
     return-void
 
     :cond_2
-    new-instance p0, Lkotlin/TypeCastException;
+    new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>"
 
-    invoke-direct {p0, p1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -158,16 +158,9 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     return-object p0
-
-    :cond_0
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static final updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
@@ -219,8 +212,6 @@
     goto :goto_1
 
     :cond_2
-    if-eqz p1, :cond_3
-
     check-cast p1, Lkotlinx/coroutines/ThreadContextElement;
 
     invoke-interface {p1, p0}, Lkotlinx/coroutines/ThreadContextElement;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/Object;
@@ -229,13 +220,4 @@
 
     :goto_1
     return-object p0
-
-    :cond_3
-    new-instance p0, Lkotlin/TypeCastException;
-
-    const-string p1, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>"
-
-    invoke-direct {p0, p1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

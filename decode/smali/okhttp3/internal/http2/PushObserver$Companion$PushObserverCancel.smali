@@ -25,7 +25,9 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_0
+    const-string p1, "source"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     int-to-long p3, p3
 
@@ -34,15 +36,6 @@
     const/4 p1, 0x1
 
     return p1
-
-    :cond_0
-    const-string p1, "source"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public onHeaders(ILjava/util/List;Z)Z
@@ -56,20 +49,13 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_0
+    const-string p1, "responseHeaders"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p1, 0x1
 
     return p1
-
-    :cond_0
-    const-string p1, "responseHeaders"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public onRequest(ILjava/util/List;)Z
@@ -83,35 +69,21 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_0
+    const-string p1, "requestHeaders"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p1, 0x1
 
     return p1
-
-    :cond_0
-    const-string p1, "requestHeaders"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public onReset(ILokhttp3/internal/http2/ErrorCode;)V
     .locals 0
 
-    if-eqz p2, :cond_0
-
-    return-void
-
-    :cond_0
     const-string p1, "errorCode"
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method

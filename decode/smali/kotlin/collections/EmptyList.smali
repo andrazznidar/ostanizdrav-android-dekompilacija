@@ -103,46 +103,30 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     check-cast p1, Ljava/lang/Void;
 
-    if-eqz p1, :cond_0
+    const-string v0, "element"
 
-    return v1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
-    const-string p1, "element"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return v1
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "elements"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p1
 
     return p1
-
-    :cond_0
-    const-string p1, "elements"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -214,24 +198,15 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     check-cast p1, Ljava/lang/Void;
 
-    if-eqz p1, :cond_0
+    const-string v0, "element"
 
-    return v1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
-    const-string p1, "element"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return v1
 .end method
 
@@ -258,24 +233,15 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     check-cast p1, Ljava/lang/Void;
 
-    if-eqz p1, :cond_0
+    const-string v0, "element"
 
-    return v1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
-    const-string p1, "element"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return v1
 .end method
 
@@ -301,7 +267,7 @@
 
     const-string v1, "Index: "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -394,7 +360,7 @@
 
     const-string v2, ", toIndex: "
 
-    invoke-static {v1, p1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

@@ -59,7 +59,11 @@
     :cond_2
     and-int/lit8 p4, p5, 0x8
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lde/rki/coronawarnapp/exception/reporting/ReportedException;-><init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;)V
+    invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/exception/reporting/ReportedException;->code:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/exception/reporting/ReportedException;->resId:Ljava/lang/Integer;
 
     return-void
 .end method

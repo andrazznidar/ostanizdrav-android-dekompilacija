@@ -17,17 +17,13 @@
     c = "de.rki.coronawarnapp.service.submission.SubmissionService"
     f = "SubmissionService.kt"
     l = {
-        0x21
+        0x14
     }
     m = "asyncRegisterDeviceViaGUID"
 .end annotation
 
 
 # instance fields
-.field public L$0:Ljava/lang/Object;
-
-.field public L$1:Ljava/lang/Object;
-
 .field public label:I
 
 .field public synthetic result:Ljava/lang/Object;

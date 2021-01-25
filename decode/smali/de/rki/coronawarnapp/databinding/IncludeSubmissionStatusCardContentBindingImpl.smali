@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ac
+    const v1, 0x7f0903bf
 
     const/4 v2, 0x5
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ae
+    const v1, 0x7f0903c1
 
     const/4 v2, 0x6
 
@@ -174,341 +174,255 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->mDeviceUIState:Lde/rki/coronawarnapp/util/DeviceUIState;
+    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->mSubmissionCard:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;
 
     const-wide/16 v5, 0x3
 
-    and-long/2addr v0, v5
+    and-long/2addr v5, v0
 
-    cmp-long v0, v0, v2
+    cmp-long v2, v5, v2
 
-    const/4 v1, 0x0
+    const-wide/16 v5, 0x4
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    if-eqz v0, :cond_10
+    if-eqz v2, :cond_4
 
-    sget-object v2, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    if-eqz v4, :cond_1
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    iget-object v7, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    move-result-object v2
+    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    const/4 v3, 0x6
+    move-result-object v7
 
-    const/4 v5, 0x5
+    const-string v8, "c"
 
-    const/4 v6, 0x4
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez v4, :cond_0
+    iget-object v8, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    sget-object v9, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardSubTitleText$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardSubTitleText$1;
+
+    invoke-static {v8, v3, v9}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v7, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    const-string v3, ""
+
+    :goto_0
+    iget-object v7, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    const-string v8, "c"
+
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v8, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    const v9, 0x7f060069
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    sget-object v10, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardSubTitleTextColor$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardSubTitleTextColor$1;
+
+    invoke-static {v8, v9, v10}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/Number;
+
+    invoke-virtual {v8}, Ljava/lang/Number;->intValue()I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getColor(I)I
 
     move-result v7
 
-    if-eq v7, v6, :cond_2
+    iget-object v8, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    if-eq v7, v5, :cond_1
+    invoke-virtual {v8}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    if-eq v7, v3, :cond_1
+    move-result-object v8
 
-    :goto_0
-    const-string v2, ""
+    const-string v9, "c"
+
+    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v9, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    const v10, 0x7f1202de
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    sget-object v11, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardTitleText$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardTitleText$1;
+
+    invoke-static {v9, v10, v11}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/Number;
+
+    invoke-virtual {v9}, Ljava/lang/Number;->intValue()I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "deviceUiState.withSucces\u2026}.let { c.getString(it) }"
+
+    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v9, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    const-string v10, "c"
+
+    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v10, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    const v11, 0x7f0800df
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    sget-object v12, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardIcon$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardIcon$1;
+
+    invoke-static {v10, v11, v12}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/Number;
+
+    invoke-virtual {v10}, Ljava/lang/Number;->intValue()I
+
+    move-result v10
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v9
+
+    iget-object v10, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v10
+
+    const-string v11, "c"
+
+    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v11, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    const v12, 0x7f1202cc
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    sget-object v13, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardBodyText$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$getContentCardBodyText$1;
+
+    invoke-static {v11, v12, v13}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljava/lang/Number;
+
+    invoke-virtual {v11}, Ljava/lang/Number;->intValue()I
+
+    move-result v11
+
+    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v11, "deviceUiState.withSucces\u2026}.let { c.getString(it) }"
+
+    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move v14, v7
+
+    move-object v7, v3
+
+    move-object v3, v9
+
+    move v9, v14
 
     goto :goto_1
 
     :cond_1
-    const v7, 0x7f120212
+    const/4 v7, 0x0
 
-    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-object v8, v3
 
-    move-result-object v2
+    move-object v10, v8
 
-    const-string v7, "appContext.getString(R.s\u2026us_card_subtitle_invalid)"
+    move v9, v7
 
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_2
-    const v7, 0x7f120213
-
-    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v7, "appContext.getString(R.s\u2026s_card_subtitle_negative)"
-
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object v7, v10
 
     :goto_1
-    sget-object v7, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    if-nez v4, :cond_2
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    const-string v8, "appContext.getString(R.s\u2026status_card_body_pending)"
-
-    const v9, 0x7f120209
-
-    const/4 v10, 0x1
-
-    if-nez v4, :cond_3
+    const/4 v11, 0x1
 
     goto :goto_2
 
-    :cond_3
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v11
-
-    if-eq v11, v10, :cond_6
-
-    if-eq v11, v6, :cond_5
-
-    if-eq v11, v5, :cond_4
-
-    if-eq v11, v3, :cond_4
+    :cond_2
+    const/4 v11, 0x0
 
     :goto_2
-    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    if-eqz v2, :cond_5
 
-    move-result-object v7
+    if-eqz v11, :cond_3
 
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    const-wide/16 v12, 0x8
+
+    or-long/2addr v0, v12
+
+    goto :goto_3
+
+    :cond_3
+    or-long/2addr v0, v5
 
     goto :goto_3
 
     :cond_4
-    const v8, 0x7f120207
+    const/4 v9, 0x0
 
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "appContext.getString(R.s\u2026status_card_body_invalid)"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :cond_5
-    const v8, 0x7f120208
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "appContext.getString(R.s\u2026tatus_card_body_negative)"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :cond_6
-    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_3
-    sget-object v8, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v8
-
-    const v9, 0x7f0800a0
-
-    if-nez v4, :cond_7
-
-    goto :goto_4
-
-    :cond_7
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v11
-
-    const v12, 0x7f0800a3
-
-    packed-switch v11, :pswitch_data_0
-
-    goto :goto_4
-
-    :pswitch_0
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    goto :goto_5
-
-    :pswitch_1
-    const v9, 0x7f0800a1
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    goto :goto_5
-
-    :pswitch_2
-    invoke-virtual {v8, v12}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    goto :goto_5
-
-    :pswitch_3
-    invoke-virtual {v8, v12}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    goto :goto_5
-
-    :goto_4
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    :goto_5
-    sget-object v9, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    if-nez v4, :cond_8
-
-    goto :goto_6
-
-    :cond_8
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v11
-
-    if-eq v11, v6, :cond_a
-
-    if-eq v11, v5, :cond_9
-
-    if-eq v11, v3, :cond_9
-
-    :goto_6
-    const v11, 0x7f06005c
-
-    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
-
-    move-result v9
-
-    goto :goto_7
-
-    :cond_9
-    const v11, 0x7f060060
-
-    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
-
-    move-result v9
-
-    goto :goto_7
-
-    :cond_a
-    const v11, 0x7f06005f
-
-    invoke-virtual {v9, v11}, Landroid/content/Context;->getColor(I)I
-
-    move-result v9
-
-    :goto_7
-    sget-object v11, Lde/rki/coronawarnapp/CoronaWarnApplication;->Companion:Lde/rki/coronawarnapp/CoronaWarnApplication;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v11
-
-    const-string v12, "appContext.getString(R.s\u2026tatus_card_title_pending)"
-
-    const v13, 0x7f120216
-
-    if-nez v4, :cond_b
-
-    goto :goto_8
-
-    :cond_b
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v14
-
-    if-eq v14, v10, :cond_d
-
-    if-eq v14, v6, :cond_c
-
-    if-eq v14, v5, :cond_c
-
-    if-eq v14, v3, :cond_c
-
-    :goto_8
-    invoke-virtual {v11, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_9
-
-    :cond_c
-    const v10, 0x7f120214
-
-    invoke-virtual {v11, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    const-string v11, "appContext.getString(R.s\u2026tus_card_title_available)"
-
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_9
-
-    :cond_d
-    invoke-virtual {v11, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_9
-    if-nez v4, :cond_e
-
-    goto :goto_a
-
-    :cond_e
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    if-eq v4, v6, :cond_f
-
-    if-eq v4, v5, :cond_f
-
-    if-eq v4, v3, :cond_f
-
-    :goto_a
-    const/16 v1, 0x8
-
-    :cond_f
-    move-object v3, v2
-
-    move v2, v1
-
-    move v1, v9
-
-    goto :goto_b
-
-    :cond_10
-    move-object v3, v2
+    const/4 v11, 0x0
 
     move-object v7, v3
 
@@ -516,36 +430,100 @@
 
     move-object v10, v8
 
-    move v2, v1
+    :cond_5
+    :goto_3
+    and-long/2addr v5, v0
 
-    :goto_b
-    if-eqz v0, :cond_11
+    const-wide/16 v12, 0x0
+
+    cmp-long v2, v5, v12
+
+    if-eqz v2, :cond_7
+
+    if-eqz v4, :cond_6
+
+    iget-object v2, v4, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    sget-object v4, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    sget-object v5, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$isContentCardStatusTextVisible$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState$isContentCardStatusTextVisible$1;
+
+    invoke-static {v2, v4, v5}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    goto :goto_4
+
+    :cond_6
+    const/4 v2, 0x0
+
+    :goto_4
+    const/4 v4, 0x1
+
+    xor-int/2addr v2, v4
+
+    goto :goto_5
+
+    :cond_7
+    const/4 v4, 0x1
+
+    const/4 v2, 0x0
+
+    :goto_5
+    const-wide/16 v5, 0x3
+
+    and-long/2addr v0, v5
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v0, v0, v5
+
+    if-eqz v0, :cond_8
+
+    if-eqz v11, :cond_9
+
+    move v2, v4
+
+    goto :goto_6
+
+    :cond_8
+    const/4 v2, 0x0
+
+    :cond_9
+    :goto_6
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentBody:Landroid/widget/TextView;
 
-    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v10}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v8}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentSubtitle:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v0, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentSubtitle:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->submissionStatusCardContentTitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v10}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_11
+    :cond_a
     return-void
 
     :catchall_0
@@ -557,18 +535,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public hasPendingBindings()Z
@@ -645,10 +611,10 @@
     return p1
 .end method
 
-.method public setDeviceUIState(Lde/rki/coronawarnapp/util/DeviceUIState;)V
+.method public setSubmissionCard(Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;)V
     .locals 4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->mDeviceUIState:Lde/rki/coronawarnapp/util/DeviceUIState;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionStatusCardContentBinding;->mSubmissionCard:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;
 
     monitor-enter p0
 
@@ -665,7 +631,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x6
+    const/16 p1, 0x2e
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

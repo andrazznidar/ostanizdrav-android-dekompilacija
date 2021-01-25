@@ -15,11 +15,11 @@
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/tasks/zzu;)V
+.method public abstract zza(Lcom/google/android/gms/tasks/Task;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/tasks/zzu<",
+            "Lcom/google/android/gms/tasks/Task<",
             "TTResult;>;)V"
         }
     .end annotation

@@ -13,10 +13,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Cache.kt\nokhttp3/Cache$RealCacheRequest$1\n*L\n1#1,784:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic this$0:Lokhttp3/Cache$RealCacheRequest;

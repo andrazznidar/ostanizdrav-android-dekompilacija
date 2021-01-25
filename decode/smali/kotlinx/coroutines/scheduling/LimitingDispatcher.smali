@@ -7,12 +7,6 @@
 .implements Ljava/util/concurrent/Executor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Dispatcher.kt\nkotlinx/coroutines/scheduling/LimitingDispatcher\n*L\n1#1,233:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final inFlightTasks$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
@@ -21,6 +15,8 @@
 .field public final dispatcher:Lkotlinx/coroutines/scheduling/ExperimentalCoroutineDispatcher;
 
 .field public volatile inFlightTasks:I
+
+.field public final name:Ljava/lang/String;
 
 .field public final parallelism:I
 
@@ -54,7 +50,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lkotlinx/coroutines/scheduling/ExperimentalCoroutineDispatcher;II)V
+.method public constructor <init>(Lkotlinx/coroutines/scheduling/ExperimentalCoroutineDispatcher;ILjava/lang/String;I)V
     .locals 0
 
     invoke-direct {p0}, Lkotlinx/coroutines/ExecutorCoroutineDispatcher;-><init>()V
@@ -63,7 +59,9 @@
 
     iput p2, p0, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->parallelism:I
 
-    iput p3, p0, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->taskMode:I
+    iput-object p3, p0, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->name:Ljava/lang/String;
+
+    iput p4, p0, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->taskMode:I
 
     new-instance p1, Ljava/util/concurrent/ConcurrentLinkedQueue;
 
@@ -254,6 +252,16 @@
     return-void
 .end method
 
+.method public dispatchYield(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
+    .locals 0
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p2, p1}, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->dispatch(Ljava/lang/Runnable;Z)V
+
+    return-void
+.end method
+
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
 
@@ -275,6 +283,13 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    iget-object v0, p0, Lkotlinx/coroutines/scheduling/LimitingDispatcher;->name:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -301,5 +316,6 @@
 
     move-result-object v0
 
+    :goto_0
     return-object v0
 .end method

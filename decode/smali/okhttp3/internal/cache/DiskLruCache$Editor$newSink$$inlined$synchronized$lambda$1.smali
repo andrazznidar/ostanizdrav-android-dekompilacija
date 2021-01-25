@@ -26,10 +26,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiskLruCache.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiskLruCache.kt\nokhttp3/internal/cache/DiskLruCache$Editor$newSink$1$1\n*L\n1#1,1065:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic this$0:Lokhttp3/internal/cache/DiskLruCache$Editor;
@@ -57,7 +53,7 @@
 
     const-string v0, "it"
 
-    if-eqz p1, :cond_0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$newSink$$inlined$synchronized$lambda$1;->this$0:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
@@ -84,11 +80,4 @@
     monitor-exit p1
 
     throw v0
-
-    :cond_0
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

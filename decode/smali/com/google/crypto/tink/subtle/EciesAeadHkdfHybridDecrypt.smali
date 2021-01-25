@@ -15,6 +15,23 @@
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/ECPrivateKey;[BLjava/lang/String;Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;Lcom/google/crypto/tink/subtle/EciesAeadHkdfDemHelper;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "recipientPrivateKey",
+            "hkdfSalt",
+            "hkdfHmacAlgo",
+            "ecPointFormat",
+            "demHelper"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

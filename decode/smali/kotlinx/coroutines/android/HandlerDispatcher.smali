@@ -25,23 +25,12 @@
 
 
 # virtual methods
-.method public invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
+.method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
     .locals 0
 
-    if-eqz p3, :cond_0
-
-    invoke-static {p1, p2, p3}, Lkotlin/collections/MapsKt___MapsKt;->invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p1
 
     return-object p1
-
-    :cond_0
-    const-string p1, "block"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

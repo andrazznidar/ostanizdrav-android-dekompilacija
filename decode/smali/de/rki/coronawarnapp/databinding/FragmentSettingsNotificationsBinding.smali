@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mSettingsViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+.field public mState:Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;
 
 .field public final settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
 
@@ -65,18 +65,14 @@
     return-void
 .end method
 
-.method public static inflate(Landroid/view/LayoutInflater;)Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;
-    .locals 4
+.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;
+    .locals 2
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c0041
+    const v1, 0x7f0c0053
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {p0, v1, v2, v3, v0}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 
@@ -87,5 +83,5 @@
 
 
 # virtual methods
-.method public abstract setSettingsViewModel(Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;)V
+.method public abstract setState(Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;)V
 .end method

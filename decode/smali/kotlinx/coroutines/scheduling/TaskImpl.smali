@@ -51,13 +51,13 @@
 
     const-string v0, "Task["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     iget-object v1, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -69,7 +69,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

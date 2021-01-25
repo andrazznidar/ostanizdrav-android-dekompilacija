@@ -165,6 +165,42 @@
     return-object v0
 .end method
 
+.method public get(Lorg/joda/time/ReadablePartial;J)[I
+    .locals 4
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v0
+
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_0
+
+    invoke-interface {p1, v2}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Lorg/joda/time/DateTimeFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DateTimeField;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2, p3}, Lorg/joda/time/DateTimeField;->get(J)I
+
+    move-result v3
+
+    aput v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
+.end method
+
 .method public getDateTimeMillis(IIII)J
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -273,6 +309,49 @@
     move-result-object p3
 
     invoke-virtual {p3, p1, p2, p7}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
+.method public getDateTimeMillis(JIIII)J
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BaseChronology;->hourOfDay()Lorg/joda/time/DateTimeField;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2, p3}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BaseChronology;->minuteOfHour()Lorg/joda/time/DateTimeField;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p1, p2, p4}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BaseChronology;->secondOfMinute()Lorg/joda/time/DateTimeField;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p1, p2, p5}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0}, Lorg/joda/time/chrono/BaseChronology;->millisOfSecond()Lorg/joda/time/DateTimeField;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p1, p2, p6}, Lorg/joda/time/DateTimeField;->set(JI)J
 
     move-result-wide p1
 
@@ -509,6 +588,42 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public set(Lorg/joda/time/ReadablePartial;J)J
+    .locals 4
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePartial;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Lorg/joda/time/DateTimeFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DateTimeField;
+
+    move-result-object v2
+
+    invoke-interface {p1, v1}, Lorg/joda/time/ReadablePartial;->getValue(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, p2, p3, v3}, Lorg/joda/time/DateTimeField;->set(JI)J
+
+    move-result-wide p2
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-wide p2
 .end method
 
 .method public weekOfWeekyear()Lorg/joda/time/DateTimeField;

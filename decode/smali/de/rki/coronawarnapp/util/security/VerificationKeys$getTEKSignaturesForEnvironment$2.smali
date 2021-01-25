@@ -11,7 +11,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "LKeyExportFormat$TEKSignature;",
+        "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;",
         "[B>;"
     }
 .end annotation
@@ -49,13 +49,13 @@
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    check-cast p1, LKeyExportFormat$TEKSignature;
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;
 
     const-string v0, "it"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, p1, LKeyExportFormat$TEKSignature;->signature_:Lcom/google/protobuf/ByteString;
+    iget-object p1, p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;->signature_:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->size()I
 

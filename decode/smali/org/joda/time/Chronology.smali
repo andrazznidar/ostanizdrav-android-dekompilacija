@@ -44,10 +44,16 @@
 .method public abstract eras()Lorg/joda/time/DurationField;
 .end method
 
+.method public abstract get(Lorg/joda/time/ReadablePartial;J)[I
+.end method
+
 .method public abstract getDateTimeMillis(IIII)J
 .end method
 
 .method public abstract getDateTimeMillis(IIIIIII)J
+.end method
+
+.method public abstract getDateTimeMillis(JIIII)J
 .end method
 
 .method public abstract getZone()Lorg/joda/time/DateTimeZone;
@@ -99,6 +105,9 @@
 .end method
 
 .method public abstract seconds()Lorg/joda/time/DurationField;
+.end method
+
+.method public abstract set(Lorg/joda/time/ReadablePartial;J)J
 .end method
 
 .method public abstract toString()Ljava/lang/String;

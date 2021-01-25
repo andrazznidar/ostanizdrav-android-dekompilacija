@@ -3,106 +3,44 @@
 .source "SettingsRepository.kt"
 
 
-# static fields
-.field public static final INSTANCE:Lde/rki/coronawarnapp/storage/SettingsRepository;
+# instance fields
+.field public final backgroundPrioritization:Lde/rki/coronawarnapp/util/BackgroundPrioritization;
 
-.field public static final TAG:Ljava/lang/String;
-
-.field public static final isBackgroundJobEnabled:Landroidx/lifecycle/MutableLiveData;
+.field public final internalIsBackgroundPriorityEnabled:Lkotlinx/coroutines/flow/MutableStateFlow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/lifecycle/MutableLiveData<",
+            "Lkotlinx/coroutines/flow/MutableStateFlow<",
             "Ljava/lang/Boolean;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final isBackgroundPriorityEnabled:Landroidx/lifecycle/MutableLiveData;
+.field public final isBackgroundPriorityEnabled:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/lifecycle/MutableLiveData<",
+            "Landroidx/lifecycle/LiveData<",
             "Ljava/lang/Boolean;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final isBluetoothEnabled:Landroidx/lifecycle/MutableLiveData;
+.field public final isBackgroundPriorityEnabledFlow:Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/lifecycle/MutableLiveData<",
+            "Lkotlinx/coroutines/flow/Flow<",
             "Ljava/lang/Boolean;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final isConnectionEnabled:Landroidx/lifecycle/MutableLiveData;
+.field public final isConnectionEnabled:Landroidx/lifecycle/MutableLiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/lifecycle/MutableLiveData<",
             "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final isLocationEnabled:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final isManualKeyRetrievalEnabled:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final isNotificationsEnabled:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final isNotificationsRiskEnabled:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final isNotificationsTestEnabled:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final manualKeyRetrievalTime:Landroidx/lifecycle/MutableLiveData;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/lifecycle/MutableLiveData<",
-            "Ljava/lang/Long;",
             ">;"
         }
     .end annotation
@@ -110,114 +48,50 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/BackgroundPrioritization;)V
+    .locals 3
 
-    const-class v0, Lde/rki/coronawarnapp/storage/SettingsRepository;
+    const-string v0, "context"
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    const-string p1, "backgroundPrioritization"
 
-    check-cast v0, Lkotlin/jvm/internal/ClassReference;
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lkotlin/jvm/internal/ClassReference;->getSimpleName()Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p2, p0, Lde/rki/coronawarnapp/storage/SettingsRepository;->backgroundPrioritization:Lde/rki/coronawarnapp/util/BackgroundPrioritization;
 
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->TAG:Ljava/lang/String;
+    new-instance p1, Landroidx/lifecycle/MutableLiveData;
 
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    invoke-direct {p1, p2}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
+    iput-object p1, p0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isConnectionEnabled:Landroidx/lifecycle/MutableLiveData;
 
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isNotificationsEnabled:Landroidx/lifecycle/MutableLiveData;
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
+    invoke-static {p1}, Lkotlinx/coroutines/flow/StateFlowKt;->MutableStateFlow(Ljava/lang/Object;)Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
+    iput-object p1, p0, Lde/rki/coronawarnapp/storage/SettingsRepository;->internalIsBackgroundPriorityEnabled:Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isNotificationsRiskEnabled:Landroidx/lifecycle/MutableLiveData;
+    iput-object p1, p0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBackgroundPriorityEnabledFlow:Lkotlinx/coroutines/flow/Flow;
 
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
+    const/4 p2, 0x0
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
+    const/4 v2, 0x3
 
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isNotificationsTestEnabled:Landroidx/lifecycle/MutableLiveData;
+    invoke-static {p1, p2, v0, v1, v2}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
+    move-result-object p1
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isManualKeyRetrievalEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isConnectionEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBluetoothEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isLocationEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBackgroundJobEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-direct {v0, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBackgroundPriorityEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    new-instance v0, Landroidx/lifecycle/MutableLiveData;
-
-    invoke-direct {v0}, Landroidx/lifecycle/MutableLiveData;-><init>()V
-
-    sput-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->manualKeyRetrievalTime:Landroidx/lifecycle/MutableLiveData;
-
-    return-void
-.end method
-
-.method public static final updateManualKeyRetrievalEnabled(Z)V
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isManualKeyRetrievalEnabled:Landroidx/lifecycle/MutableLiveData;
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    iput-object p1, p0, Lde/rki/coronawarnapp/storage/SettingsRepository;->isBackgroundPriorityEnabled:Landroidx/lifecycle/LiveData;
 
     return-void
 .end method

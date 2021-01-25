@@ -1,4 +1,4 @@
-.class public final Landroidx/work/impl/WorkDatabaseMigrations$1;
+.class public Landroidx/work/impl/WorkDatabaseMigrations$1;
 .super Landroidx/room/migration/Migration;
 .source "WorkDatabaseMigrations.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

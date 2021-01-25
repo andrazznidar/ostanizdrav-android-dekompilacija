@@ -62,6 +62,8 @@
 .method public static plant(Ltimber/log/Timber$Tree;)V
     .locals 2
 
+    if-eqz p0, :cond_1
+
     sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
     if-eq p0, v0, :cond_0
@@ -112,6 +114,15 @@
     const-string v0, "Cannot plant Timber into itself."
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "tree == null"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method

@@ -18,6 +18,8 @@
 
 .field public static sAccessibilityDelegateField:Ljava/lang/reflect/Field;
 
+.field public static final sNextGeneratedId:Ljava/util/concurrent/atomic/AtomicInteger;
+
 .field public static sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,6 +41,8 @@
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    sput-object v0, Landroidx/core/view/ViewCompat;->sNextGeneratedId:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v0, 0x0
 
@@ -397,6 +401,16 @@
     :cond_6
     :goto_0
     return v1
+.end method
+
+.method public static generateViewId()I
+    .locals 1
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static getAccessibilityDelegate(Landroid/view/View;)Landroidx/core/view/AccessibilityDelegateCompat;
@@ -1100,6 +1114,17 @@
 .method public static replaceAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
     .locals 6
 
+    if-nez p3, :cond_0
+
+    invoke-virtual {p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
+
+    move-result p1
+
+    invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->removeAccessibilityAction(Landroid/view/View;I)V
+
+    goto :goto_0
+
+    :cond_0
     new-instance p2, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     iget v2, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mId:I
@@ -1120,13 +1145,13 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
     new-instance p1, Landroidx/core/view/AccessibilityDelegateCompat;
 
     invoke-direct {p1}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
 
-    :cond_0
+    :cond_1
     invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->setAccessibilityDelegate(Landroid/view/View;Landroidx/core/view/AccessibilityDelegateCompat;)V
 
     invoke-virtual {p2}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
@@ -1143,7 +1168,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
     new-instance p1, Ljava/util/ArrayList;
 
@@ -1153,13 +1178,14 @@
 
     invoke-virtual {p0, p3, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    :cond_1
+    :cond_2
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const/4 p1, 0x0
 
     invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
+    :goto_0
     return-void
 .end method
 

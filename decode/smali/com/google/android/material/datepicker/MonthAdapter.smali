@@ -28,7 +28,7 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
 
     iget-object v0, v0, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -256,7 +256,7 @@
 
     iget-object v2, v2, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v2
 
@@ -319,7 +319,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTimeZone()Ljava/util/TimeZone;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object v4
 
@@ -374,7 +374,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTimeZone()Ljava/util/TimeZone;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object v4
 
@@ -463,11 +463,11 @@
 
     move-result-wide v3
 
-    invoke-static {v3, v4}, Lcom/google/android/gms/common/internal/Preconditions;->canonicalYearMonthDay(J)J
+    invoke-static {v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
 
     move-result-wide v3
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->canonicalYearMonthDay(J)J
+    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
 
     move-result-wide v1
 
@@ -484,7 +484,7 @@
     goto :goto_5
 
     :cond_9
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object p2
 

@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lorg/joda/time/convert/InstantConverter;
-.implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PartialConverter;
 
 
 # static fields
@@ -34,6 +34,42 @@
 
 
 # virtual methods
+.method public getChronology(Ljava/lang/Object;Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+    .locals 0
+
+    if-eqz p2, :cond_0
+
+    return-object p2
+
+    :cond_0
+    check-cast p1, Ljava/util/Calendar;
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lorg/joda/time/DateTimeZone;->forTimeZone(Ljava/util/TimeZone;)Lorg/joda/time/DateTimeZone;
+
+    move-result-object p2
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    invoke-static {}, Lorg/joda/time/DateTimeZone;->getDefault()Lorg/joda/time/DateTimeZone;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/convert/CalendarConverter;->getChronology(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public getChronology(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
     .locals 4
 

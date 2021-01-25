@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerContext\n+ 2 Runnable.kt\nkotlinx/coroutines/RunnableKt\n*L\n1#1,196:1\n17#2:197\n*E\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerContext\n*L\n136#1:197\n*E\n"
+    value = "SMAP\nHandlerDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerContext\n+ 2 Runnable.kt\nkotlinx/coroutines/RunnableKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,194:1\n17#2:195\n1#3:196\n*E\n*S KotlinDebug\n*F\n+ 1 HandlerDispatcher.kt\nkotlinx/coroutines/android/HandlerContext\n*L\n136#1:195\n*E\n"
 .end annotation
 
 
@@ -75,22 +75,11 @@
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .locals 0
 
-    if-eqz p1, :cond_0
-
     iget-object p1, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
-
-    :cond_0
-    const-string p1, "context"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -139,41 +128,28 @@
     return v0
 .end method
 
-.method public invokeOnTimeout(JLjava/lang/Runnable;)Lkotlinx/coroutines/DisposableHandle;
-    .locals 3
+.method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
+    .locals 2
 
-    if-eqz p3, :cond_0
+    iget-object p4, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
-    iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+    const-wide v0, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    const-wide v1, 0x3fffffffffffffffL    # 1.9999999999999998
-
-    invoke-static {p1, p2, v1, v2}, Lkotlin/ranges/RangesKt___RangesKt;->coerceAtMost(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lkotlin/ranges/RangesKt___RangesKt;->coerceAtMost(JJ)J
 
     move-result-wide p1
 
-    invoke-virtual {v0, p3, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p4, p3, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     new-instance p1, Lkotlinx/coroutines/android/HandlerContext$invokeOnTimeout$1;
 
     invoke-direct {p1, p0, p3}, Lkotlinx/coroutines/android/HandlerContext$invokeOnTimeout$1;-><init>(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
 
     return-object p1
-
-    :cond_0
-    const-string p1, "block"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public isDispatchNeeded(Lkotlin/coroutines/CoroutineContext;)Z
     .locals 2
-
-    if-eqz p1, :cond_2
 
     iget-boolean p1, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
 
@@ -207,15 +183,6 @@
     :cond_1
     :goto_0
     return v0
-
-    :cond_2
-    const-string p1, "context"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
@@ -254,42 +221,42 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->name:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v1, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
-
-    if-eqz v1, :cond_1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lkotlinx/coroutines/android/HandlerContext;->name:Ljava/lang/String;
-
-    const-string v2, " [immediate]"
-
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lkotlinx/coroutines/MainCoroutineDispatcher;->toStringInternalImpl()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    if-eqz v0, :cond_0
+
+    goto :goto_1
 
     :cond_0
+    iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->name:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "handler.toString()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_1
     :goto_0
+    iget-boolean v1, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
+
+    if-eqz v1, :cond_2
+
+    const-string v1, ".immediate"
+
+    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_2
+    :goto_1
     return-object v0
 .end method

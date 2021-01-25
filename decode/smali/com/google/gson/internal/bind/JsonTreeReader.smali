@@ -6,6 +6,8 @@
 # static fields
 .field public static final SENTINEL_CLOSED:Ljava/lang/Object;
 
+.field public static final UNREADABLE_READER:Ljava/io/Reader;
+
 
 # instance fields
 .field public pathIndices:[I
@@ -25,6 +27,8 @@
 
     invoke-direct {v0}, Lcom/google/gson/internal/bind/JsonTreeReader$1;-><init>()V
 
+    sput-object v0, Lcom/google/gson/internal/bind/JsonTreeReader;->UNREADABLE_READER:Ljava/io/Reader;
+
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -34,12 +38,42 @@
     return-void
 .end method
 
+.method public constructor <init>(Lcom/google/gson/JsonElement;)V
+    .locals 2
+
+    sget-object v0, Lcom/google/gson/internal/bind/JsonTreeReader;->UNREADABLE_READER:Ljava/io/Reader;
+
+    invoke-direct {p0, v0}, Lcom/google/gson/stream/JsonReader;-><init>(Ljava/io/Reader;)V
+
+    const/16 v0, 0x20
+
+    new-array v1, v0, [Ljava/lang/Object;
+
+    iput-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->stack:[Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iput v1, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->stackSize:I
+
+    new-array v1, v0, [Ljava/lang/String;
+
+    iput-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->pathNames:[Ljava/lang/String;
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->pathIndices:[I
+
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/JsonTreeReader;->push(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method private locationString()Ljava/lang/String;
     .locals 2
 
     const-string v0, " at path "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -113,9 +147,7 @@
 
     check-cast v0, Lcom/google/gson/JsonObject;
 
-    iget-object v0, v0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
-
-    invoke-virtual {v0}, Lcom/google/gson/internal/LinkedTreeMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Lcom/google/gson/JsonObject;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 

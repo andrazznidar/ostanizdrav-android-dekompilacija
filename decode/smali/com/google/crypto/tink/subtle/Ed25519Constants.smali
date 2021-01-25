@@ -424,6 +424,16 @@
 
 .method public static edwards(Lcom/google/crypto/tink/subtle/Ed25519Constants$Point;Lcom/google/crypto/tink/subtle/Ed25519Constants$Point;)Lcom/google/crypto/tink/subtle/Ed25519Constants$Point;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "a",
+            "b"
+        }
+    .end annotation
 
     new-instance v0, Lcom/google/crypto/tink/subtle/Ed25519Constants$Point;
 
@@ -556,6 +566,14 @@
 
 .method public static getCachedXYT(Lcom/google/crypto/tink/subtle/Ed25519Constants$Point;)Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "p"
+        }
+    .end annotation
 
     new-instance v0, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
 
@@ -638,6 +656,14 @@
 
 .method public static toLittleEndian(Ljava/math/BigInteger;)[B
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "n"
+        }
+    .end annotation
 
     const/16 v0, 0x20
 

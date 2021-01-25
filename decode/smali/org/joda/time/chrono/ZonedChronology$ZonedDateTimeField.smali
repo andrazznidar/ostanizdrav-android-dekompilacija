@@ -338,6 +338,82 @@
     return-object p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 4
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->getOffsetToAdd(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    iget-boolean v2, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iTimeField:Z
+
+    if-eqz v2, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->getOffsetToAdd(J)I
+
+    move-result v2
+
+    :goto_0
+    int-to-long v2, v2
+
+    add-long/2addr p1, v2
+
+    int-to-long v2, v0
+
+    add-long/2addr p3, v2
+
+    invoke-virtual {v1, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 4
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->getOffsetToAdd(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    iget-boolean v2, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iTimeField:Z
+
+    if-eqz v2, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->getOffsetToAdd(J)I
+
+    move-result v2
+
+    :goto_0
+    int-to-long v2, v2
+
+    add-long/2addr p1, v2
+
+    int-to-long v2, v0
+
+    add-long/2addr p3, v2
+
+    invoke-virtual {v1, p1, p2, p3, p4}, Lorg/joda/time/DateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public final getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 
@@ -396,6 +472,30 @@
     return p1
 .end method
 
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/DateTimeField;->getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2}, Lorg/joda/time/DateTimeField;->getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getMinimumValue()I
     .locals 1
 
@@ -406,6 +506,30 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/DateTimeField;->getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/chrono/ZonedChronology$ZonedDateTimeField;->iField:Lorg/joda/time/DateTimeField;
+
+    invoke-virtual {v0, p1, p2}, Lorg/joda/time/DateTimeField;->getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public final getOffsetToAdd(J)I

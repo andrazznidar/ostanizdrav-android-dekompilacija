@@ -5,9 +5,26 @@
 
 # virtual methods
 .method public abstract doesSupport(Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "keyUri"
+        }
+    .end annotation
 .end method
 
 .method public abstract getAead(Ljava/lang/String;)Lcom/google/crypto/tink/Aead;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "keyUri"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;

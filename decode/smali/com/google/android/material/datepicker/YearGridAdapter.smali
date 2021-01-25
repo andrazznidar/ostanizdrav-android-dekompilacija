@@ -151,7 +151,7 @@
 
     iget-object p2, p2, Lcom/google/android/material/datepicker/MaterialCalendar;->calendarStyle:Lcom/google/android/material/datepicker/CalendarStyle;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object v1
 

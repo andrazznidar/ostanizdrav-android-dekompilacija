@@ -61,7 +61,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result p2
 
@@ -76,7 +76,7 @@
     :cond_2
     const-string p2, "gcore_"
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 

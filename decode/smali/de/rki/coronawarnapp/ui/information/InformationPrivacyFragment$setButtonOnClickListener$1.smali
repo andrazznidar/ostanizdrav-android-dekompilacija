@@ -24,30 +24,15 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationPrivacyFragment$setButtonOnClickListener$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationPrivacyFragment;
 
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
-
-    check-cast p1, Lde/rki/coronawarnapp/ui/main/MainActivity;
-
-    iget-object p1, p1, Landroidx/activity/ComponentActivity;->mOnBackPressedDispatcher:Landroidx/activity/OnBackPressedDispatcher;
-
-    invoke-virtual {p1}, Landroidx/activity/OnBackPressedDispatcher;->onBackPressed()V
+    invoke-virtual {p1}, Landroidx/navigation/NavController;->popBackStack()Z
 
     return-void
-
-    :cond_0
-    new-instance p1, Lkotlin/TypeCastException;
-
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.main.MainActivity"
-
-    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

@@ -355,7 +355,7 @@
         0x7f040149
         0x7f04014a
         0x7f04014b
-        0x7f0402f6
+        0x7f0402fa
     .end array-data
 
     :array_4
@@ -417,7 +417,7 @@
     :array_a
     .array-data 4
         0x10104ee
-        0x7f0402f8
+        0x7f0402fc
     .end array-data
 
     :array_b

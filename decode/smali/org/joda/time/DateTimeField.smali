@@ -41,6 +41,12 @@
 .method public abstract getAsText(Lorg/joda/time/ReadablePartial;Ljava/util/Locale;)Ljava/lang/String;
 .end method
 
+.method public abstract getDifference(JJ)I
+.end method
+
+.method public abstract getDifferenceAsLong(JJ)J
+.end method
+
 .method public abstract getDurationField()Lorg/joda/time/DurationField;
 .end method
 
@@ -56,7 +62,19 @@
 .method public abstract getMaximumValue(J)I
 .end method
 
+.method public abstract getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+.end method
+
+.method public abstract getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+.end method
+
 .method public abstract getMinimumValue()I
+.end method
+
+.method public abstract getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+.end method
+
+.method public abstract getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
 .end method
 
 .method public abstract getName()Ljava/lang/String;

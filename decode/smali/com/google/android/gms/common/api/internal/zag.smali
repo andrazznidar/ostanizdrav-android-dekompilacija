@@ -56,7 +56,7 @@
 .end method
 
 .method public final zab(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,56 +81,17 @@
 
     check-cast p1, Lcom/google/android/gms/common/api/internal/zabs;
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zac;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    iget-object p1, p1, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
 
-    iget-object v1, p1, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-boolean v2, p1, Lcom/google/android/gms/tasks/zzu;->zzc:Z
-
-    if-eqz v2, :cond_0
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x1
-
-    iput-boolean v2, p1, Lcom/google/android/gms/tasks/zzu;->zzc:Z
-
-    iput-object v0, p1, Lcom/google/android/gms/tasks/zzu;->zze:Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p1, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzu;)V
-
-    :goto_0
     return-void
 
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-
-    :cond_1
+    :cond_0
     const/4 p1, 0x0
 
     throw p1

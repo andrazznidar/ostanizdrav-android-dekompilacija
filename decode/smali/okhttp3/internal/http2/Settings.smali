@@ -51,62 +51,55 @@
 .end method
 
 .method public final merge(Lokhttp3/internal/http2/Settings;)V
-    .locals 6
+    .locals 5
 
-    if-eqz p1, :cond_3
+    const-string v0, "other"
 
-    const/16 v0, 0xa
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move v2, v1
+    move v1, v0
 
     :goto_0
-    if-ge v2, v0, :cond_2
+    const/16 v2, 0xa
 
-    const/4 v3, 0x1
+    if-ge v1, v2, :cond_2
 
-    shl-int v4, v3, v2
+    const/4 v2, 0x1
 
-    iget v5, p1, Lokhttp3/internal/http2/Settings;->set:I
+    shl-int v3, v2, v1
 
-    and-int/2addr v4, v5
+    iget v4, p1, Lokhttp3/internal/http2/Settings;->set:I
 
-    if-eqz v4, :cond_0
+    and-int/2addr v3, v4
+
+    if-eqz v3, :cond_0
 
     goto :goto_1
 
     :cond_0
-    move v3, v1
+    move v2, v0
 
     :goto_1
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
     goto :goto_2
 
     :cond_1
-    iget-object v3, p1, Lokhttp3/internal/http2/Settings;->values:[I
+    iget-object v2, p1, Lokhttp3/internal/http2/Settings;->values:[I
 
-    aget v3, v3, v2
+    aget v2, v2, v1
 
-    invoke-virtual {p0, v2, v3}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;
+    invoke-virtual {p0, v1, v2}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;
 
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_2
     return-void
-
-    :cond_3
-    const-string p1, "other"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final set(II)Lokhttp3/internal/http2/Settings;

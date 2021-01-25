@@ -3,12 +3,6 @@
 .source "AndroidLog.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAndroidLog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AndroidLog.kt\nokhttp3/internal/platform/android/AndroidLog\n*L\n1#1,108:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final INSTANCE:Lokhttp3/internal/platform/android/AndroidLog;
 
@@ -54,22 +48,25 @@
 
     move-result-object v1
 
-    const-string v2, "OkHttpClient::class.java.`package`"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/Package;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "OkHttpClient::class.java.`package`.name"
+    goto :goto_0
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    if-eqz v1, :cond_1
 
     const-string v2, "OkHttp"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    :cond_1
     const-class v1, Lokhttp3/OkHttpClient;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -78,7 +75,7 @@
 
     const-string v2, "OkHttpClient::class.java.name"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v2, "okhttp.OkHttpClient"
 
@@ -92,7 +89,7 @@
 
     const-string v2, "Http2::class.java.name"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v2, "okhttp.Http2"
 
@@ -106,40 +103,23 @@
 
     const-string v2, "TaskRunner::class.java.name"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v2, "okhttp.TaskRunner"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/Map;->size()I
+    const-string v1, "okhttp3.mockwebserver.MockWebServer"
 
-    move-result v1
+    const-string v2, "okhttp.MockWebServer"
 
-    if-eqz v1, :cond_1
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->toMap(Ljava/util/Map;)Ljava/util/Map;
 
-    if-eq v1, v2, :cond_0
+    move-result-object v0
 
-    new-instance v1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->toSingletonMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v1, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
-
-    :goto_0
-    sput-object v1, Lokhttp3/internal/platform/android/AndroidLog;->knownLoggers:Ljava/util/Map;
+    sput-object v0, Lokhttp3/internal/platform/android/AndroidLog;->knownLoggers:Ljava/util/Map;
 
     return-void
 .end method

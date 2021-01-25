@@ -3,12 +3,6 @@
 .source "dates.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\ndates.kt\nKotlin\n*S Kotlin\n*F\n+ 1 dates.kt\nokhttp3/internal/http/DatesKt\n*L\n1#1,107:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final BROWSER_COMPATIBLE_DATE_FORMATS:[Ljava/text/DateFormat;
 
@@ -77,15 +71,13 @@
 
     const-string v0, "$this$toHttpDateOrNull"
 
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_6
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
@@ -94,17 +86,19 @@
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    move v0, v1
 
     :goto_0
+    const/4 v2, 0x0
+
     if-eqz v0, :cond_1
 
-    return-object v1
+    return-object v2
 
     :cond_1
     new-instance v0, Ljava/text/ParsePosition;
 
-    invoke-direct {v0, v2}, Ljava/text/ParsePosition;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/text/ParsePosition;-><init>(I)V
 
     sget-object v3, Lokhttp3/internal/http/DatesKt;->STANDARD_DATE_FORMAT:Lokhttp3/internal/http/DatesKt$STANDARD_DATE_FORMAT$1;
 
@@ -140,7 +134,7 @@
 
     array-length v4, v4
 
-    move v5, v2
+    move v5, v1
 
     :goto_1
     if-ge v5, v4, :cond_5
@@ -170,7 +164,7 @@
     aput-object v6, v7, v5
 
     :cond_3
-    invoke-virtual {v0, v2}, Ljava/text/ParsePosition;->setIndex(I)V
+    invoke-virtual {v0, v1}, Ljava/text/ParsePosition;->setIndex(I)V
 
     invoke-virtual {v6, p0, v0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
 
@@ -196,7 +190,7 @@
     :cond_5
     monitor-exit v3
 
-    return-object v1
+    return-object v2
 
     :catchall_0
     move-exception p0
@@ -204,15 +198,14 @@
     monitor-exit v3
 
     throw p0
-
-    :cond_6
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public static final toHttpDateString(Ljava/util/Date;)Ljava/lang/String;
     .locals 1
+
+    const-string v0, "$this$toHttpDateString"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lokhttp3/internal/http/DatesKt;->STANDARD_DATE_FORMAT:Lokhttp3/internal/http/DatesKt$STANDARD_DATE_FORMAT$1;
 
@@ -228,7 +221,7 @@
 
     const-string v0, "STANDARD_DATE_FORMAT.get().format(this)"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method

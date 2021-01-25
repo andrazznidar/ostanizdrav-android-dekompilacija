@@ -13,10 +13,6 @@
     name = "Pin"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCertificatePinner.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CertificatePinner.kt\nokhttp3/CertificatePinner$Pin\n*L\n1#1,370:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final hash:Lokio/ByteString;

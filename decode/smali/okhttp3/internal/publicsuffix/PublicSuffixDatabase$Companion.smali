@@ -13,10 +13,6 @@
     name = "Companion"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPublicSuffixDatabase.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PublicSuffixDatabase.kt\nokhttp3/internal/publicsuffix/PublicSuffixDatabase$Companion\n*L\n1#1,330:1\n*E\n"
-.end annotation
-
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -213,7 +209,7 @@
 
     const-string v2, "UTF_8"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v2, Ljava/lang/String;
 

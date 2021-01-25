@@ -36,6 +36,24 @@
 
 
 # virtual methods
+.method public visitBoolean(ZZZZ)Z
+    .locals 0
+
+    iget p1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p1, p1, 0x35
+
+    invoke-static {p2}, Lcom/google/protobuf/Internal;->hashBoolean(Z)I
+
+    move-result p3
+
+    add-int/2addr p3, p1
+
+    iput p3, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return p2
+.end method
+
 .method public visitByteString(ZLcom/google/protobuf/ByteString;ZLcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
     .locals 0
 
@@ -74,6 +92,24 @@
     iput p4, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
 
     return-wide p2
+.end method
+
+.method public visitDoubleList(Lcom/google/protobuf/Internal$DoubleList;Lcom/google/protobuf/Internal$DoubleList;)Lcom/google/protobuf/Internal$DoubleList;
+    .locals 1
+
+    iget p2, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p2, p2, 0x35
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, p2
+
+    iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return-object p1
 .end method
 
 .method public visitExtensions(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/FieldSet;)Lcom/google/protobuf/FieldSet;
@@ -122,6 +158,24 @@
     return p2
 .end method
 
+.method public visitIntList(Lcom/google/protobuf/Internal$IntList;Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
+    .locals 1
+
+    iget p2, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p2, p2, 0x35
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, p2
+
+    iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return-object p1
+.end method
+
 .method public visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -153,8 +207,59 @@
     return-object p1
 .end method
 
+.method public visitLong(ZJZJ)J
+    .locals 0
+
+    iget p1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p1, p1, 0x35
+
+    invoke-static {p2, p3}, Lcom/google/protobuf/Internal;->hashLong(J)I
+
+    move-result p4
+
+    add-int/2addr p4, p1
+
+    iput p4, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return-wide p2
+.end method
+
+.method public visitMap(Lcom/google/protobuf/MapFieldLite;Lcom/google/protobuf/MapFieldLite;)Lcom/google/protobuf/MapFieldLite;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;)",
+            "Lcom/google/protobuf/MapFieldLite<",
+            "TK;TV;>;"
+        }
+    .end annotation
+
+    iget p2, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p2, p2, 0x35
+
+    invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, p2
+
+    iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return-object p1
+.end method
+
 .method public visitMessage(Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -163,47 +268,30 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     instance-of p2, p1, Lcom/google/protobuf/GeneratedMessageLite;
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_0
 
     move-object p2, p1
 
     check-cast p2, Lcom/google/protobuf/GeneratedMessageLite;
 
-    iget v0, p2, Lcom/google/protobuf/AbstractMessageLite;->memoizedHashCode:I
+    invoke-virtual {p2, p0}, Lcom/google/protobuf/GeneratedMessageLite;->hashCode(Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;)I
 
-    if-nez v0, :cond_0
-
-    iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
-
-    const/4 v1, 0x0
-
-    iput v1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
-
-    invoke-virtual {p2, p0, p2}, Lcom/google/protobuf/GeneratedMessageLite;->visit(Lcom/google/protobuf/GeneratedMessageLite$Visitor;Lcom/google/protobuf/GeneratedMessageLite;)V
-
-    iget v1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
-
-    iput v1, p2, Lcom/google/protobuf/AbstractMessageLite;->memoizedHashCode:I
-
-    iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
-
-    :cond_0
-    iget p2, p2, Lcom/google/protobuf/AbstractMessageLite;->memoizedHashCode:I
+    move-result p2
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result p2
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const/16 p2, 0x25
 
     :goto_0

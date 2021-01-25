@@ -220,11 +220,7 @@
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {p2}, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Landroidx/appcompat/app/AppCompatDelegate;->requestWindowFeature(I)Z
+    invoke-virtual {p2, v1}, Landroidx/appcompat/app/AppCompatDialog;->supportRequestWindowFeature(I)Z
 
     return-void
 .end method

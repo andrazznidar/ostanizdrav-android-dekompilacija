@@ -142,7 +142,7 @@
 
     iget-object v2, p1, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
 
-    invoke-static {v0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -152,7 +152,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -170,6 +170,23 @@
     .locals 0
 
     return-object p0
+.end method
+
+.method public final hasResolution()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public final hashCode()I
@@ -218,10 +235,69 @@
     return v0
 .end method
 
+.method public final isSuccess()Z
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/common/api/Status;->zzc:I
+
+    if-gtz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final startResolutionForResult(Landroid/app/Activity;I)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/IntentSender$SendIntentException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/Status;->hasResolution()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+
+    move-result-object v2
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v1, p1
+
+    move v3, p2
+
+    invoke-virtual/range {v1 .. v7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
+
+    return-void
+.end method
+
 .method public final toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
+    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
     move-result-object v0
 
@@ -234,7 +310,7 @@
     :cond_0
     iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzc:I
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getStatusCodeString(I)Ljava/lang/String;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->getStatusCodeString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -259,7 +335,7 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -267,7 +343,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
@@ -275,21 +351,21 @@
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v1, v2, p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     const/16 p2, 0x3e8
 
     iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzb:I
 
-    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

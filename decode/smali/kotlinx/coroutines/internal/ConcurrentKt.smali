@@ -3,12 +3,6 @@
 .source "Concurrent.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConcurrent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Concurrent.kt\nkotlinx/coroutines/internal/ConcurrentKt\n*L\n1#1,39:1\n*E\n"
-.end annotation
-
-
 # static fields
 .field public static final REMOVE_FUTURE_ON_CANCEL:Ljava/lang/reflect/Method;
 

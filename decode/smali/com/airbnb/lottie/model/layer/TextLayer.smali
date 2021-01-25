@@ -974,7 +974,7 @@
     const/4 v9, 0x0
 
     :goto_7
-    if-ge v9, v7, :cond_2e
+    if-ge v9, v7, :cond_2c
 
     invoke-interface {v6, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1499,7 +1499,7 @@
     :cond_1a
     const-string v7, "fonts/"
 
-    invoke-static {v7, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -1590,14 +1590,14 @@
     :goto_15
     if-nez v7, :cond_20
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     :cond_20
     iget-object v3, v2, Lcom/airbnb/lottie/model/DocumentData;->text:Ljava/lang/String;
 
     iget-object v5, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->lottieDrawable:Lcom/airbnb/lottie/LottieDrawable;
 
-    if-eqz v5, :cond_2f
+    if-eqz v5, :cond_2d
 
     iget-object v5, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->fillPaint:Landroid/graphics/Paint;
 
@@ -1672,7 +1672,7 @@
     const/4 v7, 0x0
 
     :goto_17
-    if-ge v7, v5, :cond_2e
+    if-ge v7, v5, :cond_2c
 
     invoke-interface {v3, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1717,7 +1717,7 @@
 
     move-result v10
 
-    if-ge v9, v10, :cond_2d
+    if-ge v9, v10, :cond_2b
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->codePointAt(I)I
 
@@ -1819,32 +1819,11 @@
 
     int-to-long v5, v10
 
-    iget-boolean v10, v12, Landroidx/collection/LongSparseArray;->mGarbage:Z
-
-    if-eqz v10, :cond_26
-
-    invoke-virtual {v12}, Landroidx/collection/LongSparseArray;->gc()V
-
-    :cond_26
-    iget-object v10, v12, Landroidx/collection/LongSparseArray;->mKeys:[J
-
-    iget v12, v12, Landroidx/collection/LongSparseArray;->mSize:I
-
-    invoke-static {v10, v12, v5, v6}, Landroidx/collection/ContainerHelpers;->binarySearch([JIJ)I
+    invoke-virtual {v12, v5, v6}, Landroidx/collection/LongSparseArray;->containsKey(J)Z
 
     move-result v10
 
-    if-ltz v10, :cond_27
-
-    const/4 v10, 0x1
-
-    goto :goto_1d
-
-    :cond_27
-    const/4 v10, 0x0
-
-    :goto_1d
-    if-eqz v10, :cond_28
+    if-eqz v10, :cond_26
 
     iget-object v10, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->codePointCache:Landroidx/collection/LongSparseArray;
 
@@ -1854,9 +1833,9 @@
 
     check-cast v5, Ljava/lang/String;
 
-    goto :goto_1f
+    goto :goto_1e
 
-    :cond_28
+    :cond_26
     iget-object v10, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->stringBuilder:Ljava/lang/StringBuilder;
 
     const/4 v12, 0x0
@@ -1865,8 +1844,8 @@
 
     move v10, v9
 
-    :goto_1e
-    if-ge v10, v11, :cond_29
+    :goto_1d
+    if-ge v10, v11, :cond_27
 
     invoke-virtual {v8, v10}, Ljava/lang/String;->codePointAt(I)I
 
@@ -1882,9 +1861,9 @@
 
     add-int/2addr v10, v12
 
-    goto :goto_1e
+    goto :goto_1d
 
-    :cond_29
+    :cond_27
     iget-object v10, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1897,7 +1876,7 @@
 
     move-object v5, v10
 
-    :goto_1f
+    :goto_1e
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -1906,7 +1885,7 @@
 
     iget-boolean v6, v2, Lcom/airbnb/lottie/model/DocumentData;->strokeOverFill:Z
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_28
 
     iget-object v6, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->fillPaint:Landroid/graphics/Paint;
 
@@ -1916,9 +1895,9 @@
 
     invoke-virtual {v0, v5, v6, v1}, Lcom/airbnb/lottie/model/layer/TextLayer;->drawCharacter(Ljava/lang/String;Landroid/graphics/Paint;Landroid/graphics/Canvas;)V
 
-    goto :goto_20
+    goto :goto_1f
 
-    :cond_2a
+    :cond_28
     iget-object v6, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v5, v6, v1}, Lcom/airbnb/lottie/model/layer/TextLayer;->drawCharacter(Ljava/lang/String;Landroid/graphics/Paint;Landroid/graphics/Canvas;)V
@@ -1927,7 +1906,7 @@
 
     invoke-virtual {v0, v5, v6, v1}, Lcom/airbnb/lottie/model/layer/TextLayer;->drawCharacter(Ljava/lang/String;Landroid/graphics/Paint;Landroid/graphics/Canvas;)V
 
-    :goto_20
+    :goto_1f
     iget-object v6, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->fillPaint:Landroid/graphics/Paint;
 
     const/4 v10, 0x1
@@ -1948,7 +1927,7 @@
 
     iget-object v10, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->trackingCallbackAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
-    if-eqz v10, :cond_2b
+    if-eqz v10, :cond_29
 
     invoke-virtual {v10}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->getValue()Ljava/lang/Object;
 
@@ -1960,12 +1939,12 @@
 
     move-result v10
 
-    goto :goto_21
+    goto :goto_20
 
-    :cond_2b
+    :cond_29
     iget-object v10, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->trackingAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
-    if-eqz v10, :cond_2c
+    if-eqz v10, :cond_2a
 
     invoke-virtual {v10}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->getValue()Ljava/lang/Object;
 
@@ -1977,10 +1956,10 @@
 
     move-result v10
 
-    :goto_21
+    :goto_20
     add-float/2addr v6, v10
 
-    :cond_2c
+    :cond_2a
     mul-float/2addr v6, v4
 
     add-float/2addr v6, v5
@@ -1995,7 +1974,7 @@
 
     goto/16 :goto_18
 
-    :cond_2d
+    :cond_2b
     move v13, v5
 
     move/from16 p3, v6
@@ -2006,13 +1985,13 @@
 
     goto/16 :goto_17
 
-    :cond_2e
-    :goto_22
+    :cond_2c
+    :goto_21
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 
-    :cond_2f
+    :cond_2d
     throw v8
 .end method
 

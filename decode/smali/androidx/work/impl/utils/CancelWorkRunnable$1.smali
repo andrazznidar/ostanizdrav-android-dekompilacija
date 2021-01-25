@@ -1,4 +1,4 @@
-.class public final Landroidx/work/impl/utils/CancelWorkRunnable$1;
+.class public Landroidx/work/impl/utils/CancelWorkRunnable$1;
 .super Landroidx/work/impl/utils/CancelWorkRunnable;
 .source "CancelWorkRunnable.java"
 

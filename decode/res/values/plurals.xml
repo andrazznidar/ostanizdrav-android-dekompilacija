@@ -5,36 +5,52 @@
         <item quantity="one">%d new notification</item>
     </plurals>
     <plurals name="risk_card_body_contact_value">
-        <item quantity="other">%1$s exposures with low risk</item>
-        <item quantity="zero">No exposure with low risk so far</item>
-        <item quantity="one">%1$s exposure with low risk</item>
-        <item quantity="two">%1$s exposures with low risk</item>
-        <item quantity="few">%1$s exposures with low risk</item>
-        <item quantity="many">%1$s exposures with low risk</item>
+        <item quantity="other"></item>
+        <item quantity="zero"></item>
+        <item quantity="one"></item>
+        <item quantity="two"></item>
+        <item quantity="few"></item>
+        <item quantity="many"></item>
     </plurals>
     <plurals name="risk_card_body_contact_value_high_risk">
-        <item quantity="other">%1$s exposures</item>
-        <item quantity="zero">No exposure up to now</item>
-        <item quantity="one">%1$s exposure</item>
-        <item quantity="two">%1$s exposures</item>
-        <item quantity="few">%1$s exposures</item>
-        <item quantity="many">%1$s exposures</item>
+        <item quantity="other"></item>
+        <item quantity="zero"></item>
+        <item quantity="one"></item>
+        <item quantity="two"></item>
+        <item quantity="few"></item>
+        <item quantity="many"></item>
+    </plurals>
+    <plurals name="risk_card_high_risk_encounter_days_body">
+        <item quantity="other">Exposures on %1$d days</item>
+        <item quantity="zero">Exposures on %1$d days</item>
+        <item quantity="one">Exposures on one day</item>
+        <item quantity="two">Exposures on %1$d days</item>
+        <item quantity="few">Exposures on %1$d days</item>
+        <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_card_increased_risk_body_contact_last">
-        <item quantity="other">%1$s days since the last encounter</item>
-        <item quantity="zero">%1$s days since the last encounter</item>
-        <item quantity="one">%1$s day since the last encounter</item>
-        <item quantity="two">%1$s days since the last encounter</item>
-        <item quantity="few">%1$s days since the last encounter</item>
-        <item quantity="many">%1$s days since the last encounter</item>
+        <item quantity="other"></item>
+        <item quantity="zero"></item>
+        <item quantity="one"></item>
+        <item quantity="two"></item>
+        <item quantity="few"></item>
+        <item quantity="many"></item>
+    </plurals>
+    <plurals name="risk_card_low_risk_encounter_days_body">
+        <item quantity="other">Exposures on %1$d days</item>
+        <item quantity="zero">Exposures on %1$d days</item>
+        <item quantity="one">Exposures on one day</item>
+        <item quantity="two">Exposures on %1$d days</item>
+        <item quantity="few">Exposures on %1$d days</item>
+        <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_details_information_body_increased_risk">
-        <item quantity="other">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
-        <item quantity="zero">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
-        <item quantity="one">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
-        <item quantity="two">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
-        <item quantity="few">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
-        <item quantity="many">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with COVID-19.</item>
+        <item quantity="other">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s days ago.</item>
+        <item quantity="zero">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s days ago.</item>
+        <item quantity="one">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s day ago.</item>
+        <item quantity="two">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s days ago.</item>
+        <item quantity="few">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s days ago.</item>
+        <item quantity="many">You have an increased risk of infection because you were exposed over a longer period of time and at close proximity to at least one person confirmed with a SARS-CoV-2 infection. Most recently %1$s days ago.</item>
     </plurals>
     <plurals name="settings_tracing_status_body_active">
         <item quantity="other">"Exposure logging has been active for %1$s days.

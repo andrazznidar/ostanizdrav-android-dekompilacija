@@ -157,7 +157,7 @@
     goto :goto_2
 
     :cond_0
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v15
 
@@ -367,7 +367,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v7
 
@@ -378,7 +378,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v8
 
@@ -389,7 +389,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static/range {p0 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    invoke-static/range {p0 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v6
 

@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c5
+    const v1, 0x7f090164
 
     const/4 v2, 0x6
 
@@ -76,9 +76,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c0051
-        0x7f0c006e
-        0x7f0c007f
+        0x7f0c0077
+        0x7f0c009d
+        0x7f0c00ab
     .end array-data
 .end method
 
@@ -135,7 +135,7 @@
 
     check-cast v10, Landroid/widget/ProgressBar;
 
-    const/4 v5, 0x2
+    const/4 v5, 0x1
 
     move-object v2, p0
 
@@ -201,7 +201,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 10
+    .locals 12
 
     monitor-enter p0
 
@@ -216,134 +216,121 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->mSubmissionViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;
+    const/4 v4, 0x0
 
-    const-wide/16 v5, 0xd
+    const-wide/16 v5, 0x6
 
+    and-long v7, v0, v5
+
+    cmp-long v7, v7, v2
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    if-eqz v7, :cond_2
+
+    if-eqz v7, :cond_0
+
+    const-wide/16 v10, 0x8
+
+    or-long/2addr v0, v10
+
+    :cond_0
+    and-long v10, v0, v5
+
+    cmp-long v7, v10, v2
+
+    if-eqz v7, :cond_1
+
+    const-wide/16 v10, 0x40
+
+    or-long/2addr v0, v10
+
+    :cond_1
+    move v7, v8
+
+    goto :goto_0
+
+    :cond_2
+    move v7, v9
+
+    :goto_0
+    const-wide/16 v10, 0x20
+
+    and-long/2addr v10, v0
+
+    cmp-long v10, v10, v2
+
+    if-eqz v10, :cond_3
+
+    move v10, v8
+
+    goto :goto_1
+
+    :cond_3
+    move v10, v9
+
+    :goto_1
     and-long/2addr v5, v0
 
     cmp-long v5, v5, v2
 
-    const/4 v6, 0x0
+    if-eqz v5, :cond_5
 
-    if-eqz v5, :cond_6
-
-    const/4 v7, 0x0
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;->submissionState:Landroidx/lifecycle/LiveData;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v4, v7
-
-    :goto_0
-    invoke-virtual {p0, v6, v4}, Landroidx/databinding/ViewDataBinding;->updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    goto :goto_1
-
-    :cond_1
-    move-object v4, v7
-
-    :goto_1
-    if-eqz v4, :cond_5
-
-    sget-object v7, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->IDLE:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    const/4 v8, 0x1
-
-    if-eq v4, v7, :cond_3
-
-    sget-object v7, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->FAILED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    if-ne v4, v7, :cond_2
+    if-eqz v7, :cond_4
 
     goto :goto_2
 
-    :cond_2
-    move v7, v6
-
-    goto :goto_3
-
-    :cond_3
-    :goto_2
-    move v7, v8
-
-    :goto_3
-    sget-object v9, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->STARTED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    if-ne v4, v9, :cond_4
-
-    move v6, v8
-
     :cond_4
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibility(Z)I
+    move v8, v10
 
-    move-result v6
-
-    move v4, v6
-
-    move v6, v7
-
-    goto :goto_4
+    goto :goto_2
 
     :cond_5
-    const-string v0, "apiRequestState"
+    move v8, v9
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    :goto_2
+    if-eqz v5, :cond_6
 
-    throw v7
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;
+
+    invoke-virtual {v5, v4}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->setCountryData(Ljava/util/List;)V
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningButtonNext:Landroid/widget/Button;
+
+    invoke-virtual {v4, v9}, Landroid/widget/Button;->setEnabled(Z)V
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningSpinner:Landroid/widget/ProgressBar;
+
+    invoke-static {v4, v8}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
 
     :cond_6
-    move v4, v6
-
-    :goto_4
-    if-eqz v5, :cond_7
-
-    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningButtonNext:Landroid/widget/Button;
-
-    invoke-virtual {v5, v6}, Landroid/widget/Button;->setEnabled(Z)V
-
-    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningSpinner:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v5, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    :cond_7
-    const-wide/16 v4, 0x8
+    const-wide/16 v4, 0x4
 
     and-long/2addr v0, v4
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080089
+    const v2, 0x7f080094
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f1201f8
+    const v2, 0x7f1202b5
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
-    :cond_8
+    :cond_7
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -447,7 +434,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x8
+    const-wide/16 v0, 0x4
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
@@ -484,15 +471,11 @@
 .end method
 
 .method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_2
-
-    if-eq p1, v1, :cond_0
+    if-eqz p1, :cond_0
 
     return v0
 
@@ -506,15 +489,15 @@
     :try_start_0
     iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v2, 0x2
+    const-wide/16 v0, 0x1
 
-    or-long/2addr p1, v2
+    or-long/2addr p1, v0
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
 
-    move v0, v1
+    const/4 v0, 0x1
 
     goto :goto_0
 
@@ -529,41 +512,6 @@
 
     :cond_1
     :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
     return v0
 .end method
 
@@ -585,43 +533,4 @@
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     return-void
-.end method
-
-.method public setSubmissionViewModel(Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;)V
-    .locals 4
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBinding;->mSubmissionViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SubmissionViewModel;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0x1c
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
 .end method

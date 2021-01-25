@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHeaders.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Headers.kt\nokhttp3/Headers$Companion\n*L\n1#1,441:1\n*E\n"
+    value = "SMAP\nHeaders.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Headers.kt\nokhttp3/Headers$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,441:1\n1#2:442\n*E\n"
 .end annotation
 
 
@@ -245,33 +245,33 @@
 .end method
 
 .method public final varargs of([Ljava/lang/String;)Lokhttp3/Headers;
-    .locals 7
+    .locals 6
 
-    const/4 v0, 0x0
+    const-string v0, "namesAndValues"
 
-    if-eqz p1, :cond_9
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    array-length v1, p1
+    array-length v0, p1
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    rem-int/2addr v1, v2
+    rem-int/2addr v0, v1
+
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    if-nez v0, :cond_0
 
-    if-nez v1, :cond_0
-
-    move v1, v4
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    move v1, v3
+    move v0, v3
 
     :goto_0
-    if-eqz v1, :cond_8
+    if-eqz v0, :cond_8
 
     invoke-virtual {p1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -281,51 +281,51 @@
 
     check-cast p1, [Ljava/lang/String;
 
-    array-length v1, p1
+    array-length v0, p1
 
-    move v5, v3
+    move v4, v3
 
     :goto_1
-    if-ge v5, v1, :cond_4
+    if-ge v4, v0, :cond_4
 
-    aget-object v6, p1, v5
+    aget-object v5, p1, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
-    move v6, v4
+    move v5, v2
 
     goto :goto_2
 
     :cond_1
-    move v6, v3
+    move v5, v3
 
     :goto_2
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
-    aget-object v6, p1, v5
+    aget-object v5, p1, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
-    invoke-static {v6}, Lkotlin/text/StringsKt__IndentKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v5}, Lkotlin/text/StringsKt__IndentKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, p1, v5
+    aput-object v5, p1, v4
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
     :cond_2
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type kotlin.CharSequence"
 
-    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -343,61 +343,63 @@
     throw p1
 
     :cond_4
-    array-length v1, p1
+    array-length v0, p1
 
-    invoke-static {v3, v1}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
+    invoke-static {v3, v0}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, v2}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
+    invoke-static {v0, v1}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget v2, v1, Lkotlin/ranges/IntProgression;->first:I
+    iget v1, v0, Lkotlin/ranges/IntProgression;->first:I
 
-    iget v3, v1, Lkotlin/ranges/IntProgression;->last:I
+    iget v2, v0, Lkotlin/ranges/IntProgression;->last:I
 
-    iget v1, v1, Lkotlin/ranges/IntProgression;->step:I
+    iget v0, v0, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz v1, :cond_5
+    if-ltz v0, :cond_5
 
-    if-gt v2, v3, :cond_6
+    if-gt v1, v2, :cond_6
 
     goto :goto_3
 
     :cond_5
-    if-lt v2, v3, :cond_6
+    if-lt v1, v2, :cond_6
 
     :goto_3
-    aget-object v4, p1, v2
+    aget-object v3, p1, v1
 
-    add-int/lit8 v5, v2, 0x1
+    add-int/lit8 v4, v1, 0x1
 
-    aget-object v5, p1, v5
+    aget-object v4, p1, v4
 
-    invoke-virtual {p0, v4}, Lokhttp3/Headers$Companion;->checkName(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lokhttp3/Headers$Companion;->checkName(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v5, v4}, Lokhttp3/Headers$Companion;->checkValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v4, v3}, Lokhttp3/Headers$Companion;->checkValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eq v2, v3, :cond_6
+    if-eq v1, v2, :cond_6
 
-    add-int/2addr v2, v1
+    add-int/2addr v1, v0
 
     goto :goto_3
 
     :cond_6
-    new-instance v1, Lokhttp3/Headers;
+    new-instance v0, Lokhttp3/Headers;
 
-    invoke-direct {v1, p1, v0}, Lokhttp3/Headers;-><init>([Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/4 v1, 0x0
 
-    return-object v1
+    invoke-direct {v0, p1, v1}, Lokhttp3/Headers;-><init>([Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-object v0
 
     :cond_7
-    new-instance p1, Lkotlin/TypeCastException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
-    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -413,11 +415,4 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_9
-    const-string p1, "namesAndValues"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    throw v0
 .end method

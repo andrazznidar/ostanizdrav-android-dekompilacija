@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 10
+    .locals 9
 
     monitor-enter p0
 
@@ -76,49 +76,34 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->mIconDescription:Ljava/lang/String;
 
-    const/4 v5, 0x0
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->mIcon:Landroid/graphics/drawable/Drawable;
+    const-wide/16 v6, 0x5
 
-    const-wide/16 v7, 0x5
+    and-long/2addr v6, v0
 
-    and-long/2addr v7, v0
+    cmp-long v6, v6, v2
 
-    cmp-long v7, v7, v2
+    const-wide/16 v7, 0x6
 
-    if-eqz v7, :cond_0
-
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->formatButton(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    :cond_0
-    const-wide/16 v8, 0x6
-
-    and-long/2addr v0, v8
+    and-long/2addr v0, v7
 
     cmp-long v0, v0, v2
 
-    if-eqz v7, :cond_1
-
-    sget v1, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/4 v2, 0x4
-
-    if-lt v1, v2, :cond_1
+    if-eqz v6, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
 
-    :cond_1
-    if-eqz v0, :cond_2
+    :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;->mboundView1:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_2
+    :cond_1
     return-void
 
     :catchall_0
@@ -226,7 +211,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xd
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -265,7 +250,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0xe
+    const/16 p1, 0x19
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

@@ -73,6 +73,30 @@
 
 
 # virtual methods
+.method public isRunInForeground()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/work/impl/workers/ConstraintTrackingWorker;->mDelegate:Landroidx/work/ListenableWorker;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroidx/work/ListenableWorker;->isRunInForeground()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public onAllConstraintsMet(Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

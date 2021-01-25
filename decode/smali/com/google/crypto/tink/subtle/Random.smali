@@ -30,6 +30,14 @@
 
 .method public static randBytes(I)[B
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "size"
+        }
+    .end annotation
 
     new-array p0, p0, [B
 

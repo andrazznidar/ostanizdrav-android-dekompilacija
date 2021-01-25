@@ -52,7 +52,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p3, p4}, Lkotlin/collections/MapsKt___MapsKt;->safeToInt(J)I
+    invoke-static {p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
 
     move-result p3
 
@@ -73,6 +73,87 @@
     move-result p1
 
     return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 4
+
+    cmp-long v0, p1, p3
+
+    if-gez v0, :cond_0
+
+    invoke-virtual {p0, p3, p4, p1, p2}, Lorg/joda/time/field/BaseDateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+
+    move-result p1
+
+    neg-int p1, p1
+
+    int-to-long p1, p1
+
+    return-wide p1
+
+    :cond_0
+    iget-object v0, p0, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v0, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getWeekyear(J)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v1, p3, p4}, Lorg/joda/time/chrono/BasicChronology;->getWeekyear(J)I
+
+    move-result v1
+
+    invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->roundFloor(J)J
+
+    move-result-wide v2
+
+    sub-long/2addr p1, v2
+
+    invoke-virtual {p0, p3, p4}, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->roundFloor(J)J
+
+    move-result-wide v2
+
+    sub-long/2addr p3, v2
+
+    const-wide v2, 0x7528ad000L
+
+    cmp-long v2, p3, v2
+
+    if-ltz v2, :cond_1
+
+    iget-object v2, p0, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
+
+    invoke-virtual {v2, v0}, Lorg/joda/time/chrono/BasicChronology;->getWeeksInYear(I)I
+
+    move-result v2
+
+    const/16 v3, 0x34
+
+    if-gt v2, v3, :cond_1
+
+    const-wide/32 v2, 0x240c8400
+
+    sub-long/2addr p3, v2
+
+    :cond_1
+    sub-int/2addr v0, v1
+
+    cmp-long p1, p1, p3
+
+    if-gez p1, :cond_2
+
+    add-int/lit8 v0, v0, -0x1
+
+    :cond_2
+    int-to-long p1, v0
+
+    return-wide p1
 .end method
 
 .method public getLeapDurationField()Lorg/joda/time/DurationField;
@@ -219,7 +300,7 @@
 
     move-result v2
 
-    invoke-static {p0, v0, v1, v2}, Lkotlin/collections/MapsKt___MapsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, v0, v1, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicWeekyearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

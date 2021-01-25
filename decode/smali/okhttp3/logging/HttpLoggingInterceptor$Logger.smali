@@ -14,24 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final DEFAULT:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lokhttp3/logging/HttpLoggingInterceptor$Logger$Companion$DEFAULT$1;
-
-    invoke-direct {v0}, Lokhttp3/logging/HttpLoggingInterceptor$Logger$Companion$DEFAULT$1;-><init>()V
-
-    sput-object v0, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->DEFAULT:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public abstract log(Ljava/lang/String;)V
 .end method

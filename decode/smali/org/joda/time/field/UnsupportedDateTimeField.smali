@@ -215,6 +215,30 @@
     throw p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/UnsupportedDateTimeField;->iDurationField:Lorg/joda/time/DurationField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/UnsupportedDateTimeField;->iDurationField:Lorg/joda/time/DurationField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 
@@ -261,6 +285,26 @@
     throw p1
 .end method
 
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDateTimeField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
+.end method
+
+.method public getMaximumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDateTimeField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
+.end method
+
 .method public getMinimumValue()I
     .locals 1
 
@@ -269,6 +313,26 @@
     move-result-object v0
 
     throw v0
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;)I
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDateTimeField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
+.end method
+
+.method public getMinimumValue(Lorg/joda/time/ReadablePartial;[I)I
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/joda/time/field/UnsupportedDateTimeField;->unsupported()Ljava/lang/UnsupportedOperationException;
+
+    move-result-object p1
+
+    throw p1
 .end method
 
 .method public getName()Ljava/lang/String;

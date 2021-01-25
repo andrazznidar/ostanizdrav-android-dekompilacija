@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090136
+    const v1, 0x7f0901ea
 
     const/4 v2, 0x3
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c8
+    const v1, 0x7f090167
 
     const/4 v2, 0x4
 
@@ -164,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/Preconditions;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v4
 
@@ -294,7 +294,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -333,7 +333,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1d
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

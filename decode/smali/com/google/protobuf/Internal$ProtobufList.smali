@@ -28,3 +28,15 @@
         "Ljava/util/RandomAccess;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$ProtobufList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Lcom/google/protobuf/Internal$ProtobufList<",
+            "TE;>;"
+        }
+    .end annotation
+.end method

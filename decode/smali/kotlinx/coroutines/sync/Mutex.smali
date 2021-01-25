@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract isLocked()Z
-.end method
-
 .method public abstract lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

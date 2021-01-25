@@ -51,7 +51,7 @@
     move-result-object v0
 
     :try_start_0
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->await(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->await(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
 
     move-result-object v0
 

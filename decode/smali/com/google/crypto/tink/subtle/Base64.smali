@@ -34,6 +34,16 @@
 
 .method public static decode(Ljava/lang/String;I)[B
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "str",
+            "flags"
+        }
+    .end annotation
 
     sget-object v0, Lcom/google/crypto/tink/subtle/Base64;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -423,6 +433,14 @@
 
 .method public static encode([B)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "input"
+        }
+    .end annotation
 
     :try_start_0
     new-instance v0, Ljava/lang/String;
@@ -453,6 +471,16 @@
 
 .method public static encode([BI)[B
     .locals 17
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "input",
+            "flags"
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 

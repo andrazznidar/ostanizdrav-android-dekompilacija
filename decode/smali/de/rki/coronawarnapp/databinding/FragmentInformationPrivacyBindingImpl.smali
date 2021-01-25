@@ -47,7 +47,7 @@
 
     new-array v6, v2, [I
 
-    const v7, 0x7f0c0051
+    const v7, 0x7f0c0077
 
     aput v7, v6, v4
 
@@ -79,7 +79,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentInformationPrivacyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c9
+    const v1, 0x7f090168
 
     const/4 v2, 0x5
 
@@ -97,8 +97,8 @@
 
     :array_1
     .array-data 4
-        0x7f0c0052
-        0x7f0c007f
+        0x7f0c0078
+        0x7f0c00ab
     .end array-data
 .end method
 
@@ -229,17 +229,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080089
+    const v2, 0x7f080094
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationPrivacyBinding;->informationPrivacyHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120073
+    const v2, 0x7f1200cc
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationPrivacyBinding;->informationPrivacyHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -249,7 +249,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080090
+    const v2, 0x7f0800cc
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -265,7 +265,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120072
+    const v2, 0x7f1200cb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -281,13 +281,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f120071
+    const v2, 0x7f1200ca
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->formatStringAsHTMLFromLocal(Ljava/lang/String;)Landroid/text/Spanned;
+    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->formatStringAsHTMLFromLocal(Ljava/lang/String;)Landroid/text/Spanned;
 
     move-result-object v1
 

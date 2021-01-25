@@ -6,6 +6,17 @@
 .implements Landroidx/lifecycle/ViewModelProvider$Factory;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/lifecycle/ViewModelProvider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x409
+    name = "KeyedFactory"
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0

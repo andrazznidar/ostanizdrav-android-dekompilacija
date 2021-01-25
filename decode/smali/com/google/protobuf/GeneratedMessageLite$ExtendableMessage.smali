@@ -96,6 +96,16 @@
     return-void
 .end method
 
+.method public bridge synthetic newBuilderForType()Lcom/google/protobuf/MessageLite$Builder;
+    .locals 1
+
+    invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite;->newBuilderForType()Lcom/google/protobuf/GeneratedMessageLite$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public bridge synthetic toBuilder()Lcom/google/protobuf/MessageLite$Builder;
     .locals 1
 

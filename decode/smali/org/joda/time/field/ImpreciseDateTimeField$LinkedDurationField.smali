@@ -55,6 +55,34 @@
     return-wide p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/ImpreciseDateTimeField$LinkedDurationField;->this$0:Lorg/joda/time/field/ImpreciseDateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/field/BaseDateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getDifferenceAsLong(JJ)J
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/field/ImpreciseDateTimeField$LinkedDurationField;->this$0:Lorg/joda/time/field/ImpreciseDateTimeField;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/joda/time/field/BaseDateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getUnitMillis()J
     .locals 2
 

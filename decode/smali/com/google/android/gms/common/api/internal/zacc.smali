@@ -79,7 +79,7 @@
 
     const-string p1, "ClientSettings must not be null"
 
-    invoke-static {p3, p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p3, p0, Lcom/google/android/gms/common/api/internal/zacc;->zaf:Lcom/google/android/gms/common/internal/ClientSettings;
 

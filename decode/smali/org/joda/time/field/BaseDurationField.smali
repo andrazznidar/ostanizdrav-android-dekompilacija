@@ -69,6 +69,20 @@
     return p1
 .end method
 
+.method public getDifference(JJ)I
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lorg/joda/time/DurationField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final getType()Lorg/joda/time/DurationFieldType;
     .locals 1
 
@@ -90,7 +104,7 @@
 
     const-string v0, "DurationField["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

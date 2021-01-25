@@ -7,18 +7,18 @@
 
 
 # instance fields
-.field public final synthetic zza:Lcom/google/android/gms/tasks/zzu;
+.field public final synthetic zza:Lcom/google/android/gms/tasks/Task;
 
 .field public final synthetic zzb:Lcom/google/android/gms/tasks/zzm;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tasks/zzm;Lcom/google/android/gms/tasks/zzu;)V
+.method public constructor <init>(Lcom/google/android/gms/tasks/zzm;Lcom/google/android/gms/tasks/Task;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/gms/tasks/zzn;->zzb:Lcom/google/android/gms/tasks/zzm;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzn;->zza:Lcom/google/android/gms/tasks/zzu;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzn;->zza:Lcom/google/android/gms/tasks/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,9 +47,9 @@
 
     iget-object v1, v1, Lcom/google/android/gms/tasks/zzm;->zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
 
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzn;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzn;->zza:Lcom/google/android/gms/tasks/Task;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/tasks/zzu;->getResult()Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
 
     move-result-object v2
 

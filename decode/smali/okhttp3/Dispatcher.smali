@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Dispatcher.kt\nokhttp3/Dispatcher\n+ 2 Util.kt\nokhttp3/internal/Util\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,241:1\n606#2,4:242\n1360#3:246\n1429#3,3:247\n1360#3:250\n1429#3,3:251\n*E\n*S KotlinDebug\n*F\n+ 1 Dispatcher.kt\nokhttp3/Dispatcher\n*L\n162#1,4:242\n222#1:246\n222#1,3:247\n227#1:250\n227#1,3:251\n*E\n"
+    value = "SMAP\nDispatcher.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Dispatcher.kt\nokhttp3/Dispatcher\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Util.kt\nokhttp3/internal/Util\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,241:1\n1#2:242\n603#3,4:243\n1497#4:247\n1568#4,3:248\n1497#4:251\n1568#4,3:252\n*E\n*S KotlinDebug\n*F\n+ 1 Dispatcher.kt\nokhttp3/Dispatcher\n*L\n162#1,4:243\n222#1:247\n222#1,3:248\n227#1:251\n227#1,3:252\n*E\n"
 .end annotation
 
 
@@ -87,6 +87,10 @@
 .method public final finished$okhttp(Lokhttp3/internal/connection/RealCall$AsyncCall;)V
     .locals 1
 
+    const-string v0, "call"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object v0, p1, Lokhttp3/internal/connection/RealCall$AsyncCall;->callsPerHost:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
@@ -150,7 +154,7 @@
 
     const-string v1, "Thread "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -160,7 +164,7 @@
 
     const-string v3, "Thread.currentThread()"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -199,7 +203,7 @@
 
     const-string v2, "readyAsyncCalls.iterator()"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -248,7 +252,7 @@
 
     const-string v3, "asyncCall"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -307,7 +311,7 @@
     move v4, v2
 
     :goto_4
-    if-ge v4, v3, :cond_b
+    if-ge v4, v3, :cond_a
 
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -320,7 +324,7 @@
     :try_start_3
     iget-object v6, p0, Lokhttp3/Dispatcher;->executorServiceOrNull:Ljava/util/concurrent/ExecutorService;
 
-    if-nez v6, :cond_7
+    if-nez v6, :cond_6
 
     new-instance v6, Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -352,7 +356,9 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_6
+    const-string v14, "name"
+
+    invoke-static {v7, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v14, Lokhttp3/internal/Util$threadFactory$1;
 
@@ -364,29 +370,20 @@
 
     iput-object v6, p0, Lokhttp3/Dispatcher;->executorServiceOrNull:Ljava/util/concurrent/ExecutorService;
 
-    goto :goto_5
-
     :cond_6
-    const-string v0, "name"
+    iget-object v6, p0, Lokhttp3/Dispatcher;->executorServiceOrNull:Ljava/util/concurrent/ExecutorService;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_7
-    :goto_5
-    :try_start_4
-    iget-object v6, p0, Lokhttp3/Dispatcher;->executorServiceOrNull:Ljava/util/concurrent/ExecutorService;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    if-eqz v6, :cond_a
-
     monitor-exit p0
+
+    if-eqz v5, :cond_9
+
+    const-string v7, "executorService"
+
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v7, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
 
@@ -396,22 +393,22 @@
 
     sget-boolean v8, Lokhttp3/internal/Util;->assertionsEnabled:Z
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_8
 
     invoke-static {v7}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-nez v8, :cond_8
+    if-nez v8, :cond_7
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_8
+    :cond_7
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Thread "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -421,7 +418,7 @@
 
     const-string v3, "Thread.currentThread()"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -443,25 +440,25 @@
 
     throw v0
 
-    :cond_9
-    :goto_6
-    :try_start_5
+    :cond_8
+    :goto_5
+    :try_start_4
     invoke-interface {v6, v5}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
-    :try_end_5
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_5 .. :try_end_5} :catch_0
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    goto :goto_7
+    goto :goto_6
 
     :catchall_0
     move-exception v0
 
-    goto :goto_8
+    goto :goto_7
 
     :catch_0
     move-exception v6
 
-    :try_start_6
+    :try_start_5
     new-instance v7, Ljava/io/InterruptedIOException;
 
     const-string v8, "executor rejected"
@@ -477,15 +474,15 @@
     iget-object v6, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->responseCallback:Lokhttp3/Callback;
 
     iget-object v8, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     check-cast v6, Lretrofit2/OkHttpCall$1;
 
-    :try_start_7
+    :try_start_6
     invoke-virtual {v6, v8, v7}, Lretrofit2/OkHttpCall$1;->onFailure(Lokhttp3/Call;Ljava/io/IOException;)V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     iget-object v6, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
 
@@ -495,12 +492,12 @@
 
     invoke-virtual {v6, v5}, Lokhttp3/Dispatcher;->finished$okhttp(Lokhttp3/internal/connection/RealCall$AsyncCall;)V
 
-    :goto_7
+    :goto_6
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_4
 
-    :goto_8
+    :goto_7
     iget-object v1, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
 
     iget-object v1, v1, Lokhttp3/internal/connection/RealCall;->client:Lokhttp3/OkHttpClient;
@@ -511,12 +508,7 @@
 
     throw v0
 
-    :cond_a
-    :try_start_8
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-
+    :cond_9
     const/4 v0, 0x0
 
     throw v0
@@ -528,18 +520,18 @@
 
     throw v0
 
-    :cond_b
+    :cond_a
     return v1
 
     :catchall_2
     move-exception v0
 
-    :try_start_9
+    :try_start_7
     monitor-exit p0
 
     throw v0
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_3
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     :catchall_3
     move-exception v0

@@ -12,3 +12,8 @@
     accessFlags = 0x609
     name = "EnumLite"
 .end annotation
+
+
+# virtual methods
+.method public abstract getNumber()I
+.end method

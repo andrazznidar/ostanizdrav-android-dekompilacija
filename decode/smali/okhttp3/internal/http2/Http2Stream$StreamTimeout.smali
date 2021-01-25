@@ -13,10 +13,6 @@
     name = "StreamTimeout"
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttp2Stream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Http2Stream.kt\nokhttp3/internal/http2/Http2Stream$StreamTimeout\n*L\n1#1,690:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic this$0:Lokhttp3/internal/http2/Http2Stream;

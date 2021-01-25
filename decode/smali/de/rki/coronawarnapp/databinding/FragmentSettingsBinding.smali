@@ -4,9 +4,11 @@
 
 
 # instance fields
-.field public mSettingsViewModel:Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;
+.field public mBackgroundState:Lde/rki/coronawarnapp/ui/settings/start/SettingsBackgroundState;
 
-.field public mTracingViewModel:Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;
+.field public mNotificationState:Lde/rki/coronawarnapp/ui/settings/start/SettingsNotificationState;
+
+.field public mTracingState:Lde/rki/coronawarnapp/ui/settings/start/SettingsTracingState;
 
 .field public final settingsBackgroundPriority:Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;
 
@@ -62,18 +64,14 @@
     return-void
 .end method
 
-.method public static inflate(Landroid/view/LayoutInflater;)Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;
-    .locals 4
+.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;
+    .locals 2
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c003f
+    const v1, 0x7f0c0051
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {p0, v1, v2, v3, v0}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 
@@ -84,8 +82,11 @@
 
 
 # virtual methods
-.method public abstract setSettingsViewModel(Lde/rki/coronawarnapp/ui/viewmodel/SettingsViewModel;)V
+.method public abstract setBackgroundState(Lde/rki/coronawarnapp/ui/settings/start/SettingsBackgroundState;)V
 .end method
 
-.method public abstract setTracingViewModel(Lde/rki/coronawarnapp/ui/viewmodel/TracingViewModel;)V
+.method public abstract setNotificationState(Lde/rki/coronawarnapp/ui/settings/start/SettingsNotificationState;)V
+.end method
+
+.method public abstract setTracingState(Lde/rki/coronawarnapp/ui/settings/start/SettingsTracingState;)V
 .end method

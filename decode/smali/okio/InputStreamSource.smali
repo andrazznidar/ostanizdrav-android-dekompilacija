@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nJvmOkio.kt\nKotlin\n*S Kotlin\n*F\n+ 1 JvmOkio.kt\nokio/InputStreamSource\n+ 2 -Util.kt\nokio/-Util\n*L\n1#1,199:1\n75#2:200\n*E\n*S KotlinDebug\n*F\n+ 1 JvmOkio.kt\nokio/InputStreamSource\n*L\n89#1:200\n*E\n"
+    value = "SMAP\nJvmOkio.kt\nKotlin\n*S Kotlin\n*F\n+ 1 JvmOkio.kt\nokio/InputStreamSource\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 -Util.kt\nokio/-Util\n*L\n1#1,199:1\n1#2:200\n75#3:201\n*E\n*S KotlinDebug\n*F\n+ 1 JvmOkio.kt\nokio/InputStreamSource\n*L\n89#1:201\n*E\n"
 .end annotation
 
 
@@ -20,7 +20,15 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Lokio/Timeout;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "input"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "timeout"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,7 +54,9 @@
 .method public read(Lokio/Buffer;J)J
     .locals 3
 
-    if-eqz p1, :cond_6
+    const-string v0, "sink"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-wide/16 v0, 0x0
 
@@ -118,9 +128,7 @@
 
     iput-object p2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
-    sget-object p1, Lokio/SegmentPool;->INSTANCE:Lokio/SegmentPool;
-
-    invoke-virtual {p1, v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     :cond_2
     const-wide/16 p1, -0x1
@@ -149,7 +157,7 @@
     :catch_0
     move-exception p1
 
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
+    invoke-static {p1}, Lokio/Okio__JvmOkioKt;->isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
 
     move-result p2
 
@@ -167,7 +175,7 @@
     :cond_5
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -180,15 +188,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_6
-    const-string p1, "sink"
-
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public timeout()Lokio/Timeout;
@@ -204,7 +203,7 @@
 
     const-string v0, "source("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

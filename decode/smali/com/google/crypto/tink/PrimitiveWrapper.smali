@@ -26,6 +26,15 @@
 .end method
 
 .method public abstract wrap(Lcom/google/crypto/tink/PrimitiveSet;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "set"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

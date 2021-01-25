@@ -3,12 +3,6 @@
 .source "ExposureSummaryEntity.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExposureSummaryEntity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureSummaryEntity.kt\nde/rki/coronawarnapp/storage/ExposureSummaryEntity\n*L\n1#1,26:1\n*E\n"
-.end annotation
-
-
 # instance fields
 .field public attenuationDurationsInMinutes:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -21,6 +15,8 @@
 .end field
 
 .field public daysSinceLastExposure:I
+
+.field public id:J
 
 .field public matchedKeyCount:I
 

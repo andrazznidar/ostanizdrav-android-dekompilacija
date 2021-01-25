@@ -60,9 +60,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/util/security/SecurityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/security/SecurityHelper;
 
-    sget-object v1, Lde/rki/coronawarnapp/util/security/SecurityHelper$globalEncryptedSharedPreferencesInstance$2$1;->INSTANCE:Lde/rki/coronawarnapp/util/security/SecurityHelper$globalEncryptedSharedPreferencesInstance$2$1;
+    sget-object v0, Lde/rki/coronawarnapp/util/security/SecurityHelper;->encryptedPreferencesProvider:Lkotlin/jvm/functions/Function1;
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/security/SecurityHelper;->withSecurityCatch(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    sget-object v1, Lde/rki/coronawarnapp/util/di/AppInjector;->INSTANCE:Lde/rki/coronawarnapp/util/di/AppInjector;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/di/AppInjector;->getComponent()Lde/rki/coronawarnapp/util/di/ApplicationComponent;
+
+    move-result-object v1
+
+    check-cast v0, Lde/rki/coronawarnapp/util/security/SecurityHelper$encryptedPreferencesProvider$1;
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/security/SecurityHelper$encryptedPreferencesProvider$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

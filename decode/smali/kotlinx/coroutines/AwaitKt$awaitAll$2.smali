@@ -8,7 +8,7 @@
     c = "kotlinx.coroutines.AwaitKt"
     f = "Await.kt"
     l = {
-        0x26
+        0x2b
     }
     m = "awaitAll"
 .end annotation
@@ -48,7 +48,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p1, p0}, Lkotlin/collections/MapsKt___MapsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

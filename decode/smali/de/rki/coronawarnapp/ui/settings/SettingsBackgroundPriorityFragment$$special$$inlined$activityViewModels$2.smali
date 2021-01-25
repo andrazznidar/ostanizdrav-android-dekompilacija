@@ -50,17 +50,25 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsBackgroundPriorityFragment$$special$$inlined$activityViewModels$2;->$this_activityViewModels:Landroidx/fragment/app/Fragment;
 
-    const-string v1, "requireActivity()"
-
-    const-string v2, "requireActivity().defaultViewModelProviderFactory"
-
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline4(Landroidx/fragment/app/Fragment;Ljava/lang/String;Ljava/lang/String;)Landroidx/lifecycle/ViewModelProvider$Factory;
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v0
+
+    const-string v1, "requireActivity()"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Landroidx/activity/ComponentActivity;->getDefaultViewModelProviderFactory()Landroidx/lifecycle/ViewModelProvider$Factory;
+
+    move-result-object v0
+
+    const-string v1, "requireActivity().defaultViewModelProviderFactory"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

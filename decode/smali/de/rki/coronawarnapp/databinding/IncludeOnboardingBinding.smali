@@ -10,6 +10,16 @@
 
 .field public mBodyEmphasized:Ljava/lang/String;
 
+.field public mCountryData:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/ui/Country;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public mEasyLanguageText:Ljava/lang/String;
 
 .field public mHeadline:Ljava/lang/String;
@@ -40,13 +50,17 @@
 
 .field public final onboardingIllustration:Landroid/widget/ImageView;
 
+.field public final onboardingInteroperability:Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;
+
 .field public final onboardingLocationCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+.field public final onboardingLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
 .field public final onboardingSubtitle:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Landroid/widget/TextView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Lde/rki/coronawarnapp/databinding/Include16YearsBinding;Landroid/widget/TextView;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -68,14 +82,28 @@
 
     iput-object p11, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingIllustration:Landroid/widget/ImageView;
 
-    iput-object p12, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingLocationCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+    iput-object p12, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingInteroperability:Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;
 
     if-eqz p12, :cond_1
 
     iput-object p0, p12, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    iput-object p13, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingSubtitle:Landroid/widget/TextView;
+    iput-object p13, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingLocationCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    if-eqz p13, :cond_2
+
+    iput-object p0, p13, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    iput-object p14, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+
+    if-eqz p14, :cond_3
+
+    iput-object p0, p14, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    iput-object p15, p0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;->onboardingSubtitle:Landroid/widget/TextView;
 
     return-void
 .end method
@@ -89,6 +117,17 @@
 .end method
 
 .method public abstract setBodyEmphasized(Ljava/lang/String;)V
+.end method
+
+.method public abstract setCountryData(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/ui/Country;",
+            ">;)V"
+        }
+    .end annotation
 .end method
 
 .method public abstract setEasyLanguageText(Ljava/lang/String;)V

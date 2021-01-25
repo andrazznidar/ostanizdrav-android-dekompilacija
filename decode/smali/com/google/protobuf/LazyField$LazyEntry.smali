@@ -121,6 +121,8 @@
 
     iput-object v2, v0, Lcom/google/protobuf/LazyFieldLite;->delayedBytes:Lcom/google/protobuf/ByteString;
 
+    iput-object v2, v0, Lcom/google/protobuf/LazyFieldLite;->memoizedBytes:Lcom/google/protobuf/ByteString;
+
     iput-object p1, v0, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
 
     return-object v1

@@ -555,7 +555,7 @@
 
     const/4 p2, 0x0
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     iget-boolean p3, p1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -575,7 +575,7 @@
 
     if-eqz p3, :cond_0
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     iget-boolean p2, p3, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -720,7 +720,7 @@
 .method public pause()V
     .locals 4
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
 
@@ -738,7 +738,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     iget-boolean v2, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -841,7 +841,7 @@
 .method public resume()V
     .locals 5
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
 
@@ -889,7 +889,7 @@
 
     iput-object v1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     const/4 v1, 0x1
 
@@ -1130,7 +1130,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     iget-boolean v1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -1177,7 +1177,7 @@
 
     iput-object p1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->surface:Lcom/journeyapps/barcodescanner/camera/CameraSurface;
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/Preconditions;->validateMainThread()V
+    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
 
     iget-boolean p1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 

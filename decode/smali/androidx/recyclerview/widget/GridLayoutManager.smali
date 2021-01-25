@@ -32,6 +32,50 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 1
+
+    const/4 p1, 0x1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
+
+    iput-boolean v0, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mPendingSpanCountChange:Z
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mSpanCount:I
+
+    new-instance p1, Landroid/util/SparseIntArray;
+
+    invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
+
+    iput-object p1, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mPreLayoutSpanSizeCache:Landroid/util/SparseIntArray;
+
+    new-instance p1, Landroid/util/SparseIntArray;
+
+    invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
+
+    iput-object p1, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mPreLayoutSpanIndexCache:Landroid/util/SparseIntArray;
+
+    new-instance p1, Landroidx/recyclerview/widget/GridLayoutManager$DefaultSpanSizeLookup;
+
+    invoke-direct {p1}, Landroidx/recyclerview/widget/GridLayoutManager$DefaultSpanSizeLookup;-><init>()V
+
+    iput-object p1, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mSpanSizeLookup:Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
+
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Landroidx/recyclerview/widget/GridLayoutManager;->mDecorInsets:Landroid/graphics/Rect;
+
+    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanCount(I)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;IIZ)V
     .locals 0
 
@@ -2699,7 +2743,7 @@
 
     const-string v1, "Span count should be at least 1. Provided "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

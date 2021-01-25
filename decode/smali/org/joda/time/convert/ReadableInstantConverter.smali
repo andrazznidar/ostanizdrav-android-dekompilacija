@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lorg/joda/time/convert/InstantConverter;
-.implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PartialConverter;
 
 
 # static fields
@@ -34,6 +34,25 @@
 
 
 # virtual methods
+.method public getChronology(Ljava/lang/Object;Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+    .locals 0
+
+    if-nez p2, :cond_0
+
+    check-cast p1, Lorg/joda/time/ReadableInstant;
+
+    invoke-interface {p1}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+
+    move-result-object p2
+
+    :cond_0
+    return-object p2
+.end method
+
 .method public getChronology(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
     .locals 1
 

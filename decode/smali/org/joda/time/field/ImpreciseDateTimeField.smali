@@ -40,6 +40,20 @@
 
 
 # virtual methods
+.method public getDifference(JJ)I
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lorg/joda/time/field/BaseDateTimeField;->getDifferenceAsLong(JJ)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final getDurationField()Lorg/joda/time/DurationField;
     .locals 1
 

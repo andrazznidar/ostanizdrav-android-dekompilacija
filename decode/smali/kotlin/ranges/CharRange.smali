@@ -128,7 +128,11 @@
 
     iget-char v1, p0, Lkotlin/ranges/CharProgression;->last:C
 
-    if-le v0, v1, :cond_0
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+
+    move-result v0
+
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

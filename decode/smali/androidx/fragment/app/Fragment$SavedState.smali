@@ -52,6 +52,16 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/os/Bundle;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/fragment/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .locals 0
 

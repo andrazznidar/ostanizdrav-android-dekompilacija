@@ -41,6 +41,10 @@
 
 .field public mNegativeButtonText:Ljava/lang/CharSequence;
 
+.field public mNeutralButtonListener:Landroid/content/DialogInterface$OnClickListener;
+
+.field public mNeutralButtonText:Ljava/lang/CharSequence;
+
 .field public mOnCancelListener:Landroid/content/DialogInterface$OnCancelListener;
 
 .field public mOnClickListener:Landroid/content/DialogInterface$OnClickListener;

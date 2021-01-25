@@ -18,14 +18,14 @@
     value = {
         "<T:",
         "Ljava/lang/Object;",
-        "R:",
+        "V:",
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
         "Lkotlin/reflect/KProperty<",
-        "TR;>;",
+        "TV;>;",
         "Lkotlin/jvm/functions/Function1<",
-        "TT;TR;>;"
+        "TT;TV;>;"
     }
 .end annotation
 
@@ -34,7 +34,7 @@
 .method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)TR;"
+            "(TT;)TV;"
         }
     .end annotation
 .end method
@@ -44,7 +44,7 @@
         value = {
             "()",
             "Lkotlin/reflect/KProperty1$Getter<",
-            "TT;TR;>;"
+            "TT;TV;>;"
         }
     .end annotation
 .end method

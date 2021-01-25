@@ -48,31 +48,35 @@
 
 # virtual methods
 .method public runOnce()J
-    .locals 21
+    .locals 20
 
     move-object/from16 v1, p0
 
     iget-object v13, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;->this$0:Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;
 
-    iget-boolean v8, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;->$clearPrevious$inlined:Z
+    iget-boolean v9, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;->$clearPrevious$inlined:Z
 
     iget-object v10, v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;->$settings$inlined:Lokhttp3/internal/http2/Settings;
 
-    const-string v0, "settings"
+    const/4 v0, 0x0
 
-    if-eqz v10, :cond_8
+    if-eqz v13, :cond_7
 
-    new-instance v15, Lkotlin/jvm/internal/Ref$LongRef;
+    const-string v2, "settings"
 
-    invoke-direct {v15}, Lkotlin/jvm/internal/Ref$LongRef;-><init>()V
+    invoke-static {v10, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v14, Lkotlin/jvm/internal/Ref$LongRef;
+
+    invoke-direct {v14}, Lkotlin/jvm/internal/Ref$LongRef;-><init>()V
+
+    new-instance v15, Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    invoke-direct {v15}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
     new-instance v12, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v12}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
-
-    new-instance v0, Lkotlin/jvm/internal/Ref$ObjectRef;
-
-    invoke-direct {v0}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
     iget-object v2, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
@@ -81,9 +85,9 @@
     monitor-enter v11
 
     :try_start_0
-    iget-object v9, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    iget-object v8, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    monitor-enter v9
+    monitor-enter v8
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
@@ -92,9 +96,9 @@
 
     iget-object v2, v2, Lokhttp3/internal/http2/Http2Connection;->peerSettings:Lokhttp3/internal/http2/Settings;
 
-    if-eqz v8, :cond_0
+    if-eqz v9, :cond_0
 
-    iput-object v10, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    move-object v3, v10
 
     goto :goto_0
 
@@ -107,12 +111,8 @@
 
     invoke-virtual {v3, v10}, Lokhttp3/internal/http2/Settings;->merge(Lokhttp3/internal/http2/Settings;)V
 
-    iput-object v3, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
-
     :goto_0
-    iget-object v3, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
-
-    check-cast v3, Lokhttp3/internal/http2/Settings;
+    iput-object v3, v12, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     invoke-virtual {v3}, Lokhttp3/internal/http2/Settings;->getInitialWindowSize()I
 
@@ -128,7 +128,7 @@
 
     sub-long/2addr v3, v5
 
-    iput-wide v3, v15, Lkotlin/jvm/internal/Ref$LongRef;->element:J
+    iput-wide v3, v14, Lkotlin/jvm/internal/Ref$LongRef;->element:J
 
     const-wide/16 v6, 0x0
 
@@ -172,34 +172,38 @@
     goto :goto_2
 
     :cond_2
-    new-instance v0, Lkotlin/TypeCastException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v2, "null cannot be cast to non-null type kotlin.Array<T>"
 
-    invoke-direct {v0, v2}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_3
     :goto_1
-    const/4 v2, 0x0
+    move-object v2, v0
 
     :goto_2
-    iput-object v2, v12, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iput-object v2, v15, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     iget-object v2, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    iget-object v3, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iget-object v3, v12, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v3, Lokhttp3/internal/http2/Settings;
 
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_6
+
+    const-string v0, "<set-?>"
+
+    invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object v3, v2, Lokhttp3/internal/http2/Http2Connection;->peerSettings:Lokhttp3/internal/http2/Settings;
 
-    iget-object v2, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    iget-object v0, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    iget-object v4, v2, Lokhttp3/internal/http2/Http2Connection;->settingsListenerQueue:Lokhttp3/internal/concurrent/TaskQueue;
+    iget-object v0, v0, Lokhttp3/internal/http2/Http2Connection;->settingsListenerQueue:Lokhttp3/internal/concurrent/TaskQueue;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -221,13 +225,11 @@
 
     const/16 v17, 0x1
 
-    new-instance v3, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$applyAndAckSettings$$inlined$synchronized$lambda$1;
+    new-instance v4, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$applyAndAckSettings$$inlined$synchronized$lambda$1;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    move-object v2, v3
-
-    move-object v14, v3
+    move-object v2, v4
 
     move-object/from16 v3, v16
 
@@ -243,24 +245,26 @@
 
     move-object v7, v13
 
-    move-object/from16 v16, v9
+    move-object/from16 v16, v8
 
-    move-object v9, v0
+    move-object v8, v12
 
     move-object/from16 v17, v11
 
-    move-object v11, v15
+    move-object v11, v14
 
-    move-object/from16 v20, v12
+    move-object v1, v12
+
+    move-object v12, v15
 
     :try_start_2
-    invoke-direct/range {v2 .. v12}, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$applyAndAckSettings$$inlined$synchronized$lambda$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection$ReaderRunnable;ZLkotlin/jvm/internal/Ref$ObjectRef;Lokhttp3/internal/http2/Settings;Lkotlin/jvm/internal/Ref$LongRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
+    invoke-direct/range {v2 .. v12}, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$applyAndAckSettings$$inlined$synchronized$lambda$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection$ReaderRunnable;Lkotlin/jvm/internal/Ref$ObjectRef;ZLokhttp3/internal/http2/Settings;Lkotlin/jvm/internal/Ref$LongRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
 
     move-object/from16 v2, v18
 
     const-wide/16 v3, 0x0
 
-    invoke-virtual {v2, v14, v3, v4}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    invoke-virtual {v0, v2, v3, v4}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -270,15 +274,15 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     :try_start_4
-    iget-object v2, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    iget-object v0, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    iget-object v2, v2, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
+    iget-object v0, v0, Lokhttp3/internal/http2/Http2Connection;->writer:Lokhttp3/internal/http2/Http2Writer;
 
-    iget-object v0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iget-object v1, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    check-cast v0, Lokhttp3/internal/http2/Settings;
+    check-cast v1, Lokhttp3/internal/http2/Settings;
 
-    invoke-virtual {v2, v0}, Lokhttp3/internal/http2/Http2Writer;->applyAndAckSettings(Lokhttp3/internal/http2/Settings;)V
+    invoke-virtual {v0, v1}, Lokhttp3/internal/http2/Http2Writer;->applyAndAckSettings(Lokhttp3/internal/http2/Settings;)V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
@@ -289,57 +293,55 @@
     move-exception v0
 
     :try_start_5
-    iget-object v2, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
+    iget-object v1, v13, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    sget-object v5, Lokhttp3/internal/http2/ErrorCode;->PROTOCOL_ERROR:Lokhttp3/internal/http2/ErrorCode;
+    sget-object v2, Lokhttp3/internal/http2/ErrorCode;->PROTOCOL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    invoke-virtual {v2, v5, v5, v0}, Lokhttp3/internal/http2/Http2Connection;->close$okhttp(Lokhttp3/internal/http2/ErrorCode;Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
+    invoke-virtual {v1, v2, v2, v0}, Lokhttp3/internal/http2/Http2Connection;->close$okhttp(Lokhttp3/internal/http2/ErrorCode;Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     :goto_3
     monitor-exit v17
 
-    move-object/from16 v2, v20
-
-    iget-object v0, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iget-object v0, v15, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v0, [Lokhttp3/internal/http2/Http2Stream;
 
-    if-eqz v0, :cond_6
-
     if-eqz v0, :cond_5
 
-    array-length v2, v0
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    array-length v1, v0
 
     move/from16 v5, v19
 
     :goto_4
-    if-ge v5, v2, :cond_6
+    if-ge v5, v1, :cond_5
 
-    aget-object v6, v0, v5
+    aget-object v2, v0, v5
 
-    monitor-enter v6
+    monitor-enter v2
 
     :try_start_6
-    iget-wide v7, v15, Lkotlin/jvm/internal/Ref$LongRef;->element:J
+    iget-wide v6, v14, Lkotlin/jvm/internal/Ref$LongRef;->element:J
 
-    iget-wide v9, v6, Lokhttp3/internal/http2/Http2Stream;->writeBytesMaximum:J
+    iget-wide v8, v2, Lokhttp3/internal/http2/Http2Stream;->writeBytesMaximum:J
 
-    add-long/2addr v9, v7
+    add-long/2addr v8, v6
 
-    iput-wide v9, v6, Lokhttp3/internal/http2/Http2Stream;->writeBytesMaximum:J
+    iput-wide v8, v2, Lokhttp3/internal/http2/Http2Stream;->writeBytesMaximum:J
 
-    cmp-long v7, v7, v3
+    cmp-long v6, v6, v3
 
-    if-lez v7, :cond_4
+    if-lez v6, :cond_4
 
-    invoke-virtual {v6}, Ljava/lang/Object;->notifyAll()V
+    invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     :cond_4
-    monitor-exit v6
+    monitor-exit v2
 
     add-int/lit8 v5, v5, 0x1
 
@@ -348,37 +350,24 @@
     :catchall_0
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v2
 
     throw v0
 
     :cond_5
-    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+    const-wide/16 v0, -0x1
 
-    const/4 v2, 0x0
-
-    throw v2
+    return-wide v0
 
     :cond_6
-    const-wide/16 v2, -0x1
-
-    return-wide v2
-
-    :cond_7
-    move-object/from16 v16, v9
+    move-object/from16 v16, v8
 
     move-object/from16 v17, v11
 
     :try_start_7
-    const-string v0, "<set-?>"
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
+    throw v0
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
-
-    const/4 v2, 0x0
-
-    throw v2
 
     :catchall_1
     move-exception v0
@@ -388,7 +377,7 @@
     :catchall_2
     move-exception v0
 
-    move-object/from16 v16, v9
+    move-object/from16 v16, v8
 
     move-object/from16 v17, v11
 
@@ -415,10 +404,6 @@
 
     throw v0
 
-    :cond_8
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwParameterIsNullException(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    throw v2
+    :cond_7
+    throw v0
 .end method

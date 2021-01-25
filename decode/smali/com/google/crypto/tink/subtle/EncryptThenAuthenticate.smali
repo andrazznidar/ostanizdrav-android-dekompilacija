@@ -17,6 +17,18 @@
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/subtle/IndCpaCipher;Lcom/google/crypto/tink/Mac;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x0
+        }
+        names = {
+            "cipher",
+            "mac",
+            "macLength"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,6 +45,17 @@
 # virtual methods
 .method public decrypt([B[B)[B
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "ciphertext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -114,7 +137,7 @@
 
     aput-object v2, v4, p2
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p2
 
@@ -140,6 +163,17 @@
 
 .method public encrypt([B[B)[B
     .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "plaintext",
+            "associatedData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -201,7 +235,7 @@
 
     aput-object v1, v3, v4
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object v1
 
@@ -215,7 +249,7 @@
 
     aput-object v1, v2, p2
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->concat([[B)[B
+    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
 
     move-result-object p1
 
