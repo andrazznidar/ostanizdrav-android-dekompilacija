@@ -3,7 +3,7 @@ Built-By: BundleTool
 Created-By: BundleTool
 
 Name: AndroidManifest.xml
-SHA-256-Digest: E3eYoZ8CLRs1mgm7z9siBvsBWhFEu6pN3Fr6a6t+pmc=
+SHA-256-Digest: qSHHbh4I0kYMXVOiYAoALBchrtJK7ruQTPEC4I5H+E8=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: q21I1dhoxzPNAzRfiquuPZBb1vD8ZhEXqL3+psUbknQ=
@@ -353,7 +353,7 @@ Name: build-data.properties
 SHA-256-Digest: vx9cjTIWzh7dzG7okgI0sruSok1zvJZHh6s2y4/ivck=
 
 Name: classes.dex
-SHA-256-Digest: BCDLf75iW53BNBlsQM2M+FlnSCbF1l+j8yb9mxfLoBc=
+SHA-256-Digest: iqRrBiYLd/DwTX3awgymESugMxhwKqbZaGHcPGxYUs0=
 
 Name: external/exposurenotification/diagnosis_key_batch.proto
 SHA-256-Digest: sfCS3QAa1UbmuBjgLkIvLRSaYBn2MM+6oBR1u+No08E=

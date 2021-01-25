@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: ZK/0xbHeaA6K82UcaToO7PtABwekCa07NtFRaxyXNS4=
+SHA-256-Digest-Manifest: +kTTOxN+9OxALCKxE2Mr6E4670w9/eFfwnuym56Clm4=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
-SHA-256-Digest: XCvTdXiCjTGsJDnnhf8E2UvsnK+UbBuboCPB/Hafgmc=
+SHA-256-Digest: SQDceSgWh88kSJ1MLBPEPX7ijrJNh4PsZIqTu+HWslc=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: lGNfZfenjO/ig36HyxY3o4SsvfGGgP0dK+OSY20ejcw=
@@ -354,7 +354,7 @@ Name: build-data.properties
 SHA-256-Digest: 3yioYmZ9nQ2jS/Wl8v4dYoPEtb/KLuk348806XIRk3U=
 
 Name: classes.dex
-SHA-256-Digest: 7T1exSE00C0BFaNEKeEJFwIgrvhJSv8d82A/u4JgCDk=
+SHA-256-Digest: ucNiBYUiuxYbPB6RRt2xgiOQoDdzL7HlNoHVR3chhVE=
 
 Name: external/exposurenotification/diagnosis_key_batch.proto
 SHA-256-Digest: JoLgOtmPkwegHRlRrw8LcTucE0K4YpplRwQA/Fln6vU=
