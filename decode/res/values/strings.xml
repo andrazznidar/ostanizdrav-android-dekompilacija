@@ -187,7 +187,7 @@ For calls from abroad: +386 1 478 7557"</string>
     <string name="information_contact_button_phone1">080 51 00</string>
     <string name="information_contact_headline">Phone for psychological support during the COVID-19 epidemic</string>
     <string name="information_contact_illustration_description">A man wears a headset while making a phone call.</string>
-    <string name="information_contact_phone_call_number">080 17 87</string>
+    <string name="information_contact_phone_call_number">ekc@gov.si</string>
     <string name="information_contact_phone_call_number1">080 51 00</string>
     <string name="information_contact_subtitle_phone">Single Contact Centre</string>
     <string name="information_contact_title">User support</string>
@@ -198,7 +198,7 @@ For calls from abroad: +386 1 478 7557"</string>
     <string name="information_legal_headline_publisher">Published by</string>
     <string name="information_legal_headline_taxid" />
     <string name="information_legal_illustration_description">A hand holds a smartphone displaying a large body of text on the screen. Next to the text is a section symbol representing the imprint.</string>
-    <string name="information_legal_subtitle_contact">E-mail: ekc@gov.si Phone: 080 1787; from abroad: +386 1 478 7557</string>
+    <string name="information_legal_subtitle_contact">E-mail: ekc@gov.si</string>
     <string name="information_legal_subtitle_contact_form_non_en_de" />
     <string name="information_legal_subtitle_contact_label" />
     <string name="information_legal_subtitle_contact_url" />

@@ -19,7 +19,7 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    invoke-static {}, L$$ServiceLoaderMethods;->$load1()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load2()Ljava/util/Iterator;
 
     move-result-object v0
 

@@ -3,7 +3,7 @@ Built-By: BundleTool
 Created-By: BundleTool
 
 Name: AndroidManifest.xml
-SHA-256-Digest: qSHHbh4I0kYMXVOiYAoALBchrtJK7ruQTPEC4I5H+E8=
+SHA-256-Digest: NQ+b4oLV9/FuOfRkW3e4IyxYzv9IeOtFFHPYUjcnJYo=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: q21I1dhoxzPNAzRfiquuPZBb1vD8ZhEXqL3+psUbknQ=
@@ -344,16 +344,16 @@ Name: assets/technical_sl.html
 SHA-256-Digest: xuRd5wKFWPEo9/UHgP7IxLqs5y/RrxFLBY+IiabDQDI=
 
 Name: assets/terms_en.html
-SHA-256-Digest: dYrDcMx03iKhFsYniyDgxGo0anBvTnsgBw6FJLLHhN8=
+SHA-256-Digest: VtRbPB1wK1El0qtgCGdf5J+eaK7tp2o4dw9hUvzG/Ps=
 
 Name: assets/terms_sl.html
-SHA-256-Digest: HiodsBfcjFwBWV3RQpLCuygwNjwNSyaGeNDpPe1iPEo=
+SHA-256-Digest: Yr/xQATghko4gCHAYN8mIIMZmgCjtI2iierI7QL1Pl4=
 
 Name: build-data.properties
 SHA-256-Digest: vx9cjTIWzh7dzG7okgI0sruSok1zvJZHh6s2y4/ivck=
 
 Name: classes.dex
-SHA-256-Digest: iqRrBiYLd/DwTX3awgymESugMxhwKqbZaGHcPGxYUs0=
+SHA-256-Digest: kK7+4b/8zStmMJL69DjWIz/4bwOsY+mdURVC0Hc4ou4=
 
 Name: external/exposurenotification/diagnosis_key_batch.proto
 SHA-256-Digest: sfCS3QAa1UbmuBjgLkIvLRSaYBn2MM+6oBR1u+No08E=
@@ -4531,7 +4531,7 @@ Name: res/xml/standalone_badge_gravity_top_start.xml
 SHA-256-Digest: dfmeZj3EtW+/EL0NS+QI1VDZMmkL5i+2PMeUL1uPr24=
 
 Name: resources.arsc
-SHA-256-Digest: jHUadcFfxLfqozxM+UC1mZgH0ux67+p3eYkkdVwEvjk=
+SHA-256-Digest: LccHOwKqLsgh59rTx/Q8SuuyZ/V5/yxeWf12oqH83LI=
 
 Name: stamp-cert-sha256
 SHA-256-Digest: HZwqAqk4Fv9ceuZPmq0Cwj3kncUUYg2xp61iTSqDZ5w=

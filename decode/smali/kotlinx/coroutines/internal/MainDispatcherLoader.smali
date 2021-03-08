@@ -42,7 +42,7 @@
     const-string v0, "Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. \'kotlinx-coroutines-android\' and ensure it has the same version as \'kotlinx-coroutines-core\'"
 
     :try_start_0
-    invoke-static {}, L$$ServiceLoaderMethods;->$load2()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load1()Ljava/util/Iterator;
 
     move-result-object v1
 

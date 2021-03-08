@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: +kTTOxN+9OxALCKxE2Mr6E4670w9/eFfwnuym56Clm4=
+SHA-256-Digest-Manifest: sxoCOzT4yoO0A6EwXv/BweV6xnehcTcmXGCxlhPJuJU=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
-SHA-256-Digest: SQDceSgWh88kSJ1MLBPEPX7ijrJNh4PsZIqTu+HWslc=
+SHA-256-Digest: oF8uUNcbexwkQc3G+O0+KOzCjyJ8R4Vn/YA9j0zK8DI=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: lGNfZfenjO/ig36HyxY3o4SsvfGGgP0dK+OSY20ejcw=
@@ -345,16 +345,16 @@ Name: assets/technical_sl.html
 SHA-256-Digest: KnyZ46rrrooKuwWak9lzyvSrqSHdtiidAqWLZK29GJQ=
 
 Name: assets/terms_en.html
-SHA-256-Digest: C0dnP2A4HqCuhVy7AILxCd0bqagW6vkSKx4Kzt/6huA=
+SHA-256-Digest: DJKaKTGvts4gFFLa16ExvKOvgd54AyGSUDDjaE4gsTk=
 
 Name: assets/terms_sl.html
-SHA-256-Digest: UGEQDYuqkKDGnzPpaFiM5z72qLJdipynzuXcgUzxfEA=
+SHA-256-Digest: b7X4kAWRwDgsLitmH83NZB8ZAra+/6DBL3dqIbuR6Dg=
 
 Name: build-data.properties
 SHA-256-Digest: 3yioYmZ9nQ2jS/Wl8v4dYoPEtb/KLuk348806XIRk3U=
 
 Name: classes.dex
-SHA-256-Digest: ucNiBYUiuxYbPB6RRt2xgiOQoDdzL7HlNoHVR3chhVE=
+SHA-256-Digest: KYn43dQGdELxVlWybJqllUu1Vj6KHfUlweuRO1aXT8c=
 
 Name: external/exposurenotification/diagnosis_key_batch.proto
 SHA-256-Digest: JoLgOtmPkwegHRlRrw8LcTucE0K4YpplRwQA/Fln6vU=
@@ -4532,7 +4532,7 @@ Name: res/xml/standalone_badge_gravity_top_start.xml
 SHA-256-Digest: VGWki0Vh6tdl9xcxlGnJwLEc355gWKkFQ8HF7F6Iqw8=
 
 Name: resources.arsc
-SHA-256-Digest: nheIeOLn7JzLvoqaLUAbXTnH4VFbXTUQjgM/Nw5H70o=
+SHA-256-Digest: MBwhhzfjNICdP/cypctxKN0obzTqVctsPDpePFgDEoI=
 
 Name: stamp-cert-sha256
 SHA-256-Digest: L0p4Bm/NGffFWX26fUKi8jlq3aKsfwyEBtSavY6F0c0=
