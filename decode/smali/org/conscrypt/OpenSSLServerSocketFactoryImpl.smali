@@ -92,10 +92,23 @@
 .end method
 
 .method public static setUseEngineSocketByDefault(Z)V
-    .locals 0
+    .locals 2
 
     sput-boolean p0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;->useEngineSocketByDefault:Z
 
+    invoke-static {}, Ljavax/net/ssl/SSLServerSocketFactory;->getDefault()Ljavax/net/ServerSocketFactory;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;
+
+    invoke-virtual {v0, p0}, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;->setUseEngineSocket(Z)V
+
+    :cond_0
     return-void
 .end method
 

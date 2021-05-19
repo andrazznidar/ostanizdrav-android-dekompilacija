@@ -67,17 +67,17 @@
 
     sget-object v0, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
-    sget v1, Landroidx/appcompat/R$attr;->actionBarStyle:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const v2, 0x7f040006
 
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v1, Landroidx/appcompat/R$styleable;->ActionBar_height:I
+    const/16 v1, 0xd
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
@@ -91,7 +91,7 @@
 
     move-result-object v3
 
-    sget v4, Landroidx/appcompat/R$bool;->abc_action_bar_embed_tabs:I
+    const/high16 v4, 0x7f050000
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -99,7 +99,7 @@
 
     if-nez v3, :cond_0
 
-    sget v3, Landroidx/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
+    const v3, 0x7f070009
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -118,7 +118,7 @@
 
     move-result-object p1
 
-    sget v0, Landroidx/appcompat/R$dimen;->abc_action_bar_stacked_tab_max_width:I
+    const v0, 0x7f07000a
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -399,7 +399,7 @@
 
     const-string v2, "Magnitude of add amount is too large: "
 
-    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v2
 
@@ -741,7 +741,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, p3, v1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v1, v0}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/GJMonthOfYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

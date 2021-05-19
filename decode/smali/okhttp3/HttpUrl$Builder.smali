@@ -105,6 +105,99 @@
 
 
 # virtual methods
+.method public final addQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+    .locals 12
+
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
+
+    :cond_0
+    iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    sget-object v1, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/16 v11, 0xdb
+
+    const-string v5, " !\"#$&\'(),/:;<=>?@[]\\^`{|}~"
+
+    move-object v2, p1
+
+    invoke-static/range {v1 .. v11}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    if-eqz p2, :cond_1
+
+    sget-object v0, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/16 v10, 0xdb
+
+    const-string v4, " !\"#$&\'(),/:;<=>?@[]\\^`{|}~"
+
+    move-object v1, p2
+
+    invoke-static/range {v0 .. v10}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p2, 0x0
+
+    :goto_0
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-object p0
+.end method
+
 .method public final build()Lokhttp3/HttpUrl;
     .locals 17
 
@@ -156,7 +249,7 @@
 
     const/16 v8, 0xa
 
-    invoke-static {v1, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -208,7 +301,7 @@
 
     new-instance v10, Ljava/util/ArrayList;
 
-    invoke-static {v1, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v8
 
@@ -727,7 +820,7 @@
 
     const-string v3, "Expected URL scheme \'http\' or \'https\' but was \'"
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -1220,7 +1313,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1327,7 +1420,7 @@
     :cond_23
     const-string v1, "Invalid URL port: \""
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1384,7 +1477,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2006,7 +2099,7 @@
     :cond_3c
     const-string v0, "Invalid URL host: \""
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

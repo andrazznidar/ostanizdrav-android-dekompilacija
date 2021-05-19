@@ -106,6 +106,30 @@
     return p1
 .end method
 
+.method public get(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+
+    invoke-virtual {v0, p1}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Lcom/google/gson/internal/LinkedTreeMap$Node;->value:Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    return-object p1
+.end method
+
 .method public hashCode()I
     .locals 1
 

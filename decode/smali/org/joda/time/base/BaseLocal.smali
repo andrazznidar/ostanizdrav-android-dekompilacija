@@ -211,7 +211,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

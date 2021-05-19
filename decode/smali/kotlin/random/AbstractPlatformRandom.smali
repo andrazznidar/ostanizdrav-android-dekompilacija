@@ -47,6 +47,20 @@
     return p1
 .end method
 
+.method public nextDouble()D
+    .locals 2
+
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Random;->nextDouble()D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method public nextFloat()F
     .locals 1
 

@@ -801,7 +801,7 @@
 
     check-cast v13, Ljava/lang/Comparable;
 
-    invoke-static {v13, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    invoke-static {v13, v6}, Lcom/google/zxing/client/android/R$id;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v13
 

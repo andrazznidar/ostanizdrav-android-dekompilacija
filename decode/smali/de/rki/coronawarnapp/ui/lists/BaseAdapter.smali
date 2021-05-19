@@ -32,10 +32,13 @@
 
 
 # virtual methods
-.method public abstract onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;I)V
+.method public abstract onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;ILjava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;I)V"
+            "(TT;I",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;)V"
         }
     .end annotation
 .end method
@@ -49,7 +52,29 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter;->onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;I)V
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p0, p1, p2, v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter;->onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;ILjava/util/List;)V
+
+    return-void
+.end method
+
+.method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V
+    .locals 1
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;
+
+    const-string v0, "holder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "payloads"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1, p2, p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter;->onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;ILjava/util/List;)V
 
     return-void
 .end method

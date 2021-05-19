@@ -25,11 +25,11 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    sget v0, Lcom/google/zxing/client/android/R$layout;->zxing_capture:I
+    const v0, 0x7f0c012c
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
 
-    sget v0, Lcom/google/zxing/client/android/R$id;->zxing_barcode_scanner:I
+    const v0, 0x7f09056c
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

@@ -473,7 +473,7 @@
     const/16 v1, 0xf
 
     :goto_2
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->sum([I)I
 
     move-result v2
 
@@ -562,13 +562,13 @@
     :cond_6
     iget-object v2, v0, Lcom/google/zxing/oned/rss/AbstractRSSReader;->oddCounts:[I
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->sum([I)I
 
     move-result v2
 
     iget-object v4, v0, Lcom/google/zxing/oned/rss/AbstractRSSReader;->evenCounts:[I
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->sum([I)I
 
     move-result v4
 
@@ -914,11 +914,11 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v11, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getRSSvalue([IIZ)I
+    invoke-static {v11, v1, v3}, Lcom/google/zxing/client/android/R$id;->getRSSvalue([IIZ)I
 
     move-result v1
 
-    invoke-static {v12, v2, v6}, Landroidx/transition/ViewGroupUtilsApi14;->getRSSvalue([IIZ)I
+    invoke-static {v12, v2, v6}, Lcom/google/zxing/client/android/R$id;->getRSSvalue([IIZ)I
 
     move-result v2
 
@@ -972,13 +972,13 @@
 
     rsub-int/lit8 v3, v2, 0x9
 
-    invoke-static {v11, v2, v6}, Landroidx/transition/ViewGroupUtilsApi14;->getRSSvalue([IIZ)I
+    invoke-static {v11, v2, v6}, Lcom/google/zxing/client/android/R$id;->getRSSvalue([IIZ)I
 
     move-result v2
 
     const/4 v4, 0x0
 
-    invoke-static {v12, v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->getRSSvalue([IIZ)I
+    invoke-static {v12, v3, v4}, Lcom/google/zxing/client/android/R$id;->getRSSvalue([IIZ)I
 
     move-result v3
 

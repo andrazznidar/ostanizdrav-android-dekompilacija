@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.1.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Lcom/google/android/gms/tasks/zzr;
@@ -24,10 +24,10 @@
 
 .field public final zzb:Ljava/lang/Object;
 
-.field public zzc:Lcom/google/android/gms/common/api/internal/zaw;
+.field public zzc:Lcom/google/android/gms/tasks/OnCompleteListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/common/api/internal/zaw<",
+            "Lcom/google/android/gms/tasks/OnCompleteListener<",
             "TTResult;>;"
         }
     .end annotation
@@ -35,13 +35,13 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/common/api/internal/zaw;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/concurrent/Executor;",
-            "Lcom/google/android/gms/common/api/internal/zaw<",
+            "Lcom/google/android/gms/tasks/OnCompleteListener<",
             "TTResult;>;)V"
         }
     .end annotation
@@ -56,7 +56,7 @@
 
     iput-object p1, p0, Lcom/google/android/gms/tasks/zzi;->zza:Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/common/api/internal/zaw;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/tasks/OnCompleteListener;
 
     return-void
 .end method
@@ -78,7 +78,7 @@
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/common/api/internal/zaw;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/tasks/OnCompleteListener;
 
     if-nez v1, :cond_0
 

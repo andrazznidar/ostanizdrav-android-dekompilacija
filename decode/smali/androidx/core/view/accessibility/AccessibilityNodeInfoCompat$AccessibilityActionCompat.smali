@@ -476,8 +476,6 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -485,6 +483,8 @@
     move-object v0, p0
 
     move v2, p1
+
+    move-object v3, p2
 
     invoke-direct/range {v0 .. v5}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;-><init>(Ljava/lang/Object;ILjava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;Ljava/lang/Class;)V
 

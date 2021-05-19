@@ -1,76 +1,39 @@
-.class public interface abstract Lcom/google/android/play/core/internal/s;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/play/core/internal/s;
+.super Lcom/google/android/play/core/internal/k;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lcom/google/android/play/core/internal/t;
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+# direct methods
+.method public static b(Landroid/os/IBinder;)Lcom/google/android/play/core/internal/t;
+    .locals 2
 
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    if-nez p0, :cond_0
 
-.method public abstract b(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    const/4 p0, 0x0
 
-.method public abstract b(Ljava/lang/String;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    return-object p0
 
-.method public abstract b(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/util/List<",
-            "Landroid/os/Bundle;",
-            ">;",
-            "Landroid/os/Bundle;",
-            "Lcom/google/android/play/core/internal/u;",
-            ")V"
-        }
-    .end annotation
+    :cond_0
+    const-string v0, "com.google.android.play.core.assetpacks.protocol.IAssetModuleService"
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-.method public abstract c(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    move-result-object v0
 
-.method public abstract d(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;Lcom/google/android/play/core/internal/u;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    instance-of v1, v0, Lcom/google/android/play/core/internal/t;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Lcom/google/android/play/core/internal/t;
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Lcom/google/android/play/core/internal/r;
+
+    invoke-direct {v0, p0}, Lcom/google/android/play/core/internal/r;-><init>(Landroid/os/IBinder;)V
+
+    return-object v0
 .end method

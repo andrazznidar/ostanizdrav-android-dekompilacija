@@ -47,32 +47,32 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;IIILjava/lang/CharSequence;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 p4, 0x1000
+    const/16 v0, 0x1000
 
-    iput p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericModifiers:I
+    iput v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericModifiers:I
 
-    iput p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticModifiers:I
+    iput v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticModifiers:I
 
-    const/4 p4, 0x0
+    const/4 v0, 0x0
 
-    iput-object p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList:Landroid/content/res/ColorStateList;
+    iput-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList:Landroid/content/res/ColorStateList;
 
-    iput-object p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintMode:Landroid/graphics/PorterDuff$Mode;
+    iput-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    const/4 p4, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint:Z
+    iput-boolean v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint:Z
 
-    iput-boolean p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTintMode:Z
+    iput-boolean v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTintMode:Z
 
-    const/16 p4, 0x10
+    const/16 v0, 0x10
 
-    iput p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
+    iput v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
 
@@ -80,9 +80,9 @@
 
     iput p2, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mGroup:I
 
-    iput p5, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mOrdering:I
+    iput p4, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mOrdering:I
 
-    iput-object p6, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
+    iput-object p5, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
     return-void
 .end method

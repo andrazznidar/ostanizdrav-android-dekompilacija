@@ -3,14 +3,14 @@
 .source "DefaultDiagnosisKeyProvider_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider;",
         ">;"
     }

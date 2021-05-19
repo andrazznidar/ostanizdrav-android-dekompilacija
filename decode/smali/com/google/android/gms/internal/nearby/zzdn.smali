@@ -1,18 +1,18 @@
 .class public abstract Lcom/google/android/gms/internal/nearby/zzdn;
-.super Lcom/google/android/gms/internal/nearby/zza;
+.super Lcom/google/android/gms/internal/nearby/zzb;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/nearby/zzdk;
+.implements Lcom/google/android/gms/internal/nearby/zzdo;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.IExposureWindowListCallback"
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.ILongCallback"
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/nearby/zza;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/nearby/zzb;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -20,7 +20,7 @@
 
 # virtual methods
 .method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -33,19 +33,17 @@
 
     sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/nearby/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/nearby/zzc;->zzc(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object p1
 
     check-cast p1, Lcom/google/android/gms/common/api/Status;
 
-    sget-object p4, Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
-    invoke-virtual {p2, p4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    move-result-wide v0
 
-    move-result-object p2
-
-    invoke-interface {p0, p1, p2}, Lcom/google/android/gms/internal/nearby/zzdk;->zza(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
+    invoke-interface {p0, p1, v0, v1}, Lcom/google/android/gms/internal/nearby/zzdo;->zzb(Lcom/google/android/gms/common/api/Status;J)V
 
     return p3
 

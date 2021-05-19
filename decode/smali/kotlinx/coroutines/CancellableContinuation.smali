@@ -20,6 +20,9 @@
 
 
 # virtual methods
+.method public abstract cancel(Ljava/lang/Throwable;)Z
+.end method
+
 .method public abstract completeResume(Ljava/lang/Object;)V
 .end method
 

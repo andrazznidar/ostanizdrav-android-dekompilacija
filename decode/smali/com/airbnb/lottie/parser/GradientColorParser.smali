@@ -323,15 +323,25 @@
 
     sub-double v16, v16, v14
 
-    div-double v22, v12, v16
+    div-double v18, v12, v16
 
-    aget-wide v18, v8, v9
+    const-wide/16 v20, 0x0
 
-    aget-wide v20, v8, v2
+    const-wide/high16 v22, 0x3ff0000000000000L    # 1.0
 
-    invoke-static/range {v18 .. v23}, Lcom/airbnb/lottie/utils/MiscUtils;->lerp(DDD)D
+    invoke-static/range {v18 .. v23}, Lcom/airbnb/lottie/utils/MiscUtils;->clamp(DDD)D
 
     move-result-wide v12
+
+    aget-wide v14, v8, v9
+
+    aget-wide v16, v8, v2
+
+    sub-double v16, v16, v14
+
+    mul-double v16, v16, v12
+
+    add-double v16, v16, v14
 
     goto :goto_8
 
@@ -343,10 +353,10 @@
     :cond_e
     add-int/lit8 v2, v3, -0x1
 
-    aget-wide v12, v8, v2
+    aget-wide v16, v8, v2
 
     :goto_8
-    mul-double/2addr v12, v10
+    mul-double v12, v16, v10
 
     double-to-int v2, v12
 

@@ -115,7 +115,7 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p0, p3, v0, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v0}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     return-wide p1
 .end method

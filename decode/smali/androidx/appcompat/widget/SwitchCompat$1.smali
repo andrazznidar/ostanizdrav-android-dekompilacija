@@ -1,4 +1,4 @@
-.class public final Landroidx/appcompat/widget/SwitchCompat$1;
+.class public Landroidx/appcompat/widget/SwitchCompat$1;
 .super Landroid/util/Property;
 .source "SwitchCompat.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

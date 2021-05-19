@@ -1,6 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/api/Api$Client;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$AnyClient;
@@ -19,21 +19,35 @@
 
 # virtual methods
 .method public abstract connect(Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;)V
+    .param p1    # Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract disconnect()V
 .end method
 
 .method public abstract disconnect(Ljava/lang/String;)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract getAvailableFeatures()[Lcom/google/android/gms/common/Feature;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method
 
 .method public abstract getEndpointPackageName()Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method
 
 .method public abstract getLastDisconnectMessage()Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 .end method
 
 .method public abstract getMinApkVersion()I
@@ -69,6 +83,10 @@
 .end method
 
 .method public abstract onUserSignOut(Lcom/google/android/gms/common/internal/BaseGmsClient$SignOutCallbacks;)V
+    .param p1    # Lcom/google/android/gms/common/internal/BaseGmsClient$SignOutCallbacks;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract requiresGooglePlayServices()Z

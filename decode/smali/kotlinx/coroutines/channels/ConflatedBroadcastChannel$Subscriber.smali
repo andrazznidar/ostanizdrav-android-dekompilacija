@@ -119,7 +119,7 @@
 
     array-length v4, v3
 
-    invoke-static {v3, p0}, Landroidx/transition/ViewGroupUtilsApi14;->indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {v3, p0}, Lcom/google/zxing/client/android/R$id;->indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v10
 
@@ -187,7 +187,7 @@
     :cond_4
     const-string p1, "Invalid state "
 
-    invoke-static {p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

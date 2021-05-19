@@ -15,314 +15,63 @@
 
 
 # instance fields
-.field public alpha:F
+.field public final layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-.field public applyElevation:Z
-
-.field public baselineToBaseline:I
-
-.field public bottomMargin:I
-
-.field public bottomToBottom:I
-
-.field public bottomToTop:I
-
-.field public circleAngle:F
-
-.field public circleConstraint:I
-
-.field public circleRadius:I
-
-.field public constrainedHeight:Z
-
-.field public constrainedWidth:Z
-
-.field public dimensionRatio:Ljava/lang/String;
-
-.field public editorAbsoluteX:I
-
-.field public editorAbsoluteY:I
-
-.field public elevation:F
-
-.field public endMargin:I
-
-.field public endToEnd:I
-
-.field public endToStart:I
-
-.field public goneBottomMargin:I
-
-.field public goneEndMargin:I
-
-.field public goneLeftMargin:I
-
-.field public goneRightMargin:I
-
-.field public goneStartMargin:I
-
-.field public goneTopMargin:I
-
-.field public guideBegin:I
-
-.field public guideEnd:I
-
-.field public guidePercent:F
-
-.field public heightDefault:I
-
-.field public heightMax:I
-
-.field public heightMin:I
-
-.field public heightPercent:F
-
-.field public horizontalBias:F
-
-.field public horizontalChainStyle:I
-
-.field public horizontalWeight:F
-
-.field public leftMargin:I
-
-.field public leftToLeft:I
-
-.field public leftToRight:I
-
-.field public mBarrierAllowsGoneWidgets:Z
-
-.field public mBarrierDirection:I
-
-.field public mHeight:I
-
-.field public mHelperType:I
-
-.field public mIsGuideline:Z
-
-.field public mReferenceIdString:Ljava/lang/String;
-
-.field public mReferenceIds:[I
+.field public mCustomConstraints:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Landroidx/constraintlayout/widget/ConstraintAttribute;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public mViewId:I
 
-.field public mWidth:I
+.field public final motion:Landroidx/constraintlayout/widget/ConstraintSet$Motion;
 
-.field public orientation:I
+.field public final propertySet:Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
 
-.field public rightMargin:I
-
-.field public rightToLeft:I
-
-.field public rightToRight:I
-
-.field public rotation:F
-
-.field public rotationX:F
-
-.field public rotationY:F
-
-.field public scaleX:F
-
-.field public scaleY:F
-
-.field public startMargin:I
-
-.field public startToEnd:I
-
-.field public startToStart:I
-
-.field public topMargin:I
-
-.field public topToBottom:I
-
-.field public topToTop:I
-
-.field public transformPivotX:F
-
-.field public transformPivotY:F
-
-.field public translationX:F
-
-.field public translationY:F
-
-.field public translationZ:F
-
-.field public verticalBias:F
-
-.field public verticalChainStyle:I
-
-.field public verticalWeight:F
-
-.field public visibility:I
-
-.field public widthDefault:I
-
-.field public widthMax:I
-
-.field public widthMin:I
-
-.field public widthPercent:F
+.field public final transform:Landroidx/constraintlayout/widget/ConstraintSet$Transform;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 5
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    new-instance v0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
 
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mIsGuideline:Z
+    invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;-><init>()V
 
-    const/4 v1, -0x1
+    iput-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->propertySet:Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideBegin:I
+    new-instance v0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideEnd:I
+    invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet$Motion;-><init>()V
 
-    const/high16 v2, -0x40800000    # -1.0f
+    iput-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->motion:Landroidx/constraintlayout/widget/ConstraintSet$Motion;
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guidePercent:F
+    new-instance v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToLeft:I
+    invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet$Layout;-><init>()V
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToRight:I
+    iput-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToLeft:I
+    new-instance v0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToRight:I
+    invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet$Transform;-><init>()V
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToTop:I
+    iput-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transform:Landroidx/constraintlayout/widget/ConstraintSet$Transform;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToBottom:I
+    new-instance v0, Ljava/util/HashMap;
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToTop:I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToBottom:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->baselineToBaseline:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToEnd:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToStart:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToStart:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToEnd:I
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalBias:F
-
-    const/4 v2, 0x0
-
-    iput-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->dimensionRatio:Ljava/lang/String;
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleConstraint:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleRadius:I
-
-    const/4 v2, 0x0
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleAngle:F
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteX:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteY:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->orientation:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startMargin:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->visibility:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneLeftMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneTopMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneRightMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneBottomMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneEndMargin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneStartMargin:I
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalWeight:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalWeight:F
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalChainStyle:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalChainStyle:I
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    iput v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->alpha:F
-
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->applyElevation:Z
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->elevation:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotation:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationX:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationY:F
-
-    iput v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleX:F
-
-    iput v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleY:F
-
-    const/high16 v4, 0x7fc00000    # Float.NaN
-
-    iput v4, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotX:F
-
-    iput v4, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotY:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationX:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationY:F
-
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationZ:F
-
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
-
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedHeight:Z
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthDefault:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightDefault:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMax:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMax:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMin:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMin:I
-
-    iput v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthPercent:F
-
-    iput v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightPercent:F
-
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets:Z
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierDirection:I
-
-    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHelperType:I
+    iput-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mCustomConstraints:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -330,201 +79,222 @@
 
 # virtual methods
 .method public applyTo(Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;)V
-    .locals 1
+    .locals 2
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToLeft:I
+    iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToLeft:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToLeft:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToRight:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToLeft:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToRight:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToRight:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToLeft:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToRight:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToLeft:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToLeft:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToRight:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToLeft:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToRight:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToRight:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToTop:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToRight:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToTop:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToTop:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToBottom:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToTop:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToBottom:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToBottom:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToTop:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToBottom:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToTop:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToTop:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToBottom:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToTop:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToBottom:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToBottom:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->baselineToBaseline:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToBottom:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->baselineToBaseline:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->baselineToBaseline:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToEnd:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->baselineToBaseline:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToEnd:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToEnd:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToStart:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToEnd:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToStart:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToStart:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToStart:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToStart:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToStart:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToStart:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToEnd:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToStart:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToEnd:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToEnd:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftMargin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToEnd:I
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightMargin:I
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topMargin:I
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomMargin:I
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneStartMargin:I
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneStartMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneStartMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneEndMargin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneStartMargin:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneEndMargin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneEndMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneEndMargin:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalBias:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneTopMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalBias:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneTopMargin:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalBias:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneBottomMargin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleConstraint:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneBottomMargin:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleConstraint:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalBias:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleRadius:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalBias:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleRadius:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalBias:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleAngle:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalBias:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleAngle:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleConstraint:I
 
-    iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->dimensionRatio:Ljava/lang/String;
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleConstraint:I
 
-    iput-object v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->dimensionRatio:Ljava/lang/String;
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleRadius:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteX:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleRadius:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteX:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleAngle:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteY:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleAngle:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteY:I
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->dimensionRatio:Ljava/lang/String;
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalWeight:F
+    iput-object v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->dimensionRatio:Ljava/lang/String;
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalWeight:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteX:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalWeight:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteX:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalWeight:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteY:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalChainStyle:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteY:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalChainStyle:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalWeight:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalChainStyle:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalWeight:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalChainStyle:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalWeight:F
 
-    iget-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalWeight:F
 
-    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedWidth:Z
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalChainStyle:I
 
-    iget-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedHeight:Z
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalChainStyle:I
 
-    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedHeight:Z
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalChainStyle:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthDefault:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalChainStyle:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth:I
+    iget-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedWidth:Z
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightDefault:I
+    iput-boolean v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedWidth:Z
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight:I
+    iget-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedHeight:Z
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMax:I
+    iput-boolean v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedHeight:Z
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthDefault:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMax:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightDefault:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinWidth:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMax:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinHeight:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMax:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthPercent:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentWidth:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightPercent:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinWidth:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->orientation:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinHeight:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->orientation:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthPercent:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guidePercent:F
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentWidth:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guidePercent:F
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightPercent:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideBegin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideBegin:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->orientation:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideEnd:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->orientation:I
 
-    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideEnd:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guidePercent:F
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mWidth:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guidePercent:F
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideBegin:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHeight:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideBegin:I
 
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideEnd:I
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startMargin:I
+    iput v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideEnd:I
+
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mWidth:I
+
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+
+    iget v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHeight:I
+
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+
+    iget-object v0, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mConstraintTag:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    iput-object v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constraintTag:Ljava/lang/String;
+
+    :cond_0
+    iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
+
+    iget v0, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startMargin:I
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    iget v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endMargin:I
+    iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
+
+    iget v0, v0, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endMargin:I
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
@@ -534,7 +304,7 @@
 .end method
 
 .method public clone()Ljava/lang/Object;
-    .locals 3
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/CloneNotSupportedException;
@@ -545,576 +315,705 @@
 
     invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;-><init>()V
 
-    iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mIsGuideline:Z
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mIsGuideline:Z
+    iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mWidth:I
+    const/4 v3, 0x0
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mWidth:I
+    if-eqz v1, :cond_4
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHeight:I
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mIsGuideline:Z
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHeight:I
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mIsGuideline:Z
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideBegin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mWidth:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideBegin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mWidth:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideEnd:I
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mApply:Z
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideEnd:I
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mApply:Z
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guidePercent:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHeight:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guidePercent:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHeight:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToLeft:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideBegin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToLeft:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideBegin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToRight:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideEnd:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToRight:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideEnd:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToLeft:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guidePercent:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToLeft:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guidePercent:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToRight:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToLeft:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToRight:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToLeft:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToTop:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToRight:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToTop:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToRight:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToBottom:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToLeft:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToBottom:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToLeft:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToTop:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToRight:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToTop:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToRight:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToBottom:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToTop:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToBottom:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToTop:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->baselineToBaseline:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToBottom:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->baselineToBaseline:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToBottom:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToEnd:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToTop:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToEnd:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToTop:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToStart:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToBottom:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToStart:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToBottom:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToStart:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->baselineToBaseline:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToStart:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->baselineToBaseline:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToEnd:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToEnd:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToEnd:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToEnd:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToStart:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToStart:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToStart:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToStart:I
 
-    iget-object v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->dimensionRatio:Ljava/lang/String;
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToEnd:I
 
-    iput-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->dimensionRatio:Ljava/lang/String;
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToEnd:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteX:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalBias:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteX:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalBias:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteY:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalBias:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteY:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalBias:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget-object v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->dimensionRatio:Ljava/lang/String;
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput-object v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->dimensionRatio:Ljava/lang/String;
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleConstraint:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleConstraint:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleRadius:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleRadius:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleAngle:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleAngle:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteX:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteX:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->orientation:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteY:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->orientation:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteY:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->orientation:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->orientation:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->visibility:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->visibility:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneLeftMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneLeftMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneLeftMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneLeftMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneTopMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneTopMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneTopMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneTopMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneRightMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneRightMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneRightMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneRightMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneBottomMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneBottomMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneBottomMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneBottomMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneEndMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneEndMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneEndMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneEndMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneStartMargin:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneStartMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->goneStartMargin:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneStartMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalWeight:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalWeight:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalWeight:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalWeight:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalWeight:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalWeight:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalWeight:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalWeight:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalChainStyle:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalChainStyle:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalChainStyle:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalChainStyle:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalChainStyle:I
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalChainStyle:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalChainStyle:I
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalChainStyle:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->alpha:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthDefault:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->alpha:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthDefault:I
 
-    iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->applyElevation:Z
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightDefault:I
 
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->applyElevation:Z
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightDefault:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->elevation:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMax:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->elevation:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMax:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotation:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMax:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotation:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMax:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationX:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationX:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationY:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationY:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleX:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthPercent:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleX:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthPercent:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleY:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightPercent:F
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleY:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightPercent:F
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotX:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierDirection:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotX:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierDirection:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotY:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierMargin:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotY:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierMargin:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationX:F
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHelperType:I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationX:F
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHelperType:I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationY:F
+    iget-object v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mConstraintTag:Ljava/lang/String;
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationY:F
+    iput-object v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mConstraintTag:Ljava/lang/String;
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationZ:F
+    iget-object v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIds:[I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationZ:F
+    if-eqz v4, :cond_0
 
-    iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
+    array-length v5, v4
 
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
+    invoke-static {v4, v5}, Ljava/util/Arrays;->copyOf([II)[I
 
-    iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedHeight:Z
+    move-result-object v4
 
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedHeight:Z
+    iput-object v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIds:[I
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthDefault:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthDefault:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightDefault:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightDefault:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMax:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMax:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMax:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMax:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMin:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMin:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMin:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMin:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthPercent:F
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthPercent:F
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightPercent:F
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightPercent:F
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierDirection:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierDirection:I
-
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHelperType:I
-
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHelperType:I
-
-    iget-object v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mReferenceIds:[I
-
-    if-eqz v1, :cond_0
-
-    array-length v2, v1
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([II)[I
-
-    move-result-object v1
-
-    iput-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mReferenceIds:[I
+    goto :goto_0
 
     :cond_0
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleConstraint:I
+    iput-object v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIds:[I
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleConstraint:I
+    :goto_0
+    iget-object v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIdString:Ljava/lang/String;
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleRadius:I
+    iput-object v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIdString:Ljava/lang/String;
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleRadius:I
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedWidth:Z
 
-    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleAngle:F
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedWidth:Z
 
-    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleAngle:F
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedHeight:Z
 
-    iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets:Z
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedHeight:Z
 
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets:Z
+    iget-boolean v2, v2, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierAllowsGoneWidgets:Z
+
+    iput-boolean v2, v1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierAllowsGoneWidgets:Z
+
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->motion:Landroidx/constraintlayout/widget/ConstraintSet$Motion;
+
+    iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->motion:Landroidx/constraintlayout/widget/ConstraintSet$Motion;
+
+    if-eqz v1, :cond_3
+
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mApply:Z
+
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mApply:Z
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mAnimateRelativeTo:I
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mAnimateRelativeTo:I
+
+    iget-object v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mTransitionEasing:Ljava/lang/String;
+
+    iput-object v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mTransitionEasing:Ljava/lang/String;
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathMotionArc:I
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathMotionArc:I
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mDrawPath:I
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mDrawPath:I
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathRotate:F
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathRotate:F
+
+    iget v2, v2, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mMotionStagger:F
+
+    iput v2, v1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mMotionStagger:F
+
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->propertySet:Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
+
+    iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->propertySet:Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
+
+    if-eqz v1, :cond_2
+
+    iget-boolean v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mApply:Z
+
+    iput-boolean v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mApply:Z
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
+
+    iget v4, v2, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
+
+    iput v4, v1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
+
+    iget v2, v2, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
+
+    iput v2, v1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
+
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transform:Landroidx/constraintlayout/widget/ConstraintSet$Transform;
+
+    iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transform:Landroidx/constraintlayout/widget/ConstraintSet$Transform;
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->mApply:Z
+
+    iput-boolean v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->mApply:Z
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotation:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotation:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationX:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationX:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationY:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationY:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleX:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleX:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleY:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleY:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotX:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotX:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotY:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotY:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationX:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationX:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationY:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationY:F
+
+    iget v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationZ:F
+
+    iput v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationZ:F
+
+    iget-boolean v3, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->applyElevation:Z
+
+    iput-boolean v3, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->applyElevation:Z
+
+    iget v2, v2, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->elevation:F
+
+    iput v2, v1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->elevation:F
+
+    iget v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mViewId:I
+
+    iput v1, v0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mViewId:I
 
     return-object v0
+
+    :cond_1
+    throw v3
+
+    :cond_2
+    throw v3
+
+    :cond_3
+    throw v3
+
+    :cond_4
+    throw v3
+.end method
+
+.method public final fillFrom(ILandroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;)V
+    .locals 1
+
+    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mViewId:I
+
+    iget-object p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToLeft:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToLeft:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToRight:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftToRight:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToLeft:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToLeft:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToRight:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightToRight:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToTop:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToTop:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToBottom:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topToBottom:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToTop:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToTop:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToBottom:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomToBottom:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->baselineToBaseline:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->baselineToBaseline:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToEnd:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToEnd:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToStart:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startToStart:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToStart:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToStart:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToEnd:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endToEnd:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalBias:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalBias:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalBias:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalBias:F
+
+    iget-object v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->dimensionRatio:Ljava/lang/String;
+
+    iput-object v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->dimensionRatio:Ljava/lang/String;
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleConstraint:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleConstraint:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleRadius:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleRadius:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleAngle:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->circleAngle:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteX:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteX:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteY:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->editorAbsoluteY:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->orientation:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->orientation:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guidePercent:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guidePercent:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideBegin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideBegin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideEnd:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->guideEnd:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mWidth:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHeight:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->leftMargin:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->rightMargin:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->topMargin:I
+
+    iget v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->bottomMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalWeight:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalWeight:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalWeight:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalWeight:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalChainStyle:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->verticalChainStyle:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalChainStyle:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->horizontalChainStyle:I
+
+    iget-boolean v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedWidth:Z
+
+    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedWidth:Z
+
+    iget-boolean v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedHeight:Z
+
+    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->constrainedHeight:Z
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthDefault:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightDefault:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMax:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMax:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinWidth:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthMin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinHeight:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightMin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentWidth:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->widthPercent:F
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->heightPercent:F
+
+    iget-object v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constraintTag:Ljava/lang/String;
+
+    iput-object v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mConstraintTag:Ljava/lang/String;
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneTopMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneTopMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneBottomMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneBottomMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneLeftMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneLeftMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneRightMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneRightMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneStartMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneStartMargin:I
+
+    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->goneEndMargin:I
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->goneEndMargin:I
+
+    invoke-virtual {p2}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
+
+    move-result v0
+
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->endMargin:I
+
+    iget-object p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
+
+    invoke-virtual {p2}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginStart()I
+
+    move-result p2
+
+    iput p2, p1, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->startMargin:I
+
+    return-void
 .end method
 
 .method public final fillFromConstraints(ILandroidx/constraintlayout/widget/Constraints$LayoutParams;)V
     .locals 1
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mViewId:I
+    invoke-virtual {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->fillFrom(ILandroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;)V
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToLeft:I
+    iget-object p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->propertySet:Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToLeft:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->alpha:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->leftToRight:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftToRight:I
+    iget-object p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transform:Landroidx/constraintlayout/widget/ConstraintSet$Transform;
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToLeft:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotation:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToLeft:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotation:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->rightToRight:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotationX:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightToRight:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationX:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToTop:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotationY:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToTop:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationY:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->topToBottom:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->scaleX:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topToBottom:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleX:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToTop:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->scaleY:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToTop:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleY:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->bottomToBottom:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->transformPivotX:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomToBottom:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotX:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->baselineToBaseline:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->transformPivotY:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->baselineToBaseline:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotY:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToEnd:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationX:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToEnd:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationX:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->startToStart:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationY:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startToStart:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationY:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToStart:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationZ:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToStart:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationZ:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->endToEnd:I
+    iget v0, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->elevation:F
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endToEnd:I
+    iput v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->elevation:F
 
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalBias:F
+    iget-boolean p2, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->applyElevation:Z
 
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalBias:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalBias:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalBias:F
-
-    iget-object p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->dimensionRatio:Ljava/lang/String;
-
-    iput-object p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->dimensionRatio:Ljava/lang/String;
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleConstraint:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleConstraint:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleRadius:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleRadius:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->circleAngle:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->circleAngle:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteX:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteX:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->editorAbsoluteY:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->editorAbsoluteY:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->orientation:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->orientation:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guidePercent:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guidePercent:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideBegin:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideBegin:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideEnd:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->guideEnd:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mWidth:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHeight:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->leftMargin:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rightMargin:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->topMargin:I
-
-    iget p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->bottomMargin:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalWeight:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalWeight:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalWeight:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalWeight:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->verticalChainStyle:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->verticalChainStyle:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->horizontalChainStyle:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->horizontalChainStyle:I
-
-    iget-boolean p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedWidth:Z
-
-    iput-boolean p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
-
-    iget-boolean v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->constrainedHeight:Z
-
-    iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedHeight:Z
-
-    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthDefault:I
-
-    iget v0, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight:I
-
-    iput v0, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightDefault:I
-
-    iput-boolean p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->constrainedWidth:Z
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMax:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMax:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinWidth:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthMin:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinHeight:I
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightMin:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentWidth:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->widthPercent:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->heightPercent:F
-
-    invoke-virtual {p2}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
-
-    move-result p1
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->endMargin:I
-
-    invoke-virtual {p2}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginStart()I
-
-    move-result p1
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->startMargin:I
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->alpha:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->alpha:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotation:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotation:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotationX:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationX:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->rotationY:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->rotationY:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->scaleX:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleX:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->scaleY:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->scaleY:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->transformPivotX:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotX:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->transformPivotY:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->transformPivotY:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationX:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationX:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationY:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationY:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->translationZ:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->translationZ:F
-
-    iget p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->elevation:F
-
-    iput p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->elevation:F
-
-    iget-boolean p1, p2, Landroidx/constraintlayout/widget/Constraints$LayoutParams;->applyElevation:Z
-
-    iput-boolean p1, p0, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->applyElevation:Z
+    iput-boolean p2, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->applyElevation:Z
 
     return-void
 .end method

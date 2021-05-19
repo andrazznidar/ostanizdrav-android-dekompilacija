@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/conscrypt/TrustManagerImpl$GlobalHostnameVerifierAdapter;,
         Lorg/conscrypt/TrustManagerImpl$ExtendedKeyUsagePKIXCertPathChecker;,
         Lorg/conscrypt/TrustManagerImpl$TrustAnchorComparator;
     }
@@ -24,7 +23,7 @@
 # instance fields
 .field public final acceptedIssuers:[Ljava/security/cert/X509Certificate;
 
-.field public final blacklist:Lorg/conscrypt/CertBlacklist;
+.field public final blocklist:Lorg/conscrypt/CertBlocklist;
 
 .field public ctEnabledOverride:Z
 
@@ -103,12 +102,12 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lorg/conscrypt/TrustManagerImpl;-><init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlacklist;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lorg/conscrypt/TrustManagerImpl;-><init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlocklist;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlacklist;)V
+.method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlocklist;)V
     .locals 8
 
     const/4 v5, 0x0
@@ -127,12 +126,12 @@
 
     move-object v4, p4
 
-    invoke-direct/range {v0 .. v7}, Lorg/conscrypt/TrustManagerImpl;-><init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlacklist;Lorg/conscrypt/ct/CTLogStore;Lorg/conscrypt/ct/CTVerifier;Lorg/conscrypt/ct/CTPolicy;)V
+    invoke-direct/range {v0 .. v7}, Lorg/conscrypt/TrustManagerImpl;-><init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlocklist;Lorg/conscrypt/ct/CTLogStore;Lorg/conscrypt/ct/CTVerifier;Lorg/conscrypt/ct/CTPolicy;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlacklist;Lorg/conscrypt/ct/CTLogStore;Lorg/conscrypt/ct/CTVerifier;Lorg/conscrypt/ct/CTPolicy;)V
+.method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlocklist;Lorg/conscrypt/ct/CTLogStore;Lorg/conscrypt/ct/CTVerifier;Lorg/conscrypt/ct/CTPolicy;)V
     .locals 5
 
     invoke-direct {p0}, Ljavax/net/ssl/X509ExtendedTrustManager;-><init>()V
@@ -360,7 +359,7 @@
     :goto_4
     if-nez p4, :cond_2
 
-    invoke-static {}, Lorg/conscrypt/Platform;->newDefaultBlacklist()Lorg/conscrypt/CertBlacklist;
+    invoke-static {}, Lorg/conscrypt/Platform;->newDefaultBlocklist()Lorg/conscrypt/CertBlocklist;
 
     move-result-object p4
 
@@ -401,7 +400,7 @@
 
     iput-object v3, p0, Lorg/conscrypt/TrustManagerImpl;->err:Ljava/lang/Exception;
 
-    iput-object p4, p0, Lorg/conscrypt/TrustManagerImpl;->blacklist:Lorg/conscrypt/CertBlacklist;
+    iput-object p4, p0, Lorg/conscrypt/TrustManagerImpl;->blocklist:Lorg/conscrypt/CertBlocklist;
 
     new-instance p1, Lorg/conscrypt/ct/CTVerifier;
 
@@ -477,7 +476,7 @@
     return-object p0
 .end method
 
-.method private checkBlacklist(Ljava/security/cert/X509Certificate;)V
+.method private checkBlocklist(Ljava/security/cert/X509Certificate;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -485,7 +484,7 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->blacklist:Lorg/conscrypt/CertBlacklist;
+    iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->blocklist:Lorg/conscrypt/CertBlocklist;
 
     if-eqz v0, :cond_1
 
@@ -493,7 +492,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lorg/conscrypt/CertBlacklist;->isPublicKeyBlackListed(Ljava/security/PublicKey;)Z
+    invoke-interface {v0, v1}, Lorg/conscrypt/CertBlocklist;->isPublicKeyBlockListed(Ljava/security/PublicKey;)Z
 
     move-result v0
 
@@ -508,7 +507,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Certificate blacklisted by public key: "
+    const-string v2, "Certificate blocklisted by public key: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -613,7 +612,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, p3}, Lorg/conscrypt/TrustManagerImpl;->getOcspDataFromSession(Ljavax/net/ssl/SSLSession;)[B
+    invoke-static {p3}, Lorg/conscrypt/TrustManagerImpl;->getOcspDataFromSession(Ljavax/net/ssl/SSLSession;)[B
 
     move-result-object v1
 
@@ -657,7 +656,7 @@
 
     move-result-object p4
 
-    invoke-interface {p4, v8, p3}, Lorg/conscrypt/ConscryptHostnameVerifier;->verify(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
+    invoke-interface {p4, p1, v8, p3}, Lorg/conscrypt/ConscryptHostnameVerifier;->verify([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
 
     move-result p3
 
@@ -888,7 +887,7 @@
     :goto_0
     move-object v6, v0
 
-    invoke-direct {p0, v6}, Lorg/conscrypt/TrustManagerImpl;->checkBlacklist(Ljava/security/cert/X509Certificate;)V
+    invoke-direct {p0, v6}, Lorg/conscrypt/TrustManagerImpl;->checkBlocklist(Ljava/security/cert/X509Certificate;)V
 
     invoke-virtual {v6}, Ljava/security/cert/X509Certificate;->getIssuerDN()Ljava/security/Principal;
 
@@ -1106,7 +1105,7 @@
 
     const-string v12, "Unacceptable certificate: "
 
-    invoke-static {v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v12
 
@@ -1410,24 +1409,17 @@
     return-object v0
 
     :cond_0
-    invoke-static {}, Lorg/conscrypt/TrustManagerImpl;->getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
+    invoke-static {}, Lorg/conscrypt/Platform;->getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
 
     move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    return-object v0
-
-    :cond_1
-    sget-object v0, Lorg/conscrypt/TrustManagerImpl$GlobalHostnameVerifierAdapter;->INSTANCE:Lorg/conscrypt/TrustManagerImpl$GlobalHostnameVerifierAdapter;
 
     return-object v0
 .end method
 
-.method private getOcspDataFromSession(Ljavax/net/ssl/SSLSession;)[B
+.method public static getOcspDataFromSession(Ljavax/net/ssl/SSLSession;)[B
     .locals 5
 
-    instance-of v0, p1, Lorg/conscrypt/ConscryptSession;
+    instance-of v0, p0, Lorg/conscrypt/ConscryptSession;
 
     const/4 v1, 0x0
 
@@ -1435,17 +1427,17 @@
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lorg/conscrypt/ConscryptSession;
+    check-cast p0, Lorg/conscrypt/ConscryptSession;
 
-    invoke-interface {p1}, Lorg/conscrypt/ConscryptSession;->getStatusResponses()Ljava/util/List;
+    invoke-interface {p0}, Lorg/conscrypt/ConscryptSession;->getStatusResponses()Ljava/util/List;
 
-    move-result-object p1
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
     :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
@@ -1463,15 +1455,15 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    instance-of v0, p1, Ljava/util/List;
+    instance-of v0, p0, Ljava/util/List;
 
     if-eqz v0, :cond_1
 
-    check-cast p1, Ljava/util/List;
+    check-cast p0, Ljava/util/List;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
@@ -1482,26 +1474,26 @@
     goto :goto_0
 
     :catch_0
-    move-exception p1
+    move-exception p0
 
     new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
 
     :catch_1
     :cond_1
-    move-object p1, v1
+    move-object p0, v1
 
     :goto_0
-    if-eqz p1, :cond_3
+    if-eqz p0, :cond_3
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
@@ -1510,13 +1502,13 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, [B
+    check-cast p0, [B
 
-    return-object p1
+    return-object p0
 
     :cond_3
     :goto_1
@@ -1890,7 +1882,7 @@
 
     check-cast v5, Ljava/security/cert/X509Certificate;
 
-    invoke-direct {p0, v5}, Lorg/conscrypt/TrustManagerImpl;->checkBlacklist(Ljava/security/cert/X509Certificate;)V
+    invoke-direct {p0, v5}, Lorg/conscrypt/TrustManagerImpl;->checkBlocklist(Ljava/security/cert/X509Certificate;)V
 
     goto :goto_1
 
@@ -2036,7 +2028,7 @@
 
     const-string p3, "Rejected candidate cert chain due to error: "
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 

@@ -14,9 +14,11 @@
 
 .field public final mainRowItemSubtitle:Landroid/widget/TextView;
 
+.field public final rootLayout:Landroidx/constraintlayout/widget/ConstraintLayout;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Guideline;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
@@ -26,6 +28,8 @@
     iput-object p6, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRowItemIcon:Landroid/widget/ImageView;
 
     iput-object p7, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRowItemSubtitle:Landroid/widget/TextView;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->rootLayout:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     return-void
 .end method

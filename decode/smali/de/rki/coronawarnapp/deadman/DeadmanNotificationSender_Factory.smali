@@ -3,14 +3,14 @@
 .source "DeadmanNotificationSender_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;",
         ">;"
     }
@@ -32,17 +32,17 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/ForegroundState;",
+            "Lde/rki/coronawarnapp/util/device/ForegroundState;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final notificationManagerCompatProvider:Ljavax/inject/Provider;
+.field public final notificationHelperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Landroidx/core/app/NotificationManagerCompat;",
+            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
             ">;"
         }
     .end annotation
@@ -59,10 +59,10 @@
             "Landroid/content/Context;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/ForegroundState;",
+            "Lde/rki/coronawarnapp/util/device/ForegroundState;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Landroidx/core/app/NotificationManagerCompat;",
+            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
             ">;)V"
         }
     .end annotation
@@ -73,7 +73,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;->foregroundStateProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;->notificationManagerCompatProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;->notificationHelperProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -97,19 +97,19 @@
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/util/ForegroundState;
+    check-cast v1, Lde/rki/coronawarnapp/util/device/ForegroundState;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;->notificationManagerCompatProvider:Ljavax/inject/Provider;
+    iget-object v2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;->notificationHelperProvider:Ljavax/inject/Provider;
 
     invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Landroidx/core/app/NotificationManagerCompat;
+    check-cast v2, Lde/rki/coronawarnapp/notification/NotificationHelper;
 
     new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;
 
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
 
     return-object v3
 .end method

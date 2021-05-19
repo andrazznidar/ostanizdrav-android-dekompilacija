@@ -191,7 +191,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validateRsaSsaPssParams(Lcom/google/crypto/tink/proto/RsaSsaPssParams;)V
+    invoke-static {p1}, Lcom/google/android/material/R$style;->validateRsaSsaPssParams(Lcom/google/crypto/tink/proto/RsaSsaPssParams;)V
 
     return-void
 .end method

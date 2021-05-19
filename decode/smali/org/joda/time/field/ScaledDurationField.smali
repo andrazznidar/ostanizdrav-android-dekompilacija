@@ -60,7 +60,7 @@
 
     iget v0, p0, Lorg/joda/time/field/ScaledDurationField;->iScalar:I
 
-    invoke-static {p3, p4, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeMultiply(JI)J
+    invoke-static {p3, p4, v0}, Lcom/google/zxing/client/android/R$id;->safeMultiply(JI)J
 
     move-result-wide p3
 

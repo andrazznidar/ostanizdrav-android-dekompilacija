@@ -17,16 +17,26 @@
 
 
 # virtual methods
-.method public compareTo(Ljava/lang/Object;)I
-    .locals 5
+.method public bridge synthetic compareTo(Ljava/lang/Object;)I
+    .locals 0
 
     check-cast p1, Lorg/joda/time/ReadableInstant;
+
+    invoke-virtual {p0, p1}, Lorg/joda/time/base/AbstractInstant;->compareTo(Lorg/joda/time/ReadableInstant;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public compareTo(Lorg/joda/time/ReadableInstant;)I
+    .locals 5
 
     const/4 v0, 0x0
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
     invoke-interface {p1}, Lorg/joda/time/ReadableInstant;->getMillis()J
@@ -41,20 +51,19 @@
 
     if-nez p1, :cond_1
 
-    goto :goto_0
+    return v0
 
     :cond_1
     if-gez p1, :cond_2
 
-    const/4 v0, -0x1
+    const/4 p1, -0x1
 
-    goto :goto_0
+    return p1
 
     :cond_2
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    :goto_0
-    return v0
+    return p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -98,7 +107,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lcom/google/zxing/client/android/R$id;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

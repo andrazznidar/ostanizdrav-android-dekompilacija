@@ -19,15 +19,15 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    invoke-static {}, L$$ServiceLoaderMethods;->$load2()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load$kotlinx$coroutines$CoroutineExceptionHandlerImplKt$$clinit$-163931$$0()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
 
     invoke-direct {v4, v5, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v4, p1}, Landroidx/transition/ViewGroupUtilsApi14;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-static {v4, p1}, Lcom/google/zxing/client/android/R$id;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     :goto_1
     invoke-interface {v3, v2, v4}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V

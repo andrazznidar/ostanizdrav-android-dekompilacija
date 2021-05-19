@@ -87,7 +87,7 @@
 
     iget-object v0, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
 
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_camera_closed:I
+    const v2, 0x7f09056e
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 

@@ -92,7 +92,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -106,13 +106,13 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2$$special$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
     check-cast p1, Ljava/util/List;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->toContactDiaryLocationVisitSortedList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->toContactDiaryLocationVisitSortedList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 

@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;
 .super Lcom/google/android/gms/internal/base/zaa;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/IStatusCallback;
@@ -36,6 +36,12 @@
 
 .method public static asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/common/api/internal/IStatusCallback;
     .locals 2
+    .param p0    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     if-nez p0, :cond_0
 
@@ -70,6 +76,14 @@
 # virtual methods
 .method public final zaa(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .param p2    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/ApiKey;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -34,15 +34,19 @@
     .end annotation
 .end field
 
+.field public final zae:Ljava/lang/String;
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/Api$ApiOptions;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/Api$ApiOptions;Ljava/lang/String;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/android/gms/common/api/Api<",
-            "TO;>;TO;)V"
+            "TO;>;TO;",
+            "Ljava/lang/String;",
+            ")V"
         }
     .end annotation
 
@@ -52,7 +56,9 @@
 
     iput-object p2, p0, Lcom/google/android/gms/common/api/internal/ApiKey;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
-    const/4 v0, 0x2
+    iput-object p3, p0, Lcom/google/android/gms/common/api/internal/ApiKey;->zae:Ljava/lang/String;
+
+    const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -63,6 +69,10 @@
     const/4 p1, 0x1
 
     aput-object p2, v0, p1
+
+    const/4 p1, 0x2
+
+    aput-object p3, v0, p1
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
@@ -105,7 +115,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zac:Lcom/google/android/gms/common/api/Api;
 
-    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -113,9 +123,19 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/api/internal/ApiKey;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+    iget-object v3, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
-    invoke-static {v2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/ApiKey;->zae:Ljava/lang/String;
+
+    iget-object p1, p1, Lcom/google/android/gms/common/api/internal/ApiKey;->zae:Ljava/lang/String;
+
+    invoke-static {v2, p1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

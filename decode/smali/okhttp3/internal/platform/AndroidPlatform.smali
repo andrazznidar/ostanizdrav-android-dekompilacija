@@ -85,7 +85,7 @@
     :cond_2
     const-string v0, "Expected Android API level 21+ but was "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -220,11 +220,7 @@
 
     aput-object v5, v0, v3
 
-    const-string v3, "elements"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

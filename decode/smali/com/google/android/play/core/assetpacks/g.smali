@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final a:Lcom/google/android/play/core/assetpacks/bc;
+.field public final a:Lcom/google/android/play/core/assetpacks/bb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/play/core/assetpacks/bc;)V
+.method public constructor <init>(Lcom/google/android/play/core/assetpacks/bb;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/g;->a:Lcom/google/android/play/core/assetpacks/bc;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/g;->a:Lcom/google/android/play/core/assetpacks/bb;
 
     return-void
 .end method
@@ -23,70 +23,66 @@
 
 # virtual methods
 .method public final onSuccess(Ljava/lang/Object;)V
-    .locals 9
+    .locals 7
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/g;->a:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/g;->a:Lcom/google/android/play/core/assetpacks/bb;
 
     check-cast p1, Ljava/util/List;
 
-    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/bc;->e:Lcom/google/android/play/core/assetpacks/dl;
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/bb;->e:Lcom/google/android/play/core/assetpacks/dm;
 
-    invoke-virtual {v1}, Lcom/google/android/play/core/assetpacks/dl;->a()I
+    invoke-virtual {v1}, Lcom/google/android/play/core/assetpacks/dm;->a()I
 
     move-result v1
 
-    invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/bc;->g()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/bb;->L()Ljava/util/List;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    const/4 v3, 0x0
+    if-eqz v2, :cond_1
 
-    :goto_0
-    if-ge v3, v2, :cond_2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v4
+    check-cast v2, Ljava/io/File;
 
-    check-cast v4, Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v5
+    invoke-interface {p1, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    invoke-interface {p1, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v5
+    if-nez v3, :cond_0
 
-    if-nez v5, :cond_1
+    invoke-static {v2}, Lcom/google/android/play/core/assetpacks/bb;->H(Ljava/io/File;)J
 
-    invoke-static {v4}, Lcom/google/android/play/core/assetpacks/bc;->b(Ljava/io/File;)J
+    move-result-wide v3
 
-    move-result-wide v5
+    int-to-long v5, v1
 
-    int-to-long v7, v1
+    cmp-long v3, v3, v5
 
-    cmp-long v5, v5, v7
+    if-eqz v3, :cond_0
 
-    if-nez v5, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {v4}, Lcom/google/android/play/core/assetpacks/bc;->c(Ljava/io/File;)Z
-
-    :cond_1
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
+    invoke-static {v2}, Lcom/google/android/play/core/assetpacks/bb;->P(Ljava/io/File;)Z
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     return-void
 .end method

@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x59,
-        0x61,
-        0x65,
-        0x6d
+        0x6d,
+        0x75,
+        0x79,
+        0x81
     }
     m = "determineRiskLevelResult"
 .end annotation

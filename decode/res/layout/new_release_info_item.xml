@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/new_release_info_item_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:layout_marginStart="@dimen/spacing_normal" android:layout_marginEnd="@dimen/spacing_large" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@id/bullet_point" app:layout_constraintTop_toTopOf="parent" style="@style/subtitleBoldSixteen" />
+    <ImageView android:id="@id/bullet_point" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:src="@drawable/bullet_point" android:importantForAccessibility="no" android:layout_marginStart="@dimen/spacing_normal" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/title" />
+    <TextView android:id="@id/body" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginEnd="@dimen/spacing_large" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@id/title" app:layout_constraintTop_toBottomOf="@id/title" style="@style/subtitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

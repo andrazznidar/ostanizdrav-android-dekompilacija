@@ -122,11 +122,11 @@
     return-object p1
 
     :cond_1
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
 
     move-result-object v0
 
@@ -190,7 +190,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v1
 

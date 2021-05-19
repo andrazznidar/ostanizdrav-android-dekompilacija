@@ -28,7 +28,7 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
 
     iget-object v0, v0, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v0}, Lcom/google/android/material/datepicker/UtcDates;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -179,7 +179,7 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 7
+    .locals 6
 
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -212,7 +212,7 @@
 
     move-result-object p2
 
-    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_day:I
+    const v0, 0x7f0c00bb
 
     invoke-virtual {p2, v0, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -256,7 +256,7 @@
 
     iget-object v2, v2, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v2}, Lcom/google/android/material/datepicker/UtcDates;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v2
 
@@ -272,15 +272,13 @@
 
     iget p2, p2, Lcom/google/android/material/datepicker/Month;->year:I
 
-    invoke-static {}, Lcom/google/android/material/datepicker/Month;->today()Lcom/google/android/material/datepicker/Month;
+    invoke-static {}, Lcom/google/android/material/datepicker/Month;->current()Lcom/google/android/material/datepicker/Month;
 
     move-result-object v4
 
     iget v4, v4, Lcom/google/android/material/datepicker/Month;->year:I
 
-    const-string v5, "UTC"
-
-    const/16 v6, 0x18
+    const/16 v5, 0x18
 
     if-ne p2, v4, :cond_4
 
@@ -290,19 +288,11 @@
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v4, v6, :cond_3
+    if-lt v4, v5, :cond_3
 
-    const-string v4, "MMMEd"
-
-    invoke-static {v4, p2}, Landroid/icu/text/DateFormat;->getInstanceForSkeleton(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
+    invoke-static {p2}, Lcom/google/android/material/datepicker/UtcDates;->getAbbrMonthWeekdayDayFormat(Ljava/util/Locale;)Landroid/icu/text/DateFormat;
 
     move-result-object p2
-
-    invoke-static {v5}, Landroid/icu/util/TimeZone;->getTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
-
-    move-result-object v4
-
-    invoke-virtual {p2, v4}, Landroid/icu/text/DateFormat;->setTimeZone(Landroid/icu/util/TimeZone;)V
 
     new-instance v4, Ljava/util/Date;
 
@@ -315,15 +305,9 @@
     goto :goto_0
 
     :cond_3
-    invoke-static {v1, p2}, Ljava/text/DateFormat;->getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+    invoke-static {p2}, Lcom/google/android/material/datepicker/UtcDates;->getFullFormat(Ljava/util/Locale;)Ljava/text/DateFormat;
 
     move-result-object p2
-
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
-
-    move-result-object v4
-
-    invoke-virtual {p2, v4}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     new-instance v4, Ljava/util/Date;
 
@@ -345,19 +329,11 @@
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v4, v6, :cond_5
+    if-lt v4, v5, :cond_5
 
-    const-string v4, "yMMMEd"
-
-    invoke-static {v4, p2}, Landroid/icu/text/DateFormat;->getInstanceForSkeleton(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
+    invoke-static {p2}, Lcom/google/android/material/datepicker/UtcDates;->getYearAbbrMonthWeekdayDayFormat(Ljava/util/Locale;)Landroid/icu/text/DateFormat;
 
     move-result-object p2
-
-    invoke-static {v5}, Landroid/icu/util/TimeZone;->getTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
-
-    move-result-object v4
-
-    invoke-virtual {p2, v4}, Landroid/icu/text/DateFormat;->setTimeZone(Landroid/icu/util/TimeZone;)V
 
     new-instance v4, Ljava/util/Date;
 
@@ -370,15 +346,9 @@
     goto :goto_1
 
     :cond_5
-    invoke-static {v1, p2}, Ljava/text/DateFormat;->getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+    invoke-static {p2}, Lcom/google/android/material/datepicker/UtcDates;->getFullFormat(Ljava/util/Locale;)Ljava/text/DateFormat;
 
     move-result-object p2
-
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
-
-    move-result-object v4
-
-    invoke-virtual {p2, v4}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     new-instance v4, Ljava/util/Date;
 
@@ -463,11 +433,11 @@
 
     move-result-wide v3
 
-    invoke-static {v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
+    invoke-static {v3, v4}, Lcom/google/android/material/datepicker/UtcDates;->canonicalYearMonthDay(J)J
 
     move-result-wide v3
 
-    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->canonicalYearMonthDay(J)J
+    invoke-static {v1, v2}, Lcom/google/android/material/datepicker/UtcDates;->canonicalYearMonthDay(J)J
 
     move-result-wide v1
 
@@ -484,7 +454,7 @@
     goto :goto_5
 
     :cond_9
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object p2
 

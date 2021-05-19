@@ -775,11 +775,31 @@
 
     if-ge v6, v7, :cond_0
 
-    invoke-virtual {v0, v6}, Landroidx/customview/widget/ExploreByTouchHelper;->createNodeForChild(I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
-    invoke-virtual {v4, v6, v7}, Landroidx/collection/SparseArrayCompat;->put(ILjava/lang/Object;)V
+    check-cast v7, Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    invoke-virtual {v0, v7}, Landroidx/customview/widget/ExploreByTouchHelper;->createNodeForChild(I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/Integer;
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    invoke-virtual {v4, v8, v7}, Landroidx/collection/SparseArrayCompat;->put(ILjava/lang/Object;)V
 
     add-int/lit8 v6, v6, 0x1
 
@@ -1026,7 +1046,7 @@
 
     invoke-virtual {v12, v11, v6}, Landroidx/customview/widget/ExploreByTouchHelper$1;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
 
-    invoke-static {v14, v6, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
+    invoke-static {v14, v6, v1}, Landroidx/core/app/AppOpsManagerCompat;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
 
     move-result v12
 
@@ -1035,7 +1055,7 @@
     goto :goto_7
 
     :cond_10
-    invoke-static {v14, v7, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
+    invoke-static {v14, v7, v1}, Landroidx/core/app/AppOpsManagerCompat;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
 
     move-result v12
 
@@ -1044,7 +1064,7 @@
     goto :goto_6
 
     :cond_11
-    invoke-static {v1, v14, v6, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-static {v1, v14, v6, v7}, Landroidx/core/app/AppOpsManagerCompat;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v12
 
@@ -1053,7 +1073,7 @@
     goto :goto_6
 
     :cond_12
-    invoke-static {v1, v14, v7, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-static {v1, v14, v7, v6}, Landroidx/core/app/AppOpsManagerCompat;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v12
 
@@ -1062,11 +1082,11 @@
     goto :goto_7
 
     :cond_13
-    invoke-static {v1, v14, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
+    invoke-static {v1, v14, v6}, Landroidx/core/app/AppOpsManagerCompat;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result v12
 
-    invoke-static {v1, v14, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
+    invoke-static {v1, v14, v6}, Landroidx/core/app/AppOpsManagerCompat;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result v13
 
@@ -1078,11 +1098,11 @@
 
     add-int v13, v13, v17
 
-    invoke-static {v1, v14, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
+    invoke-static {v1, v14, v7}, Landroidx/core/app/AppOpsManagerCompat;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result v12
 
-    invoke-static {v1, v14, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
+    invoke-static {v1, v14, v7}, Landroidx/core/app/AppOpsManagerCompat;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result v17
 
@@ -1522,7 +1542,7 @@
 .end method
 
 .method public final requestKeyboardFocusForVirtualView(I)Z
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Landroidx/customview/widget/ExploreByTouchHelper;->mHost:Landroid/view/View;
 
@@ -1552,13 +1572,18 @@
     return v1
 
     :cond_1
-    const/high16 v1, -0x80000000
+    const/high16 v2, -0x80000000
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v2, :cond_2
 
     invoke-virtual {p0, v0}, Landroidx/customview/widget/ExploreByTouchHelper;->clearKeyboardFocusForVirtualView(I)Z
 
     :cond_2
+    if-ne p1, v2, :cond_3
+
+    return v1
+
+    :cond_3
     iput p1, p0, Landroidx/customview/widget/ExploreByTouchHelper;->mKeyboardFocusedVirtualViewId:I
 
     move-object v0, p0
@@ -1567,7 +1592,7 @@
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v1, :cond_4
 
     iget-object v0, v0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
 
@@ -1575,7 +1600,7 @@
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->refreshDrawableState()V
 
-    :cond_3
+    :cond_4
     const/16 v0, 0x8
 
     invoke-virtual {p0, p1, v0}, Landroidx/customview/widget/ExploreByTouchHelper;->sendEventForVirtualView(II)Z

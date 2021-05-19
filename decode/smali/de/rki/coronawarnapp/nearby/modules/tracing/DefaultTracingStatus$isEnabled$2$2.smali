@@ -43,7 +43,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabled$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -104,10 +104,23 @@
 .end method
 
 .method public static setUseEngineSocketByDefault(Z)V
-    .locals 0
+    .locals 2
 
     sput-boolean p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocketByDefault:Z
 
+    invoke-static {}, Ljavax/net/ssl/SSLSocketFactory;->getDefault()Ljavax/net/SocketFactory;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;
+
+    invoke-virtual {v0, p0}, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->setUseEngineSocket(Z)V
+
+    :cond_0
     return-void
 .end method
 

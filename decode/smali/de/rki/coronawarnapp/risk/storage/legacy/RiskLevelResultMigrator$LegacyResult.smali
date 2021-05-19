@@ -257,7 +257,7 @@
 .method public isIncreasedRisk()Z
     .locals 1
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->isIncreasedRisk(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Z
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->isIncreasedRisk(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Z
 
     move-result v0
 
@@ -269,7 +269,7 @@
 
     const-string v0, "LegacyResult(riskState="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

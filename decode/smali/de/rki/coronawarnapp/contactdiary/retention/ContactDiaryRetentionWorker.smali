@@ -32,16 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/work/WorkerParameters;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "context"
 
@@ -65,7 +55,7 @@
 
 # virtual methods
 .method public doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 12
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,7 +116,7 @@
     check-cast v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -142,7 +132,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
 
@@ -173,17 +163,19 @@
 
     const-string v10, "ContactDiaryCleanWorker"
 
-    const/4 v11, 0x6
+    const/4 v11, 0x0
+
+    const/16 v12, 0x16
 
     move-object v6, v2
 
-    invoke-direct/range {v6 .. v11}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    invoke-direct/range {v6 .. v12}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->L$0:Ljava/lang/Object;
 
     iput v4, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->label:I
 
-    invoke-static {p1, v2, v0}, Landroidx/transition/ViewGroupUtilsApi14;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

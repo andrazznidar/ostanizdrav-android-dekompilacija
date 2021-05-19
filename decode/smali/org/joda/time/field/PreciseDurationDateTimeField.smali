@@ -199,7 +199,7 @@
 
     move-result v1
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     invoke-virtual {p0, p1, p2}, Lorg/joda/time/DateTimeField;->get(J)I
 

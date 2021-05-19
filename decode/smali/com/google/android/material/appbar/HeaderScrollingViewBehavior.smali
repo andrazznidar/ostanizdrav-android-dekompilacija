@@ -159,7 +159,7 @@
 
     float-to-int v0, v2
 
-    invoke-static {v0, v1, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->clamp(III)I
+    invoke-static {v0, v1, p1}, Landroidx/core/app/AppOpsManagerCompat;->clamp(III)I
 
     move-result v1
 

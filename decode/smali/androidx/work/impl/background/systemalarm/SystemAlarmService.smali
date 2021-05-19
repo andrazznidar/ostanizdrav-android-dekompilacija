@@ -109,6 +109,18 @@
 
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "intent",
+            "flags",
+            "startId"
+        }
+    .end annotation
 
     invoke-super {p0, p1, p2, p3}, Landroidx/lifecycle/LifecycleService;->onStartCommand(Landroid/content/Intent;II)I
 

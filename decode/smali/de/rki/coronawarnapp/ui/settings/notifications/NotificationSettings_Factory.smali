@@ -3,14 +3,14 @@
 .source "NotificationSettings_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;",
         ">;"
     }
@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/ForegroundState;",
+            "Lde/rki/coronawarnapp/util/device/ForegroundState;",
             ">;"
         }
     .end annotation
@@ -46,7 +46,7 @@
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/ForegroundState;",
+            "Lde/rki/coronawarnapp/util/device/ForegroundState;",
             ">;",
             "Ljavax/inject/Provider<",
             "Landroidx/core/app/NotificationManagerCompat;",
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/util/ForegroundState;
+    check-cast v0, Lde/rki/coronawarnapp/util/device/ForegroundState;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings_Factory;->notificationManagerCompatProvider:Ljavax/inject/Provider;
 
@@ -86,7 +86,7 @@
 
     new-instance v2, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;-><init>(Lde/rki/coronawarnapp/util/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;-><init>(Lde/rki/coronawarnapp/util/device/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
 
     return-object v2
 .end method

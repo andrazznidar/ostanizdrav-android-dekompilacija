@@ -24,7 +24,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiagnosisKeyServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,110:1\n1517#2:111\n1588#2,3:112\n*E\n*S KotlinDebug\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n*L\n34#1:111\n34#1,3:112\n*E\n"
+    value = "SMAP\nDiagnosisKeyServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,113:1\n1517#2:114\n1588#2,3:115\n*E\n*S KotlinDebug\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n*L\n34#1:114\n34#1,3:115\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -130,7 +130,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -144,7 +144,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
@@ -174,7 +174,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v1}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
 

@@ -81,11 +81,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
 
     move-result-object v0
 
@@ -293,7 +293,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
+    invoke-static {p1}, Lcom/google/android/material/R$style;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
 
     return-void
 .end method

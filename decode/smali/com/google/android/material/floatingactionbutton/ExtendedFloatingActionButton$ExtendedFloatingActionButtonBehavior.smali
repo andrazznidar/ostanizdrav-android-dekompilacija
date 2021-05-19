@@ -60,21 +60,17 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide:I
+    const/4 p2, 0x0
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, p2, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;->autoHideEnabled:Z
 
-    sget p2, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink:I
+    const/4 p2, 0x1
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, p2, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
@@ -87,58 +83,12 @@
 
 
 # virtual methods
-.method public bridge synthetic getInsetDodgeRect(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;)Z
+.method public getInsetDodgeRect(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;)Z
     .locals 0
 
     check-cast p2, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
 
-    invoke-virtual {p0, p2, p3}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;->getInsetDodgeRect(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Landroid/graphics/Rect;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public getInsetDodgeRect(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Landroid/graphics/Rect;)Z
-    .locals 5
-
-    iget-object v0, p1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->shadowPadding:Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/widget/Button;->getLeft()I
-
-    move-result v1
-
-    iget v2, v0, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v1, v2
-
-    invoke-virtual {p1}, Landroid/widget/Button;->getTop()I
-
-    move-result v2
-
-    iget v3, v0, Landroid/graphics/Rect;->top:I
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {p1}, Landroid/widget/Button;->getRight()I
-
-    move-result v3
-
-    iget v4, v0, Landroid/graphics/Rect;->right:I
-
-    sub-int/2addr v3, v4
-
-    invoke-virtual {p1}, Landroid/widget/Button;->getBottom()I
-
-    move-result p1
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    sub-int/2addr p1, v0
-
-    invoke-virtual {p2, v1, v2, v3, p1}, Landroid/graphics/Rect;->set(IIII)V
-
-    const/4 p1, 0x1
+    const/4 p1, 0x0
 
     return p1
 .end method
@@ -285,108 +235,6 @@
     :goto_2
     invoke-virtual {p1, p2, p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->onLayoutChild(Landroid/view/View;I)V
 
-    iget-object p3, p2, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->shadowPadding:Landroid/graphics/Rect;
-
-    if-eqz p3, :cond_9
-
-    invoke-virtual {p3}, Landroid/graphics/Rect;->centerX()I
-
-    move-result v0
-
-    if-lez v0, :cond_9
-
-    invoke-virtual {p3}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v0
-
-    if-lez v0, :cond_9
-
-    invoke-virtual {p2}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
-
-    invoke-virtual {p2}, Landroid/widget/Button;->getRight()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getWidth()I
-
-    move-result v3
-
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    sub-int/2addr v3, v4
-
-    if-lt v1, v3, :cond_4
-
-    iget v1, p3, Landroid/graphics/Rect;->right:I
-
-    goto :goto_3
-
-    :cond_4
-    invoke-virtual {p2}, Landroid/widget/Button;->getLeft()I
-
-    move-result v1
-
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    if-gt v1, v3, :cond_5
-
-    iget v1, p3, Landroid/graphics/Rect;->left:I
-
-    neg-int v1, v1
-
-    goto :goto_3
-
-    :cond_5
-    move v1, v2
-
-    :goto_3
-    invoke-virtual {p2}, Landroid/widget/Button;->getBottom()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getHeight()I
-
-    move-result p1
-
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    sub-int/2addr p1, v4
-
-    if-lt v3, p1, :cond_6
-
-    iget v2, p3, Landroid/graphics/Rect;->bottom:I
-
-    goto :goto_4
-
-    :cond_6
-    invoke-virtual {p2}, Landroid/widget/Button;->getTop()I
-
-    move-result p1
-
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    if-gt p1, v0, :cond_7
-
-    iget p1, p3, Landroid/graphics/Rect;->top:I
-
-    neg-int v2, p1
-
-    :cond_7
-    :goto_4
-    if-eqz v2, :cond_8
-
-    invoke-static {p2, v2}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
-
-    :cond_8
-    if-eqz v1, :cond_9
-
-    invoke-static {p2, v1}, Landroidx/core/view/ViewCompat;->offsetLeftAndRight(Landroid/view/View;I)V
-
-    :cond_9
     const/4 p1, 0x1
 
     return p1

@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.ui.main.MainActivityViewModel$doBackgroundNoiseCheck$1"
     f = "MainActivityViewModel.kt"
     l = {
-        0x22
+        0x3b
     }
     m = "invokeSuspend"
 .end annotation
@@ -108,7 +108,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -122,7 +122,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->Companion:Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
 

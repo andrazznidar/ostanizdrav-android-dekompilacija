@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.storage.TracingRepository"
     f = "TracingRepository.kt"
     l = {
-        0x99
+        0x9a
     }
     m = "downloadDiagnosisKeysTaskDidNotRunRecently"
 .end annotation

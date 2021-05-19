@@ -141,7 +141,7 @@
     :cond_2
     const/16 v4, 0x17
 
-    invoke-static {v0, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->take(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v4}, Lcom/google/zxing/client/android/R$id;->take(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -156,7 +156,7 @@
 
     const-string v0, "\n"
 
-    invoke-static {v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

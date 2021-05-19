@@ -26,22 +26,14 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
     and-int/lit8 p1, p3, 0x1
 
     const/4 p1, 0x0
 
-    const-string p3, "description"
-
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/util/HumanReadableError;->title:Ljava/lang/String;
-
-    iput-object p2, p0, Lde/rki/coronawarnapp/util/HumanReadableError;->description:Ljava/lang/String;
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -133,7 +125,7 @@
 
     const-string v0, "HumanReadableError(title="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -149,7 +141,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

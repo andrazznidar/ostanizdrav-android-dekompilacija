@@ -125,13 +125,13 @@
 
     if-eq v0, v1, :cond_4
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    if-eq v0, v2, :cond_3
+    if-eq v0, v1, :cond_3
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x4
 
@@ -186,13 +186,7 @@
     :cond_2
     sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v2, "preference_notifications_test_enabled"
-
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isNotificationsTestEnabled()Z
 
     move-result v0
 

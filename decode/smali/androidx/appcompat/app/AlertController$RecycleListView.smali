@@ -32,7 +32,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/appcompat/R$styleable;->RecycleListView_paddingBottomNoButtons:I
+    const/4 p2, 0x0
 
     const/4 v0, -0x1
 
@@ -42,7 +42,7 @@
 
     iput p2, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->mPaddingBottomNoButtons:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->RecycleListView_paddingTopNoTitle:I
+    const/4 p2, 0x1
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 

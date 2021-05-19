@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09045e
+    const v1, 0x7f090542
 
     const/4 v2, 0x1
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09010a
+    const v1, 0x7f090134
 
     const/4 v2, 0x2
 
@@ -37,7 +37,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09010b
+    const v1, 0x7f090135
 
     const/4 v2, 0x3
 
@@ -45,7 +45,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09010d
+    const v1, 0x7f090137
 
     const/4 v2, 0x4
 
@@ -53,7 +53,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090283
+    const v1, 0x7f09032b
 
     const/4 v2, 0x5
 
@@ -61,7 +61,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090134
+    const v1, 0x7f090171
 
     const/4 v2, 0x6
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0, v13}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     invoke-virtual {v12, v0, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -262,12 +262,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 HotDataFlow.kt\nde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,132:1\n60#2:133\n61#2,3:142\n65#2:147\n109#3,8:134\n118#3,2:145\n*E\n*S KotlinDebug\n*F\n+ 1 HotDataFlow.kt\nde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1\n*L\n60#1,8:134\n60#1,2:145\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 HotDataFlow.kt\nde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,132:1\n61#2:133\n62#2,3:142\n66#2:147\n109#3,8:134\n118#3,2:145\n*E\n*S KotlinDebug\n*F\n+ 1 HotDataFlow.kt\nde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1\n*L\n61#1,8:134\n61#1,2:145\n*E\n"
 .end annotation
 
 
@@ -123,7 +123,7 @@
     check-cast v0, Lkotlinx/coroutines/sync/Mutex;
 
     :try_start_0
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -161,7 +161,7 @@
     check-cast v5, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1$invokeSuspend$$inlined$collect$1;
 
     :try_start_1
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -184,12 +184,12 @@
 
     check-cast v7, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalProducer$1$invokeSuspend$$inlined$collect$1;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_4
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     check-cast p1, Lkotlin/jvm/functions/Function2;
 

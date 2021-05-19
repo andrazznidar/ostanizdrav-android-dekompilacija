@@ -409,7 +409,7 @@
 
     sget-object v4, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE:[I
 
-    invoke-static {v0, v3, v2, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {v0, v3, v2, v4}, Landroidx/core/app/AppOpsManagerCompat;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v4
 
@@ -536,7 +536,7 @@
     move/from16 v18, v20
 
     :try_start_2
-    invoke-static/range {v11 .. v18}, Landroidx/transition/ViewGroupUtilsApi14;->createAnimatorFromXml(Landroid/content/Context;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/animation/AnimatorSet;IF)Landroid/animation/Animator;
+    invoke-static/range {v11 .. v18}, Landroidx/navigation/ui/R$anim;->createAnimatorFromXml(Landroid/content/Context;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/animation/AnimatorSet;IF)Landroid/animation/Animator;
 
     move-result-object v10
     :try_end_2
@@ -1015,7 +1015,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTint(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTint(Landroid/graphics/drawable/Drawable;I)V
 
     return-void
 
@@ -1036,7 +1036,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     return-void
 
@@ -1057,7 +1057,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
     return-void
 

@@ -129,7 +129,7 @@
 
     aget v5, v5, v2
 
-    invoke-static {p2, v4, v5}, Landroidx/transition/ViewGroupUtilsApi14;->evaluate(FII)I
+    invoke-static {p2, v4, v5}, Lcom/airbnb/lottie/R$attr;->evaluate(FII)I
 
     move-result v4
 
@@ -149,7 +149,7 @@
 
     const-string v0, "Cannot interpolate between gradients. Lengths vary ("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -169,7 +169,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

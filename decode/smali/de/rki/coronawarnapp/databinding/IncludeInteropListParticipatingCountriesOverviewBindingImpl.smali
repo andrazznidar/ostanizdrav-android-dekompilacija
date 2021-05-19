@@ -81,7 +81,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -124,7 +124,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v9
 
@@ -142,7 +142,7 @@
 
     if-eqz v10, :cond_1
 
-    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v8
 
@@ -157,7 +157,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->countryHeaderDescription:Landroid/widget/TextView;
 
-    invoke-static {v1, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v1, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->countryHeaderDescription:Landroid/widget/TextView;
 
@@ -175,7 +175,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->labelCountrySelectionInfo:Landroid/widget/TextView;
 
-    invoke-static {v0, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v5}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->labelCountrySelectionInfo:Landroid/widget/TextView;
 
@@ -259,14 +259,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public setCountryData(Ljava/util/List;)V

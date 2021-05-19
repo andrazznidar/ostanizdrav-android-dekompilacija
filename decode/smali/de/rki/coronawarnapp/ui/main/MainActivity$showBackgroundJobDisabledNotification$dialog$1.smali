@@ -55,9 +55,9 @@
 
     move-result-object v1
 
-    const-string v2, "android.settings.APPLICATION_DETAILS_SETTINGS"
+    const-string v3, "android.settings.APPLICATION_DETAILS_SETTINGS"
 
-    invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    invoke-direct {v0, v3, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     const/high16 v1, 0x10000000
 
@@ -69,9 +69,24 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/MainActivity$showBackgroundJobDisabledNotification$dialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->access$checkForEnergyOptimizedEnabled(Lde/rki/coronawarnapp/ui/main/MainActivity;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->access$getVm$p(Lde/rki/coronawarnapp/ui/main/MainActivity;)Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v1, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;
+
+    invoke-direct {v1, v0, v2}, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;-><init>(Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v2, v1, v3, v2}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
+
+    :cond_0
+    throw v2
 .end method

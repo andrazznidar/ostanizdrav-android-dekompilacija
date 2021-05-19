@@ -6,17 +6,27 @@
 .implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
-# instance fields
-.field public final zza:Lcom/google/android/gms/internal/nearby/zzt;
+# static fields
+.field public static final zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzt;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzy;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/nearby/zzy;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/nearby/zzy;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzy;->zza:Lcom/google/android/gms/internal/nearby/zzt;
 
     return-void
 .end method
@@ -26,29 +36,31 @@
 .method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzn;
 
     check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzap;
-
-    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/nearby/zzap;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    sget v0, Lcom/google/android/gms/internal/nearby/zzaw;->zza:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdv;
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdq;
 
-    new-instance p2, Lcom/google/android/gms/internal/nearby/zzbg;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzem;
 
     const/4 v1, 0x0
 
-    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzbg;-><init>(Lcom/google/android/gms/internal/nearby/zzbj;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzem;-><init>(Lcom/google/android/gms/internal/nearby/zzek;)V
 
-    iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzbg;->zza:Lcom/google/android/gms/internal/nearby/zzcz;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzan;
 
-    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzbg;)V
+    invoke-direct {v1, p2}, Lcom/google/android/gms/internal/nearby/zzan;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzem;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+
+    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/nearby/zzdq;->zzt(Lcom/google/android/gms/internal/nearby/zzem;)V
 
     return-void
 .end method

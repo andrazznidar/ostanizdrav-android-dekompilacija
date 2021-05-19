@@ -131,7 +131,7 @@
 
     const/4 v3, 0x4
 
-    invoke-static {v1, p1, v0, v2, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->startCoroutineCancellable$default(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function1;I)V
+    invoke-static {v1, p1, v0, v2, v3}, Lcom/google/zxing/client/android/R$id;->startCoroutineCancellable$default(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lkotlin/jvm/functions/Function1;I)V
 
     :cond_1
     :goto_0

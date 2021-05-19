@@ -101,19 +101,13 @@
 
     aput-object p2, v2, p1
 
-    invoke-static {v2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    const-string p2, "%s: actual 0x%08x != expected 0x%08x"
-
-    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
+    const-string p1, "%s: actual 0x%08x != expected 0x%08x"
 
     const-string p2, "java.lang.String.format(this, *args)"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v1, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline27([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -594,7 +588,7 @@
     :cond_16
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, v8, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, v8, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v0
 

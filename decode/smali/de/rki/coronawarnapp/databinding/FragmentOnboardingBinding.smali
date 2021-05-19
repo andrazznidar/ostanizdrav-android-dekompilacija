@@ -8,26 +8,21 @@
 
 .field public final onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+.field public final onboardingEasyLanguage:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/TextView;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingButtonNext:Landroid/widget/Button;
+    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingButtonNext:Landroid/widget/Button;
 
-    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingInclude:Lde/rki/coronawarnapp/databinding/IncludeOnboardingBinding;
+    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBinding;->onboardingEasyLanguage:Landroid/widget/TextView;
 
-    if-eqz p10, :cond_0
-
-    iput-object p0, p10, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     return-void
 .end method
 
@@ -36,7 +31,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c004a
+    const v1, 0x7f0c0053
 
     invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 

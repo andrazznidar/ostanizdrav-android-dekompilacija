@@ -17,9 +17,15 @@
 .end annotation
 
 
+# instance fields
+.field public final synthetic this$0:Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;
+
+
 # direct methods
 .method public constructor <init>(Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3;->this$0:Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,6 +52,12 @@
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    iget-object p2, p0, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3;->this$0:Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;
+
+    iget-object p2, p2, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;->textWatcher:Landroid/text/TextWatcher;
+
+    invoke-virtual {p1, p2}, Landroid/widget/EditText;->removeTextChangedListener(Landroid/text/TextWatcher;)V
 
     :cond_0
     return-void

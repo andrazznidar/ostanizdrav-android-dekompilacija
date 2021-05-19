@@ -201,6 +201,106 @@
     return-object v1
 .end method
 
+.method public get(Lorg/joda/time/ReadablePeriod;J)[I
+    .locals 7
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePeriod;->size()I
+
+    move-result v0
+
+    new-array v1, v0, [I
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, p2, v2
+
+    if-eqz v4, :cond_1
+
+    const/4 v4, 0x0
+
+    :goto_0
+    if-ge v4, v0, :cond_1
+
+    invoke-interface {p1, v4}, Lorg/joda/time/ReadablePeriod;->getFieldType(I)Lorg/joda/time/DurationFieldType;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lorg/joda/time/DurationField;->isPrecise()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {v5, p2, p3, v2, v3}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+
+    move-result v6
+
+    invoke-virtual {v5, v2, v3, v6}, Lorg/joda/time/DurationField;->add(JI)J
+
+    move-result-wide v2
+
+    aput v6, v1, v4
+
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-object v1
+.end method
+
+.method public get(Lorg/joda/time/ReadablePeriod;JJ)[I
+    .locals 5
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePeriod;->size()I
+
+    move-result v0
+
+    new-array v1, v0, [I
+
+    cmp-long v2, p2, p4
+
+    if-eqz v2, :cond_1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-interface {p1, v2}, Lorg/joda/time/ReadablePeriod;->getFieldType(I)Lorg/joda/time/DurationFieldType;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p4, p5, p2, p3}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v3, p2, p3, v4}, Lorg/joda/time/DurationField;->add(JI)J
+
+    move-result-wide p2
+
+    :cond_0
+    aput v4, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-object v1
+.end method
+
 .method public getDateTimeMillis(IIII)J
     .locals 3
     .annotation system Ldalvik/annotation/Throws;

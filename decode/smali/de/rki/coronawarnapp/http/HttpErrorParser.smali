@@ -36,42 +36,92 @@
     invoke-interface {p1, v2}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
 
     move-result-object p1
-    :try_end_0
-    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_1
 
-    :try_start_1
     invoke-virtual {p1}, Lokhttp3/Response;->isSuccessful()Z
 
     move-result v2
+    :try_end_0
+    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_2
 
     if-eqz v2, :cond_0
 
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    iget-object v2, p1, Lokhttp3/Response;->message:Ljava/lang/String;
+    const/4 v2, 0x0
+
+    :try_start_1
+    iget-object v3, p1, Lokhttp3/Response;->message:Ljava/lang/String;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     :try_start_2
-    const-string v2, "Failed to get http error message."
+    const-string v3, "Failed to get http status-message."
 
-    const/4 v3, 0x0
+    new-array v4, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    invoke-virtual {v5, v3, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    :try_end_2
+    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_2
 
-    invoke-virtual {v4, v2, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-object v3, v1
 
     :goto_0
+    const-wide/16 v4, 0x800
+
+    :try_start_3
+    invoke-virtual {p1, v4, v5}, Lokhttp3/Response;->peekBody(J)Lokhttp3/ResponseBody;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lokhttp3/ResponseBody;->string()Ljava/lang/String;
+
+    move-result-object v2
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    :try_start_4
+    const-string v4, "Failed to get http error body."
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v5, v4, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
     move-object v2, v1
 
     :goto_1
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " body="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x27
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
     iget v3, p1, Lokhttp3/Response;->code:I
 
     const/16 v4, 0xcc
@@ -341,15 +391,15 @@
     invoke-direct {p1, v2}, Lde/rki/coronawarnapp/exception/http/UnsupportedMediaTypeException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_2
-    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_1
+    :try_end_4
+    .catch Ljava/net/SocketTimeoutException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/net/UnknownHostException; {:try_start_4 .. :try_end_4} :catch_2
 
     :cond_15
     :pswitch_6
     return-object p1
 
-    :catch_1
+    :catch_2
     move-exception p1
 
     new-instance v2, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;
@@ -358,7 +408,7 @@
 
     throw v2
 
-    :catch_2
+    :catch_3
     move-exception p1
 
     new-instance v2, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;

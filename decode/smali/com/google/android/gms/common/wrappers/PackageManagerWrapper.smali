@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # instance fields
@@ -10,6 +10,10 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

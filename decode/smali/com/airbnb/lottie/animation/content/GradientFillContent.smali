@@ -354,6 +354,14 @@
     goto :goto_0
 
     :cond_5
+    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/GradientFillContent;->linearGradientCache:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->clear()V
+
+    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/GradientFillContent;->radialGradientCache:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->clear()V
+
     new-instance p1, Lcom/airbnb/lottie/animation/keyframe/ValueCallbackKeyframeAnimation;
 
     invoke-direct {p1, p2, v1}, Lcom/airbnb/lottie/animation/keyframe/ValueCallbackKeyframeAnimation;-><init>(Lcom/airbnb/lottie/value/LottieValueCallback;Ljava/lang/Object;)V

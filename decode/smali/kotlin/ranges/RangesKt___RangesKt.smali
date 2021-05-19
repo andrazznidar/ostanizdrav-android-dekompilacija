@@ -96,7 +96,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
-    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
+    invoke-static {p1, p0}, Lcom/google/zxing/client/android/R$id;->nextInt(Lkotlin/random/Random;Lkotlin/ranges/IntRange;)I
 
     move-result p0
     :try_end_0
@@ -130,7 +130,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
-    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->nextLong(Lkotlin/random/Random;Lkotlin/ranges/LongRange;)J
+    invoke-static {p1, p0}, Lcom/google/zxing/client/android/R$id;->nextLong(Lkotlin/random/Random;Lkotlin/ranges/LongRange;)J
 
     move-result-wide p0
     :try_end_0

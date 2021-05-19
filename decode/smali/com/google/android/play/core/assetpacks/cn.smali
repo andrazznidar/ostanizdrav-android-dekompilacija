@@ -5,34 +5,37 @@
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:J
+.field public final b:Ljava/lang/String;
 
-.field public c:I
+.field public final c:J
 
-.field public final d:J
-
-.field public final e:Ljava/util/List;
+.field public final d:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lcom/google/android/play/core/assetpacks/cp;",
+            "Lcom/google/android/play/core/assetpacks/ck;",
             ">;"
         }
     .end annotation
 .end field
 
+.field public final e:I
+
+.field public final f:I
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JIJLjava/util/List;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JLjava/util/List;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "JIJ",
+            "Ljava/lang/String;",
+            "J",
             "Ljava/util/List<",
-            "Lcom/google/android/play/core/assetpacks/cp;",
-            ">;)V"
+            "Lcom/google/android/play/core/assetpacks/ck;",
+            ">;II)V"
         }
     .end annotation
 
@@ -40,13 +43,15 @@
 
     iput-object p1, p0, Lcom/google/android/play/core/assetpacks/cn;->a:Ljava/lang/String;
 
-    iput-wide p2, p0, Lcom/google/android/play/core/assetpacks/cn;->b:J
+    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/cn;->b:Ljava/lang/String;
 
-    iput p4, p0, Lcom/google/android/play/core/assetpacks/cn;->c:I
+    iput-wide p3, p0, Lcom/google/android/play/core/assetpacks/cn;->c:J
 
-    iput-wide p5, p0, Lcom/google/android/play/core/assetpacks/cn;->d:J
+    iput-object p5, p0, Lcom/google/android/play/core/assetpacks/cn;->d:Ljava/util/List;
 
-    iput-object p7, p0, Lcom/google/android/play/core/assetpacks/cn;->e:Ljava/util/List;
+    iput p6, p0, Lcom/google/android/play/core/assetpacks/cn;->e:I
+
+    iput p7, p0, Lcom/google/android/play/core/assetpacks/cn;->f:I
 
     return-void
 .end method

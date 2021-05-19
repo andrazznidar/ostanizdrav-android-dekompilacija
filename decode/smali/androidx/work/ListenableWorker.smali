@@ -14,6 +14,8 @@
 # instance fields
 .field public mAppContext:Landroid/content/Context;
 
+.field public volatile mStopped:Z
+
 .field public mUsed:Z
 
 .field public mWorkerParams:Landroidx/work/WorkerParameters;
@@ -29,6 +31,17 @@
     .end annotation
 
     .annotation build Landroidx/annotation/Keep;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "appContext",
+            "workerParams"
+        }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +103,11 @@
 .end method
 
 .method public final stop()V
-    .locals 0
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/work/ListenableWorker;->mStopped:Z
 
     invoke-virtual {p0}, Landroidx/work/ListenableWorker;->onStopped()V
 

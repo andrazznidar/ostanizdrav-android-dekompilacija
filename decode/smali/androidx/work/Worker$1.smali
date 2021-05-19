@@ -24,6 +24,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/Worker;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010
+        }
+        names = {
+            "this$0"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/work/Worker$1;->this$0:Landroidx/work/Worker;
 

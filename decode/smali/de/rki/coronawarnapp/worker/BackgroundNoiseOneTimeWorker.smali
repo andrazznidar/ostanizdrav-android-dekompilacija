@@ -32,16 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/playbook/Playbook;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/work/WorkerParameters;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "context"
 
@@ -128,7 +118,7 @@
     check-cast v0, Lde/rki/coronawarnapp/worker/BackgroundNoiseOneTimeWorker;
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -144,7 +134,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/worker/BackgroundNoiseOneTimeWorker;->TAG:Ljava/lang/String;
 

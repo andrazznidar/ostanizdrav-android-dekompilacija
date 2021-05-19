@@ -1,9 +1,6 @@
 .class public Lcom/google/android/material/datepicker/MaterialDatePicker$3;
-.super Ljava/lang/Object;
+.super Lcom/google/android/material/datepicker/OnSelectionChangedListener;
 .source "MaterialDatePicker.java"
-
-# interfaces
-.implements Lcom/google/android/material/datepicker/OnSelectionChangedListener;
 
 
 # annotations
@@ -18,7 +15,6 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
         "Lcom/google/android/material/datepicker/OnSelectionChangedListener<",
         "TS;>;"
     }
@@ -35,7 +31,7 @@
 
     iput-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;-><init>()V
 
     return-void
 .end method
@@ -56,33 +52,15 @@
 
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
 
+    iget-object v0, p1, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
+
     iget-object p1, p1, Lcom/google/android/material/datepicker/MaterialDatePicker;->dateSelector:Lcom/google/android/material/datepicker/DateSelector;
 
     invoke-interface {p1}, Lcom/google/android/material/datepicker/DateSelector;->isSelectionComplete()Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
-
-    iget-object p1, p1, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Landroid/widget/Button;->setEnabled(Z)V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
-
-    iget-object p1, p1, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/widget/Button;->setEnabled(Z)V
-
-    :goto_0
     return-void
 .end method

@@ -771,8 +771,6 @@
 
     invoke-virtual {v0, v8}, Landroidx/appcompat/widget/ActionMenuView;->hasSupportDividerBeforeChildAt(I)Z
 
-    move-result v7
-
     add-int/lit8 v10, v10, 0x1
 
     :goto_2

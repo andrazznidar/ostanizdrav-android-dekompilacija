@@ -47,6 +47,12 @@
 .method public abstract get(Lorg/joda/time/ReadablePartial;J)[I
 .end method
 
+.method public abstract get(Lorg/joda/time/ReadablePeriod;J)[I
+.end method
+
+.method public abstract get(Lorg/joda/time/ReadablePeriod;JJ)[I
+.end method
+
 .method public abstract getDateTimeMillis(IIII)J
 .end method
 

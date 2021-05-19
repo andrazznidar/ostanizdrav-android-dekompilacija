@@ -182,7 +182,7 @@
     :cond_1
     iget v1, v0, Landroidx/core/provider/FontRequest;->mCertificatesArray:I
 
-    invoke-static {v2, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->readCerts(Landroid/content/res/Resources;I)Ljava/util/List;
+    invoke-static {v2, v1}, Landroidx/core/app/AppOpsManagerCompat;->readCerts(Landroid/content/res/Resources;I)Ljava/util/List;
 
     move-result-object v1
 
@@ -561,19 +561,13 @@
     :cond_10
     new-instance v1, Landroid/content/pm/PackageManager$NameNotFoundException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Found content provider "
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v4, ", but package was not "
 
-    const-string v4, "Found content provider "
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline32(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, ", but package was not "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
     iget-object v0, v0, Landroidx/core/provider/FontRequest;->mProviderPackage:Ljava/lang/String;
 
@@ -592,7 +586,7 @@
 
     const-string v1, "No package found for authority: "
 
-    invoke-static {v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -894,7 +888,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {p0, p2, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
+    invoke-static {p0, p2, v3}, Landroidx/core/app/AppOpsManagerCompat;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
 
     move-result-object v4
 

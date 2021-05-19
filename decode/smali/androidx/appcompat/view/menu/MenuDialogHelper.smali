@@ -68,7 +68,7 @@
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {p1}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
     :cond_1
     return-void

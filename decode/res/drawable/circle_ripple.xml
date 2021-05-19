@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="?android:colorControlHighlight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/mask" android:left="@dimen/spacing_mega_tiny" android:top="@dimen/spacing_mega_tiny" android:right="@dimen/spacing_mega_tiny" android:bottom="@dimen/spacing_mega_tiny">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorSurface2Pressed" />
+        </shape>
+    </item>
+</ripple>

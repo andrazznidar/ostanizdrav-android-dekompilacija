@@ -26,6 +26,19 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "workerClass",
+            "repeatInterval",
+            "repeatIntervalTimeUnit"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

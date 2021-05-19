@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c00ab
+    const v6, 0x7f0c00b4
 
     aput v6, v4, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903ec
+    const v1, 0x7f0904bc
 
     const/4 v2, 0x3
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903f2
+    const v1, 0x7f0904c2
 
     const/4 v2, 0x4
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903f0
+    const v1, 0x7f0904be
 
     const/4 v2, 0x5
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903ee
+    const v1, 0x7f0904c0
 
     const/4 v2, 0x6
 
@@ -115,7 +115,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -123,7 +123,7 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     aget-object v1, v0, v1
 
@@ -188,7 +188,7 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -312,14 +312,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

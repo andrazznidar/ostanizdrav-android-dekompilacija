@@ -46,6 +46,14 @@
 
 .method public static migrateDatabase(Landroid/content/Context;)V
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     const-string v0, "androidx.work.workdb"
 

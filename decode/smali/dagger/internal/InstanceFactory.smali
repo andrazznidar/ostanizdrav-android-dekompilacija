@@ -3,7 +3,7 @@
 .source "InstanceFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 .implements Ldagger/Lazy;
 
 
@@ -14,7 +14,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "TT;>;",
         "Ldagger/Lazy<",
         "TT;>;"
@@ -46,6 +46,29 @@
     iput-object p1, p0, Ldagger/internal/InstanceFactory;->instance:Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public static create(Ljava/lang/Object;)Ldagger/internal/Factory;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Ldagger/internal/Factory<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Ldagger/internal/InstanceFactory;
+
+    const-string v1, "instance cannot be null"
+
+    invoke-static {p0, v1}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-direct {v0, p0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
 .end method
 
 

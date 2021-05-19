@@ -52,7 +52,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_Layout_android_layout_weight:I
+    const/4 p2, 0x3
 
     const/4 v1, 0x0
 
@@ -62,7 +62,7 @@
 
     iput p2, p0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
-    sget p2, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_Layout_android_layout_gravity:I
+    const/4 p2, 0x0
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 

@@ -156,6 +156,19 @@
     return-wide v0
 .end method
 
+.method public static final getPeriodType(Lorg/joda/time/PeriodType;)Lorg/joda/time/PeriodType;
+    .locals 0
+
+    if-nez p0, :cond_0
+
+    invoke-static {}, Lorg/joda/time/PeriodType;->standard()Lorg/joda/time/PeriodType;
+
+    move-result-object p0
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static final getZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTimeZone;
     .locals 0
 

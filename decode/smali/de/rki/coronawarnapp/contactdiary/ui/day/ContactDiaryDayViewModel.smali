@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryDayViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,50:1\n47#2:51\n49#2:55\n50#3:52\n55#3:54\n106#4:53\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n24#1:51\n24#1:55\n24#1:52\n24#1:54\n24#1:53\n*E\n"
+    value = "SMAP\nContactDiaryDayViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,62:1\n47#2:63\n49#2:67\n50#3:64\n55#3:66\n106#4:65\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n29#1:63\n29#1:67\n29#1:64\n29#1:66\n29#1:65\n*E\n"
 .end annotation
 
 
@@ -51,12 +51,6 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/lang/String;)V
     .locals 3
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "dispatcherProvider"
 

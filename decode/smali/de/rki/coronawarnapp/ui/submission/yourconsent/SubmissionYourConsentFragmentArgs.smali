@@ -34,29 +34,21 @@
 .end method
 
 .method public static final fromBundle(Landroid/os/Bundle;)Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragmentArgs;
-    .locals 2
+    .locals 3
 
     const-string v0, "bundle"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-class v1, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragmentArgs;
 
-    const-class v0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragmentArgs;
+    const-string v2, "isTestResultAvailable"
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-static {p0, v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline41(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+    if-eqz v0, :cond_0
 
-    const-string v0, "isTestResultAvailable"
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result p0
 
@@ -124,7 +116,7 @@
 
     const-string v0, "SubmissionYourConsentFragmentArgs(isTestResultAvailable="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -132,7 +124,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

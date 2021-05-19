@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/UnsupportedApiCallException;
 .super Ljava/lang/UnsupportedOperationException;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # instance fields
@@ -10,6 +10,10 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/Feature;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/Feature;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
@@ -22,6 +26,8 @@
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/UnsupportedApiCallException;->zza:Lcom/google/android/gms/common/Feature;
 

@@ -1,10 +1,13 @@
 .class public Lcom/google/android/gms/common/api/ApiException;
 .super Ljava/lang/Exception;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # instance fields
 .field public final mStatus:Lcom/google/android/gms/common/api/Status;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
@@ -13,6 +16,10 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/api/Status;)V
     .locals 4
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     iget v0, p1, Lcom/google/android/gms/common/api/Status;->zzc:I
 

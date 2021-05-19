@@ -161,7 +161,7 @@
 
     invoke-virtual {v0, v4, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
+    invoke-static {p0, p1}, Lcom/google/zxing/client/android/R$id;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -211,7 +211,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v0 .. v5}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 

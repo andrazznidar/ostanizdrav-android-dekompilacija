@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/play/core/assetpacks/de;
-.super Lcom/google/android/play/core/assetpacks/ct;
+.super Lcom/google/android/play/core/assetpacks/cr;
 
 
 # instance fields
@@ -14,7 +14,7 @@
 .method public constructor <init>(ILjava/lang/String;IJLjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/play/core/assetpacks/ct;-><init>(ILjava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/android/play/core/assetpacks/cr;-><init>(ILjava/lang/String;)V
 
     iput p3, p0, Lcom/google/android/play/core/assetpacks/de;->a:I
 

@@ -65,7 +65,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903ae
+    const v1, 0x7f09049a
 
     const/16 v2, 0x9
 
@@ -73,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903b2
+    const v1, 0x7f09049d
 
     const/16 v2, 0xa
 
@@ -91,10 +91,10 @@
 
     :array_1
     .array-data 4
-        0x7f0c006b
-        0x7f0c0083
-        0x7f0c00ab
-        0x7f0c00aa
+        0x7f0c008a
+        0x7f0c009b
+        0x7f0c00b4
+        0x7f0c00b3
     .end array-data
 .end method
 
@@ -237,11 +237,25 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+
+    if-eqz p1, :cond_2
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+
+    if-eqz p1, :cond_3
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -268,7 +282,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->mCountryData:Ljava/util/List;
+    const/4 v4, 0x0
 
     const-wide/16 v5, 0xc
 
@@ -297,13 +311,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f1202a1
+    const v2, 0x7f1203a3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
 
@@ -311,13 +325,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f1202ad
+    const v2, 0x7f1203af
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_1
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
@@ -476,139 +490,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_2
-
-    if-eq p1, v1, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
-.end method
-
-.method public setCountryData(Ljava/util/List;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/ui/Country;",
-            ">;)V"
-        }
-    .end annotation
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->mCountryData:Ljava/util/List;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0xa
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

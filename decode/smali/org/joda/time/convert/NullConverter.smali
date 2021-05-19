@@ -6,6 +6,7 @@
 .implements Lorg/joda/time/convert/InstantConverter;
 .implements Lorg/joda/time/convert/PartialConverter;
 .implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PeriodConverter;
 
 
 # static fields
@@ -48,4 +49,14 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public setInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/Object;Lorg/joda/time/Chronology;)V
+    .locals 0
+
+    const/4 p2, 0x0
+
+    invoke-interface {p1, p2}, Lorg/joda/time/ReadWritablePeriod;->setPeriod(Lorg/joda/time/ReadablePeriod;)V
+
+    return-void
 .end method

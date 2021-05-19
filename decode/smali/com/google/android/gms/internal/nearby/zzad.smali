@@ -2,12 +2,9 @@
 .super Ljava/lang/Object;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
-# interfaces
-.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
-
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/internal/nearby/zzt;
+.field public final zza:Lcom/google/android/gms/internal/nearby/zzaw;
 
 .field public final zzb:Ljava/util/List;
 
@@ -17,12 +14,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzaw;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzad;->zza:Lcom/google/android/gms/internal/nearby/zzt;
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzad;->zza:Lcom/google/android/gms/internal/nearby/zzaw;
 
     iput-object p2, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzb:Ljava/util/List;
 
@@ -35,120 +32,81 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 7
+.method public final then(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;
+    .locals 8
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzb:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzad;->zza:Lcom/google/android/gms/internal/nearby/zzaw;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzc:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzb:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzd:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzc:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzr;
+    iget-object v3, p0, Lcom/google/android/gms/internal/nearby/zzad;->zzd:Ljava/lang/String;
 
-    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+    if-eqz v0, :cond_1
 
-    new-instance v3, Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    move-result-object p1
 
-    move-result v4
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    const/4 v4, 0x0
+    move-result-wide v4
 
-    :try_start_0
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const-wide v6, 0x4016bb0c4L
 
-    move-result-object v0
+    cmp-long p1, v4, v6
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-ltz p1, :cond_0
 
-    move-result v5
+    new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;
 
-    if-eqz v5, :cond_0
+    invoke-direct {p1, v1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;-><init>(Ljava/util/List;)V
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, p1, v2, v3}, Lcom/google/android/gms/internal/nearby/zzaw;->zzb(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)Lcom/google/android/gms/tasks/Task;
 
-    move-result-object v5
-
-    check-cast v5, Ljava/io/File;
-
-    const/high16 v6, 0x10000000
-
-    invoke-static {v5, v6}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdv;
+    new-instance v4, Lcom/google/android/gms/internal/nearby/zzz;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzej;
+    invoke-direct {v4, v0, v1, v2, v3}, Lcom/google/android/gms/internal/nearby/zzz;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
 
-    invoke-direct {v0, v4}, Lcom/google/android/gms/internal/nearby/zzej;-><init>(Lcom/google/android/gms/internal/nearby/zzei;)V
+    iput-object v4, p1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
-    iput-object v3, v0, Lcom/google/android/gms/internal/nearby/zzej;->zzc:Ljava/util/List;
+    const/4 v1, 0x1
 
-    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzej;->zzd:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+    new-array v2, v1, [Lcom/google/android/gms/common/Feature;
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzav;
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v3, p2}, Lcom/google/android/gms/internal/nearby/zzav;-><init>(Ljava/util/List;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    sget-object v4, Lcom/google/android/gms/nearby/zza;->zzf:Lcom/google/android/gms/common/Feature;
 
-    iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzej;->zzb:Lcom/google/android/gms/common/api/internal/IStatusCallback;
+    aput-object v4, v2, v3
 
-    iput-object v2, v0, Lcom/google/android/gms/internal/nearby/zzej;->zze:Ljava/lang/String;
+    iput-object v2, p1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
-    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/nearby/zzdv;->zza(Lcom/google/android/gms/internal/nearby/zzej;)V
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    new-instance v0, Lcom/google/android/gms/common/api/Status;
-
-    const v1, 0x9a52
-
-    invoke-virtual {p1}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
 
     move-result-object p1
 
-    invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/Status;->isSuccess()Z
+    move-result-object p1
 
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p2, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
-
-    invoke-virtual {p1, v4}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Object;)V
-
-    goto :goto_1
+    :goto_0
+    return-object p1
 
     :cond_1
-    new-instance p1, Lcom/google/android/gms/common/api/ApiException;
+    const/4 p1, 0x0
 
-    invoke-direct {p1, v0}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    iget-object p2, p2, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
-
-    invoke-virtual {p2, p1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
-
-    :goto_1
-    return-void
+    throw p1
 .end method

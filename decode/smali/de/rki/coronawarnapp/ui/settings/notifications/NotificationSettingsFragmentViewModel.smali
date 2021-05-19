@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNotificationSettingsFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NotificationSettingsFragmentViewModel.kt\nde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel\n+ 2 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 3 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,44:1\n237#2:45\n239#2:47\n106#3:46\n*E\n*S KotlinDebug\n*F\n+ 1 NotificationSettingsFragmentViewModel.kt\nde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel\n*L\n19#1:45\n19#1:47\n19#1:46\n*E\n"
+    value = "SMAP\nNotificationSettingsFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NotificationSettingsFragmentViewModel.kt\nde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel\n+ 2 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 3 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,45:1\n237#2:46\n239#2:48\n106#3:47\n*E\n*S KotlinDebug\n*F\n+ 1 NotificationSettingsFragmentViewModel.kt\nde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel\n*L\n20#1:46\n20#1:48\n20#1:47\n*E\n"
 .end annotation
 
 
@@ -26,8 +26,6 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;)V
     .locals 4
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "dispatcherProvider"
 
@@ -69,7 +67,7 @@
 
     invoke-direct {p2, v0}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
@@ -148,7 +146,7 @@
 .end method
 
 .method public final toggleNotificationsTestEnabled()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel;->notificationSettings:Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;
 
@@ -156,19 +154,11 @@
 
     sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v2, "preference_notifications_test_enabled"
-
-    const/4 v3, 0x1
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isNotificationsTestEnabled()Z
 
     move-result v1
 
-    xor-int/2addr v1, v3
+    xor-int/lit8 v1, v1, 0x1
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
 
@@ -178,9 +168,11 @@
 
     move-result-object v0
 
-    const-string v3, "editor"
+    const-string v2, "editor"
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "preference_notifications_test_enabled"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

@@ -41,7 +41,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$NotificationReceiverSubcomponentImpl;->this$0:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
 
-    new-instance v1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    new-instance v1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
@@ -67,9 +67,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/notification/NotificationHelper;
 
-    invoke-direct {v1, v2, v3, v0}, Lde/rki/coronawarnapp/notification/TestResultNotificationService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
+    invoke-direct {v1, v2, v3, v0}, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
 
-    iput-object v1, p1, Lde/rki/coronawarnapp/notification/NotificationReceiver;->testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    iput-object v1, p1, Lde/rki/coronawarnapp/notification/NotificationReceiver;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
     return-void
 .end method

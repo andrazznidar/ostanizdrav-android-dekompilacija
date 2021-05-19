@@ -34,13 +34,13 @@
 
     move-result-object p1
 
-    const p2, 0x7f0c003e
+    const p2, 0x7f0c0048
 
     const/4 p3, 0x1
 
     invoke-virtual {p1, p2, p0, p3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    const p1, 0x7f090130
+    const p1, 0x7f090167
 
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

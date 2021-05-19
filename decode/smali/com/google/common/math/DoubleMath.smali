@@ -17,7 +17,7 @@
 .method public static isMathematicalInteger(D)Z
     .locals 6
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->isFinite(D)Z
 
     move-result v0
 
@@ -31,7 +31,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->isFinite(D)Z
 
     move-result v0
 
@@ -97,7 +97,7 @@
 .method public static roundToLong(DLjava/math/RoundingMode;)J
     .locals 8
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->isFinite(D)Z
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->isFinite(D)Z
 
     move-result v0
 

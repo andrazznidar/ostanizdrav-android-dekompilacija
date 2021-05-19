@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/GmsClient;
 .super Lcom/google/android/gms/common/internal/BaseGmsClient;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$Client;
@@ -37,6 +37,26 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
     .locals 11
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/google/android/gms/common/internal/ClientSettings;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p5    # Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p6    # Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     move-object v10, p0
 
@@ -51,13 +71,13 @@
 
     if-nez v2, :cond_0
 
-    new-instance v2, Lcom/google/android/gms/common/internal/zzf;
+    new-instance v2, Lcom/google/android/gms/common/internal/zzg;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Lcom/google/android/gms/common/internal/zzf;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, v3}, Lcom/google/android/gms/common/internal/zzg;-><init>(Landroid/content/Context;)V
 
     sput-object v2, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 
@@ -70,21 +90,21 @@
 
     sget-object v5, Lcom/google/android/gms/common/GoogleApiAvailability;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
-    invoke-static/range {p5 .. p5}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {p5 .. p5}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static/range {p6 .. p6}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {p6 .. p6}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v7, Lcom/google/android/gms/common/internal/zah;
+    new-instance v7, Lcom/google/android/gms/common/internal/zag;
 
     move-object/from16 v1, p5
 
-    invoke-direct {v7, v1}, Lcom/google/android/gms/common/internal/zah;-><init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
+    invoke-direct {v7, v1}, Lcom/google/android/gms/common/internal/zag;-><init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
 
-    new-instance v8, Lcom/google/android/gms/common/internal/zag;
+    new-instance v8, Lcom/google/android/gms/common/internal/zai;
 
     move-object/from16 v1, p6
 
-    invoke-direct {v8, v1}, Lcom/google/android/gms/common/internal/zag;-><init>(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+    invoke-direct {v8, v1}, Lcom/google/android/gms/common/internal/zai;-><init>(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
 
     iget-object v9, v0, Lcom/google/android/gms/common/internal/ClientSettings;->zah:Ljava/lang/String;
 

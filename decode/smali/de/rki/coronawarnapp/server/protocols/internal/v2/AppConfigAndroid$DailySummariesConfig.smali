@@ -136,7 +136,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4200()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
+.method public static synthetic access$5000()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
@@ -144,7 +144,7 @@
     return-object v0
 .end method
 
-.method public static synthetic access$4300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;II)V
+.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketThresholdDb(II)V
@@ -152,7 +152,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
+.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketThresholdDb(I)V
@@ -160,7 +160,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
+.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketThresholdDb(Ljava/lang/Iterable;)V
@@ -168,7 +168,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketThresholdDb()V
@@ -176,7 +176,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;ID)V
+.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;ID)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketWeights(ID)V
@@ -184,7 +184,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
+.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketWeights(D)V
@@ -192,7 +192,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
+.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketWeights(Ljava/lang/Iterable;)V
@@ -200,7 +200,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketWeights()V
@@ -208,7 +208,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
+.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setDaysSinceExposureThreshold(I)V
@@ -216,7 +216,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearDaysSinceExposureThreshold()V
@@ -224,7 +224,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
+.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableInfectiousnessWeightsMap()Ljava/util/Map;
@@ -234,7 +234,7 @@
     return-object p0
 .end method
 
-.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
+.method public static synthetic access$6200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setMinimumWindowScore(D)V
@@ -242,7 +242,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+.method public static synthetic access$6300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearMinimumWindowScore()V
@@ -250,7 +250,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
+.method public static synthetic access$6400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableReportTypeWeightsMap()Ljava/util/Map;
@@ -2054,9 +2054,13 @@
 
     move-result-object v5
 
+    check-cast v5, Ljava/lang/Integer;
+
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
+
+    check-cast v2, Ljava/lang/Double;
 
     invoke-virtual {v3, v4, v5, v2}, Lcom/google/protobuf/MapEntryLite;->computeMessageSize(ILjava/lang/Object;Ljava/lang/Object;)I
 
@@ -2117,9 +2121,13 @@
 
     move-result-object v5
 
+    check-cast v5, Ljava/lang/Integer;
+
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
+
+    check-cast v2, Ljava/lang/Double;
 
     invoke-virtual {v3, v4, v5, v2}, Lcom/google/protobuf/MapEntryLite;->computeMessageSize(ILjava/lang/Object;Ljava/lang/Object;)I
 
@@ -2243,9 +2251,13 @@
 
     move-result-object v4
 
+    check-cast v4, Ljava/lang/Integer;
+
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
+
+    check-cast v1, Ljava/lang/Double;
 
     invoke-virtual {v2, p1, v3, v4, v1}, Lcom/google/protobuf/MapEntryLite;->serializeTo(Lcom/google/protobuf/CodedOutputStream;ILjava/lang/Object;Ljava/lang/Object;)V
 
@@ -2298,9 +2310,13 @@
 
     move-result-object v4
 
+    check-cast v4, Ljava/lang/Integer;
+
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
+
+    check-cast v1, Ljava/lang/Double;
 
     invoke-virtual {v2, p1, v3, v4, v1}, Lcom/google/protobuf/MapEntryLite;->serializeTo(Lcom/google/protobuf/CodedOutputStream;ILjava/lang/Object;Ljava/lang/Object;)V
 

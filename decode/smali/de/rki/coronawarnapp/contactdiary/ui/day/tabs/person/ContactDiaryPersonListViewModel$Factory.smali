@@ -7,9 +7,6 @@
 
 
 # annotations
-.annotation build Lcom/squareup/inject/assisted/AssistedInject$Factory;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListViewModel;
 .end annotation

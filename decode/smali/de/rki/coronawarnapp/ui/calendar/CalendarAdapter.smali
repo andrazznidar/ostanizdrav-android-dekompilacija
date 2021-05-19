@@ -134,15 +134,7 @@
 
     new-instance v2, Lorg/joda/time/LocalDate;
 
-    invoke-static {}, Lorg/joda/time/DateTimeUtils;->currentTimeMillis()J
-
-    move-result-wide v3
-
-    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object v5
-
-    invoke-direct {v2, v3, v4, v5}, Lorg/joda/time/LocalDate;-><init>(JLorg/joda/time/Chronology;)V
+    invoke-direct {v2}, Lorg/joda/time/LocalDate;-><init>()V
 
     iget-object v3, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
@@ -215,13 +207,13 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const v0, 0x7f080071
+    const v0, 0x7f080074
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060068
+    const p2, 0x7f060048
 
     invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -256,13 +248,13 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const v0, 0x7f080072
+    const v0, 0x7f080075
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060049
+    const p2, 0x7f06004b
 
     invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -310,7 +302,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060069
+    const p2, 0x7f060049
 
     invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -328,7 +320,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f06006d
+    const p2, 0x7f060076
 
     invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -361,7 +353,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0c003e
+    const v0, 0x7f0c0048
 
     const/4 v1, 0x0
 

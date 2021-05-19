@@ -143,11 +143,7 @@
 
     aput-object v2, v0, v1
 
-    const-string v1, "elements"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

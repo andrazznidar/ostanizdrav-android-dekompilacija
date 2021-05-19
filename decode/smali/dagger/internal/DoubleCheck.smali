@@ -124,8 +124,6 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_1
-
     instance-of v0, p0, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_0
@@ -138,11 +136,6 @@
     invoke-direct {v0, p0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     return-object v0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static reentrantCheck(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

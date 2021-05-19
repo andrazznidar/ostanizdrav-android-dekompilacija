@@ -44,7 +44,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/device/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
     .locals 1
 
     const-string v0, "foregroundState"
@@ -59,7 +59,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;->notificationManagerCompat:Landroidx/core/app/NotificationManagerCompat;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/ForegroundState;->isInForeground()Lkotlinx/coroutines/flow/Flow;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/device/ForegroundState;->isInForeground()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 

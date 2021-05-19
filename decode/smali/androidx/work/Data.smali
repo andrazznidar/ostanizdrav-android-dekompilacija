@@ -67,6 +67,14 @@
 
 .method public constructor <init>(Landroidx/work/Data;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "other"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -83,6 +91,15 @@
 
 .method public constructor <init>(Ljava/util/Map;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "values"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,6 +122,14 @@
 
 .method public static convertPrimitiveBooleanArray([Z)[Ljava/lang/Boolean;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -135,6 +160,14 @@
 
 .method public static convertPrimitiveByteArray([B)[Ljava/lang/Byte;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -165,6 +198,14 @@
 
 .method public static convertPrimitiveDoubleArray([D)[Ljava/lang/Double;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -195,6 +236,14 @@
 
 .method public static convertPrimitiveFloatArray([F)[Ljava/lang/Float;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -225,6 +274,14 @@
 
 .method public static convertPrimitiveIntArray([I)[Ljava/lang/Integer;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -255,6 +312,14 @@
 
 .method public static convertPrimitiveLongArray([J)[Ljava/lang/Long;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
 
     array-length v0, p0
 
@@ -285,6 +350,14 @@
 
 .method public static fromByteArray([B)Landroidx/work/Data;
     .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "bytes"
+        }
+    .end annotation
 
     const-string v0, "Error in Data#fromByteArray: "
 
@@ -494,6 +567,14 @@
 
 .method public static toByteArrayInternal(Landroidx/work/Data;)[B
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "data"
+        }
+    .end annotation
 
     const-string v0, "Error in Data#toByteArray: "
 
@@ -732,6 +813,14 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "o"
+        }
+    .end annotation
 
     const/4 v0, 0x1
 

@@ -79,6 +79,28 @@
     return-object v0
 .end method
 
+.method public setStableInsets(Landroidx/core/graphics/Insets;)V
+    .locals 4
+
+    iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
+
+    iget v1, p1, Landroidx/core/graphics/Insets;->left:I
+
+    iget v2, p1, Landroidx/core/graphics/Insets;->top:I
+
+    iget v3, p1, Landroidx/core/graphics/Insets;->right:I
+
+    iget p1, p1, Landroidx/core/graphics/Insets;->bottom:I
+
+    invoke-static {v1, v2, v3, p1}, Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/view/WindowInsets$Builder;->setStableInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+
+    return-void
+.end method
+
 .method public setSystemWindowInsets(Landroidx/core/graphics/Insets;)V
     .locals 4
 

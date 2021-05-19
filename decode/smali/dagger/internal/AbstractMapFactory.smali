@@ -3,7 +3,7 @@
 .source "AbstractMapFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
@@ -23,7 +23,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Ljava/util/Map<",
         "TK;TV2;>;>;"
     }

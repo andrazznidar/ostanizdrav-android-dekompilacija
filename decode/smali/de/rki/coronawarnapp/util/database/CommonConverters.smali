@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCommonConverters.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CommonConverters.kt\nde/rki/coronawarnapp/util/database/CommonConverters\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,91:1\n1#2:92\n10#3,4:93\n*E\n*S KotlinDebug\n*F\n+ 1 CommonConverters.kt\nde/rki/coronawarnapp/util/database/CommonConverters\n*L\n49#1,4:93\n*E\n"
+    value = "SMAP\nCommonConverters.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CommonConverters.kt\nde/rki/coronawarnapp/util/database/CommonConverters\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,72:1\n1#2:73\n10#3,4:74\n*E\n*S KotlinDebug\n*F\n+ 1 CommonConverters.kt\nde/rki/coronawarnapp/util/database/CommonConverters\n*L\n30#1,4:74\n*E\n"
 .end annotation
 
 

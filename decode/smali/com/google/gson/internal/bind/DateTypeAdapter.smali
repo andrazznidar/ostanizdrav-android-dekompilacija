@@ -102,7 +102,7 @@
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/DateTypeAdapter;->dateFormats:Ljava/util/List;
 
-    invoke-static {v2, v2}, Landroidx/transition/ViewGroupUtilsApi14;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
+    invoke-static {v2, v2}, Lcom/google/android/material/R$style;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
 
     move-result-object v1
 

@@ -118,7 +118,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result p1
 

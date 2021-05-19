@@ -5,6 +5,7 @@ doNotCompress:
 - resources.arsc
 - META-INF/androidx.activity_activity-ktx.version
 - META-INF/androidx.activity_activity.version
+- META-INF/androidx.annotation_annotation-experimental.version
 - META-INF/androidx.appcompat_appcompat-resources.version
 - META-INF/androidx.appcompat_appcompat.version
 - META-INF/androidx.arch.core_core-runtime.version
@@ -26,7 +27,6 @@ doNotCompress:
 - META-INF/androidx.legacy_legacy-support-core-ui.version
 - META-INF/androidx.legacy_legacy-support-core-utils.version
 - META-INF/androidx.legacy_legacy-support-v4.version
-- META-INF/androidx.lifecycle_lifecycle-extensions.version
 - META-INF/androidx.lifecycle_lifecycle-livedata-core-ktx.version
 - META-INF/androidx.lifecycle_lifecycle-livedata-core.version
 - META-INF/androidx.lifecycle_lifecycle-livedata-ktx.version
@@ -49,6 +49,7 @@ doNotCompress:
 - META-INF/androidx.navigation_navigation-runtime.version
 - META-INF/androidx.navigation_navigation-ui-ktx.version
 - META-INF/androidx.navigation_navigation-ui.version
+- META-INF/androidx.preference_preference-ktx.version
 - META-INF/androidx.preference_preference.version
 - META-INF/androidx.print_print.version
 - META-INF/androidx.recyclerview_recyclerview-selection.version
@@ -60,6 +61,7 @@ doNotCompress:
 - META-INF/androidx.security_security-crypto.version
 - META-INF/androidx.slidingpanelayout_slidingpanelayout.version
 - META-INF/androidx.sqlite_sqlite-framework.version
+- META-INF/androidx.sqlite_sqlite-ktx.version
 - META-INF/androidx.sqlite_sqlite.version
 - META-INF/androidx.swiperefreshlayout_swiperefreshlayout.version
 - META-INF/androidx.transition_transition.version
@@ -76,6 +78,7 @@ doNotCompress:
 - META-INF/com.google.dagger_dagger-lint-aar.version
 - META-INF/com.google.dagger_dagger.version
 - png
+- jpg
 - ogg
 isFrameworkApk: false
 packageInfo:
@@ -109,6 +112,14 @@ unknownFiles:
   internal/risk_score_classification.proto: '8'
   internal/risk_score_parameters.proto: '8'
   internal/submission_payload.proto: '8'
+  internal/ppdd/edus_otp.proto: '8'
+  internal/ppdd/edus_otp_request_android.proto: '8'
+  internal/ppdd/edus_otp_request_ios.proto: '8'
+  internal/ppdd/ppa_data.proto: '8'
+  internal/ppdd/ppa_data_request_android.proto: '8'
+  internal/ppdd/ppa_data_request_ios.proto: '8'
+  internal/ppdd/ppac_android.proto: '8'
+  internal/ppdd/ppac_ios.proto: '8'
   internal/stats/card_header.proto: '8'
   internal/stats/key_figure_card.proto: '8'
   internal/stats/statistics.proto: '8'
@@ -117,6 +128,9 @@ unknownFiles:
   internal/v2/app_features.proto: '8'
   internal/v2/exposure_detection_parameters.proto: '8'
   internal/v2/key_download_parameters.proto: '8'
+  internal/v2/ppdd_edus_parameters.proto: '8'
+  internal/v2/ppdd_ppa_parameters.proto: '8'
+  internal/v2/ppdd_ppac_parameters.proto: '8'
   internal/v2/risk_calculation_parameters.proto: '8'
   internal/v2/semantic_version.proto: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
@@ -613,5 +627,5 @@ usesFramework:
   tag: null
 version: 2.5.0
 versionInfo:
-  versionCode: '1100103'
-  versionName: 1.10.1
+  versionCode: '1140300'
+  versionName: 1.14.3

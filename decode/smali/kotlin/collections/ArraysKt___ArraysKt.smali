@@ -120,7 +120,7 @@
     goto :goto_0
 
     :cond_3
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->throwIndexOverflow()V
 
     const/4 p0, 0x0
 
@@ -550,7 +550,7 @@
     if-gt p3, p5, :cond_2
 
     :cond_1
-    invoke-static {p1, v0, p7}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v0, p7}, Lcom/google/zxing/client/android/R$id;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_0
 
@@ -791,7 +791,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->getLastIndex(Ljava/util/List;)I
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getLastIndex(Ljava/util/List;)I
 
     move-result v0
 
@@ -1071,9 +1071,9 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {v0, p0}, Landroidx/transition/ViewGroupUtilsApi14;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    invoke-static {v0, p0}, Lcom/google/zxing/client/android/R$id;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
     return-object v0
 .end method
@@ -1133,7 +1133,7 @@
 
     invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
     return-object v0
 .end method
@@ -1441,7 +1441,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
@@ -1474,7 +1474,7 @@
     if-ne v0, p1, :cond_4
 
     :cond_5
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
 
@@ -1485,7 +1485,7 @@
 
     const-string v0, " is less than zero."
 
-    invoke-static {p0, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1567,11 +1567,11 @@
 
     const/16 v1, 0xc
 
-    invoke-static {p0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v1}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->mapCapacity(I)I
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->mapCapacity(I)I
 
     move-result v1
 
@@ -1649,7 +1649,7 @@
     move-result-object p0
 
     :goto_0
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
@@ -1666,7 +1666,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
 
@@ -1715,7 +1715,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->mapCapacity(I)I
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->mapCapacity(I)I
 
     move-result v0
 
@@ -1736,7 +1736,7 @@
 
     check-cast p0, Lkotlin/Pair;
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->mapOf(Lkotlin/Pair;)Ljava/util/Map;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->mapOf(Lkotlin/Pair;)Ljava/util/Map;
 
     move-result-object v1
 
@@ -1849,7 +1849,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->toSingletonMap(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->toSingletonMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 
@@ -1998,7 +1998,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->mapCapacity(I)I
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->mapCapacity(I)I
 
     move-result v0
 

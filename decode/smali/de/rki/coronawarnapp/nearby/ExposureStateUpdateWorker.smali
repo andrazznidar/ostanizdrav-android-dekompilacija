@@ -32,16 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/work/WorkerParameters;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "context"
 
@@ -65,7 +55,7 @@
 
 # virtual methods
 .method public doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +70,7 @@
     :try_start_0
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
-    new-instance v6, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+    new-instance v7, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
     const-class v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
@@ -94,13 +84,15 @@
 
     const-string v4, "ExposureStateUpdateWorker"
 
-    const/4 v5, 0x6
+    const/4 v5, 0x0
 
-    move-object v0, v6
+    const/16 v6, 0x16
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    move-object v0, v7
 
-    invoke-virtual {p1, v6}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
+    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+
+    invoke-virtual {p1, v7}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 
     sget-object p1, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker;->TAG:Ljava/lang/String;
 
@@ -125,7 +117,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
 
     :goto_0
     new-instance p1, Landroidx/work/ListenableWorker$Result$Success;

@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.task.TaskController"
     f = "TaskController.kt"
     l = {
-        0x127,
-        0xfe
+        0x12a,
+        0x101
     }
     m = "updateSafely"
 .end annotation

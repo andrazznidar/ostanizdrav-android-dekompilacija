@@ -36,7 +36,7 @@
 
     const-string v1, "coronawarnapp-db"
 
-    invoke-static {p1, v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
+    invoke-static {p1, v0, v1}, Landroidx/navigation/ui/R$anim;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object p1
 
@@ -89,6 +89,10 @@
     invoke-static {}, Ljava/security/SecureRandom;->getInstanceStrong()Ljava/security/SecureRandom;
 
     move-result-object v1
+
+    const-string v3, "SecureRandom.getInstanceStrong()"
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -271,7 +275,7 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v1, v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->runBlocking$default(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v1, v0, p1}, Lcom/google/zxing/client/android/R$id;->runBlocking$default(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->Companion:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;
 

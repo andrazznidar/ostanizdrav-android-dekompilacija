@@ -36,7 +36,29 @@
 
 
 # direct methods
-.method public static access$1000(Lcom/google/android/material/bottomappbar/BottomAppBar;Landroidx/appcompat/widget/ActionMenuView;IZ)V
+.method public static access$1500(Lcom/google/android/material/bottomappbar/BottomAppBar;)V
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar;->animatingModeChangeCounter:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar;->animatingModeChangeCounter:I
+
+    return-void
+.end method
+
+.method public static synthetic access$1600(Lcom/google/android/material/bottomappbar/BottomAppBar;I)F
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getFabTranslationX(I)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static access$1800(Lcom/google/android/material/bottomappbar/BottomAppBar;Landroidx/appcompat/widget/ActionMenuView;IZ)V
     .locals 0
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getActionMenuViewTranslationX(Landroidx/appcompat/widget/ActionMenuView;IZ)I
@@ -50,7 +72,7 @@
     return-void
 .end method
 
-.method public static synthetic access$1200(Lcom/google/android/material/bottomappbar/BottomAppBar;)F
+.method public static synthetic access$2000(Lcom/google/android/material/bottomappbar/BottomAppBar;)F
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getFabTranslationX()F
@@ -60,7 +82,7 @@
     return p0
 .end method
 
-.method public static synthetic access$1700(Lcom/google/android/material/bottomappbar/BottomAppBar;)Landroid/view/View;
+.method public static synthetic access$2800(Lcom/google/android/material/bottomappbar/BottomAppBar;)Landroid/view/View;
     .locals 0
 
     invoke-virtual {p0}, Lcom/google/android/material/bottomappbar/BottomAppBar;->findDependentView()Landroid/view/View;
@@ -68,28 +90,6 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static access$700(Lcom/google/android/material/bottomappbar/BottomAppBar;)V
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar;->animatingModeChangeCounter:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar;->animatingModeChangeCounter:I
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lcom/google/android/material/bottomappbar/BottomAppBar;I)F
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getFabTranslationX(I)F
-
-    move-result p0
-
-    return p0
 .end method
 
 .method private getActionMenuView()Landroidx/appcompat/widget/ActionMenuView;
@@ -157,6 +157,22 @@
     iget v0, v0, Lcom/google/android/material/bottomappbar/BottomAppBarTopEdgeTreatment;->cradleVerticalOffset:F
 
     neg-float v0, v0
+
+    return v0
+.end method
+
+.method private getLeftInset()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private getRightInset()I
+    .locals 1
+
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -297,136 +313,132 @@
 .end method
 
 .method public getActionMenuViewTranslationX(Landroidx/appcompat/widget/ActionMenuView;IZ)I
-    .locals 8
+    .locals 6
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
-
-    move-result v0
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    if-ne p2, v0, :cond_7
 
-    if-ne v0, v2, :cond_0
+    if-nez p3, :cond_0
 
-    move v0, v2
-
-    goto :goto_0
+    goto :goto_5
 
     :cond_0
-    move v0, v1
+    invoke-static {p0}, Lcom/google/android/material/R$style;->isLayoutRtl(Landroid/view/View;)Z
 
-    :goto_0
-    if-eqz v0, :cond_1
+    move-result p2
+
+    if-eqz p2, :cond_1
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
-    move-result v3
+    move-result p3
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    move v3, v1
+    move p3, v1
+
+    :goto_0
+    move v2, v1
 
     :goto_1
-    move v4, v1
-
-    :goto_2
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result v5
-
-    if-ge v4, v5, :cond_5
-
-    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v6
-
-    instance-of v6, v6, Landroidx/appcompat/widget/Toolbar$LayoutParams;
-
-    if-eqz v6, :cond_2
-
-    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v6
-
-    check-cast v6, Landroidx/appcompat/widget/Toolbar$LayoutParams;
-
-    iget v6, v6, Landroidx/appcompat/app/ActionBar$LayoutParams;->gravity:I
-
-    const v7, 0x800007
-
-    and-int/2addr v6, v7
-
-    const v7, 0x800003
-
-    if-ne v6, v7, :cond_2
-
-    move v6, v2
-
-    goto :goto_3
-
-    :cond_2
-    move v6, v1
-
-    :goto_3
-    if-eqz v6, :cond_4
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v5}, Landroid/view/View;->getLeft()I
-
-    move-result v5
-
-    invoke-static {v3, v5}, Ljava/lang/Math;->min(II)I
-
     move-result v3
 
-    goto :goto_4
+    if-ge v2, v3, :cond_5
 
-    :cond_3
-    invoke-virtual {v5}, Landroid/view/View;->getRight()I
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result v5
+    move-result-object v3
 
-    invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result v3
+    move-result-object v4
 
-    :cond_4
-    :goto_4
-    add-int/lit8 v4, v4, 0x1
+    instance-of v4, v4, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+
+    iget v4, v4, Landroidx/appcompat/app/ActionBar$LayoutParams;->gravity:I
+
+    const v5, 0x800007
+
+    and-int/2addr v4, v5
+
+    const v5, 0x800003
+
+    if-ne v4, v5, :cond_2
+
+    move v4, v0
 
     goto :goto_2
 
+    :cond_2
+    move v4, v1
+
+    :goto_2
+    if-eqz v4, :cond_4
+
+    if-eqz p2, :cond_3
+
+    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+
+    move-result v3
+
+    invoke-static {p3, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result p3
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {v3}, Landroid/view/View;->getRight()I
+
+    move-result v3
+
+    invoke-static {p3, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result p3
+
+    :cond_4
+    :goto_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
     :cond_5
-    if-eqz v0, :cond_6
+    if-eqz p2, :cond_6
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getRight()I
 
     move-result p1
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result p1
 
-    :goto_5
-    sub-int/2addr v3, p1
+    :goto_4
+    add-int/2addr p1, v1
 
-    if-ne p2, v2, :cond_7
+    sub-int/2addr p3, p1
 
-    if-eqz p3, :cond_7
-
-    move v1, v3
+    return p3
 
     :cond_7
+    :goto_5
     return v1
 .end method
 
@@ -520,27 +532,15 @@
 .end method
 
 .method public final getFabTranslationX(I)F
-    .locals 3
+    .locals 2
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {p0}, Lcom/google/android/material/R$style;->isLayoutRtl(Landroid/view/View;)Z
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    if-ne p1, v2, :cond_2
+    if-ne p1, v1, :cond_1
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -548,23 +548,22 @@
 
     div-int/lit8 p1, p1, 0x2
 
-    sub-int/2addr p1, v1
+    add-int/lit8 p1, p1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
-    :cond_1
-    mul-int/2addr p1, v2
+    :cond_0
+    mul-int/2addr p1, v1
 
     int-to-float p1, p1
 
-    goto :goto_1
+    return p1
 
-    :cond_2
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_1
     return p1
 .end method
 
@@ -746,7 +745,7 @@
 .end method
 
 .method public setCradleVerticalOffset(F)V
-    .locals 1
+    .locals 3
 
     invoke-virtual {p0}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getCradleVerticalOffset()F
 
@@ -754,20 +753,40 @@
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_2
 
-    return-void
-
-    :cond_0
     invoke-direct {p0}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getTopEdgeTreatment()Lcom/google/android/material/bottomappbar/BottomAppBarTopEdgeTreatment;
 
     move-result-object v0
 
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    const/4 v2, 0x0
+
+    cmpg-float v2, p1, v2
+
+    if-ltz v2, :cond_0
+
     iput p1, v0, Lcom/google/android/material/bottomappbar/BottomAppBarTopEdgeTreatment;->cradleVerticalOffset:F
 
-    const/4 p1, 0x0
+    throw v1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "cradleVerticalOffset must be positive."
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    :cond_1
+    throw v1
+
+    :cond_2
+    return-void
 .end method
 
 .method public final setCutoutState()V

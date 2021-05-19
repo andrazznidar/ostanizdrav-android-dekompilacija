@@ -65,33 +65,35 @@
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
     .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
-    if-nez p1, :cond_0
+    iget-object v1, v0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    return v0
+    const/4 v2, 0x0
+
+    if-ne p1, v1, :cond_0
+
+    return v2
 
     :cond_0
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
+    move-object v1, p1
 
-    move-object v2, p1
+    check-cast v1, Landroidx/appcompat/view/menu/SubMenuBuilder;
 
-    check-cast v2, Landroidx/appcompat/view/menu/SubMenuBuilder;
+    iget-object v1, v1, Landroidx/appcompat/view/menu/SubMenuBuilder;->mItem:Landroidx/appcompat/view/menu/MenuItemImpl;
 
-    iget-object v2, v2, Landroidx/appcompat/view/menu/SubMenuBuilder;->mItem:Landroidx/appcompat/view/menu/MenuItemImpl;
+    iget v1, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mId:I
 
-    iget v2, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mId:I
+    iput v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOpenSubMenuId:I
 
-    iput v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOpenSubMenuId:I
+    iget-object v0, v0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
-    iget-object v1, v1, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_1
+    invoke-interface {v0, p1}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
 
-    invoke-interface {v1, p1}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
-
-    move-result v0
+    move-result v2
 
     :cond_1
-    return v0
+    return v2
 .end method

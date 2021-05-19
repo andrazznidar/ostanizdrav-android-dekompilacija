@@ -51,21 +51,6 @@
 # direct methods
 .method public constructor <init>(Ljava/util/Map;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;Lkotlin/jvm/functions/Function2;)V
     .locals 1
-    .param p2    # Landroidx/savedstate/SavedStateRegistryOwner;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p3    # Landroid/os/Bundle;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p4    # Lkotlin/jvm/functions/Function2;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

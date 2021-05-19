@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.nearby.modules.version.DefaultENFVersion"
     f = "DefaultENFVersion.kt"
     l = {
-        0x2e
+        0x2b
     }
     m = "isAtLeast"
 .end annotation

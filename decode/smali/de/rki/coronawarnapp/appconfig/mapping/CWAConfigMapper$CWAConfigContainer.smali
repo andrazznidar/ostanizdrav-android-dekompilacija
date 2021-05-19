@@ -18,15 +18,7 @@
 
 
 # instance fields
-.field public final appFeatures:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/server/protocols/internal/v2/AppFeaturesOuterClass$AppFeature;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final isDeviceTimeCheckEnabled:Z
 
 .field public final latestVersionCode:J
 
@@ -44,27 +36,20 @@
 
 
 # direct methods
-.method public constructor <init>(JJLjava/util/List;Ljava/util/List;)V
+.method public constructor <init>(JJLjava/util/List;Z)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJ",
             "Ljava/util/List<",
             "Ljava/lang/String;",
-            ">;",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/server/protocols/internal/v2/AppFeaturesOuterClass$AppFeature;",
-            ">;)V"
+            ">;Z)V"
         }
     .end annotation
 
     const-string v0, "supportedCountries"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "appFeatures"
-
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -74,7 +59,7 @@
 
     iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->supportedCountries:Ljava/util/List;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->appFeatures:Ljava/util/List;
+    iput-boolean p6, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
     return-void
 .end method
@@ -118,15 +103,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->appFeatures:Ljava/util/List;
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->appFeatures:Ljava/util/List;
+    iget-boolean p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
+    if-ne v0, p1, :cond_0
 
     goto :goto_0
 
@@ -189,8 +170,6 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->supportedCountries:Ljava/util/List;
 
-    const/4 v2, 0x0
-
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
@@ -200,23 +179,29 @@
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    const/4 v1, 0x0
 
     :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->appFeatures:Ljava/util/List;
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
+    const/4 v1, 0x1
 
     :cond_1
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public isDeviceTimeCheckEnabled()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
     return v0
 .end method
@@ -226,7 +211,7 @@
 
     const-string v0, "CWAConfigContainer(latestVersionCode="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -250,19 +235,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", appFeatures="
+    const-string v1, ", isDeviceTimeCheckEnabled="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->appFeatures:Ljava/util/List;
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v2, ")"
 
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

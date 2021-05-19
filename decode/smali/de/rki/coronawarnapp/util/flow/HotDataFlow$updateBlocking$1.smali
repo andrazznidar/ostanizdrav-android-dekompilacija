@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.util.flow.HotDataFlow"
     f = "HotDataFlow.kt"
     l = {
-        0x69
+        0x6d
     }
     m = "updateBlocking"
 .end annotation

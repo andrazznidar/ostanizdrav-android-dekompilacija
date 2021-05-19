@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -43,58 +43,54 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_background:I
+    const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p2
+    move-result-object v0
 
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_backgroundStacked:I
+    const/4 v0, 0x2
 
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p2
+    move-result-object v0
 
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
-    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_height:I
+    const/16 v0, 0xd
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->mHeight:I
+    iput v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->mHeight:I
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getId()I
 
-    move-result p2
-
-    sget v0, Landroidx/appcompat/R$id;->split_action_bar:I
+    move-result v0
 
     const/4 v1, 0x1
 
-    if-ne p2, v0, :cond_0
+    const v2, 0x7f09040e
+
+    if-ne v0, v2, :cond_0
 
     iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->mIsSplit:Z
 
-    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_backgroundSplit:I
+    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    move-result-object v0
 
-    move-result-object p2
-
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
     :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->mIsSplit:Z
-
-    const/4 p2, 0x0
 
     if-eqz p1, :cond_1
 
@@ -102,7 +98,10 @@
 
     if-nez p1, :cond_2
 
-    goto :goto_0
+    :goto_0
+    move p2, v1
+
+    goto :goto_1
 
     :cond_1
     iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
@@ -116,10 +115,8 @@
     goto :goto_0
 
     :cond_2
-    move v1, p2
-
-    :goto_0
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    :goto_1
+    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
 .end method
@@ -291,7 +288,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    sget v0, Landroidx/appcompat/R$id;->action_bar:I
+    const v0, 0x7f090031
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -299,7 +296,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView:Landroid/view/View;
 
-    sget v0, Landroidx/appcompat/R$id;->action_context_bar:I
+    const v0, 0x7f090044
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

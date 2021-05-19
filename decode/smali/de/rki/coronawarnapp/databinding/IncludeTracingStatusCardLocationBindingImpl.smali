@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090465
+    const v1, 0x7f09054f
 
     const/4 v2, 0x4
 
@@ -29,7 +29,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090463
+    const v1, 0x7f09054d
 
     const/4 v2, 0x5
 
@@ -129,7 +129,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -172,11 +172,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-static {v9}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Integer;)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityIcon(Ljava/lang/Object;)I
 
     move-result v9
 
@@ -200,7 +196,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v8
 
@@ -209,7 +205,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBinding;->tracingStatusCardButton:Landroid/widget/Button;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBinding;->tracingStatusCardButton:Landroid/widget/Button;
 
@@ -220,7 +216,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBinding;->tracingStatusCardHeaderHeadline:Landroid/widget/TextView;
 
-    invoke-static {v0, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v5}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
@@ -323,14 +319,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
 .method public setButtonText(Ljava/lang/String;)V
     .locals 4
 
@@ -390,7 +378,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x15
+    const/16 p1, 0x14
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -429,7 +417,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

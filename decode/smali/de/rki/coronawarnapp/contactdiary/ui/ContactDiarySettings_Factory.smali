@@ -3,14 +3,14 @@
 .source "ContactDiarySettings_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;",
         ">;"
     }
@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final contextProvider:Ljavax/inject/Provider;
+.field public final preferencesProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Landroid/content/Context;",
+            "Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;",
             ">;"
         }
     .end annotation
@@ -36,14 +36,14 @@
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Landroid/content/Context;",
+            "Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;",
             ">;)V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;->contextProvider:Ljavax/inject/Provider;
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;->preferencesProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -53,17 +53,17 @@
 .method public get()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;->preferencesProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    check-cast v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;
 
     new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;)V
 
     return-object v1
 .end method

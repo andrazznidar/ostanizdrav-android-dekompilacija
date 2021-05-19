@@ -21,6 +21,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "exception"
+        }
+    .end annotation
 
     invoke-direct {p0}, Landroidx/work/Operation$State;-><init>()V
 

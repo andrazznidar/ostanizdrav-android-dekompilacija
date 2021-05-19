@@ -238,7 +238,7 @@
     goto :goto_2
 
     :cond_7
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->throwIndexOverflow()V
 
     throw v3
 
@@ -347,7 +347,7 @@
 
     new-instance v2, Lokhttp3/internal/http/RealResponseBody;
 
-    invoke-static {v11}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v11}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v3
 

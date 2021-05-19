@@ -150,7 +150,7 @@
     return-void
 .end method
 
-.method public static synthetic access$3500()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
+.method public static synthetic access$4300()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
@@ -158,7 +158,7 @@
     return-object v0
 .end method
 
-.method public static synthetic access$3600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)Ljava/util/Map;
+.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)Ljava/util/Map;
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->getMutableInfectiousnessForDaysSinceOnsetOfSymptomsMap()Ljava/util/Map;
@@ -168,7 +168,7 @@
     return-object p0
 .end method
 
-.method public static synthetic access$3700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeNoneMap(I)V
@@ -176,7 +176,7 @@
     return-void
 .end method
 
-.method public static synthetic access$3800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeNoneMap()V
@@ -184,7 +184,7 @@
     return-void
 .end method
 
-.method public static synthetic access$3900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;II)V
+.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setAttenuationDurationThresholds(II)V
@@ -192,7 +192,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAttenuationDurationThresholds(I)V
@@ -200,7 +200,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;Ljava/lang/Iterable;)V
+.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;Ljava/lang/Iterable;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAllAttenuationDurationThresholds(Ljava/lang/Iterable;)V
@@ -208,7 +208,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearAttenuationDurationThresholds()V
@@ -216,7 +216,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setImmediateDurationWeight(D)V
@@ -224,7 +224,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearImmediateDurationWeight()V
@@ -232,7 +232,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setMediumDurationWeight(D)V
@@ -240,7 +240,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearMediumDurationWeight()V
@@ -248,7 +248,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setNearDurationWeight(D)V
@@ -256,7 +256,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearNearDurationWeight()V
@@ -264,7 +264,7 @@
     return-void
 .end method
 
-.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setOtherDurationWeight(D)V
@@ -272,7 +272,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearOtherDurationWeight()V
@@ -280,7 +280,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setDaysSinceLastExposureThreshold(I)V
@@ -288,7 +288,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearDaysSinceLastExposureThreshold()V
@@ -296,7 +296,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessStandardWeight(D)V
@@ -304,7 +304,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$6200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessStandardWeight()V
@@ -312,7 +312,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$6300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessHighWeight(D)V
@@ -320,7 +320,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$6400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessHighWeight()V
@@ -328,7 +328,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$6500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedTestWeight(D)V
@@ -336,7 +336,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$6600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedTestWeight()V
@@ -344,7 +344,7 @@
     return-void
 .end method
 
-.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$6700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedClinicalDiagnosisWeight(D)V
@@ -352,7 +352,7 @@
     return-void
 .end method
 
-.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$6800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedClinicalDiagnosisWeight()V
@@ -360,7 +360,7 @@
     return-void
 .end method
 
-.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$6900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeSelfReportedWeight(D)V
@@ -368,7 +368,7 @@
     return-void
 .end method
 
-.method public static synthetic access$6200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$7000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeSelfReportedWeight()V
@@ -376,7 +376,7 @@
     return-void
 .end method
 
-.method public static synthetic access$6300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+.method public static synthetic access$7100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeRecursiveWeight(D)V
@@ -384,7 +384,7 @@
     return-void
 .end method
 
-.method public static synthetic access$6400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+.method public static synthetic access$7200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeRecursiveWeight()V
@@ -2316,9 +2316,13 @@
 
     move-result-object v6
 
+    check-cast v6, Ljava/lang/Integer;
+
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
 
     invoke-virtual {v5, v4, v6, v3}, Lcom/google/protobuf/MapEntryLite;->computeMessageSize(ILjava/lang/Object;Ljava/lang/Object;)I
 
@@ -2597,9 +2601,13 @@
 
     move-result-object v3
 
+    check-cast v3, Ljava/lang/Integer;
+
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
 
     const/4 v4, 0x1
 

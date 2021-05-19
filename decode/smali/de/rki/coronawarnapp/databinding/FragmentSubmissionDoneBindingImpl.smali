@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090395
+    const v1, 0x7f090483
 
     const/4 v2, 0x4
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090164
+    const v1, 0x7f0901c5
 
     const/4 v2, 0x5
 
@@ -84,9 +84,9 @@
 
     :array_1
     .array-data 4
-        0x7f0c0077
-        0x7f0c009a
-        0x7f0c00ab
+        0x7f0c0090
+        0x7f0c00a9
+        0x7f0c00b4
     .end array-data
 .end method
 
@@ -176,7 +176,21 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBinding;->submissionDoneContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;
+
+    if-eqz p1, :cond_1
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBinding;->submissionDoneHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    if-eqz p1, :cond_2
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -215,9 +229,9 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080099
+    const v2, 0x7f0800a2
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBinding;->submissionDoneHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
@@ -357,90 +371,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_2
-
-    if-eq p1, v1, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

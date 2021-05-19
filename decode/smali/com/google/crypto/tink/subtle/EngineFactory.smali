@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->logger:Ljava/util/logging/Logger;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAndroid()Z
+    invoke-static {}, Lcom/google/android/material/R$style;->isAndroid()Z
 
     move-result v0
 

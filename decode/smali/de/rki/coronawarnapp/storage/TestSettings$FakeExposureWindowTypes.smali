@@ -37,6 +37,12 @@
     .end annotation
 .end field
 
+.field public static final enum INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT"
+    .end annotation
+.end field
+
 .field public static final enum LOW_RISK_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "LOW_RISK_DEFAULT"
@@ -48,7 +54,7 @@
 .method public static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
@@ -78,9 +84,21 @@
 
     new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    const-string v2, "LOW_RISK_DEFAULT"
+    const-string v2, "INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT"
 
     const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+
+    const-string v2, "LOW_RISK_DEFAULT"
+
+    const/4 v3, 0x3
 
     invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
 

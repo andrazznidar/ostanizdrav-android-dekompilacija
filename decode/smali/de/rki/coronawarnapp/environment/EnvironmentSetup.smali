@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEnvironmentSetup.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnvironmentSetup.kt\nde/rki/coronawarnapp/environment/EnvironmentSetup\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,114:1\n40#2,11:115\n1#3:126\n*E\n*S KotlinDebug\n*F\n+ 1 EnvironmentSetup.kt\nde/rki/coronawarnapp/environment/EnvironmentSetup\n*L\n72#1,11:115\n*E\n"
+    value = "SMAP\nEnvironmentSetup.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnvironmentSetup.kt\nde/rki/coronawarnapp/environment/EnvironmentSetup\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,130:1\n40#2,11:131\n*E\n*S KotlinDebug\n*F\n+ 1 EnvironmentSetup.kt\nde/rki/coronawarnapp/environment/EnvironmentSetup\n*L\n76#1,11:131\n*E\n"
 .end annotation
 
 
@@ -48,7 +48,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$prefs$2;-><init>(Lde/rki/coronawarnapp/environment/EnvironmentSetup;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -58,7 +58,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$environmentJson$2;-><init>(Lde/rki/coronawarnapp/environment/EnvironmentSetup;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -228,9 +228,9 @@
 .end method
 
 .method public final getEnvironmentValue(Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;)Lcom/google/gson/JsonPrimitive;
-    .locals 5
+    .locals 6
 
-    const/4 v0, 0x0
+    const/16 v0, 0x3a
 
     :try_start_0
     iget-object v1, p0, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->environmentJson$delegate:Lkotlin/Lazy;
@@ -255,6 +255,8 @@
 
     const/4 v2, 0x1
 
+    const/4 v3, 0x0
+
     if-eqz v1, :cond_0
 
     move v1, v2
@@ -262,7 +264,7 @@
     goto :goto_0
 
     :cond_0
-    move v1, v0
+    move v1, v3
 
     :goto_0
     if-eqz v1, :cond_1
@@ -280,52 +282,46 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Tried to use unavailable environment: "
+    const-string v4, "Tried to use unavailable environment: "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v3, " on "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->getCurrentEnvironment()Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    new-array v3, v0, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-virtual {v4, v1, v3}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, v1, v4}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;->PRODUCTION:Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
 
     iget-object v1, v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;->rawKey:Ljava/lang/String;
 
     :goto_1
-    iget-object v3, p0, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->environmentJson$delegate:Lkotlin/Lazy;
+    iget-object v4, p0, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->environmentJson$delegate:Lkotlin/Lazy;
 
-    invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    invoke-interface {v4}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lcom/google/gson/JsonObject;
+    check-cast v4, Lcom/google/gson/JsonObject;
 
-    iget-object v3, v3, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+    iget-object v4, v4, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
 
-    invoke-virtual {v3, v1}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
+    invoke-virtual {v4, v1}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-eqz v1, :cond_2
 
@@ -334,56 +330,50 @@
     goto :goto_2
 
     :cond_2
-    move-object v1, v3
+    move-object v1, v4
 
     :goto_2
     check-cast v1, Lcom/google/gson/JsonObject;
 
-    iget-object v4, p1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;->rawKey:Ljava/lang/String;
+    iget-object v5, p1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;->rawKey:Ljava/lang/String;
 
     iget-object v1, v1, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
 
-    invoke-virtual {v1, v4}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
+    invoke-virtual {v1, v5}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
 
     move-result-object v1
 
     if-eqz v1, :cond_3
 
-    iget-object v3, v1, Lcom/google/gson/internal/LinkedTreeMap$Node;->value:Ljava/lang/Object;
+    iget-object v4, v1, Lcom/google/gson/internal/LinkedTreeMap$Node;->value:Ljava/lang/Object;
 
     :cond_3
-    check-cast v3, Lcom/google/gson/JsonPrimitive;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v4, Lcom/google/gson/JsonPrimitive;
 
-    const/4 v1, 0x2
+    if-eqz v4, :cond_4
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v1, "getEnvironmentValue(endpoint=%s): %s"
 
-    aput-object p1, v1, v0
+    const/4 v5, 0x2
 
-    aput-object v3, v1, v2
+    new-array v5, v5, [Ljava/lang/Object;
 
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v5, v3
 
-    const-string v0, "getEndpointUrl(endpoint=%s): %s"
+    aput-object v4, v5, v2
 
-    invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    const-string p1, "run {\n        try {\n    \u2026: %s\", variableKey, it) }"
+    invoke-virtual {v2, v1, v5}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    return-object v4
 
-    return-object v3
+    :cond_4
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    :catch_0
-    move-exception v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, "Failed to retrieve endpoint URL for "
-
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->getCurrentEnvironment()Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
 
@@ -391,27 +381,50 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/16 v3, 0x3a
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    const-string v3, " is missing in your *_environment.json"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v1
+
+    new-instance v2, Ljava/lang/IllegalStateException;
+
+    const-string v3, "Failed to retrieve "
+
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->getCurrentEnvironment()Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-direct {v2, p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v2, v1, p1, v0}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Failed to setup test environment"
-
-    invoke-direct {p1, v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
+    throw v2
 .end method

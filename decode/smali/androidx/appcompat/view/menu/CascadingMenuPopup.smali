@@ -16,10 +16,6 @@
 .end annotation
 
 
-# static fields
-.field public static final ITEM_LAYOUT:I
-
-
 # instance fields
 .field public mAnchorView:Landroid/view/View;
 
@@ -91,16 +87,6 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    sget v0, Landroidx/appcompat/R$layout;->abc_cascading_menu_item_layout:I
-
-    sput v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->ITEM_LAYOUT:I
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/view/View;IIZ)V
     .locals 1
 
@@ -182,7 +168,7 @@
 
     div-int/lit8 p2, p2, 0x2
 
-    sget p3, Landroidx/appcompat/R$dimen;->abc_config_prefDialogWidth:I
+    const p3, 0x7f070017
 
     invoke-virtual {p1, p3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -658,6 +644,20 @@
     return p1
 .end method
 
+.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onSaveInstanceState()Landroid/os/Parcelable;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
     .locals 4
 
@@ -942,7 +942,7 @@
 
     iget-boolean v4, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mOverflowOnly:Z
 
-    sget v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->ITEM_LAYOUT:I
+    const v5, 0x7f0c000b
 
     invoke-direct {v3, v1, v2, v4, v5}, Landroidx/appcompat/view/menu/MenuAdapter;-><init>(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/LayoutInflater;ZI)V
 
@@ -1505,7 +1505,7 @@
 
     if-eqz v3, :cond_1b
 
-    sget v3, Landroidx/appcompat/R$layout;->abc_popup_menu_header_item_layout:I
+    const v3, 0x7f0c0012
 
     invoke-virtual {v2, v3, v4, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

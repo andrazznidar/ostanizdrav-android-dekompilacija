@@ -30,7 +30,13 @@
 
 .field public mOrientation:I
 
+.field public mTotalMargins:I
+
+.field public mTotalSize:I
+
 .field public mTotalWeight:F
+
+.field public mVisibleWidgets:I
 
 .field public mWeightedMatchConstraintsWidgets:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;

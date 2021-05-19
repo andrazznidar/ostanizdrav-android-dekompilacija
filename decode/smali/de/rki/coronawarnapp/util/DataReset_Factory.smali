@@ -3,14 +3,14 @@
 .source "DataReset_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/util/DataReset;",
         ">;"
     }
@@ -18,11 +18,41 @@
 
 
 # instance fields
+.field public final analyticsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/Analytics;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final analyticsSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final appConfigProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/appconfig/AppConfigProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final contactDiaryPreferencesProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;",
             ">;"
         }
     .end annotation
@@ -38,21 +68,21 @@
     .end annotation
 .end field
 
-.field public final contactDiarySettingsProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final contextProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
             "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final cwaSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/main/CWASettings;",
             ">;"
         }
     .end annotation
@@ -98,11 +128,31 @@
     .end annotation
 .end field
 
+.field public final statisticsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final submissionRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/storage/SubmissionRepository;",
+            "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final surveySettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;",
             ">;"
         }
     .end annotation
@@ -110,7 +160,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -125,7 +175,7 @@
             "Lde/rki/coronawarnapp/appconfig/AppConfigProvider;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/storage/SubmissionRepository;",
+            "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;",
@@ -140,7 +190,22 @@
             "Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;",
+            "Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/main/CWASettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/Analytics;",
             ">;)V"
         }
     .end annotation
@@ -163,7 +228,17 @@
 
     iput-object p8, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiaryRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p9, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiarySettingsProvider:Ljavax/inject/Provider;
+    iput-object p9, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
+
+    iput-object p10, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
+
+    iput-object p11, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->statisticsProvider:Ljavax/inject/Provider;
+
+    iput-object p12, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->surveySettingsProvider:Ljavax/inject/Provider;
+
+    iput-object p13, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    iput-object p14, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->analyticsProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -171,103 +246,155 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 11
+    .locals 17
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contextProvider:Ljavax/inject/Provider;
+    move-object/from16 v0, p0
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contextProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v2, v0
+    move-result-object v1
 
-    check-cast v2, Landroid/content/Context;
+    move-object v3, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
+    check-cast v3, Landroid/content/Context;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v3, v0
+    move-result-object v1
 
-    check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    move-object v4, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->appConfigProvider:Ljavax/inject/Provider;
+    check-cast v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->appConfigProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v4, v0
+    move-result-object v1
 
-    check-cast v4, Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
+    move-object v5, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
+    check-cast v5, Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v5, v0
+    move-result-object v1
 
-    check-cast v5, Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    move-object v6, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->exposureDetectionTrackerProvider:Ljavax/inject/Provider;
+    check-cast v6, Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->exposureDetectionTrackerProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v6, v0
+    move-result-object v1
 
-    check-cast v6, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
+    move-object v7, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->downloadDiagnosisKeysSettingsProvider:Ljavax/inject/Provider;
+    check-cast v7, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->downloadDiagnosisKeysSettingsProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v7, v0
+    move-result-object v1
 
-    check-cast v7, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;
+    move-object v8, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v8, v0
+    move-result-object v1
 
-    check-cast v8, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
+    move-object v9, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiaryRepositoryProvider:Ljavax/inject/Provider;
+    check-cast v9, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiaryRepositoryProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v9, v0
+    move-result-object v1
 
-    check-cast v9, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
+    move-object v10, v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiarySettingsProvider:Ljavax/inject/Provider;
+    check-cast v10, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-object v10, v0
+    move-result-object v1
 
-    check-cast v10, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;
+    move-object v11, v1
 
-    new-instance v0, Lde/rki/coronawarnapp/util/DataReset;
+    check-cast v11, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;
 
-    move-object v1, v0
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
 
-    invoke-direct/range {v1 .. v10}, Lde/rki/coronawarnapp/util/DataReset;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/storage/SubmissionRepository;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;)V
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Lde/rki/coronawarnapp/main/CWASettings;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->statisticsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v13, v1
+
+    check-cast v13, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->surveySettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v14, v1
+
+    check-cast v14, Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v15, v1
+
+    check-cast v15, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/DataReset_Factory;->analyticsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v16, v1
+
+    check-cast v16, Lde/rki/coronawarnapp/datadonation/analytics/Analytics;
+
+    new-instance v1, Lde/rki/coronawarnapp/util/DataReset;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v16}, Lde/rki/coronawarnapp/util/DataReset;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;Lde/rki/coronawarnapp/main/CWASettings;Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;Lde/rki/coronawarnapp/datadonation/analytics/Analytics;)V
+
+    return-object v1
 .end method

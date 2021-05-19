@@ -49,6 +49,20 @@
 
 .method public constructor <init>(Landroid/content/Context;ILjava/lang/String;Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "startId",
+            "workSpecId",
+            "dispatcher"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -317,6 +331,15 @@
 
 .method public onAllConstraintsMet(Ljava/util/List;)V
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecIds"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -445,6 +468,15 @@
 
 .method public onAllConstraintsNotMet(Ljava/util/List;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "ignored"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -461,6 +493,16 @@
 
 .method public onExecuted(Ljava/lang/String;Z)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "workSpecId",
+            "needsReschedule"
+        }
+    .end annotation
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
@@ -547,6 +589,14 @@
 
 .method public onTimeLimitExceeded(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecId"
+        }
+    .end annotation
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 

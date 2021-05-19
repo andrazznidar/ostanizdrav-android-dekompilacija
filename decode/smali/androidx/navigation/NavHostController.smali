@@ -1,4 +1,4 @@
-.class public final Landroidx/navigation/NavHostController;
+.class public Landroidx/navigation/NavHostController;
 .super Landroidx/navigation/NavController;
 .source "NavHostController.java"
 

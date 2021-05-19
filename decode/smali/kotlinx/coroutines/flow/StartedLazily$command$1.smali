@@ -152,7 +152,7 @@
 
     check-cast v0, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -166,7 +166,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lkotlinx/coroutines/flow/StartedLazily$command$1;->p$:Lkotlinx/coroutines/flow/FlowCollector;
 

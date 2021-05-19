@@ -138,7 +138,7 @@
 
     invoke-direct {v6}, Lkotlin/sequences/SequenceBuilderIterator;-><init>()V
 
-    invoke-static {v5, v6, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v5, v6, v6}, Lcom/google/zxing/client/android/R$id;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v5
 

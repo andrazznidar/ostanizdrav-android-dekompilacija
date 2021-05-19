@@ -256,13 +256,13 @@
 
     aput-object v6, v0, v2
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     new-instance v2, Ljava/util/ArrayList;
 
-    invoke-static {v0, v5}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 
@@ -304,7 +304,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->throwIndexOverflow()V
 
     throw v1
 
@@ -677,7 +677,7 @@
 
     move-result v3
 
-    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->mapCapacity(I)I
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->mapCapacity(I)I
 
     move-result v3
 
@@ -758,13 +758,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v0
 
     check-cast p1, Lkotlin/reflect/KClass;
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object p1
 
@@ -987,7 +987,7 @@
 
     if-eqz v0, :cond_6
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1028,7 +1028,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v0
 

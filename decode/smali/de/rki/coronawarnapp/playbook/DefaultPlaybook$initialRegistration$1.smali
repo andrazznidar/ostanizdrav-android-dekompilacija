@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x22,
-        0x2c,
+        0x24,
         0x2e,
-        0x33
+        0x30,
+        0x35
     }
     m = "initialRegistration"
 .end annotation

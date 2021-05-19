@@ -100,7 +100,7 @@
 
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->next:Lcom/google/protobuf/ByteString$LeafByteString;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     :cond_0
     iget-object v1, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
@@ -113,7 +113,7 @@
 
     const/4 v1, 0x0
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_1
     iget-object v1, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
@@ -144,28 +144,18 @@
     :cond_2
     check-cast v1, Lcom/google/protobuf/ByteString$LeafByteString;
 
-    invoke-virtual {v1}, Lcom/google/protobuf/ByteString;->size()I
+    invoke-virtual {v1}, Lcom/google/protobuf/ByteString;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_3
-
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_1
     if-nez v2, :cond_0
 
-    :goto_2
+    :goto_1
     iput-object v1, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->next:Lcom/google/protobuf/ByteString$LeafByteString;
 
     return-object v0
 
-    :cond_4
+    :cond_3
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

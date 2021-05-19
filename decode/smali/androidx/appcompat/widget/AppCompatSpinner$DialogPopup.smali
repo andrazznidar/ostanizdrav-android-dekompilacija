@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
     const/4 v0, 0x0
 
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {p1}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
     iput-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPopup:Landroidx/appcompat/app/AlertDialog;
 

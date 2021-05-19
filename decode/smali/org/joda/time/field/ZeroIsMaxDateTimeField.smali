@@ -245,7 +245,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, p3, v1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v1, v0}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     if-ne p3, v0, :cond_0
 

@@ -155,6 +155,16 @@
     return-object v0
 .end method
 
+.method public getMandatorySystemGestureInsets()Landroidx/core/graphics/Insets;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getStableInsets()Landroidx/core/graphics/Insets;
     .locals 1
 
@@ -231,6 +241,14 @@
     move-result v0
 
     return v0
+.end method
+
+.method public inset(IIII)Landroidx/core/view/WindowInsetsCompat;
+    .locals 0
+
+    sget-object p1, Landroidx/core/view/WindowInsetsCompat;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
+
+    return-object p1
 .end method
 
 .method public isConsumed()Z

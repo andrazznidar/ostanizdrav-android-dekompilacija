@@ -17,11 +17,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    sget v0, Landroidx/preference/R$attr;->dialogPreferenceStyle:I
+    const v0, 0x7f040115
 
     const v1, 0x1010091
 
-    invoke-static {p1, v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getAttr(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->getAttr(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -43,11 +43,11 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_dialogTitle:I
+    const/16 p2, 0x9
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_dialogTitle:I
+    const/4 p3, 0x0
 
-    invoke-static {p1, p2, p3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
@@ -60,9 +60,9 @@
     iput-object p2, p0, Landroidx/preference/DialogPreference;->mDialogTitle:Ljava/lang/CharSequence;
 
     :cond_0
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_dialogMessage:I
+    const/16 p2, 0x8
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_dialogMessage:I
+    const/4 p4, 0x1
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -70,16 +70,16 @@
 
     if-nez p2, :cond_1
 
-    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, p4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
     :cond_1
     iput-object p2, p0, Landroidx/preference/DialogPreference;->mDialogMessage:Ljava/lang/CharSequence;
 
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_dialogIcon:I
+    const/4 p2, 0x6
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_dialogIcon:I
+    const/4 p4, 0x2
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -87,12 +87,12 @@
 
     if-nez p2, :cond_2
 
-    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     :cond_2
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_positiveButtonText:I
+    const/16 p2, 0xb
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_positiveButtonText:I
+    const/4 p4, 0x3
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -100,16 +100,16 @@
 
     if-nez p2, :cond_3
 
-    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, p4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
     :cond_3
     iput-object p2, p0, Landroidx/preference/DialogPreference;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_negativeButtonText:I
+    const/16 p2, 0xa
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_negativeButtonText:I
+    const/4 p4, 0x4
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -117,20 +117,18 @@
 
     if-nez p2, :cond_4
 
-    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, p4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
     :cond_4
     iput-object p2, p0, Landroidx/preference/DialogPreference;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    sget p2, Landroidx/preference/R$styleable;->DialogPreference_dialogLayout:I
+    const/4 p2, 0x7
 
-    sget p3, Landroidx/preference/R$styleable;->DialogPreference_android_dialogLayout:I
+    const/4 p4, 0x5
 
-    const/4 p4, 0x0
-
-    invoke-virtual {p1, p3, p4}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p1, p4, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p3
 

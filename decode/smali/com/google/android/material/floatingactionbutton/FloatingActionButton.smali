@@ -5,13 +5,10 @@
 # interfaces
 .implements Lcom/google/android/material/expandable/ExpandableWidget;
 .implements Lcom/google/android/material/shape/Shapeable;
+.implements Landroidx/coordinatorlayout/widget/CoordinatorLayout$AttachedBehavior;
 
 
 # annotations
-.annotation runtime Landroidx/coordinatorlayout/widget/CoordinatorLayout$DefaultBehavior;
-    value = Lcom/google/android/material/floatingactionbutton/FloatingActionButton$Behavior;
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/material/floatingactionbutton/FloatingActionButton$ShadowDelegateImpl;,
@@ -249,6 +246,24 @@
     return-object v0
 .end method
 
+.method public getBehavior()Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior<",
+            "Lcom/google/android/material/floatingactionbutton/FloatingActionButton;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButton$Behavior;
+
+    invoke-direct {v0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton$Behavior;-><init>()V
+
+    return-object v0
+.end method
+
 .method public getCompatElevation()F
     .locals 1
 
@@ -402,7 +417,7 @@
 
     iget-object v0, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->shapeAppearance:Lcom/google/android/material/shape/ShapeAppearanceModel;
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/material/shape/ShapeAppearanceModel;
 
@@ -463,7 +478,7 @@
 
     if-eq p1, v2, :cond_1
 
-    sget p1, Lcom/google/android/material/R$dimen;->design_fab_size_normal:I
+    const p1, 0x7f07008d
 
     invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -472,7 +487,7 @@
     return p1
 
     :cond_1
-    sget p1, Lcom/google/android/material/R$dimen;->design_fab_size_mini:I
+    const p1, 0x7f07008c
 
     invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -622,7 +637,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/google/android/material/R$animator;->design_fab_hide_motion_spec:I
+    const v2, 0x7f020001
 
     invoke-static {v1, v2}, Lcom/google/android/material/animation/MotionSpec;->createFromResource(Landroid/content/Context;I)Lcom/google/android/material/animation/MotionSpec;
 
@@ -633,7 +648,7 @@
     :cond_4
     iget-object v1, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->defaultHideMotionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_1
     const/4 v2, 0x0
@@ -938,7 +953,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast p1, Landroid/os/Bundle;
 
@@ -1677,7 +1692,7 @@
 
     move-result-object v1
 
-    sget v3, Lcom/google/android/material/R$animator;->design_fab_show_motion_spec:I
+    const v3, 0x7f020002
 
     invoke-static {v1, v3}, Lcom/google/android/material/animation/MotionSpec;->createFromResource(Landroid/content/Context;I)Lcom/google/android/material/animation/MotionSpec;
 
@@ -1688,7 +1703,7 @@
     :cond_5
     iget-object v1, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->defaultShowMotionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_1
     invoke-virtual {v0, v1, v2, v2, v2}, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->createAnimator(Lcom/google/android/material/animation/MotionSpec;FFF)Landroid/animation/AnimatorSet;

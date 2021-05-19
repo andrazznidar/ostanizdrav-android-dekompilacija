@@ -28,10 +28,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:exported="false" android:name="de.rki.coronawarnapp.ui.main.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Main"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="de.rki.coronawarnapp.ui.main.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Main" android:windowSoftInputMode="adjustResize"/>
         <activity android:exported="false" android:name="de.rki.coronawarnapp.ui.onboarding.OnboardingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Onboarding"/>
         <activity android:clearTaskOnLaunch="true" android:exported="false" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="fullSensor" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:exported="false" android:launchMode="singleTop" android:name="de.rki.coronawarnapp.contactdiary.ui.ContactDiaryActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.ContactDiary" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <provider android:authorities="si.gov.ostanizdrav.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
         <service android:exported="true" android:name="com.google.android.gms.nearby.exposurenotification.WakeUpService" android:permission="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK"/>
         <provider android:authorities="si.gov.ostanizdrav.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>

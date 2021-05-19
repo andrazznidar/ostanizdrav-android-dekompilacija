@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nOnboardingNotificationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingNotificationsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,52:1\n11#2,9:53\n16#3,11:62\n*E\n*S KotlinDebug\n*F\n+ 1 OnboardingNotificationsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment\n*L\n28#1,9:53\n29#1,11:62\n*E\n"
+    value = "SMAP\nOnboardingNotificationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingNotificationsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,56:1\n11#2,9:57\n16#3,11:66\n*E\n*S KotlinDebug\n*F\n+ 1 OnboardingNotificationsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment\n*L\n30#1,9:57\n31#1,11:66\n*E\n"
 .end annotation
 
 
@@ -40,7 +40,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c004c
+    const v0, 0x7f0c0056
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -88,7 +88,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -99,14 +99,6 @@
 
 
 # virtual methods
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    return-void
-.end method
-
 .method public onResume()V
     .locals 3
 
@@ -192,7 +184,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

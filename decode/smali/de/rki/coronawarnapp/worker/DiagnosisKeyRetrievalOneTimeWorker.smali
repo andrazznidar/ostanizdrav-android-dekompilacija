@@ -32,16 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/work/WorkerParameters;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "context"
 
@@ -65,7 +55,7 @@
 
 # virtual methods
 .method public doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 12
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -127,7 +117,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -141,7 +131,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->TAG:Ljava/lang/String;
 
@@ -193,7 +183,7 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
-    new-instance v11, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+    new-instance v12, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
     const-class v5, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
@@ -209,13 +199,15 @@
 
     const/4 v8, 0x0
 
-    const/4 v10, 0x4
+    const/4 v10, 0x0
+
+    const/16 v11, 0x14
 
     const-string v9, "DiagnosisKeyRetrievalOneTimeWorker"
 
-    move-object v5, v11
+    move-object v5, v12
 
-    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->L$0:Ljava/lang/Object;
 
@@ -223,7 +215,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/worker/DiagnosisKeyRetrievalOneTimeWorker$doWork$1;->label:I
 
-    invoke-static {v2, v11, v0}, Landroidx/transition/ViewGroupUtilsApi14;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v12, v0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 

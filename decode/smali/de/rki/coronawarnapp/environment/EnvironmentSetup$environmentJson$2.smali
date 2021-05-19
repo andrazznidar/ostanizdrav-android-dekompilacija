@@ -56,93 +56,9 @@
 
     const-class v1, Lcom/google/gson/JsonObject;
 
-    const-string v2, "{  \"PROD\": {    \"USE_EUR_KEY_PKGS\": true,    \"SUBMISSION_CDN_URL\": \"https://submission.cwa.gov.si\",    \"DOWNLOAD_CDN_URL\": \"https://svc90.cwa.gov.si\",    \"VERIFICATION_CDN_URL\": \"https://verification.cwa.gov.si\",    \"PUB_KEYS_SIGNATURE_VERIFICATION\": \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2NDY84ATX4/2DW6yROcT/s+JrbrR/7TQHfd1zqeyTCKvajWHOBaOtvUgYqES/woCec0loqiaE/9hwhL1VwaSjQ==\"  }}"
+    const-string v2, "{  \"PROD\": {    \"USE_EUR_KEY_PKGS\": true,    \"DATA_DONATION_CDN_URL\": \"\",    \"SAFETYNET_API_KEY\": \"placeholder\",    \"SUBMISSION_CDN_URL\": \"https://submission.cwa.gov.si\",    \"DOWNLOAD_CDN_URL\": \"https://svc90.cwa.gov.si\",    \"VERIFICATION_CDN_URL\": \"https://verification.cwa.gov.si\",    \"PUB_KEYS_SIGNATURE_VERIFICATION\": \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2NDY84ATX4/2DW6yROcT/s+JrbrR/7TQHfd1zqeyTCKvajWHOBaOtvUgYqES/woCec0loqiaE/9hwhL1VwaSjQ==\"  }}"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_0
-
-    const-class v1, Ljava/lang/Integer;
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_1
-
-    const-class v1, Ljava/lang/Float;
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_2
-
-    const-class v1, Ljava/lang/Byte;
-
-    goto :goto_0
-
-    :cond_2
-    sget-object v2, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_3
-
-    const-class v1, Ljava/lang/Double;
-
-    goto :goto_0
-
-    :cond_3
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_4
-
-    const-class v1, Ljava/lang/Long;
-
-    goto :goto_0
-
-    :cond_4
-    sget-object v2, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_5
-
-    const-class v1, Ljava/lang/Character;
-
-    goto :goto_0
-
-    :cond_5
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_6
-
-    const-class v1, Ljava/lang/Boolean;
-
-    goto :goto_0
-
-    :cond_6
-    sget-object v2, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_7
-
-    const-class v1, Ljava/lang/Short;
-
-    goto :goto_0
-
-    :cond_7
-    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
-
-    if-ne v1, v2, :cond_8
-
-    const-class v1, Ljava/lang/Void;
-
-    :cond_8
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 

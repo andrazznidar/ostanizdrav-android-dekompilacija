@@ -44,7 +44,7 @@
 
     move-result-wide p1
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lcom/google/zxing/client/android/R$id;->safeSubtract(JJ)J
 
     move-result-wide p1
 

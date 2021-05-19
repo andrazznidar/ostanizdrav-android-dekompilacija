@@ -1,9 +1,6 @@
 .class public Lcom/google/android/material/datepicker/MaterialTextInputPicker$1;
-.super Ljava/lang/Object;
+.super Lcom/google/android/material/datepicker/OnSelectionChangedListener;
 .source "MaterialTextInputPicker.java"
-
-# interfaces
-.implements Lcom/google/android/material/datepicker/OnSelectionChangedListener;
 
 
 # annotations
@@ -18,7 +15,6 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
         "Lcom/google/android/material/datepicker/OnSelectionChangedListener<",
         "TS;>;"
     }
@@ -35,7 +31,7 @@
 
     iput-object p1, p0, Lcom/google/android/material/datepicker/MaterialTextInputPicker$1;->this$0:Lcom/google/android/material/datepicker/MaterialTextInputPicker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;-><init>()V
 
     return-void
 .end method
@@ -71,7 +67,7 @@
 
     check-cast v1, Lcom/google/android/material/datepicker/OnSelectionChangedListener;
 
-    invoke-interface {v1, p1}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;->onSelectionChanged(Ljava/lang/Object;)V
+    invoke-virtual {v1, p1}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;->onSelectionChanged(Ljava/lang/Object;)V
 
     goto :goto_0
 

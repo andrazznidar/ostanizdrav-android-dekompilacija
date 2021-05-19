@@ -218,7 +218,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -269,7 +269,7 @@
     :cond_4
     const-string v1, "unexpected port: "
 
-    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -288,7 +288,7 @@
 
     const-string v3, "unexpected host: "
 
-    invoke-static {v3, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -301,7 +301,7 @@
 
     const-string v2, "unexpected scheme: "
 
-    invoke-static {v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -575,7 +575,7 @@
 
     const-string v0, "Address{"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -605,7 +605,7 @@
 
     const-string v1, "proxy="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -616,7 +616,7 @@
     :cond_0
     const-string v1, "proxySelector="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

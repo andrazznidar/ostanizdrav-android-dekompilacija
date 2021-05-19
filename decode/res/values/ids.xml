@@ -41,10 +41,11 @@
     <item type="id" name="action_bar_spinner" />
     <item type="id" name="action_bar_subtitle" />
     <item type="id" name="action_bar_title" />
-    <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryLocationBottomSheetDialogFragment" />
-    <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryPersonBottomSheetDialogFragment" />
-    <item type="id" name="action_contactDiaryEditLocationsFragment_to_contactDiaryLocationBottomSheetDialogFragment" />
-    <item type="id" name="action_contactDiaryEditPersonsFragment_to_contactDiaryPersonBottomSheetDialogFragment" />
+    <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryAddLocationFragment" />
+    <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryAddPersonFragment" />
+    <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryCommentInfoFragment" />
+    <item type="id" name="action_contactDiaryEditLocationsFragment_to_contactDiaryAddLocationFragment" />
+    <item type="id" name="action_contactDiaryEditPersonsFragment_to_contactDiaryAddPersonFragment" />
     <item type="id" name="action_contactDiaryOnboardingFragment_to_contactDiaryInformationPrivacyFragment" />
     <item type="id" name="action_contactDiaryOnboardingFragment_to_contactDiaryOverviewFragment" />
     <item type="id" name="action_contactDiaryOverviewFragment_to_contactDiaryDayFragment" />
@@ -55,20 +56,25 @@
     <item type="id" name="action_context_bar" />
     <item type="id" name="action_divider" />
     <item type="id" name="action_image" />
+    <item type="id" name="action_informationFragment_to_debuglogFragment" />
     <item type="id" name="action_informationFragment_to_informationAboutFragment" />
     <item type="id" name="action_informationFragment_to_informationContactFragment" />
     <item type="id" name="action_informationFragment_to_informationLegalFragment" />
     <item type="id" name="action_informationFragment_to_informationPrivacyFragment" />
     <item type="id" name="action_informationFragment_to_informationTechnicalFragment" />
     <item type="id" name="action_informationFragment_to_informationTermsFragment" />
+    <item type="id" name="action_informationFragment_to_newReleaseInfoFragment" />
     <item type="id" name="action_interopCountryConfigurationFragment_to_settingTracingFragment" />
+    <item type="id" name="action_loadingFragment_to_newReleaseInfoFragment" />
+    <item type="id" name="action_loadingFragment_to_onboardingDeltaInteroperabilityFragment" />
+    <item type="id" name="action_loadingFragment_to_onboardingFragment" />
     <item type="id" name="action_mainFragment_to_informationFragment" />
     <item type="id" name="action_mainFragment_to_mainOverviewFragment" />
     <item type="id" name="action_mainFragment_to_mainSharingFragment" />
-    <item type="id" name="action_mainFragment_to_onboardingDeltaInteroperabilityFragment" />
     <item type="id" name="action_mainFragment_to_riskDetailsFragment" />
     <item type="id" name="action_mainFragment_to_settingsFragment" />
     <item type="id" name="action_mainFragment_to_settingsTracingFragment" />
+    <item type="id" name="action_mainFragment_to_statisticsExplanationFragment" />
     <item type="id" name="action_mainFragment_to_submissionDispatcher" />
     <item type="id" name="action_mainFragment_to_submissionResultPositiveOtherWarningNoConsentFragment" />
     <item type="id" name="action_mainFragment_to_submissionTestResultAvailableFragment" />
@@ -81,21 +87,30 @@
     <item type="id" name="action_mode_bar" />
     <item type="id" name="action_mode_bar_stub" />
     <item type="id" name="action_mode_close_button" />
+    <item type="id" name="action_newReleaseInfoFragment_to_onboardingDeltaAnalyticsFragment" />
+    <item type="id" name="action_onboardingAnalyticsFragment_to_analyticsUserInputFragment" />
+    <item type="id" name="action_onboardingAnalyticsFragment_to_ppaMoreInfoFragment" />
+    <item type="id" name="action_onboardingDeltaAnalyticsFragment_to_analyticsUserInputFragment" />
+    <item type="id" name="action_onboardingDeltaAnalyticsFragment_to_ppaMoreInfoFragment" />
     <item type="id" name="action_onboardingDeltaInteroperabilityFragment_to_informationTermsFragment" />
     <item type="id" name="action_onboardingFragment_to_onboardingPrivacyFragment" />
+    <item type="id" name="action_onboardingNotificationsFragment_to_onboardingAnalyticsFragment" />
     <item type="id" name="action_onboardingPrivacyFragment_to_onboardingTracingFragment" />
     <item type="id" name="action_onboardingTestFragment_to_onboardingNotificationsFragment" />
     <item type="id" name="action_onboardingTracingFragment_to_onboardingTestFragment" />
     <item type="id" name="action_riskDetailsFragment_to_settingsTracingFragment" />
+    <item type="id" name="action_riskDetailsFragment_to_surveyConsentFragment" />
     <item type="id" name="action_settingsFragment_self" />
     <item type="id" name="action_settingsFragment_to_settingsBackgroundPriorityFragment" />
     <item type="id" name="action_settingsFragment_to_settingsNotificationFragment" />
+    <item type="id" name="action_settingsFragment_to_settingsPrivacyPreservingAnalyticsFragment" />
     <item type="id" name="action_settingsFragment_to_settingsResetFragment" />
     <item type="id" name="action_settingsFragment_to_settingsTracingFragment" />
+    <item type="id" name="action_settingsPrivacyPreservingAnalyticsFragment_to_analyticsUserInputFragment" />
+    <item type="id" name="action_settingsPrivacyPreservingAnalyticsFragment_to_ppaMoreInfoFragment" />
     <item type="id" name="action_settingsResetFragment_to_mainFragment" />
     <item type="id" name="action_settingsTracingFragment_to_interopCountryConfigurationFragment" />
     <item type="id" name="action_submissionCalendarFragment_to_submissionSymptomIntroductionFragment" />
-    <item type="id" name="action_submissionConsentFragment_to_homeFragment" />
     <item type="id" name="action_submissionConsentFragment_to_informationPrivacyFragment" />
     <item type="id" name="action_submissionConsentFragment_to_submissionQRCodeScanFragment" />
     <item type="id" name="action_submissionContactFragment_to_submissionTanFragment" />
@@ -129,17 +144,36 @@
     <item type="id" name="action_submissionTestResultPendingFragment_to_submissionTestResultInvalidFragment" />
     <item type="id" name="action_submissionTestResultPendingFragment_to_submissionTestResultNegativeFragment" />
     <item type="id" name="action_submissionYourConsentFragment_to_informationPrivacyFragment" />
+    <item type="id" name="action_surveyConsentFragment_to_surveyConsentDetailFragment" />
     <item type="id" name="action_text" />
     <item type="id" name="actions" />
     <item type="id" name="activity_chooser_view_content" />
+    <item type="id" name="age_group_row" />
+    <item type="id" name="age_group_row_body" />
+    <item type="id" name="age_group_row_subtitle" />
     <item type="id" name="alertTitle" />
+    <item type="id" name="analyticsUserInputFragment" />
+    <item type="id" name="background_image" />
+    <item type="id" name="body" />
+    <item type="id" name="body_end" />
+    <item type="id" name="body_start" />
+    <item type="id" name="body_text" />
+    <item type="id" name="box_container" />
     <item type="id" name="bullet_point" />
+    <item type="id" name="bullet_point_consent" />
     <item type="id" name="bullet_point_content" />
+    <item type="id" name="bullet_point_identity" />
+    <item type="id" name="bullet_point_one" />
+    <item type="id" name="bullet_point_sixteen" />
+    <item type="id" name="bullet_point_three" />
+    <item type="id" name="bullet_point_two" />
     <item type="id" name="bulletpoint_four" />
     <item type="id" name="bulletpoint_one" />
     <item type="id" name="bulletpoint_three" />
     <item type="id" name="bulletpoint_two" />
     <item type="id" name="buttonPanel" />
+    <item type="id" name="button_back" />
+    <item type="id" name="button_barrier" />
     <item type="id" name="button_container" />
     <item type="id" name="button_icon" />
     <item type="id" name="calendar_button_more_than_two_weeks" />
@@ -152,28 +186,34 @@
     <item type="id" name="calendar_recycler_view" />
     <item type="id" name="cancel_action" />
     <item type="id" name="cancel_button" />
+    <item type="id" name="card_container" />
     <item type="id" name="checkbox" />
     <item type="id" name="checked" />
     <item type="id" name="chip" />
+    <item type="id" name="chip1" />
+    <item type="id" name="chip2" />
+    <item type="id" name="chip3" />
     <item type="id" name="chip_group" />
     <item type="id" name="chronometer" />
     <item type="id" name="circle_progress_body" />
     <item type="id" name="circle_progress_icon" />
+    <item type="id" name="circumstances" />
     <item type="id" name="confirm_button" />
     <item type="id" name="consent_icon" />
+    <item type="id" name="consent_layout" />
     <item type="id" name="consent_status" />
     <item type="id" name="consent_status_message" />
+    <item type="id" name="contactDiaryAddLocationFragment" />
+    <item type="id" name="contactDiaryAddPersonFragment" />
+    <item type="id" name="contactDiaryCommentInfoFragment" />
     <item type="id" name="contactDiaryDayFragment" />
     <item type="id" name="contactDiaryEditLocationsFragment" />
     <item type="id" name="contactDiaryEditPersonsFragment" />
     <item type="id" name="contactDiaryInformationPrivacyFragment" />
-    <item type="id" name="contactDiaryLocationBottomSheetDialogFragment" />
     <item type="id" name="contactDiaryOnboardingFragment" />
     <item type="id" name="contactDiaryOverviewFragment" />
-    <item type="id" name="contactDiaryPersonBottomSheetDialogFragment" />
     <item type="id" name="contactDiaryPersonListFragment" />
     <item type="id" name="contactDiaryPlaceListFragment" />
-    <item type="id" name="contact_diary_card" />
     <item type="id" name="contact_diary_card_homescreen_body" />
     <item type="id" name="contact_diary_card_homescreen_button" />
     <item type="id" name="contact_diary_card_homescreen_icon" />
@@ -182,20 +222,6 @@
     <item type="id" name="contact_diary_day_header" />
     <item type="id" name="contact_diary_day_tab_layout" />
     <item type="id" name="contact_diary_day_view_pager" />
-    <item type="id" name="contact_diary_fragment_container" />
-    <item type="id" name="contact_diary_header" />
-    <item type="id" name="contact_diary_header_button_back" />
-    <item type="id" name="contact_diary_header_options_menu" />
-    <item type="id" name="contact_diary_header_title" />
-    <item type="id" name="contact_diary_homescreen_card" />
-    <item type="id" name="contact_diary_location_bottom_sheet_close_button" />
-    <item type="id" name="contact_diary_location_bottom_sheet_delete_button" />
-    <item type="id" name="contact_diary_location_bottom_sheet_save_button" />
-    <item type="id" name="contact_diary_location_bottom_sheet_text_input_edit_text" />
-    <item type="id" name="contact_diary_location_bottom_sheet_text_input_layout" />
-    <item type="id" name="contact_diary_location_bottom_sheet_title" />
-    <item type="id" name="contact_diary_location_list_line_icon" />
-    <item type="id" name="contact_diary_location_list_line_name" />
     <item type="id" name="contact_diary_location_list_no_items_group" />
     <item type="id" name="contact_diary_location_list_no_items_image" />
     <item type="id" name="contact_diary_location_list_no_items_subtitle" />
@@ -207,39 +233,39 @@
     <item type="id" name="contact_diary_onboarding_first_divider" />
     <item type="id" name="contact_diary_onboarding_first_section" />
     <item type="id" name="contact_diary_onboarding_fourth_section" />
-    <item type="id" name="contact_diary_onboarding_header" />
     <item type="id" name="contact_diary_onboarding_illustration" />
     <item type="id" name="contact_diary_onboarding_next_button" />
     <item type="id" name="contact_diary_onboarding_privacy_card" />
     <item type="id" name="contact_diary_onboarding_privacy_information" />
-    <item type="id" name="contact_diary_onboarding_privacy_information_container" />
     <item type="id" name="contact_diary_onboarding_second_divider" />
     <item type="id" name="contact_diary_onboarding_second_section" />
+    <item type="id" name="contact_diary_onboarding_sixth_section" />
     <item type="id" name="contact_diary_onboarding_third_section" />
+    <item type="id" name="contact_diary_overview_barrier" />
+    <item type="id" name="contact_diary_overview_element_attributes" />
     <item type="id" name="contact_diary_overview_element_body" />
     <item type="id" name="contact_diary_overview_element_divider" />
+    <item type="id" name="contact_diary_overview_element_guideline" />
     <item type="id" name="contact_diary_overview_element_image" />
     <item type="id" name="contact_diary_overview_element_name" />
     <item type="id" name="contact_diary_overview_element_nested_body" />
-    <item type="id" name="contact_diary_overview_element_nested_container" />
     <item type="id" name="contact_diary_overview_element_right_arrow" />
-    <item type="id" name="contact_diary_overview_header" />
+    <item type="id" name="contact_diary_overview_item_risk_body" />
+    <item type="id" name="contact_diary_overview_item_risk_divider" />
+    <item type="id" name="contact_diary_overview_item_risk_title" />
+    <item type="id" name="contact_diary_overview_nested_element_group" />
+    <item type="id" name="contact_diary_overview_nested_list_item_risk" />
     <item type="id" name="contact_diary_overview_nested_recycler_view" />
     <item type="id" name="contact_diary_overview_recyclerview" />
+    <item type="id" name="contact_diary_overview_risk_item" />
+    <item type="id" name="contact_diary_overview_risk_item_image" />
     <item type="id" name="contact_diary_overview_subtitle" />
-    <item type="id" name="contact_diary_person_bottom_sheet_close_button" />
-    <item type="id" name="contact_diary_person_bottom_sheet_delete_button" />
-    <item type="id" name="contact_diary_person_bottom_sheet_save_button" />
-    <item type="id" name="contact_diary_person_bottom_sheet_text_input_edit_text" />
-    <item type="id" name="contact_diary_person_bottom_sheet_text_input_layout" />
-    <item type="id" name="contact_diary_person_bottom_sheet_title" />
-    <item type="id" name="contact_diary_person_list_line_icon" />
-    <item type="id" name="contact_diary_person_list_line_name" />
     <item type="id" name="contact_diary_person_list_no_items_group" />
     <item type="id" name="contact_diary_person_list_no_items_image" />
     <item type="id" name="contact_diary_person_list_no_items_subtitle" />
     <item type="id" name="contact_diary_person_list_no_items_title" />
     <item type="id" name="contact_diary_person_list_recycler_view" />
+    <item type="id" name="contact_diary_person_title" />
     <item type="id" name="contact_diary_privacy_card" />
     <item type="id" name="contact_diary_privacy_card_first_section_body_container_one" />
     <item type="id" name="contact_diary_privacy_card_first_section_body_container_two" />
@@ -257,6 +283,7 @@
     <item type="id" name="container" />
     <item type="id" name="content" />
     <item type="id" name="contentPanel" />
+    <item type="id" name="content_barrier" />
     <item type="id" name="content_container" />
     <item type="id" name="content_scrollcontainer" />
     <item type="id" name="coordinator" />
@@ -269,32 +296,64 @@
     <item type="id" name="country_list_overview" />
     <item type="id" name="customPanel" />
     <item type="id" name="dataBinding" />
+    <item type="id" name="data_processing_body" />
+    <item type="id" name="data_processing_point_1" />
+    <item type="id" name="data_processing_point_1_text" />
+    <item type="id" name="data_processing_point_2" />
+    <item type="id" name="data_processing_point_2_text" />
+    <item type="id" name="data_processing_point_3" />
+    <item type="id" name="data_processing_point_3_text" />
+    <item type="id" name="data_processing_point_4" />
+    <item type="id" name="data_processing_point_4_text" />
+    <item type="id" name="data_processing_title" />
     <item type="id" name="date_picker_actions" />
     <item type="id" name="dayText" />
+    <item type="id" name="debuglogFragment" />
+    <item type="id" name="debuglog_activity_indicator" />
+    <item type="id" name="debuglog_status_primary" />
+    <item type="id" name="debuglog_status_secondary" />
     <item type="id" name="decor_content_parent" />
     <item type="id" name="deepLink" />
     <item type="id" name="default_activity_button" />
     <item type="id" name="delete_button" />
+    <item type="id" name="delete_test_action" />
     <item type="id" name="design_bottom_sheet" />
     <item type="id" name="design_menu_item_action_area" />
     <item type="id" name="design_menu_item_action_area_stub" />
     <item type="id" name="design_menu_item_text" />
     <item type="id" name="design_navigation_view" />
+    <item type="id" name="details_icon" />
     <item type="id" name="dialog_button" />
     <item type="id" name="dispatcher_card" />
     <item type="id" name="dispatcher_card_icon" />
     <item type="id" name="dispatcher_card_illustration" />
     <item type="id" name="dispatcher_card_title" />
+    <item type="id" name="district_row" />
+    <item type="id" name="district_row_body" />
+    <item type="id" name="district_row_subtitle" />
     <item type="id" name="divider" />
-    <item type="id" name="divider2" />
+    <item type="id" name="duration_above_15" />
+    <item type="id" name="duration_below_15" />
+    <item type="id" name="duration_container" />
+    <item type="id" name="duration_group" />
+    <item type="id" name="duration_input" />
     <item type="id" name="edit_icon" />
     <item type="id" name="edit_query" />
+    <item type="id" name="enable_tracing_action" />
     <item type="id" name="end_padder" />
+    <item type="id" name="environment_group" />
+    <item type="id" name="environment_inside" />
+    <item type="id" name="environment_outside" />
     <item type="id" name="expand_activities_button" />
     <item type="id" name="expanded_menu" />
     <item type="id" name="expanded_terms_footer" />
-    <item type="id" name="filter_chip" />
+    <item type="id" name="explanation" />
+    <item type="id" name="federal_state_row" />
+    <item type="id" name="federal_state_row_body" />
+    <item type="id" name="federal_state_row_subtitle" />
     <item type="id" name="flagGrid" />
+    <item type="id" name="flow_layout" />
+    <item type="id" name="footnote" />
     <item type="id" name="fragment_container_view_tag" />
     <item type="id" name="further_info" />
     <item type="id" name="further_info_text" />
@@ -311,24 +370,34 @@
     <item type="id" name="guideline_card_start" />
     <item type="id" name="guideline_end" />
     <item type="id" name="guideline_end_outer" />
-    <item type="id" name="guideline_header_start" />
     <item type="id" name="guideline_icon" />
     <item type="id" name="guideline_start" />
     <item type="id" name="guideline_start_outer" />
     <item type="id" name="guideline_top" />
+    <item type="id" name="header" />
     <item type="id" name="header_button_back" />
+    <item type="id" name="header_checkbox" />
     <item type="id" name="header_title" />
+    <item type="id" name="headline" />
     <item type="id" name="home" />
+    <item type="id" name="horizontal_guideline" />
+    <item type="id" name="hours" />
     <item type="id" name="icon" />
+    <item type="id" name="icon_background" />
     <item type="id" name="icon_frame" />
     <item type="id" name="icon_group" />
+    <item type="id" name="illustration" />
     <item type="id" name="image" />
     <item type="id" name="image_qr_code" />
+    <item type="id" name="incidence_container" />
     <item type="id" name="include_submission_consent_body" />
     <item type="id" name="include_submission_consent_intro" />
     <item type="id" name="include_submission_contact" />
     <item type="id" name="include_submission_test_result_consent_given_buttons" />
+    <item type="id" name="infections_container" />
     <item type="id" name="info" />
+    <item type="id" name="info_button" />
+    <item type="id" name="info_statistics" />
     <item type="id" name="informationAboutFragment" />
     <item type="id" name="informationContactFragment" />
     <item type="id" name="informationFragment" />
@@ -346,15 +415,17 @@
     <item type="id" name="information_contact" />
     <item type="id" name="information_contact_body_open" />
     <item type="id" name="information_contact_body_other" />
+    <item type="id" name="information_contact_body_phone" />
     <item type="id" name="information_contact_container" />
     <item type="id" name="information_contact_header" />
     <item type="id" name="information_contact_header_details" />
-    <item type="id" name="information_contact_navigation_row" />
     <item type="id" name="information_contact_navigation_row_phone" />
-    <item type="id" name="information_contact_subtitle" />
     <item type="id" name="information_contact_subtitle_phone" />
     <item type="id" name="information_container" />
+    <item type="id" name="information_debuglog" />
+    <item type="id" name="information_details_eu_flag" />
     <item type="id" name="information_details_header_body" />
+    <item type="id" name="information_details_header_headline" />
     <item type="id" name="information_details_header_illustration" />
     <item type="id" name="information_enf_version" />
     <item type="id" name="information_header" />
@@ -376,6 +447,7 @@
     <item type="id" name="information_privacy_container" />
     <item type="id" name="information_privacy_header" />
     <item type="id" name="information_privacy_header_details" />
+    <item type="id" name="information_release" />
     <item type="id" name="information_technical" />
     <item type="id" name="information_technical_container" />
     <item type="id" name="information_technical_header" />
@@ -385,18 +457,22 @@
     <item type="id" name="information_terms_header" />
     <item type="id" name="information_terms_header_details" />
     <item type="id" name="information_version" />
+    <item type="id" name="input" />
+    <item type="id" name="input_layout" />
+    <item type="id" name="input_list" />
     <item type="id" name="interopCountryConfigurationFragment" />
-    <item type="id" name="interoperability_configuration_country_list" />
-    <item type="id" name="interoperability_configuration_country_list_container" />
     <item type="id" name="interoperability_configuration_header" />
     <item type="id" name="interoperability_footer" />
     <item type="id" name="interoperability_footer_description" />
     <item type="id" name="interoperability_footer_title" />
     <item type="id" name="interoperability_header" />
     <item type="id" name="interoperability_illustration" />
+    <item type="id" name="interoperability_layout" />
     <item type="id" name="interoperability_title_container" />
     <item type="id" name="item_container" />
     <item type="id" name="item_touch_helper_previous_elevation" />
+    <item type="id" name="keysubmissions_container" />
+    <item type="id" name="label" />
     <item type="id" name="label_country_selection_info" />
     <item type="id" name="label_interoperability_subtitle" />
     <item type="id" name="label_interoperability_subtitle2" />
@@ -404,26 +480,41 @@
     <item type="id" name="label_interoperability_subtitle4" />
     <item type="id" name="largeLabel" />
     <item type="id" name="launcherActivity" />
+    <item type="id" name="legal_body" />
+    <item type="id" name="legal_layout" />
+    <item type="id" name="legal_point_consent" />
+    <item type="id" name="legal_point_identity" />
+    <item type="id" name="legal_point_one" />
+    <item type="id" name="legal_point_sixteen" />
+    <item type="id" name="legal_point_three" />
+    <item type="id" name="legal_point_two" />
+    <item type="id" name="legal_title" />
     <item type="id" name="line1" />
     <item type="id" name="line3" />
     <item type="id" name="list_item" />
+    <item type="id" name="loadingFragment" />
+    <item type="id" name="location_close_button" />
+    <item type="id" name="location_delete_button" />
+    <item type="id" name="location_email_input" />
+    <item type="id" name="location_email_input_layout" />
+    <item type="id" name="location_name_input_edit" />
+    <item type="id" name="location_name_input_layout" />
+    <item type="id" name="location_phone_input" />
+    <item type="id" name="location_phone_input_layout" />
+    <item type="id" name="location_save_button" />
+    <item type="id" name="location_title" />
     <item type="id" name="locations_recycler_view" />
     <item type="id" name="lottie_layer_name" />
     <item type="id" name="mainFragment" />
     <item type="id" name="mainOverviewFragment" />
     <item type="id" name="mainSharingFragment" />
-    <item type="id" name="main_about" />
-    <item type="id" name="main_barrier" />
-    <item type="id" name="main_card" />
+    <item type="id" name="main_bottom_navigation" />
+    <item type="id" name="main_box" />
     <item type="id" name="main_card_content_body" />
-    <item type="id" name="main_card_header" />
     <item type="id" name="main_card_header_headline" />
     <item type="id" name="main_card_header_icon" />
     <item type="id" name="main_card_header_icon_end" />
-    <item type="id" name="main_header" />
     <item type="id" name="main_header_logo" />
-    <item type="id" name="main_header_options_menu" />
-    <item type="id" name="main_header_share" />
     <item type="id" name="main_overview_container" />
     <item type="id" name="main_overview_glossary" />
     <item type="id" name="main_overview_glossary_body" />
@@ -442,7 +533,6 @@
     <item type="id" name="main_overview_risk_low_risk" />
     <item type="id" name="main_overview_risk_medium_risk" />
     <item type="id" name="main_overview_risk_subtitle" />
-    <item type="id" name="main_overview_risk_unknown_risk" />
     <item type="id" name="main_overview_row" />
     <item type="id" name="main_overview_row_subtitle" />
     <item type="id" name="main_overview_segment" />
@@ -454,22 +544,16 @@
     <item type="id" name="main_row" />
     <item type="id" name="main_row_item_icon" />
     <item type="id" name="main_row_item_subtitle" />
-    <item type="id" name="main_scrollview" />
     <item type="id" name="main_share_button" />
     <item type="id" name="main_share_container" />
     <item type="id" name="main_share_header" />
     <item type="id" name="main_share_header_details" />
-    <item type="id" name="main_test_done" />
-    <item type="id" name="main_test_failed" />
-    <item type="id" name="main_test_fetching" />
-    <item type="id" name="main_test_positive" />
-    <item type="id" name="main_test_ready" />
-    <item type="id" name="main_test_result" />
-    <item type="id" name="main_test_unregistered" />
     <item type="id" name="main_tracing" />
-    <item type="id" name="main_tracing_divider" />
     <item type="id" name="main_tracing_headline" />
     <item type="id" name="main_tracing_icon" />
+    <item type="id" name="mask_group" />
+    <item type="id" name="mask_with" />
+    <item type="id" name="mask_without" />
     <item type="id" name="masked" />
     <item type="id" name="media_actions" />
     <item type="id" name="menu_contact_diary_edit_locations" />
@@ -479,14 +563,19 @@
     <item type="id" name="menu_help" />
     <item type="id" name="menu_information" />
     <item type="id" name="menu_settings" />
+    <item type="id" name="menu_share" />
     <item type="id" name="menu_test" />
     <item type="id" name="message" />
+    <item type="id" name="minutes" />
     <item type="id" name="month_grid" />
     <item type="id" name="month_navigation_bar" />
     <item type="id" name="month_navigation_fragment_toggle" />
     <item type="id" name="month_navigation_next" />
     <item type="id" name="month_navigation_previous" />
     <item type="id" name="month_title" />
+    <item type="id" name="more_info_row" />
+    <item type="id" name="more_info_title" />
+    <item type="id" name="motion_base" />
     <item type="id" name="mtrl_calendar_day_selector_frame" />
     <item type="id" name="mtrl_calendar_days_of_week" />
     <item type="id" name="mtrl_calendar_frame" />
@@ -498,6 +587,7 @@
     <item type="id" name="mtrl_card_checked_layer_id" />
     <item type="id" name="mtrl_child_content_container" />
     <item type="id" name="mtrl_internal_children_alpha_tag" />
+    <item type="id" name="mtrl_motion_snapshot_view" />
     <item type="id" name="mtrl_picker_fullscreen" />
     <item type="id" name="mtrl_picker_header" />
     <item type="id" name="mtrl_picker_header_selection_text" />
@@ -507,6 +597,7 @@
     <item type="id" name="mtrl_picker_text_input_range_end" />
     <item type="id" name="mtrl_picker_text_input_range_start" />
     <item type="id" name="mtrl_picker_title_text" />
+    <item type="id" name="much_privacy_body" />
     <item type="id" name="name" />
     <item type="id" name="nav_controller_view_tag" />
     <item type="id" name="nav_graph" />
@@ -517,6 +608,12 @@
     <item type="id" name="navigation_row" />
     <item type="id" name="navigation_row_icon" />
     <item type="id" name="navigation_row_subtitle" />
+    <item type="id" name="newReleaseInfoFragment" />
+    <item type="id" name="new_release_info_body" />
+    <item type="id" name="new_release_info_bottom" />
+    <item type="id" name="new_release_info_illustration" />
+    <item type="id" name="new_release_info_next_button" />
+    <item type="id" name="next_steps_action" />
     <item type="id" name="no_countries_default_infoview" />
     <item type="id" name="no_countries_riskdetails_infoview" />
     <item type="id" name="no_network_description" />
@@ -526,10 +623,14 @@
     <item type="id" name="notification_main_column" />
     <item type="id" name="notification_main_column_container" />
     <item type="id" name="off" />
+    <item type="id" name="ok_button" />
     <item type="id" name="on" />
     <item type="id" name="onAttachStateChangeListener" />
     <item type="id" name="onDateChanged" />
+    <item type="id" name="onboardingAnalyticsFragment" />
+    <item type="id" name="onboardingDeltaAnalyticsFragment" />
     <item type="id" name="onboardingDeltaInteroperabilityFragment" />
+    <item type="id" name="onboardingDeltaInteroperabilityFragment2" />
     <item type="id" name="onboardingFragment" />
     <item type="id" name="onboardingNotificationsFragment" />
     <item type="id" name="onboardingPrivacyFragment" />
@@ -537,6 +638,8 @@
     <item type="id" name="onboardingTracingFragment" />
     <item type="id" name="onboarding_body" />
     <item type="id" name="onboarding_body_emphasized" />
+    <item type="id" name="onboarding_body_long" />
+    <item type="id" name="onboarding_body_short" />
     <item type="id" name="onboarding_button_back" />
     <item type="id" name="onboarding_button_disable" />
     <item type="id" name="onboarding_button_next" />
@@ -555,17 +658,37 @@
     <item type="id" name="onboarding_location_card" />
     <item type="id" name="onboarding_location_card_16_years" />
     <item type="id" name="onboarding_notifications_container" />
+    <item type="id" name="onboarding_ppa_container" />
     <item type="id" name="onboarding_privacy_container" />
     <item type="id" name="onboarding_subtitle" />
     <item type="id" name="onboarding_test_container" />
     <item type="id" name="onboarding_tracing_container" />
+    <item type="id" name="other_info_body" />
+    <item type="id" name="other_info_point_1" />
+    <item type="id" name="other_info_point_1_text" />
+    <item type="id" name="other_info_point_3" />
+    <item type="id" name="other_info_point_3_text" />
+    <item type="id" name="other_info_point_4" />
+    <item type="id" name="other_info_point_4_text" />
     <item type="id" name="parentPanel" />
     <item type="id" name="parent_matrix" />
     <item type="id" name="participating_countries_body" />
     <item type="id" name="participating_countries_headline" />
     <item type="id" name="participating_countries_notfetch_layout" />
+    <item type="id" name="person_close_button" />
+    <item type="id" name="person_delete_button" />
+    <item type="id" name="person_email_input" />
+    <item type="id" name="person_email_input_layout" />
+    <item type="id" name="person_name_input" />
+    <item type="id" name="person_name_input_layout" />
+    <item type="id" name="person_phone_input_layout" />
+    <item type="id" name="person_phone_number_input" />
+    <item type="id" name="person_save_button" />
     <item type="id" name="persons_recycler_view" />
+    <item type="id" name="ppaMoreInfoFragment" />
     <item type="id" name="primary" />
+    <item type="id" name="primary_label" />
+    <item type="id" name="primary_value" />
     <item type="id" name="privacy_card" />
     <item type="id" name="privacy_card_text" />
     <item type="id" name="privacy_card_text_part_first" />
@@ -577,74 +700,102 @@
     <item type="id" name="progress_indicator" />
     <item type="id" name="progress_message" />
     <item type="id" name="radio" />
+    <item type="id" name="radiobutton" />
     <item type="id" name="recycler_view" />
+    <item type="id" name="reenable_risk_card_button" />
+    <item type="id" name="reenable_risk_card_description" />
+    <item type="id" name="reenable_risk_card_divider" />
+    <item type="id" name="reenable_risk_card_positive_body" />
+    <item type="id" name="reenable_risk_card_positive_icon" />
+    <item type="id" name="reenable_risk_card_positive_title" />
+    <item type="id" name="reenable_risk_card_test_registration_date" />
+    <item type="id" name="reenable_risk_card_title" />
     <item type="id" name="right_icon" />
     <item type="id" name="right_side" />
     <item type="id" name="riskDetailsFragment" />
-    <item type="id" name="risk_card" />
     <item type="id" name="risk_card_body" />
-    <item type="id" name="risk_card_button_enable_tracing" />
     <item type="id" name="risk_card_button_update" />
-    <item type="id" name="risk_card_content" />
     <item type="id" name="risk_card_header_headline" />
     <item type="id" name="risk_card_header_icon" />
-    <item type="id" name="risk_card_progress_body" />
-    <item type="id" name="risk_card_progress_headline" />
-    <item type="id" name="risk_card_progress_headline_icon" />
-    <item type="id" name="risk_card_progress_indicator" />
-    <item type="id" name="risk_card_row_body" />
-    <item type="id" name="risk_card_row_contact" />
-    <item type="id" name="risk_card_row_contact_last" />
-    <item type="id" name="risk_card_row_icon" />
-    <item type="id" name="risk_card_row_saved_days" />
     <item type="id" name="risk_card_row_saved_days_body" />
     <item type="id" name="risk_card_row_saved_days_circle_progress" />
     <item type="id" name="risk_card_row_saved_risk" />
     <item type="id" name="risk_card_row_time_fetched" />
-    <item type="id" name="risk_details_additional_information" />
     <item type="id" name="risk_details_additional_information_body" />
     <item type="id" name="risk_details_additional_information_headline" />
     <item type="id" name="risk_details_additional_information_subtitle" />
-    <item type="id" name="risk_details_behavior" />
     <item type="id" name="risk_details_behavior_bullet_point_1" />
+    <item type="id" name="risk_details_behavior_bullet_point_1_icon" />
     <item type="id" name="risk_details_behavior_bullet_point_2" />
+    <item type="id" name="risk_details_behavior_bullet_point_2_icon" />
     <item type="id" name="risk_details_behavior_bullet_point_3" />
-    <item type="id" name="risk_details_behavior_cough_sneeze" />
+    <item type="id" name="risk_details_behavior_bullet_point_3_icon" />
     <item type="id" name="risk_details_behavior_headline" />
-    <item type="id" name="risk_details_behavior_icon" />
-    <item type="id" name="risk_details_behavior_increased_risk" />
-    <item type="id" name="risk_details_behavior_stay_away" />
-    <item type="id" name="risk_details_behavior_stay_home" />
     <item type="id" name="risk_details_behavior_subtitle" />
-    <item type="id" name="risk_details_behavior_wash_hands" />
-    <item type="id" name="risk_details_behavior_wear_mask" />
-    <item type="id" name="risk_details_behavior_wrapper" />
     <item type="id" name="risk_details_body" />
     <item type="id" name="risk_details_button" />
     <item type="id" name="risk_details_button_enable_tracing" />
     <item type="id" name="risk_details_button_update" />
     <item type="id" name="risk_details_container" />
-    <item type="id" name="risk_details_header" />
-    <item type="id" name="risk_details_header_button_back" />
-    <item type="id" name="risk_details_header_title" />
     <item type="id" name="risk_details_information_body" />
     <item type="id" name="risk_details_information_body_notice" />
-    <item type="id" name="risk_details_information_gov_url" />
     <item type="id" name="risk_details_information_headline" />
-    <item type="id" name="risk_details_information_lowrisk_body_url" />
     <item type="id" name="risk_details_information_subtitle" />
     <item type="id" name="risk_details_investigation_period_circle_progress" />
     <item type="id" name="risk_details_open_settings_button" />
-    <item type="id" name="risk_details_period_logged_card" />
+    <item type="id" name="risk_details_period_logged_body_notice" />
     <item type="id" name="risk_details_period_logged_headline" />
     <item type="id" name="risk_details_period_logged_layout" />
-    <item type="id" name="risk_details_period_logged_progress" />
     <item type="id" name="risk_details_period_logged_subtitle" />
+    <item type="id" name="rki_data_body_1" />
+    <item type="id" name="rki_data_body_2" />
+    <item type="id" name="rki_data_point_1" />
+    <item type="id" name="rki_data_point_10" />
+    <item type="id" name="rki_data_point_10_text" />
+    <item type="id" name="rki_data_point_11" />
+    <item type="id" name="rki_data_point_11_text" />
+    <item type="id" name="rki_data_point_12" />
+    <item type="id" name="rki_data_point_12_text" />
+    <item type="id" name="rki_data_point_13" />
+    <item type="id" name="rki_data_point_13_text" />
+    <item type="id" name="rki_data_point_14" />
+    <item type="id" name="rki_data_point_14_text" />
+    <item type="id" name="rki_data_point_15" />
+    <item type="id" name="rki_data_point_15_text" />
+    <item type="id" name="rki_data_point_16" />
+    <item type="id" name="rki_data_point_16_text" />
+    <item type="id" name="rki_data_point_1_text" />
+    <item type="id" name="rki_data_point_2" />
+    <item type="id" name="rki_data_point_2_text" />
+    <item type="id" name="rki_data_point_3" />
+    <item type="id" name="rki_data_point_3_text" />
+    <item type="id" name="rki_data_point_4" />
+    <item type="id" name="rki_data_point_4_text" />
+    <item type="id" name="rki_data_point_5" />
+    <item type="id" name="rki_data_point_5_text" />
+    <item type="id" name="rki_data_point_6" />
+    <item type="id" name="rki_data_point_6_text" />
+    <item type="id" name="rki_data_point_7" />
+    <item type="id" name="rki_data_point_7_text" />
+    <item type="id" name="rki_data_point_8" />
+    <item type="id" name="rki_data_point_8_text" />
+    <item type="id" name="rki_data_point_9" />
+    <item type="id" name="rki_data_point_9_text" />
+    <item type="id" name="rki_data_title" />
+    <item type="id" name="root_layout" />
+    <item type="id" name="row_contact" />
+    <item type="id" name="row_contact_last" />
+    <item type="id" name="row_index_key" />
+    <item type="id" name="row_saved_days" />
+    <item type="id" name="row_time_fetched" />
+    <item type="id" name="row_tracing_days" />
     <item type="id" name="save_non_transition_alpha" />
     <item type="id" name="save_overlay_view" />
     <item type="id" name="scrollIndicatorDown" />
     <item type="id" name="scrollIndicatorUp" />
     <item type="id" name="scrollView" />
+    <item type="id" name="scroll_view" />
+    <item type="id" name="scrollview" />
     <item type="id" name="search_badge" />
     <item type="id" name="search_bar" />
     <item type="id" name="search_button" />
@@ -656,12 +807,16 @@
     <item type="id" name="search_src_text" />
     <item type="id" name="search_voice_btn" />
     <item type="id" name="secondary" />
+    <item type="id" name="secondary_label" />
+    <item type="id" name="secondary_value" />
     <item type="id" name="seekbar" />
     <item type="id" name="seekbar_value" />
     <item type="id" name="select_dialog_listview" />
+    <item type="id" name="sensitive_information" />
     <item type="id" name="settingsBackgroundPriorityFragment" />
     <item type="id" name="settingsFragment" />
     <item type="id" name="settingsNotificationFragment" />
+    <item type="id" name="settingsPrivacyPreservingAnalyticsFragment" />
     <item type="id" name="settingsResetFragment" />
     <item type="id" name="settingsTracingFragment" />
     <item type="id" name="settings_background_priority" />
@@ -681,6 +836,9 @@
     <item type="id" name="settings_plain_row" />
     <item type="id" name="settings_plain_row_header_body" />
     <item type="id" name="settings_plain_row_header_subtitle" />
+    <item type="id" name="settings_ppa_header" />
+    <item type="id" name="settings_ppa_switch_row" />
+    <item type="id" name="settings_privacy_preserving_analytics" />
     <item type="id" name="settings_reset" />
     <item type="id" name="settings_reset_body" />
     <item type="id" name="settings_reset_button_cancel" />
@@ -708,15 +866,15 @@
     <item type="id" name="settings_tracing" />
     <item type="id" name="settings_tracing_body" />
     <item type="id" name="settings_tracing_container" />
-    <item type="id" name="settings_tracing_header" />
-    <item type="id" name="settings_tracing_header_details" />
     <item type="id" name="settings_tracing_status" />
     <item type="id" name="settings_tracing_status_bluetooth" />
     <item type="id" name="settings_tracing_status_connection" />
     <item type="id" name="settings_tracing_status_location" />
-    <item type="id" name="settings_tracing_status_tracing" />
     <item type="id" name="settings_tracing_switch_row" />
+    <item type="id" name="seven_day_r_value_container" />
+    <item type="id" name="share_recording" />
     <item type="id" name="shortcut" />
+    <item type="id" name="show_test_action" />
     <item type="id" name="simple_step_entry_body" />
     <item type="id" name="simple_step_entry_title" />
     <item type="id" name="sixteen_years" />
@@ -728,6 +886,22 @@
     <item type="id" name="spacer" />
     <item type="id" name="spinner" />
     <item type="id" name="split_action_bar" />
+    <item type="id" name="statisticsExplanationFragment" />
+    <item type="id" name="statistics_explanation_container" />
+    <item type="id" name="statistics_explanation_header_button_back" />
+    <item type="id" name="statistics_explanation_header_subtitle" />
+    <item type="id" name="statistics_explanation_header_subtitle_divider" />
+    <item type="id" name="statistics_explanation_header_title" />
+    <item type="id" name="statistics_explanation_seven_day_r_value_text" />
+    <item type="id" name="statistics_explanation_title" />
+    <item type="id" name="statistics_explanation_trend_decreasing_arrow" />
+    <item type="id" name="statistics_explanation_trend_decreasing_title" />
+    <item type="id" name="statistics_explanation_trend_increasing_arrow" />
+    <item type="id" name="statistics_explanation_trend_increasing_title" />
+    <item type="id" name="statistics_explanation_trend_stable_arrow" />
+    <item type="id" name="statistics_explanation_trend_stable_title" />
+    <item type="id" name="statistics_explanation_trend_text" />
+    <item type="id" name="statistics_recyclerview" />
     <item type="id" name="status_bar_latest_event_content" />
     <item type="id" name="step_entry_icon" />
     <item type="id" name="step_entry_line" />
@@ -775,11 +949,13 @@
     <item type="id" name="submission_consent_your_consent_subsection_tapping_agree" />
     <item type="id" name="submission_consent_your_consent_subsection_third_point" />
     <item type="id" name="submission_contact_body" />
+    <item type="id" name="submission_contact_body_other" />
     <item type="id" name="submission_contact_button_call" />
     <item type="id" name="submission_contact_button_enter" />
     <item type="id" name="submission_contact_header" />
     <item type="id" name="submission_contact_headline" />
     <item type="id" name="submission_contact_illustration" />
+    <item type="id" name="submission_contact_operating_hours_body" />
     <item type="id" name="submission_contact_root" />
     <item type="id" name="submission_contact_step_1" />
     <item type="id" name="submission_contact_step_1_body" />
@@ -835,12 +1011,9 @@
     <item type="id" name="submission_positive_location_card_16_years" />
     <item type="id" name="submission_positive_other_privacy" />
     <item type="id" name="submission_positive_other_privacy_container" />
-    <item type="id" name="submission_positive_other_warning_button_next" />
-    <item type="id" name="submission_positive_other_warning_header" />
     <item type="id" name="submission_positive_other_warning_headline" />
     <item type="id" name="submission_positive_other_warning_hero_illustration" />
     <item type="id" name="submission_positive_other_warning_no_consent_button_next" />
-    <item type="id" name="submission_positive_other_warning_spinner" />
     <item type="id" name="submission_positive_other_warning_text" />
     <item type="id" name="submission_positive_other_warning_text_first_part" />
     <item type="id" name="submission_positive_other_warning_text_second_part" />
@@ -853,24 +1026,9 @@
     <item type="id" name="submission_qr_code_scan_spinner" />
     <item type="id" name="submission_qr_code_scan_torch" />
     <item type="id" name="submission_qr_code_scan_viewfinder_view" />
-    <item type="id" name="submission_status_card_content" />
-    <item type="id" name="submission_status_card_content_barrier" />
-    <item type="id" name="submission_status_card_content_body" />
-    <item type="id" name="submission_status_card_content_button" />
-    <item type="id" name="submission_status_card_content_icon" />
-    <item type="id" name="submission_status_card_content_subtitle" />
-    <item type="id" name="submission_status_card_content_title" />
-    <item type="id" name="submission_status_card_done" />
-    <item type="id" name="submission_status_card_fetch_failed_body" />
-    <item type="id" name="submission_status_card_fetch_failed_button" />
-    <item type="id" name="submission_status_card_fetch_failed_icon" />
-    <item type="id" name="submission_status_card_fetch_failed_title" />
-    <item type="id" name="submission_status_card_fetching" />
     <item type="id" name="submission_status_card_fetching_body" />
-    <item type="id" name="submission_status_card_fetching_button" />
     <item type="id" name="submission_status_card_fetching_spinner" />
     <item type="id" name="submission_status_card_fetching_title" />
-    <item type="id" name="submission_status_card_positive" />
     <item type="id" name="submission_status_card_positive_button" />
     <item type="id" name="submission_status_card_positive_next" />
     <item type="id" name="submission_status_card_positive_result_card" />
@@ -879,19 +1037,7 @@
     <item type="id" name="submission_status_card_positive_result_share" />
     <item type="id" name="submission_status_card_positive_result_subtitle" />
     <item type="id" name="submission_status_card_positive_title" />
-    <item type="id" name="submission_status_card_ready" />
-    <item type="id" name="submission_status_card_ready_barrier" />
-    <item type="id" name="submission_status_card_ready_body" />
-    <item type="id" name="submission_status_card_ready_button" />
-    <item type="id" name="submission_status_card_ready_icon" />
-    <item type="id" name="submission_status_card_ready_subtitle" />
-    <item type="id" name="submission_status_card_ready_title" />
-    <item type="id" name="submission_status_card_unregistered" />
     <item type="id" name="submission_status_card_unregistered_barrier" />
-    <item type="id" name="submission_status_card_unregistered_body" />
-    <item type="id" name="submission_status_card_unregistered_button" />
-    <item type="id" name="submission_status_card_unregistered_icon" />
-    <item type="id" name="submission_status_card_unregistered_title" />
     <item type="id" name="submission_symptom_calendar_body" />
     <item type="id" name="submission_symptom_calendar_header" />
     <item type="id" name="submission_symptom_calendar_headline" />
@@ -953,6 +1099,17 @@
     <item type="id" name="submission_your_consent_switch" />
     <item type="id" name="submission_your_consent_title" />
     <item type="id" name="submit_area" />
+    <item type="id" name="subtitle" />
+    <item type="id" name="surveyConsentDetailFragment" />
+    <item type="id" name="surveyConsentFragment" />
+    <item type="id" name="survey_bottom_info_body" />
+    <item type="id" name="survey_bottom_info_headline" />
+    <item type="id" name="survey_consent_more_information" />
+    <item type="id" name="survey_details_bottom_info_body" />
+    <item type="id" name="survey_details_bottom_info_title" />
+    <item type="id" name="survey_details_headline" />
+    <item type="id" name="survey_next_button" />
+    <item type="id" name="survey_top_illustration" />
     <item type="id" name="switchWidget" />
     <item type="id" name="symptom_button_next" />
     <item type="id" name="symptom_calendar_container" />
@@ -972,9 +1129,13 @@
     <item type="id" name="target_button_apply" />
     <item type="id" name="target_button_reject" />
     <item type="id" name="target_button_verify" />
+    <item type="id" name="tertiary_label" />
+    <item type="id" name="tertiary_value" />
     <item type="id" name="test_checkbox_android_button_tint" />
     <item type="id" name="test_checkbox_app_button_tint" />
     <item type="id" name="test_nav_graph" />
+    <item type="id" name="test_radiobutton_android_button_tint" />
+    <item type="id" name="test_radiobutton_app_button_tint" />
     <item type="id" name="test_result_card" />
     <item type="id" name="test_result_card_content" />
     <item type="id" name="test_result_card_headline" />
@@ -1006,13 +1167,23 @@
     <item type="id" name="textinput_counter" />
     <item type="id" name="textinput_error" />
     <item type="id" name="textinput_helper_text" />
+    <item type="id" name="textinput_placeholder" />
+    <item type="id" name="textinput_prefix_text" />
+    <item type="id" name="textinput_suffix_text" />
     <item type="id" name="time" />
     <item type="id" name="title" />
     <item type="id" name="titleDividerNoCustom" />
     <item type="id" name="title_template" />
+    <item type="id" name="toggle_recording" />
     <item type="id" name="toolbar" />
     <item type="id" name="topPanel" />
     <item type="id" name="touch_outside" />
+    <item type="id" name="tracing_details_survey_card_barrier" />
+    <item type="id" name="tracing_details_survey_card_body" />
+    <item type="id" name="tracing_details_survey_card_button" />
+    <item type="id" name="tracing_details_survey_card_container" />
+    <item type="id" name="tracing_details_survey_card_icon" />
+    <item type="id" name="tracing_details_survey_card_title" />
     <item type="id" name="tracing_status_card" />
     <item type="id" name="tracing_status_card_body" />
     <item type="id" name="tracing_status_card_button" />
@@ -1024,11 +1195,14 @@
     <item type="id" name="transition_position" />
     <item type="id" name="transition_scene_layoutid_cache" />
     <item type="id" name="transition_transform" />
+    <item type="id" name="trend" />
+    <item type="id" name="trend_arrow" />
     <item type="id" name="unchecked" />
     <item type="id" name="up" />
+    <item type="id" name="update_action" />
     <item type="id" name="view_offset_helper" />
-    <item type="id" name="visible" />
     <item type="id" name="visible_removing_fragment_view_tag" />
+    <item type="id" name="zero_corner_chip" />
     <item type="id" name="zxing_back_button" />
     <item type="id" name="zxing_barcode_scanner" />
     <item type="id" name="zxing_barcode_surface" />

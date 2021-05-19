@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/PendingResult;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -27,4 +27,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
+    .param p1    # Lcom/google/android/gms/common/api/PendingResult$StatusListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method

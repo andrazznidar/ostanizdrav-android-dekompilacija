@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.1.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -39,21 +39,17 @@
     :try_start_0
     iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
-    iget-object v1, v1, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/common/api/internal/zaw;
+    iget-object v1, v1, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/tasks/OnCompleteListener;
 
     if-eqz v1, :cond_0
 
     iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
-    iget-object v1, v1, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/common/api/internal/zaw;
+    iget-object v1, v1, Lcom/google/android/gms/tasks/zzi;->zzc:Lcom/google/android/gms/tasks/OnCompleteListener;
 
-    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/zaw;->zab:Lcom/google/android/gms/common/api/internal/zav;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzj;->zza:Lcom/google/android/gms/tasks/Task;
 
-    iget-object v2, v2, Lcom/google/android/gms/common/api/internal/zav;->zab:Ljava/util/Map;
-
-    iget-object v1, v1, Lcom/google/android/gms/common/api/internal/zaw;->zaa:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-interface {v2, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v2}, Lcom/google/android/gms/tasks/OnCompleteListener;->onComplete(Lcom/google/android/gms/tasks/Task;)V
 
     :cond_0
     monitor-exit v0

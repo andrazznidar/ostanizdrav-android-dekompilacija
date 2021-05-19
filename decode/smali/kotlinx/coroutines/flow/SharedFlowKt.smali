@@ -128,7 +128,7 @@
     :cond_6
     const-string p0, "extraBufferCapacity cannot be negative, but was "
 
-    invoke-static {p0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -145,7 +145,7 @@
     :cond_7
     const-string p1, "replay cannot be negative, but was "
 
-    invoke-static {p1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 

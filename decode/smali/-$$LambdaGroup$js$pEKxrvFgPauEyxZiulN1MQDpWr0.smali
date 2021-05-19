@@ -53,19 +53,11 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment;->vm$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object p1
 
-    check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsViewModel;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
-
-    sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingTracing;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingTracing;
-
-    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->onBackPressed()V
 
     return-void
 
@@ -89,7 +81,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
 
-    sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToMainActivity;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToMainActivity;
+    sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingAnalytics;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingAnalytics;
 
     invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 

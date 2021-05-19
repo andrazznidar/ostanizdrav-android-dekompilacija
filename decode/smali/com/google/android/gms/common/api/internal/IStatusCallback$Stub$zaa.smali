@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub$zaa;
 .super Lcom/google/android/gms/internal/base/zab;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/IStatusCallback;
@@ -38,13 +38,9 @@
         }
     .end annotation
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/base/zab;->zaa()Landroid/os/Parcel;
 
     move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/base/zab;->zab:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     invoke-static {v0, p1}, Lcom/google/android/gms/internal/base/zad;->zaa(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 

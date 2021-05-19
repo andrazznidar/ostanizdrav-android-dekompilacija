@@ -1,10 +1,13 @@
 .class public final Lcom/google/android/gms/common/ConnectionResult;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -15,6 +18,9 @@
 .end field
 
 .field public static final RESULT_SUCCESS:Lcom/google/android/gms/common/ConnectionResult;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -142,111 +148,121 @@
     return-object p0
 
     :pswitch_0
-    const-string p0, "API_VERSION_UPDATE_REQUIRED"
+    const-string p0, "API_DISABLED"
 
     return-object p0
 
     :pswitch_1
-    const-string p0, "RESTRICTED_PROFILE"
+    const-string p0, "RESOLUTION_ACTIVITY_NOT_FOUND"
 
     return-object p0
 
     :pswitch_2
-    const-string p0, "SERVICE_MISSING_PERMISSION"
+    const-string p0, "API_VERSION_UPDATE_REQUIRED"
 
     return-object p0
 
     :pswitch_3
-    const-string p0, "SERVICE_UPDATING"
+    const-string p0, "RESTRICTED_PROFILE"
 
     return-object p0
 
     :pswitch_4
-    const-string p0, "SIGN_IN_FAILED"
+    const-string p0, "SERVICE_MISSING_PERMISSION"
 
     return-object p0
 
     :pswitch_5
-    const-string p0, "API_UNAVAILABLE"
+    const-string p0, "SERVICE_UPDATING"
 
     return-object p0
 
     :pswitch_6
-    const-string p0, "INTERRUPTED"
+    const-string p0, "SIGN_IN_FAILED"
 
     return-object p0
 
     :pswitch_7
-    const-string p0, "TIMEOUT"
+    const-string p0, "API_UNAVAILABLE"
 
     return-object p0
 
     :pswitch_8
-    const-string p0, "CANCELED"
+    const-string p0, "INTERRUPTED"
 
     return-object p0
 
     :pswitch_9
-    const-string p0, "LICENSE_CHECK_FAILED"
+    const-string p0, "TIMEOUT"
 
     return-object p0
 
     :pswitch_a
-    const-string p0, "DEVELOPER_ERROR"
+    const-string p0, "CANCELED"
 
     return-object p0
 
     :pswitch_b
-    const-string p0, "SERVICE_INVALID"
+    const-string p0, "LICENSE_CHECK_FAILED"
 
     return-object p0
 
     :pswitch_c
-    const-string p0, "INTERNAL_ERROR"
+    const-string p0, "DEVELOPER_ERROR"
 
     return-object p0
 
     :pswitch_d
-    const-string p0, "NETWORK_ERROR"
+    const-string p0, "SERVICE_INVALID"
 
     return-object p0
 
     :pswitch_e
-    const-string p0, "RESOLUTION_REQUIRED"
+    const-string p0, "INTERNAL_ERROR"
 
     return-object p0
 
     :pswitch_f
-    const-string p0, "INVALID_ACCOUNT"
+    const-string p0, "NETWORK_ERROR"
 
     return-object p0
 
     :pswitch_10
-    const-string p0, "SIGN_IN_REQUIRED"
+    const-string p0, "RESOLUTION_REQUIRED"
 
     return-object p0
 
     :pswitch_11
-    const-string p0, "SERVICE_DISABLED"
+    const-string p0, "INVALID_ACCOUNT"
 
     return-object p0
 
     :pswitch_12
-    const-string p0, "SERVICE_VERSION_UPDATE_REQUIRED"
+    const-string p0, "SIGN_IN_REQUIRED"
 
     return-object p0
 
     :pswitch_13
-    const-string p0, "SERVICE_MISSING"
+    const-string p0, "SERVICE_DISABLED"
 
     return-object p0
 
     :pswitch_14
-    const-string p0, "SUCCESS"
+    const-string p0, "SERVICE_VERSION_UPDATE_REQUIRED"
 
     return-object p0
 
     :pswitch_15
+    const-string p0, "SERVICE_MISSING"
+
+    return-object p0
+
+    :pswitch_16
+    const-string p0, "SUCCESS"
+
+    return-object p0
+
+    :pswitch_17
     const-string p0, "UNKNOWN"
 
     return-object p0
@@ -265,6 +281,8 @@
 
     :pswitch_data_0
     .packed-switch -0x1
+        :pswitch_17
+        :pswitch_16
         :pswitch_15
         :pswitch_14
         :pswitch_13
@@ -276,12 +294,12 @@
         :pswitch_d
         :pswitch_c
         :pswitch_b
-        :pswitch_a
-        :pswitch_9
     .end packed-switch
 
     :pswitch_data_1
     .packed-switch 0xd
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
@@ -327,7 +345,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->zzc:Landroid/app/PendingIntent;
 
-    invoke-static {v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -337,7 +355,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/common/ConnectionResult;->zzd:Ljava/lang/String;
 
-    invoke-static {v1, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -404,8 +422,10 @@
 
 .method public final toString()Ljava/lang/String;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
+    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
     move-result-object v0
 
@@ -440,8 +460,12 @@
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -449,13 +473,13 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->zzb:I
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->zzc:Landroid/app/PendingIntent;
 
@@ -463,15 +487,15 @@
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v2, v1, p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     iget-object p2, p0, Lcom/google/android/gms/common/ConnectionResult;->zzd:Ljava/lang/String;
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

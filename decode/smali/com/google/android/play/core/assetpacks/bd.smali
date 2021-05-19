@@ -1,91 +1,130 @@
 .class public final Lcom/google/android/play/core/assetpacks/bd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/play/core/internal/ci;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/play/core/internal/ci<",
-        "Lcom/google/android/play/core/assetpacks/bc;",
-        ">;"
-    }
-.end annotation
+.super Ljava/io/InputStream;
 
 
 # instance fields
-.field public final a:Lcom/google/android/play/core/internal/ci;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/play/core/internal/ci<",
-            "Landroid/content/Context;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final a:Ljava/io/InputStream;
 
-.field public final b:Lcom/google/android/play/core/internal/ci;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/play/core/internal/ci<",
-            "Lcom/google/android/play/core/assetpacks/dl;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public b:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/play/core/internal/ci;Lcom/google/android/play/core/internal/ci;)V
+.method public constructor <init>(Ljava/io/InputStream;J)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/play/core/internal/ci<",
-            "Landroid/content/Context;",
-            ">;",
-            "Lcom/google/android/play/core/internal/ci<",
-            "Lcom/google/android/play/core/assetpacks/dl;",
-            ">;)V"
-        }
-    .end annotation
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Lcom/google/android/play/core/internal/ci;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Ljava/io/InputStream;
 
-    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/bd;->b:Lcom/google/android/play/core/internal/ci;
+    iput-wide p2, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Lcom/google/android/play/core/internal/ci;
+    invoke-super {p0}, Ljava/io/InputStream;->close()V
 
-    check-cast v0, Lcom/google/android/play/core/assetpacks/s;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Ljava/io/InputStream;
 
-    invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/s;->b()Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    move-result-object v0
+    const-wide/16 v0, 0x0
 
-    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/bd;->b:Lcom/google/android/play/core/internal/ci;
+    iput-wide v0, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
 
-    invoke-interface {v1}, Lcom/google/android/play/core/internal/ci;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final read()I
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    new-instance v2, Lcom/google/android/play/core/assetpacks/bc;
+    iget-wide v0, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
 
-    check-cast v1, Lcom/google/android/play/core/assetpacks/dl;
+    const-wide/16 v2, 0x0
 
-    invoke-direct {v2, v0, v1}, Lcom/google/android/play/core/assetpacks/bc;-><init>(Landroid/content/Context;Lcom/google/android/play/core/assetpacks/dl;)V
+    cmp-long v2, v0, v2
 
-    return-object v2
+    if-gtz v2, :cond_0
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :cond_0
+    const-wide/16 v2, -0x1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
+
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final read([BII)I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-wide v0, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    const/4 v3, -0x1
+
+    if-gtz v2, :cond_0
+
+    return v3
+
+    :cond_0
+    int-to-long v4, p3
+
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    iget-object p3, p0, Lcom/google/android/play/core/assetpacks/bd;->a:Ljava/io/InputStream;
+
+    long-to-int v0, v0
+
+    invoke-virtual {p3, p1, p2, v0}, Ljava/io/InputStream;->read([BII)I
+
+    move-result p1
+
+    if-eq p1, v3, :cond_1
+
+    iget-wide p2, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
+
+    int-to-long v0, p1
+
+    sub-long/2addr p2, v0
+
+    iput-wide p2, p0, Lcom/google/android/play/core/assetpacks/bd;->b:J
+
+    :cond_1
+    return p1
 .end method

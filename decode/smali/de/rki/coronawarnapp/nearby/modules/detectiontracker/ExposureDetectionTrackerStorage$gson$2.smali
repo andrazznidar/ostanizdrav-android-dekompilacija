@@ -72,7 +72,7 @@
 
     invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v2
 

@@ -140,7 +140,7 @@
 
     :cond_1
     :goto_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :cond_2
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/DefaultExposureDetectionTracker$detectionStates$2$setupTimeoutEnforcer$1$1;->$hd:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
@@ -163,7 +163,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/DefaultExposureDetectionTracker$detectionStates$2$setupTimeoutEnforcer$1$1;->label:I
 
-    invoke-static {v3, v4, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v3, v4, p0}, Lcom/google/zxing/client/android/R$id;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

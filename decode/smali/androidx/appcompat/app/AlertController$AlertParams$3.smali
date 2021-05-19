@@ -59,7 +59,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AlertController;->mDialog:Landroidx/appcompat/app/AppCompatDialog;
 
-    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {p1}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
     :cond_0
     return-void

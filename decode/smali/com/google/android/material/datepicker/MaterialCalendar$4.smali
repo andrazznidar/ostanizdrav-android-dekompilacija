@@ -19,13 +19,13 @@
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar$4;->startItem:Ljava/util/Calendar;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object p1
 

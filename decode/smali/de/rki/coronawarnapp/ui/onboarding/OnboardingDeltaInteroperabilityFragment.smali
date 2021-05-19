@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nOnboardingDeltaInteroperabilityFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingDeltaInteroperabilityFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,59:1\n11#2,9:60\n16#3,11:69\n*E\n*S KotlinDebug\n*F\n+ 1 OnboardingDeltaInteroperabilityFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment\n*L\n24#1,9:60\n26#1,11:69\n*E\n"
+    value = "SMAP\nOnboardingDeltaInteroperabilityFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingDeltaInteroperabilityFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,61:1\n11#2,9:62\n16#3,11:71\n*E\n*S KotlinDebug\n*F\n+ 1 OnboardingDeltaInteroperabilityFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment\n*L\n24#1,9:62\n26#1,11:71\n*E\n"
 .end annotation
 
 
@@ -40,7 +40,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c004b
+    const v0, 0x7f0c0054
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -88,7 +88,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -153,14 +153,6 @@
     return-object v0
 .end method
 
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    return-void
-.end method
-
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 2
 
@@ -180,7 +172,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment$onViewCreated$1;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;->getVm()Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragmentViewModel;
 
@@ -202,7 +194,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1200d1
+    const v0, 0x7f120152
 
     invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -212,7 +204,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->convertToHyperlink(Landroid/widget/TextView;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ViewsKt;->convertToHyperlink(Landroid/widget/TextView;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBinding;
 
@@ -286,7 +278,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment$onViewCreated$5;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

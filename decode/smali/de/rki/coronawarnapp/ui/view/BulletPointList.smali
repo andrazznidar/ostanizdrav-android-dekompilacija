@@ -70,7 +70,7 @@
 
     add-int/lit8 v4, v2, 0x1
 
-    const v5, 0x7f0c00f9
+    const v5, 0x7f0c011d
 
     invoke-static {p1, v5, p0}, Landroid/widget/LinearLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -78,7 +78,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f09009c
+    const v5, 0x7f0900c6
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

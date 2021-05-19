@@ -23,6 +23,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "val$workManager",
+            "val$tag"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/work/impl/utils/StatusRunnable$3;->val$workManager:Landroidx/work/impl/WorkManagerImpl;
 
@@ -92,25 +102,25 @@
     :try_start_1
     const-string v3, "id"
 
-    invoke-static {v1, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
     const-string v5, "state"
 
-    invoke-static {v1, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v6, "output"
 
-    invoke-static {v1, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "run_attempt_count"
 
-    invoke-static {v1, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
@@ -277,7 +287,7 @@
 
     move-result v14
 
-    invoke-static {v14}, Landroidx/transition/ViewGroupUtilsApi14;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v14}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v14
 

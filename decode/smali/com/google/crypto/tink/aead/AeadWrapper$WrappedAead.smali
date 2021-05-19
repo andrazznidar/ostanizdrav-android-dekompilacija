@@ -122,7 +122,7 @@
 
     const-string v4, "ciphertext prefix matches a key, but cannot decrypt: "
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -238,7 +238,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
+    invoke-static {v0}, Lcom/google/android/material/R$style;->concat([[B)[B
 
     move-result-object p1
 

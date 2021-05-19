@@ -3,22 +3,29 @@
 .source "DropdownMenuEndIconDelegate.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lcom/google/android/material/textfield/TextInputLayout$OnEndIconChangedListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
 
 
 # instance fields
 .field public final synthetic this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
-.field public final synthetic val$editText:Landroid/widget/AutoCompleteTextView;
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
+.method public constructor <init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
-
-    iput-object p2, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->val$editText:Landroid/widget/AutoCompleteTextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,40 +34,46 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public onEndIconChanged(Lcom/google/android/material/textfield/TextInputLayout;I)V
     .locals 2
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {p1}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
-    move-result p2
+    move-result-object p1
 
-    const/4 v0, 0x0
+    check-cast p1, Landroid/widget/AutoCompleteTextView;
 
-    const/4 v1, 0x1
+    if-eqz p1, :cond_1
 
-    if-ne p2, v1, :cond_1
+    const/4 v0, 0x3
 
-    iget-object p2, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
-
-    invoke-virtual {p2}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->isDropdownPopupActive()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
+    if-ne p2, v0, :cond_1
 
     iget-object p2, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
-    iput-boolean v0, p2, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->dropdownPopupDirty:Z
+    iget-object p2, p2, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->exposedDropdownEndIconTextWatcher:Landroid/text/TextWatcher;
+
+    invoke-virtual {p1, p2}, Landroid/widget/AutoCompleteTextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    invoke-virtual {p1}, Landroid/widget/AutoCompleteTextView;->getOnFocusChangeListener()Landroid/view/View$OnFocusChangeListener;
+
+    move-result-object p2
+
+    iget-object v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
+
+    iget-object v0, v0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->onFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
+
+    const/4 v1, 0x0
+
+    if-ne p2, v0, :cond_0
+
+    invoke-virtual {p1, v1}, Landroid/widget/AutoCompleteTextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     :cond_0
-    iget-object p2, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
+    invoke-virtual {p1, v1}, Landroid/widget/AutoCompleteTextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    iget-object v1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$5;->val$editText:Landroid/widget/AutoCompleteTextView;
-
-    invoke-static {p2, v1}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->access$400(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
-
-    invoke-virtual {p1}, Landroid/view/View;->performClick()Z
+    invoke-virtual {p1, v1}, Landroid/widget/AutoCompleteTextView;->setOnDismissListener(Landroid/widget/AutoCompleteTextView$OnDismissListener;)V
 
     :cond_1
-    return v0
+    return-void
 .end method

@@ -935,7 +935,7 @@
 
     sget-object v0, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY:[I
 
-    invoke-static {v2, v11, v10, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {v2, v11, v10, v0}, Landroidx/core/app/AppOpsManagerCompat;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v3
 
@@ -949,7 +949,7 @@
 
     const/4 v14, -0x1
 
-    invoke-static {v3, v9, v0, v13, v14}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v3, v9, v0, v13, v14}, Landroidx/core/app/AppOpsManagerCompat;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v0
 
@@ -1000,7 +1000,7 @@
 
     const-string v0, "tint"
 
-    invoke-static {v9, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v9, v0}, Landroidx/core/app/AppOpsManagerCompat;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1052,7 +1052,7 @@
 
     move-result-object v6
 
-    invoke-static {v0, v6, v11}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+    invoke-static {v0, v6, v11}, Landroidx/core/app/AppOpsManagerCompat;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v0
     :try_end_0
@@ -1112,7 +1112,7 @@
 
     const-string v6, "autoMirrored"
 
-    invoke-static {v9, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v9, v6}, Landroidx/core/app/AppOpsManagerCompat;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v6
 
@@ -1134,7 +1134,7 @@
 
     const/4 v14, 0x7
 
-    invoke-static {v3, v9, v4, v14, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v3, v9, v4, v14, v0}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v0
 
@@ -1146,7 +1146,7 @@
 
     const/16 v6, 0x8
 
-    invoke-static {v3, v9, v4, v6, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v3, v9, v4, v6, v0}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v0
 
@@ -1200,7 +1200,7 @@
 
     const/4 v14, 0x4
 
-    invoke-static {v3, v9, v4, v14, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v3, v9, v4, v14, v0}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v0
 
@@ -1299,7 +1299,7 @@
 
     sget-object v3, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_PATH:[I
 
-    invoke-static {v2, v11, v10, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {v2, v11, v10, v3}, Landroidx/core/app/AppOpsManagerCompat;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v6
 
@@ -1307,7 +1307,7 @@
 
     iput-object v3, v8, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat$VFullPath;->mThemeAttrs:[I
 
-    invoke-static {v9, v13}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v9, v13}, Landroidx/core/app/AppOpsManagerCompat;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v13
 
@@ -1353,7 +1353,7 @@
 
     if-eqz v13, :cond_d
 
-    invoke-static {v13}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
+    invoke-static {v13}, Landroidx/core/app/AppOpsManagerCompat;->createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
 
     move-result-object v3
 
@@ -1396,7 +1396,7 @@
 
     move/from16 v8, v20
 
-    invoke-static/range {v3 .. v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedComplexColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;Ljava/lang/String;II)Landroidx/core/content/res/ComplexColorCompat;
+    invoke-static/range {v3 .. v8}, Landroidx/core/app/AppOpsManagerCompat;->getNamedComplexColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;Ljava/lang/String;II)Landroidx/core/content/res/ComplexColorCompat;
 
     move-result-object v3
 
@@ -1410,7 +1410,7 @@
 
     move-object/from16 v8, v26
 
-    invoke-static {v8, v9, v5, v3, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v8, v9, v5, v3, v4}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1422,7 +1422,7 @@
 
     const/16 v7, 0x8
 
-    invoke-static {v8, v9, v3, v7, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v8, v9, v3, v7, v4}, Landroidx/core/app/AppOpsManagerCompat;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v3
 
@@ -1462,7 +1462,7 @@
 
     const/16 v6, 0x9
 
-    invoke-static {v8, v9, v3, v6, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v8, v9, v3, v6, v5}, Landroidx/core/app/AppOpsManagerCompat;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v3
 
@@ -1502,7 +1502,7 @@
 
     const-string v5, "strokeMiterLimit"
 
-    invoke-static {v8, v9, v5, v3, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v8, v9, v5, v3, v4}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1534,7 +1534,7 @@
 
     move/from16 v8, v20
 
-    invoke-static/range {v3 .. v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedComplexColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;Ljava/lang/String;II)Landroidx/core/content/res/ComplexColorCompat;
+    invoke-static/range {v3 .. v8}, Landroidx/core/app/AppOpsManagerCompat;->getNamedComplexColor(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;Ljava/lang/String;II)Landroidx/core/content/res/ComplexColorCompat;
 
     move-result-object v3
 
@@ -1546,7 +1546,7 @@
 
     const-string v5, "strokeAlpha"
 
-    invoke-static {v1, v9, v5, v3, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v9, v5, v3, v4}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1558,7 +1558,7 @@
 
     const/4 v5, 0x4
 
-    invoke-static {v1, v9, v4, v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v9, v4, v5, v3}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1570,7 +1570,7 @@
 
     const/4 v5, 0x6
 
-    invoke-static {v1, v9, v4, v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v9, v4, v5, v3}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1582,7 +1582,7 @@
 
     const/4 v5, 0x7
 
-    invoke-static {v1, v9, v4, v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v9, v4, v5, v3}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1594,7 +1594,7 @@
 
     const/4 v5, 0x5
 
-    invoke-static {v1, v9, v4, v5, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v1, v9, v4, v5, v3}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v3
 
@@ -1604,7 +1604,7 @@
 
     iget v4, v13, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat$VPath;->mFillRule:I
 
-    invoke-static {v1, v9, v15, v3, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v1, v9, v15, v3, v4}, Landroidx/core/app/AppOpsManagerCompat;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v3
 
@@ -1692,7 +1692,7 @@
 
     invoke-direct {v3}, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat$VClipPath;-><init>()V
 
-    invoke-static {v9, v13}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
+    invoke-static {v9, v13}, Landroidx/core/app/AppOpsManagerCompat;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v4
 
@@ -1703,7 +1703,7 @@
     :cond_16
     sget-object v4, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH:[I
 
-    invoke-static {v2, v11, v10, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {v2, v11, v10, v4}, Landroidx/core/app/AppOpsManagerCompat;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v4
 
@@ -1726,7 +1726,7 @@
 
     if-eqz v7, :cond_18
 
-    invoke-static {v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
+    invoke-static {v7}, Landroidx/core/app/AppOpsManagerCompat;->createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
 
     move-result-object v6
 
@@ -1735,7 +1735,7 @@
     :cond_18
     const/4 v6, 0x2
 
-    invoke-static {v4, v9, v15, v6, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
+    invoke-static {v4, v9, v15, v6, v5}, Landroidx/core/app/AppOpsManagerCompat;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 
     move-result v7
 
@@ -1786,7 +1786,7 @@
 
     sget-object v4, Landroidx/vectordrawable/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP:[I
 
-    invoke-static {v2, v11, v10, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {v2, v11, v10, v4}, Landroidx/core/app/AppOpsManagerCompat;->obtainAttributes1(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v4
 
@@ -1800,7 +1800,7 @@
 
     const/4 v8, 0x5
 
-    invoke-static {v4, v9, v7, v8, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v4, v9, v7, v8, v6}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v6
 
@@ -1832,7 +1832,7 @@
 
     const/4 v5, 0x3
 
-    invoke-static {v4, v9, v15, v5, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v4, v9, v15, v5, v6}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v6
 
@@ -1844,7 +1844,7 @@
 
     const/4 v15, 0x4
 
-    invoke-static {v4, v9, v6, v15, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v4, v9, v6, v15, v5}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v5
 
@@ -1856,7 +1856,7 @@
 
     const/4 v7, 0x6
 
-    invoke-static {v4, v9, v6, v7, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v4, v9, v6, v7, v5}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v5
 
@@ -1868,7 +1868,7 @@
 
     const/4 v7, 0x7
 
-    invoke-static {v4, v9, v6, v7, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+    invoke-static {v4, v9, v6, v7, v5}, Landroidx/core/app/AppOpsManagerCompat;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
 
     move-result v5
 
@@ -2458,7 +2458,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTint(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTint(Landroid/graphics/drawable/Drawable;I)V
 
     return-void
 
@@ -2479,7 +2479,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     return-void
 
@@ -2513,7 +2513,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0, p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
     return-void
 

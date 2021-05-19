@@ -151,7 +151,7 @@
     check-cast v1, Lkotlinx/coroutines/flow/FlowCollector;
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -172,7 +172,7 @@
     check-cast v1, Lkotlinx/coroutines/flow/FlowCollector;
 
     :try_start_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -194,7 +194,7 @@
     check-cast v5, Lkotlinx/coroutines/flow/FlowCollector;
 
     :try_start_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -209,7 +209,7 @@
     goto :goto_2
 
     :cond_3
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isTracingEnabled$1;->L$0:Ljava/lang/Object;
 
@@ -274,7 +274,7 @@
 
     iput v2, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isTracingEnabled$1;->label:I
 
-    invoke-static {v7, v8, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v7, v8, v0}, Lcom/google/zxing/client/android/R$id;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_3

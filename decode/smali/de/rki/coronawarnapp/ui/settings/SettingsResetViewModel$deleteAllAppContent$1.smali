@@ -25,9 +25,9 @@
     c = "de.rki.coronawarnapp.ui.settings.SettingsResetViewModel$deleteAllAppContent$1"
     f = "SettingsResetViewModel.kt"
     l = {
-        0x25,
-        0x28,
-        0x32
+        0x26,
+        0x29,
+        0x35
     }
     m = "invokeSuspend"
 .end annotation
@@ -126,7 +126,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -141,19 +141,19 @@
 
     :cond_1
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :cond_3
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     sget-object p1, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
@@ -209,15 +209,15 @@
 
     const/4 v4, 0x0
 
-    invoke-static {p1, v1, v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v1, v3, v4}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_6
     :goto_2
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iget-object p1, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
     const/16 v1, 0x64
 
@@ -237,7 +237,7 @@
 
     const/high16 v3, -0x80000000
 
-    invoke-virtual {v1, v3}, Lde/rki/coronawarnapp/storage/LocalData;->setNumberOfRemainingPositiveTestResultReminders(I)V
+    invoke-virtual {v1, v3}, Lde/rki/coronawarnapp/storage/LocalData;->setNumberOfRemainingSharePositiveTestResultReminders(I)V
 
     new-array p1, p1, [Ljava/lang/Object;
 
@@ -263,6 +263,12 @@
 
     :cond_7
     :goto_3
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;->removeAppShortcut()V
+
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;

@@ -92,7 +92,7 @@
 
     iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkElementIndex(II)I
+    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->checkElementIndex(II)I
 
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 

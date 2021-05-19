@@ -34,15 +34,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInformationFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationFragmentViewModel.kt\nde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,35:1\n1#2:36\n*E\n"
+    value = "SMAP\nInformationFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationFragmentViewModel.kt\nde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,36:1\n1#2:37\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.ui.information.InformationFragmentViewModel$currentENFVersion$1"
     f = "InformationFragmentViewModel.kt"
     l = {
-        0x17,
-        0x19
+        0x18,
+        0x1a
     }
     m = "invokeSuspend"
 .end annotation
@@ -151,7 +151,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -169,12 +169,12 @@
 
     check-cast v1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->L$0:Ljava/lang/Object;
 
@@ -212,7 +212,7 @@
 
     const-string p1, "ENF "
 
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -220,7 +220,7 @@
 
     iget-object v7, v7, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->context:Landroid/content/Context;
 
-    const v8, 0x7f1200d5
+    const v8, 0x7f120156
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

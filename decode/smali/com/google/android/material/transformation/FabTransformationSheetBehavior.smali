@@ -3,6 +3,11 @@
 .source "FabTransformationSheetBehavior.java"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # instance fields
 .field public importantForAccessibilityMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;

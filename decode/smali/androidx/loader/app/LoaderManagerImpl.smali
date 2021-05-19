@@ -188,7 +188,7 @@
 
     iget-object v1, p0, Landroidx/loader/app/LoaderManagerImpl;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    invoke-static {v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
+    invoke-static {v1, v0}, Landroidx/core/app/AppOpsManagerCompat;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
     const-string v1, "}}"
 

@@ -3,14 +3,14 @@
 .source "AppConfigModule_ProvideAppConfigApiFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/appconfig/download/AppConfigApiV2;",
         ">;"
     }
@@ -18,16 +18,6 @@
 
 
 # instance fields
-.field public final cacheProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lokhttp3/Cache;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final clientProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -62,7 +52,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,9 +66,6 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lretrofit2/converter/gson/GsonConverterFactory;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lokhttp3/Cache;",
             ">;)V"
         }
     .end annotation
@@ -93,15 +80,13 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;->gsonConverterFactoryProvider:Ljavax/inject/Provider;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;->cacheProvider:Ljavax/inject/Provider;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 9
+    .locals 7
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;->module:Lde/rki/coronawarnapp/appconfig/AppConfigModule;
 
@@ -129,14 +114,6 @@
 
     check-cast v3, Lretrofit2/converter/gson/GsonConverterFactory;
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;->cacheProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v4}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lokhttp3/Cache;
-
     if-eqz v0, :cond_0
 
     const-string v0, "client"
@@ -151,15 +128,9 @@
 
     invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cache"
-
-    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v1}, Lokhttp3/OkHttpClient;->newBuilder()Lokhttp3/OkHttpClient$Builder;
 
     move-result-object v0
-
-    iput-object v4, v0, Lokhttp3/OkHttpClient$Builder;->cache:Lokhttp3/Cache;
 
     sget-object v1, Lde/rki/coronawarnapp/appconfig/AppConfigModule;->HTTP_TIMEOUT_APPCONFIG:Lorg/joda/time/Duration;
 
@@ -171,17 +142,7 @@
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-string v7, "unit"
-
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "timeout"
-
-    invoke-static {v8, v5, v6, v1}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v1
-
-    iput v1, v0, Lokhttp3/OkHttpClient$Builder;->connectTimeout:I
+    invoke-virtual {v0, v5, v6, v1}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     sget-object v1, Lde/rki/coronawarnapp/appconfig/AppConfigModule;->HTTP_TIMEOUT_APPCONFIG:Lorg/joda/time/Duration;
 
@@ -191,13 +152,7 @@
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v8, v5, v6, v1}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v1
-
-    iput v1, v0, Lokhttp3/OkHttpClient$Builder;->readTimeout:I
+    invoke-virtual {v0, v5, v6, v1}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     sget-object v1, Lde/rki/coronawarnapp/appconfig/AppConfigModule;->HTTP_TIMEOUT_APPCONFIG:Lorg/joda/time/Duration;
 
@@ -207,13 +162,7 @@
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v8, v5, v6, v1}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v1
-
-    iput v1, v0, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I
+    invoke-virtual {v0, v5, v6, v1}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     sget-object v1, Lde/rki/coronawarnapp/appconfig/AppConfigModule;->HTTP_TIMEOUT_APPCONFIG:Lorg/joda/time/Duration;
 
@@ -223,13 +172,7 @@
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v8, v4, v5, v1}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v1
-
-    iput v1, v0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I
+    invoke-virtual {v0, v4, v5, v1}, Lokhttp3/OkHttpClient$Builder;->callTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     new-instance v1, Lokhttp3/OkHttpClient;
 
@@ -271,9 +214,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/appconfig/download/AppConfigApiV2;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 

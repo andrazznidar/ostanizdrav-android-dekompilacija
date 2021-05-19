@@ -1,6 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/api/ResultCallback;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -16,6 +16,10 @@
 
 # virtual methods
 .method public abstract onResult(Lcom/google/android/gms/common/api/Result;)V
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"

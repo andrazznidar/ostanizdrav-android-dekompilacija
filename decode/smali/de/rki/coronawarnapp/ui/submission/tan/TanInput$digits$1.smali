@@ -77,7 +77,7 @@
 
     const-class p1, Landroid/widget/TextView;
 
-    invoke-static {v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 

@@ -48,11 +48,11 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const p2, 0x7f0c00fe
+    const p2, 0x7f0c0122
 
     invoke-static {p1, p2, p0}, Landroid/widget/LinearLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const p2, 0x7f090159
+    const p2, 0x7f0901b3
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -80,7 +80,7 @@
 
     check-cast p2, Landroidx/recyclerview/widget/RecyclerView;
 
-    const p1, 0x7f090128
+    const p1, 0x7f090155
 
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public final setCountries(Ljava/util/List;)V
-    .locals 9
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,6 +130,14 @@
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$1;
+
+    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$1;-><init>(Lde/rki/coronawarnapp/ui/view/CountryListView;)V
+
+    invoke-static {p1, v1}, Lkotlin/collections/ArraysKt___ArraysKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+
+    move-result-object p1
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/view/CountryListView;->adapterCountryFlags:Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter;
 
@@ -145,25 +153,25 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CountryListView;->countryNames:Landroid/widget/TextView;
 
-    const/4 v3, 0x0
-
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    new-instance v7, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$$inlined$also$lambda$1;
+    const/4 v7, 0x0
 
-    invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$$inlined$also$lambda$1;-><init>(Lde/rki/coronawarnapp/ui/view/CountryListView;)V
+    new-instance v8, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$$inlined$also$lambda$1;
 
-    const/16 v8, 0x1e
+    invoke-direct {v8, p0}, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$$inlined$also$lambda$1;-><init>(Lde/rki/coronawarnapp/ui/view/CountryListView;)V
 
-    const-string v2, ", "
+    const/16 v9, 0x1e
 
-    move-object v1, p1
+    const-string v3, ", "
 
-    invoke-static/range {v1 .. v8}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    move-object v2, p1
+
+    invoke-static/range {v2 .. v9}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v1
 

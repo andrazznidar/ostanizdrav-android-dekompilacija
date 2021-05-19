@@ -113,7 +113,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

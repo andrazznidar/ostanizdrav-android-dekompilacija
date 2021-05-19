@@ -17,6 +17,8 @@
 
 
 # instance fields
+.field public containsIncompatibleShadowOp:Z
+
 .field public currentShadowAngle:F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -388,6 +390,10 @@
     iget-object p1, p0, Lcom/google/android/material/shape/ShapePath;->shadowCompatOperations:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->clear()V
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lcom/google/android/material/shape/ShapePath;->containsIncompatibleShadowOp:Z
 
     return-void
 .end method

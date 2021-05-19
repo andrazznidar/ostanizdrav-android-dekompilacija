@@ -94,7 +94,7 @@
 .end method
 
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
-    .locals 23
+    .locals 21
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -164,7 +164,7 @@
 
     const-string v7, "--> "
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -186,7 +186,7 @@
 
     const-string v9, " "
 
-    invoke-static {v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -220,7 +220,7 @@
 
     if-eqz v5, :cond_5
 
-    invoke-static {v6, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -241,81 +241,72 @@
 
     invoke-interface {v10, v6}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    const-string v6, "charset"
+    const-string v6, "-byte body omitted)"
 
-    const-string v10, "-byte body omitted)"
+    const-string v10, "UTF_8"
 
-    const-string v11, "UTF_8"
+    if-eqz v2, :cond_e
 
-    if-eqz v2, :cond_f
-
-    iget-object v12, v3, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+    iget-object v11, v3, Lokhttp3/Request;->headers:Lokhttp3/Headers;
 
     if-eqz v5, :cond_7
 
     invoke-virtual {v5}, Lokhttp3/RequestBody;->contentType()Lokhttp3/MediaType;
 
+    move-result-object v12
+
+    if-eqz v12, :cond_6
+
+    const-string v13, "Content-Type"
+
+    invoke-virtual {v11, v13}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v13
 
-    if-eqz v13, :cond_6
+    if-nez v13, :cond_6
 
-    const-string v14, "Content-Type"
+    iget-object v13, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-virtual {v12, v14}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-nez v14, :cond_6
+    const-string v15, "Content-Type: "
 
-    iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move/from16 v16, v2
+    move-result-object v12
 
-    const-string v2, "Content-Type: "
-
-    invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v14, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
-
-    goto :goto_4
+    invoke-interface {v13, v12}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_6
-    move/from16 v16, v2
-
-    :goto_4
     invoke-virtual {v5}, Lokhttp3/RequestBody;->contentLength()J
 
-    move-result-wide v13
+    move-result-wide v12
 
-    const-wide/16 v17, -0x1
+    const-wide/16 v14, -0x1
 
-    cmp-long v2, v13, v17
+    cmp-long v12, v12, v14
 
-    if-eqz v2, :cond_8
+    if-eqz v12, :cond_7
 
-    const-string v2, "Content-Length"
+    const-string v12, "Content-Length"
 
-    invoke-virtual {v12, v2}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v11, v12}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v12
 
-    if-nez v2, :cond_8
+    if-nez v12, :cond_7
 
-    iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v12, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     const-string v13, "Content-Length: "
 
-    invoke-static {v13}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v13}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v13
 
@@ -329,71 +320,65 @@
 
     move-result-object v13
 
-    invoke-interface {v2, v13}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
-
-    goto :goto_5
+    invoke-interface {v12, v13}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_7
-    move/from16 v16, v2
+    invoke-virtual {v11}, Lokhttp3/Headers;->size()I
 
-    :cond_8
-    :goto_5
-    invoke-virtual {v12}, Lokhttp3/Headers;->size()I
-
-    move-result v2
+    move-result v12
 
     const/4 v13, 0x0
 
-    :goto_6
-    if-ge v13, v2, :cond_9
+    :goto_4
+    if-ge v13, v12, :cond_8
 
-    invoke-virtual {v1, v12, v13}, Lokhttp3/logging/HttpLoggingInterceptor;->logHeader(Lokhttp3/Headers;I)V
+    invoke-virtual {v1, v11, v13}, Lokhttp3/logging/HttpLoggingInterceptor;->logHeader(Lokhttp3/Headers;I)V
 
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_6
+    goto :goto_4
+
+    :cond_8
+    const-string v11, "--> END "
+
+    if-eqz v4, :cond_d
+
+    if-nez v5, :cond_9
+
+    goto/16 :goto_6
 
     :cond_9
-    const-string v2, "--> END "
-
-    if-eqz v4, :cond_e
-
-    if-nez v5, :cond_a
-
-    goto/16 :goto_8
-
-    :cond_a
     iget-object v12, v3, Lokhttp3/Request;->headers:Lokhttp3/Headers;
 
     invoke-virtual {v1, v12}, Lokhttp3/logging/HttpLoggingInterceptor;->bodyHasUnknownEncoding(Lokhttp3/Headers;)Z
 
     move-result v12
 
-    if-eqz v12, :cond_b
+    if-eqz v12, :cond_a
 
     iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v11
 
     iget-object v12, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v12, " (encoded body omitted)"
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v11
 
-    invoke-interface {v5, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v5, v11}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_7
 
-    :cond_b
+    :cond_a
     new-instance v12, Lokio/Buffer;
 
     invoke-direct {v12}, Lokio/Buffer;-><init>()V
@@ -404,7 +389,7 @@
 
     move-result-object v13
 
-    if-eqz v13, :cond_c
+    if-eqz v13, :cond_b
 
     sget-object v14, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -412,145 +397,116 @@
 
     move-result-object v13
 
-    if-eqz v13, :cond_c
+    if-eqz v13, :cond_b
 
-    goto :goto_7
+    goto :goto_5
 
-    :cond_c
+    :cond_b
     sget-object v13, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-static {v13, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v13, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_7
+    :goto_5
     iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-interface {v14, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-static {v12}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isProbablyUtf8(Lokio/Buffer;)Z
+    invoke-static {v12}, Lcom/google/zxing/client/android/R$id;->isProbablyUtf8(Lokio/Buffer;)Z
 
     move-result v14
 
-    if-eqz v14, :cond_d
+    if-eqz v14, :cond_c
 
     iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-static {v13, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v12, v13}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
-    move-object v15, v10
+    move-result-object v12
 
-    move-object/from16 v17, v11
+    invoke-interface {v14, v12}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    iget-wide v10, v12, Lokio/Buffer;->size:J
+    iget-object v12, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-virtual {v12, v10, v11, v13}, Lokio/Buffer;->readString(JLjava/nio/charset/Charset;)Ljava/lang/String;
+    invoke-static {v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-interface {v14, v10}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    iget-object v13, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    iget-object v10, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v11, v3, Lokhttp3/Request;->method:Ljava/lang/String;
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Lokhttp3/RequestBody;->contentLength()J
 
-    move-result-wide v11
+    move-result-wide v13
 
-    invoke-virtual {v2, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v10, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v12, v5}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    move-object v5, v15
+    goto :goto_7
 
-    goto :goto_a
+    :cond_c
+    iget-object v12, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+
+    invoke-static {v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    iget-object v13, v3, Lokhttp3/Request;->method:Ljava/lang/String;
+
+    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v13, " (binary "
+
+    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Lokhttp3/RequestBody;->contentLength()J
+
+    move-result-wide v13
+
+    invoke-virtual {v11, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v12, v5}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+
+    goto :goto_7
 
     :cond_d
-    move-object v15, v10
+    :goto_6
+    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    move-object/from16 v17, v11
+    invoke-static {v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v10, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    move-result-object v11
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v12, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    move-result-object v2
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v11, v3, Lokhttp3/Request;->method:Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v11
 
-    const-string v11, " (binary "
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lokhttp3/RequestBody;->contentLength()J
-
-    move-result-wide v11
-
-    invoke-virtual {v2, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-object v5, v15
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v10, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
-
-    goto :goto_a
+    invoke-interface {v5, v11}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_e
-    :goto_8
-    move-object v5, v10
-
-    move-object/from16 v17, v11
-
-    iget-object v10, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v11, v3, Lokhttp3/Request;->method:Ljava/lang/String;
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v10, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
-
-    goto :goto_a
-
-    :cond_f
-    move/from16 v16, v2
-
-    :goto_9
-    move-object v5, v10
-
-    move-object/from16 v17, v11
-
-    :goto_a
+    :goto_7
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v10
+    move-result-wide v11
 
     :try_start_0
     invoke-interface {v0, v3}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
@@ -559,206 +515,204 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v12
+    move-result-wide v13
 
-    sub-long/2addr v12, v10
+    sub-long/2addr v13, v11
 
-    invoke-virtual {v2, v12, v13}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v2
-
-    iget-object v10, v0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
-
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    invoke-virtual {v10}, Lokhttp3/ResponseBody;->contentLength()J
+    invoke-virtual {v3, v13, v14}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
     move-result-wide v11
 
-    const-wide/16 v13, -0x1
+    iget-object v3, v0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
 
-    cmp-long v13, v11, v13
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    if-eqz v13, :cond_10
+    invoke-virtual {v3}, Lokhttp3/ResponseBody;->contentLength()J
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    move-result-wide v13
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    const-wide/16 v15, -0x1
 
-    invoke-virtual {v13, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    cmp-long v5, v13, v15
 
-    const-string v14, "-byte"
+    if-eqz v5, :cond_f
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v13
+    invoke-virtual {v5, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    goto :goto_b
+    const-string v15, "-byte"
+
+    invoke-virtual {v5, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_8
+
+    :cond_f
+    const-string v5, "unknown-length"
+
+    :goto_8
+    iget-object v15, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+
+    const-string v16, "<-- "
+
+    move-object/from16 v17, v7
+
+    invoke-static/range {v16 .. v16}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    move-wide/from16 v18, v13
+
+    iget v13, v0, Lokhttp3/Response;->code:I
+
+    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    iget-object v13, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+
+    invoke-virtual {v13}, Ljava/lang/String;->length()I
+
+    move-result v13
+
+    if-nez v13, :cond_10
+
+    const/4 v13, 0x1
+
+    goto :goto_9
 
     :cond_10
-    const-string v13, "unknown-length"
+    const/4 v13, 0x0
 
-    :goto_b
-    iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    :goto_9
+    if-eqz v13, :cond_11
 
-    const-string v15, "<-- "
+    const/16 v13, 0x20
 
-    invoke-static {v15}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    move-object/from16 v18, v7
-
-    iget v7, v0, Lokhttp3/Response;->code:I
-
-    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    iget-object v7, v0, Lokhttp3/Response;->message:Ljava/lang/String;
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    if-nez v7, :cond_11
-
-    const/4 v7, 0x1
-
-    goto :goto_c
-
-    :cond_11
-    const/4 v7, 0x0
-
-    :goto_c
-    if-eqz v7, :cond_12
-
-    const/16 v7, 0x20
-
-    move-object/from16 v19, v6
+    move-object/from16 v20, v6
 
     move-object v6, v8
 
-    move-wide/from16 v21, v11
+    goto :goto_a
 
-    goto :goto_d
+    :cond_11
+    iget-object v13, v0, Lokhttp3/Response;->message:Ljava/lang/String;
 
-    :cond_12
-    iget-object v7, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    move-object/from16 v19, v6
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    const/16 v16, 0x20
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    move-object/from16 v20, v6
 
-    const/16 v20, 0x20
-
-    move-wide/from16 v21, v11
-
-    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v16 .. v16}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v6
 
-    move/from16 v7, v20
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_d
-    invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    move/from16 v13, v16
+
+    :goto_a
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-object v6, v0, Lokhttp3/Response;->request:Lokhttp3/Request;
 
     iget-object v6, v6, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;
 
-    invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v2, "ms"
+    const-string v6, "ms"
 
-    invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v16, :cond_13
+    if-nez v2, :cond_12
 
-    const-string v2, ", "
+    const-string v6, ", "
 
-    const-string v3, " body"
+    const-string v9, " body"
 
-    invoke-static {v2, v13, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v5, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    goto :goto_e
+    goto :goto_b
 
-    :cond_13
-    move-object v2, v8
+    :cond_12
+    move-object v5, v8
 
-    :goto_e
-    invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_b
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x29
+    const/16 v5, 0x29
 
-    invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v14, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v15, v5}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    if-eqz v16, :cond_1d
+    if-eqz v2, :cond_1c
 
     iget-object v2, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
     invoke-virtual {v2}, Lokhttp3/Headers;->size()I
 
-    move-result v3
+    move-result v5
 
     const/4 v6, 0x0
 
-    :goto_f
-    if-ge v6, v3, :cond_14
+    :goto_c
+    if-ge v6, v5, :cond_13
 
     invoke-virtual {v1, v2, v6}, Lokhttp3/logging/HttpLoggingInterceptor;->logHeader(Lokhttp3/Headers;I)V
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_f
+    goto :goto_c
 
-    :cond_14
-    if-eqz v4, :cond_1c
+    :cond_13
+    if-eqz v4, :cond_1b
 
     invoke-static {v0}, Lokhttp3/internal/http/HttpHeaders;->promisesBody(Lokhttp3/Response;)Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_15
+    if-nez v4, :cond_14
 
-    goto/16 :goto_12
+    goto/16 :goto_f
 
-    :cond_15
-    iget-object v3, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
+    :cond_14
+    iget-object v4, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
-    invoke-virtual {v1, v3}, Lokhttp3/logging/HttpLoggingInterceptor;->bodyHasUnknownEncoding(Lokhttp3/Headers;)Z
+    invoke-virtual {v1, v4}, Lokhttp3/logging/HttpLoggingInterceptor;->bodyHasUnknownEncoding(Lokhttp3/Headers;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_16
+    if-eqz v4, :cond_15
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
@@ -766,40 +720,40 @@
 
     invoke-interface {v2, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    goto/16 :goto_13
+    goto/16 :goto_10
 
-    :cond_16
-    invoke-virtual {v10}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
+    :cond_15
+    invoke-virtual {v3}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-wide v6, 0x7fffffffffffffffL
+    const-wide v5, 0x7fffffffffffffffL
 
-    invoke-interface {v3, v6, v7}, Lokio/BufferedSource;->request(J)Z
+    invoke-interface {v4, v5, v6}, Lokio/BufferedSource;->request(J)Z
 
-    invoke-interface {v3}, Lokio/BufferedSource;->getBuffer()Lokio/Buffer;
+    invoke-interface {v4}, Lokio/BufferedSource;->getBuffer()Lokio/Buffer;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "Content-Encoding"
+    const-string v5, "Content-Encoding"
 
-    invoke-virtual {v2, v4}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v5}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v4, "gzip"
+    const-string v5, "gzip"
 
     const/4 v6, 0x1
 
-    invoke-static {v4, v2, v6}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {v5, v2, v6}, Lkotlin/text/StringsKt__IndentKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v2
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_16
 
-    iget-wide v6, v3, Lokio/Buffer;->size:J
+    iget-wide v6, v4, Lokio/Buffer;->size:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -807,26 +761,26 @@
 
     new-instance v6, Lokio/GzipSource;
 
-    invoke-virtual {v3}, Lokio/Buffer;->clone()Lokio/Buffer;
+    invoke-virtual {v4}, Lokio/Buffer;->clone()Lokio/Buffer;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {v6, v3}, Lokio/GzipSource;-><init>(Lokio/Source;)V
+    invoke-direct {v6, v4}, Lokio/GzipSource;-><init>(Lokio/Source;)V
 
     :try_start_1
-    new-instance v3, Lokio/Buffer;
+    new-instance v4, Lokio/Buffer;
 
-    invoke-direct {v3}, Lokio/Buffer;-><init>()V
+    invoke-direct {v4}, Lokio/Buffer;-><init>()V
 
-    invoke-virtual {v3, v6}, Lokio/Buffer;->writeAll(Lokio/Source;)J
+    invoke-virtual {v4, v6}, Lokio/Buffer;->writeAll(Lokio/Source;)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-static {v6, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v6, v5}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    move-object v4, v2
+    move-object v5, v2
 
-    goto :goto_10
+    goto :goto_d
 
     :catchall_0
     move-exception v0
@@ -843,41 +797,39 @@
 
     move-object v3, v0
 
-    invoke-static {v6, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v6, v2}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v3
 
+    :cond_16
+    :goto_d
+    invoke-virtual {v3}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_17
+
+    sget-object v3, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {v2, v3}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_17
+
+    goto :goto_e
+
     :cond_17
-    :goto_10
-    invoke-virtual {v10}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_18
-
-    sget-object v6, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v2, v6}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_18
-
-    goto :goto_11
-
-    :cond_18
     sget-object v2, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    move-object/from16 v6, v17
+    invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :goto_e
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->isProbablyUtf8(Lokio/Buffer;)Z
 
-    :goto_11
-    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->isProbablyUtf8(Lokio/Buffer;)Z
+    move-result v3
 
-    move-result v6
-
-    if-nez v6, :cond_19
+    if-nez v3, :cond_18
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
@@ -885,19 +837,21 @@
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    const-string v4, "<-- END HTTP (binary "
+    const-string v3, "<-- END HTTP (binary "
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget-wide v6, v3, Lokio/Buffer;->size:J
+    iget-wide v4, v4, Lokio/Buffer;->size:J
 
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v4, v20
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -905,101 +859,95 @@
 
     return-object v0
 
-    :cond_19
-    const-wide/16 v5, 0x0
+    :cond_18
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v21, v5
+    cmp-long v3, v18, v6
 
-    if-eqz v5, :cond_1a
+    if-eqz v3, :cond_19
 
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v3, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-interface {v5, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v3, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v3, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-virtual {v3}, Lokio/Buffer;->clone()Lokio/Buffer;
+    invoke-virtual {v4}, Lokio/Buffer;->clone()Lokio/Buffer;
 
     move-result-object v6
 
-    move-object/from16 v7, v19
-
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-wide v7, v6, Lokio/Buffer;->size:J
-
-    invoke-virtual {v6, v7, v8, v2}, Lokio/Buffer;->readString(JLjava/nio/charset/Charset;)Ljava/lang/String;
+    invoke-virtual {v6, v2}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v5, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v3, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    :cond_1a
+    :cond_19
     const-string v2, "<-- END HTTP ("
 
-    if-eqz v4, :cond_1b
+    if-eqz v5, :cond_1a
 
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v3, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget-wide v6, v3, Lokio/Buffer;->size:J
+    iget-wide v6, v4, Lokio/Buffer;->size:J
 
     invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v3, "-byte, "
+    const-string v4, "-byte, "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v3, "-gzipped-byte body)"
+    const-string v4, "-gzipped-byte body)"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v5, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+    invoke-interface {v3, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    goto :goto_13
+    goto :goto_10
+
+    :cond_1a
+    iget-object v3, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-wide v4, v4, Lokio/Buffer;->size:J
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-object/from16 v4, v17
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v3, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+
+    goto :goto_10
 
     :cond_1b
-    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-wide v5, v3, Lokio/Buffer;->size:J
-
-    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-object/from16 v3, v18
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v4, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
-
-    goto :goto_13
-
-    :cond_1c
-    :goto_12
+    :goto_f
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     const-string v3, "<-- END HTTP"
 
     invoke-interface {v2, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    :cond_1d
-    :goto_13
+    :cond_1c
+    :goto_10
     return-object v0
 
     :catch_0

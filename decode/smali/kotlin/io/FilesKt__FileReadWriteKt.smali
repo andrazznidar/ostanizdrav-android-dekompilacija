@@ -10,6 +10,70 @@
 
 
 # direct methods
+.method public static final appendText(Ljava/io/File;Ljava/lang/String;Ljava/nio/charset/Charset;)V
+    .locals 1
+
+    const-string v0, "$this$appendText"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "text"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object p1
+
+    const-string p2, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "$this$appendBytes"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "array"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p2, Ljava/io/FileOutputStream;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p2, p0, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+
+    :try_start_0
+    invoke-virtual {p2, p1}, Ljava/io/FileOutputStream;->write([B)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 p0, 0x0
+
+    invoke-static {p2, p0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    throw p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception p1
+
+    invoke-static {p2, p0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
 .method public static final readBytes(Ljava/io/File;)[B
     .locals 9
 
@@ -104,9 +168,9 @@
 
     invoke-virtual {v6, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    const/16 v5, 0x2000
+    const/4 v5, 0x2
 
-    invoke-static {v0, v6, v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+    invoke-static {v0, v6, v3, v5}, Lcom/google/zxing/client/android/R$id;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;II)J
 
     invoke-virtual {v6}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -137,7 +201,7 @@
     :goto_2
     const/4 p0, 0x0
 
-    invoke-static {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-object v2
 
@@ -207,7 +271,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-static {v0, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 .end method

@@ -198,7 +198,7 @@
 
     const-string v0, "Unexpected engine result "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -254,7 +254,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_4
+
+    if-gtz v0, :cond_3
 
     goto :goto_1
 
@@ -268,7 +270,6 @@
     throw p1
 
     :cond_4
-    :goto_1
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;->target:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
@@ -277,6 +278,7 @@
 
     if-gtz v0, :cond_0
 
+    :goto_1
     return-void
 
     :cond_5
@@ -293,7 +295,7 @@
 
     const-string v0, "Engine bytesProduced "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

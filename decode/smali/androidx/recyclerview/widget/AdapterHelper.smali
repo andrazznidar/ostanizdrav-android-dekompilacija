@@ -260,13 +260,13 @@
 
     if-eq v4, v6, :cond_2
 
-    const/4 v6, 0x4
+    const/4 v5, 0x4
 
-    if-eq v4, v6, :cond_1
+    if-eq v4, v5, :cond_1
 
-    const/16 v6, 0x8
+    const/16 v5, 0x8
 
-    if-eq v4, v6, :cond_0
+    if-eq v4, v5, :cond_0
 
     goto :goto_1
 
@@ -279,19 +279,13 @@
 
     iget-object v4, p0, Landroidx/recyclerview/widget/AdapterHelper;->mCallback:Landroidx/recyclerview/widget/AdapterHelper$Callback;
 
-    iget v6, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v5, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget v3, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     check-cast v4, Landroidx/recyclerview/widget/RecyclerView$6;
 
-    iget-object v7, v4, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v7, v6, v3}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForMove(II)V
-
-    iget-object v3, v4, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-boolean v5, v3, Landroidx/recyclerview/widget/RecyclerView;->mItemsAddedOrRemoved:Z
+    invoke-virtual {v4, v5, v3}, Landroidx/recyclerview/widget/RecyclerView$6;->offsetPositionsForMove(II)V
 
     goto :goto_1
 
@@ -358,24 +352,18 @@
 
     iget-object v4, p0, Landroidx/recyclerview/widget/AdapterHelper;->mCallback:Landroidx/recyclerview/widget/AdapterHelper$Callback;
 
-    iget v6, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v5, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget v3, v3, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     check-cast v4, Landroidx/recyclerview/widget/RecyclerView$6;
 
-    iget-object v7, v4, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v7, v6, v3}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForInsert(II)V
-
-    iget-object v3, v4, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-boolean v5, v3, Landroidx/recyclerview/widget/RecyclerView;->mItemsAddedOrRemoved:Z
+    invoke-virtual {v4, v5, v3}, Landroidx/recyclerview/widget/RecyclerView$6;->offsetPositionsForAdd(II)V
 
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
     iget-object v0, p0, Landroidx/recyclerview/widget/AdapterHelper;->mPendingUpdates:Ljava/util/ArrayList;
@@ -592,7 +580,7 @@
 .end method
 
 .method public dispatchFirstPassAndUpdateViewHolders(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;I)V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/recyclerview/widget/AdapterHelper;->mCallback:Landroidx/recyclerview/widget/AdapterHelper$Callback;
 
@@ -603,8 +591,6 @@
     iget v0, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
 
     const/4 v1, 0x2
-
-    const/4 v2, 0x1
 
     if-eq v0, v1, :cond_1
 
@@ -620,13 +606,7 @@
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$6;
 
-    iget-object v3, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v3, p2, v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->viewRangeUpdate(IILjava/lang/Object;)V
-
-    iget-object p1, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-boolean v2, p1, Landroidx/recyclerview/widget/RecyclerView;->mItemsChanged:Z
+    invoke-virtual {v0, p2, v1, p1}, Landroidx/recyclerview/widget/RecyclerView$6;->markViewHoldersUpdated(IILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -647,6 +627,8 @@
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$6;
 
     iget-object v1, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
+
+    const/4 v2, 0x1
 
     invoke-virtual {v1, p2, p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForRemove(IIZ)V
 
@@ -828,29 +810,23 @@
 
     if-eq v0, v2, :cond_2
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v1, :cond_1
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/recyclerview/widget/AdapterHelper;->mCallback:Landroidx/recyclerview/widget/AdapterHelper$Callback;
 
-    iget v2, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget p1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$6;
 
-    iget-object v3, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v3, v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForMove(II)V
-
-    iget-object p1, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-boolean v1, p1, Landroidx/recyclerview/widget/RecyclerView;->mItemsAddedOrRemoved:Z
+    invoke-virtual {v0, v1, p1}, Landroidx/recyclerview/widget/RecyclerView$6;->offsetPositionsForMove(II)V
 
     goto :goto_0
 
@@ -914,19 +890,13 @@
     :cond_3
     iget-object v0, p0, Landroidx/recyclerview/widget/AdapterHelper;->mCallback:Landroidx/recyclerview/widget/AdapterHelper$Callback;
 
-    iget v2, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget p1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$6;
 
-    iget-object v3, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v3, v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForInsert(II)V
-
-    iget-object p1, v0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-boolean v1, p1, Landroidx/recyclerview/widget/RecyclerView;->mItemsAddedOrRemoved:Z
+    invoke-virtual {v0, v1, p1}, Landroidx/recyclerview/widget/RecyclerView$6;->offsetPositionsForAdd(II)V
 
     :goto_0
     return-void

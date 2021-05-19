@@ -144,23 +144,21 @@
 
     sget-object p3, Landroidx/appcompat/R$styleable;->AlertDialog:[I
 
-    sget v1, Landroidx/appcompat/R$attr;->alertDialogStyle:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const v2, 0x7f040027
 
-    invoke-virtual {p1, v2, p3, v1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, p3, v2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_android_layout:I
-
-    invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p3
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mAlertDialogLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_buttonPanelSideLayout:I
+    const/4 p3, 0x2
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -168,7 +166,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mButtonPanelSideLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_listLayout:I
+    const/4 p3, 0x4
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -176,7 +174,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mListLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_multiChoiceItemLayout:I
+    const/4 p3, 0x5
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -184,7 +182,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mMultiChoiceItemLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_singleChoiceItemLayout:I
+    const/4 p3, 0x7
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -192,7 +190,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mSingleChoiceItemLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_listItemLayout:I
+    const/4 p3, 0x3
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -200,7 +198,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mListItemLayout:I
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_showTitle:I
+    const/4 p3, 0x6
 
     const/4 v1, 0x1
 
@@ -210,9 +208,7 @@
 
     iput-boolean p3, p0, Landroidx/appcompat/app/AlertController;->mShowTitle:Z
 
-    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_buttonIconDimen:I
-
-    invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p3
 
@@ -220,7 +216,11 @@
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {p2, v1}, Landroidx/appcompat/app/AppCompatDialog;->supportRequestWindowFeature(I)Z
+    invoke-virtual {p2}, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1}, Landroidx/appcompat/app/AppCompatDelegate;->requestWindowFeature(I)Z
 
     return-void
 .end method

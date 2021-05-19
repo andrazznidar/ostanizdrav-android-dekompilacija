@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 4
+    .locals 2
 
     const-string v0, "reader"
 
@@ -50,20 +50,9 @@
 
     move-result-wide v0
 
-    const-wide/16 v2, 0x0
+    invoke-static {v0, v1}, Lorg/joda/time/Duration;->millis(J)Lorg/joda/time/Duration;
 
-    cmp-long p1, v0, v2
-
-    if-nez p1, :cond_1
-
-    sget-object p1, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Lorg/joda/time/Duration;
-
-    invoke-direct {p1, v0, v1}, Lorg/joda/time/Duration;-><init>(J)V
+    move-result-object p1
 
     :goto_0
     return-object p1

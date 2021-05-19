@@ -17,7 +17,9 @@
     c = "de.rki.coronawarnapp.nearby.modules.tekhistory.DefaultTEKHistoryProvider"
     f = "DefaultTEKHistoryProvider.kt"
     l = {
-        0x1b
+        0x29,
+        0x2c,
+        0x31
     }
     m = "getTEKHistoryOrRequestPermission"
 .end annotation
@@ -27,6 +29,8 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
+
+.field public L$2:Ljava/lang/Object;
 
 .field public label:I
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingRepository.kt\nde/rki/coronawarnapp/storage/TracingRepository\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 5 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 6 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,172:1\n1711#2,3:173\n1711#2,3:176\n734#2:179\n825#2,2:180\n1571#2,9:182\n1819#2:191\n1820#2:193\n1580#2:194\n1#3:192\n47#4:195\n49#4:199\n47#4:200\n49#4:204\n50#5:196\n55#5:198\n50#5:201\n55#5:203\n106#6:197\n106#6:202\n*E\n*S KotlinDebug\n*F\n+ 1 TracingRepository.kt\nde/rki/coronawarnapp/storage/TracingRepository\n*L\n65#1,3:173\n69#1,3:176\n154#1:179\n154#1,2:180\n155#1,9:182\n155#1:191\n155#1:193\n155#1:194\n155#1:192\n54#1:195\n54#1:199\n56#1:200\n56#1:204\n54#1:196\n54#1:198\n56#1:201\n56#1:203\n54#1:197\n56#1:202\n*E\n"
+    value = "SMAP\nTracingRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingRepository.kt\nde/rki/coronawarnapp/storage/TracingRepository\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 5 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 6 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,173:1\n1711#2,3:174\n1711#2,3:177\n734#2:180\n825#2,2:181\n1571#2,9:183\n1819#2:192\n1820#2:194\n1580#2:195\n1#3:193\n47#4:196\n49#4:200\n47#4:201\n49#4:205\n50#5:197\n55#5:199\n50#5:202\n55#5:204\n106#6:198\n106#6:203\n*E\n*S KotlinDebug\n*F\n+ 1 TracingRepository.kt\nde/rki/coronawarnapp/storage/TracingRepository\n*L\n67#1,3:174\n71#1,3:177\n155#1:180\n155#1,2:181\n156#1,9:183\n156#1:192\n156#1:194\n156#1:195\n156#1:193\n56#1:196\n56#1:200\n58#1:201\n58#1:205\n56#1:197\n56#1:199\n58#1:202\n58#1:204\n56#1:198\n58#1:203\n*E\n"
 .end annotation
 
 
@@ -23,6 +23,8 @@
         }
     .end annotation
 .end field
+
+.field public final backgroundModeStatus:Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
 
 .field public final context:Landroid/content/Context;
 
@@ -76,7 +78,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;)V
+.method public constructor <init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;)V
     .locals 1
 
     const-string v0, "context"
@@ -103,6 +105,10 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "backgroundModeStatus"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->context:Landroid/content/Context;
@@ -114,6 +120,8 @@
     iput-object p5, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
     iput-object p6, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
+
+    iput-object p7, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->backgroundModeStatus:Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
 
     const-wide/16 p1, 0x0
 
@@ -165,7 +173,7 @@
 
     invoke-direct {p3, p5}, Lde/rki/coronawarnapp/storage/TracingRepository$tracingProgress$3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p2, p1, p4, p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p2, p1, p4, p3}, Lcom/google/zxing/client/android/R$id;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -424,7 +432,7 @@
     check-cast v0, Lorg/joda/time/Instant;
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -440,7 +448,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
@@ -457,7 +465,7 @@
 
     iput v4, v0, Lde/rki/coronawarnapp/storage/TracingRepository$downloadDiagnosisKeysTaskDidNotRunRecently$1;->label:I
 
-    invoke-static {v2, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -655,24 +663,120 @@
     return-object p1
 .end method
 
-.method public final refreshRiskLevel()V
+.method public final refreshRiskLevel(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 11
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
 
-    sget-object v0, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
+    instance-of v0, p1, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->context:Landroid/content/Context;
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->isNetworkEnabled(Landroid/content/Context;)Z
+    move-object v0, p1
 
-    move-result v0
+    check-cast v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;
 
-    sget-object v1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
+    iget v1, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->label:I
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->context:Landroid/content/Context;
+    const/high16 v2, -0x80000000
 
-    invoke-static {v1}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->autoModeEnabled(Landroid/content/Context;)Z
+    and-int v3, v1, v2
 
-    move-result v1
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->label:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;
+
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;-><init>(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p1, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->label:I
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v3, :cond_1
+
+    iget-boolean v1, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->Z$0:Z
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->L$0:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/storage/TracingRepository;
+
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->context:Landroid/content/Context;
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->isNetworkEnabled(Landroid/content/Context;)Z
+
+    move-result p1
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->backgroundModeStatus:Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
+
+    iget-object v2, v2, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;->isAutoModeEnabled:Lkotlinx/coroutines/flow/Flow;
+
+    iput-object p0, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->L$0:Ljava/lang/Object;
+
+    iput-boolean p1, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->Z$0:Z
+
+    iput v3, v0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->label:I
+
+    invoke-static {v2, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-ne v0, v1, :cond_3
+
+    return-object v1
+
+    :cond_3
+    move v1, p1
+
+    move-object p1, v0
+
+    move-object v0, p0
+
+    :goto_1
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
 
     sget-object v2, Lde/rki/coronawarnapp/storage/TracingRepository;->TAG:Ljava/lang/String;
 
@@ -688,7 +792,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -714,7 +818,7 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -724,28 +828,30 @@
 
     invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_4
 
-    if-eqz v1, :cond_0
+    if-eqz p1, :cond_4
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/storage/TracingRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
+    iget-object v5, v0, Lde/rki/coronawarnapp/storage/TracingRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    new-instance v8, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;
+    new-instance v8, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    invoke-direct {v8, p0, v0}, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;-><init>(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v8, v0, p1}, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;-><init>(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)V
 
     const/4 v9, 0x3
 
     const/4 v10, 0x0
 
-    invoke-static/range {v5 .. v10}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v5 .. v10}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    :cond_0
-    return-void
+    :cond_4
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

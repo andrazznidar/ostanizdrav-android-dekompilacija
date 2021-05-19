@@ -28,6 +28,8 @@
 
 .field public shadowStartColor:I
 
+.field public transparentPaint:Landroid/graphics/Paint;
+
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -88,9 +90,27 @@
 
     iput-object v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->scratch:Landroid/graphics/Path;
 
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->transparentPaint:Landroid/graphics/Paint;
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowPaint:Landroid/graphics/Paint;
+
     const/high16 v0, -0x1000000
 
     invoke-virtual {p0, v0}, Lcom/google/android/material/shadow/ShadowRenderer;->setShadowColor(I)V
+
+    iget-object v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->transparentPaint:Landroid/graphics/Paint;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -103,16 +123,6 @@
     sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowPaint:Landroid/graphics/Paint;
-
-    iget v1, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowStartColor:I
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -153,6 +163,12 @@
     move-result p1
 
     iput p1, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowEndColor:I
+
+    iget-object p1, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowPaint:Landroid/graphics/Paint;
+
+    iget v0, p0, Lcom/google/android/material/shadow/ShadowRenderer;->shadowStartColor:I
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method

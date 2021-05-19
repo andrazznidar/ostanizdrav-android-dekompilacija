@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;
 .super Lcom/google/android/gms/common/internal/BaseGmsClient$zza;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -50,9 +50,9 @@
 
     if-eqz v0, :cond_0
 
-    check-cast v0, Lcom/google/android/gms/common/internal/zag;
+    check-cast v0, Lcom/google/android/gms/common/internal/zai;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/zag;->zaa:Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/zai;->zaa:Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
 
     invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
 
@@ -80,6 +80,8 @@
 
     :try_start_0
     iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zza:Landroid/os/IBinder;
+
+    invoke-static {v2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {v2}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
 
@@ -187,15 +189,15 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzaa:Lcom/google/android/gms/common/ConnectionResult;
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzab:Lcom/google/android/gms/common/ConnectionResult;
 
     iget-object v0, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzw:Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
 
     if-eqz v0, :cond_2
 
-    check-cast v0, Lcom/google/android/gms/common/internal/zah;
+    check-cast v0, Lcom/google/android/gms/common/internal/zag;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/zah;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/zag;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;->onConnected(Landroid/os/Bundle;)V
 

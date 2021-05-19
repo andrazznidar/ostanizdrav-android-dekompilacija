@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.storage.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0x50,
-        0xb6
+        0x3d,
+        0xa3
     }
     m = "doHouseKeeping"
 .end annotation

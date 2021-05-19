@@ -13,6 +13,18 @@
 
 
 # direct methods
+.method public constructor <init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;)V
+    .locals 0
+
+    invoke-direct {p0, p2, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/exception/reporting/ReportedIOException;->code:Ljava/lang/Integer;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/exception/reporting/ReportedIOException;->resId:Ljava/lang/Integer;
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;I)V
     .locals 1
 

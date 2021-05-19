@@ -154,3 +154,72 @@
 
     return-object p0
 .end method
+
+.method public static uproot(Ltimber/log/Timber$Tree;)V
+    .locals 4
+
+    sget-object v0, Ltimber/log/Timber;->FOREST:Ljava/util/List;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Ltimber/log/Timber;->FOREST:Ljava/util/List;
+
+    invoke-interface {v1, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object p0, Ltimber/log/Timber;->FOREST:Ljava/util/List;
+
+    sget-object v1, Ltimber/log/Timber;->FOREST:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    new-array v1, v1, [Ltimber/log/Timber$Tree;
+
+    invoke-interface {p0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [Ltimber/log/Timber$Tree;
+
+    sput-object p0, Ltimber/log/Timber;->forestAsArray:[Ltimber/log/Timber$Tree;
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Cannot uproot tree which is not planted: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method

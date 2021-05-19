@@ -12,6 +12,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/impl/WorkManagerImpl;Ljava/util/UUID;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "val$workManagerImpl",
+            "val$id"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/work/impl/utils/CancelWorkRunnable$1;->val$workManagerImpl:Landroidx/work/impl/WorkManagerImpl;
 

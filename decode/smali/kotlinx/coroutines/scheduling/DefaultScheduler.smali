@@ -45,7 +45,7 @@
 
     const-string v4, "kotlinx.coroutines.io.parallelism"
 
-    invoke-static/range {v4 .. v9}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v4 .. v9}, Lcom/google/zxing/client/android/R$id;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v2
 

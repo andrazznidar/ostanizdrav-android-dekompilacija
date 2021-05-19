@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInformationAboutFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationAboutFragment.kt\nde/rki/coronawarnapp/ui/information/InformationAboutFragment\n+ 2 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,47:1\n16#2,11:48\n*E\n*S KotlinDebug\n*F\n+ 1 InformationAboutFragment.kt\nde/rki/coronawarnapp/ui/information/InformationAboutFragment\n*L\n19#1,11:48\n*E\n"
+    value = "SMAP\nInformationAboutFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationAboutFragment.kt\nde/rki/coronawarnapp/ui/information/InformationAboutFragment\n+ 2 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,49:1\n16#2,11:50\n*E\n*S KotlinDebug\n*F\n+ 1 InformationAboutFragment.kt\nde/rki/coronawarnapp/ui/information/InformationAboutFragment\n*L\n19#1,11:50\n*E\n"
 .end annotation
 
 
@@ -33,7 +33,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -47,7 +47,7 @@
 .method public constructor <init>()V
     .locals 2
 
-    const v0, 0x7f0c0041
+    const v0, 0x7f0c004a
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -55,7 +55,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -84,14 +84,6 @@
     check-cast v0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBinding;
 
     return-object v0
-.end method
-
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    return-void
 .end method
 
 .method public onResume()V

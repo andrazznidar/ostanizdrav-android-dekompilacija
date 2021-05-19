@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.1.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/gms/tasks/zzk;->zzb:Lcom/google/android/gms/tasks/zzl;
 
@@ -49,51 +49,25 @@
 
     iget-object v2, p0, Lcom/google/android/gms/tasks/zzk;->zza:Lcom/google/android/gms/tasks/Task;
 
-    check-cast v2, Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {v2}, Lcom/google/android/gms/tasks/Task;->getException()Ljava/lang/Exception;
 
-    iget-object v3, v2, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
+    move-result-object v2
 
-    monitor-enter v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    invoke-static {v2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :try_start_1
-    iget-object v2, v2, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
-
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
     invoke-interface {v1, v2}, Lcom/google/android/gms/tasks/OnFailureListener;->onFailure(Ljava/lang/Exception;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_3
-    monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v1
 
     :cond_0
-    :goto_0
     monitor-exit v0
 
     return-void
 
-    :catchall_1
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

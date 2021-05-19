@@ -71,14 +71,14 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/concurrent/Callable;)V
+.method public constructor <init>(Ljava/util/concurrent/Callable;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/concurrent/Callable<",
             "Lcom/airbnb/lottie/LottieResult<",
-            "TT;>;>;)V"
+            "TT;>;>;Z)V"
         }
     .end annotation
 
@@ -112,14 +112,42 @@
 
     iput-object v0, p0, Lcom/airbnb/lottie/LottieTask;->result:Lcom/airbnb/lottie/LottieResult;
 
-    sget-object v0, Lcom/airbnb/lottie/LottieTask;->EXECUTOR:Ljava/util/concurrent/Executor;
+    if-eqz p2, :cond_0
 
-    new-instance v1, Lcom/airbnb/lottie/LottieTask$LottieFutureTask;
+    :try_start_0
+    invoke-interface {p1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
-    invoke-direct {v1, p0, p1}, Lcom/airbnb/lottie/LottieTask$LottieFutureTask;-><init>(Lcom/airbnb/lottie/LottieTask;Ljava/util/concurrent/Callable;)V
+    move-result-object p1
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    check-cast p1, Lcom/airbnb/lottie/LottieResult;
 
+    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieTask;->setResult(Lcom/airbnb/lottie/LottieResult;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    new-instance p2, Lcom/airbnb/lottie/LottieResult;
+
+    invoke-direct {p2, p1}, Lcom/airbnb/lottie/LottieResult;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0, p2}, Lcom/airbnb/lottie/LottieTask;->setResult(Lcom/airbnb/lottie/LottieResult;)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p2, Lcom/airbnb/lottie/LottieTask;->EXECUTOR:Ljava/util/concurrent/Executor;
+
+    new-instance v0, Lcom/airbnb/lottie/LottieTask$LottieFutureTask;
+
+    invoke-direct {v0, p0, p1}, Lcom/airbnb/lottie/LottieTask$LottieFutureTask;-><init>(Lcom/airbnb/lottie/LottieTask;Ljava/util/concurrent/Callable;)V
+
+    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :goto_0
     return-void
 .end method
 

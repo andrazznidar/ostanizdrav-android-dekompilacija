@@ -40,212 +40,289 @@
 
 # virtual methods
 .method public call()Ljava/lang/Object;
-    .locals 14
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
         }
     .end annotation
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    move-object/from16 v1, p0
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    iget-object v0, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->val$_statement:Landroidx/room/RoomSQLiteQuery;
+    iget-object v2, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->val$_statement:Landroidx/room/RoomSQLiteQuery;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-static {v0, v2, v3, v4}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
 
-    move-result-object v0
+    move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    const-string v1, "id"
+    const-string v0, "id"
 
-    invoke-static {v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    const-string v2, "date"
+    const-string v3, "date"
 
-    invoke-static {v0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    const-string v4, "fkLocationId"
+    const-string v5, "fkLocationId"
 
-    invoke-static {v0, v4}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v4
+    move-result v5
 
-    new-instance v5, Landroidx/collection/LongSparseArray;
+    const-string v6, "duration"
 
-    const/16 v6, 0xa
-
-    invoke-direct {v5, v6}, Landroidx/collection/LongSparseArray;-><init>(I)V
-
-    :goto_0
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-static {v2, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    const-string v7, "circumstances"
 
-    invoke-interface {v0, v4}, Landroid/database/Cursor;->getLong(I)J
+    invoke-static {v2, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result-wide v6
+    move-result v7
 
-    invoke-virtual {v5, v6, v7, v3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    new-instance v8, Landroidx/collection/LongSparseArray;
+
+    const/16 v9, 0xa
+
+    invoke-direct {v8, v9}, Landroidx/collection/LongSparseArray;-><init>(I)V
+
+    :goto_0
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v9
+
+    invoke-virtual {v8, v9, v10, v4}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, -0x1
+    const/4 v9, -0x1
 
-    invoke-interface {v0, v6}, Landroid/database/Cursor;->moveToPosition(I)Z
+    invoke-interface {v2, v9}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    iget-object v9, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
-    invoke-virtual {v6, v5}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__fetchRelationshiplocationsAsdeRkiCoronawarnappContactdiaryStorageEntityContactDiaryLocationEntity(Landroidx/collection/LongSparseArray;)V
+    invoke-virtual {v9, v8}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__fetchRelationshiplocationsAsdeRkiCoronawarnappContactdiaryStorageEntityContactDiaryLocationEntity(Landroidx/collection/LongSparseArray;)V
 
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
+    invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
 
-    move-result v7
+    move-result v10
 
-    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_1
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v7
+    move-result v10
 
-    if-eqz v7, :cond_3
+    if-eqz v10, :cond_6
 
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v2, v0}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v7
+    move-result v10
 
-    if-eqz v7, :cond_2
+    if-eqz v10, :cond_2
 
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v7
+    move-result v10
 
-    if-eqz v7, :cond_2
+    if-eqz v10, :cond_2
 
-    invoke-interface {v0, v4}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v7
+    move-result v10
 
-    if-nez v7, :cond_1
+    if-eqz v10, :cond_2
+
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_2
+
+    invoke-interface {v2, v7}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v10
+
+    if-nez v10, :cond_1
 
     goto :goto_2
 
     :cond_1
-    move-object v13, v3
+    move-object v10, v4
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_2
     :goto_2
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v8
+    move-result-wide v12
 
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    iget-object v10, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
-
-    iget-object v10, v10, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
-
-    invoke-virtual {v10, v7}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-interface {v0, v4}, Landroid/database/Cursor;->getLong(I)J
+    iget-object v11, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+
+    iget-object v11, v11, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
+
+    invoke-virtual {v11, v10}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
+
+    move-result-object v14
+
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v15
+
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_3
+
+    move-object v10, v4
+
+    goto :goto_3
+
+    :cond_3
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v10
+
+    :goto_3
+    iget-object v11, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+
+    iget-object v11, v11, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
+
+    if-eqz v11, :cond_5
+
+    if-eqz v10, :cond_4
+
+    invoke-virtual {v10}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Lorg/joda/time/Duration;->millis(J)Lorg/joda/time/Duration;
+
+    move-result-object v10
+
+    move-object/from16 v17, v10
+
+    goto :goto_4
+
+    :cond_4
+    move-object/from16 v17, v4
+
+    :goto_4
+    invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    new-instance v10, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
+
+    move-object v11, v10
+
+    invoke-direct/range {v11 .. v18}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;-><init>(JLorg/joda/time/LocalDate;JLorg/joda/time/Duration;Ljava/lang/String;)V
+
+    :goto_5
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    new-instance v13, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
+    invoke-virtual {v8, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-object v7, v13
+    move-result-object v11
 
-    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;-><init>(JLorg/joda/time/LocalDate;J)V
+    check-cast v11, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
 
-    :goto_3
-    invoke-interface {v0, v4}, Landroid/database/Cursor;->getLong(I)J
+    new-instance v12, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;
 
-    move-result-wide v7
+    invoke-direct {v12, v10, v11}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;)V
 
-    invoke-virtual {v5, v7, v8}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
-
-    new-instance v8, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;
-
-    invoke-direct {v8, v13, v7}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;)V
-
-    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_3
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    :cond_5
+    throw v4
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    :cond_6
+    iget-object v0, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    iget-object v0, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    return-object v6
+    return-object v9
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     :try_start_3
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    throw v1
+    throw v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :catchall_1
     move-exception v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
+    iget-object v2, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v2, v2, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 .end method

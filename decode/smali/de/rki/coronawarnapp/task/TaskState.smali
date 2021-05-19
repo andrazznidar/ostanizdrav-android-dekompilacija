@@ -21,6 +21,9 @@
 .method public abstract getRequest()Lde/rki/coronawarnapp/task/TaskRequest;
 .end method
 
+.method public abstract getResult()Lde/rki/coronawarnapp/task/Task$Result;
+.end method
+
 .method public abstract getStartedAt()Lorg/joda/time/Instant;
 .end method
 
@@ -43,4 +46,7 @@
 .end method
 
 .method public abstract isFinished()Z
+.end method
+
+.method public abstract isSuccessful()Z
 .end method

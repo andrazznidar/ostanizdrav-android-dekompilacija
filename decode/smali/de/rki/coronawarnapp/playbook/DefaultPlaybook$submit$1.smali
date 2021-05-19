@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x56,
-        0x5b,
-        0x65,
-        0x68
+        0x58,
+        0x5d,
+        0x69,
+        0x6c
     }
     m = "submit"
 .end annotation

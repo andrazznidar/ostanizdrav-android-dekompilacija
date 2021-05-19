@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackgroundWorkScheduler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,298:1\n11298#2:299\n11633#2,2:300\n11635#2:303\n1#3:302\n*E\n*S KotlinDebug\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n*L\n141#1:299\n141#1,2:300\n141#1:303\n*E\n"
+    value = "SMAP\nBackgroundWorkScheduler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,299:1\n11298#2:300\n11633#2,2:301\n11635#2:304\n1#3:303\n*E\n*S KotlinDebug\n*F\n+ 1 BackgroundWorkScheduler.kt\nde/rki/coronawarnapp/worker/BackgroundWorkScheduler\n*L\n142#1:300\n142#1,2:301\n142#1:304\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$workManager$2;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$workManager$2;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -299,7 +299,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -401,7 +401,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -520,7 +520,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -621,7 +621,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -734,7 +734,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
 
-    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -761,21 +761,10 @@
 
     const-string v1, "Jobs starting: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/storage/LocalData;->numberOfSuccessfulSubmissions()I
-
-    move-result v2
-
-    if-lez v2, :cond_0
-
-    return-void
-
-    :cond_0
     iget-object v2, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
 
     invoke-static {v2}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->isWorkActive(Ljava/lang/String;)Z
@@ -812,7 +801,7 @@
 
     invoke-virtual {v5, v0, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_KEY_BACKGROUND_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
@@ -822,7 +811,15 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
+    :cond_0
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->submissionWasSuccessful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->DIAGNOSIS_TEST_RESULT_RETRIEVAL_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkTag;->tag:Ljava/lang/String;
@@ -831,7 +828,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
@@ -839,15 +836,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isTestResultNotificationSent()Z
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isTestResultAvailableNotificationSent()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
@@ -865,7 +862,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_2
+    :cond_1
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -879,51 +876,6 @@
     invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
-.end method
-
-.method public static final stop(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
-    .locals 3
-
-    const-string v0, "$this$stop"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->getWorkManager()Landroidx/work/WorkManager;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
-
-    check-cast v0, Landroidx/work/impl/WorkManagerImpl;
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Landroidx/work/impl/utils/CancelWorkRunnable$3;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v0, p0, v2}, Landroidx/work/impl/utils/CancelWorkRunnable$3;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;Z)V
-
-    iget-object p0, v0, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
-
-    check-cast p0, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
-
-    iget-object p0, p0, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
-
-    invoke-virtual {p0, v1}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
-
-    iget-object p0, v1, Landroidx/work/impl/utils/CancelWorkRunnable;->mOperation:Landroidx/work/impl/OperationImpl;
-
-    const-string v0, "workManager.cancelUniqueWork(this.uniqueName)"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static final stopWorkScheduler()V
@@ -1014,7 +966,7 @@
 
     invoke-virtual {v8, v5, v7}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-interface {v1, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
 

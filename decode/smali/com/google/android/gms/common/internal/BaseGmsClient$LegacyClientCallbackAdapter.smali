@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/internal/BaseGmsClient$LegacyClientCallbackAdapter;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
@@ -24,6 +24,10 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/internal/BaseGmsClient;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$LegacyClientCallbackAdapter;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
@@ -36,6 +40,10 @@
 # virtual methods
 .method public onReportServiceBinding(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/common/ConnectionResult;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/ConnectionResult;->isSuccess()Z
 
@@ -64,9 +72,9 @@
 
     if-eqz v0, :cond_1
 
-    check-cast v0, Lcom/google/android/gms/common/internal/zag;
+    check-cast v0, Lcom/google/android/gms/common/internal/zai;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/zag;->zaa:Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/zai;->zaa:Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
 
     invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
 

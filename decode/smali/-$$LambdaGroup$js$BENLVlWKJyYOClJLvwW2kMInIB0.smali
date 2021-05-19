@@ -53,7 +53,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->popBackStack(Landroidx/fragment/app/Fragment;)Z
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->popBackStack(Landroidx/fragment/app/Fragment;)Z
 
     return-void
 

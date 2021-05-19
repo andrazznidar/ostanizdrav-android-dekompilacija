@@ -39,54 +39,91 @@
 
     iget-object v0, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
 
-    iget-boolean v0, v0, Lcom/google/android/material/chip/ChipGroup;->protectFromCheckedChange:Z
+    iget-boolean v1, v0, Lcom/google/android/material/chip/ChipGroup;->protectFromCheckedChange:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     return-void
 
     :cond_0
+    invoke-virtual {v0}, Lcom/google/android/material/chip/ChipGroup;->getCheckedChipIds()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
+
+    iget-boolean v1, v0, Lcom/google/android/material/chip/ChipGroup;->selectionRequired:Z
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->getId()I
+
+    move-result p2
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p2, v1}, Lcom/google/android/material/chip/ChipGroup;->setCheckedStateForView(IZ)V
+
+    iget-object p2, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
+
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->getId()I
+
+    move-result p1
+
+    iput p1, p2, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
+
+    iget-object p1, p2, Lcom/google/android/material/chip/ChipGroup;->onCheckedChangeListener:Lcom/google/android/material/chip/ChipGroup$OnCheckedChangeListener;
+
+    return-void
+
+    :cond_1
     invoke-virtual {p1}, Landroid/widget/CompoundButton;->getId()I
 
     move-result p1
 
     const/4 v0, -0x1
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_3
 
     iget-object p2, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
 
     iget v1, p2, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
-    if-eq v1, v0, :cond_1
+    if-eq v1, v0, :cond_2
 
-    if-eq v1, p1, :cond_1
+    if-eq v1, p1, :cond_2
 
     iget-boolean v0, p2, Lcom/google/android/material/chip/ChipGroup;->singleSelection:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v1, v0}, Lcom/google/android/material/chip/ChipGroup;->setCheckedStateForView(IZ)V
 
-    :cond_1
+    :cond_2
     iget-object p2, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
 
-    invoke-static {p2, p1}, Lcom/google/android/material/chip/ChipGroup;->access$700(Lcom/google/android/material/chip/ChipGroup;I)V
+    invoke-static {p2, p1}, Lcom/google/android/material/chip/ChipGroup;->access$900(Lcom/google/android/material/chip/ChipGroup;I)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object p2, p0, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;->this$0:Lcom/google/android/material/chip/ChipGroup;
 
     iget v1, p2, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
-    if-ne v1, p1, :cond_3
+    if-ne v1, p1, :cond_4
 
-    invoke-static {p2, v0}, Lcom/google/android/material/chip/ChipGroup;->access$700(Lcom/google/android/material/chip/ChipGroup;I)V
+    invoke-static {p2, v0}, Lcom/google/android/material/chip/ChipGroup;->access$900(Lcom/google/android/material/chip/ChipGroup;I)V
 
-    :cond_3
+    :cond_4
     :goto_0
     return-void
 .end method

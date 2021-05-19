@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 3
+    .locals 4
 
     iget p1, p0, L-$$LambdaGroup$js$aWBrpR9C6aH2nbwEVSdvpM3tyl8;->$id$:I
 
@@ -102,7 +102,11 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_3
+    iget-object v2, p1, Lde/rki/coronawarnapp/ui/submission/resultavailable/SubmissionTestResultAvailableViewModel;->showKeysRetrievalProgress:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+
+    sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;->setValue(Ljava/lang/Object;)V
 
     new-instance v2, Lde/rki/coronawarnapp/ui/submission/resultavailable/SubmissionTestResultAvailableViewModel$proceed$1;
 
@@ -111,7 +115,4 @@
     invoke-static {p1, v0, v2, v1, v0}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     return-void
-
-    :cond_3
-    throw v0
 .end method

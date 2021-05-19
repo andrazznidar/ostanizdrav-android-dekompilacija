@@ -1,80 +1,43 @@
-.class public interface abstract Lcom/google/android/gms/internal/nearby/zzdv;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/nearby/zzdv;
+.super Lcom/google/android/gms/internal/nearby/zza;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lcom/google/android/gms/internal/nearby/zzdx;
+
+
+# direct methods
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.ITemporaryExposureKeyListCallback"
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zza;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzbg;)V
-    .annotation system Ldalvik/annotation/Throws;
+.method public final zzb(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Landroid/os/RemoteException;
+            "(",
+            "Lcom/google/android/gms/common/api/Status;",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;)V"
         }
     .end annotation
-.end method
 
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzbs;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
-.end method
 
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzce;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
+    const/4 p1, 0x0
 
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzci;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzef;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzej;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzen;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzer;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/nearby/zzev;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    throw p1
 .end method

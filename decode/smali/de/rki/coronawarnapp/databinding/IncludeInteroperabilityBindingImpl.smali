@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/ScrollView;
-
 .field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final mboundView3:Landroid/widget/TextView;
@@ -63,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901c3
+    const v1, 0x7f090235
 
     const/16 v2, 0x10
 
@@ -71,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901c5
+    const v1, 0x7f090238
 
     const/16 v2, 0x11
 
@@ -79,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090126
+    const v1, 0x7f090153
 
     const/16 v2, 0x12
 
@@ -87,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090267
+    const v1, 0x7f0902fb
 
     const/16 v2, 0x13
 
@@ -95,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090266
+    const v1, 0x7f0902fa
 
     const/16 v2, 0x14
 
@@ -103,7 +101,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090268
+    const v1, 0x7f0902fc
 
     const/16 v2, 0x15
 
@@ -120,14 +118,14 @@
 
     :array_1
     .array-data 4
-        0x7f0c007a
-        0x7f0c007b
-        0x7f0c0079
+        0x7f0c0093
+        0x7f0c0094
+        0x7f0c0092
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 23
+    .locals 24
 
     move-object/from16 v2, p0
 
@@ -143,11 +141,11 @@
 
     invoke-static {v15, v1, v4, v0, v3}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
-    move-result-object v22
+    move-result-object v23
 
     const/16 v0, 0x12
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v4, v0
 
@@ -155,7 +153,7 @@
 
     const/16 v0, 0xf
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v5, v0
 
@@ -163,7 +161,7 @@
 
     const/16 v0, 0xc
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v6, v0
 
@@ -171,7 +169,7 @@
 
     const/16 v0, 0x9
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v7, v0
 
@@ -179,7 +177,7 @@
 
     const/16 v0, 0xb
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v8, v0
 
@@ -187,7 +185,7 @@
 
     const/16 v0, 0xa
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v9, v0
 
@@ -195,7 +193,7 @@
 
     const/16 v0, 0x10
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v10, v0
 
@@ -203,91 +201,99 @@
 
     const/4 v0, 0x2
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v11, v0
 
     check-cast v11, Landroid/widget/ImageView;
 
-    const/16 v0, 0x11
+    const/4 v0, 0x0
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v12, v0
 
-    check-cast v12, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v12, Landroid/widget/ScrollView;
 
-    const/4 v0, 0x5
+    const/16 v0, 0x11
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v13, v0
 
-    check-cast v13, Landroid/widget/TextView;
+    check-cast v13, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/4 v0, 0x6
+    const/4 v0, 0x5
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object v14, v0
 
     check-cast v14, Landroid/widget/TextView;
 
-    const/4 v0, 0x7
+    const/4 v0, 0x6
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Landroid/widget/TextView;
 
     move-object v15, v0
 
-    const/16 v0, 0x8
+    const/4 v0, 0x7
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v16, v0
 
     check-cast v16, Landroid/widget/TextView;
 
-    const/16 v0, 0xd
+    const/16 v0, 0x8
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v17, v0
 
-    check-cast v17, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;
+    check-cast v17, Landroid/widget/TextView;
 
-    const/16 v0, 0xe
+    const/16 v0, 0xd
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v18, v0
 
-    check-cast v18, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
+    check-cast v18, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;
 
-    const/16 v0, 0x14
+    const/16 v0, 0xe
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v19, v0
 
-    check-cast v19, Landroid/widget/TextView;
+    check-cast v19, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
 
-    const/16 v0, 0x13
+    const/16 v0, 0x14
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v20, v0
 
     check-cast v20, Landroid/widget/TextView;
 
-    const/16 v0, 0x15
+    const/16 v0, 0x13
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v21, v0
 
     check-cast v21, Landroid/widget/TextView;
+
+    const/16 v0, 0x15
+
+    aget-object v0, v23, v0
+
+    move-object/from16 v22, v0
+
+    check-cast v22, Landroid/widget/TextView;
 
     const/4 v3, 0x3
 
@@ -297,7 +303,7 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v21}, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v0 .. v22}, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/ScrollView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 
@@ -305,6 +311,13 @@
 
     iput-wide v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
 
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
+
+    if-eqz v0, :cond_0
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_0
     iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->expandedTermsFooter:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
@@ -327,6 +340,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityLayout:Landroid/widget/ScrollView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
+
     iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
@@ -343,19 +360,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const/4 v0, 0x0
-
-    aget-object v0, v22, v0
-
-    check-cast v0, Landroid/widget/ScrollView;
-
-    iput-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView0:Landroid/widget/ScrollView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
-
     const/4 v0, 0x1
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -365,7 +372,7 @@
 
     const/4 v0, 0x3
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Landroid/widget/TextView;
 
@@ -375,7 +382,7 @@
 
     const/4 v0, 0x4
 
-    aget-object v0, v22, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Landroid/widget/TextView;
 
@@ -383,7 +390,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->noCountriesDefaultInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;
+
+    if-eqz v0, :cond_1
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_1
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->noCountriesRiskdetailsInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
+
+    if-eqz v0, :cond_2
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    const v0, 0x7f09015b
 
     move-object/from16 v1, p2
 
@@ -430,392 +451,371 @@
 
     iget-object v12, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mFirstSection:Ljava/lang/String;
 
-    iget-object v13, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mFourthSection:Ljava/lang/String;
+    iget-object v13, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mShowFooter:Ljava/lang/Boolean;
 
-    iget-object v14, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mShowFooter:Ljava/lang/Boolean;
+    iget-object v14, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mTitle:Ljava/lang/String;
 
-    iget-object v15, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mTitle:Ljava/lang/String;
+    iget-object v15, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mIsOnboarding:Ljava/lang/Boolean;
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mIsOnboarding:Ljava/lang/Boolean;
+    const-wide/32 v16, 0x10408
 
-    const-wide/32 v18, 0x10408
+    and-long v18, v2, v16
 
-    and-long v20, v2, v18
+    cmp-long v18, v18, v4
 
-    const-wide/16 v16, 0x0
+    const-wide/32 v19, 0x40000
 
-    cmp-long v5, v20, v16
+    const-wide/32 v21, 0x10008
 
-    const-wide/32 v20, 0x40000
+    const/16 v23, 0x0
 
-    const-wide/32 v22, 0x10008
-
-    const/16 v24, 0x0
-
-    if-eqz v5, :cond_4
+    if-eqz v18, :cond_4
 
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    move-result v25
+    move-result v24
 
     goto :goto_0
 
     :cond_0
-    move/from16 v25, v24
+    move/from16 v24, v23
 
     :goto_0
-    if-eqz v5, :cond_2
+    if-eqz v18, :cond_2
 
-    if-eqz v25, :cond_1
+    if-eqz v24, :cond_1
 
-    or-long v2, v2, v20
+    or-long v2, v2, v19
 
     goto :goto_1
 
     :cond_1
-    const-wide/32 v26, 0x20000
+    const-wide/32 v25, 0x20000
 
-    or-long v2, v2, v26
+    or-long v2, v2, v25
 
     :cond_2
     :goto_1
-    and-long v26, v2, v22
+    and-long v25, v2, v21
 
-    const-wide/16 v16, 0x0
+    cmp-long v18, v25, v4
 
-    cmp-long v5, v26, v16
+    if-eqz v18, :cond_3
 
-    if-eqz v5, :cond_3
+    invoke-static/range {v24 .. v24}, Lcom/google/zxing/client/android/R$id;->formatVisibilityInverted(Z)I
 
-    xor-int/lit8 v5, v25, 0x1
+    move-result v18
 
-    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static/range {v24 .. v24}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
-    move-result v5
+    move-result v25
 
-    invoke-static/range {v25 .. v25}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    move/from16 v27, v18
 
-    move-result v26
+    move/from16 v28, v25
 
-    move/from16 v43, v26
-
-    move-object/from16 v26, v15
-
-    move/from16 v15, v43
-
-    goto :goto_2
+    goto :goto_3
 
     :cond_3
-    move-object/from16 v26, v15
-
-    move/from16 v5, v24
-
-    move v15, v5
+    move/from16 v27, v23
 
     goto :goto_2
 
     :cond_4
-    const-wide/16 v16, 0x0
+    move/from16 v24, v23
 
-    move-object/from16 v26, v15
-
-    move/from16 v5, v24
-
-    move v15, v5
-
-    move/from16 v25, v15
+    move/from16 v27, v24
 
     :goto_2
-    const-wide/32 v27, 0x10010
-
-    and-long v27, v2, v27
-
-    cmp-long v27, v27, v16
-
-    const-wide/32 v28, 0x10020
-
-    and-long v28, v2, v28
-
-    cmp-long v28, v28, v16
-
-    if-eqz v28, :cond_5
-
-    invoke-static {v7}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
-
-    move-result v29
-
-    move/from16 v30, v29
-
-    goto :goto_3
-
-    :cond_5
-    move/from16 v30, v24
+    move/from16 v28, v27
 
     :goto_3
-    const-wide/32 v31, 0x10040
+    const-wide/32 v25, 0x10010
 
-    and-long v31, v2, v31
+    and-long v25, v2, v25
 
-    cmp-long v29, v31, v16
+    cmp-long v18, v25, v4
 
-    const-wide/32 v31, 0x10080
+    const-wide/32 v25, 0x10020
 
-    and-long v31, v2, v31
+    and-long v25, v2, v25
 
-    cmp-long v31, v31, v16
+    cmp-long v25, v25, v4
 
-    if-eqz v31, :cond_6
+    if-eqz v25, :cond_5
 
-    invoke-static {v8}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v7}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
-    move-result v32
+    move-result v26
 
-    move/from16 v33, v32
+    move/from16 v29, v26
 
     goto :goto_4
 
-    :cond_6
-    move/from16 v33, v24
+    :cond_5
+    move/from16 v29, v23
 
     :goto_4
-    const-wide/32 v34, 0x10100
+    const-wide/32 v30, 0x10040
 
-    and-long v34, v2, v34
+    and-long v30, v2, v30
 
-    cmp-long v32, v34, v16
+    cmp-long v26, v30, v4
 
-    const-wide/32 v34, 0x10200
+    const-wide/32 v30, 0x10080
 
-    and-long v34, v2, v34
+    and-long v30, v2, v30
 
-    cmp-long v34, v34, v16
+    cmp-long v30, v30, v4
 
-    const-wide/32 v35, 0x10800
+    if-eqz v30, :cond_6
 
-    and-long v35, v2, v35
+    invoke-static {v8}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
-    cmp-long v35, v35, v16
+    move-result v31
 
-    if-eqz v35, :cond_7
-
-    invoke-static {v12}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
-
-    move-result v36
-
-    move/from16 v43, v36
-
-    move-object/from16 v36, v8
-
-    move/from16 v8, v43
+    move/from16 v32, v31
 
     goto :goto_5
 
-    :cond_7
-    move-object/from16 v36, v8
-
-    move/from16 v8, v24
+    :cond_6
+    move/from16 v32, v23
 
     :goto_5
+    const-wide/32 v33, 0x10100
+
+    and-long v33, v2, v33
+
+    cmp-long v31, v33, v4
+
+    const-wide/32 v33, 0x10200
+
+    and-long v33, v2, v33
+
+    cmp-long v33, v33, v4
+
+    const-wide/32 v34, 0x10800
+
+    and-long v34, v2, v34
+
+    cmp-long v34, v34, v4
+
+    if-eqz v34, :cond_7
+
+    invoke-static {v12}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
+
+    move-result v35
+
+    move/from16 v36, v35
+
+    goto :goto_6
+
+    :cond_7
+    move/from16 v36, v23
+
+    :goto_6
     const-wide/32 v37, 0x11000
 
     and-long v37, v2, v37
 
-    cmp-long v37, v37, v16
+    cmp-long v35, v37, v4
 
-    if-eqz v37, :cond_8
+    const/4 v4, 0x0
 
-    invoke-static {v13}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityText(Ljava/lang/String;)I
+    if-eqz v35, :cond_8
 
-    move-result v38
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
 
-    move/from16 v39, v38
-
-    goto :goto_6
-
-    :cond_8
-    move/from16 v39, v24
-
-    :goto_6
-    const-wide/32 v40, 0x12000
-
-    and-long v40, v2, v40
-
-    cmp-long v38, v40, v16
-
-    if-eqz v38, :cond_9
-
-    invoke-static {v14}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
-
-    move-result v14
-
-    invoke-static {v14}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
-
-    move-result v14
+    move-result v5
 
     goto :goto_7
 
-    :cond_9
-    move/from16 v14, v24
+    :cond_8
+    move/from16 v5, v23
 
     :goto_7
+    const-wide/32 v39, 0x12000
+
+    and-long v39, v2, v39
+
+    const-wide/16 v37, 0x0
+
+    cmp-long v39, v39, v37
+
+    if-eqz v39, :cond_9
+
+    invoke-static {v13}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+
+    move-result v13
+
+    invoke-static {v13}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
+
+    move-result v13
+
+    goto :goto_8
+
+    :cond_9
+    move/from16 v13, v23
+
+    :goto_8
     const-wide/32 v40, 0x14000
 
     and-long v40, v2, v40
 
-    cmp-long v40, v40, v16
+    cmp-long v40, v40, v37
 
     const-wide/32 v41, 0x18000
 
     and-long v41, v2, v41
 
-    cmp-long v41, v41, v16
+    cmp-long v41, v41, v37
 
     if-eqz v41, :cond_a
 
-    invoke-static {v4}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    invoke-static {v15}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
-    move-result v4
+    move-result v15
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static {v15}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
     move-result v42
 
-    xor-int/lit8 v4, v4, 0x1
+    xor-int/lit8 v15, v15, 0x1
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static {v15}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
-    move-result v4
+    move-result v15
 
     move/from16 v43, v42
 
-    move-object/from16 v42, v13
-
-    move/from16 v13, v43
-
-    goto :goto_8
+    goto :goto_9
 
     :cond_a
-    move-object/from16 v42, v13
+    move/from16 v15, v23
 
-    move/from16 v4, v24
+    move/from16 v43, v15
 
-    move v13, v4
+    :goto_9
+    and-long v19, v2, v19
 
-    :goto_8
-    and-long v20, v2, v20
+    const-wide/16 v37, 0x0
 
-    cmp-long v20, v20, v16
+    cmp-long v19, v19, v37
 
-    if-eqz v20, :cond_b
+    if-eqz v19, :cond_b
 
     invoke-static {v11}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v11
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_b
-    move/from16 v11, v24
+    move/from16 v11, v23
 
-    :goto_9
-    and-long v18, v2, v18
+    :goto_a
+    and-long v16, v2, v16
 
-    cmp-long v18, v18, v16
+    cmp-long v16, v16, v37
 
-    if-eqz v18, :cond_d
+    if-eqz v16, :cond_d
 
-    if-eqz v25, :cond_c
+    if-eqz v24, :cond_c
 
-    move/from16 v24, v11
+    move/from16 v23, v11
 
     :cond_c
-    invoke-static/range {v24 .. v24}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static/range {v23 .. v23}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
-    move-result v24
+    move-result v23
 
     :cond_d
-    move/from16 v11, v24
+    move/from16 v11, v23
 
-    and-long v19, v2, v22
+    and-long v19, v2, v21
 
-    cmp-long v19, v19, v16
+    cmp-long v17, v19, v37
 
-    if-eqz v19, :cond_e
+    if-eqz v17, :cond_e
+
+    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
+
+    iget-object v4, v4, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
     move/from16 v19, v11
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
+    move/from16 v11, v27
 
-    iget-object v11, v11, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    invoke-virtual {v4, v11}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {v11, v5}, Landroid/view/View;->setVisibility(I)V
+    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
-
-    invoke-virtual {v5, v0}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->setCountryData(Ljava/util/List;)V
+    invoke-virtual {v4, v0}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->setCountryData(Ljava/util/List;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->noCountriesDefaultInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;
 
     iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v0, v15}, Landroid/view/View;->setVisibility(I)V
+    move/from16 v4, v28
 
-    goto :goto_a
+    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_b
 
     :cond_e
     move/from16 v19, v11
 
-    :goto_a
-    if-eqz v29, :cond_f
+    :goto_b
+    if-eqz v26, :cond_f
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v0, v5}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->setCountryListHint(Ljava/lang/String;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->setCountryListHint(Ljava/lang/String;)V
 
     :cond_f
-    if-eqz v34, :cond_10
+    if-eqz v33, :cond_10
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->countryListOverview:Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
 
     invoke-virtual {v0, v10}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->setCountryListTitle(Ljava/lang/String;)V
 
     :cond_10
-    if-eqz v38, :cond_11
+    if-eqz v39, :cond_11
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->expandedTermsFooter:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-virtual {v0, v14}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v0, v13}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityFooter:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-virtual {v0, v14}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v0, v13}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     :cond_11
-    if-eqz v27, :cond_12
+    if-eqz v18, :cond_12
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityFooterDescription:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_12
-    if-eqz v32, :cond_13
+    if-eqz v31, :cond_13
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityFooterTitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v9}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v9}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_13
-    const-wide/32 v5, 0x10000
+    const-wide/32 v9, 0x10000
 
-    and-long/2addr v2, v5
+    and-long/2addr v2, v9
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v9, 0x0
 
-    cmp-long v0, v2, v5
+    cmp-long v0, v2, v9
 
     const/4 v2, 0x4
 
@@ -831,9 +831,9 @@
 
     move-result-object v3
 
-    const v5, 0x7f1200dd
+    const v4, 0x7f12015e
 
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -844,95 +844,92 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityIllustration:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v15}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView3:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v15}, Landroid/widget/TextView;->setVisibility(I)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView4:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setVisibility(I)V
+    move/from16 v3, v43
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_15
-    if-eqz v35, :cond_16
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle:Landroid/widget/TextView;
-
-    invoke-static {v0, v12}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v8}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_16
-    if-eqz v28, :cond_17
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle2:Landroid/widget/TextView;
-
-    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle2:Landroid/widget/TextView;
-
-    move/from16 v3, v30
-
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_17
-    if-eqz v31, :cond_18
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle3:Landroid/widget/TextView;
-
-    move-object/from16 v3, v36
-
-    invoke-static {v0, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle3:Landroid/widget/TextView;
-
-    move/from16 v3, v33
-
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_18
-    if-eqz v37, :cond_19
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle4:Landroid/widget/TextView;
-
-    move-object/from16 v3, v42
-
-    invoke-static {v0, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle4:Landroid/widget/TextView;
-
-    move/from16 v3, v39
-
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_19
-    if-eqz v40, :cond_1b
+    if-eqz v40, :cond_17
 
     sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
-    if-lt v0, v2, :cond_1a
+    if-lt v0, v2, :cond_16
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView0:Landroid/widget/ScrollView;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->interoperabilityLayout:Landroid/widget/ScrollView;
 
-    move-object/from16 v2, v26
+    invoke-virtual {v0, v14}, Landroid/widget/ScrollView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/ScrollView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    goto :goto_b
-
-    :cond_1a
-    move-object/from16 v2, v26
-
-    :goto_b
+    :cond_16
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView3:Landroid/widget/TextView;
 
-    invoke-static {v0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v14}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mboundView4:Landroid/widget/TextView;
 
-    invoke-static {v0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v14}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    :cond_17
+    if-eqz v34, :cond_18
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle:Landroid/widget/TextView;
+
+    invoke-static {v0, v12}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle:Landroid/widget/TextView;
+
+    move/from16 v2, v36
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :cond_18
+    if-eqz v25, :cond_19
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle2:Landroid/widget/TextView;
+
+    invoke-static {v0, v7}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle2:Landroid/widget/TextView;
+
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :cond_19
+    if-eqz v30, :cond_1a
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle3:Landroid/widget/TextView;
+
+    invoke-static {v0, v8}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle3:Landroid/widget/TextView;
+
+    move/from16 v2, v32
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :cond_1a
+    if-eqz v35, :cond_1b
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle4:Landroid/widget/TextView;
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->labelInteroperabilitySubtitle4:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_1b
-    if-eqz v18, :cond_1c
+    if-eqz v16, :cond_1c
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->noCountriesRiskdetailsInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
 
@@ -1082,129 +1079,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_4
-
-    if-eq p1, v1, :cond_2
-
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
-
-    :cond_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p1
-
-    :cond_5
-    :goto_2
-    return v0
-.end method
-
 .method public setCountryData(Ljava/util/List;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -1311,7 +1185,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x11
+    const/16 p1, 0x10
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1350,7 +1224,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x12
+    const/16 p1, 0x11
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1389,46 +1263,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public setFourthSection(Ljava/lang/String;)V
-    .locals 4
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->mFourthSection:Ljava/lang/String;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1000
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0x14
+    const/16 p1, 0x12
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1467,7 +1302,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1e
+    const/16 p1, 0x1d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1506,7 +1341,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1f
+    const/16 p1, 0x1e
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1604,7 +1439,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2a
+    const/16 p1, 0x29
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1643,7 +1478,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x32
+    const/16 p1, 0x30
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1682,7 +1517,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x33
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

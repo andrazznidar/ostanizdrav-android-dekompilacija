@@ -3,14 +3,14 @@
 .source "RiskLevelTask_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
         ">;"
     }
@@ -18,6 +18,16 @@
 
 
 # instance fields
+.field public final analyticsExposureWindowCollectorProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final appConfigProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -32,7 +42,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/BackgroundModeStatus;",
+            "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
             ">;"
         }
     .end annotation
@@ -110,7 +120,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -128,7 +138,7 @@
             "Lde/rki/coronawarnapp/util/TimeStamper;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/BackgroundModeStatus;",
+            "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/risk/RiskLevelSettings;",
@@ -141,6 +151,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;",
             ">;)V"
         }
     .end annotation
@@ -165,13 +178,15 @@
 
     iput-object p9, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
+    iput-object p10, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->analyticsExposureWindowCollectorProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 11
+    .locals 12
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->riskLevelsProvider:Ljavax/inject/Provider;
 
@@ -221,7 +236,7 @@
 
     move-object v6, v0
 
-    check-cast v6, Lde/rki/coronawarnapp/util/BackgroundModeStatus;
+    check-cast v6, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->riskLevelSettingsProvider:Ljavax/inject/Provider;
 
@@ -263,11 +278,21 @@
 
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->analyticsExposureWindowCollectorProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v11, v0
+
+    check-cast v11, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;
+
     new-instance v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v10}, Lde/rki/coronawarnapp/risk/RiskLevelTask;-><init>(Lde/rki/coronawarnapp/risk/RiskLevels;Landroid/content/Context;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/BackgroundModeStatus;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/risk/RiskLevelTask;-><init>(Lde/rki/coronawarnapp/risk/RiskLevels;Landroid/content/Context;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;)V
 
     return-object v0
 .end method

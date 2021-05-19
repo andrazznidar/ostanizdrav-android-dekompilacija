@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionResultReadyFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionResultReadyFragment.kt\nde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,85:1\n11#2,9:86\n16#3,11:95\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionResultReadyFragment.kt\nde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment\n*L\n27#1,9:86\n28#1,11:95\n*E\n"
+    value = "SMAP\nSubmissionResultReadyFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionResultReadyFragment.kt\nde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,86:1\n11#2,9:87\n16#3,11:96\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionResultReadyFragment.kt\nde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment\n*L\n27#1,9:87\n28#1,11:96\n*E\n"
 .end annotation
 
 
@@ -42,7 +42,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -56,7 +56,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c005e
+    const v0, 0x7f0c006a
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -80,7 +80,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -90,7 +90,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -136,11 +136,11 @@
 
     invoke-direct {p0, v0}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f12028e
+    const v0, 0x7f120390
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/app/AlertDialog$Builder;->setTitle(I)Landroidx/appcompat/app/AlertDialog$Builder;
 
-    const v0, 0x7f12028b
+    const v0, 0x7f12038d
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/app/AlertDialog$Builder;->setMessage(I)Landroidx/appcompat/app/AlertDialog$Builder;
 
@@ -148,7 +148,7 @@
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$show$$inlined$apply$lambda$1;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    const v1, 0x7f12028d
+    const v1, 0x7f12038f
 
     invoke-virtual {p0, v1, v0}, Landroidx/appcompat/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroidx/appcompat/app/AlertDialog$Builder;
 
@@ -158,7 +158,7 @@
 
     iget-object v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f12028c
+    const v3, 0x7f12038e
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -170,11 +170,7 @@
 
     iput-object v0, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    invoke-virtual {p0}, Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->show()V
+    invoke-virtual {p0}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
 
     return-void
 .end method
@@ -215,18 +211,30 @@
     return-object v0
 .end method
 
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    return-void
-.end method
-
 .method public onResume()V
-    .locals 2
+    .locals 4
 
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v3, "onNewUserActivity()"
+
+    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->updateLastSubmissionUserActivity()V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBinding;
 
@@ -239,6 +247,11 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    throw v0
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
@@ -340,7 +353,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment$onViewCreated$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
 
@@ -352,7 +365,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

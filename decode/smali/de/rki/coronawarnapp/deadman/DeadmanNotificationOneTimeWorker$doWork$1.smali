@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.deadman.DeadmanNotificationOneTimeWorker"
     f = "DeadmanNotificationOneTimeWorker.kt"
     l = {
-        0x22
+        0x23
     }
     m = "doWork"
 .end annotation

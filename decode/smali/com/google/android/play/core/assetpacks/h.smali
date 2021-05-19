@@ -35,7 +35,7 @@
 .method public final onFailure(Ljava/lang/Exception;)V
     .locals 3
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/j;->a:Lcom/google/android/play/core/internal/aa;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/j;->a:Lcom/google/android/play/core/internal/ag;
 
     const/4 v1, 0x1
 
@@ -55,7 +55,7 @@
 
     const/4 v2, 0x5
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/google/android/play/core/internal/aa;->a(ILjava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, p1, v1}, Lcom/google/android/play/core/internal/ag;->f(ILjava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method

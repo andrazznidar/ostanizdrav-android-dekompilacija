@@ -56,6 +56,8 @@
 
 .field public final matrix:Landroid/graphics/Matrix;
 
+.field public outlineMasksAndMattes:Z
+
 .field public performanceTrackingEnabled:Z
 
 .field public final progressUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -272,6 +274,37 @@
     invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieDrawable;->setProgress(F)V
 
     :cond_5
+    return-void
+.end method
+
+.method public final buildCompositionLayer()V
+    .locals 4
+
+    new-instance v0, Lcom/airbnb/lottie/model/layer/CompositionLayer;
+
+    iget-object v1, p0, Lcom/airbnb/lottie/LottieDrawable;->composition:Lcom/airbnb/lottie/LottieComposition;
+
+    invoke-static {v1}, Lcom/airbnb/lottie/parser/LayerParser;->parse(Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/layer/Layer;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/airbnb/lottie/LottieDrawable;->composition:Lcom/airbnb/lottie/LottieComposition;
+
+    iget-object v3, v2, Lcom/airbnb/lottie/LottieComposition;->layers:Ljava/util/List;
+
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/airbnb/lottie/model/layer/CompositionLayer;-><init>(Lcom/airbnb/lottie/LottieDrawable;Lcom/airbnb/lottie/model/layer/Layer;Ljava/util/List;Lcom/airbnb/lottie/LottieComposition;)V
+
+    iput-object v0, p0, Lcom/airbnb/lottie/LottieDrawable;->compositionLayer:Lcom/airbnb/lottie/model/layer/CompositionLayer;
+
+    iget-boolean v1, p0, Lcom/airbnb/lottie/LottieDrawable;->outlineMasksAndMattes:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/airbnb/lottie/model/layer/CompositionLayer;->setOutlineMasksAndMattes(Z)V
+
+    :cond_0
     return-void
 .end method
 
@@ -1251,7 +1284,7 @@
 
     const-string v2, "."
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1371,7 +1404,7 @@
 
     const-string v2, "."
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1452,7 +1485,7 @@
 
     const-string v2, "."
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1532,10 +1565,27 @@
 .end method
 
 .method public start()V
-    .locals 0
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->isInEditMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/airbnb/lottie/LottieDrawable;->playAnimation()V
 
+    :cond_0
     return-void
 .end method
 

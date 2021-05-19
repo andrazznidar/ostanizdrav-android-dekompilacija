@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lde/rki/coronawarnapp/ui/main/home/HomeFragment;",
-        "Lde/rki/coronawarnapp/databinding/FragmentHomeBinding;",
+        "Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;",
         ">;"
     }
 .end annotation
@@ -69,7 +69,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-class v0, Lde/rki/coronawarnapp/databinding/FragmentHomeBinding;
+    const-class v0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;
 
     const/4 v1, 0x1
 
@@ -107,7 +107,7 @@
 
     if-eqz v0, :cond_0
 
-    check-cast v0, Lde/rki/coronawarnapp/databinding/FragmentHomeBinding;
+    check-cast v0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;
 
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
@@ -120,7 +120,7 @@
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.databinding.FragmentHomeBinding"
+    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.databinding.HomeFragmentLayoutBinding"
 
     invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

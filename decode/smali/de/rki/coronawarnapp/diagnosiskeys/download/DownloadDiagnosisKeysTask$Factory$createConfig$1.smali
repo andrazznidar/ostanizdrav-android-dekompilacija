@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask$Factory"
     f = "DownloadDiagnosisKeysTask.kt"
     l = {
-        0xda
+        0xf3
     }
     m = "createConfig"
 .end annotation

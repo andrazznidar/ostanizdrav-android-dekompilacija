@@ -89,7 +89,7 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/android/material/R$dimen;->mtrl_calendar_day_height:I
+    const v0, 0x7f07010e
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -217,7 +217,7 @@
 
     iget-object p1, p1, Lcom/google/android/material/datepicker/MonthsPagerAdapter$ViewHolder;->monthGrid:Lcom/google/android/material/datepicker/MaterialCalendarGridView;
 
-    sget v0, Lcom/google/android/material/R$id;->month_grid:I
+    const v0, 0x7f0902a7
 
     invoke-virtual {p1, v0}, Landroid/widget/GridView;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
 
     move-result-object p2
 
-    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_month_labeled:I
+    const v0, 0x7f0c00c0
 
     const/4 v1, 0x0
 

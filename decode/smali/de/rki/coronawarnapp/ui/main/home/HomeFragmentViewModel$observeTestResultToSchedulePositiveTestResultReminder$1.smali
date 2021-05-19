@@ -22,14 +22,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHomeFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HomeFragmentViewModel.kt\nde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,138:1\n1#2:139\n*E\n"
+    value = "SMAP\nHomeFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HomeFragmentViewModel.kt\nde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,331:1\n1#2:332\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.ui.main.home.HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1"
     f = "HomeFragmentViewModel.kt"
     l = {
-        0x50
+        0x101
     }
     m = "invokeSuspend"
 .end annotation
@@ -120,7 +120,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -134,13 +134,13 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->submissionCardsStateProvider:Lde/rki/coronawarnapp/ui/main/home/SubmissionCardsStateProvider;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardsStateProvider;->state:Lkotlinx/coroutines/flow/Flow;
+    iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlow:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1$1;
 
@@ -150,7 +150,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1;->label:I
 
-    invoke-static {p1, v1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, p0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -160,13 +160,13 @@
 
     :cond_2
     :goto_0
-    check-cast p1, Lde/rki/coronawarnapp/ui/main/home/SubmissionCardState;
+    check-cast p1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$observeTestResultToSchedulePositiveTestResultReminder$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->schedulePositiveTestResultReminder()V
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->scheduleSharePositiveTestResultReminder()V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

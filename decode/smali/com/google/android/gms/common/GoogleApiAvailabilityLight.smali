@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # static fields
@@ -32,6 +32,8 @@
 # virtual methods
 .method public getErrorResolutionIntent(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -52,7 +54,7 @@
     return-object p1
 
     :cond_0
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzi;->zza(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzj;->zza(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -61,13 +63,13 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    invoke-static {}, Lcom/google/android/gms/common/internal/zzi;->zza()Landroid/content/Intent;
+    invoke-static {}, Lcom/google/android/gms/common/internal/zzj;->zza()Landroid/content/Intent;
 
     move-result-object p1
 
@@ -76,7 +78,7 @@
     :cond_2
     const-string p2, "gcore_"
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -145,7 +147,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/zzi;->zza(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -154,6 +156,10 @@
 
 .method public isGooglePlayServicesAvailable(Landroid/content/Context;I)I
     .locals 6
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-static {p1, p2}, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->isGooglePlayServicesAvailable(Landroid/content/Context;I)I
 

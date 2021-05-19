@@ -24,14 +24,6 @@
 
 
 # virtual methods
-.method public abstract addListener(Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-.end method
-
 .method public abstract removeListener(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

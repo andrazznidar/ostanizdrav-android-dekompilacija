@@ -3,15 +3,15 @@
 .source "SubmissionModule_ProvideKeyConverterFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
-        "Lde/rki/coronawarnapp/submission/KeyConverter;",
+        "Ldagger/internal/Factory<",
+        "Lde/rki/coronawarnapp/submission/task/KeyConverter;",
         ">;"
     }
 .end annotation
@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/submission/DefaultKeyConverter;",
+            "Lde/rki/coronawarnapp/submission/task/DefaultKeyConverter;",
             ">;"
         }
     .end annotation
@@ -39,7 +39,7 @@
             "(",
             "Lde/rki/coronawarnapp/submission/SubmissionModule;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/submission/DefaultKeyConverter;",
+            "Lde/rki/coronawarnapp/submission/task/DefaultKeyConverter;",
             ">;)V"
         }
     .end annotation
@@ -66,7 +66,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/submission/DefaultKeyConverter;
+    check-cast v1, Lde/rki/coronawarnapp/submission/task/DefaultKeyConverter;
 
     if-eqz v0, :cond_0
 
@@ -74,9 +74,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v1
 

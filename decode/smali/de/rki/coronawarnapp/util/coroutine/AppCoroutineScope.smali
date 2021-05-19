@@ -20,7 +20,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
 
     move-result-object v0
 

@@ -43,28 +43,33 @@
     return-void
 
     :cond_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v1, p0, Landroidx/recyclerview/widget/SnapHelper;->mScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->removeOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
+    iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView;->mScrollListeners:Ljava/util/List;
 
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    :cond_1
     iget-object v0, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setOnFlingListener(Landroidx/recyclerview/widget/RecyclerView$OnFlingListener;)V
 
-    :cond_1
+    :cond_2
     iput-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getOnFlingListener()Landroidx/recyclerview/widget/RecyclerView$OnFlingListener;
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_3
 
     iget-object p1, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -96,7 +101,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "An instance of OnFlingListener already set."
@@ -105,7 +110,7 @@
 
     throw p1
 
-    :cond_3
+    :cond_4
     :goto_0
     return-void
 .end method
@@ -147,7 +152,7 @@
 .end method
 
 .method public snapToTargetExistingView()V
-    .locals 4
+    .locals 10
 
     iget-object v0, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -191,13 +196,19 @@
     if-eqz v2, :cond_4
 
     :cond_3
-    iget-object v2, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v4, p0, Landroidx/recyclerview/widget/SnapHelper;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    aget v1, v0, v1
+    aget v5, v0, v1
 
-    aget v0, v0, v3
+    aget v6, v0, v3
 
-    invoke-virtual {v2, v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
+    const/4 v9, 0x0
+
+    const/high16 v8, -0x80000000
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v4 .. v9}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(IILandroid/view/animation/Interpolator;IZ)V
 
     :cond_4
     return-void

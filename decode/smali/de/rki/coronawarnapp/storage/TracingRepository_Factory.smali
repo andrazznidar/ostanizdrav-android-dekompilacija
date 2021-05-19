@@ -3,14 +3,14 @@
 .source "TracingRepository_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/storage/TracingRepository;",
         ">;"
     }
@@ -18,6 +18,16 @@
 
 
 # instance fields
+.field public final backgroundModeStatusProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final contextProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -80,7 +90,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,6 +112,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
             ">;)V"
         }
     .end annotation
@@ -120,13 +133,15 @@
 
     iput-object p6, p0, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;->exposureDetectionTrackerProvider:Ljavax/inject/Provider;
 
+    iput-object p7, p0, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 8
+    .locals 9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;->contextProvider:Ljavax/inject/Provider;
 
@@ -188,11 +203,21 @@
 
     check-cast v7, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
+
     new-instance v0, Lde/rki/coronawarnapp/storage/TracingRepository;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/storage/TracingRepository;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;)V
+    invoke-direct/range {v1 .. v8}, Lde/rki/coronawarnapp/storage/TracingRepository;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;)V
 
     return-object v0
 .end method

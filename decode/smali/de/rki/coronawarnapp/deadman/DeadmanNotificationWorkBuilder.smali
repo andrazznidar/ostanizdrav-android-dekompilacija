@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDeadmanNotificationWorkBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeadmanNotificationWorkBuilder.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder\n+ 2 OneTimeWorkRequest.kt\nandroidx/work/OneTimeWorkRequestKt\n+ 3 PeriodicWorkRequest.kt\nandroidx/work/PeriodicWorkRequestKt\n*L\n1#1,44:1\n29#2:45\n33#3:46\n*E\n*S KotlinDebug\n*F\n+ 1 DeadmanNotificationWorkBuilder.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder\n*L\n18#1:45\n30#1:46\n*E\n"
+    value = "SMAP\nDeadmanNotificationWorkBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeadmanNotificationWorkBuilder.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder\n+ 2 OneTimeWorkRequest.kt\nandroidx/work/OneTimeWorkRequestKt\n+ 3 PeriodicWorkRequest.kt\nandroidx/work/PeriodicWorkRequestKt\n*L\n1#1,45:1\n29#2:46\n33#3:47\n*E\n*S KotlinDebug\n*F\n+ 1 DeadmanNotificationWorkBuilder.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder\n*L\n18#1:46\n30#1:47\n*E\n"
 .end annotation
 
 

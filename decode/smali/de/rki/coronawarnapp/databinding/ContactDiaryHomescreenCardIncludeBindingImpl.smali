@@ -10,6 +10,8 @@
 # instance fields
 .field public mDirtyFlags:J
 
+.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
+
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -21,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900d0
+    const v1, 0x7f090109
 
     const/4 v2, 0x1
 
@@ -29,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cd
+    const v1, 0x7f090106
 
     const/4 v2, 0x2
 
@@ -37,7 +39,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900ce
+    const v1, 0x7f090108
 
     const/4 v2, 0x3
 
@@ -45,7 +47,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900cf
+    const v1, 0x7f0904b4
 
     const/4 v2, 0x4
 
@@ -53,7 +55,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903e0
+    const v1, 0x7f090107
 
     const/4 v2, 0x5
 
@@ -63,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 13
+    .locals 12
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -83,7 +85,7 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -91,13 +93,13 @@
 
     check-cast v8, Landroid/widget/Button;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
     move-object v9, v1
 
-    check-cast v9, Landroid/widget/ImageView;
+    check-cast v9, Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 v1, 0x1
 
@@ -107,21 +109,13 @@
 
     check-cast v10, Landroid/widget/TextView;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
     move-object v11, v1
 
-    check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const/4 v1, 0x5
-
-    aget-object v0, v0, v1
-
-    move-object v12, v0
-
-    check-cast v12, Landroidx/constraintlayout/widget/Barrier;
+    check-cast v11, Landroidx/constraintlayout/widget/Barrier;
 
     const/4 v6, 0x0
 
@@ -131,17 +125,23 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/Button;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Barrier;)V
+    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/Button;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Barrier;)V
 
-    const-wide/16 v0, -0x1
+    const-wide/16 v3, -0x1
 
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->mDirtyFlags:J
+    iput-wide v3, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->mDirtyFlags:J
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBinding;->contactDiaryHomescreenCard:Landroidx/constraintlayout/widget/ConstraintLayout;
+    const/4 p1, 0x0
+
+    aget-object p1, v0, p1
+
+    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -240,12 +240,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

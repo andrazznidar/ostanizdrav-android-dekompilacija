@@ -111,6 +111,26 @@
 
 
 # virtual methods
+.method public calculatePrintedLength(I)I
+    .locals 2
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iLeft:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v0, p1}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->calculatePrintedLength(I)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iRight:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v1, p1}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->calculatePrintedLength(I)I
+
+    move-result p1
+
+    add-int/2addr p1, v0
+
+    return p1
+.end method
+
 .method public getAffixes()[Ljava/lang/String;
     .locals 1
 
@@ -123,4 +143,110 @@
     check-cast v0, [Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public parse(Ljava/lang/String;I)I
+    .locals 2
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iLeft:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v0, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->parse(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iRight:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v1, p1, v0}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->parse(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    invoke-virtual {p0, p1, v0}, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->parse(Ljava/lang/String;I)I
+
+    move-result v1
+
+    sub-int/2addr v1, v0
+
+    invoke-virtual {p0, v1, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$IgnorableAffix;->matchesOtherAffix(ILjava/lang/String;I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    not-int p1, p2
+
+    return p1
+
+    :cond_0
+    return v0
+.end method
+
+.method public printTo(Ljava/lang/StringBuffer;I)V
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iLeft:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v0, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->printTo(Ljava/lang/StringBuffer;I)V
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iRight:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v0, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->printTo(Ljava/lang/StringBuffer;I)V
+
+    return-void
+.end method
+
+.method public scan(Ljava/lang/String;I)I
+    .locals 3
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iLeft:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v0, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->scan(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_2
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iRight:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    iget-object v2, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iLeft:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v2, p1, v0}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->parse(Ljava/lang/String;I)I
+
+    move-result v2
+
+    invoke-interface {v1, p1, v2}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->scan(Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-ltz v1, :cond_0
+
+    iget-object v2, p0, Lorg/joda/time/format/PeriodFormatterBuilder$CompositeAffix;->iRight:Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;
+
+    invoke-interface {v2, p1, v1}, Lorg/joda/time/format/PeriodFormatterBuilder$PeriodFieldAffix;->parse(Ljava/lang/String;I)I
+
+    move-result v2
+
+    sub-int/2addr v2, v0
+
+    invoke-virtual {p0, v2, p1, p2}, Lorg/joda/time/format/PeriodFormatterBuilder$IgnorableAffix;->matchesOtherAffix(ILjava/lang/String;I)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    :cond_0
+    if-lez v0, :cond_1
+
+    return v0
+
+    :cond_1
+    return v1
+
+    :cond_2
+    not-int p1, p2
+
+    return p1
 .end method

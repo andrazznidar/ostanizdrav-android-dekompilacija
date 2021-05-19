@@ -11,6 +11,8 @@
 
 
 # instance fields
+.field public final analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
+
 .field public final cwaConfig:Lde/rki/coronawarnapp/appconfig/CWAConfig;
 
 .field public final exposureDetectionConfig:Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;
@@ -21,9 +23,11 @@
 
 .field public final rawConfig:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;
 
+.field public final survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;Lde/rki/coronawarnapp/appconfig/CWAConfig;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;Lde/rki/coronawarnapp/appconfig/CWAConfig;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;Lde/rki/coronawarnapp/appconfig/SurveyConfig;Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;)V
     .locals 1
 
     const-string v0, "rawConfig"
@@ -46,6 +50,14 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "survey"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "analytics"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->rawConfig:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;
@@ -57,6 +69,10 @@
     iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureDetectionConfig:Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;
 
     iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureWindowRiskCalculationConfig:Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    iput-object p7, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
 
     return-void
 .end method
@@ -116,7 +132,27 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureWindowRiskCalculationConfig:Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureWindowRiskCalculationConfig:Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
+    iget-object v1, p1, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureWindowRiskCalculationConfig:Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    iget-object v1, p1, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -136,6 +172,14 @@
     const/4 p1, 0x1
 
     return p1
+.end method
+
+.method public getAnalytics()Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
+
+    return-object v0
 .end method
 
 .method public getDiagnosisKeysDataMapping()Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
@@ -362,6 +406,14 @@
     return-object v0
 .end method
 
+.method public getSurvey()Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    return-object v0
+.end method
+
 .method public getTransmissionRiskLevelEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
     .locals 1
 
@@ -487,10 +539,58 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    move-result v1
+    move-result v2
+
+    goto :goto_4
 
     :cond_4
+    move v2, v1
+
+    :goto_4
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    goto :goto_5
+
+    :cond_5
+    move v2, v1
+
+    :goto_5
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
+
+    if-eqz v2, :cond_6
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :cond_6
     add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public isDeviceTimeCheckEnabled()Z
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->cwaConfig:Lde/rki/coronawarnapp/appconfig/CWAConfig;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->isDeviceTimeCheckEnabled()Z
+
+    move-result v0
 
     return v0
 .end method
@@ -500,7 +600,7 @@
 
     const-string v0, "DefaultConfigMapping(rawConfig="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -537,6 +637,22 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->exposureWindowRiskCalculationConfig:Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", survey="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->survey:Lde/rki/coronawarnapp/appconfig/SurveyConfig;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", analytics="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->analytics:Lde/rki/coronawarnapp/appconfig/AnalyticsConfig;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

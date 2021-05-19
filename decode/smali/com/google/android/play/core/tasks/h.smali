@@ -90,7 +90,7 @@
     throw p1
 .end method
 
-.method public final a(Lcom/google/android/play/core/tasks/m;)V
+.method public final b(Lcom/google/android/play/core/tasks/m;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,12 +107,15 @@
     :try_start_0
     iget-object v1, p0, Lcom/google/android/play/core/tasks/h;->b:Ljava/util/Queue;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Lcom/google/android/play/core/tasks/h;->c:Z
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
 
+    goto :goto_1
+
+    :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/android/play/core/tasks/h;->c:Z
@@ -135,7 +138,7 @@
 
     check-cast v0, Lcom/google/android/play/core/tasks/g;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
@@ -145,7 +148,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -164,7 +167,8 @@
 
     throw p1
 
-    :cond_1
+    :cond_2
+    :goto_1
     :try_start_3
     monitor-exit v0
 

@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public getDefault()Lkotlin/coroutines/CoroutineContext;
     .locals 1
 
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->Default:Lkotlinx/coroutines/CoroutineDispatcher;
@@ -25,7 +25,7 @@
     return-object v0
 .end method
 
-.method public getIO()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public getIO()Lkotlin/coroutines/CoroutineContext;
     .locals 1
 
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
@@ -33,7 +33,7 @@
     return-object v0
 .end method
 
-.method public getMain()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public getMain()Lkotlin/coroutines/CoroutineContext;
     .locals 1
 
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getMain()Lkotlinx/coroutines/MainCoroutineDispatcher;

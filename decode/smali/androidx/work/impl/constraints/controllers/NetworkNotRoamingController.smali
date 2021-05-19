@@ -34,6 +34,16 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "taskExecutor"
+        }
+    .end annotation
 
     invoke-static {p1, p2}, Landroidx/work/impl/constraints/trackers/Trackers;->getInstance(Landroid/content/Context;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)Landroidx/work/impl/constraints/trackers/Trackers;
 
@@ -50,6 +60,14 @@
 # virtual methods
 .method public hasConstraint(Landroidx/work/impl/model/WorkSpec;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpec"
+        }
+    .end annotation
 
     iget-object p1, p1, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
@@ -72,6 +90,14 @@
 
 .method public isConstrained(Ljava/lang/Object;)Z
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "state"
+        }
+    .end annotation
 
     check-cast p1, Landroidx/work/impl/constraints/NetworkState;
 

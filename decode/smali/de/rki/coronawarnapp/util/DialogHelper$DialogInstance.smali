@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogHelper.kt\nde/rki/coronawarnapp/util/DialogHelper$DialogInstance\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,119:1\n1#2:120\n*E\n"
+    value = "SMAP\nDialogHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogHelper.kt\nde/rki/coronawarnapp/util/DialogHelper$DialogInstance\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,120:1\n1#2:121\n*E\n"
 .end annotation
 
 
@@ -237,116 +237,6 @@
     move/from16 v7, p4
 
     invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;ILjava/lang/String;ILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
-    .locals 13
-
-    move/from16 v0, p9
-
-    and-int/lit8 v1, v0, 0x20
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    move-object v8, v1
-
-    goto :goto_0
-
-    :cond_0
-    move-object/from16 v8, p6
-
-    :goto_0
-    and-int/lit8 v1, v0, 0x40
-
-    if-eqz v1, :cond_1
-
-    sget-object v1, L-$$LambdaGroup$ks$HSCf0BSr9h_HZBMKHJhH7srtS3g;->INSTANCE$0:L-$$LambdaGroup$ks$HSCf0BSr9h_HZBMKHJhH7srtS3g;
-
-    move-object v10, v1
-
-    goto :goto_1
-
-    :cond_1
-    move-object/from16 v10, p7
-
-    :goto_1
-    and-int/lit16 v0, v0, 0x80
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, L-$$LambdaGroup$ks$HSCf0BSr9h_HZBMKHJhH7srtS3g;->INSTANCE$1:L-$$LambdaGroup$ks$HSCf0BSr9h_HZBMKHJhH7srtS3g;
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    move-object v11, v0
-
-    const-string v0, "context"
-
-    move-object v1, p1
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "message"
-
-    move-object/from16 v5, p3
-
-    invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "positiveButtonFunction"
-
-    invoke-static {v10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "negativeButtonFunction"
-
-    invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    move v2, p2
-
-    invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v0, "context.resources.getString(title)"
-
-    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    move/from16 v2, p4
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v0, "context.resources.getString(positiveButton)"
-
-    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
-
-    const/16 v12, 0x40
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    invoke-direct/range {v2 .. v12}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     return-void
 .end method
@@ -777,7 +667,7 @@
 
     const-string v0, "DialogInstance(context="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

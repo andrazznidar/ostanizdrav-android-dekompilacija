@@ -109,9 +109,9 @@
 
     move-result-object p1
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/storage/SubmissionRepository;->refreshDeviceUIState(Z)V
+    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->refreshDeviceUIState(Z)V
 
     iget-object p1, p0, L-$$LambdaGroup$js$vAbteOfXAHKfkHz7YcfP7jkjTWQ;->$capture$0:Ljava/lang/Object;
 

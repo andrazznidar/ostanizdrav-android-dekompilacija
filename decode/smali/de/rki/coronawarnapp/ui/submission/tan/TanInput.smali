@@ -5,13 +5,11 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTanInput.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TanInput.kt\nde/rki/coronawarnapp/ui/submission/tan/TanInput\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt\n*L\n1#1,233:1\n1828#2,3:234\n1819#2,2:237\n122#3,2:239\n49#4:241\n71#4,10:242\n93#4,3:252\n*E\n*S KotlinDebug\n*F\n+ 1 TanInput.kt\nde/rki/coronawarnapp/ui/submission/tan/TanInput\n*L\n95#1,3:234\n128#1,2:237\n161#1,2:239\n62#1:241\n62#1,10:242\n62#1,3:252\n*E\n"
+    value = "SMAP\nTanInput.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TanInput.kt\nde/rki/coronawarnapp/ui/submission/tan/TanInput\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt\n*L\n1#1,234:1\n1828#2,3:235\n1819#2,2:238\n122#3,2:240\n49#4:242\n71#4,10:243\n93#4,3:253\n*E\n*S KotlinDebug\n*F\n+ 1 TanInput.kt\nde/rki/coronawarnapp/ui/submission/tan/TanInput\n*L\n99#1,3:235\n129#1,2:238\n162#1,2:240\n64#1:242\n64#1,10:243\n64#1,3:253\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public _$_findViewCache:Ljava/util/HashMap;
-
 .field public final alphaNumericFilter:Landroid/text/InputFilter;
 
 .field public lengthFilter:Landroid/text/InputFilter$LengthFilter;
@@ -31,6 +29,8 @@
 .end field
 
 .field public tan:Ljava/lang/String;
+
+.field public tanInputEditText:Landroid/widget/EditText;
 
 .field public final whitespaceFilter:Landroid/text/InputFilter;
 
@@ -69,21 +69,21 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->tan:Ljava/lang/String;
 
-    const p2, 0x7f0c0102
+    const p2, 0x7f0c0127
 
     invoke-static {p1, p2, p0}, Landroid/view/ViewGroup;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const p2, 0x7f0c0103
+    const p2, 0x7f0c0128
 
     invoke-static {p1, p2, p0}, Landroid/view/ViewGroup;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     invoke-static {p1, p2, p0}, Landroid/view/ViewGroup;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const p2, 0x7f0c0104
+    const p2, 0x7f0c0129
 
     invoke-static {p1, p2, p0}, Landroid/view/ViewGroup;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const p1, 0x7f07019a
+    const p1, 0x7f0701b4
 
     invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->getDimension(I)F
 
@@ -93,17 +93,15 @@
 
     iput p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->lineSpacing:I
 
-    sget p1, Lde/rki/coronawarnapp/R$id;->tan_input_edittext:I
+    const p1, 0x7f09050d
 
-    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findCachedViewById(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    check-cast p1, Lde/rki/coronawarnapp/ui/view/UnscrollableEditText;
+    move-object p2, p1
 
-    const-string p2, "tan_input_edittext"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    check-cast p2, Landroid/widget/EditText;
 
     const/4 v0, 0x3
 
@@ -127,23 +125,21 @@
 
     aput-object v1, v0, v2
 
-    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
+    invoke-virtual {p2, v0}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    sget p1, Lde/rki/coronawarnapp/R$id;->tan_input_edittext:I
+    new-instance v0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$special$$inlined$apply$lambda$1;
 
-    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findCachedViewById(I)Landroid/view/View;
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$special$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/TanInput;)V
 
-    move-result-object p1
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    check-cast p1, Lde/rki/coronawarnapp/ui/view/UnscrollableEditText;
+    const-string p2, "findViewById<EditText>(R\u2026n(text ?: \"\") }\n        }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$special$$inlined$doOnTextChanged$1;
+    check-cast p1, Landroid/widget/EditText;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$special$$inlined$doOnTextChanged$1;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/TanInput;)V
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->tanInputEditText:Landroid/widget/EditText;
 
     new-instance p1, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$2;
 
@@ -153,7 +149,11 @@
 
     new-instance p1, Landroid/os/Handler;
 
-    invoke-direct {p1}, Landroid/os/Handler;-><init>()V
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$3;
 
@@ -169,13 +169,7 @@
 .method public static final access$showKeyboard(Lde/rki/coronawarnapp/ui/submission/tan/TanInput;)V
     .locals 2
 
-    sget v0, Lde/rki/coronawarnapp/R$id;->tan_input_edittext:I
-
-    invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findCachedViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lde/rki/coronawarnapp/ui/view/UnscrollableEditText;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->tanInputEditText:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
@@ -197,13 +191,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    sget v1, Lde/rki/coronawarnapp/R$id;->tan_input_edittext:I
-
-    invoke-virtual {p0, v1}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findCachedViewById(I)Landroid/view/View;
-
-    move-result-object p0
-
-    check-cast p0, Lde/rki/coronawarnapp/ui/view/UnscrollableEditText;
+    iget-object p0, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->tanInputEditText:Landroid/widget/EditText;
 
     const/4 v1, 0x1
 
@@ -226,7 +214,7 @@
 .end method
 
 .method public static final access$updateTan(Lde/rki/coronawarnapp/ui/submission/tan/TanInput;Ljava/lang/CharSequence;)V
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -335,15 +323,21 @@
 
     move-result v4
 
+    const/4 v5, 0x2
+
+    const-string v6, "resources"
+
     if-eqz v4, :cond_2
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f080156
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v5, v0}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    const v6, 0x7f080174
+
+    invoke-static {v4, v6, v0, v5}, Lcom/google/zxing/client/android/R$id;->getDrawableCompat$default(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
@@ -362,9 +356,11 @@
 
     move-result-object v4
 
-    const v5, 0x7f080157
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v5, v0}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    const v6, 0x7f080175
+
+    invoke-static {v4, v6, v0, v5}, Lcom/google/zxing/client/android/R$id;->getDrawableCompat$default(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
@@ -375,9 +371,11 @@
 
     move-result-object v4
 
-    const v5, 0x7f080158
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v5, v0}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    const v6, 0x7f080176
+
+    invoke-static {v4, v6, v0, v5}, Lcom/google/zxing/client/android/R$id;->getDrawableCompat$default(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
@@ -396,7 +394,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f060069
+    const v4, 0x7f060071
 
     invoke-virtual {v1, v4, v0}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
@@ -409,7 +407,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f060070
+    const v4, 0x7f060079
 
     invoke-virtual {v1, v4, v0}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
@@ -423,7 +421,7 @@
     goto/16 :goto_0
 
     :cond_5
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->throwIndexOverflow()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->throwIndexOverflow()V
 
     throw v0
 
@@ -458,50 +456,6 @@
 
 
 # virtual methods
-.method public _$_findCachedViewById(I)Landroid/view/View;
-    .locals 2
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findViewCache:Ljava/util/HashMap;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findViewCache:Ljava/util/HashMap;
-
-    :cond_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    return-object v0
-.end method
-
 .method public final digits()Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -523,7 +477,7 @@
 
     const-class v1, Landroid/widget/LinearLayout;
 
-    invoke-static {v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->filterIsInstance(Lkotlin/sequences/Sequence;Ljava/lang/Class;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
@@ -543,7 +497,7 @@
 
     invoke-direct {v2, v0, v1, v3}, Lkotlin/sequences/FlatteningSequence;-><init>(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v0
 
@@ -699,7 +653,7 @@
 
     int-to-float v2, v2
 
-    const v3, 0x7f07019b
+    const v3, 0x7f0701b5
 
     invoke-virtual {p0, v3}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->getDimension(I)F
 
@@ -711,7 +665,7 @@
 
     int-to-float v2, v2
 
-    const v4, 0x7f07019c
+    const v4, 0x7f0701b6
 
     invoke-virtual {p0, v4}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->getDimension(I)F
 
@@ -731,13 +685,13 @@
 
     div-float/2addr v2, v3
 
-    const v3, 0x7f070195
+    const v3, 0x7f0701af
 
     invoke-virtual {p0, v3}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->getDimension(I)F
 
     move-result v3
 
-    const v4, 0x7f070194
+    const v4, 0x7f0701ae
 
     invoke-virtual {p0, v4}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->getDimension(I)F
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionTestResultInvalidViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTestResultInvalidViewModel.kt\nde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,45:1\n50#2,2:46\n57#2:51\n237#3:48\n239#3:50\n106#4:49\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTestResultInvalidViewModel.kt\nde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel\n*L\n23#1,2:46\n23#1:51\n23#1:48\n23#1:50\n23#1:49\n*E\n"
+    value = "SMAP\nSubmissionTestResultInvalidViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTestResultInvalidViewModel.kt\nde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,53:1\n50#2,3:54\n58#2:60\n237#3:57\n239#3:59\n106#4:58\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTestResultInvalidViewModel.kt\nde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel\n*L\n26#1,3:54\n26#1:60\n26#1:57\n26#1:59\n26#1:58\n*E\n"
 .end annotation
 
 
@@ -20,7 +20,7 @@
     .end annotation
 .end field
 
-.field public final submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+.field public final submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
 .field public final testResult:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
@@ -32,12 +32,12 @@
     .end annotation
 .end field
 
+.field public final testResultAvailableNotificationService:Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/storage/SubmissionRepository;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;)V
     .locals 4
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "dispatcherProvider"
 
@@ -47,13 +47,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "testResultAvailableNotificationService"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     const/4 v1, 0x2
 
     invoke-direct {p0, p1, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->testResultAvailableNotificationService:Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;
 
     new-instance p2, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
@@ -61,27 +67,27 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iget-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/storage/SubmissionRepository;->deviceUIStateFlow:Lkotlinx/coroutines/flow/Flow;
+    iget-object p3, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlow:Lkotlinx/coroutines/flow/Flow;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/storage/SubmissionRepository;->testResultReceivedDateFlow:Lkotlinx/coroutines/flow/Flow;
+    iget-object p2, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultReceivedDateFlow:Lkotlinx/coroutines/flow/Flow;
 
-    new-array v2, v1, [Lkotlinx/coroutines/flow/Flow;
+    new-array v0, v1, [Lkotlinx/coroutines/flow/Flow;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    aput-object v0, v2, v3
+    aput-object p3, v0, v2
 
-    const/4 v0, 0x1
+    const/4 p3, 0x1
 
-    aput-object p2, v2, v0
+    aput-object p2, v0, p3
 
     new-instance p2, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel$$special$$inlined$combine$1;
 
-    invoke-direct {p2, v2}, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidViewModel$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 

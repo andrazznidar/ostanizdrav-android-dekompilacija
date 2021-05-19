@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x94
+        0xad
     }
     m = "ignoreExceptions"
 .end annotation

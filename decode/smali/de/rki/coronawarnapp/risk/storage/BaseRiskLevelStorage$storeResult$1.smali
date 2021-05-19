@@ -17,10 +17,11 @@
     c = "de.rki.coronawarnapp.risk.storage.BaseRiskLevelStorage"
     f = "BaseRiskLevelStorage.kt"
     l = {
-        0x38,
-        0x45,
-        0x4e,
-        0x51
+        0x6a,
+        0x6f,
+        0x7b,
+        0x84,
+        0x87
     }
     m = "storeResult$suspendImpl"
 .end annotation

@@ -286,11 +286,11 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {v0, v1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeMultiply(JI)J
+    invoke-static {v0, v1, p2}, Lcom/google/zxing/client/android/R$id;->safeMultiply(JI)J
 
     move-result-wide p1
 
-    invoke-static {v3, v4, p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
+    invoke-static {v3, v4, p1, p2}, Lcom/google/zxing/client/android/R$id;->safeAdd(JJ)J
 
     move-result-wide v3
 

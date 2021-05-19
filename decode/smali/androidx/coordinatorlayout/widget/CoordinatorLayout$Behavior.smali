@@ -145,7 +145,7 @@
     return p1
 .end method
 
-.method public onDependentViewRemoved()V
+.method public onDependentViewRemoved(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -285,7 +285,7 @@
     return-void
 .end method
 
-.method public onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIII)V
+.method public onNestedScroll()V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -304,7 +304,7 @@
 .end method
 
 .method public onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIIII[I)V
-    .locals 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -315,25 +315,25 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    aget v1, p9, v0
+    aget p2, p9, p1
 
-    add-int/2addr v1, p6
+    add-int/2addr p2, p6
 
-    aput v1, p9, v0
+    aput p2, p9, p1
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    aget v1, p9, v0
+    aget p2, p9, p1
 
-    add-int/2addr v1, p7
+    add-int/2addr p2, p7
 
-    aput v1, p9, v0
+    aput p2, p9, p1
 
     if-nez p8, :cond_0
 
-    invoke-virtual/range {p0 .. p7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIII)V
+    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedScroll()V
 
     :cond_0
     return-void
@@ -406,8 +406,8 @@
     return-object p1
 .end method
 
-.method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
-    .locals 0
+.method public onStartNestedScroll()Z
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -422,9 +422,9 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    return p1
+    return v0
 .end method
 
 .method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
@@ -442,7 +442,7 @@
 
     if-nez p6, :cond_0
 
-    invoke-virtual/range {p0 .. p5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
+    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStartNestedScroll()Z
 
     move-result p1
 

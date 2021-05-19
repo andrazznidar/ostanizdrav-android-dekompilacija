@@ -419,7 +419,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->encode([B)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/material/R$style;->encode([B)Ljava/lang/String;
 
     move-result-object v1
 
@@ -484,7 +484,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->encode([B)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/material/R$style;->encode([B)Ljava/lang/String;
 
     move-result-object v1
 

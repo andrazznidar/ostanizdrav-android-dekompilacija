@@ -136,18 +136,18 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_1
 
-    new-instance v0, Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     :goto_0
     const/4 v1, 0x1
@@ -170,7 +170,7 @@
 
     const-string v2, "Couldn\'t start missing splits activity for %s"
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/play/core/internal/aa;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lcom/google/android/play/core/internal/ag;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -210,7 +210,7 @@
 
     move-result-object p1
 
-    invoke-static {p0}, Lcom/google/android/play/core/internal/bt;->a(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/play/core/internal/bz;->a(Landroid/content/Context;)Z
 
     move-result v0
 

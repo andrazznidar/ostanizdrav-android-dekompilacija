@@ -124,7 +124,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
@@ -138,7 +138,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     const/4 p1, 0x0
 
@@ -158,7 +158,7 @@
 
     const-string v3, "Writing "
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -226,7 +226,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$submitKeysToServer$2;->$data:Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iget-object v1, v1, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
     invoke-virtual {p1, v1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;->addAllVisitedCountries(Ljava/lang/Iterable;)Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;
 

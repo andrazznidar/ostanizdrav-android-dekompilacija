@@ -56,7 +56,7 @@
 
     iget v0, p0, Lcom/google/common/collect/ImmutableList$SubList;->length:I
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkElementIndex(II)I
+    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->checkElementIndex(II)I
 
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$SubList;->this$0:Lcom/google/common/collect/ImmutableList;
 
@@ -169,7 +169,7 @@
 
     iget v0, p0, Lcom/google/common/collect/ImmutableList$SubList;->length:I
 
-    invoke-static {p1, p2, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkPositionIndexes(III)V
+    invoke-static {p1, p2, v0}, Lcom/google/android/material/R$style;->checkPositionIndexes(III)V
 
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$SubList;->this$0:Lcom/google/common/collect/ImmutableList;
 

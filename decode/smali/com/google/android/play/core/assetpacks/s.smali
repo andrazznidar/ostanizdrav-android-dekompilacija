@@ -2,14 +2,14 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/play/core/internal/ci;
+.implements Lcom/google/android/play/core/internal/co;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/android/play/core/internal/ci<",
+        "Lcom/google/android/play/core/internal/co<",
         "Landroid/content/Context;",
         ">;"
     }
@@ -44,15 +44,13 @@
 .end method
 
 .method public final b()Landroid/content/Context;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/s;->a:Lcom/google/android/play/core/assetpacks/n;
 
     iget-object v0, v0, Lcom/google/android/play/core/assetpacks/n;->a:Landroid/content/Context;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/material/R$style;->j(Ljava/lang/Object;)V
 
     return-object v0
 .end method

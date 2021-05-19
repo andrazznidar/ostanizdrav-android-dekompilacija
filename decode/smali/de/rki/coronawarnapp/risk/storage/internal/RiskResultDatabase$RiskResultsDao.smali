@@ -53,3 +53,27 @@
         }
     .end annotation
 .end method
+
+.method public abstract latestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract latestEntries(I)Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
+            ">;>;"
+        }
+    .end annotation
+.end method

@@ -162,7 +162,7 @@
     :cond_5
     const-string v0, "code < 0: "
 
-    invoke-static {v0, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

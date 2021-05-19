@@ -451,7 +451,7 @@
 
     check-cast p2, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -465,7 +465,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p3, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->keyCache:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
@@ -679,7 +679,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -693,7 +693,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     const-wide/16 v5, 0x0
 
@@ -869,7 +869,7 @@
 
     if-ne v4, v6, :cond_1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_5
 
@@ -891,12 +891,12 @@
 
     check-cast v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_3
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     invoke-interface/range {p1 .. p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -925,7 +925,7 @@
 
     move-object/from16 v1, p1
 
-    invoke-static {v1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -1093,7 +1093,7 @@
 
     new-instance v4, Ljava/util/ArrayList;
 
-    invoke-static {v8, v5}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v8, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 

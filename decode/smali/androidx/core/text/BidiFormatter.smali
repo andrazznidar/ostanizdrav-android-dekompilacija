@@ -596,3 +596,208 @@
     :goto_1
     return-object v0
 .end method
+
+
+# virtual methods
+.method public unicodeWrap(Ljava/lang/CharSequence;Landroidx/core/text/TextDirectionHeuristicCompat;Z)Ljava/lang/CharSequence;
+    .locals 7
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    check-cast p2, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, p1, v1, v0}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->isRtl(Ljava/lang/CharSequence;II)Z
+
+    move-result p2
+
+    new-instance v0, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
+
+    iget v2, p0, Landroidx/core/text/BidiFormatter;->mFlags:I
+
+    and-int/lit8 v2, v2, 0x2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_1
+
+    move v2, v3
+
+    goto :goto_0
+
+    :cond_1
+    move v2, v1
+
+    :goto_0
+    const/4 v4, -0x1
+
+    const-string v5, ""
+
+    if-eqz v2, :cond_7
+
+    if-eqz p3, :cond_7
+
+    if-eqz p2, :cond_2
+
+    sget-object v2, Landroidx/core/text/TextDirectionHeuristicsCompat;->RTL:Landroidx/core/text/TextDirectionHeuristicCompat;
+
+    goto :goto_1
+
+    :cond_2
+    sget-object v2, Landroidx/core/text/TextDirectionHeuristicsCompat;->LTR:Landroidx/core/text/TextDirectionHeuristicCompat;
+
+    :goto_1
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v6
+
+    check-cast v2, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+
+    invoke-virtual {v2, p1, v1, v6}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->isRtl(Ljava/lang/CharSequence;II)Z
+
+    move-result v2
+
+    iget-boolean v6, p0, Landroidx/core/text/BidiFormatter;->mIsRtlContext:Z
+
+    if-nez v6, :cond_4
+
+    if-nez v2, :cond_3
+
+    invoke-static {p1}, Landroidx/core/text/BidiFormatter;->getEntryDir(Ljava/lang/CharSequence;)I
+
+    move-result v6
+
+    if-ne v6, v3, :cond_4
+
+    :cond_3
+    sget-object v2, Landroidx/core/text/BidiFormatter;->LRM_STRING:Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_4
+    iget-boolean v6, p0, Landroidx/core/text/BidiFormatter;->mIsRtlContext:Z
+
+    if-eqz v6, :cond_6
+
+    if-eqz v2, :cond_5
+
+    invoke-static {p1}, Landroidx/core/text/BidiFormatter;->getEntryDir(Ljava/lang/CharSequence;)I
+
+    move-result v2
+
+    if-ne v2, v4, :cond_6
+
+    :cond_5
+    sget-object v2, Landroidx/core/text/BidiFormatter;->RLM_STRING:Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_6
+    move-object v2, v5
+
+    :goto_2
+    invoke-virtual {v0, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    :cond_7
+    iget-boolean v2, p0, Landroidx/core/text/BidiFormatter;->mIsRtlContext:Z
+
+    if-eq p2, v2, :cond_9
+
+    if-eqz p2, :cond_8
+
+    const/16 v2, 0x202b
+
+    goto :goto_3
+
+    :cond_8
+    const/16 v2, 0x202a
+
+    :goto_3
+    invoke-virtual {v0, v2}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {v0, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    const/16 v2, 0x202c
+
+    invoke-virtual {v0, v2}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
+
+    goto :goto_4
+
+    :cond_9
+    invoke-virtual {v0, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    :goto_4
+    if-eqz p3, :cond_f
+
+    if-eqz p2, :cond_a
+
+    sget-object p2, Landroidx/core/text/TextDirectionHeuristicsCompat;->RTL:Landroidx/core/text/TextDirectionHeuristicCompat;
+
+    goto :goto_5
+
+    :cond_a
+    sget-object p2, Landroidx/core/text/TextDirectionHeuristicsCompat;->LTR:Landroidx/core/text/TextDirectionHeuristicCompat;
+
+    :goto_5
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p3
+
+    check-cast p2, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+
+    invoke-virtual {p2, p1, v1, p3}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->isRtl(Ljava/lang/CharSequence;II)Z
+
+    move-result p2
+
+    iget-boolean p3, p0, Landroidx/core/text/BidiFormatter;->mIsRtlContext:Z
+
+    if-nez p3, :cond_c
+
+    if-nez p2, :cond_b
+
+    invoke-static {p1}, Landroidx/core/text/BidiFormatter;->getExitDir(Ljava/lang/CharSequence;)I
+
+    move-result p3
+
+    if-ne p3, v3, :cond_c
+
+    :cond_b
+    sget-object v5, Landroidx/core/text/BidiFormatter;->LRM_STRING:Ljava/lang/String;
+
+    goto :goto_6
+
+    :cond_c
+    iget-boolean p3, p0, Landroidx/core/text/BidiFormatter;->mIsRtlContext:Z
+
+    if-eqz p3, :cond_e
+
+    if-eqz p2, :cond_d
+
+    invoke-static {p1}, Landroidx/core/text/BidiFormatter;->getExitDir(Ljava/lang/CharSequence;)I
+
+    move-result p1
+
+    if-ne p1, v4, :cond_e
+
+    :cond_d
+    sget-object v5, Landroidx/core/text/BidiFormatter;->RLM_STRING:Ljava/lang/String;
+
+    :cond_e
+    :goto_6
+    invoke-virtual {v0, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    :cond_f
+    return-object v0
+.end method

@@ -44,7 +44,7 @@
 
     const/4 p1, 0x1
 
-    invoke-static {v2, v2, p1, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {v2, v2, p1, v2}, Lcom/google/zxing/client/android/R$id;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     throw v2
 

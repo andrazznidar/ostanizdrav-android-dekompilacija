@@ -138,7 +138,7 @@
     :goto_0
     const-string v14, "daysSinceOnsetToInfectiousness must not be null."
 
-    invoke-static {v12, v14}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v12, v14}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -166,7 +166,7 @@
 
     const-string v2, "the size of daysSinceOnsetToInfectiousness exceeds maximum size %d."
 
-    invoke-static {v12, v2, v15}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v12, v2, v15}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     new-array v2, v14, [Ljava/lang/Integer;
 
@@ -251,9 +251,9 @@
 
     const-string v3, "Invalid day since onset %d"
 
-    invoke-static {v0, v3, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v1}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v12}, Lcom/google/android/gms/nearby/exposurenotification/zzg;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzg;
+    invoke-static {v12}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
     move-result-object v0
 
@@ -277,15 +277,11 @@
 
     aput-object v1, v3, v17
 
-    invoke-static {v0, v14, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v14, v3}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     add-int/lit8 v15, v15, 0xe
 
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    aput-object v0, v2, v15
+    aput-object v1, v2, v15
 
     move-object/from16 v1, p1
 
@@ -312,7 +308,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/google/android/gms/nearby/exposurenotification/zzg;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzg;
+    invoke-static {v1}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
     move-result-object v3
 
@@ -332,17 +328,13 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
-
-    const/16 v17, 0x0
-
-    aput-object v12, v15, v17
-
-    invoke-static {v3, v14, v15}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v1
+
+    const/4 v12, 0x0
+
+    aput-object v1, v15, v12
+
+    invoke-static {v3, v14, v15}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
@@ -366,7 +358,7 @@
     :goto_6
     const-string v12, "Invalid reportTypeWhenMissing value"
 
-    invoke-static {v3, v12}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
 
     if-ltz v2, :cond_7
 
@@ -396,7 +388,7 @@
 
     const-string v12, "Invalid value of ReportType %d"
 
-    invoke-static {v3, v12, v14}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v3, v12, v14}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz v0, :cond_8
 
@@ -410,7 +402,7 @@
     :goto_8
     const-string v12, "Must set daysSinceOnsetToInfectiousness"
 
-    invoke-static {v3, v12}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
 
     if-eqz v2, :cond_9
 
@@ -424,7 +416,7 @@
     :goto_9
     const-string v12, "Must set reportTypeWhenMissing"
 
-    invoke-static {v3, v12}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
 
     if-eqz v1, :cond_a
 
@@ -433,7 +425,7 @@
     :cond_a
     const-string v3, "Must set infectiousnessWhenDaysSinceOnsetMissing"
 
-    invoke-static {v15, v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v15, v3}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
 
     new-instance v12, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
 
@@ -443,7 +435,7 @@
 
     invoke-direct {v12, v0, v2, v1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;-><init>(Ljava/util/List;II)V
 
-    const-string v0, "DiagnosisKeysDataMapping\u2026ng)\n            }.build()"
+    const-string v0, "DiagnosisKeysDataMapping\u2026                }.build()"
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -154,7 +154,7 @@
 
     check-cast v1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -172,14 +172,14 @@
 
     check-cast v1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p1, p0
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$fixedPeriodTicker$3;->p$:Lkotlinx/coroutines/channels/ProducerScope;
 
@@ -189,7 +189,7 @@
 
     iput v4, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$fixedPeriodTicker$3;->label:I
 
-    invoke-static {v5, v6, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v5, v6, p0}, Lcom/google/zxing/client/android/R$id;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -228,7 +228,7 @@
 
     iput v2, p1, Lkotlinx/coroutines/flow/FlowKt__DelayKt$fixedPeriodTicker$3;->label:I
 
-    invoke-static {v4, v5, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v4, v5, p1}, Lcom/google/zxing/client/android/R$id;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v4
 

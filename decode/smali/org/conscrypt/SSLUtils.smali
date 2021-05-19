@@ -34,7 +34,7 @@
 
     const-string v0, "org.conscrypt.useEngineSocketByDefault"
 
-    const-string v1, "false"
+    const-string v1, "true"
 
     invoke-static {v0, v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -228,7 +228,7 @@
 
     const-string v3, " byte array"
 
-    invoke-static {v1, p0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -410,7 +410,7 @@
 
     const-string v0, "] has invalid length: "
 
-    invoke-static {v4, v1, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v1, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -423,7 +423,7 @@
 
     const-string v0, "] is null"
 
-    invoke-static {v4, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

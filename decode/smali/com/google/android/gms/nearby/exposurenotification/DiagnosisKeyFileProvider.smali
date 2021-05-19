@@ -20,6 +20,10 @@
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
     .locals 1
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,7 +39,7 @@
 
     iput v0, p0, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;->zza:I
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zznx;->zza(Ljava/util/Collection;)Lcom/google/android/gms/internal/nearby/zznx;
+    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zznz;->zzk(Ljava/util/Collection;)Lcom/google/android/gms/internal/nearby/zznz;
 
     move-result-object p1
 

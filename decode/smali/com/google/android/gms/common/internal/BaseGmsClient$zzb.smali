@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/BaseGmsClient$zzb;
 .super Lcom/google/android/gms/internal/common/zzi;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -171,7 +171,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(I)V
 
-    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzaa:Lcom/google/android/gms/common/ConnectionResult;
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzab:Lcom/google/android/gms/common/ConnectionResult;
 
     iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzb;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
@@ -183,7 +183,7 @@
 
     iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzb;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    iget-boolean v0, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzab:Z
+    iget-boolean v0, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzac:Z
 
     if-nez v0, :cond_6
 
@@ -194,7 +194,7 @@
     :cond_6
     iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzb;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzaa:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzab:Lcom/google/android/gms/common/ConnectionResult;
 
     if-eqz p1, :cond_7
 
@@ -228,7 +228,7 @@
 
     iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzb;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzaa:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzab:Lcom/google/android/gms/common/ConnectionResult;
 
     if-eqz p1, :cond_a
 
@@ -314,9 +314,9 @@
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    check-cast v0, Lcom/google/android/gms/common/internal/zah;
+    check-cast v0, Lcom/google/android/gms/common/internal/zag;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/zah;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/zag;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;->onConnectionSuspended(I)V
 

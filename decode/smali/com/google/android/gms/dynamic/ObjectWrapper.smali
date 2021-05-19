@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/dynamic/ObjectWrapper;
 .super Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -42,6 +42,13 @@
 
 .method public static unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
     .locals 7
+    .param p0    # Lcom/google/android/gms/dynamic/IObjectWrapper;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -107,6 +114,8 @@
     const/4 v2, 0x1
 
     if-ne v4, v2, :cond_4
+
+    invoke-static {v1}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->isAccessible()Z
 

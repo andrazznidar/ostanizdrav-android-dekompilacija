@@ -37,14 +37,12 @@
 
 .field public final dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-.field public final submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+.field public final submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/storage/SubmissionRepository;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/submission/SubmissionRepository;)V
     .locals 4
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "dispatcherProvider"
 
@@ -66,7 +64,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
     new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
 
@@ -74,9 +72,9 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/storage/SubmissionRepository;->hasGivenConsentToSubmission:Lkotlinx/coroutines/flow/Flow;
+    iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->hasGivenConsentToSubmission:Lkotlinx/coroutines/flow/Flow;
 
     const/4 p3, 0x3
 
@@ -92,7 +90,7 @@
 
     iget-object p2, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentViewModel;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    invoke-interface {p2}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {p2}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
 

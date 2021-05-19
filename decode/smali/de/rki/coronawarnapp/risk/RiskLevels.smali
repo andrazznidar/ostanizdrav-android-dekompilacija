@@ -4,15 +4,19 @@
 
 
 # virtual methods
-.method public abstract determineRisk(Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;Ljava/util/List;)Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
+.method public abstract aggregateResults(Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;Ljava/util/Map;)Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;",
-            "Ljava/util/List<",
+            "Ljava/util/Map<",
             "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
+            "Lde/rki/coronawarnapp/risk/result/RiskResult;",
             ">;)",
             "Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;"
         }
     .end annotation
+.end method
+
+.method public abstract calculateRisk(Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;)Lde/rki/coronawarnapp/risk/result/RiskResult;
 .end method

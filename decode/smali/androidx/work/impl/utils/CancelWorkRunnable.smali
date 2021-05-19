@@ -29,6 +29,16 @@
 # virtual methods
 .method public cancel(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "workManagerImpl",
+            "workSpecId"
+        }
+    .end annotation
 
     iget-object v0, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -206,6 +216,14 @@
 
 .method public reschedulePendingWorkers(Landroidx/work/impl/WorkManagerImpl;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workManagerImpl"
+        }
+    .end annotation
 
     iget-object v0, p1, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
 

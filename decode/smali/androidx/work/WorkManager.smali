@@ -22,8 +22,27 @@
 
 
 # virtual methods
+.method public abstract cancelUniqueWork(Ljava/lang/String;)Landroidx/work/Operation;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "uniqueWorkName"
+        }
+    .end annotation
+.end method
+
 .method public final enqueue(Landroidx/work/WorkRequest;)Landroidx/work/Operation;
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workRequest"
+        }
+    .end annotation
 
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
@@ -68,10 +87,34 @@
 .end method
 
 .method public abstract enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "uniqueWorkName",
+            "existingPeriodicWorkPolicy",
+            "periodicWork"
+        }
+    .end annotation
 .end method
 
 .method public enqueueUniqueWork(Ljava/lang/String;Landroidx/work/ExistingWorkPolicy;Landroidx/work/OneTimeWorkRequest;)Landroidx/work/Operation;
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "uniqueWorkName",
+            "existingWorkPolicy",
+            "work"
+        }
+    .end annotation
 
     invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 

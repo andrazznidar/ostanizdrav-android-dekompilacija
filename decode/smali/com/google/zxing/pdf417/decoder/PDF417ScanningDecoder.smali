@@ -2994,7 +2994,7 @@
     return-object v3
 
     :cond_c
-    invoke-static {v8}, Landroidx/transition/ViewGroupUtilsApi14;->sum([I)I
+    invoke-static {v8}, Lcom/google/zxing/client/android/R$id;->sum([I)I
 
     move-result v1
 

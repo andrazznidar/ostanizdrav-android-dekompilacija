@@ -20,7 +20,9 @@
 
 .field public final dataReset:Lde/rki/coronawarnapp/util/DataReset;
 
-.field public final testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+.field public final shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+
+.field public final shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 
 
 # direct methods
@@ -44,10 +46,8 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/notification/TestResultNotificationService;Lde/rki/coronawarnapp/storage/SubmissionRepository;)V
-    .locals 1
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;)V
+    .locals 2
 
     const-string v0, "dispatcherProvider"
 
@@ -57,23 +57,25 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "testResultNotificationService"
+    const-string v0, "shareTestResultNotificationService"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "submissionRepository"
+    const-string v0, "shortcutsHelper"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p4, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x2
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1, p4, v0}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
+    invoke-direct {p0, p1, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->dataReset:Lde/rki/coronawarnapp/util/DataReset;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 
     new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
 

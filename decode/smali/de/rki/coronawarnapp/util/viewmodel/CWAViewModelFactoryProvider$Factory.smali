@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/squareup/inject/assisted/AssistedInject$Factory;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;
 .end annotation

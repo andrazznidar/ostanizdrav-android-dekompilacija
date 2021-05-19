@@ -37,6 +37,30 @@
     return p1
 .end method
 
+.method public nextDouble()D
+    .locals 2
+
+    sget-object v0, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
+
+    invoke-virtual {v0}, Lkotlin/random/Random;->nextDouble()D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public nextDouble(DD)D
+    .locals 1
+
+    sget-object v0, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lkotlin/random/Random;->nextDouble(DD)D
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public nextFloat()F
     .locals 1
 

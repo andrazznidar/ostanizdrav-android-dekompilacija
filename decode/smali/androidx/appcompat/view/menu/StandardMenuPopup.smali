@@ -9,10 +9,6 @@
 .implements Landroid/view/View$OnKeyListener;
 
 
-# static fields
-.field public static final ITEM_LAYOUT:I
-
-
 # instance fields
 .field public final mAdapter:Landroidx/appcompat/view/menu/MenuAdapter;
 
@@ -56,16 +52,6 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    sget v0, Landroidx/appcompat/R$layout;->abc_popup_menu_item_layout:I
-
-    sput v0, Landroidx/appcompat/view/menu/StandardMenuPopup;->ITEM_LAYOUT:I
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/View;IIZ)V
     .locals 3
 
@@ -101,7 +87,7 @@
 
     iget-boolean v1, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mOverflowOnly:Z
 
-    sget v2, Landroidx/appcompat/view/menu/StandardMenuPopup;->ITEM_LAYOUT:I
+    const v2, 0x7f0c0013
 
     invoke-direct {v0, p2, p6, v1, v2}, Landroidx/appcompat/view/menu/MenuAdapter;-><init>(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/LayoutInflater;ZI)V
 
@@ -123,7 +109,7 @@
 
     div-int/lit8 p5, p5, 0x2
 
-    sget p6, Landroidx/appcompat/R$dimen;->abc_config_prefDialogWidth:I
+    const p6, 0x7f070017
 
     invoke-virtual {p4, p6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -327,6 +313,20 @@
     const/4 p1, 0x0
 
     return p1
+.end method
+
+.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onSaveInstanceState()Landroid/os/Parcelable;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
@@ -706,7 +706,7 @@
 
     move-result-object v4
 
-    sget v5, Landroidx/appcompat/R$layout;->abc_popup_menu_header_item_layout:I
+    const v5, 0x7f0c0012
 
     invoke-virtual {v4, v5, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

@@ -25,32 +25,12 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainFirstPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    if-eqz p4, :cond_0
-
-    iput-object p0, p4, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     iput-object p5, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainFourthPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    if-eqz p5, :cond_1
-
-    iput-object p0, p5, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_1
     iput-object p6, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainSecondPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    if-eqz p6, :cond_2
-
-    iput-object p0, p6, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_2
     iput-object p7, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainThirdPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    if-eqz p7, :cond_3
-
-    iput-object p0, p7, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_3
     iput-object p8, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentYourConsentSubsectionFirstPoint:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     iput-object p11, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentYourConsentSubsectionSecondPoint:Landroidx/constraintlayout/widget/ConstraintLayout;

@@ -44,9 +44,15 @@
 
     check-cast p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
 
+    iget-wide v0, p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->monotonicId:J
+
+    const/4 v2, 0x1
+
+    invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+
     iget-object v0, p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
     if-nez v0, :cond_0
 
@@ -68,7 +74,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     if-nez v0, :cond_1
 
@@ -100,7 +106,7 @@
     move-object v0, v2
 
     :goto_2
-    const/4 v1, 0x3
+    const/4 v1, 0x4
 
     if-nez v0, :cond_3
 
@@ -114,19 +120,19 @@
     :goto_3
     iget-object p2, p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->aggregatedRiskResult:Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$PersistedAggregatedRiskResult;
 
-    const/16 v0, 0xa
+    const/16 v0, 0xb
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
-    const/4 v3, 0x6
+    const/4 v3, 0x7
 
-    const/4 v4, 0x5
+    const/4 v4, 0x6
 
-    const/16 v5, 0x8
+    const/16 v5, 0x9
 
-    const/4 v6, 0x7
+    const/16 v6, 0x8
 
-    const/4 v7, 0x4
+    const/4 v7, 0x5
 
     if-eqz p2, :cond_9
 
@@ -259,7 +265,7 @@
 .method public createQuery()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "INSERT OR ABORT INTO `riskresults` (`id`,`calculatedAt`,`failureReason`,`totalRiskLevel`,`totalMinimumDistinctEncountersWithLowRisk`,`totalMinimumDistinctEncountersWithHighRisk`,`mostRecentDateWithLowRisk`,`mostRecentDateWithHighRisk`,`numberOfDaysWithLowRisk`,`numberOfDaysWithHighRisk`) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    const-string v0, "INSERT OR ABORT INTO `riskresults` (`monotonicId`,`id`,`calculatedAt`,`failureReason`,`totalRiskLevel`,`totalMinimumDistinctEncountersWithLowRisk`,`totalMinimumDistinctEncountersWithHighRisk`,`mostRecentDateWithLowRisk`,`mostRecentDateWithHighRisk`,`numberOfDaysWithLowRisk`,`numberOfDaysWithHighRisk`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)"
 
     return-object v0
 .end method

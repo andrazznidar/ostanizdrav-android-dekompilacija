@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoroutineWorker.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n+ 2 ListenableFuture.kt\nandroidx/work/ListenableFutureKt\n+ 3 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,117:1\n39#2,8:118\n47#2,2:135\n59#2,3:137\n39#2,8:142\n47#2,2:159\n59#2,3:161\n189#3,9:126\n198#3,2:140\n189#3,9:150\n198#3,2:164\n*E\n*S KotlinDebug\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n*L\n99#1,8:118\n99#1,2:135\n99#1,3:137\n110#1,8:142\n110#1,2:159\n110#1,3:161\n99#1,9:126\n99#1,2:140\n110#1,9:150\n110#1,2:164\n*E\n"
+    value = "SMAP\nCoroutineWorker.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n+ 2 ListenableFuture.kt\nandroidx/work/ListenableFutureKt\n+ 3 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,117:1\n39#2,8:118\n47#2,2:135\n59#2,3:137\n39#2,8:142\n47#2,2:159\n59#2,3:161\n308#3,9:126\n317#3,2:140\n308#3,9:150\n317#3,2:164\n*E\n*S KotlinDebug\n*F\n+ 1 CoroutineWorker.kt\nandroidx/work/CoroutineWorker\n*L\n99#1,8:118\n99#1,2:135\n99#1,3:137\n110#1,8:142\n110#1,2:159\n110#1,3:161\n99#1,9:126\n99#1,2:140\n110#1,9:150\n110#1,2:164\n*E\n"
 .end annotation
 
 
@@ -43,7 +43,7 @@
 
     const/4 p2, 0x1
 
-    invoke-static {p1, p2, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->Job$default(Lkotlinx/coroutines/Job;ILjava/lang/Object;)Lkotlinx/coroutines/CompletableJob;
+    invoke-static {p1, p2, p1}, Lcom/google/zxing/client/android/R$id;->Job$default(Lkotlinx/coroutines/Job;ILjava/lang/Object;)Lkotlinx/coroutines/CompletableJob;
 
     move-result-object p1
 
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
 
     move-result-object v1
 
@@ -148,7 +148,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     iget-object v0, p0, Landroidx/work/CoroutineWorker;->future:Landroidx/work/impl/utils/futures/SettableFuture;
 

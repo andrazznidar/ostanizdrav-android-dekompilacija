@@ -26,3 +26,18 @@
         }
     .end annotation
 .end method
+
+.method public abstract getWindowsForResult(Ljava/util/List;)Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;",
+            ">;>;"
+        }
+    .end annotation
+.end method

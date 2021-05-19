@@ -57,40 +57,7 @@
 
     iget-object v0, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2$1;
-
-    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2$1;-><init>(Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2;)V
-
-    const-string v2, "block"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v2, v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;
-
-    if-eqz v2, :cond_0
-
-    check-cast v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
-
-    invoke-virtual {v1, v0}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    iget-object v0, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
-
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    sget-object v2, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2$hasResult$1;->INSTANCE:Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2$hasResult$1;
-
-    invoke-static {v0, v1, v2}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;->withSuccess(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
+    instance-of v0, v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment;
 
@@ -112,7 +79,7 @@
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setInvisible(Landroid/view/View;Z)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->setInvisible(Landroid/view/View;Z)V
 
     iget-object p1, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBinding;->submissionTestResultContent:Landroid/widget/ScrollView;
 
@@ -122,7 +89,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setInvisible(Landroid/view/View;Z)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->setInvisible(Landroid/view/View;Z)V
 
     iget-object p1, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBinding;->buttonContainer:Landroid/widget/LinearLayout;
 
@@ -130,7 +97,7 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setInvisible(Landroid/view/View;Z)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->setInvisible(Landroid/view/View;Z)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

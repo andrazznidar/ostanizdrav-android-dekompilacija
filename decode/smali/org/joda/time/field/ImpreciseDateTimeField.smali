@@ -47,7 +47,7 @@
 
     move-result-wide p1
 
-    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->safeToInt(J)I
 
     move-result p1
 

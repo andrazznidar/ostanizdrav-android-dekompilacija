@@ -159,7 +159,7 @@
 
     const-string v6, "Unknown layer type "
 
-    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -596,6 +596,51 @@
     goto :goto_0
 
     :cond_0
+    return-void
+.end method
+
+.method public setOutlineMasksAndMattes(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/airbnb/lottie/animation/LPaint;
+
+    invoke-direct {v0}, Lcom/airbnb/lottie/animation/LPaint;-><init>()V
+
+    iput-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    :cond_0
+    iput-boolean p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattes:Z
+
+    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/CompositionLayer;->layers:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/airbnb/lottie/model/layer/BaseLayer;
+
+    invoke-virtual {v1, p1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->setOutlineMasksAndMattes(Z)V
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 

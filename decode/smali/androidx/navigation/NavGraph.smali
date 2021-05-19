@@ -62,11 +62,15 @@
 
 # virtual methods
 .method public final addDestination(Landroidx/navigation/NavDestination;)V
-    .locals 2
+    .locals 3
 
     iget v0, p1, Landroidx/navigation/NavDestination;->mId:I
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
+
+    iget v1, p0, Landroidx/navigation/NavDestination;->mId:I
+
+    if-eq v0, v1, :cond_3
 
     iget-object v1, p0, Landroidx/navigation/NavGraph;->mNodes:Landroidx/collection/SparseArrayCompat;
 
@@ -112,6 +116,33 @@
     throw p1
 
     :cond_3
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Destination "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " cannot have the same id as graph "
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Destinations must have an id. Call setId() or include an android:id in your navigation XML."
@@ -186,10 +217,10 @@
     return-object v0
 .end method
 
-.method public matchDeepLink(Landroid/net/Uri;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+.method public matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
     .locals 4
 
-    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroid/net/Uri;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v0
 
@@ -211,7 +242,7 @@
 
     check-cast v2, Landroidx/navigation/NavDestination;
 
-    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroid/net/Uri;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v2
 
@@ -249,11 +280,9 @@
 
     move-result-object p2
 
-    sget v0, Landroidx/navigation/common/R$styleable;->NavGraphNavigator_startDestination:I
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p2, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
@@ -273,7 +302,11 @@
 .end method
 
 .method public final setStartDestination(I)V
-    .locals 0
+    .locals 3
+
+    iget v0, p0, Landroidx/navigation/NavDestination;->mId:I
+
+    if-eq p1, v0, :cond_0
 
     iput p1, p0, Landroidx/navigation/NavGraph;->mStartDestId:I
 
@@ -282,6 +315,33 @@
     iput-object p1, p0, Landroidx/navigation/NavGraph;->mStartDestIdName:Ljava/lang/String;
 
     return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Start destination "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, " cannot use the same id as the graph "
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public toString()Ljava/lang/String;

@@ -40,5 +40,11 @@
 .method public abstract build()Landroidx/core/view/WindowInsetsCompat;
 .end method
 
+.method public setStableInsets(Landroidx/core/graphics/Insets;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public abstract setSystemWindowInsets(Landroidx/core/graphics/Insets;)V
 .end method

@@ -1209,6 +1209,16 @@
     throw v1
 .end method
 
+.method public static getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
+    .locals 1
+
+    invoke-static {}, Lorg/conscrypt/OkHostnameVerifier;->strictInstance()Lorg/conscrypt/OkHostnameVerifier;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static getDefaultProviderName()Ljava/lang/String;
     .locals 1
 
@@ -1749,7 +1759,7 @@
     :cond_2
     const-string v3, "."
 
-    invoke-static {v1, v3, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1917,7 +1927,7 @@
 
     const-string v1, "\tat "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1943,7 +1953,7 @@
     return-void
 .end method
 
-.method public static newDefaultBlacklist()Lorg/conscrypt/CertBlacklist;
+.method public static newDefaultBlocklist()Lorg/conscrypt/CertBlocklist;
     .locals 1
 
     const/4 v0, 0x0

@@ -61,12 +61,12 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$4;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->popBackStack(Landroidx/fragment/app/Fragment;)Z
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->popBackStack(Landroidx/fragment/app/Fragment;)Z
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddPersonBottomSheet;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddPersonBottomSheet;
+    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddPersonFragment;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddPersonFragment;
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -84,16 +84,16 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;->selectedDay:Ljava/lang/String;
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryPersonBottomSheetDialogFragment;
+    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryAddPersonFragment;
 
-    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryPersonBottomSheetDialogFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryAddPersonFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;Ljava/lang/String;)V
 
-    invoke-static {p1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v2}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddLocationBottomSheet;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddLocationBottomSheet;
+    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddLocationFragment;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents$NavigateToAddLocationFragment;
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -109,11 +109,11 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;->selectedDay:Ljava/lang/String;
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryLocationBottomSheetDialogFragment;
+    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryAddLocationFragment;
 
-    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryLocationBottomSheetDialogFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentDirections$ActionContactDiaryDayFragmentToContactDiaryAddLocationFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;Ljava/lang/String;)V
 
-    invoke-static {p1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v2}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     :cond_2
     :goto_0

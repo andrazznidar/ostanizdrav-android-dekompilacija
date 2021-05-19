@@ -128,7 +128,7 @@
     check-cast p0, Lde/rki/coronawarnapp/task/example/QueueingTask;
 
     :try_start_0
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -144,7 +144,7 @@
     throw p0
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     const-string p2, "Running with arguments=%s"
@@ -187,13 +187,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/task/example/QueueingTask;->isCanceled:Z
 
-    invoke-static {p1, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -205,7 +205,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/task/example/QueueingTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
 
-    invoke-static {p0, v6, v7, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {p0, v6, v7, v6}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object p2
 
@@ -231,13 +231,13 @@
     :catchall_0
     move-exception p1
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/task/example/QueueingTask;->isCanceled:Z
 
-    invoke-static {p2, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -249,7 +249,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/task/example/QueueingTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
 
-    invoke-static {p0, v6, v7, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {p0, v6, v7, v6}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     throw p1
 .end method
@@ -397,7 +397,7 @@
 
     check-cast v6, Lde/rki/coronawarnapp/task/example/QueueingTask;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -423,7 +423,7 @@
 
     check-cast v6, Lde/rki/coronawarnapp/task/example/QueueingTask;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :cond_3
     if-eqz v5, :cond_9
@@ -438,7 +438,7 @@
 
     iput v4, v0, Lde/rki/coronawarnapp/task/example/QueueingTask$runSafely$1;->label:I
 
-    invoke-static {v7, v8, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v7, v8, v0}, Lcom/google/zxing/client/android/R$id;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -471,44 +471,7 @@
 
     sget-object v7, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    const-string v8, "$this$appendText"
-
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "text"
-
-    invoke-static {p2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "charset"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p2, v7}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v7
-
-    const-string v8, "(this as java.lang.String).getBytes(charset)"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "$this$appendBytes"
-
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "array"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v8, Ljava/io/FileOutputStream;
-
-    invoke-direct {v8, v3, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
-
-    :try_start_0
-    invoke-virtual {v8, v7}, Ljava/io/FileOutputStream;->write([B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v3, p2, v7}, Lkotlin/io/FilesKt__FileReadWriteKt;->appendText(Ljava/io/File;Ljava/lang/String;Ljava/nio/charset/Charset;)V
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -554,21 +517,6 @@
 
     return-object v1
 
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    move-exception p2
-
-    invoke-static {v8, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw p2
-
     :cond_6
     throw v3
 
@@ -585,7 +533,7 @@
     throw v3
 
     :cond_a
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     if-eqz p1, :cond_b
 

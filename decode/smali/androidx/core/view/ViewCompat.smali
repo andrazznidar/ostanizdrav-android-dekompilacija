@@ -95,6 +95,32 @@
     return-object v0
 .end method
 
+.method public static computeSystemWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)Landroidx/core/view/WindowInsetsCompat;
+    .locals 1
+
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsets()Landroid/view/WindowInsets;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v0, p2}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsetsCompat(Landroid/view/WindowInsets;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Landroid/graphics/Rect;->setEmpty()V
+
+    :goto_0
+    return-object p1
+.end method
+
 .method public static dispatchUnhandledKeyEventBeforeCallback(Landroid/view/View;Landroid/view/KeyEvent;)Z
     .locals 8
 
@@ -527,16 +553,6 @@
     return-object v1
 .end method
 
-.method public static getAccessibilityLiveRegion(Landroid/view/View;)I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityLiveRegion()I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static getBackgroundTintList(Landroid/view/View;)Landroid/content/res/ColorStateList;
     .locals 0
 
@@ -673,6 +689,20 @@
     return p0
 .end method
 
+.method public static getRootWindowInsets(Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsetsCompat(Landroid/view/WindowInsets;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static getTransitionName(Landroid/view/View;)Ljava/lang/String;
     .locals 0
 
@@ -778,13 +808,13 @@
 
     new-instance v0, Landroidx/core/view/ViewCompat$3;
 
-    sget v1, Landroidx/core/R$id;->tag_screen_reader_focusable:I
+    const-class v1, Ljava/lang/Boolean;
 
-    const-class v2, Ljava/lang/Boolean;
+    const v2, 0x7f090505
 
     const/16 v3, 0x1c
 
-    invoke-direct {v0, v1, v2, v3}, Landroidx/core/view/ViewCompat$3;-><init>(ILjava/lang/Class;I)V
+    invoke-direct {v0, v2, v1, v3}, Landroidx/core/view/ViewCompat$3;-><init>(ILjava/lang/Class;I)V
 
     invoke-virtual {v0, p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->get(Landroid/view/View;)Ljava/lang/Object;
 
@@ -833,15 +863,15 @@
     :cond_0
     new-instance v0, Landroidx/core/view/ViewCompat$4;
 
-    sget v1, Landroidx/core/R$id;->tag_accessibility_pane_title:I
+    const-class v1, Ljava/lang/CharSequence;
 
-    const-class v2, Ljava/lang/CharSequence;
+    const v2, 0x7f090504
 
     const/16 v3, 0x8
 
     const/16 v4, 0x1c
 
-    invoke-direct {v0, v1, v2, v3, v4}, Landroidx/core/view/ViewCompat$4;-><init>(ILjava/lang/Class;II)V
+    invoke-direct {v0, v2, v1, v3, v4}, Landroidx/core/view/ViewCompat$4;-><init>(ILjava/lang/Class;II)V
 
     invoke-virtual {v0, p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->get(Landroid/view/View;)Ljava/lang/Object;
 
@@ -1057,47 +1087,45 @@
 .method public static removeActionWithId(ILandroid/view/View;)V
     .locals 2
 
-    sget v0, Landroidx/core/R$id;->tag_accessibility_actions:I
+    const v0, 0x7f090501
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/util/ArrayList;
+    check-cast v1, Ljava/util/ArrayList;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    sget v1, Landroidx/core/R$id;->tag_accessibility_actions:I
-
-    invoke-virtual {p1, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     :cond_0
     const/4 p1, 0x0
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v0
 
-    if-ge p1, v1, :cond_2
+    if-ge p1, v0, :cond_2
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
+    check-cast v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
+    invoke-virtual {v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
 
-    move-result v1
+    move-result v0
 
-    if-ne v1, p0, :cond_1
+    if-ne v0, p0, :cond_1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    invoke-interface {v1, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     goto :goto_1
 
@@ -1160,26 +1188,24 @@
 
     invoke-static {p1, p0}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
 
-    sget p1, Landroidx/core/R$id;->tag_accessibility_actions:I
+    const p1, 0x7f090501
 
     invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p3
 
-    check-cast p1, Ljava/util/ArrayList;
+    check-cast p3, Ljava/util/ArrayList;
 
-    if-nez p1, :cond_2
+    if-nez p3, :cond_2
 
-    new-instance p1, Ljava/util/ArrayList;
+    new-instance p3, Ljava/util/ArrayList;
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    sget p3, Landroidx/core/R$id;->tag_accessibility_actions:I
-
-    invoke-virtual {p0, p3, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p0, p1, p3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     :cond_2
-    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p3, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const/4 p1, 0x0
 
@@ -1194,6 +1220,28 @@
 
     invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
 
+    return-void
+.end method
+
+.method public static saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroid/annotation/SuppressLint;
+            value = {
+                "ContextFirst"
+            }
+        .end annotation
+    .end param
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1d
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual/range {p0 .. p6}, Landroid/view/View;->saveAttributeDataForStyleable(Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+
+    :cond_0
     return-void
 .end method
 
@@ -1235,13 +1283,13 @@
 
     new-instance v0, Landroidx/core/view/ViewCompat$5;
 
-    sget v1, Landroidx/core/R$id;->tag_accessibility_heading:I
+    const-class v1, Ljava/lang/Boolean;
 
-    const-class v2, Ljava/lang/Boolean;
+    const v2, 0x7f090503
 
     const/16 v3, 0x1c
 
-    invoke-direct {v0, v1, v2, v3}, Landroidx/core/view/ViewCompat$5;-><init>(ILjava/lang/Class;I)V
+    invoke-direct {v0, v2, v1, v3}, Landroidx/core/view/ViewCompat$5;-><init>(ILjava/lang/Class;I)V
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1328,14 +1376,6 @@
     return-void
 .end method
 
-.method public static setBackgroundTintMode(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-
-    return-void
-.end method
-
 .method public static setClipBounds(Landroid/view/View;Landroid/graphics/Rect;)V
     .locals 0
 
@@ -1394,6 +1434,33 @@
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
 
+    return-void
+.end method
+
+.method public static setPointerIcon(Landroid/view/View;Landroidx/core/view/PointerIconCompat;)V
+    .locals 2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x18
+
+    if-lt v0, v1, :cond_1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Landroidx/core/view/PointerIconCompat;->mPointerIcon:Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    check-cast p1, Landroid/view/PointerIcon;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
+
+    :cond_1
     return-void
 .end method
 

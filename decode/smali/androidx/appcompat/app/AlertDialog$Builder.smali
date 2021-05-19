@@ -431,3 +431,15 @@
 
     return-object p0
 .end method
+
+.method public show()Landroidx/appcompat/app/AlertDialog;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+
+    return-object v0
+.end method

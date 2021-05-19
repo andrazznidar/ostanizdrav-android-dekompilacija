@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLauncherActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LauncherActivity.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivity\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n*L\n1#1,59:1\n36#2,9:60\n*E\n*S KotlinDebug\n*F\n+ 1 LauncherActivity.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivity\n*L\n20#1,9:60\n*E\n"
+    value = "SMAP\nLauncherActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LauncherActivity.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivity\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n*L\n1#1,60:1\n36#2,9:61\n*E\n*S KotlinDebug\n*F\n+ 1 LauncherActivity.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivity\n*L\n21#1,9:61\n*E\n"
 .end annotation
 
 
@@ -41,7 +41,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v2, v1, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/activity/ComponentActivity;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v1, v0, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/activity/ComponentActivity;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -59,11 +59,11 @@
 
     invoke-direct {v0, p0}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120356
+    const v1, 0x7f120458
 
     invoke-virtual {v0, v1}, Landroidx/appcompat/app/AlertDialog$Builder;->setTitle(I)Landroidx/appcompat/app/AlertDialog$Builder;
 
-    const v1, 0x7f120355
+    const v1, 0x7f120457
 
     invoke-virtual {v0, v1}, Landroidx/appcompat/app/AlertDialog$Builder;->setMessage(I)Landroidx/appcompat/app/AlertDialog$Builder;
 
@@ -73,7 +73,7 @@
 
     iput-boolean v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
 
-    const v1, 0x7f120354
+    const v1, 0x7f120456
 
     new-instance v2, Lde/rki/coronawarnapp/ui/launcher/LauncherActivity$showUpdateNeededDialog$1;
 
@@ -81,11 +81,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/appcompat/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroidx/appcompat/app/AlertDialog$Builder;
 
-    invoke-virtual {v0}, Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v0}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
 
     return-void
 
@@ -98,7 +94,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/util/di/AppInjector;->INSTANCE:Lde/rki/coronawarnapp/util/di/AppInjector;
 
@@ -120,23 +116,7 @@
 
     invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/launcher/LauncherActivity$onCreate$1;-><init>(Lde/rki/coronawarnapp/ui/launcher/LauncherActivity;)V
 
-    const-string v1, "$this$observe2"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "activity"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "callback"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/util/ui/LiveDataExtensionsKt$observe2$2;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/ui/LiveDataExtensionsKt$observe2$2;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p1, p0, v1}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+    invoke-virtual {p1, p0, v0}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
 
     return-void
 .end method

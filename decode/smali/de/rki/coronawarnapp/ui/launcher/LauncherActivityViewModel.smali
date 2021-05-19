@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field public final cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
 .field public final events:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -18,10 +20,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/main/CWASettings;)V
     .locals 2
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "updateChecker"
 
@@ -31,6 +31,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "cwaSettings"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -38,6 +42,8 @@
     invoke-direct {p0, p2, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;->updateChecker:Lde/rki/coronawarnapp/update/UpdateChecker;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
     new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 

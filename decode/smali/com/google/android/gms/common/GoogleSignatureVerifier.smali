@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/GoogleSignatureVerifier;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # static fields
@@ -87,6 +87,10 @@
 
 .method public static zza(Landroid/content/pm/PackageInfo;Z)Z
     .locals 3
+    .param p0    # Landroid/content/pm/PackageInfo;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 

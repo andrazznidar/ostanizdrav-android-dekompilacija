@@ -1,4 +1,4 @@
-.class public final Landroidx/appcompat/widget/AppCompatSpinner$SavedState$1;
+.class public Landroidx/appcompat/widget/AppCompatSpinner$SavedState$1;
 .super Ljava/lang/Object;
 .source "AppCompatSpinner.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

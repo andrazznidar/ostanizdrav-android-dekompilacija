@@ -223,7 +223,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     :try_start_0
-    invoke-static/range {p1 .. p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v2
     :try_end_0
@@ -739,7 +739,7 @@
 
     cmp-long v3, v0, v3
 
-    if-ltz v3, :cond_4
+    if-ltz v3, :cond_3
 
     const v3, 0x7fffffff
 
@@ -747,7 +747,7 @@
 
     cmp-long v3, v0, v3
 
-    if-gtz v3, :cond_4
+    if-gtz v3, :cond_3
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -767,7 +767,7 @@
     move v3, v4
 
     :goto_0
-    if-nez v3, :cond_4
+    if-nez v3, :cond_3
 
     long-to-int v0, v0
 
@@ -792,7 +792,7 @@
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_1
-    if-ge v4, v0, :cond_3
+    if-ge v4, v0, :cond_2
 
     invoke-interface {p1}, Lokio/BufferedSource;->readUtf8LineStrict()Ljava/lang/String;
 
@@ -804,29 +804,13 @@
 
     sget-object v6, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
-    const-string v6, "$this$decodeBase64"
-
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v3}, Lokio/-Base64;->decodeBase64ToArray(Ljava/lang/String;)[B
+    invoke-virtual {v6, v3}, Lokio/ByteString$Companion;->decodeBase64(Ljava/lang/String;)Lokio/ByteString;
 
     move-result-object v3
 
-    if-eqz v3, :cond_2
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    new-instance v6, Lokio/ByteString;
-
-    invoke-direct {v6, v3}, Lokio/ByteString;-><init>([B)V
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v6, 0x0
-
-    :goto_2
-    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    invoke-virtual {v5, v6}, Lokio/Buffer;->write(Lokio/ByteString;)Lokio/Buffer;
+    invoke-virtual {v5, v3}, Lokio/Buffer;->write(Lokio/ByteString;)Lokio/Buffer;
 
     new-instance v3, Lokio/Buffer$inputStream$1;
 
@@ -844,7 +828,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     return-object v2
 
     :catch_0
@@ -860,7 +844,7 @@
 
     throw v0
 
-    :cond_4
+    :cond_3
     :try_start_2
     new-instance p1, Ljava/io/IOException;
 
@@ -1022,7 +1006,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object p1
 
@@ -1286,7 +1270,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -1301,7 +1285,7 @@
     :catchall_1
     move-exception v1
 
-    invoke-static {p1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
 .end method

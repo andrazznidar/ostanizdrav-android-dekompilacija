@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.storage.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0x95,
-        0x95
+        0x82,
+        0x82
     }
     m = "markKeyComplete"
 .end annotation

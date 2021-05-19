@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->toHmacAlgo1(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toHmacAlgo1(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -103,7 +103,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->toHmacAlgo1(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toHmacAlgo1(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
 
     move-result-object v4
 

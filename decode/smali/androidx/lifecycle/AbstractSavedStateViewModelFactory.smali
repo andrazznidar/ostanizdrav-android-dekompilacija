@@ -170,7 +170,7 @@
     :goto_0
     check-cast v2, Ljava/util/Map$Entry;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_9
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -178,17 +178,11 @@
 
     check-cast p1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactory;
 
-    goto :goto_1
-
-    :cond_2
-    move-object p1, v4
-
-    :goto_1
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_9
 
     iget-object p2, v1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;->assistAction:Lkotlin/jvm/functions/Function2;
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_2
 
     invoke-interface {p2, p1, v0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -196,24 +190,24 @@
 
     check-cast p2, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_3
+    :cond_2
     move-object p2, v4
 
-    :goto_2
+    :goto_1
     instance-of v1, p2, Landroidx/lifecycle/ViewModel;
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
     move-object p2, v4
 
-    :cond_4
-    if-nez p2, :cond_8
+    :cond_3
+    if-nez p2, :cond_7
 
     instance-of p2, p1, Lde/rki/coronawarnapp/util/viewmodel/SavedStateCWAViewModelFactory;
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_5
 
     move-object p2, p1
 
@@ -225,19 +219,19 @@
 
     instance-of v0, p2, Landroidx/lifecycle/ViewModel;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_5
+    :cond_4
     move-object v4, p2
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_6
+    :cond_5
     instance-of p2, p1, Lde/rki/coronawarnapp/util/viewmodel/SimpleCWAViewModelFactory;
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_6
 
     move-object p2, p1
 
@@ -249,14 +243,14 @@
 
     instance-of v0, p2, Landroidx/lifecycle/ViewModel;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
-    :goto_3
+    :goto_2
     move-object p2, v4
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_7
+    :cond_6
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -277,9 +271,9 @@
 
     throw p2
 
-    :cond_8
-    :goto_4
-    if-eqz p2, :cond_9
+    :cond_7
+    :goto_3
+    if-eqz p2, :cond_8
 
     const-string p1, "androidx.lifecycle.savedstate.vm.tag"
 
@@ -287,7 +281,7 @@
 
     return-object p2
 
-    :cond_9
+    :cond_8
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -308,12 +302,12 @@
 
     throw p2
 
-    :cond_a
+    :cond_9
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Unknown ViewModel factory: "
 
-    invoke-static {v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 

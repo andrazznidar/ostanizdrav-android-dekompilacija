@@ -16,7 +16,7 @@
     c = "de.rki.coronawarnapp.risk.storage.BaseRiskLevelStorage$$special$$inlined$map$1$2"
     f = "BaseRiskLevelStorage.kt"
     l = {
-        0x88,
+        0x87,
         0x87
     }
     m = "emit"

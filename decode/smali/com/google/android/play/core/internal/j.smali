@@ -1,73 +1,80 @@
 .class public Lcom/google/android/play/core/internal/j;
-.super Landroid/os/Binder;
+.super Ljava/lang/Object;
 
 # interfaces
 .implements Landroid/os/IInterface;
 
 
+# instance fields
+.field public final a:Landroid/os/IBinder;
+
+.field public final b:Ljava/lang/String;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p0, p1}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/play/core/internal/j;->a:Landroid/os/IBinder;
+
+    iput-object p2, p0, Lcom/google/android/play/core/internal/j;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(ILandroid/os/Parcel;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public final a()Landroid/os/Parcel;
+    .locals 2
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/play/core/internal/j;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 .method public final asBinder()Landroid/os/IBinder;
-    .locals 0
+    .locals 1
 
-    return-object p0
+    iget-object v0, p0, Lcom/google/android/play/core/internal/j;->a:Landroid/os/IBinder;
+
+    return-object v0
 .end method
 
-.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 1
+.method public final b(ILandroid/os/Parcel;)V
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    const v0, 0xffffff
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/play/core/internal/j;->a:Landroid/os/IBinder;
 
-    if-gt p1, v0, :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Landroid/os/Binder;->getInterfaceDescriptor()Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object p3
+    invoke-interface {v0, p1, p2, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p2, p3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 
-    goto :goto_0
+    return-void
 
-    :cond_0
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :catchall_0
+    move-exception p1
 
-    move-result p3
+    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 
-    if-eqz p3, :cond_1
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_1
-    :goto_0
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/play/core/internal/j;->a(ILandroid/os/Parcel;)Z
-
-    move-result p1
-
-    return p1
+    throw p1
 .end method

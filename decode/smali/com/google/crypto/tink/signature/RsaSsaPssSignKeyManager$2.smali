@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v1}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v1
 
@@ -423,7 +423,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->validateRsaSsaPssParams(Lcom/google/crypto/tink/proto/RsaSsaPssParams;)V
+    invoke-static {v0}, Lcom/google/android/material/R$style;->validateRsaSsaPssParams(Lcom/google/crypto/tink/proto/RsaSsaPssParams;)V
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/RsaSsaPssKeyFormat;->getModulusSizeInBits()I
 

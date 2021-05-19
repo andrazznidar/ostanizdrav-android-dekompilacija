@@ -20,11 +20,9 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lkotlin/jvm/functions/Function1<",
-        "-",
-        "Ljava/lang/Boolean;",
+        "Ljava/util/List<",
         "+",
-        "Lkotlin/Unit;",
+        "Lde/rki/coronawarnapp/ui/Country;",
         ">;",
         "Lkotlin/Unit;",
         ">;"
@@ -52,73 +50,23 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+    .locals 1
 
-    check-cast p1, Lkotlin/jvm/functions/Function1;
+    check-cast p1, Ljava/util/List;
+
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment$onViewCreated$8;->this$0:Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment;)Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v0, "requireContext()"
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->countryList:Lde/rki/coronawarnapp/ui/view/CountryListView;
 
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "context"
-
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, L-$$LambdaGroup$ks$omPXWwFwvMbc2qS9AbtwJ-8dzxA;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, p1}, L-$$LambdaGroup$ks$omPXWwFwvMbc2qS9AbtwJ-8dzxA;-><init>(ILjava/lang/Object;)V
-
-    new-instance v3, L-$$LambdaGroup$ks$omPXWwFwvMbc2qS9AbtwJ-8dzxA;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v4, p1}, L-$$LambdaGroup$ks$omPXWwFwvMbc2qS9AbtwJ-8dzxA;-><init>(ILjava/lang/Object;)V
-
-    const-string p1, "onConsentGiven"
-
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "onConsentDeclined"
-
-    invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
-
-    const v5, 0x7f120165
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    sget-object v7, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    new-instance v8, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;
-
-    invoke-direct {v8, v1, v0}, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;-><init>(ILjava/lang/Object;)V
-
-    new-instance v9, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;
-
-    invoke-direct {v9, v4, v3}, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;-><init>(ILjava/lang/Object;)V
-
-    const v3, 0x7f12018e
-
-    const v4, 0x7f120184
-
-    const v5, 0x7f120167
-
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-
-    invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/ui/view/CountryListView;->setCountries(Ljava/util/List;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryOverviewFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryOverviewFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,89:1\n11#2,9:90\n16#3,11:99\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryOverviewFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment\n*L\n23#1,9:90\n24#1,11:99\n*E\n"
+    value = "SMAP\nContactDiaryOverviewFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryOverviewFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,120:1\n11#2,9:121\n16#3,11:130\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryOverviewFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment\n*L\n25#1,9:121\n26#1,11:130\n*E\n"
 .end annotation
 
 
@@ -18,8 +18,6 @@
 
 # instance fields
 .field public final binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
-
-.field public contactDiaryOverviewMenu:Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewMenu;
 
 .field public viewModelFactory:Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider$Factory;
 
@@ -42,7 +40,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -56,7 +54,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c0028
+    const v0, 0x7f0c002e
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -80,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -90,7 +88,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -100,232 +98,93 @@
 .end method
 
 .method public static final access$exportLocationsAndPersons(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;Ljava/lang/String;)V
-    .locals 9
+    .locals 5
 
-    const/4 v0, 0x0
+    if-eqz p0, :cond_1
 
-    if-eqz p0, :cond_9
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "exportLocationsAndPersons(exportString="
 
-    const-string v2, "exportLocationsAndPersons(exportString="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v1, 0x29
 
-    const/16 v2, 0x29
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v3, v2, [Ljava/lang/Object;
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v4, v1, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getComponentName()Landroid/content/ComponentName;
+
     move-result-object v1
 
-    if-eqz v1, :cond_8
+    new-instance v2, Landroidx/core/app/ShareCompat$IntentBuilder;
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getComponentName()Landroid/content/ComponentName;
+    invoke-direct {v2, v0, v1}, Landroidx/core/app/ShareCompat$IntentBuilder;-><init>(Landroid/content/Context;Landroid/content/ComponentName;)V
 
-    move-result-object v3
+    iget-object v1, v2, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
 
-    new-instance v4, Landroidx/core/app/ShareCompat$IntentBuilder;
+    const-string v3, "text/plain"
 
-    invoke-direct {v4, v1, v3}, Landroidx/core/app/ShareCompat$IntentBuilder;-><init>(Landroid/content/Context;Landroid/content/ComponentName;)V
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v3, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
+    const v1, 0x7f120090
 
-    const-string v5, "text/plain"
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v3, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    move-result-object v1
 
-    const v3, 0x7f120054
+    iget-object v3, v2, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
 
-    invoke-virtual {p0, v3}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
+    const-string v4, "android.intent.extra.SUBJECT"
 
-    move-result-object v3
+    invoke-virtual {v3, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v5, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
+    iget-object v1, v2, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
 
-    const-string v6, "android.intent.extra.SUBJECT"
+    const-string v3, "android.intent.extra.TEXT"
 
-    invoke-virtual {v5, v6, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    iget-object v3, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    const-string v5, "android.intent.extra.TEXT"
-
-    invoke-virtual {v3, v5, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mToAddresses:Ljava/util/ArrayList;
-
-    if-eqz p1, :cond_0
-
-    const-string v3, "android.intent.extra.EMAIL"
-
-    invoke-virtual {v4, v3, p1}, Landroidx/core/app/ShareCompat$IntentBuilder;->combineArrayExtra(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    iput-object v0, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mToAddresses:Ljava/util/ArrayList;
-
-    :cond_0
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mCcAddresses:Ljava/util/ArrayList;
-
-    if-eqz p1, :cond_1
-
-    const-string v3, "android.intent.extra.CC"
-
-    invoke-virtual {v4, v3, p1}, Landroidx/core/app/ShareCompat$IntentBuilder;->combineArrayExtra(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    iput-object v0, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mCcAddresses:Ljava/util/ArrayList;
-
-    :cond_1
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mBccAddresses:Ljava/util/ArrayList;
-
-    if-eqz p1, :cond_2
-
-    const-string v3, "android.intent.extra.BCC"
-
-    invoke-virtual {v4, v3, p1}, Landroidx/core/app/ShareCompat$IntentBuilder;->combineArrayExtra(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    iput-object v0, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mBccAddresses:Ljava/util/ArrayList;
-
-    :cond_2
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    const/4 v3, 0x1
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-le p1, v3, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    move v3, v2
-
-    :goto_0
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v2}, Landroidx/core/app/ShareCompat$IntentBuilder;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
 
-    const-string v5, "android.intent.action.SEND_MULTIPLE"
+    iget-object v1, v2, Landroidx/core/app/ShareCompat$IntentBuilder;->mChooserTitle:Ljava/lang/CharSequence;
 
-    invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    const-string v6, "android.intent.extra.STREAM"
-
-    if-nez v3, :cond_5
-
-    if-eqz p1, :cond_5
-
-    iget-object v7, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    const-string v8, "android.intent.action.SEND"
-
-    invoke-virtual {v7, v8}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v7, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    if-eqz v7, :cond_4
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v7
-
-    if-nez v7, :cond_4
-
-    iget-object v7, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    iget-object v8, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/os/Parcelable;
-
-    invoke-virtual {v7, v6, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    goto :goto_1
-
-    :cond_4
-    iget-object v2, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {v2, v6}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
-
-    :goto_1
-    iput-object v0, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    :cond_5
-    if-eqz v3, :cond_7
-
-    if-nez p1, :cond_7
-
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {p1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    if-eqz p1, :cond_6
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_6
-
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    iget-object v2, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mStreams:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v6, v2}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-
-    goto :goto_2
-
-    :cond_6
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {p1, v6}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
-
-    :cond_7
-    :goto_2
-    iget-object p1, v4, Landroidx/core/app/ShareCompat$IntentBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-static {p1, v0}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+    invoke-static {p1, v1}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object p1
 
-    const-string v0, "ShareCompat.IntentBuilde\u2026   .createChooserIntent()"
+    const-string v1, "ShareCompat.IntentBuilde\u2026   .createChooserIntent()"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "activity"
+    const-string v1, "activity"
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
@@ -333,15 +192,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->startActivity(Landroid/content/Intent;)V
 
-    :cond_8
+    :cond_0
     return-void
 
-    :cond_9
-    throw v0
+    :cond_1
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 .method public static final synthetic access$getVm$p(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel;
@@ -370,10 +231,30 @@
     return-object v0
 .end method
 
-.method public onDestroyView()V
-    .locals 0
+.method public onResume()V
+    .locals 3
 
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;->contentContainer:Landroid/widget/LinearLayout;
+
+    const/16 v1, 0x4000
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->sendAccessibilityEvent(I)V
 
     return-void
 .end method
@@ -387,51 +268,15 @@
 
     invoke-super {p0, p1, p2}, Landroidx/fragment/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    new-instance p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/ContactDiaryOverviewAdapter;
+    new-instance p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;
 
-    new-instance p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$adapter$1;
-
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$adapter$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)V
-
-    invoke-direct {p1, p2}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/ContactDiaryOverviewAdapter;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;-><init>()V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {p2, p0, v0}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
-
-    move-result-object p2
-
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;->contactDiaryOverviewHeader:Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBinding;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBinding;->contactDiaryHeaderOptionsMenu:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const v0, 0x7f120026
-
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$setupToolbar$$inlined$apply$lambda$1;
-
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$setupToolbar$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)V
-
-    invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
-
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
     aget-object v0, v0, v1
 
@@ -449,17 +294,29 @@
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;->contactDiaryOverviewHeader:Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBinding;
+    iget-object v0, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/IncludeContactDiaryOverviewHeaderBinding;->contactDiaryHeaderButtonBack:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
+    const-string v1, "toolbar"
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v1, 0x7f0d0001
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->inflateMenu(I)V
+
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$setupMenu$$inlined$apply$lambda$1;
+
+    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$setupMenu$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)V
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setOnMenuItemClickListener(Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;)V
+
+    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
 
     new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$$inlined$apply$lambda$1;
 
-    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/ContactDiaryOverviewAdapter;)V
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;)V
 
-    invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p2, v0}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->getVm()Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel;
 
@@ -469,9 +326,9 @@
 
     new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$2;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/ContactDiaryOverviewAdapter;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;)V
 
-    invoke-static {p2, p0, v0}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p2, p0, v0}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->getVm()Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel;
 
@@ -483,7 +340,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$3;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;->getVm()Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel;
 
@@ -495,7 +352,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$onViewCreated$4;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

@@ -134,7 +134,7 @@
 
     check-cast v1, Ljava/lang/Exception;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -148,7 +148,7 @@
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/KeyDownloadTool;
 
     :try_start_0
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -181,7 +181,7 @@
     check-cast v4, Lde/rki/coronawarnapp/diagnosiskeys/download/KeyDownloadTool;
 
     :try_start_1
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -197,7 +197,7 @@
     goto/16 :goto_3
 
     :cond_4
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_2
     iget-object v0, v8, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->path:Ljava/io/File;
@@ -264,7 +264,7 @@
 
     move-object/from16 v1, p2
 
-    invoke-static {v14, v15, v1, v9}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v14, v15, v1, v9}, Lcom/google/zxing/client/android/R$id;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
     :try_end_2
@@ -392,7 +392,7 @@
 
     iget-object v2, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 

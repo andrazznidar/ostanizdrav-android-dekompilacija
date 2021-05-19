@@ -20,7 +20,10 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent;",
+        "Ljava/util/List<",
+        "+",
+        "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+        ">;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -47,54 +50,34 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent;
+    check-cast p1, Ljava/util/List;
 
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent$ShowDeletionConfirmationDialog;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent$ShowDeletionConfirmationDialog;
+    const-string v0, "it"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;->deleteAllLocationsConfirmationDialog$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
-
-    invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
-
-    goto :goto_0
-
-    :cond_0
-    instance-of v0, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent$ShowLocationDetailSheet;
-
-    if-eqz v0, :cond_1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;
 
-    check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent$ShowLocationDetailSheet;
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;->listAdapter:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel$NavigationEvent$ShowLocationDetailSheet;->location:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragmentDirections$ActionContactDiaryEditLocationsFragmentToContactDiaryLocationBottomSheetDialogFragment;
+    invoke-static {v0, p1, v1}, Lcom/google/zxing/client/android/R$id;->update(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;Z)V
 
-    invoke-direct {v2, p1, v1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragmentDirections$ActionContactDiaryEditLocationsFragmentToContactDiaryLocationBottomSheetDialogFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;Ljava/lang/String;)V
-
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
-
-    :cond_1
-    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
+
+    :cond_0
+    const-string p1, "listAdapter"
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

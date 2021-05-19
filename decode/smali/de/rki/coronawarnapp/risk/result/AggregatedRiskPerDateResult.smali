@@ -91,6 +91,42 @@
     return p1
 .end method
 
+.method public final getDay()Lorg/joda/time/LocalDate;
+    .locals 4
+
+    sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ymd:Lorg/joda/time/format/DateTimeFormatter;
+
+    iget-wide v1, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->dateMillisSinceEpoch:J
+
+    new-instance v3, Lorg/joda/time/Instant;
+
+    invoke-direct {v3, v1, v2}, Lorg/joda/time/Instant;-><init>(J)V
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v3}, Lorg/joda/time/base/AbstractInstant;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, v3}, Lorg/joda/time/format/DateTimeFormatter;->print(Lorg/joda/time/ReadableInstant;)Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-static {v1, v0}, Lorg/joda/time/LocalDate;->parse(Ljava/lang/String;Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/LocalDate;
+
+    move-result-object v0
+
+    const-string v1, "LocalDate.parse(dateString, dateFormatter)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
 .method public hashCode()I
     .locals 2
 
@@ -138,7 +174,7 @@
 
     const-string v0, "AggregatedRiskPerDateResult(dateMillisSinceEpoch="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -170,7 +206,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.storage.TracingRepository$refreshDiagnosisKeys$1"
     f = "TracingRepository.kt"
     l = {
-        0x53
+        0x55
     }
     m = "invokeSuspend"
 .end annotation
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -116,7 +116,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -130,7 +130,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshDiagnosisKeys$1;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 
@@ -152,17 +152,19 @@
 
     const/4 v6, 0x0
 
-    const/4 v8, 0x4
+    const/4 v8, 0x0
+
+    const/16 v9, 0x14
 
     const-string v7, "TracingRepository.refreshDiagnosisKeys()"
 
     move-object v3, v1
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
     iput v2, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshDiagnosisKeys$1;->label:I
 
-    invoke-static {p1, v1, p0}, Landroidx/transition/ViewGroupUtilsApi14;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, p0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -176,7 +178,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/storage/TracingRepository;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
-    new-instance v6, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+    new-instance v7, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
     const-class v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
@@ -188,15 +190,17 @@
 
     const/4 v3, 0x0
 
-    const/4 v5, 0x6
+    const/4 v5, 0x0
+
+    const/16 v6, 0x16
 
     const-string v4, "TracingRepository.refreshDiagnosisKeys()"
 
-    move-object v0, v6
+    move-object v0, v7
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
-    invoke-virtual {p1, v6}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
+    invoke-virtual {p1, v7}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

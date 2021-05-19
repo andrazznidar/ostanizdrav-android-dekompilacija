@@ -200,7 +200,7 @@
 
     iget-object p1, p0, Lcom/journeyapps/barcodescanner/CaptureManager;->activity:Landroid/app/Activity;
 
-    sget v0, Lcom/google/zxing/client/android/R$string;->zxing_msg_camera_framework_bug:I
+    const v0, 0x7f12045d
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -215,7 +215,7 @@
 
     iget-object v1, p0, Lcom/journeyapps/barcodescanner/CaptureManager;->activity:Landroid/app/Activity;
 
-    sget v2, Lcom/google/zxing/client/android/R$string;->zxing_app_name:I
+    const v2, 0x7f12045b
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -225,7 +225,7 @@
 
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    sget p1, Lcom/google/zxing/client/android/R$string;->zxing_button_ok:I
+    const p1, 0x7f12045c
 
     new-instance v1, Lcom/journeyapps/barcodescanner/-$$Lambda$CaptureManager$UrwP2FzcBwpoYyNiiSM0MxY9Ds0;
 

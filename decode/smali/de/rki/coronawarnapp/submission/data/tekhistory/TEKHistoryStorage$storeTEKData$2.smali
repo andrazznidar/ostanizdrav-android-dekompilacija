@@ -115,7 +115,7 @@
     check-cast v5, Ljava/util/Iterator;
 
     :try_start_0
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -138,7 +138,7 @@
     throw v1
 
     :cond_1
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v2, v0, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage$storeTEKData$2;->$data:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage$TEKBatch;
 

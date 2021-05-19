@@ -136,15 +136,15 @@
     return p1
 .end method
 
-.method public onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIII)V
-    .locals 6
+.method public onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIIII[I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
             "TV;",
             "Landroid/view/View;",
-            "IIII)V"
+            "IIIII[I)V"
         }
     .end annotation
 
@@ -174,17 +174,17 @@
 
     iget p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->additionalHiddenOffsetY:I
 
-    add-int v2, p1, p3
+    add-int p6, p1, p3
 
-    const-wide/16 v3, 0xaf
+    const-wide/16 p7, 0xaf
 
-    sget-object v5, Lcom/google/android/material/animation/AnimationUtils;->FAST_OUT_LINEAR_IN_INTERPOLATOR:Landroid/animation/TimeInterpolator;
+    sget-object p9, Lcom/google/android/material/animation/AnimationUtils;->FAST_OUT_LINEAR_IN_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-    move-object v0, p0
+    move-object p4, p0
 
-    move-object v1, p2
+    move-object p5, p2
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->animateChildTo(Landroid/view/View;IJLandroid/animation/TimeInterpolator;)V
+    invoke-virtual/range {p4 .. p9}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->animateChildTo(Landroid/view/View;IJLandroid/animation/TimeInterpolator;)V
 
     goto :goto_0
 
@@ -211,24 +211,24 @@
     :cond_4
     iput p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->currentState:I
 
-    const/4 v2, 0x0
+    const/4 p6, 0x0
 
-    const-wide/16 v3, 0xe1
+    const-wide/16 p7, 0xe1
 
-    sget-object v5, Lcom/google/android/material/animation/AnimationUtils;->LINEAR_OUT_SLOW_IN_INTERPOLATOR:Landroid/animation/TimeInterpolator;
+    sget-object p9, Lcom/google/android/material/animation/AnimationUtils;->LINEAR_OUT_SLOW_IN_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-    move-object v0, p0
+    move-object p4, p0
 
-    move-object v1, p2
+    move-object p5, p2
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->animateChildTo(Landroid/view/View;IJLandroid/animation/TimeInterpolator;)V
+    invoke-virtual/range {p4 .. p9}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->animateChildTo(Landroid/view/View;IJLandroid/animation/TimeInterpolator;)V
 
     :cond_5
     :goto_0
     return-void
 .end method
 
-.method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
+.method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -237,7 +237,7 @@
             "TV;",
             "Landroid/view/View;",
             "Landroid/view/View;",
-            "I)Z"
+            "II)Z"
         }
     .end annotation
 

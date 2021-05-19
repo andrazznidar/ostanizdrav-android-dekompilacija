@@ -105,16 +105,6 @@
 
     iput v0, p0, Landroidx/appcompat/widget/SuggestionsAdapter;->mFlagsCol:I
 
-    iget-object v0, p0, Landroidx/cursoradapter/widget/CursorAdapter;->mContext:Landroid/content/Context;
-
-    const-string v1, "search"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/SearchManager;
-
     iput-object p2, p0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView:Landroidx/appcompat/widget/SearchView;
 
     iput-object p3, p0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
@@ -277,7 +267,7 @@
 
     move-result-object v10
 
-    sget v11, Landroidx/appcompat/R$attr;->textColorSearchUrl:I
+    const v11, 0x7f040360
 
     invoke-virtual {v10, v11, v9, v8}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -506,7 +496,7 @@
 
     const-string v12, " for "
 
-    invoke-static {v11, v13, v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v11, v13, v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
@@ -1655,7 +1645,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    sget p2, Landroidx/appcompat/R$id;->edit_query:I
+    const p2, 0x7f090199
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

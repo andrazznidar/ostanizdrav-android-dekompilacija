@@ -35,6 +35,28 @@
     return v0
 .end method
 
+.method public getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .locals 3
+
+    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
+
+    iget-object v1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
+
+    invoke-virtual {v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->getCollapsedSize()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
+
+    invoke-virtual {v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->getCollapsedSize()I
+
+    move-result v2
+
+    invoke-direct {v0, v1, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    return-object v0
+.end method
+
 .method public getWidth()I
     .locals 1
 

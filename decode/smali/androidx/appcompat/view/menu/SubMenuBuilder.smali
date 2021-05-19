@@ -182,6 +182,16 @@
     return v0
 .end method
 
+.method public setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/appcompat/view/menu/SubMenuBuilder;->mParentMenu:Landroidx/appcompat/view/menu/MenuBuilder;
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/view/menu/MenuBuilder;->setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+
+    return-void
+.end method
+
 .method public setGroupDividerEnabled(Z)V
     .locals 1
 

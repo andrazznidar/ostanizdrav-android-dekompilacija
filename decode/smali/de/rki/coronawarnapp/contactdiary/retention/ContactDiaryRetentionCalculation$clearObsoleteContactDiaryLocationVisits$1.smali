@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.contactdiary.retention.ContactDiaryRetentionCalculation"
     f = "ContactDiaryRetentionCalculation.kt"
     l = {
-        0x22,
-        0x27
+        0x28,
+        0x2c
     }
     m = "clearObsoleteContactDiaryLocationVisits"
 .end annotation

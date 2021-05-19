@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCWAViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWAViewModel.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModel\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,50:1\n1819#2,2:51\n*E\n*S KotlinDebug\n*F\n+ 1 CWAViewModel.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModel\n*L\n43#1,2:51\n*E\n"
+    value = "SMAP\nCWAViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWAViewModel.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModel\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,55:1\n1819#2,2:56\n*E\n*S KotlinDebug\n*F\n+ 1 CWAViewModel.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModel\n*L\n48#1,2:56\n*E\n"
 .end annotation
 
 
@@ -38,26 +38,37 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;",
-            "Ljava/util/List<",
-            "+",
-            "Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
+    .locals 0
 
-    const-string v0, "dispatcherProvider"
+    and-int/lit8 p2, p3, 0x1
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz p2, :cond_0
 
-    const-string v0, "childViewModels"
+    new-instance p1, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider;-><init>()V
+
+    :cond_0
+    and-int/lit8 p2, p3, 0x2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p2, 0x0
+
+    :goto_0
+    const-string p3, "dispatcherProvider"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p3, "childViewModels"
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
 
@@ -91,38 +102,9 @@
 
     new-array p2, p2, [Ljava/lang/Object;
 
-    const-string v0, "Initialized"
+    const-string p3, "Initialized"
 
-    invoke-virtual {p1, v0, p2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
-    .locals 0
-
-    and-int/lit8 p2, p3, 0x1
-
-    if-eqz p2, :cond_0
-
-    new-instance p1, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider;
-
-    invoke-direct {p1}, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider;-><init>()V
-
-    :cond_0
-    and-int/lit8 p2, p3, 0x2
-
-    if-eqz p2, :cond_1
-
-    sget-object p2, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p2, 0x0
-
-    :goto_0
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;)V
+    invoke-virtual {p1, p3, p2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -136,7 +118,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
@@ -181,7 +163,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
-    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getViewModelScope(Landroidx/lifecycle/ViewModel;)Lkotlinx/coroutines/CoroutineScope;
+    invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat;->getViewModelScope(Landroidx/lifecycle/ViewModel;)Lkotlinx/coroutines/CoroutineScope;
 
     move-result-object v1
 
@@ -195,7 +177,7 @@
 
     move-object v4, p2
 
-    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
     :try_end_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -216,6 +198,52 @@
 
     :goto_0
     return-void
+.end method
+
+.method public final launchInViewModel(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/Job;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "+TT;>;)",
+            "Lkotlinx/coroutines/Job;"
+        }
+    .end annotation
+
+    const-string v0, "$this$launchInViewModel"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat;->getViewModelScope(Landroidx/lifecycle/ViewModel;)Lkotlinx/coroutines/CoroutineScope;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+
+    invoke-interface {v1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v1
+
+    new-instance v2, Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-interface {v0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
+
+    invoke-static {p1, v2}, Lcom/google/zxing/client/android/R$id;->launchIn(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CoroutineScope;)Lkotlinx/coroutines/Job;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public onCleared()V

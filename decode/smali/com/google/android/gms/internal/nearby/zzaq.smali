@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzaq;
-.super Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;
+.super Lcom/google/android/gms/internal/nearby/zzdw;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
@@ -13,21 +13,28 @@
 
     iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzaq;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzdw;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onResult(Lcom/google/android/gms/common/api/Status;)V
-    .locals 2
+.method public final zzb(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/Status;",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;)V"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzaq;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
+    invoke-static {p1, p2, v0}, Lcom/airbnb/lottie/R$attr;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return-void
 .end method

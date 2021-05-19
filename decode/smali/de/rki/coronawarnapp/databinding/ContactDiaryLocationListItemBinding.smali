@@ -1,39 +1,30 @@
-.class public abstract Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
-.super Landroidx/databinding/ViewDataBinding;
+.class public final Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
+.super Ljava/lang/Object;
 .source "ContactDiaryLocationListItemBinding.java"
+
+# interfaces
+.implements Landroidx/viewbinding/ViewBinding;
 
 
 # instance fields
-.field public final contactDiaryLocationListLineIcon:Landroid/widget/ImageView;
+.field public final circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-.field public final contactDiaryLocationListLineName:Landroid/widget/TextView;
+.field public final durationInput:Landroid/widget/TextView;
+
+.field public final mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;Landroid/widget/FrameLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->contactDiaryLocationListLineIcon:Landroid/widget/ImageView;
+    iput-object p2, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->contactDiaryLocationListLineName:Landroid/widget/TextView;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
 
     return-void
-.end method
-
-.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
-    .locals 2
-
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
-
-    const v1, 0x7f0c0026
-
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
-
-    move-result-object p0
-
-    check-cast p0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
-
-    return-object p0
 .end method

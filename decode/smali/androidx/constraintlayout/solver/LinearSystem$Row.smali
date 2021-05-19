@@ -17,3 +17,12 @@
 # virtual methods
 .method public abstract addError(Landroidx/constraintlayout/solver/SolverVariable;)V
 .end method
+
+.method public abstract clear()V
+.end method
+
+.method public abstract getPivotCandidate(Landroidx/constraintlayout/solver/LinearSystem;[Z)Landroidx/constraintlayout/solver/SolverVariable;
+.end method
+
+.method public abstract isEmpty()Z
+.end method

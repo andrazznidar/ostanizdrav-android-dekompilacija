@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/internal/base/zab;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Landroid/os/IInterface;
@@ -31,6 +31,20 @@
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/gms/internal/base/zab;->zaa:Landroid/os/IBinder;
+
+    return-object v0
+.end method
+
+.method public final zaa()Landroid/os/Parcel;
+    .locals 2
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/base/zab;->zab:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     return-object v0
 .end method

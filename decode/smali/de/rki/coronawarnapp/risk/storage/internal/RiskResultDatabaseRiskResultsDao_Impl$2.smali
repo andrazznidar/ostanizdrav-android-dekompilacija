@@ -28,7 +28,7 @@
 .method public createQuery()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "DELETE FROM riskresults where id NOT IN (SELECT id from riskresults ORDER BY calculatedAt DESC LIMIT ?)"
+    const-string v0, "DELETE FROM riskresults where id NOT IN (SELECT id from riskresults ORDER BY monotonicId DESC LIMIT ?)"
 
     return-object v0
 .end method

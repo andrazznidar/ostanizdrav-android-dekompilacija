@@ -21,33 +21,6 @@
 
 
 # virtual methods
-.method public final cancelJobOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/RejectedExecutionException;)V
-    .locals 2
-
-    new-instance v0, Ljava/util/concurrent/CancellationException;
-
-    const-string v1, "The task was rejected"
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p2}, Ljava/util/concurrent/CancellationException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    sget-object p2, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
-
-    invoke-interface {p1, p2}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-
-    move-result-object p1
-
-    check-cast p1, Lkotlinx/coroutines/Job;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1, v0}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public close()V
     .locals 2
 
@@ -75,7 +48,7 @@
 .end method
 
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
-    .locals 1
+    .locals 3
 
     :try_start_0
     move-object v0, p0
@@ -93,7 +66,15 @@
     :catch_0
     move-exception v0
 
-    invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->cancelJobOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/RejectedExecutionException;)V
+    new-instance v1, Ljava/util/concurrent/CancellationException;
+
+    const-string v2, "The task was rejected"
+
+    invoke-direct {v1, v2}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CancellationException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    invoke-static {p1, v1}, Lcom/google/zxing/client/android/R$id;->cancel(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;)V
 
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
@@ -224,18 +205,24 @@
 
     invoke-interface {v1, p1, p3, p4, v2}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
-    move-result-object p1
+    move-result-object v0
     :try_end_0
     .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v0, p1
 
     goto :goto_0
 
     :catch_0
     move-exception p1
 
-    invoke-virtual {p0, p2, p1}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherBase;->cancelJobOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/RejectedExecutionException;)V
+    new-instance p3, Ljava/util/concurrent/CancellationException;
+
+    const-string p4, "The task was rejected"
+
+    invoke-direct {p3, p4}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p1}, Ljava/util/concurrent/CancellationException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    invoke-static {p2, p3}, Lcom/google/zxing/client/android/R$id;->cancel(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;)V
 
     :cond_1
     :goto_0

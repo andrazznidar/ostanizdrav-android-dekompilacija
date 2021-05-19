@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public call()Ljava/lang/Object;
-    .locals 5
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -63,37 +63,57 @@
     :try_start_0
     const-string v1, "locationId"
 
-    invoke-static {v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
 
     const-string v2, "locationName"
 
-    invoke-static {v0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+    const-string v4, "phoneNumber"
+
+    invoke-static {v0, v4}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    const-string v5, "emailAddress"
+
+    invoke-static {v0, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v3
+    move-result-wide v8
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v10
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+    invoke-interface {v0, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    invoke-direct {v2, v3, v4, v1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;)V
+    move-result-object v11
+
+    invoke-interface {v0, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+
+    move-object v7, v3
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-object v3, v2
 
     :cond_0
     invoke-interface {v0}, Landroid/database/Cursor;->close()V

@@ -93,26 +93,24 @@
 .method public static at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
     .locals 2
 
-    sget v0, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I
+    const v0, 0x7f090507
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
+    check-cast v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    new-instance v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
+    new-instance v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
 
-    invoke-direct {v0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;-><init>()V
+    invoke-direct {v1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;-><init>()V
 
-    sget v1, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I
-
-    invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     :cond_0
-    return-object v0
+    return-object v1
 .end method
 
 
@@ -186,7 +184,7 @@
 .method public final onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
     .locals 4
 
-    sget v0, Landroidx/core/R$id;->tag_unhandled_key_listeners:I
+    const v0, 0x7f090508
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

@@ -14,6 +14,24 @@
 
 
 # virtual methods
+.method public getAsBoolean()Z
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public getAsJsonObject()Lcom/google/gson/JsonObject;
     .locals 3
 

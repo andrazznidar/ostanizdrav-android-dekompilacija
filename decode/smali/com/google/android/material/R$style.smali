@@ -3,1342 +3,10786 @@
 
 
 # static fields
-.field public static final AlertDialog_AppCompat:I = 0x7f130000
+.field public static a:Lcom/google/android/play/core/assetpacks/br;
 
-.field public static final AlertDialog_AppCompat_Light:I = 0x7f130001
 
-.field public static final Animation_AppCompat_Dialog:I = 0x7f130002
+# direct methods
+.method public static a(Ljava/util/List;)Ljava/lang/String;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/io/File;",
+            ">;)",
+            "Ljava/lang/String;"
+        }
+    .end annotation
 
-.field public static final Animation_AppCompat_DropDownUp:I = 0x7f130003
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/NoSuchAlgorithmException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-.field public static final Animation_AppCompat_Tooltip:I = 0x7f130004
+    const-string v0, "SHA256"
 
-.field public static final Animation_Design_BottomSheetDialog:I = 0x7f130005
+    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-.field public static final Animation_MaterialComponents_BottomSheetDialog:I = 0x7f130006
+    move-result-object v0
 
-.field public static final Base_AlertDialog_AppCompat:I = 0x7f13000f
+    const/16 v1, 0x2000
 
-.field public static final Base_AlertDialog_AppCompat_Light:I = 0x7f130010
+    new-array v1, v1, [B
 
-.field public static final Base_Animation_AppCompat_Dialog:I = 0x7f130011
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-.field public static final Base_Animation_AppCompat_DropDownUp:I = 0x7f130012
+    move-result-object p0
 
-.field public static final Base_Animation_AppCompat_Tooltip:I = 0x7f130013
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static final Base_CardView:I = 0x7f130014
+    move-result v2
 
-.field public static final Base_DialogWindowTitleBackground_AppCompat:I = 0x7f130016
+    if-eqz v2, :cond_2
 
-.field public static final Base_DialogWindowTitle_AppCompat:I = 0x7f130015
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static final Base_MaterialAlertDialog_MaterialComponents_Title_Icon:I = 0x7f130017
+    move-result-object v2
 
-.field public static final Base_MaterialAlertDialog_MaterialComponents_Title_Panel:I = 0x7f130018
+    check-cast v2, Ljava/io/File;
 
-.field public static final Base_MaterialAlertDialog_MaterialComponents_Title_Text:I = 0x7f130019
+    new-instance v3, Ljava/io/FileInputStream;
 
-.field public static final Base_TextAppearance_AppCompat:I = 0x7f13001a
+    invoke-direct {v3, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-.field public static final Base_TextAppearance_AppCompat_Body1:I = 0x7f13001b
+    :cond_0
+    :try_start_0
+    invoke-virtual {v3, v1}, Ljava/io/InputStream;->read([B)I
 
-.field public static final Base_TextAppearance_AppCompat_Body2:I = 0x7f13001c
+    move-result v2
 
-.field public static final Base_TextAppearance_AppCompat_Button:I = 0x7f13001d
+    if-lez v2, :cond_1
 
-.field public static final Base_TextAppearance_AppCompat_Caption:I = 0x7f13001e
+    const/4 v4, 0x0
 
-.field public static final Base_TextAppearance_AppCompat_Display1:I = 0x7f13001f
+    invoke-virtual {v0, v1, v4, v2}, Ljava/security/MessageDigest;->update([BII)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.field public static final Base_TextAppearance_AppCompat_Display2:I = 0x7f130020
+    :cond_1
+    const/4 v4, -0x1
 
-.field public static final Base_TextAppearance_AppCompat_Display3:I = 0x7f130021
+    if-ne v2, v4, :cond_0
 
-.field public static final Base_TextAppearance_AppCompat_Display4:I = 0x7f130022
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
 
-.field public static final Base_TextAppearance_AppCompat_Headline:I = 0x7f130023
+    goto :goto_0
 
-.field public static final Base_TextAppearance_AppCompat_Inverse:I = 0x7f130024
+    :catchall_0
+    move-exception p0
 
-.field public static final Base_TextAppearance_AppCompat_Large:I = 0x7f130025
+    :try_start_1
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-.field public static final Base_TextAppearance_AppCompat_Large_Inverse:I = 0x7f130026
+    goto :goto_1
 
-.field public static final Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large:I = 0x7f130027
+    :catchall_1
+    move-exception v0
 
-.field public static final Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small:I = 0x7f130028
+    sget-object v1, Lcom/google/android/play/core/internal/cj;->a:Lcom/google/android/play/core/internal/cd;
 
-.field public static final Base_TextAppearance_AppCompat_Medium:I = 0x7f130029
+    invoke-virtual {v1, p0, v0}, Lcom/google/android/play/core/internal/cd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-.field public static final Base_TextAppearance_AppCompat_Medium_Inverse:I = 0x7f13002a
+    :goto_1
+    throw p0
 
-.field public static final Base_TextAppearance_AppCompat_Menu:I = 0x7f13002b
+    :cond_2
+    invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
 
-.field public static final Base_TextAppearance_AppCompat_SearchResult:I = 0x7f13002c
+    move-result-object p0
 
-.field public static final Base_TextAppearance_AppCompat_SearchResult_Subtitle:I = 0x7f13002d
+    const/16 v0, 0xb
 
-.field public static final Base_TextAppearance_AppCompat_SearchResult_Title:I = 0x7f13002e
+    invoke-static {p0, v0}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
-.field public static final Base_TextAppearance_AppCompat_Small:I = 0x7f13002f
+    move-result-object p0
 
-.field public static final Base_TextAppearance_AppCompat_Small_Inverse:I = 0x7f130030
+    return-object p0
+.end method
 
-.field public static final Base_TextAppearance_AppCompat_Subhead:I = 0x7f130031
+.method public static access$1000(BBBB[CI)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
 
-.field public static final Base_TextAppearance_AppCompat_Subhead_Inverse:I = 0x7f130032
+    invoke-static {p1}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_TextAppearance_AppCompat_Title:I = 0x7f130033
+    move-result v0
 
-.field public static final Base_TextAppearance_AppCompat_Title_Inverse:I = 0x7f130034
+    if-nez v0, :cond_0
 
-.field public static final Base_TextAppearance_AppCompat_Tooltip:I = 0x7f130035
+    shl-int/lit8 v0, p0, 0x1c
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionBar_Menu:I = 0x7f130036
+    add-int/lit8 v1, p1, 0x70
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle:I = 0x7f130037
+    add-int/2addr v1, v0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse:I = 0x7f130038
+    shr-int/lit8 v0, v1, 0x1e
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionBar_Title:I = 0x7f130039
+    if-nez v0, :cond_0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse:I = 0x7f13003a
+    invoke-static {p2}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle:I = 0x7f13003b
+    move-result v0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_ActionMode_Title:I = 0x7f13003c
+    if-nez v0, :cond_0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_Button:I = 0x7f13003d
+    invoke-static {p3}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored:I = 0x7f13003e
+    move-result v0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_Button_Colored:I = 0x7f13003f
+    if-nez v0, :cond_0
 
-.field public static final Base_TextAppearance_AppCompat_Widget_Button_Inverse:I = 0x7f130040
+    and-int/lit8 p0, p0, 0x7
 
-.field public static final Base_TextAppearance_AppCompat_Widget_DropDownItem:I = 0x7f130041
+    shl-int/lit8 p0, p0, 0x12
 
-.field public static final Base_TextAppearance_AppCompat_Widget_PopupMenu_Header:I = 0x7f130042
+    and-int/lit8 p1, p1, 0x3f
 
-.field public static final Base_TextAppearance_AppCompat_Widget_PopupMenu_Large:I = 0x7f130043
+    shl-int/lit8 p1, p1, 0xc
 
-.field public static final Base_TextAppearance_AppCompat_Widget_PopupMenu_Small:I = 0x7f130044
+    or-int/2addr p0, p1
 
-.field public static final Base_TextAppearance_AppCompat_Widget_Switch:I = 0x7f130045
+    and-int/lit8 p1, p2, 0x3f
 
-.field public static final Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem:I = 0x7f130046
+    shl-int/lit8 p1, p1, 0x6
 
-.field public static final Base_TextAppearance_MaterialComponents_Badge:I = 0x7f130047
+    or-int/2addr p0, p1
 
-.field public static final Base_TextAppearance_MaterialComponents_Button:I = 0x7f130048
+    and-int/lit8 p1, p3, 0x3f
 
-.field public static final Base_TextAppearance_MaterialComponents_Headline6:I = 0x7f130049
+    or-int/2addr p0, p1
 
-.field public static final Base_TextAppearance_MaterialComponents_Subtitle2:I = 0x7f13004a
+    ushr-int/lit8 p1, p0, 0xa
 
-.field public static final Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item:I = 0x7f13004b
+    const p2, 0xd7c0
 
-.field public static final Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle:I = 0x7f13004c
+    add-int/2addr p1, p2
 
-.field public static final Base_TextAppearance_Widget_AppCompat_Toolbar_Title:I = 0x7f13004d
+    int-to-char p1, p1
 
-.field public static final Base_ThemeOverlay_AppCompat:I = 0x7f13006f
+    aput-char p1, p4, p5
 
-.field public static final Base_ThemeOverlay_AppCompat_ActionBar:I = 0x7f130070
+    add-int/lit8 p5, p5, 0x1
 
-.field public static final Base_ThemeOverlay_AppCompat_Dark:I = 0x7f130071
+    and-int/lit16 p0, p0, 0x3ff
 
-.field public static final Base_ThemeOverlay_AppCompat_Dark_ActionBar:I = 0x7f130072
+    const p1, 0xdc00
 
-.field public static final Base_ThemeOverlay_AppCompat_Dialog:I = 0x7f130073
+    add-int/2addr p0, p1
 
-.field public static final Base_ThemeOverlay_AppCompat_Dialog_Alert:I = 0x7f130074
+    int-to-char p0, p0
 
-.field public static final Base_ThemeOverlay_AppCompat_Light:I = 0x7f130075
+    aput-char p0, p4, p5
 
-.field public static final Base_ThemeOverlay_MaterialComponents_Dialog:I = 0x7f130076
+    return-void
 
-.field public static final Base_ThemeOverlay_MaterialComponents_Dialog_Alert:I = 0x7f130077
+    :cond_0
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
-.field public static final Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog:I = 0x7f130078
+    move-result-object p0
 
-.field public static final Base_Theme_AppCompat:I = 0x7f13004e
+    throw p0
+.end method
 
-.field public static final Base_Theme_AppCompat_CompactMenu:I = 0x7f13004f
+.method public static access$400(B)Z
+    .locals 0
 
-.field public static final Base_Theme_AppCompat_Dialog:I = 0x7f130050
+    if-ltz p0, :cond_0
 
-.field public static final Base_Theme_AppCompat_DialogWhenLarge:I = 0x7f130054
+    const/4 p0, 0x1
 
-.field public static final Base_Theme_AppCompat_Dialog_Alert:I = 0x7f130051
+    goto :goto_0
 
-.field public static final Base_Theme_AppCompat_Dialog_FixedSize:I = 0x7f130052
+    :cond_0
+    const/4 p0, 0x0
 
-.field public static final Base_Theme_AppCompat_Dialog_MinWidth:I = 0x7f130053
+    :goto_0
+    return p0
+.end method
 
-.field public static final Base_Theme_AppCompat_Light:I = 0x7f130055
+.method public static access$600(B)Z
+    .locals 1
 
-.field public static final Base_Theme_AppCompat_Light_DarkActionBar:I = 0x7f130056
+    const/16 v0, -0x20
 
-.field public static final Base_Theme_AppCompat_Light_Dialog:I = 0x7f130057
+    if-ge p0, v0, :cond_0
 
-.field public static final Base_Theme_AppCompat_Light_DialogWhenLarge:I = 0x7f13005b
+    const/4 p0, 0x1
 
-.field public static final Base_Theme_AppCompat_Light_Dialog_Alert:I = 0x7f130058
+    goto :goto_0
 
-.field public static final Base_Theme_AppCompat_Light_Dialog_FixedSize:I = 0x7f130059
+    :cond_0
+    const/4 p0, 0x0
 
-.field public static final Base_Theme_AppCompat_Light_Dialog_MinWidth:I = 0x7f13005a
+    :goto_0
+    return p0
+.end method
 
-.field public static final Base_Theme_MaterialComponents:I = 0x7f13005c
+.method public static access$700(BB[CI)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
 
-.field public static final Base_Theme_MaterialComponents_Bridge:I = 0x7f13005d
+    const/16 v0, -0x3e
 
-.field public static final Base_Theme_MaterialComponents_CompactMenu:I = 0x7f13005e
+    if-lt p0, v0, :cond_0
 
-.field public static final Base_Theme_MaterialComponents_Dialog:I = 0x7f13005f
+    invoke-static {p1}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_Theme_MaterialComponents_DialogWhenLarge:I = 0x7f130064
+    move-result v0
 
-.field public static final Base_Theme_MaterialComponents_Dialog_Alert:I = 0x7f130060
+    if-nez v0, :cond_0
 
-.field public static final Base_Theme_MaterialComponents_Dialog_Bridge:I = 0x7f130061
+    and-int/lit8 p0, p0, 0x1f
 
-.field public static final Base_Theme_MaterialComponents_Dialog_FixedSize:I = 0x7f130062
+    shl-int/lit8 p0, p0, 0x6
 
-.field public static final Base_Theme_MaterialComponents_Dialog_MinWidth:I = 0x7f130063
+    and-int/lit8 p1, p1, 0x3f
 
-.field public static final Base_Theme_MaterialComponents_Light:I = 0x7f130065
+    or-int/2addr p0, p1
 
-.field public static final Base_Theme_MaterialComponents_Light_Bridge:I = 0x7f130066
+    int-to-char p0, p0
 
-.field public static final Base_Theme_MaterialComponents_Light_DarkActionBar:I = 0x7f130067
+    aput-char p0, p2, p3
 
-.field public static final Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge:I = 0x7f130068
+    return-void
 
-.field public static final Base_Theme_MaterialComponents_Light_Dialog:I = 0x7f130069
+    :cond_0
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
-.field public static final Base_Theme_MaterialComponents_Light_DialogWhenLarge:I = 0x7f13006e
+    move-result-object p0
 
-.field public static final Base_Theme_MaterialComponents_Light_Dialog_Alert:I = 0x7f13006a
+    throw p0
+.end method
 
-.field public static final Base_Theme_MaterialComponents_Light_Dialog_Bridge:I = 0x7f13006b
+.method public static access$800(B)Z
+    .locals 1
 
-.field public static final Base_Theme_MaterialComponents_Light_Dialog_FixedSize:I = 0x7f13006c
+    const/16 v0, -0x10
 
-.field public static final Base_Theme_MaterialComponents_Light_Dialog_MinWidth:I = 0x7f13006d
+    if-ge p0, v0, :cond_0
 
-.field public static final Base_V14_ThemeOverlay_MaterialComponents_Dialog:I = 0x7f130082
+    const/4 p0, 0x1
 
-.field public static final Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert:I = 0x7f130083
+    goto :goto_0
 
-.field public static final Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog:I = 0x7f130084
+    :cond_0
+    const/4 p0, 0x0
 
-.field public static final Base_V14_Theme_MaterialComponents:I = 0x7f130079
+    :goto_0
+    return p0
+.end method
 
-.field public static final Base_V14_Theme_MaterialComponents_Bridge:I = 0x7f13007a
+.method public static access$900(BBB[CI)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
 
-.field public static final Base_V14_Theme_MaterialComponents_Dialog:I = 0x7f13007b
+    invoke-static {p1}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_V14_Theme_MaterialComponents_Dialog_Bridge:I = 0x7f13007c
+    move-result v0
 
-.field public static final Base_V14_Theme_MaterialComponents_Light:I = 0x7f13007d
+    if-nez v0, :cond_2
 
-.field public static final Base_V14_Theme_MaterialComponents_Light_Bridge:I = 0x7f13007e
+    const/16 v0, -0x20
 
-.field public static final Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge:I = 0x7f13007f
+    const/16 v1, -0x60
 
-.field public static final Base_V14_Theme_MaterialComponents_Light_Dialog:I = 0x7f130080
+    if-ne p0, v0, :cond_0
 
-.field public static final Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge:I = 0x7f130081
+    if-lt p1, v1, :cond_2
 
-.field public static final Base_V21_ThemeOverlay_AppCompat_Dialog:I = 0x7f130089
+    :cond_0
+    const/16 v0, -0x13
 
-.field public static final Base_V21_Theme_AppCompat:I = 0x7f130085
+    if-ne p0, v0, :cond_1
 
-.field public static final Base_V21_Theme_AppCompat_Dialog:I = 0x7f130086
+    if-ge p1, v1, :cond_2
 
-.field public static final Base_V21_Theme_AppCompat_Light:I = 0x7f130087
+    :cond_1
+    invoke-static {p2}, Lcom/google/android/material/R$style;->isNotTrailingByte(B)Z
 
-.field public static final Base_V21_Theme_AppCompat_Light_Dialog:I = 0x7f130088
+    move-result v0
 
-.field public static final Base_V22_Theme_AppCompat:I = 0x7f13008a
+    if-nez v0, :cond_2
 
-.field public static final Base_V22_Theme_AppCompat_Light:I = 0x7f13008b
+    and-int/lit8 p0, p0, 0xf
 
-.field public static final Base_V23_Theme_AppCompat:I = 0x7f13008c
+    shl-int/lit8 p0, p0, 0xc
 
-.field public static final Base_V23_Theme_AppCompat_Light:I = 0x7f13008d
+    and-int/lit8 p1, p1, 0x3f
 
-.field public static final Base_V26_Theme_AppCompat:I = 0x7f13008e
+    shl-int/lit8 p1, p1, 0x6
 
-.field public static final Base_V26_Theme_AppCompat_Light:I = 0x7f13008f
+    or-int/2addr p0, p1
 
-.field public static final Base_V26_Widget_AppCompat_Toolbar:I = 0x7f130090
+    and-int/lit8 p1, p2, 0x3f
 
-.field public static final Base_V28_Theme_AppCompat:I = 0x7f130091
+    or-int/2addr p0, p1
 
-.field public static final Base_V28_Theme_AppCompat_Light:I = 0x7f130092
+    int-to-char p0, p0
 
-.field public static final Base_V7_ThemeOverlay_AppCompat_Dialog:I = 0x7f130097
+    aput-char p0, p3, p4
 
-.field public static final Base_V7_Theme_AppCompat:I = 0x7f130093
+    return-void
 
-.field public static final Base_V7_Theme_AppCompat_Dialog:I = 0x7f130094
+    :cond_2
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
-.field public static final Base_V7_Theme_AppCompat_Light:I = 0x7f130095
+    move-result-object p0
 
-.field public static final Base_V7_Theme_AppCompat_Light_Dialog:I = 0x7f130096
+    throw p0
+.end method
 
-.field public static final Base_V7_Widget_AppCompat_AutoCompleteTextView:I = 0x7f130098
+.method public static await(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
+    .locals 4
+    .param p0    # Lcom/google/android/play/core/tasks/m;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<ResultT:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/android/play/core/tasks/m<",
+            "TResultT;>;)TResultT;"
+        }
+    .end annotation
 
-.field public static final Base_V7_Widget_AppCompat_EditText:I = 0x7f130099
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
-.field public static final Base_V7_Widget_AppCompat_Toolbar:I = 0x7f13009a
+    const-string v0, "Task must not be null"
 
-.field public static final Base_Widget_AppCompat_ActionBar:I = 0x7f13009b
+    if-eqz p0, :cond_1
 
-.field public static final Base_Widget_AppCompat_ActionBar_Solid:I = 0x7f13009c
+    iget-object v1, p0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
 
-.field public static final Base_Widget_AppCompat_ActionBar_TabBar:I = 0x7f13009d
+    monitor-enter v1
 
-.field public static final Base_Widget_AppCompat_ActionBar_TabText:I = 0x7f13009e
+    :try_start_0
+    iget-boolean v0, p0, Lcom/google/android/play/core/tasks/m;->c:Z
 
-.field public static final Base_Widget_AppCompat_ActionBar_TabView:I = 0x7f13009f
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.field public static final Base_Widget_AppCompat_ActionButton:I = 0x7f1300a0
+    if-eqz v0, :cond_0
 
-.field public static final Base_Widget_AppCompat_ActionButton_CloseMode:I = 0x7f1300a1
+    invoke-static {p0}, Lcom/google/android/material/R$style;->c(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
 
-.field public static final Base_Widget_AppCompat_ActionButton_Overflow:I = 0x7f1300a2
+    move-result-object p0
 
-.field public static final Base_Widget_AppCompat_ActionMode:I = 0x7f1300a3
+    return-object p0
 
-.field public static final Base_Widget_AppCompat_ActivityChooserView:I = 0x7f1300a4
+    :cond_0
+    new-instance v0, Lcom/google/android/play/core/tasks/n;
 
-.field public static final Base_Widget_AppCompat_AutoCompleteTextView:I = 0x7f1300a5
+    const/4 v1, 0x0
 
-.field public static final Base_Widget_AppCompat_Button:I = 0x7f1300a6
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/tasks/n;-><init>([B)V
 
-.field public static final Base_Widget_AppCompat_ButtonBar:I = 0x7f1300ac
+    sget-object v1, Lcom/google/android/play/core/tasks/TaskExecutors;->a:Ljava/util/concurrent/Executor;
 
-.field public static final Base_Widget_AppCompat_ButtonBar_AlertDialog:I = 0x7f1300ad
+    iget-object v2, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-.field public static final Base_Widget_AppCompat_Button_Borderless:I = 0x7f1300a7
+    new-instance v3, Lcom/google/android/play/core/tasks/f;
 
-.field public static final Base_Widget_AppCompat_Button_Borderless_Colored:I = 0x7f1300a8
+    invoke-direct {v3, v1, v0}, Lcom/google/android/play/core/tasks/f;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/play/core/tasks/OnSuccessListener;)V
 
-.field public static final Base_Widget_AppCompat_Button_ButtonBar_AlertDialog:I = 0x7f1300a9
+    invoke-virtual {v2, v3}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/g;)V
 
-.field public static final Base_Widget_AppCompat_Button_Colored:I = 0x7f1300aa
+    invoke-virtual {p0}, Lcom/google/android/play/core/tasks/m;->g()V
 
-.field public static final Base_Widget_AppCompat_Button_Small:I = 0x7f1300ab
+    sget-object v1, Lcom/google/android/play/core/tasks/TaskExecutors;->a:Ljava/util/concurrent/Executor;
 
-.field public static final Base_Widget_AppCompat_CompoundButton_CheckBox:I = 0x7f1300ae
+    iget-object v2, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-.field public static final Base_Widget_AppCompat_CompoundButton_RadioButton:I = 0x7f1300af
+    new-instance v3, Lcom/google/android/play/core/tasks/d;
 
-.field public static final Base_Widget_AppCompat_CompoundButton_Switch:I = 0x7f1300b0
+    invoke-direct {v3, v1, v0}, Lcom/google/android/play/core/tasks/d;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/play/core/tasks/OnFailureListener;)V
 
-.field public static final Base_Widget_AppCompat_DrawerArrowToggle:I = 0x7f1300b1
+    invoke-virtual {v2, v3}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/g;)V
 
-.field public static final Base_Widget_AppCompat_DrawerArrowToggle_Common:I = 0x7f1300b2
+    invoke-virtual {p0}, Lcom/google/android/play/core/tasks/m;->g()V
 
-.field public static final Base_Widget_AppCompat_DropDownItem_Spinner:I = 0x7f1300b3
+    iget-object v0, v0, Lcom/google/android/play/core/tasks/n;->a:Ljava/util/concurrent/CountDownLatch;
 
-.field public static final Base_Widget_AppCompat_EditText:I = 0x7f1300b4
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
 
-.field public static final Base_Widget_AppCompat_ImageButton:I = 0x7f1300b5
+    invoke-static {p0}, Lcom/google/android/material/R$style;->c(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar:I = 0x7f1300b6
+    move-result-object p0
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar_Solid:I = 0x7f1300b7
+    return-object p0
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar_TabBar:I = 0x7f1300b8
+    :catchall_0
+    move-exception p0
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar_TabText:I = 0x7f1300b9
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse:I = 0x7f1300ba
+    throw p0
 
-.field public static final Base_Widget_AppCompat_Light_ActionBar_TabView:I = 0x7f1300bb
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
 
-.field public static final Base_Widget_AppCompat_Light_PopupMenu:I = 0x7f1300bc
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-.field public static final Base_Widget_AppCompat_Light_PopupMenu_Overflow:I = 0x7f1300bd
+    throw p0
+.end method
 
-.field public static final Base_Widget_AppCompat_ListMenuView:I = 0x7f1300be
+.method public static b(Ljava/io/File;)Ljava/lang/String;
+    .locals 3
 
-.field public static final Base_Widget_AppCompat_ListPopupWindow:I = 0x7f1300bf
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-.field public static final Base_Widget_AppCompat_ListView:I = 0x7f1300c0
+    move-result-object v0
 
-.field public static final Base_Widget_AppCompat_ListView_DropDown:I = 0x7f1300c1
+    const-string v1, ".apk"
 
-.field public static final Base_Widget_AppCompat_ListView_Menu:I = 0x7f1300c2
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-.field public static final Base_Widget_AppCompat_PopupMenu:I = 0x7f1300c3
+    move-result v0
 
-.field public static final Base_Widget_AppCompat_PopupMenu_Overflow:I = 0x7f1300c4
+    if-eqz v0, :cond_2
 
-.field public static final Base_Widget_AppCompat_PopupWindow:I = 0x7f1300c5
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-.field public static final Base_Widget_AppCompat_ProgressBar:I = 0x7f1300c6
+    move-result-object p0
 
-.field public static final Base_Widget_AppCompat_ProgressBar_Horizontal:I = 0x7f1300c7
+    const-string v0, "(_\\d+)?\\.apk"
 
-.field public static final Base_Widget_AppCompat_RatingBar:I = 0x7f1300c8
+    const-string v1, ""
 
-.field public static final Base_Widget_AppCompat_RatingBar_Indicator:I = 0x7f1300c9
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-.field public static final Base_Widget_AppCompat_RatingBar_Small:I = 0x7f1300ca
+    move-result-object p0
 
-.field public static final Base_Widget_AppCompat_SearchView:I = 0x7f1300cb
+    const-string v0, "base-master"
 
-.field public static final Base_Widget_AppCompat_SearchView_ActionBar:I = 0x7f1300cc
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-.field public static final Base_Widget_AppCompat_SeekBar:I = 0x7f1300cd
+    move-result v0
 
-.field public static final Base_Widget_AppCompat_SeekBar_Discrete:I = 0x7f1300ce
+    if-eqz v0, :cond_0
 
-.field public static final Base_Widget_AppCompat_Spinner:I = 0x7f1300cf
+    return-object v1
 
-.field public static final Base_Widget_AppCompat_Spinner_Underlined:I = 0x7f1300d0
+    :cond_0
+    const-string v0, "base-"
 
-.field public static final Base_Widget_AppCompat_TextView:I = 0x7f1300d1
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-.field public static final Base_Widget_AppCompat_TextView_SpinnerItem:I = 0x7f1300d2
+    move-result v2
 
-.field public static final Base_Widget_AppCompat_Toolbar:I = 0x7f1300d3
+    if-eqz v2, :cond_1
 
-.field public static final Base_Widget_AppCompat_Toolbar_Button_Navigation:I = 0x7f1300d4
+    const-string v1, "config."
 
-.field public static final Base_Widget_Design_TabLayout:I = 0x7f1300d5
+    :goto_0
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-.field public static final Base_Widget_MaterialComponents_AutoCompleteTextView:I = 0x7f1300d6
+    move-result-object p0
 
-.field public static final Base_Widget_MaterialComponents_CheckedTextView:I = 0x7f1300d7
+    return-object p0
 
-.field public static final Base_Widget_MaterialComponents_Chip:I = 0x7f1300d8
+    :cond_1
+    const-string v0, "-"
 
-.field public static final Base_Widget_MaterialComponents_PopupMenu:I = 0x7f1300d9
+    const-string v2, ".config."
 
-.field public static final Base_Widget_MaterialComponents_PopupMenu_ContextMenu:I = 0x7f1300da
+    invoke-virtual {p0, v0, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-.field public static final Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow:I = 0x7f1300db
+    move-result-object p0
 
-.field public static final Base_Widget_MaterialComponents_PopupMenu_Overflow:I = 0x7f1300dc
+    const-string v0, ".config.master"
 
-.field public static final Base_Widget_MaterialComponents_TextInputEditText:I = 0x7f1300dd
+    goto :goto_0
 
-.field public static final Base_Widget_MaterialComponents_TextInputLayout:I = 0x7f1300de
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.field public static final Base_Widget_MaterialComponents_TextView:I = 0x7f1300df
+    const-string v0, "Non-apk found in splits directory."
 
-.field public static final CardView:I = 0x7f1300e0
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.field public static final CardView_Dark:I = 0x7f1300e1
+    throw p0
+.end method
 
-.field public static final CardView_Light:I = 0x7f1300e2
+.method public static badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
+    .locals 4
 
-.field public static final EmptyTheme:I = 0x7f1300e3
+    const/4 v0, 0x1
 
-.field public static final MaterialAlertDialog_MaterialComponents:I = 0x7f1300e4
+    const/4 v1, 0x0
 
-.field public static final MaterialAlertDialog_MaterialComponents_Body_Text:I = 0x7f1300e5
+    const/4 v2, 0x2
 
-.field public static final MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar:I = 0x7f1300e6
+    if-gez p0, :cond_0
 
-.field public static final MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner:I = 0x7f1300e7
+    new-array p1, v2, [Ljava/lang/Object;
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Icon:I = 0x7f1300e8
+    aput-object p2, p1, v1
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked:I = 0x7f1300e9
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Panel:I = 0x7f1300ea
+    move-result-object p0
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked:I = 0x7f1300eb
+    aput-object p0, p1, v0
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Text:I = 0x7f1300ec
+    const-string p0, "%s (%s) must not be negative"
 
-.field public static final MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked:I = 0x7f1300ed
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final Platform_AppCompat:I = 0x7f1300f0
+    move-result-object p0
 
-.field public static final Platform_AppCompat_Light:I = 0x7f1300f1
+    return-object p0
 
-.field public static final Platform_MaterialComponents:I = 0x7f1300f2
+    :cond_0
+    if-ltz p1, :cond_1
 
-.field public static final Platform_MaterialComponents_Dialog:I = 0x7f1300f3
+    const/4 v3, 0x3
 
-.field public static final Platform_MaterialComponents_Light:I = 0x7f1300f4
+    new-array v3, v3, [Ljava/lang/Object;
 
-.field public static final Platform_MaterialComponents_Light_Dialog:I = 0x7f1300f5
+    aput-object p2, v3, v1
 
-.field public static final Platform_ThemeOverlay_AppCompat:I = 0x7f1300f6
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final Platform_ThemeOverlay_AppCompat_Dark:I = 0x7f1300f7
+    move-result-object p0
 
-.field public static final Platform_ThemeOverlay_AppCompat_Light:I = 0x7f1300f8
+    aput-object p0, v3, v0
 
-.field public static final Platform_V21_AppCompat:I = 0x7f1300f9
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final Platform_V21_AppCompat_Light:I = 0x7f1300fa
+    move-result-object p0
 
-.field public static final Platform_V25_AppCompat:I = 0x7f1300fb
+    aput-object p0, v3, v2
 
-.field public static final Platform_V25_AppCompat_Light:I = 0x7f1300fc
+    const-string p0, "%s (%s) must not be greater than size (%s)"
 
-.field public static final Platform_Widget_AppCompat_Spinner:I = 0x7f1300fd
+    invoke-static {p0, v3}, Lcom/google/android/material/R$style;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final RtlOverlay_DialogWindowTitle_AppCompat:I = 0x7f13011d
+    move-result-object p0
 
-.field public static final RtlOverlay_Widget_AppCompat_ActionBar_TitleItem:I = 0x7f13011e
+    return-object p0
 
-.field public static final RtlOverlay_Widget_AppCompat_DialogTitle_Icon:I = 0x7f13011f
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem:I = 0x7f130120
+    const/16 p2, 0x1a
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup:I = 0x7f130121
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut:I = 0x7f130122
+    invoke-direct {v0, p2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow:I = 0x7f130123
+    const-string p2, "negative size: "
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem_Text:I = 0x7f130124
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final RtlOverlay_Widget_AppCompat_PopupMenuItem_Title:I = 0x7f130125
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.field public static final RtlOverlay_Widget_AppCompat_SearchView_MagIcon:I = 0x7f13012b
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final RtlOverlay_Widget_AppCompat_Search_DropDown:I = 0x7f130126
+    move-result-object p1
 
-.field public static final RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1:I = 0x7f130127
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.field public static final RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2:I = 0x7f130128
+    throw p0
+.end method
 
-.field public static final RtlOverlay_Widget_AppCompat_Search_DropDown_Query:I = 0x7f130129
+.method public static c(Lcom/google/android/play/core/tasks/m;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<ResultT:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/android/play/core/tasks/m<",
+            "TResultT;>;)TResultT;"
+        }
+    .end annotation
 
-.field public static final RtlOverlay_Widget_AppCompat_Search_DropDown_Text:I = 0x7f13012a
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/util/concurrent/ExecutionException;
+        }
+    .end annotation
 
-.field public static final RtlUnderlay_Widget_AppCompat_ActionButton:I = 0x7f13012c
+    invoke-virtual {p0}, Lcom/google/android/play/core/tasks/m;->isSuccessful()Z
 
-.field public static final RtlUnderlay_Widget_AppCompat_ActionButton_Overflow:I = 0x7f13012d
+    move-result v0
 
-.field public static final ShapeAppearanceOverlay:I = 0x7f130133
+    if-eqz v0, :cond_0
 
-.field public static final ShapeAppearanceOverlay_BottomLeftDifferentCornerSize:I = 0x7f130134
+    invoke-virtual {p0}, Lcom/google/android/play/core/tasks/m;->getResult()Ljava/lang/Object;
 
-.field public static final ShapeAppearanceOverlay_BottomRightCut:I = 0x7f130135
+    move-result-object p0
 
-.field public static final ShapeAppearanceOverlay_Cut:I = 0x7f130136
+    return-object p0
 
-.field public static final ShapeAppearanceOverlay_DifferentCornerSize:I = 0x7f130137
+    :cond_0
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_BottomSheet:I = 0x7f130138
+    iget-object v1, p0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_Chip:I = 0x7f130139
+    monitor-enter v1
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton:I = 0x7f13013a
+    :try_start_0
+    iget-object p0, p0, Lcom/google/android/play/core/tasks/m;->e:Ljava/lang/Exception;
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton:I = 0x7f13013b
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day:I = 0x7f13013c
+    invoke-direct {v0, p0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen:I = 0x7f13013d
+    throw v0
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year:I = 0x7f13013e
+    :catchall_0
+    move-exception p0
 
-.field public static final ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox:I = 0x7f13013f
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-.field public static final ShapeAppearanceOverlay_TopLeftCut:I = 0x7f130140
+    throw p0
+.end method
 
-.field public static final ShapeAppearanceOverlay_TopRightDifferentCornerSize:I = 0x7f130141
+.method public static final camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
 
-.field public static final ShapeAppearance_MaterialComponents:I = 0x7f13012e
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.field public static final ShapeAppearance_MaterialComponents_LargeComponent:I = 0x7f13012f
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-.field public static final ShapeAppearance_MaterialComponents_MediumComponent:I = 0x7f130130
+    const/4 v1, 0x0
 
-.field public static final ShapeAppearance_MaterialComponents_SmallComponent:I = 0x7f130131
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-.field public static final ShapeAppearance_MaterialComponents_Test:I = 0x7f130132
+    move-result v2
 
-.field public static final TestStyleWithLineHeight:I = 0x7f130147
+    if-ge v1, v2, :cond_1
 
-.field public static final TestStyleWithLineHeightAppearance:I = 0x7f130148
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
-.field public static final TestStyleWithThemeLineHeightAttribute:I = 0x7f130149
+    move-result v2
 
-.field public static final TestStyleWithoutLineHeight:I = 0x7f13014a
+    invoke-static {v2}, Ljava/lang/Character;->isUpperCase(C)Z
 
-.field public static final TestThemeWithLineHeight:I = 0x7f13014b
+    move-result v3
 
-.field public static final TestThemeWithLineHeightDisabled:I = 0x7f13014c
+    if-eqz v3, :cond_0
 
-.field public static final Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day:I = 0x7f130142
+    const-string v3, "_"
 
-.field public static final Test_Theme_MaterialComponents_MaterialCalendar:I = 0x7f130143
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final Test_Widget_MaterialComponents_MaterialCalendar:I = 0x7f130144
+    :cond_0
+    invoke-static {v2}, Ljava/lang/Character;->toLowerCase(C)C
 
-.field public static final Test_Widget_MaterialComponents_MaterialCalendar_Day:I = 0x7f130145
+    move-result v2
 
-.field public static final Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected:I = 0x7f130146
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_AppCompat:I = 0x7f13014d
+    add-int/lit8 v1, v1, 0x1
 
-.field public static final TextAppearance_AppCompat_Body1:I = 0x7f13014e
+    goto :goto_0
 
-.field public static final TextAppearance_AppCompat_Body2:I = 0x7f13014f
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final TextAppearance_AppCompat_Button:I = 0x7f130150
+    move-result-object p0
 
-.field public static final TextAppearance_AppCompat_Caption:I = 0x7f130151
+    return-object p0
+.end method
 
-.field public static final TextAppearance_AppCompat_Display1:I = 0x7f130152
+.method public static final camelCaseToSnakeCase1(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
 
-.field public static final TextAppearance_AppCompat_Display2:I = 0x7f130153
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_AppCompat_Display3:I = 0x7f130154
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-.field public static final TextAppearance_AppCompat_Display4:I = 0x7f130155
+    const/4 v1, 0x0
 
-.field public static final TextAppearance_AppCompat_Headline:I = 0x7f130156
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-.field public static final TextAppearance_AppCompat_Inverse:I = 0x7f130157
+    move-result v2
 
-.field public static final TextAppearance_AppCompat_Large:I = 0x7f130158
+    if-ge v1, v2, :cond_1
 
-.field public static final TextAppearance_AppCompat_Large_Inverse:I = 0x7f130159
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
-.field public static final TextAppearance_AppCompat_Light_SearchResult_Subtitle:I = 0x7f13015a
+    move-result v2
 
-.field public static final TextAppearance_AppCompat_Light_SearchResult_Title:I = 0x7f13015b
+    invoke-static {v2}, Ljava/lang/Character;->isUpperCase(C)Z
 
-.field public static final TextAppearance_AppCompat_Light_Widget_PopupMenu_Large:I = 0x7f13015c
+    move-result v3
 
-.field public static final TextAppearance_AppCompat_Light_Widget_PopupMenu_Small:I = 0x7f13015d
+    if-eqz v3, :cond_0
 
-.field public static final TextAppearance_AppCompat_Medium:I = 0x7f13015e
+    const-string v3, "_"
 
-.field public static final TextAppearance_AppCompat_Medium_Inverse:I = 0x7f13015f
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_AppCompat_Menu:I = 0x7f130160
+    :cond_0
+    invoke-static {v2}, Ljava/lang/Character;->toLowerCase(C)C
 
-.field public static final TextAppearance_AppCompat_SearchResult_Subtitle:I = 0x7f130161
+    move-result v2
 
-.field public static final TextAppearance_AppCompat_SearchResult_Title:I = 0x7f130162
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_AppCompat_Small:I = 0x7f130163
+    add-int/lit8 v1, v1, 0x1
 
-.field public static final TextAppearance_AppCompat_Small_Inverse:I = 0x7f130164
+    goto :goto_0
 
-.field public static final TextAppearance_AppCompat_Subhead:I = 0x7f130165
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final TextAppearance_AppCompat_Subhead_Inverse:I = 0x7f130166
+    move-result-object p0
 
-.field public static final TextAppearance_AppCompat_Title:I = 0x7f130167
+    return-object p0
+.end method
 
-.field public static final TextAppearance_AppCompat_Title_Inverse:I = 0x7f130168
+.method public static checkArgument(Z)V
+    .locals 0
 
-.field public static final TextAppearance_AppCompat_Tooltip:I = 0x7f130169
+    if-eqz p0, :cond_0
 
-.field public static final TextAppearance_AppCompat_Widget_ActionBar_Menu:I = 0x7f13016a
+    return-void
 
-.field public static final TextAppearance_AppCompat_Widget_ActionBar_Subtitle:I = 0x7f13016b
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.field public static final TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse:I = 0x7f13016c
+    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-.field public static final TextAppearance_AppCompat_Widget_ActionBar_Title:I = 0x7f13016d
+    throw p0
+.end method
 
-.field public static final TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse:I = 0x7f13016e
+.method public static checkElementIndex(II)I
+    .locals 6
 
-.field public static final TextAppearance_AppCompat_Widget_ActionMode_Subtitle:I = 0x7f13016f
+    if-ltz p0, :cond_1
 
-.field public static final TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse:I = 0x7f130170
+    if-lt p0, p1, :cond_0
 
-.field public static final TextAppearance_AppCompat_Widget_ActionMode_Title:I = 0x7f130171
+    goto :goto_0
 
-.field public static final TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse:I = 0x7f130172
+    :cond_0
+    return p0
 
-.field public static final TextAppearance_AppCompat_Widget_Button:I = 0x7f130173
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-.field public static final TextAppearance_AppCompat_Widget_Button_Borderless_Colored:I = 0x7f130174
+    const/4 v1, 0x1
 
-.field public static final TextAppearance_AppCompat_Widget_Button_Colored:I = 0x7f130175
+    const/4 v2, 0x0
 
-.field public static final TextAppearance_AppCompat_Widget_Button_Inverse:I = 0x7f130176
+    const/4 v3, 0x2
 
-.field public static final TextAppearance_AppCompat_Widget_DropDownItem:I = 0x7f130177
+    const-string v4, "index"
 
-.field public static final TextAppearance_AppCompat_Widget_PopupMenu_Header:I = 0x7f130178
+    if-ltz p0, :cond_3
 
-.field public static final TextAppearance_AppCompat_Widget_PopupMenu_Large:I = 0x7f130179
+    if-ltz p1, :cond_2
 
-.field public static final TextAppearance_AppCompat_Widget_PopupMenu_Small:I = 0x7f13017a
+    const/4 v5, 0x3
 
-.field public static final TextAppearance_AppCompat_Widget_Switch:I = 0x7f13017b
+    new-array v5, v5, [Ljava/lang/Object;
 
-.field public static final TextAppearance_AppCompat_Widget_TextView_SpinnerItem:I = 0x7f13017c
+    aput-object v4, v5, v2
 
-.field public static final TextAppearance_Compat_Notification:I = 0x7f13017d
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final TextAppearance_Compat_Notification_Info:I = 0x7f13017e
+    move-result-object p0
 
-.field public static final TextAppearance_Compat_Notification_Line2:I = 0x7f130180
+    aput-object p0, v5, v1
 
-.field public static final TextAppearance_Compat_Notification_Time:I = 0x7f130183
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final TextAppearance_Compat_Notification_Title:I = 0x7f130185
+    move-result-object p0
 
-.field public static final TextAppearance_Design_CollapsingToolbar_Expanded:I = 0x7f130187
+    aput-object p0, v5, v3
 
-.field public static final TextAppearance_Design_Counter:I = 0x7f130188
+    const-string p0, "%s (%s) must be less than size (%s)"
 
-.field public static final TextAppearance_Design_Counter_Overflow:I = 0x7f130189
+    invoke-static {p0, v5}, Lcom/google/android/material/R$style;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final TextAppearance_Design_Error:I = 0x7f13018a
+    move-result-object p0
 
-.field public static final TextAppearance_Design_HelperText:I = 0x7f13018b
+    goto :goto_1
 
-.field public static final TextAppearance_Design_Hint:I = 0x7f13018c
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.field public static final TextAppearance_Design_Snackbar_Message:I = 0x7f13018d
+    const/16 v0, 0x1a
 
-.field public static final TextAppearance_Design_Tab:I = 0x7f13018e
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_MaterialComponents_Badge:I = 0x7f13018f
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.field public static final TextAppearance_MaterialComponents_Body1:I = 0x7f130190
+    const-string v0, "negative size: "
 
-.field public static final TextAppearance_MaterialComponents_Body2:I = 0x7f130191
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_MaterialComponents_Button:I = 0x7f130192
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.field public static final TextAppearance_MaterialComponents_Caption:I = 0x7f130193
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final TextAppearance_MaterialComponents_Chip:I = 0x7f130194
+    move-result-object p1
 
-.field public static final TextAppearance_MaterialComponents_Headline1:I = 0x7f130195
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.field public static final TextAppearance_MaterialComponents_Headline2:I = 0x7f130196
+    throw p0
 
-.field public static final TextAppearance_MaterialComponents_Headline3:I = 0x7f130197
+    :cond_3
+    new-array p1, v3, [Ljava/lang/Object;
 
-.field public static final TextAppearance_MaterialComponents_Headline4:I = 0x7f130198
+    aput-object v4, p1, v2
 
-.field public static final TextAppearance_MaterialComponents_Headline5:I = 0x7f130199
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final TextAppearance_MaterialComponents_Headline6:I = 0x7f13019a
+    move-result-object p0
 
-.field public static final TextAppearance_MaterialComponents_Overline:I = 0x7f13019b
+    aput-object p0, p1, v1
 
-.field public static final TextAppearance_MaterialComponents_Subtitle1:I = 0x7f13019c
+    const-string p0, "%s (%s) must not be negative"
 
-.field public static final TextAppearance_MaterialComponents_Subtitle2:I = 0x7f13019d
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final TextAppearance_Widget_AppCompat_ExpandedMenu_Item:I = 0x7f13019e
+    move-result-object p0
 
-.field public static final TextAppearance_Widget_AppCompat_Toolbar_Subtitle:I = 0x7f13019f
+    :goto_1
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-.field public static final TextAppearance_Widget_AppCompat_Toolbar_Title:I = 0x7f1301a0
+    throw v0
+.end method
 
-.field public static final ThemeOverlay_AppCompat:I = 0x7f1301ef
+.method public static checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
 
-.field public static final ThemeOverlay_AppCompat_ActionBar:I = 0x7f1301f0
+    if-eqz p0, :cond_1
 
-.field public static final ThemeOverlay_AppCompat_Dark:I = 0x7f1301f1
+    if-eqz p1, :cond_0
 
-.field public static final ThemeOverlay_AppCompat_Dark_ActionBar:I = 0x7f1301f2
+    return-void
 
-.field public static final ThemeOverlay_AppCompat_DayNight:I = 0x7f1301f3
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-.field public static final ThemeOverlay_AppCompat_DayNight_ActionBar:I = 0x7f1301f4
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final ThemeOverlay_AppCompat_Dialog:I = 0x7f1301f5
+    move-result-object p0
 
-.field public static final ThemeOverlay_AppCompat_Dialog_Alert:I = 0x7f1301f6
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-.field public static final ThemeOverlay_AppCompat_Light:I = 0x7f1301f7
+    move-result v0
 
-.field public static final ThemeOverlay_Design_TextInputEditText:I = 0x7f1301f8
+    add-int/lit8 v0, v0, 0x1a
 
-.field public static final ThemeOverlay_MaterialComponents:I = 0x7f1301f9
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_ActionBar:I = 0x7f1301fa
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.field public static final ThemeOverlay_MaterialComponents_ActionBar_Primary:I = 0x7f1301fb
+    const-string v0, "null value in entry: "
 
-.field public static final ThemeOverlay_MaterialComponents_ActionBar_Surface:I = 0x7f1301fc
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_AutoCompleteTextView:I = 0x7f1301fd
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox:I = 0x7f1301fe
+    const-string p0, "=null"
 
-.field public static final ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense:I = 0x7f1301ff
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox:I = 0x7f130200
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense:I = 0x7f130201
+    move-result-object p0
 
-.field public static final ThemeOverlay_MaterialComponents_BottomAppBar_Primary:I = 0x7f130202
+    invoke-direct {p1, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-.field public static final ThemeOverlay_MaterialComponents_BottomAppBar_Surface:I = 0x7f130203
+    throw p1
 
-.field public static final ThemeOverlay_MaterialComponents_BottomSheetDialog:I = 0x7f130204
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
 
-.field public static final ThemeOverlay_MaterialComponents_Dark:I = 0x7f130205
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final ThemeOverlay_MaterialComponents_Dark_ActionBar:I = 0x7f130206
+    move-result-object p1
 
-.field public static final ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog:I = 0x7f130207
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-.field public static final ThemeOverlay_MaterialComponents_Dialog:I = 0x7f130208
+    move-result v0
 
-.field public static final ThemeOverlay_MaterialComponents_Dialog_Alert:I = 0x7f130209
+    add-int/lit8 v0, v0, 0x18
 
-.field public static final ThemeOverlay_MaterialComponents_Light:I = 0x7f13020a
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_Light_BottomSheetDialog:I = 0x7f13020b
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog:I = 0x7f13020c
+    const-string v0, "null key in entry: null="
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered:I = 0x7f13020d
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date:I = 0x7f13020e
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar:I = 0x7f13020f
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text:I = 0x7f130210
+    move-result-object p1
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day:I = 0x7f130211
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner:I = 0x7f130212
+    throw p0
+.end method
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialCalendar:I = 0x7f130213
+.method public static checkNonnegative(ILjava/lang/String;)I
+    .locals 3
 
-.field public static final ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen:I = 0x7f130214
+    if-ltz p0, :cond_0
 
-.field public static final ThemeOverlay_MaterialComponents_TextInputEditText:I = 0x7f130215
+    return p0
 
-.field public static final ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox:I = 0x7f130216
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-.field public static final ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense:I = 0x7f130217
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-.field public static final ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox:I = 0x7f130218
+    move-result v1
 
-.field public static final ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense:I = 0x7f130219
+    add-int/lit8 v1, v1, 0x28
 
-.field public static final ThemeOverlay_MaterialComponents_Toolbar_Primary:I = 0x7f13021a
+    new-instance v2, Ljava/lang/StringBuilder;
 
-.field public static final ThemeOverlay_MaterialComponents_Toolbar_Surface:I = 0x7f13021b
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.field public static final Theme_AppCompat:I = 0x7f1301a1
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final Theme_AppCompat_CompactMenu:I = 0x7f1301a2
+    const-string p1, " cannot be negative but was: "
 
-.field public static final Theme_AppCompat_DayNight:I = 0x7f1301a3
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static final Theme_AppCompat_DayNight_DarkActionBar:I = 0x7f1301a4
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.field public static final Theme_AppCompat_DayNight_Dialog:I = 0x7f1301a5
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static final Theme_AppCompat_DayNight_DialogWhenLarge:I = 0x7f1301a8
+    move-result-object p0
 
-.field public static final Theme_AppCompat_DayNight_Dialog_Alert:I = 0x7f1301a6
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.field public static final Theme_AppCompat_DayNight_Dialog_MinWidth:I = 0x7f1301a7
+    throw v0
+.end method
 
-.field public static final Theme_AppCompat_DayNight_NoActionBar:I = 0x7f1301a9
+.method public static checkNotNull1(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)TT;"
+        }
+    .end annotation
 
-.field public static final Theme_AppCompat_Dialog:I = 0x7f1301aa
+    if-eqz p0, :cond_0
 
-.field public static final Theme_AppCompat_DialogWhenLarge:I = 0x7f1301ad
+    return-object p0
 
-.field public static final Theme_AppCompat_Dialog_Alert:I = 0x7f1301ab
+    :cond_0
+    const/4 p0, 0x0
 
-.field public static final Theme_AppCompat_Dialog_MinWidth:I = 0x7f1301ac
+    throw p0
+.end method
 
-.field public static final Theme_AppCompat_Light:I = 0x7f1301ae
+.method public static checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "point",
+            "ec"
+        }
+    .end annotation
 
-.field public static final Theme_AppCompat_Light_DarkActionBar:I = 0x7f1301af
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
 
-.field public static final Theme_AppCompat_Light_Dialog:I = 0x7f1301b0
+    invoke-virtual {p1}, Ljava/security/spec/EllipticCurve;->getField()Ljava/security/spec/ECField;
 
-.field public static final Theme_AppCompat_Light_DialogWhenLarge:I = 0x7f1301b3
+    move-result-object v0
 
-.field public static final Theme_AppCompat_Light_Dialog_Alert:I = 0x7f1301b1
+    instance-of v1, v0, Ljava/security/spec/ECFieldFp;
 
-.field public static final Theme_AppCompat_Light_Dialog_MinWidth:I = 0x7f1301b2
+    if-eqz v1, :cond_4
 
-.field public static final Theme_AppCompat_Light_NoActionBar:I = 0x7f1301b4
+    check-cast v0, Ljava/security/spec/ECFieldFp;
 
-.field public static final Theme_AppCompat_NoActionBar:I = 0x7f1301b5
+    invoke-virtual {v0}, Ljava/security/spec/ECFieldFp;->getP()Ljava/math/BigInteger;
 
-.field public static final Theme_Design:I = 0x7f1301b6
+    move-result-object v0
 
-.field public static final Theme_Design_BottomSheetDialog:I = 0x7f1301b7
+    invoke-virtual {p0}, Ljava/security/spec/ECPoint;->getAffineX()Ljava/math/BigInteger;
 
-.field public static final Theme_Design_Light:I = 0x7f1301b8
+    move-result-object v1
 
-.field public static final Theme_Design_Light_BottomSheetDialog:I = 0x7f1301b9
+    invoke-virtual {p0}, Ljava/security/spec/ECPoint;->getAffineY()Ljava/math/BigInteger;
 
-.field public static final Theme_Design_Light_NoActionBar:I = 0x7f1301ba
+    move-result-object p0
 
-.field public static final Theme_Design_NoActionBar:I = 0x7f1301bb
+    if-eqz v1, :cond_3
 
-.field public static final Theme_MaterialComponents:I = 0x7f1301bc
+    if-eqz p0, :cond_3
 
-.field public static final Theme_MaterialComponents_BottomSheetDialog:I = 0x7f1301bd
+    invoke-virtual {v1}, Ljava/math/BigInteger;->signum()I
 
-.field public static final Theme_MaterialComponents_Bridge:I = 0x7f1301be
+    move-result v2
 
-.field public static final Theme_MaterialComponents_CompactMenu:I = 0x7f1301bf
+    const/4 v3, -0x1
 
-.field public static final Theme_MaterialComponents_DayNight:I = 0x7f1301c0
+    if-eq v2, v3, :cond_2
 
-.field public static final Theme_MaterialComponents_DayNight_BottomSheetDialog:I = 0x7f1301c1
+    invoke-virtual {v1, v0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
-.field public static final Theme_MaterialComponents_DayNight_Bridge:I = 0x7f1301c2
+    move-result v2
 
-.field public static final Theme_MaterialComponents_DayNight_DarkActionBar:I = 0x7f1301c3
+    if-gez v2, :cond_2
 
-.field public static final Theme_MaterialComponents_DayNight_DarkActionBar_Bridge:I = 0x7f1301c4
+    invoke-virtual {p0}, Ljava/math/BigInteger;->signum()I
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog:I = 0x7f1301c5
+    move-result v2
 
-.field public static final Theme_MaterialComponents_DayNight_DialogWhenLarge:I = 0x7f1301cd
+    if-eq v2, v3, :cond_1
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_Alert:I = 0x7f1301c6
+    invoke-virtual {p0, v0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge:I = 0x7f1301c7
+    move-result v2
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_Bridge:I = 0x7f1301c8
+    if-gez v2, :cond_1
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_FixedSize:I = 0x7f1301c9
+    invoke-virtual {p0, p0}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge:I = 0x7f1301ca
+    move-result-object p0
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_MinWidth:I = 0x7f1301cb
+    invoke-virtual {p0, v0}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge:I = 0x7f1301cc
+    move-result-object p0
 
-.field public static final Theme_MaterialComponents_DayNight_NoActionBar:I = 0x7f1301ce
+    invoke-virtual {v1, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_DayNight_NoActionBar_Bridge:I = 0x7f1301cf
+    move-result-object v2
 
-.field public static final Theme_MaterialComponents_Dialog:I = 0x7f1301d0
+    invoke-virtual {p1}, Ljava/security/spec/EllipticCurve;->getA()Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_DialogWhenLarge:I = 0x7f1301d8
+    move-result-object v3
 
-.field public static final Theme_MaterialComponents_Dialog_Alert:I = 0x7f1301d1
+    invoke-virtual {v2, v3}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_Dialog_Alert_Bridge:I = 0x7f1301d2
+    move-result-object v2
 
-.field public static final Theme_MaterialComponents_Dialog_Bridge:I = 0x7f1301d3
+    invoke-virtual {v2, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_Dialog_FixedSize:I = 0x7f1301d4
+    move-result-object v1
 
-.field public static final Theme_MaterialComponents_Dialog_FixedSize_Bridge:I = 0x7f1301d5
+    invoke-virtual {p1}, Ljava/security/spec/EllipticCurve;->getB()Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_Dialog_MinWidth:I = 0x7f1301d6
+    move-result-object p1
 
-.field public static final Theme_MaterialComponents_Dialog_MinWidth_Bridge:I = 0x7f1301d7
+    invoke-virtual {v1, p1}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_Light:I = 0x7f1301d9
+    move-result-object p1
 
-.field public static final Theme_MaterialComponents_Light_BarSize:I = 0x7f1301da
+    invoke-virtual {p1, v0}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-.field public static final Theme_MaterialComponents_Light_BottomSheetDialog:I = 0x7f1301db
+    move-result-object p1
 
-.field public static final Theme_MaterialComponents_Light_Bridge:I = 0x7f1301dc
+    invoke-virtual {p0, p1}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
 
-.field public static final Theme_MaterialComponents_Light_DarkActionBar:I = 0x7f1301dd
+    move-result p0
 
-.field public static final Theme_MaterialComponents_Light_DarkActionBar_Bridge:I = 0x7f1301de
+    if-eqz p0, :cond_0
 
-.field public static final Theme_MaterialComponents_Light_Dialog:I = 0x7f1301df
+    return-void
 
-.field public static final Theme_MaterialComponents_Light_DialogWhenLarge:I = 0x7f1301e7
+    :cond_0
+    new-instance p0, Ljava/security/GeneralSecurityException;
 
-.field public static final Theme_MaterialComponents_Light_Dialog_Alert:I = 0x7f1301e0
+    const-string p1, "Point is not on curve"
 
-.field public static final Theme_MaterialComponents_Light_Dialog_Alert_Bridge:I = 0x7f1301e1
+    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-.field public static final Theme_MaterialComponents_Light_Dialog_Bridge:I = 0x7f1301e2
+    throw p0
 
-.field public static final Theme_MaterialComponents_Light_Dialog_FixedSize:I = 0x7f1301e3
+    :cond_1
+    new-instance p0, Ljava/security/GeneralSecurityException;
 
-.field public static final Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge:I = 0x7f1301e4
+    const-string p1, "y is out of range"
 
-.field public static final Theme_MaterialComponents_Light_Dialog_MinWidth:I = 0x7f1301e5
+    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-.field public static final Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge:I = 0x7f1301e6
+    throw p0
 
-.field public static final Theme_MaterialComponents_Light_LargeTouch:I = 0x7f1301e8
+    :cond_2
+    new-instance p0, Ljava/security/GeneralSecurityException;
 
-.field public static final Theme_MaterialComponents_Light_NoActionBar:I = 0x7f1301e9
+    const-string p1, "x is out of range"
 
-.field public static final Theme_MaterialComponents_Light_NoActionBar_Bridge:I = 0x7f1301ea
+    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-.field public static final Theme_MaterialComponents_NoActionBar:I = 0x7f1301eb
+    throw p0
 
-.field public static final Theme_MaterialComponents_NoActionBar_Bridge:I = 0x7f1301ec
+    :cond_3
+    new-instance p0, Ljava/security/GeneralSecurityException;
 
-.field public static final Widget_AppCompat_ActionBar:I = 0x7f13021d
+    const-string p1, "point is at infinity"
 
-.field public static final Widget_AppCompat_ActionBar_Solid:I = 0x7f13021e
+    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-.field public static final Widget_AppCompat_ActionBar_TabBar:I = 0x7f13021f
+    throw p0
 
-.field public static final Widget_AppCompat_ActionBar_TabText:I = 0x7f130220
+    :cond_4
+    new-instance p0, Ljava/security/GeneralSecurityException;
 
-.field public static final Widget_AppCompat_ActionBar_TabView:I = 0x7f130221
+    const-string p1, "Only curves over prime order fields are supported"
 
-.field public static final Widget_AppCompat_ActionButton:I = 0x7f130222
+    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-.field public static final Widget_AppCompat_ActionButton_CloseMode:I = 0x7f130223
+    throw p0
+.end method
 
-.field public static final Widget_AppCompat_ActionButton_Overflow:I = 0x7f130224
+.method public static checkPositionIndex(II)I
+    .locals 2
 
-.field public static final Widget_AppCompat_ActionMode:I = 0x7f130225
+    if-ltz p0, :cond_0
 
-.field public static final Widget_AppCompat_ActivityChooserView:I = 0x7f130226
+    if-gt p0, p1, :cond_0
 
-.field public static final Widget_AppCompat_AutoCompleteTextView:I = 0x7f130227
+    return p0
 
-.field public static final Widget_AppCompat_Button:I = 0x7f130228
+    :cond_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-.field public static final Widget_AppCompat_ButtonBar:I = 0x7f13022e
+    const-string v1, "index"
 
-.field public static final Widget_AppCompat_ButtonBar_AlertDialog:I = 0x7f13022f
+    invoke-static {p0, p1, v1}, Lcom/google/android/material/R$style;->badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
 
-.field public static final Widget_AppCompat_Button_Borderless:I = 0x7f130229
+    move-result-object p0
 
-.field public static final Widget_AppCompat_Button_Borderless_Colored:I = 0x7f13022a
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-.field public static final Widget_AppCompat_Button_ButtonBar_AlertDialog:I = 0x7f13022b
+    throw v0
+.end method
 
-.field public static final Widget_AppCompat_Button_Colored:I = 0x7f13022c
+.method public static checkPositionIndexes(III)V
+    .locals 2
 
-.field public static final Widget_AppCompat_Button_Small:I = 0x7f13022d
+    if-ltz p0, :cond_1
 
-.field public static final Widget_AppCompat_CompoundButton_CheckBox:I = 0x7f130230
+    if-lt p1, p0, :cond_1
 
-.field public static final Widget_AppCompat_CompoundButton_RadioButton:I = 0x7f130231
+    if-le p1, p2, :cond_0
 
-.field public static final Widget_AppCompat_CompoundButton_Switch:I = 0x7f130232
+    goto :goto_0
 
-.field public static final Widget_AppCompat_DrawerArrowToggle:I = 0x7f130233
+    :cond_0
+    return-void
 
-.field public static final Widget_AppCompat_DropDownItem_Spinner:I = 0x7f130234
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-.field public static final Widget_AppCompat_EditText:I = 0x7f130235
+    if-ltz p0, :cond_4
 
-.field public static final Widget_AppCompat_ImageButton:I = 0x7f130236
+    if-gt p0, p2, :cond_4
 
-.field public static final Widget_AppCompat_Light_ActionBar:I = 0x7f130237
+    if-ltz p1, :cond_3
 
-.field public static final Widget_AppCompat_Light_ActionBar_Solid:I = 0x7f130238
+    if-le p1, p2, :cond_2
 
-.field public static final Widget_AppCompat_Light_ActionBar_Solid_Inverse:I = 0x7f130239
+    goto :goto_1
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabBar:I = 0x7f13023a
+    :cond_2
+    const/4 p2, 0x2
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabBar_Inverse:I = 0x7f13023b
+    new-array p2, p2, [Ljava/lang/Object;
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabText:I = 0x7f13023c
+    const/4 v1, 0x0
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabText_Inverse:I = 0x7f13023d
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabView:I = 0x7f13023e
+    move-result-object p1
 
-.field public static final Widget_AppCompat_Light_ActionBar_TabView_Inverse:I = 0x7f13023f
+    aput-object p1, p2, v1
 
-.field public static final Widget_AppCompat_Light_ActionButton:I = 0x7f130240
+    const/4 p1, 0x1
 
-.field public static final Widget_AppCompat_Light_ActionButton_CloseMode:I = 0x7f130241
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static final Widget_AppCompat_Light_ActionButton_Overflow:I = 0x7f130242
+    move-result-object p0
 
-.field public static final Widget_AppCompat_Light_ActionMode_Inverse:I = 0x7f130243
+    aput-object p0, p2, p1
 
-.field public static final Widget_AppCompat_Light_ActivityChooserView:I = 0x7f130244
+    const-string p0, "end index (%s) must not be less than start index (%s)"
 
-.field public static final Widget_AppCompat_Light_AutoCompleteTextView:I = 0x7f130245
+    invoke-static {p0, p2}, Lcom/google/android/material/R$style;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.field public static final Widget_AppCompat_Light_DropDownItem_Spinner:I = 0x7f130246
+    move-result-object p0
 
-.field public static final Widget_AppCompat_Light_ListPopupWindow:I = 0x7f130247
+    goto :goto_2
 
-.field public static final Widget_AppCompat_Light_ListView_DropDown:I = 0x7f130248
+    :cond_3
+    :goto_1
+    const-string p0, "end index"
 
-.field public static final Widget_AppCompat_Light_PopupMenu:I = 0x7f130249
+    invoke-static {p1, p2, p0}, Lcom/google/android/material/R$style;->badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
 
-.field public static final Widget_AppCompat_Light_PopupMenu_Overflow:I = 0x7f13024a
+    move-result-object p0
 
-.field public static final Widget_AppCompat_Light_SearchView:I = 0x7f13024b
+    goto :goto_2
 
-.field public static final Widget_AppCompat_Light_Spinner_DropDown_ActionBar:I = 0x7f13024c
+    :cond_4
+    const-string p1, "start index"
 
-.field public static final Widget_AppCompat_ListMenuView:I = 0x7f13024d
+    invoke-static {p0, p2, p1}, Lcom/google/android/material/R$style;->badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
 
-.field public static final Widget_AppCompat_ListPopupWindow:I = 0x7f13024e
+    move-result-object p0
 
-.field public static final Widget_AppCompat_ListView:I = 0x7f13024f
+    :goto_2
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-.field public static final Widget_AppCompat_ListView_DropDown:I = 0x7f130250
+    throw v0
+.end method
 
-.field public static final Widget_AppCompat_ListView_Menu:I = 0x7f130251
+.method public static cmacPad([B)[B
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "x"
+        }
+    .end annotation
 
-.field public static final Widget_AppCompat_PopupMenu:I = 0x7f130252
+    array-length v0, p0
 
-.field public static final Widget_AppCompat_PopupMenu_Overflow:I = 0x7f130253
+    const/16 v1, 0x10
 
-.field public static final Widget_AppCompat_PopupWindow:I = 0x7f130254
+    if-ge v0, v1, :cond_0
 
-.field public static final Widget_AppCompat_ProgressBar:I = 0x7f130255
+    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
 
-.field public static final Widget_AppCompat_ProgressBar_Horizontal:I = 0x7f130256
+    move-result-object v0
 
-.field public static final Widget_AppCompat_RatingBar:I = 0x7f130257
+    array-length p0, p0
 
-.field public static final Widget_AppCompat_RatingBar_Indicator:I = 0x7f130258
+    const/16 v1, -0x80
 
-.field public static final Widget_AppCompat_RatingBar_Small:I = 0x7f130259
+    aput-byte v1, v0, p0
 
-.field public static final Widget_AppCompat_SearchView:I = 0x7f13025a
+    return-object v0
 
-.field public static final Widget_AppCompat_SearchView_ActionBar:I = 0x7f13025b
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.field public static final Widget_AppCompat_SeekBar:I = 0x7f13025c
+    const-string v0, "x must be smaller than a block."
 
-.field public static final Widget_AppCompat_SeekBar_Discrete:I = 0x7f13025d
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.field public static final Widget_AppCompat_Spinner:I = 0x7f13025e
+    throw p0
+.end method
 
-.field public static final Widget_AppCompat_Spinner_DropDown:I = 0x7f13025f
+.method public static computeMac([B[B)[B
+    .locals 52
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "key",
+            "data"
+        }
+    .end annotation
 
-.field public static final Widget_AppCompat_Spinner_DropDown_ActionBar:I = 0x7f130260
+    move-object/from16 v0, p0
 
-.field public static final Widget_AppCompat_Spinner_Underlined:I = 0x7f130261
+    move-object/from16 v1, p1
 
-.field public static final Widget_AppCompat_TextView:I = 0x7f130262
+    array-length v2, v0
 
-.field public static final Widget_AppCompat_TextView_SpinnerItem:I = 0x7f130263
+    const/16 v3, 0x20
 
-.field public static final Widget_AppCompat_Toolbar:I = 0x7f130264
+    if-ne v2, v3, :cond_2
 
-.field public static final Widget_AppCompat_Toolbar_Button_Navigation:I = 0x7f130265
+    const/4 v2, 0x0
 
-.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f130266
+    invoke-static {v0, v2, v2}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_Compat_NotificationActionText:I = 0x7f130267
+    move-result-wide v4
 
-.field public static final Widget_Design_AppBarLayout:I = 0x7f130268
+    const-wide/32 v6, 0x3ffffff
 
-.field public static final Widget_Design_BottomNavigationView:I = 0x7f130269
+    and-long/2addr v4, v6
 
-.field public static final Widget_Design_BottomSheet_Modal:I = 0x7f13026a
+    const/4 v8, 0x3
 
-.field public static final Widget_Design_CollapsingToolbar:I = 0x7f13026b
+    const/4 v9, 0x2
 
-.field public static final Widget_Design_FloatingActionButton:I = 0x7f13026c
+    invoke-static {v0, v8, v9}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_Design_NavigationView:I = 0x7f13026d
+    move-result-wide v10
 
-.field public static final Widget_Design_ScrimInsetsFrameLayout:I = 0x7f13026e
+    const-wide/32 v12, 0x3ffff03
 
-.field public static final Widget_Design_Snackbar:I = 0x7f13026f
+    and-long/2addr v10, v12
 
-.field public static final Widget_Design_TabLayout:I = 0x7f130270
+    const/4 v12, 0x6
 
-.field public static final Widget_Design_TextInputLayout:I = 0x7f130271
+    const/4 v13, 0x4
 
-.field public static final Widget_MaterialComponents_ActionBar_Primary:I = 0x7f130272
+    invoke-static {v0, v12, v13}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_ActionBar_PrimarySurface:I = 0x7f130273
+    move-result-wide v14
 
-.field public static final Widget_MaterialComponents_ActionBar_Solid:I = 0x7f130274
+    const-wide/32 v16, 0x3ffc0ff
 
-.field public static final Widget_MaterialComponents_ActionBar_Surface:I = 0x7f130275
+    and-long v14, v14, v16
 
-.field public static final Widget_MaterialComponents_AppBarLayout_Primary:I = 0x7f130276
+    const/16 v3, 0x9
 
-.field public static final Widget_MaterialComponents_AppBarLayout_PrimarySurface:I = 0x7f130277
+    invoke-static {v0, v3, v12}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_AppBarLayout_Surface:I = 0x7f130278
+    move-result-wide v17
 
-.field public static final Widget_MaterialComponents_AutoCompleteTextView_FilledBox:I = 0x7f130279
+    const-wide/32 v19, 0x3f03fff
 
-.field public static final Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense:I = 0x7f13027a
+    and-long v17, v17, v19
 
-.field public static final Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox:I = 0x7f13027b
+    const/16 v6, 0xc
 
-.field public static final Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense:I = 0x7f13027c
+    const/16 v7, 0x8
 
-.field public static final Widget_MaterialComponents_Badge:I = 0x7f13027d
+    invoke-static {v0, v6, v7}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_BottomAppBar:I = 0x7f13027e
+    move-result-wide v21
 
-.field public static final Widget_MaterialComponents_BottomAppBar_Colored:I = 0x7f13027f
+    const-wide/32 v23, 0xfffff
 
-.field public static final Widget_MaterialComponents_BottomAppBar_PrimarySurface:I = 0x7f130280
+    and-long v21, v21, v23
 
-.field public static final Widget_MaterialComponents_BottomNavigationView:I = 0x7f130281
+    const-wide/16 v23, 0x5
 
-.field public static final Widget_MaterialComponents_BottomNavigationView_Colored:I = 0x7f130282
+    mul-long v25, v10, v23
 
-.field public static final Widget_MaterialComponents_BottomNavigationView_PrimarySurface:I = 0x7f130283
+    mul-long v27, v14, v23
 
-.field public static final Widget_MaterialComponents_BottomSheet:I = 0x7f130284
+    mul-long v29, v17, v23
 
-.field public static final Widget_MaterialComponents_BottomSheet_Modal:I = 0x7f130285
+    mul-long v31, v21, v23
 
-.field public static final Widget_MaterialComponents_Button:I = 0x7f130286
+    const/16 v6, 0x11
 
-.field public static final Widget_MaterialComponents_Button_Icon:I = 0x7f130287
+    new-array v7, v6, [B
 
-.field public static final Widget_MaterialComponents_Button_OutlinedButton:I = 0x7f130288
+    const-wide/16 v33, 0x0
 
-.field public static final Widget_MaterialComponents_Button_OutlinedButton_Icon:I = 0x7f130289
+    move v3, v2
 
-.field public static final Widget_MaterialComponents_Button_TextButton:I = 0x7f13028a
+    move-wide/from16 v35, v33
 
-.field public static final Widget_MaterialComponents_Button_TextButton_Dialog:I = 0x7f13028b
+    move-wide/from16 v37, v35
 
-.field public static final Widget_MaterialComponents_Button_TextButton_Dialog_Flush:I = 0x7f13028c
+    move-wide/from16 v39, v37
 
-.field public static final Widget_MaterialComponents_Button_TextButton_Dialog_Icon:I = 0x7f13028d
+    move-wide/from16 v41, v39
 
-.field public static final Widget_MaterialComponents_Button_TextButton_Icon:I = 0x7f13028e
+    :goto_0
+    array-length v12, v1
 
-.field public static final Widget_MaterialComponents_Button_TextButton_Snackbar:I = 0x7f13028f
+    const/16 v13, 0x10
 
-.field public static final Widget_MaterialComponents_Button_UnelevatedButton:I = 0x7f130290
+    const/16 v43, 0x1a
 
-.field public static final Widget_MaterialComponents_Button_UnelevatedButton_Icon:I = 0x7f130291
+    if-ge v3, v12, :cond_1
 
-.field public static final Widget_MaterialComponents_CardView:I = 0x7f130292
+    array-length v12, v1
 
-.field public static final Widget_MaterialComponents_CheckedTextView:I = 0x7f130293
+    sub-int/2addr v12, v3
 
-.field public static final Widget_MaterialComponents_ChipGroup:I = 0x7f130298
+    invoke-static {v13, v12}, Ljava/lang/Math;->min(II)I
 
-.field public static final Widget_MaterialComponents_Chip_Action:I = 0x7f130294
+    move-result v12
 
-.field public static final Widget_MaterialComponents_Chip_Choice:I = 0x7f130295
+    invoke-static {v1, v3, v7, v2, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-.field public static final Widget_MaterialComponents_Chip_Entry:I = 0x7f130296
+    const/16 v44, 0x1
 
-.field public static final Widget_MaterialComponents_Chip_Filter:I = 0x7f130297
+    aput-byte v44, v7, v12
 
-.field public static final Widget_MaterialComponents_CompoundButton_CheckBox:I = 0x7f130299
+    if-eq v12, v13, :cond_0
 
-.field public static final Widget_MaterialComponents_CompoundButton_RadioButton:I = 0x7f13029a
+    add-int/lit8 v12, v12, 0x1
 
-.field public static final Widget_MaterialComponents_CompoundButton_Switch:I = 0x7f13029b
+    invoke-static {v7, v12, v6, v2}, Ljava/util/Arrays;->fill([BIIB)V
 
-.field public static final Widget_MaterialComponents_ExtendedFloatingActionButton:I = 0x7f13029c
+    :cond_0
+    invoke-static {v7, v2, v2}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_ExtendedFloatingActionButton_Icon:I = 0x7f13029d
+    move-result-wide v44
 
-.field public static final Widget_MaterialComponents_FloatingActionButton:I = 0x7f13029e
+    add-long v44, v44, v41
 
-.field public static final Widget_MaterialComponents_Light_ActionBar_Solid:I = 0x7f13029f
+    invoke-static {v7, v8, v9}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_MaterialButtonToggleGroup:I = 0x7f1302a0
+    move-result-wide v41
 
-.field public static final Widget_MaterialComponents_MaterialCalendar:I = 0x7f1302a1
+    add-long v41, v41, v33
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Day:I = 0x7f1302a2
+    const/4 v6, 0x6
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_DayTextView:I = 0x7f1302a6
+    const/4 v12, 0x4
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Day_Invalid:I = 0x7f1302a3
+    invoke-static {v7, v6, v12}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Day_Selected:I = 0x7f1302a4
+    move-result-wide v33
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Day_Today:I = 0x7f1302a5
+    add-long v33, v33, v35
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Fullscreen:I = 0x7f1302a7
+    const/16 v12, 0x9
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton:I = 0x7f1302a8
+    invoke-static {v7, v12, v6}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderDivider:I = 0x7f1302a9
+    move-result-wide v35
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderLayout:I = 0x7f1302aa
+    add-long v35, v35, v37
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderSelection:I = 0x7f1302ab
+    const/16 v6, 0x8
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen:I = 0x7f1302ac
+    const/16 v8, 0xc
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderTitle:I = 0x7f1302ad
+    invoke-static {v7, v8, v6}, Lcom/google/android/material/R$style;->load26([BII)J
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton:I = 0x7f1302ae
+    move-result-wide v37
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Item:I = 0x7f1302af
+    aget-byte v6, v7, v13
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Year:I = 0x7f1302b0
+    const/16 v8, 0x18
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Year_Selected:I = 0x7f1302b1
+    shl-int/2addr v6, v8
 
-.field public static final Widget_MaterialComponents_MaterialCalendar_Year_Today:I = 0x7f1302b2
+    int-to-long v12, v6
 
-.field public static final Widget_MaterialComponents_NavigationView:I = 0x7f1302b3
+    or-long v12, v37, v12
 
-.field public static final Widget_MaterialComponents_PopupMenu:I = 0x7f1302b4
+    add-long v39, v39, v12
 
-.field public static final Widget_MaterialComponents_PopupMenu_ContextMenu:I = 0x7f1302b5
+    mul-long v12, v44, v4
 
-.field public static final Widget_MaterialComponents_PopupMenu_ListPopupWindow:I = 0x7f1302b6
+    mul-long v37, v41, v31
 
-.field public static final Widget_MaterialComponents_PopupMenu_Overflow:I = 0x7f1302b7
+    add-long v37, v37, v12
 
-.field public static final Widget_MaterialComponents_Snackbar:I = 0x7f1302b8
+    mul-long v12, v33, v29
 
-.field public static final Widget_MaterialComponents_Snackbar_FullWidth:I = 0x7f1302b9
+    add-long v12, v12, v37
 
-.field public static final Widget_MaterialComponents_TabLayout:I = 0x7f1302ba
+    mul-long v37, v35, v27
 
-.field public static final Widget_MaterialComponents_TabLayout_Colored:I = 0x7f1302bb
+    add-long v37, v37, v12
 
-.field public static final Widget_MaterialComponents_TabLayout_PrimarySurface:I = 0x7f1302bc
+    mul-long v12, v39, v25
 
-.field public static final Widget_MaterialComponents_TextInputEditText_FilledBox:I = 0x7f1302bd
+    add-long v12, v12, v37
 
-.field public static final Widget_MaterialComponents_TextInputEditText_FilledBox_Dense:I = 0x7f1302be
+    mul-long v37, v44, v10
 
-.field public static final Widget_MaterialComponents_TextInputEditText_OutlinedBox:I = 0x7f1302bf
+    mul-long v46, v41, v4
 
-.field public static final Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense:I = 0x7f1302c0
+    add-long v46, v46, v37
 
-.field public static final Widget_MaterialComponents_TextInputLayout_FilledBox:I = 0x7f1302c1
+    mul-long v37, v33, v31
 
-.field public static final Widget_MaterialComponents_TextInputLayout_FilledBox_Dense:I = 0x7f1302c2
+    add-long v37, v37, v46
 
-.field public static final Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu:I = 0x7f1302c3
+    mul-long v46, v35, v29
 
-.field public static final Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu:I = 0x7f1302c4
+    add-long v46, v46, v37
 
-.field public static final Widget_MaterialComponents_TextInputLayout_OutlinedBox:I = 0x7f1302c5
+    mul-long v37, v39, v27
 
-.field public static final Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense:I = 0x7f1302c6
+    add-long v37, v37, v46
 
-.field public static final Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu:I = 0x7f1302c7
+    mul-long v46, v44, v14
 
-.field public static final Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu:I = 0x7f1302c8
+    mul-long v48, v41, v10
 
-.field public static final Widget_MaterialComponents_TextView:I = 0x7f1302c9
+    add-long v48, v48, v46
 
-.field public static final Widget_MaterialComponents_Toolbar:I = 0x7f1302ca
+    mul-long v46, v33, v4
 
-.field public static final Widget_MaterialComponents_Toolbar_Primary:I = 0x7f1302cb
+    add-long v46, v46, v48
 
-.field public static final Widget_MaterialComponents_Toolbar_PrimarySurface:I = 0x7f1302cc
+    mul-long v48, v35, v31
 
-.field public static final Widget_MaterialComponents_Toolbar_Surface:I = 0x7f1302cd
+    add-long v48, v48, v46
 
-.field public static final Widget_Support_CoordinatorLayout:I = 0x7f1302ce
+    mul-long v46, v39, v29
+
+    add-long v46, v46, v48
+
+    mul-long v48, v44, v17
+
+    mul-long v50, v41, v14
+
+    add-long v50, v50, v48
+
+    mul-long v48, v33, v10
+
+    add-long v48, v48, v50
+
+    mul-long v50, v35, v4
+
+    add-long v50, v50, v48
+
+    mul-long v48, v39, v31
+
+    add-long v48, v48, v50
+
+    mul-long v44, v44, v21
+
+    mul-long v41, v41, v17
+
+    add-long v41, v41, v44
+
+    mul-long v33, v33, v14
+
+    add-long v33, v33, v41
+
+    mul-long v35, v35, v10
+
+    add-long v35, v35, v33
+
+    mul-long v39, v39, v4
+
+    add-long v39, v39, v35
+
+    shr-long v33, v12, v43
+
+    const-wide/32 v19, 0x3ffffff
+
+    and-long v12, v12, v19
+
+    add-long v37, v37, v33
+
+    shr-long v33, v37, v43
+
+    and-long v35, v37, v19
+
+    add-long v46, v46, v33
+
+    shr-long v33, v46, v43
+
+    and-long v37, v46, v19
+
+    add-long v48, v48, v33
+
+    shr-long v33, v48, v43
+
+    and-long v41, v48, v19
+
+    add-long v39, v39, v33
+
+    shr-long v33, v39, v43
+
+    and-long v39, v39, v19
+
+    mul-long v33, v33, v23
+
+    add-long v33, v33, v12
+
+    shr-long v12, v33, v43
+
+    and-long v33, v33, v19
+
+    add-long v12, v35, v12
+
+    add-int/lit8 v3, v3, 0x10
+
+    move-wide/from16 v35, v37
+
+    move-wide/from16 v37, v41
+
+    const/16 v6, 0x11
+
+    const/4 v8, 0x3
+
+    move-wide/from16 v41, v33
+
+    move-wide/from16 v33, v12
+
+    const/4 v13, 0x4
+
+    goto/16 :goto_0
+
+    :cond_1
+    const-wide/32 v19, 0x3ffffff
+
+    shr-long v3, v33, v43
+
+    and-long v5, v33, v19
+
+    add-long v35, v35, v3
+
+    shr-long v3, v35, v43
+
+    and-long v7, v35, v19
+
+    add-long v37, v37, v3
+
+    shr-long v3, v37, v43
+
+    and-long v9, v37, v19
+
+    add-long v39, v39, v3
+
+    shr-long v3, v39, v43
+
+    and-long v11, v39, v19
+
+    mul-long v3, v3, v23
+
+    add-long v3, v3, v41
+
+    shr-long v14, v3, v43
+
+    and-long v3, v3, v19
+
+    add-long/2addr v5, v14
+
+    add-long v23, v3, v23
+
+    shr-long v14, v23, v43
+
+    and-long v17, v23, v19
+
+    add-long/2addr v14, v5
+
+    shr-long v21, v14, v43
+
+    and-long v14, v14, v19
+
+    add-long v21, v7, v21
+
+    shr-long v23, v21, v43
+
+    and-long v21, v21, v19
+
+    add-long v23, v9, v23
+
+    shr-long v25, v23, v43
+
+    and-long v19, v23, v19
+
+    add-long v25, v11, v25
+
+    const-wide/32 v23, 0x4000000
+
+    sub-long v25, v25, v23
+
+    const/16 v1, 0x3f
+
+    move-wide/from16 v27, v14
+
+    shr-long v13, v25, v1
+
+    and-long/2addr v3, v13
+
+    and-long/2addr v5, v13
+
+    and-long/2addr v7, v13
+
+    and-long/2addr v9, v13
+
+    and-long/2addr v11, v13
+
+    not-long v13, v13
+
+    and-long v17, v17, v13
+
+    or-long v3, v3, v17
+
+    and-long v17, v27, v13
+
+    or-long v5, v5, v17
+
+    and-long v17, v21, v13
+
+    or-long v7, v7, v17
+
+    and-long v17, v19, v13
+
+    or-long v9, v9, v17
+
+    and-long v13, v25, v13
+
+    or-long/2addr v11, v13
+
+    shl-long v13, v5, v43
+
+    or-long/2addr v3, v13
+
+    const-wide v13, 0xffffffffL
+
+    and-long/2addr v3, v13
+
+    const/4 v1, 0x6
+
+    shr-long/2addr v5, v1
+
+    const/16 v1, 0x14
+
+    shl-long v17, v7, v1
+
+    or-long v5, v5, v17
+
+    and-long/2addr v5, v13
+
+    const/16 v15, 0xc
+
+    shr-long/2addr v7, v15
+
+    const/16 v15, 0xe
+
+    shl-long v17, v9, v15
+
+    or-long v7, v7, v17
+
+    and-long/2addr v7, v13
+
+    const/16 v15, 0x12
+
+    shr-long/2addr v9, v15
+
+    const/16 v15, 0x8
+
+    shl-long/2addr v11, v15
+
+    or-long/2addr v9, v11
+
+    and-long/2addr v9, v13
+
+    const/16 v11, 0x10
+
+    invoke-static {v0, v11}, Lcom/google/android/material/R$style;->load32([BI)J
+
+    move-result-wide v17
+
+    add-long v17, v17, v3
+
+    and-long v3, v17, v13
+
+    invoke-static {v0, v1}, Lcom/google/android/material/R$style;->load32([BI)J
+
+    move-result-wide v11
+
+    add-long/2addr v11, v5
+
+    const/16 v1, 0x20
+
+    shr-long v5, v17, v1
+
+    add-long/2addr v11, v5
+
+    and-long v5, v11, v13
+
+    const/16 v15, 0x18
+
+    invoke-static {v0, v15}, Lcom/google/android/material/R$style;->load32([BI)J
+
+    move-result-wide v15
+
+    add-long/2addr v15, v7
+
+    shr-long v7, v11, v1
+
+    add-long/2addr v15, v7
+
+    and-long v7, v15, v13
+
+    const/16 v11, 0x1c
+
+    invoke-static {v0, v11}, Lcom/google/android/material/R$style;->load32([BI)J
+
+    move-result-wide v11
+
+    add-long/2addr v11, v9
+
+    shr-long v0, v15, v1
+
+    add-long/2addr v11, v0
+
+    and-long v0, v11, v13
+
+    const/16 v9, 0x10
+
+    new-array v9, v9, [B
+
+    invoke-static {v9, v3, v4, v2}, Lcom/google/android/material/R$style;->toByteArray([BJI)V
+
+    const/4 v2, 0x4
+
+    invoke-static {v9, v5, v6, v2}, Lcom/google/android/material/R$style;->toByteArray([BJI)V
+
+    const/16 v2, 0x8
+
+    invoke-static {v9, v7, v8, v2}, Lcom/google/android/material/R$style;->toByteArray([BJI)V
+
+    const/16 v2, 0xc
+
+    invoke-static {v9, v0, v1, v2}, Lcom/google/android/material/R$style;->toByteArray([BJI)V
+
+    return-object v9
+
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The key length in bytes must be 32."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static varargs concat([[B)[B
+    .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "chunks"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    move v3, v2
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    aget-object v4, p0, v2
+
+    const v5, 0x7fffffff
+
+    array-length v6, v4
+
+    sub-int/2addr v5, v6
+
+    if-gt v3, v5, :cond_0
+
+    array-length v4, v4
+
+    add-int/2addr v3, v4
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "exceeded size limit"
+
+    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-array v0, v3, [B
+
+    array-length v2, p0
+
+    move v3, v1
+
+    move v4, v3
+
+    :goto_1
+    if-ge v3, v2, :cond_2
+
+    aget-object v5, p0, v3
+
+    array-length v6, v5
+
+    invoke-static {v5, v1, v0, v4, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    array-length v5, v5
+
+    add-int/2addr v4, v5
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    return-object v0
+.end method
+
+.method public static createCircularReveal(Lcom/google/android/material/circularreveal/CircularRevealWidget;FFF)Landroid/animation/Animator;
+    .locals 6
+
+    sget-object v0, Lcom/google/android/material/circularreveal/CircularRevealWidget$CircularRevealProperty;->CIRCULAR_REVEAL:Landroid/util/Property;
+
+    sget-object v1, Lcom/google/android/material/circularreveal/CircularRevealWidget$CircularRevealEvaluator;->CIRCULAR_REVEAL:Landroid/animation/TypeEvaluator;
+
+    const/4 v2, 0x1
+
+    new-array v3, v2, [Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;
+
+    new-instance v4, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;
+
+    invoke-direct {v4, p1, p2, p3}, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;-><init>(FFF)V
+
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
+
+    invoke-static {p0, v0, v1, v3}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    invoke-interface {p0}, Lcom/google/android/material/circularreveal/CircularRevealWidget;->getRevealInfo()Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, v1, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
+
+    check-cast p0, Landroid/view/View;
+
+    float-to-int p1, p1
+
+    float-to-int p2, p2
+
+    invoke-static {p0, p1, p2, v1, p3}, Landroid/view/ViewAnimationUtils;->createCircularReveal(Landroid/view/View;IIFF)Landroid/animation/Animator;
+
+    move-result-object p0
+
+    new-instance p1, Landroid/animation/AnimatorSet;
+
+    invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
+
+    const/4 p2, 0x2
+
+    new-array p2, p2, [Landroid/animation/Animator;
+
+    aput-object v0, p2, v5
+
+    aput-object p0, p2, v2
+
+    invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Caller must set a non-null RevealInfo before calling this."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    .locals 1
+
+    if-eqz p0, :cond_1
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_0
+
+    new-instance p0, Lcom/google/android/material/shape/RoundedCornerTreatment;
+
+    invoke-direct {p0}, Lcom/google/android/material/shape/RoundedCornerTreatment;-><init>()V
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lcom/google/android/material/shape/CutCornerTreatment;
+
+    invoke-direct {p0}, Lcom/google/android/material/shape/CutCornerTreatment;-><init>()V
+
+    return-object p0
+
+    :cond_1
+    new-instance p0, Lcom/google/android/material/shape/RoundedCornerTreatment;
+
+    invoke-direct {p0}, Lcom/google/android/material/shape/RoundedCornerTreatment;-><init>()V
+
+    return-object p0
+.end method
+
+.method public static d([BI)J
+    .locals 2
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->e([BI)I
+
+    move-result v0
+
+    add-int/lit8 p1, p1, 0x2
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->e([BI)I
+
+    move-result p0
+
+    shl-int/lit8 p0, p0, 0x10
+
+    or-int/2addr p0, v0
+
+    int-to-long p0, p0
+
+    const-wide v0, 0xffffffffL
+
+    and-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static dbl([B)[B
+    .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    array-length v0, p0
+
+    const/16 v1, 0x10
+
+    if-ne v0, v1, :cond_2
+
+    new-array v0, v1, [B
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_0
+    const/16 v4, 0xf
+
+    if-ge v3, v1, :cond_1
+
+    aget-byte v5, p0, v3
+
+    shl-int/lit8 v5, v5, 0x1
+
+    and-int/lit16 v5, v5, 0xfe
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v0, v3
+
+    if-ge v3, v4, :cond_0
+
+    aget-byte v4, v0, v3
+
+    add-int/lit8 v5, v3, 0x1
+
+    aget-byte v5, p0, v5
+
+    shr-int/lit8 v5, v5, 0x7
+
+    and-int/lit8 v5, v5, 0x1
+
+    int-to-byte v5, v5
+
+    or-int/2addr v4, v5
+
+    int-to-byte v4, v4
+
+    aput-byte v4, v0, v3
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    aget-byte v1, v0, v4
+
+    aget-byte p0, p0, v2
+
+    shr-int/lit8 p0, p0, 0x7
+
+    and-int/lit16 p0, p0, 0x87
+
+    int-to-byte p0, p0
+
+    xor-int/2addr p0, v1
+
+    int-to-byte p0, p0
+
+    aput-byte p0, v0, v4
+
+    return-object v0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "value must be a block."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static decode(Ljava/lang/String;)[B
+    .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hex"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    rem-int/lit8 v0, v0, 0x2
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    div-int/lit8 v0, v0, 0x2
+
+    new-array v1, v0, [B
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    mul-int/lit8 v3, v2, 0x2
+
+    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    const/16 v5, 0x10
+
+    invoke-static {v4, v5}, Ljava/lang/Character;->digit(CI)I
+
+    move-result v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3, v5}, Ljava/lang/Character;->digit(CI)I
+
+    move-result v3
+
+    const/4 v5, -0x1
+
+    if-eq v4, v5, :cond_0
+
+    if-eq v3, v5, :cond_0
+
+    mul-int/lit8 v4, v4, 0x10
+
+    add-int/2addr v4, v3
+
+    int-to-byte v3, v4
+
+    aput-byte v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "input is not hexadecimal"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    return-object v1
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Expected a string of even length"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    invoke-static {p0, p1, p2}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ltz v0, :cond_2
+
+    array-length v1, p0
+
+    sub-int/2addr v1, p1
+
+    if-gt v0, v1, :cond_1
+
+    if-nez v0, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    iput-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    return p1
+
+    :cond_0
+    invoke-static {p0, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object p0
+
+    iput-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    add-int/2addr p1, v0
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_2
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeDouble([BI)D
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public static decodeExtension(I[BIILcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I[BII",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage<",
+            "**>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "**>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema<",
+            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;",
+            ">;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    ushr-int/lit8 p0, p0, 0x3
+
+    iget-object v1, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-boolean v2, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_2
+
+    iget-boolean v2, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked:Z
+
+    if-eqz v2, :cond_2
+
+    iget-object p3, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p3
+
+    packed-switch p3, :pswitch_data_0
+
+    :pswitch_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Type cannot be packed: "
+
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    goto/16 :goto_1
+
+    :pswitch_1
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedSInt64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_2
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedSInt32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_3
+    new-instance p3, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-direct {p3}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;-><init>()V
+
+    invoke-static {p1, p2, p3, p7}, Lcom/google/android/material/R$style;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    sget-object p7, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->DEFAULT_INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    if-ne p2, p7, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v3, p2
+
+    :goto_0
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->enumTypeMap:Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;
+
+    invoke-static {p0, p3, p2, v3, p6}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->filterUnknownEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    if-eqz p0, :cond_1
+
+    iput-object p0, p4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    :cond_1
+    iget-object p0, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p0, p3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_4
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedBoolList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_5
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedFixed32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_6
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedFixed64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_7
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_8
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedVarint64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_9
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedFloatList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :pswitch_a
+    new-instance p0, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
+
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;-><init>()V
+
+    invoke-static {p1, p2, p0, p7}, Lcom/google/android/material/R$style;->decodePackedDoubleList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-object p2, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p2, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto/16 :goto_8
+
+    :goto_1
+    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    iget-object v1, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-object v1, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    if-ne v1, v2, :cond_5
+
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-object p1, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->enumTypeMap:Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;
+
+    iget p3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-interface {p1, p3}, Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;->findValueByNumber(I)Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLite;
+
+    move-result-object p1
+
+    if-nez p1, :cond_4
+
+    iget-object p1, p4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    sget-object p3, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->DEFAULT_INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    if-ne p1, p3, :cond_3
+
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    move-result-object p1
+
+    iput-object p1, p4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    :cond_3
+    iget p3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-static {p0, p3, p1, p6}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+
+    return p2
+
+    :cond_4
+    iget p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    goto/16 :goto_5
+
+    :cond_5
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p4
+
+    packed-switch p4, :pswitch_data_1
+
+    goto/16 :goto_5
+
+    :pswitch_b
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-wide p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    invoke-static {p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->decodeZigZag64(J)J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    goto/16 :goto_5
+
+    :pswitch_c
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->decodeZigZag32(I)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    goto/16 :goto_5
+
+    :pswitch_d
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Shouldn\'t reach here."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_e
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-object v3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    goto/16 :goto_5
+
+    :pswitch_f
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    iget-object p4, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p4
+
+    invoke-virtual {p0, p4}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object p0
+
+    invoke-static {p0, p1, p2, p3, p7}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-object v3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    goto/16 :goto_5
+
+    :pswitch_10
+    shl-int/lit8 p0, p0, 0x3
+
+    or-int/lit8 v5, p0, 0x4
+
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    iget-object p4, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p4
+
+    invoke-virtual {p0, p4}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object v1
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move-object v6, p7
+
+    invoke-static/range {v1 .. v6}, Lcom/google/android/material/R$style;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-object v3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    goto :goto_5
+
+    :pswitch_11
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-object v3, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    goto :goto_5
+
+    :pswitch_12
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-wide p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    const-wide/16 p3, 0x0
+
+    cmp-long p0, p0, p3
+
+    if-eqz p0, :cond_6
+
+    const/4 p0, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    const/4 p0, 0x0
+
+    :goto_2
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    goto :goto_5
+
+    :pswitch_13
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    goto :goto_3
+
+    :pswitch_14
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    goto :goto_4
+
+    :pswitch_15
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    goto :goto_5
+
+    :pswitch_16
+    invoke-static {p1, p2, p7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget-wide p0, p7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    goto :goto_5
+
+    :pswitch_17
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    :goto_3
+    move-object v3, p0
+
+    add-int/lit8 p2, p2, 0x4
+
+    goto :goto_5
+
+    :pswitch_18
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p0
+
+    :goto_4
+    move-object v3, p0
+
+    add-int/lit8 p2, p2, 0x8
+
+    :goto_5
+    iget-object p0, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-boolean p1, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
+
+    if-eqz p1, :cond_7
+
+    invoke-virtual {v0, p0, v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->addRepeatedField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    goto :goto_7
+
+    :cond_7
+    iget-object p0, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p0
+
+    const/16 p1, 0x9
+
+    if-eq p0, p1, :cond_8
+
+    const/16 p1, 0xa
+
+    if-eq p0, p1, :cond_8
+
+    goto :goto_6
+
+    :cond_8
+    iget-object p0, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_9
+
+    invoke-static {p0, v3}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    :cond_9
+    :goto_6
+    iget-object p0, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0, p0, v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    :goto_7
+    move p1, p2
+
+    :goto_8
+    return p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_7
+        :pswitch_3
+        :pswitch_5
+        :pswitch_6
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_15
+        :pswitch_d
+        :pswitch_13
+        :pswitch_14
+        :pswitch_c
+        :pswitch_b
+    .end packed-switch
+.end method
+
+.method public static decodeFixed32([BI)I
+    .locals 2
+
+    aget-byte v0, p0, p1
+
+    and-int/lit16 v0, v0, 0xff
+
+    add-int/lit8 v1, p1, 0x1
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x8
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 v1, p1, 0x2
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x10
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 p1, p1, 0x3
+
+    aget-byte p0, p0, p1
+
+    and-int/lit16 p0, p0, 0xff
+
+    shl-int/lit8 p0, p0, 0x18
+
+    or-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static decodeFixed64([BI)J
+    .locals 7
+
+    aget-byte v0, p0, p1
+
+    int-to-long v0, v0
+
+    const-wide/16 v2, 0xff
+
+    and-long/2addr v0, v2
+
+    add-int/lit8 v4, p1, 0x1
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x8
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 v4, p1, 0x2
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x10
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 v4, p1, 0x3
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x18
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 v4, p1, 0x4
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x20
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 v4, p1, 0x5
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x28
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 v4, p1, 0x6
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    and-long/2addr v4, v2
+
+    const/16 v6, 0x30
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v0, v4
+
+    add-int/lit8 p1, p1, 0x7
+
+    aget-byte p0, p0, p1
+
+    int-to-long p0, p0
+
+    and-long/2addr p0, v2
+
+    const/16 v2, 0x38
+
+    shl-long/2addr p0, v2
+
+    or-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static decodeFloat([BI)F
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->newInstance()Ljava/lang/Object;
+
+    move-result-object v7
+
+    move-object v0, p0
+
+    move-object v1, v7
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    move-object v6, p5
+
+    invoke-virtual/range {v0 .. v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->parseProto2Message(Ljava/lang/Object;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    invoke-virtual {p0, v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->makeImmutable(Ljava/lang/Object;)V
+
+    iput-object v7, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    return p1
+.end method
+
+.method public static decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    add-int/lit8 v0, p2, 0x1
+
+    aget-byte p2, p1, p2
+
+    if-gez p2, :cond_0
+
+    invoke-static {p2, p1, v0, p4}, Lcom/google/android/material/R$style;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result v0
+
+    iget p2, p4, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    :cond_0
+    move v3, v0
+
+    if-ltz p2, :cond_1
+
+    sub-int/2addr p3, v3
+
+    if-gt p2, p3, :cond_1
+
+    invoke-interface {p0}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->newInstance()Ljava/lang/Object;
+
+    move-result-object p3
+
+    add-int/2addr p2, v3
+
+    move-object v0, p0
+
+    move-object v1, p3
+
+    move-object v2, p1
+
+    move v4, p2
+
+    move-object v5, p4
+
+    invoke-interface/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->mergeFrom(Ljava/lang/Object;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)V
+
+    invoke-interface {p0, p3}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->makeImmutable(Ljava/lang/Object;)V
+
+    iput-object p3, p4, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    return p2
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/Schema<",
+            "*>;I[BII",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p0, p2, p3, p4, p6}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p3
+
+    iget-object v0, p6, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :goto_0
+    if-ge p3, p4, :cond_1
+
+    invoke-static {p2, p3, p6}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result v0
+
+    iget v1, p6, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-eq p1, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p0, p2, v0, p4, p6}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p3
+
+    iget-object v0, p6, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return p3
+.end method
+
+.method public static decodePackedBoolList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_1
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-wide v1, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v1, v3
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {p2, v1}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->addBoolean(Z)V
+
+    goto :goto_0
+
+    :cond_1
+    if-ne p1, v0, :cond_2
+
+    return p1
+
+    :cond_2
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedDoubleList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget p3, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr p3, p1
+
+    :goto_0
+    if-ge p1, p3, :cond_0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+
+    move-result-wide v0
+
+    invoke-virtual {p2, v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->addDouble(D)V
+
+    add-int/lit8 p1, p1, 0x8
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, p3, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedFixed32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget p3, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr p3, p1
+
+    :goto_0
+    if-ge p1, p3, :cond_0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+
+    add-int/lit8 p1, p1, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, p3, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedFixed64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget p3, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr p3, p1
+
+    :goto_0
+    if-ge p1, p3, :cond_0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+
+    move-result-wide v0
+
+    invoke-virtual {p2, v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+
+    add-int/lit8 p1, p1, 0x8
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, p3, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedFloatList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget p3, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr p3, p1
+
+    :goto_0
+    if-ge p1, p3, :cond_0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->addFloat(F)V
+
+    add-int/lit8 p1, p1, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, p3, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedSInt32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v1, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-static {v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->decodeZigZag32(I)I
+
+    move-result v1
+
+    invoke-virtual {p2, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, v0, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedSInt64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-wide v1, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    invoke-static {v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->decodeZigZag64(J)J
+
+    move-result-wide v1
+
+    invoke-virtual {p2, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, v0, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v1, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-virtual {p2, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, v0, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodePackedVarint64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BI",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    invoke-static {p0, p1, p3}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-wide v1, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    invoke-virtual {p2, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+
+    goto :goto_0
+
+    :cond_0
+    if-ne p1, v0, :cond_1
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    invoke-static {p0, p1, p2}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ltz v0, :cond_1
+
+    if-nez v0, :cond_0
+
+    const-string p0, ""
+
+    iput-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    return p1
+
+    :cond_0
+    new-instance v1, Ljava/lang/String;
+
+    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-direct {v1, p0, p1, v0, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    iput-object v1, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    add-int/2addr p1, v0
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeStringRequireUtf8([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    invoke-static {p0, p1, p2}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget v0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ltz v0, :cond_1
+
+    if-nez v0, :cond_0
+
+    const-string p0, ""
+
+    iput-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    return p1
+
+    :cond_0
+    invoke-static {p0, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/Utf8;->decodeUtf8([BII)Ljava/lang/String;
+
+    move-result-object p0
+
+    iput-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
+
+    add-int/2addr p1, v0
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    ushr-int/lit8 v0, p0, 0x3
+
+    if-eqz v0, :cond_b
+
+    and-int/lit8 v0, p0, 0x7
+
+    if-eqz v0, :cond_a
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_9
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_5
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 p3, 0x5
+
+    if-ne v0, p3, :cond_0
+
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p4, p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    add-int/lit8 p2, p2, 0x4
+
+    return p2
+
+    :cond_0
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_1
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    move-result-object v6
+
+    and-int/lit8 v0, p0, -0x8
+
+    or-int/lit8 v7, v0, 0x4
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge p2, p3, :cond_3
+
+    invoke-static {p1, p2, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result v2
+
+    iget p2, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ne p2, v7, :cond_2
+
+    move v0, p2
+
+    move p2, v2
+
+    goto :goto_1
+
+    :cond_2
+    move v0, p2
+
+    move-object v1, p1
+
+    move v3, p3
+
+    move-object v4, v6
+
+    move-object v5, p5
+
+    invoke-static/range {v0 .. v5}, Lcom/google/android/material/R$style;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result v0
+
+    move v8, v0
+
+    move v0, p2
+
+    move p2, v8
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    if-gt p2, p3, :cond_4
+
+    if-ne v0, v7, :cond_4
+
+    invoke-virtual {p4, p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    return p2
+
+    :cond_4
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_5
+    invoke-static {p1, p2, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget p3, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ltz p3, :cond_8
+
+    array-length p5, p1
+
+    sub-int/2addr p5, p2
+
+    if-gt p3, p5, :cond_7
+
+    if-nez p3, :cond_6
+
+    sget-object p1, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    invoke-virtual {p4, p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_6
+    invoke-static {p1, p2, p3}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object p1
+
+    invoke-virtual {p4, p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    :goto_2
+    add-int/2addr p2, p3
+
+    return p2
+
+    :cond_7
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_8
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_9
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {p4, p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    add-int/lit8 p2, p2, 0x8
+
+    return p2
+
+    :cond_a
+    invoke-static {p1, p2, p5}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    iget-wide p2, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {p4, p0, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+
+    return p1
+
+    :cond_b
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 1
+
+    and-int/lit8 p0, p0, 0x7f
+
+    add-int/lit8 v0, p2, 0x1
+
+    aget-byte p2, p1, p2
+
+    if-ltz p2, :cond_0
+
+    shl-int/lit8 p1, p2, 0x7
+
+    or-int/2addr p0, p1
+
+    iput p0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return v0
+
+    :cond_0
+    and-int/lit8 p2, p2, 0x7f
+
+    shl-int/lit8 p2, p2, 0x7
+
+    or-int/2addr p0, p2
+
+    add-int/lit8 p2, v0, 0x1
+
+    aget-byte v0, p1, v0
+
+    if-ltz v0, :cond_1
+
+    shl-int/lit8 p1, v0, 0xe
+
+    or-int/2addr p0, p1
+
+    iput p0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return p2
+
+    :cond_1
+    and-int/lit8 v0, v0, 0x7f
+
+    shl-int/lit8 v0, v0, 0xe
+
+    or-int/2addr p0, v0
+
+    add-int/lit8 v0, p2, 0x1
+
+    aget-byte p2, p1, p2
+
+    if-ltz p2, :cond_2
+
+    shl-int/lit8 p1, p2, 0x15
+
+    or-int/2addr p0, p1
+
+    iput p0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return v0
+
+    :cond_2
+    and-int/lit8 p2, p2, 0x7f
+
+    shl-int/lit8 p2, p2, 0x15
+
+    or-int/2addr p0, p2
+
+    add-int/lit8 p2, v0, 0x1
+
+    aget-byte v0, p1, v0
+
+    if-ltz v0, :cond_3
+
+    shl-int/lit8 p1, v0, 0x1c
+
+    or-int/2addr p0, p1
+
+    iput p0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return p2
+
+    :cond_3
+    and-int/lit8 v0, v0, 0x7f
+
+    shl-int/lit8 v0, v0, 0x1c
+
+    or-int/2addr p0, v0
+
+    :goto_0
+    add-int/lit8 v0, p2, 0x1
+
+    aget-byte p2, p1, p2
+
+    if-gez p2, :cond_4
+
+    move p2, v0
+
+    goto :goto_0
+
+    :cond_4
+    iput p0, p3, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return v0
+.end method
+
+.method public static decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 1
+
+    add-int/lit8 v0, p1, 0x1
+
+    aget-byte p1, p0, p1
+
+    if-ltz p1, :cond_0
+
+    iput p1, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    return v0
+
+    :cond_0
+    invoke-static {p1, p0, v0, p2}, Lcom/google/android/material/R$style;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static decodeVarint32List(I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I[BII",
+            "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
+            "*>;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;",
+            ")I"
+        }
+    .end annotation
+
+    check-cast p4, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    invoke-static {p1, p2, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget v0, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-virtual {p4, v0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+
+    :goto_0
+    if-ge p2, p3, :cond_1
+
+    invoke-static {p1, p2, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result v0
+
+    iget v1, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-eq p0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p1, v0, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget v0, p5, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    invoke-virtual {p4, v0}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return p2
+.end method
+
+.method public static decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 9
+
+    add-int/lit8 v0, p1, 0x1
+
+    aget-byte p1, p0, p1
+
+    int-to-long v1, p1
+
+    const-wide/16 v3, 0x0
+
+    cmp-long p1, v1, v3
+
+    if-ltz p1, :cond_0
+
+    iput-wide v1, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    return v0
+
+    :cond_0
+    const-wide/16 v3, 0x7f
+
+    and-long/2addr v1, v3
+
+    add-int/lit8 p1, v0, 0x1
+
+    aget-byte v0, p0, v0
+
+    and-int/lit8 v3, v0, 0x7f
+
+    int-to-long v3, v3
+
+    const/4 v5, 0x7
+
+    shl-long/2addr v3, v5
+
+    or-long/2addr v1, v3
+
+    move v3, v5
+
+    :goto_0
+    if-gez v0, :cond_1
+
+    add-int/lit8 v0, p1, 0x1
+
+    aget-byte p1, p0, p1
+
+    add-int/2addr v3, v5
+
+    and-int/lit8 v4, p1, 0x7f
+
+    int-to-long v6, v4
+
+    shl-long/2addr v6, v3
+
+    or-long/2addr v1, v6
+
+    move v8, v0
+
+    move v0, p1
+
+    move p1, v8
+
+    goto :goto_0
+
+    :cond_1
+    iput-wide v1, p2, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+
+    return p1
+.end method
+
+.method public static dist(FFFF)F
+    .locals 0
+
+    sub-float/2addr p2, p0
+
+    sub-float/2addr p3, p1
+
+    float-to-double p0, p2
+
+    float-to-double p2, p3
+
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Math;->hypot(DD)D
+
+    move-result-wide p0
+
+    double-to-float p0, p0
+
+    return p0
+.end method
+
+.method public static doOnApplyWindowInsets(Landroid/view/View;Lcom/google/android/material/internal/ViewUtils$OnApplyWindowInsetsListener;)V
+    .locals 5
+
+    new-instance v0, Lcom/google/android/material/internal/ViewUtils$RelativePadding;
+
+    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getPaddingStart(Landroid/view/View;)I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
+
+    move-result v3
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result v4
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/material/internal/ViewUtils$RelativePadding;-><init>(IIII)V
+
+    new-instance v1, Lcom/google/android/material/internal/ViewUtils$3;
+
+    invoke-direct {v1, p1, v0}, Lcom/google/android/material/internal/ViewUtils$3;-><init>(Lcom/google/android/material/internal/ViewUtils$OnApplyWindowInsetsListener;Lcom/google/android/material/internal/ViewUtils$RelativePadding;)V
+
+    invoke-static {p0, v1}, Landroidx/core/view/ViewCompat;->setOnApplyWindowInsetsListener(Landroid/view/View;Landroidx/core/view/OnApplyWindowInsetsListener;)V
+
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lcom/google/android/material/internal/ViewUtils$4;
+
+    invoke-direct {p1}, Lcom/google/android/material/internal/ViewUtils$4;-><init>()V
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method public static dpToPx(Landroid/content/Context;I)F
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    int-to-float p1, p1
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    const/4 v0, 0x1
+
+    invoke-static {v0, p1, p0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static e([BI)I
+    .locals 1
+
+    aget-byte v0, p0, p1
+
+    and-int/lit16 v0, v0, 0xff
+
+    add-int/lit8 p1, p1, 0x1
+
+    aget-byte p0, p0, p1
+
+    and-int/lit16 p0, p0, 0xff
+
+    shl-int/lit8 p0, p0, 0x8
+
+    or-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    add-int/2addr v0, v1
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ":"
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static encode([B)Ljava/lang/String;
+    .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "bytes"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    array-length v1, p0
+
+    mul-int/lit8 v1, v1, 0x2
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    array-length v1, p0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-byte v3, p0, v2
+
+    and-int/lit16 v3, v3, 0xff
+
+    div-int/lit8 v4, v3, 0x10
+
+    const-string v5, "0123456789abcdef"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    rem-int/lit8 v3, v3, 0x10
+
+    invoke-virtual {v5, v3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+
+    if-eq p0, p1, :cond_1
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
+.end method
+
+.method public static final equal([B[B)Z
+    .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "x",
+            "y"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_3
+
+    if-nez p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    array-length v1, p0
+
+    array-length v2, p1
+
+    if-eq v1, v2, :cond_1
+
+    return v0
+
+    :cond_1
+    move v1, v0
+
+    move v2, v1
+
+    :goto_0
+    array-length v3, p0
+
+    if-ge v1, v3, :cond_2
+
+    aget-byte v3, p0, v1
+
+    aget-byte v4, p1, v1
+
+    xor-int/2addr v3, v4
+
+    or-int/2addr v2, v3
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    if-nez v2, :cond_3
+
+    const/4 v0, 0x1
+
+    :cond_3
+    :goto_1
+    return v0
+.end method
+
+.method public static escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
+    .locals 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_4
+
+    invoke-virtual {p0, v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->byteAt(I)B
+
+    move-result v2
+
+    const/16 v3, 0x22
+
+    if-eq v2, v3, :cond_3
+
+    const/16 v3, 0x27
+
+    if-eq v2, v3, :cond_2
+
+    const/16 v3, 0x5c
+
+    if-eq v2, v3, :cond_1
+
+    packed-switch v2, :pswitch_data_0
+
+    const/16 v4, 0x20
+
+    if-lt v2, v4, :cond_0
+
+    const/16 v4, 0x7e
+
+    if-gt v2, v4, :cond_0
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_0
+    const-string v2, "\\r"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_1
+    const-string v2, "\\f"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_2
+    const-string v2, "\\v"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_3
+    const-string v2, "\\n"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_4
+    const-string v2, "\\t"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_5
+    const-string v2, "\\b"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_6
+    const-string v2, "\\a"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    ushr-int/lit8 v3, v2, 0x6
+
+    and-int/lit8 v3, v3, 0x3
+
+    add-int/lit8 v3, v3, 0x30
+
+    int-to-char v3, v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    ushr-int/lit8 v3, v2, 0x3
+
+    and-int/lit8 v3, v3, 0x7
+
+    add-int/lit8 v3, v3, 0x30
+
+    int-to-char v3, v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    and-int/lit8 v2, v2, 0x7
+
+    add-int/lit8 v2, v2, 0x30
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_1
+    const-string v2, "\\\\"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_2
+    const-string v2, "\\\'"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_3
+    const-string v2, "\\\""
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_4
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static escapeBytes(Lcom/google/protobuf/ByteString;)Ljava/lang/String;
+    .locals 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_4
+
+    invoke-virtual {p0, v1}, Lcom/google/protobuf/ByteString;->byteAt(I)B
+
+    move-result v2
+
+    const/16 v3, 0x22
+
+    if-eq v2, v3, :cond_3
+
+    const/16 v3, 0x27
+
+    if-eq v2, v3, :cond_2
+
+    const/16 v3, 0x5c
+
+    if-eq v2, v3, :cond_1
+
+    packed-switch v2, :pswitch_data_0
+
+    const/16 v4, 0x20
+
+    if-lt v2, v4, :cond_0
+
+    const/16 v4, 0x7e
+
+    if-gt v2, v4, :cond_0
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_0
+    const-string v2, "\\r"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_1
+    const-string v2, "\\f"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_2
+    const-string v2, "\\v"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_3
+    const-string v2, "\\n"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_4
+    const-string v2, "\\t"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_5
+    const-string v2, "\\b"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :pswitch_6
+    const-string v2, "\\a"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    ushr-int/lit8 v3, v2, 0x6
+
+    and-int/lit8 v3, v3, 0x3
+
+    add-int/lit8 v3, v3, 0x30
+
+    int-to-char v3, v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    ushr-int/lit8 v3, v2, 0x3
+
+    and-int/lit8 v3, v3, 0x7
+
+    add-int/lit8 v3, v3, 0x30
+
+    int-to-char v3, v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    and-int/lit8 v2, v2, 0x7
+
+    add-int/lit8 v2, v2, 0x30
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_1
+    const-string v2, "\\\\"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_2
+    const-string v2, "\\\'"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_3
+    const-string v2, "\\\""
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_4
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static f(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x2
+
+    add-int/2addr v0, v1
+
+    add-int/2addr v0, v2
+
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ":"
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static g(Landroid/content/pm/PackageManager;Landroid/content/ComponentName;I)V
+    .locals 10
+
+    invoke-virtual {p0, p1}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_6
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_5
+
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit16 p2, p2, 0x200
+
+    :try_start_0
+    invoke-virtual {p0, v0, p2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object p2
+
+    const/4 v0, 0x3
+
+    new-array v4, v0, [[Landroid/content/pm/ComponentInfo;
+
+    iget-object v5, p2, Landroid/content/pm/PackageInfo;->activities:[Landroid/content/pm/ActivityInfo;
+
+    const/4 v6, 0x0
+
+    aput-object v5, v4, v6
+
+    iget-object v5, p2, Landroid/content/pm/PackageInfo;->services:[Landroid/content/pm/ServiceInfo;
+
+    aput-object v5, v4, v1
+
+    iget-object p2, p2, Landroid/content/pm/PackageInfo;->providers:[Landroid/content/pm/ProviderInfo;
+
+    aput-object p2, v4, v2
+
+    move p2, v6
+
+    :goto_0
+    if-ge p2, v0, :cond_3
+
+    aget-object v2, v4, p2
+
+    if-nez v2, :cond_0
+
+    goto :goto_2
+
+    :cond_0
+    array-length v5, v2
+
+    move v7, v6
+
+    :goto_1
+    if-ge v7, v5, :cond_2
+
+    aget-object v8, v2, v7
+
+    iget-object v9, v8, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+
+    invoke-virtual {v9, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    goto :goto_3
+
+    :cond_1
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    :goto_2
+    add-int/lit8 p2, p2, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v8, 0x0
+
+    :goto_3
+    if-nez v8, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {v8}, Landroid/content/pm/ComponentInfo;->isEnabled()Z
+
+    move-result p2
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz p2, :cond_5
+
+    goto :goto_5
+
+    :catch_0
+    :cond_5
+    :goto_4
+    invoke-virtual {p0, p1, v1, v1}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+
+    :cond_6
+    :goto_5
+    return-void
+.end method
+
+.method public static g(I)Z
+    .locals 1
+
+    const/4 v0, 0x5
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x6
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "curve"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-static {p0}, Lcom/google/android/material/R$style;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    sget-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->KEY_PAIR_GENERATOR:Lcom/google/crypto/tink/subtle/EngineFactory;
+
+    const-string v1, "EC"
+
+    invoke-virtual {v0, v1}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/security/KeyPairGenerator;
+
+    invoke-virtual {v0, p0}, Ljava/security/KeyPairGenerator;->initialize(Ljava/security/spec/AlgorithmParameterSpec;)V
+
+    invoke-virtual {v0}, Ljava/security/KeyPairGenerator;->generateKeyPair()Ljava/security/KeyPair;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getColor(Landroid/content/Context;II)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->resolve(Landroid/content/Context;I)Landroid/util/TypedValue;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    iget p0, p0, Landroid/util/TypedValue;->data:I
+
+    return p0
+
+    :cond_0
+    return p2
+.end method
+
+.method public static getColor(Landroid/view/View;I)I
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p1, p0}, Lcom/google/android/material/R$style;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    .locals 1
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getColorStateList(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;I)Landroid/content/res/ColorStateList;
+    .locals 2
+
+    iget-object v0, p1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+
+    invoke-virtual {v0, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iget-object v1, p1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+
+    invoke-virtual {v1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "curve"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/NoSuchAlgorithmException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    const-string p0, "6864797660130609714981900799081393217269435300143305409394463459185543183397656052122559640661454554977296311391480858037121987999716643812574028291115057151"
+
+    const-string v0, "6864797660130609714981900799081393217269435300143305409394463459185543183397655394245057746333217197532963996371363321113864768612440380340372808892707005449"
+
+    const-string v1, "051953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00"
+
+    const-string v2, "c6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66"
+
+    const-string v3, "11839296a789a3bc0045c8a5fb42c7d1bd998f54449579b446817afbd17273e662c97ee72995ef42640c550b9013fad0761353c7086a272c24088be94769fd16650"
+
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/google/android/material/R$style;->getNistCurveSpec(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/NoSuchAlgorithmException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "curve not implemented:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/NoSuchAlgorithmException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const-string p0, "39402006196394479212279040100143613805079739270465446667948293404245721771496870329047266088258938001861606973112319"
+
+    const-string v0, "39402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643"
+
+    const-string v1, "b3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aef"
+
+    const-string v2, "aa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7"
+
+    const-string v3, "3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5f"
+
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/google/android/material/R$style;->getNistCurveSpec(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "115792089210356248762697446949407573530086143415290314195533631308867097853951"
+
+    const-string v0, "115792089210356248762697446949407573529996955224135760342422259061068512044369"
+
+    const-string v1, "5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b"
+
+    const-string v2, "6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296"
+
+    const-string v3, "4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5"
+
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/google/android/material/R$style;->getNistCurveSpec(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getDrawable(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x10
+        }
+        names = {
+            "curve",
+            "keyValue"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-static {p0}, Lcom/google/android/material/R$style;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/math/BigInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p1}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    new-instance p1, Ljava/security/spec/ECPrivateKeySpec;
+
+    invoke-direct {p1, v0, p0}, Ljava/security/spec/ECPrivateKeySpec;-><init>(Ljava/math/BigInteger;Ljava/security/spec/ECParameterSpec;)V
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EngineFactory;->KEY_FACTORY:Lcom/google/crypto/tink/subtle/EngineFactory;
+
+    const-string v0, "EC"
+
+    invoke-virtual {p0, v0}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/security/KeyFactory;
+
+    invoke-virtual {p0, p1}, Ljava/security/KeyFactory;->generatePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/security/interfaces/ECPrivateKey;
+
+    return-object p0
+.end method
+
+.method public static getEcPublicKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B[B)Ljava/security/interfaces/ECPublicKey;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x10,
+            0x10
+        }
+        names = {
+            "curve",
+            "x",
+            "y"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-static {p0}, Lcom/google/android/material/R$style;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/math/BigInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p1}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    new-instance p1, Ljava/math/BigInteger;
+
+    invoke-direct {p1, v1, p2}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    new-instance p2, Ljava/security/spec/ECPoint;
+
+    invoke-direct {p2, v0, p1}, Ljava/security/spec/ECPoint;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+
+    invoke-virtual {p0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
+
+    move-result-object p1
+
+    invoke-static {p2, p1}, Lcom/google/android/material/R$style;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
+
+    new-instance p1, Ljava/security/spec/ECPublicKeySpec;
+
+    invoke-direct {p1, p2, p0}, Ljava/security/spec/ECPublicKeySpec;-><init>(Ljava/security/spec/ECPoint;Ljava/security/spec/ECParameterSpec;)V
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EngineFactory;->KEY_FACTORY:Lcom/google/crypto/tink/subtle/EngineFactory;
+
+    const-string p2, "EC"
+
+    invoke-virtual {p0, p2}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/security/KeyFactory;
+
+    invoke-virtual {p0, p1}, Ljava/security/KeyFactory;->generatePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/security/interfaces/ECPublicKey;
+
+    return-object p0
+.end method
+
+.method public static getNistCurveSpec(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/spec/ECParameterSpec;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "decimalP",
+            "decimalN",
+            "hexB",
+            "hexGX",
+            "hexGY"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/math/BigInteger;
+
+    invoke-direct {v0, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    new-instance p0, Ljava/math/BigInteger;
+
+    invoke-direct {p0, p1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    new-instance p1, Ljava/math/BigInteger;
+
+    const-string v1, "3"
+
+    invoke-direct {p1, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/math/BigInteger;
+
+    const/16 v2, 0x10
+
+    invoke-direct {v1, p2, v2}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;I)V
+
+    new-instance p2, Ljava/math/BigInteger;
+
+    invoke-direct {p2, p3, v2}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;I)V
+
+    new-instance p3, Ljava/math/BigInteger;
+
+    invoke-direct {p3, p4, v2}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;I)V
+
+    new-instance p4, Ljava/security/spec/ECFieldFp;
+
+    invoke-direct {p4, v0}, Ljava/security/spec/ECFieldFp;-><init>(Ljava/math/BigInteger;)V
+
+    new-instance v0, Ljava/security/spec/EllipticCurve;
+
+    invoke-direct {v0, p4, p1, v1}, Ljava/security/spec/EllipticCurve;-><init>(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+
+    new-instance p1, Ljava/security/spec/ECPoint;
+
+    invoke-direct {p1, p2, p3}, Ljava/security/spec/ECPoint;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+
+    new-instance p2, Ljava/security/spec/ECParameterSpec;
+
+    const/4 p3, 0x1
+
+    invoke-direct {p2, v0, p1, p0, p3}, Ljava/security/spec/ECParameterSpec;-><init>(Ljava/security/spec/EllipticCurve;Ljava/security/spec/ECPoint;Ljava/math/BigInteger;I)V
+
+    return-object p2
+.end method
+
+.method public static getParentAbsoluteElevation(Landroid/view/View;)F
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    instance-of v1, p0, Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    move-object v1, p0
+
+    check-cast v1, Landroid/view/View;
+
+    invoke-static {v1}, Landroidx/core/view/ViewCompat;->getElevation(Landroid/view/View;)F
+
+    move-result v1
+
+    add-float/2addr v0, v1
+
+    invoke-interface {p0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    return v0
+.end method
+
+.method public static getUSDateTimeFormat(II)Ljava/text/DateFormat;
+    .locals 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Unknown DateFormat style: "
+
+    const/4 v2, 0x3
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    if-eqz p0, :cond_3
+
+    if-eq p0, v4, :cond_2
+
+    if-eq p0, v3, :cond_1
+
+    if-ne p0, v2, :cond_0
+
+    const-string p0, "M/d/yy"
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    const-string p0, "MMM d, yyyy"
+
+    goto :goto_0
+
+    :cond_2
+    const-string p0, "MMMM d, yyyy"
+
+    goto :goto_0
+
+    :cond_3
+    const-string p0, "EEEE, MMMM d, yyyy"
+
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, " "
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p1, :cond_6
+
+    if-eq p1, v4, :cond_6
+
+    if-eq p1, v3, :cond_5
+
+    if-ne p1, v2, :cond_4
+
+    const-string p0, "h:mm a"
+
+    goto :goto_1
+
+    :cond_4
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_5
+    const-string p0, "h:mm:ss a"
+
+    goto :goto_1
+
+    :cond_6
+    const-string p0, "h:mm:ss a z"
+
+    :goto_1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Ljava/text/SimpleDateFormat;
+
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-direct {p1, p0, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    return-object p1
+.end method
+
+.method public static h(I)Z
+    .locals 1
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x7
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static hashCodeImpl(Ljava/util/Set;)I
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set<",
+            "*>;)I"
+        }
+    .end annotation
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    goto :goto_1
+
+    :cond_0
+    move v2, v0
+
+    :goto_1
+    add-int/2addr v1, v2
+
+    not-int v1, v1
+
+    not-int v1, v1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public static i(II)Z
+    .locals 4
+
+    const/4 v0, 0x5
+
+    const/4 v1, 0x1
+
+    if-ne p0, v0, :cond_1
+
+    if-ne p1, v0, :cond_0
+
+    move p0, v0
+
+    goto :goto_0
+
+    :cond_0
+    return v1
+
+    :cond_1
+    :goto_0
+    const/4 v2, 0x6
+
+    if-ne p0, v2, :cond_3
+
+    if-eq p1, v2, :cond_3
+
+    if-ne p1, v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    return v1
+
+    :cond_3
+    :goto_1
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_5
+
+    if-ne p1, v0, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    return v1
+
+    :cond_5
+    :goto_2
+    const/4 v0, 0x3
+
+    const/16 v2, 0x8
+
+    const/4 v3, 0x2
+
+    if-ne p0, v0, :cond_7
+
+    if-eq p1, v3, :cond_6
+
+    const/4 v0, 0x7
+
+    if-eq p1, v0, :cond_6
+
+    if-eq p1, v1, :cond_6
+
+    if-eq p1, v2, :cond_6
+
+    goto :goto_3
+
+    :cond_6
+    return v1
+
+    :cond_7
+    :goto_3
+    if-ne p0, v3, :cond_9
+
+    if-eq p1, v1, :cond_8
+
+    if-ne p1, v2, :cond_9
+
+    :cond_8
+    return v1
+
+    :cond_9
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static integer2Bytes(Ljava/math/BigInteger;I)[B
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "num",
+            "intendedLength"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/math/BigInteger;->toByteArray()[B
+
+    move-result-object p0
+
+    array-length v0, p0
+
+    if-ne v0, p1, :cond_0
+
+    return-object p0
+
+    :cond_0
+    array-length v0, p0
+
+    add-int/lit8 v1, p1, 0x1
+
+    const-string v2, "integer too large"
+
+    if-gt v0, v1, :cond_3
+
+    array-length v0, p0
+
+    const/4 v3, 0x0
+
+    if-ne v0, v1, :cond_2
+
+    aget-byte p1, p0, v3
+
+    if-nez p1, :cond_1
+
+    array-length p1, p0
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, v0, p1}, Ljava/util/Arrays;->copyOfRange([BII)[B
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-array v0, p1, [B
+
+    array-length v1, p0
+
+    sub-int/2addr p1, v1
+
+    array-length v1, p0
+
+    invoke-static {p0, v3, v0, p1, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-object v0
+
+    :cond_3
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static isAndroid()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    const-string v1, "android.app.Application"
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 v0, 0x1
+
+    :catch_0
+    return v0
+.end method
+
+.method public static isFinite(D)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Ljava/lang/Math;->getExponent(D)I
+
+    move-result p0
+
+    const/16 p1, 0x3ff
+
+    if-gt p0, p1, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public static isLayoutRtl(Landroid/view/View;)Z
+    .locals 1
+
+    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+
+    move-result p0
+
+    const/4 v0, 0x1
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public static isNotTrailingByte(B)Z
+    .locals 1
+
+    const/16 v0, -0x41
+
+    if-le p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public static j(Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)V"
+        }
+    .end annotation
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static k(Lcom/google/android/play/core/internal/cb;Ljava/io/InputStream;Ljava/io/OutputStream;J)V
+    .locals 13
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/16 v0, 0x4000
+
+    new-array v0, v0, [B
+
+    new-instance v1, Ljava/io/BufferedInputStream;
+
+    const/16 v2, 0x1000
+
+    move-object v3, p1
+
+    invoke-direct {v1, p1, v2}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
+
+    new-instance v9, Ljava/io/DataInputStream;
+
+    invoke-direct {v9, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v1
+
+    const v2, -0x2e002e01
+
+    if-eq v1, v2, :cond_1
+
+    new-instance v0, Lcom/google/android/play/core/internal/ca;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v2, v3
+
+    const-string v1, "%x"
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "Unexpected magic="
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/ca;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->read()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    if-ne v1, v2, :cond_6
+
+    const-wide/16 v1, 0x0
+
+    move-wide v10, v1
+
+    :goto_1
+    sub-long v7, p3, v10
+
+    :try_start_0
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->read()I
+
+    move-result v12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 v1, -0x1
+
+    if-eq v12, v1, :cond_5
+
+    if-eqz v12, :cond_4
+
+    const-string v2, "Unexpected end of patch"
+
+    packed-switch v12, :pswitch_data_0
+
+    goto/16 :goto_2
+
+    :pswitch_0
+    :try_start_1
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v4
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto/16 :goto_3
+
+    :pswitch_1
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v1
+
+    int-to-long v4, v1
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto/16 :goto_3
+
+    :pswitch_2
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v1
+
+    int-to-long v4, v1
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto/16 :goto_3
+
+    :pswitch_3
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v3
+
+    int-to-long v4, v3
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->read()I
+
+    move-result v12
+
+    if-eq v12, v1, :cond_2
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto/16 :goto_3
+
+    :cond_2
+    new-instance v0, Ljava/io/IOException;
+
+    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_4
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v1
+
+    int-to-long v4, v1
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto/16 :goto_3
+
+    :pswitch_5
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v1
+
+    int-to-long v4, v1
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto :goto_3
+
+    :pswitch_6
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v3
+
+    int-to-long v4, v3
+
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->read()I
+
+    move-result v12
+
+    if-eq v12, v1, :cond_3
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    move v6, v12
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/material/R$style;->p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+
+    goto :goto_3
+
+    :cond_3
+    new-instance v0, Ljava/io/IOException;
+
+    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_7
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, v9
+
+    move-object v3, p2
+
+    move v4, v12
+
+    move-wide v5, v7
+
+    invoke-static/range {v1 .. v6}, Lcom/google/android/material/R$style;->o([BLjava/io/DataInputStream;Ljava/io/OutputStream;IJ)V
+
+    goto :goto_3
+
+    :pswitch_8
+    invoke-virtual {v9}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result v12
+
+    move-object v1, v0
+
+    move-object v2, v9
+
+    move-object v3, p2
+
+    move v4, v12
+
+    move-wide v5, v7
+
+    invoke-static/range {v1 .. v6}, Lcom/google/android/material/R$style;->o([BLjava/io/DataInputStream;Ljava/io/OutputStream;IJ)V
+
+    goto :goto_3
+
+    :goto_2
+    move-object v1, v0
+
+    move-object v2, v9
+
+    move-object v3, p2
+
+    move v4, v12
+
+    move-wide v5, v7
+
+    invoke-static/range {v1 .. v6}, Lcom/google/android/material/R$style;->o([BLjava/io/DataInputStream;Ljava/io/OutputStream;IJ)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_3
+    int-to-long v1, v12
+
+    add-long/2addr v10, v1
+
+    goto/16 :goto_1
+
+    :cond_4
+    invoke-virtual {p2}, Ljava/io/OutputStream;->flush()V
+
+    return-void
+
+    :cond_5
+    :try_start_2
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "Patch file overrun"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {p2}, Ljava/io/OutputStream;->flush()V
+
+    throw v0
+
+    :cond_6
+    new-instance v0, Lcom/google/android/play/core/internal/ca;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x1e
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Unexpected version="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/ca;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0xf7
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static layer(IIF)I
+    .locals 1
+
+    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, p2
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result p2
+
+    invoke-static {p1, p2}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result p1
+
+    invoke-static {p1, p0}, Landroidx/core/graphics/ColorUtils;->compositeColors(II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static varargs lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .locals 10
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    array-length v2, p1
+
+    if-ge v1, v2, :cond_2
+
+    aget-object v2, p1, v1
+
+    if-nez v2, :cond_0
+
+    const-string v2, "null"
+
+    goto/16 :goto_2
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto/16 :goto_2
+
+    :catch_0
+    move-exception v3
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/2addr v6, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v4, 0x40
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "com.google.common.base.Strings"
+
+    invoke-static {v4}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v4
+
+    sget-object v5, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+
+    const-string v6, "Exception during lenientFormat for "
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v7, Ljava/lang/String;
+
+    invoke-direct {v7, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    move-object v6, v7
+
+    :goto_1
+    invoke-virtual {v4, v5, v6, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x9
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v5, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "<"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " threw "
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ">"
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    :goto_2
+    aput-object v2, p1, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    array-length v3, p1
+
+    mul-int/lit8 v3, v3, 0x10
+
+    add-int/2addr v3, v2
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move v2, v0
+
+    :goto_3
+    array-length v3, p1
+
+    if-ge v0, v3, :cond_4
+
+    const-string v3, "%s"
+
+    invoke-virtual {p0, v3, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v3
+
+    const/4 v4, -0x1
+
+    if-ne v3, v4, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    invoke-virtual {v1, p0, v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v0, 0x1
+
+    aget-object v0, p1, v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v3, 0x2
+
+    move v9, v2
+
+    move v2, v0
+
+    move v0, v9
+
+    goto :goto_3
+
+    :cond_4
+    :goto_4
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {v1, p0, v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    array-length p0, p1
+
+    if-ge v0, p0, :cond_6
+
+    const-string p0, " ["
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 p0, v0, 0x1
+
+    aget-object v0, p1, v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    :goto_5
+    array-length v0, p1
+
+    if-ge p0, v0, :cond_5
+
+    const-string v0, ", "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, p0, 0x1
+
+    aget-object p0, p1, p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move p0, v0
+
+    goto :goto_5
+
+    :cond_5
+    const/16 p0, 0x5d
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :cond_6
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static lerp(FFF)F
+    .locals 1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    sub-float/2addr v0, p2
+
+    mul-float/2addr v0, p0
+
+    mul-float/2addr p2, p1
+
+    add-float/2addr p2, v0
+
+    return p2
+.end method
+
+.method public static load26([BII)J
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "in",
+            "idx",
+            "shift"
+        }
+    .end annotation
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->load32([BI)J
+
+    move-result-wide p0
+
+    shr-long/2addr p0, p2
+
+    const-wide/32 v0, 0x3ffffff
+
+    and-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static load32([BI)J
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "in",
+            "idx"
+        }
+    .end annotation
+
+    aget-byte v0, p0, p1
+
+    and-int/lit16 v0, v0, 0xff
+
+    add-int/lit8 v1, p1, 0x1
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x8
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 v1, p1, 0x2
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x10
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 p1, p1, 0x3
+
+    aget-byte p0, p0, p1
+
+    and-int/lit16 p0, p0, 0xff
+
+    shl-int/lit8 p0, p0, 0x18
+
+    or-int/2addr p0, v0
+
+    int-to-long p0, p0
+
+    const-wide v0, 0xffffffffL
+
+    and-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "mgfSeed",
+            "maskLen",
+            "mgfHash"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    sget-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->MESSAGE_DIGEST:Lcom/google/crypto/tink/subtle/EngineFactory;
+
+    invoke-static {p2}, Lcom/google/android/material/R$style;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/security/MessageDigest;
+
+    invoke-virtual {p2}, Ljava/security/MessageDigest;->getDigestLength()I
+
+    move-result v0
+
+    new-array v1, p1, [B
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    move v4, v3
+
+    :goto_0
+    add-int/lit8 v5, p1, -0x1
+
+    div-int/2addr v5, v0
+
+    if-gt v3, v5, :cond_0
+
+    invoke-virtual {p2}, Ljava/security/MessageDigest;->reset()V
+
+    invoke-virtual {p2, p0}, Ljava/security/MessageDigest;->update([B)V
+
+    int-to-long v5, v3
+
+    invoke-static {v5, v6}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    const/4 v6, 0x4
+
+    invoke-static {v5, v6}, Lcom/google/android/material/R$style;->integer2Bytes(Ljava/math/BigInteger;I)[B
+
+    move-result-object v5
+
+    invoke-virtual {p2, v5}, Ljava/security/MessageDigest;->update([B)V
+
+    invoke-virtual {p2}, Ljava/security/MessageDigest;->digest()[B
+
+    move-result-object v5
+
+    array-length v6, v5
+
+    sub-int v7, p1, v4
+
+    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
+
+    invoke-static {v5, v2, v1, v4, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    array-length v5, v5
+
+    add-int/2addr v4, v5
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method public static o([BLjava/io/DataInputStream;Ljava/io/OutputStream;IJ)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-ltz p3, :cond_2
+
+    int-to-long v0, p3
+
+    cmp-long p4, v0, p4
+
+    if-gtz p4, :cond_1
+
+    :goto_0
+    if-lez p3, :cond_0
+
+    const/16 p4, 0x4000
+
+    :try_start_0
+    invoke-static {p3, p4}, Ljava/lang/Math;->min(II)I
+
+    move-result p4
+
+    const/4 p5, 0x0
+
+    invoke-virtual {p1, p0, p5, p4}, Ljava/io/DataInputStream;->readFully([BII)V
+
+    invoke-virtual {p2, p0, p5, p4}, Ljava/io/OutputStream;->write([BII)V
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+
+    sub-int/2addr p3, p4
+
+    goto :goto_0
+
+    :catch_0
+    new-instance p0, Ljava/io/IOException;
+
+    const-string p1, "patch underrun"
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/io/IOException;
+
+    const-string p1, "Output length overrun"
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/io/IOException;
+
+    const-string p1, "copyLength negative"
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static p([BLcom/google/android/play/core/internal/cb;Ljava/io/OutputStream;JIJ)V
+    .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    move-object v0, p0
+
+    move/from16 v1, p5
+
+    if-ltz v1, :cond_5
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, p3, v2
+
+    if-ltz v4, :cond_4
+
+    int-to-long v8, v1
+
+    cmp-long v4, v8, p6
+
+    if-gtz v4, :cond_3
+
+    :try_start_0
+    new-instance v10, Lcom/google/android/play/core/internal/cc;
+
+    move-object v4, v10
+
+    move-object v5, p1
+
+    move-wide v6, p3
+
+    invoke-direct/range {v4 .. v9}, Lcom/google/android/play/core/internal/cc;-><init>(Lcom/google/android/play/core/internal/cb;JJ)V
+
+    monitor-enter v10
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    invoke-virtual {v10}, Lcom/google/android/play/core/internal/cb;->a()J
+
+    move-result-wide v4
+
+    invoke-virtual {v10, v2, v3, v4, v5}, Lcom/google/android/play/core/internal/cb;->b(JJ)Ljava/io/InputStream;
+
+    move-result-object v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    :try_start_2
+    monitor-exit v10
+    :try_end_2
+    .catch Ljava/io/EOFException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_0
+    if-lez v1, :cond_2
+
+    const/16 v3, 0x4000
+
+    :try_start_3
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    move v5, v4
+
+    :goto_1
+    if-ge v5, v3, :cond_1
+
+    sub-int v6, v3, v5
+
+    invoke-virtual {v2, p0, v5, v6}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v6
+
+    const/4 v7, -0x1
+
+    if-eq v6, v7, :cond_0
+
+    add-int/2addr v5, v6
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "truncated input stream"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    move-object v5, p2
+
+    invoke-virtual {p2, p0, v4, v3}, Ljava/io/OutputStream;->write([BII)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    sub-int/2addr v1, v3
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    move-object v1, v0
+
+    :try_start_4
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception v0
+
+    move-object v2, v0
+
+    :try_start_5
+    sget-object v0, Lcom/google/android/play/core/internal/cj;->a:Lcom/google/android/play/core/internal/cd;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/play/core/internal/cd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    :goto_2
+    throw v1
+
+    :cond_2
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+
+    return-void
+
+    :catchall_2
+    move-exception v0
+
+    monitor-exit v10
+
+    throw v0
+    :try_end_5
+    .catch Ljava/io/EOFException; {:try_start_5 .. :try_end_5} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/io/IOException;
+
+    const-string v2, "patch underrun"
+
+    invoke-direct {v1, v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_3
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "Output length overrun"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "inputOffset negative"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_5
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "copyLength negative"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/gson/JsonParseException;
+        }
+    .end annotation
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1
+
+    const/4 v0, 0x0
+
+    :try_start_1
+    sget-object v1, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
+
+    invoke-virtual {v1, p0}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/google/gson/JsonElement;
+    :try_end_1
+    .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p0
+
+    new-instance v0, Lcom/google/gson/JsonSyntaxException;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_2
+    move-exception p0
+
+    new-instance v0, Lcom/google/gson/JsonIOException;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_3
+    move-exception p0
+
+    new-instance v0, Lcom/google/gson/JsonSyntaxException;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_4
+    move-exception p0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_0
+
+    sget-object p0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Lcom/google/gson/JsonSyntaxException;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public static parseReader(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/gson/JsonIOException;,
+            Lcom/google/gson/JsonSyntaxException;
+        }
+    .end annotation
+
+    const-string v0, " to Json"
+
+    const-string v1, "Failed parsing JSON source: "
+
+    iget-boolean v2, p0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    const/4 v3, 0x1
+
+    iput-boolean v3, p0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    :try_start_0
+    invoke-static {p0}, Lcom/google/android/material/R$style;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/StackOverflowError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iput-boolean v2, p0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v3
+
+    :try_start_1
+    new-instance v4, Lcom/google/gson/JsonParseException;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v4, v0, v3}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v4
+
+    :catch_1
+    move-exception v3
+
+    new-instance v4, Lcom/google/gson/JsonParseException;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v4, v0, v3}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_0
+    iput-boolean v2, p0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    throw v0
+.end method
+
+.method public static parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    .locals 1
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x5
+
+    if-eq p0, v0, :cond_1
+
+    const/16 v0, 0x9
+
+    if-eq p0, v0, :cond_0
+
+    packed-switch p0, :pswitch_data_0
+
+    return-object p1
+
+    :pswitch_0
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :pswitch_1
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :pswitch_2
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :cond_1
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :cond_2
+    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0xe
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    .locals 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/animation/AnimatorSet;",
+            "Ljava/util/List<",
+            "Landroid/animation/Animator;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const-wide/16 v2, 0x0
+
+    move v4, v1
+
+    :goto_0
+    if-ge v4, v0, :cond_0
+
+    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/animation/Animator;
+
+    invoke-virtual {v5}, Landroid/animation/Animator;->getStartDelay()J
+
+    move-result-wide v6
+
+    invoke-virtual {v5}, Landroid/animation/Animator;->getDuration()J
+
+    move-result-wide v8
+
+    add-long/2addr v8, v6
+
+    invoke-static {v2, v3, v8, v9}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v2
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x2
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_0
+
+    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    invoke-interface {p1, v1, v0}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    invoke-virtual {p0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+
+    return-void
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
+.end method
+
+.method public static final printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+    .locals 6
+
+    instance-of v0, p3, Ljava/util/List;
+
+    if-eqz v0, :cond_1
+
+    check-cast p3, Ljava/util/List;
+
+    invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, p2, v0}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    instance-of v0, p3, Ljava/util/Map;
+
+    if-eqz v0, :cond_3
+
+    check-cast p3, Ljava/util/Map;
+
+    invoke-interface {p3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p3
+
+    invoke-interface {p3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_1
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-static {p0, p1, p2, v0}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_2
+    return-void
+
+    :cond_3
+    const/16 v0, 0xa
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_2
+    const/16 v2, 0x20
+
+    if-ge v1, p1, :cond_4
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    instance-of p2, p3, Ljava/lang/String;
+
+    const/16 v1, 0x22
+
+    const-string v3, ": \""
+
+    if-eqz p2, :cond_5
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Ljava/lang/String;
+
+    invoke-static {p3}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_5
+
+    :cond_5
+    instance-of p2, p3, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    if-eqz p2, :cond_6
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    invoke-static {p3}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_5
+
+    :cond_6
+    instance-of p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    const-string v1, "}"
+
+    const-string v3, "\n"
+
+    const-string v4, " {"
+
+    if-eqz p2, :cond_8
+
+    invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    add-int/lit8 p2, p1, 0x2
+
+    invoke-static {p3, p0, p2}, Lcom/google/android/material/R$style;->reflectivePrintWithIndent(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_3
+    if-ge v0, p1, :cond_7
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_3
+
+    :cond_7
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_5
+
+    :cond_8
+    instance-of p2, p3, Ljava/util/Map$Entry;
+
+    if-eqz p2, :cond_a
+
+    invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Ljava/util/Map$Entry;
+
+    add-int/lit8 p2, p1, 0x2
+
+    invoke-interface {p3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    const-string v5, "key"
+
+    invoke-static {p0, p2, v5, v4}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    invoke-interface {p3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p3
+
+    const-string v4, "value"
+
+    invoke-static {p0, p2, v4, p3}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_4
+    if-ge v0, p1, :cond_9
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4
+
+    :cond_9
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_5
+
+    :cond_a
+    const-string p1, ": "
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_5
+    return-void
+.end method
+
+.method public static final printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+    .locals 4
+
+    instance-of v0, p3, Ljava/util/List;
+
+    if-eqz v0, :cond_1
+
+    check-cast p3, Ljava/util/List;
+
+    invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, p2, v0}, Lcom/google/android/material/R$style;->printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/16 v0, 0xa
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_1
+    const/16 v2, 0x20
+
+    if-ge v1, p1, :cond_2
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    instance-of p2, p3, Ljava/lang/String;
+
+    const/16 v1, 0x22
+
+    const-string v3, ": \""
+
+    if-eqz p2, :cond_3
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Ljava/lang/String;
+
+    invoke-static {p3}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/protobuf/ByteString;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_3
+
+    :cond_3
+    instance-of p2, p3, Lcom/google/protobuf/ByteString;
+
+    if-eqz p2, :cond_4
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Lcom/google/protobuf/ByteString;
+
+    invoke-static {p3}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/protobuf/ByteString;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_3
+
+    :cond_4
+    instance-of p2, p3, Lcom/google/protobuf/GeneratedMessageLite;
+
+    if-eqz p2, :cond_6
+
+    const-string p2, " {"
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    check-cast p3, Lcom/google/protobuf/GeneratedMessageLite;
+
+    add-int/lit8 p2, p1, 0x2
+
+    invoke-static {p3, p0, p2}, Lcom/google/android/material/R$style;->reflectivePrintWithIndent(Lcom/google/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+
+    const-string p2, "\n"
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_2
+    if-ge v0, p1, :cond_5
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_5
+    const-string p1, "}"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_3
+
+    :cond_6
+    const-string p1, ": "
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_3
+    return-void
+.end method
+
+.method public static reflectivePrintWithIndent(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+    .locals 13
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    new-instance v2, Ljava/util/TreeSet;
+
+    invoke-direct {v2}, Ljava/util/TreeSet;-><init>()V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    const/4 v5, 0x0
+
+    move v6, v5
+
+    :goto_0
+    const-string v7, "get"
+
+    if-ge v6, v4, :cond_1
+
+    aget-object v8, v3, v6
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v1, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+
+    move-result-object v9
+
+    array-length v9, v9
+
+    if-nez v9, :cond_0
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v0, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_2
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    const/4 v4, 0x3
+
+    if-eqz v3, :cond_12
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    goto :goto_2
+
+    :cond_3
+    move-object v6, v3
+
+    :goto_2
+    const-string v8, "List"
+
+    invoke-virtual {v6, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v9
+
+    const/4 v10, 0x1
+
+    if-eqz v9, :cond_4
+
+    const-string v9, "OrBuilderList"
+
+    invoke-virtual {v6, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_4
+
+    invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_4
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v5, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    add-int/lit8 v9, v9, -0x4
+
+    invoke-virtual {v6, v10, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/reflect/Method;
+
+    if-eqz v9, :cond_4
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v11
+
+    const-class v12, Ljava/util/List;
+
+    invoke-virtual {v11, v12}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    invoke-static {v8}, Lcom/google/android/material/R$style;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-array v4, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, p0, v4}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {p1, p2, v3, v4}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_4
+    const-string v8, "Map"
+
+    invoke-virtual {v6, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_5
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v5, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    sub-int/2addr v9, v4
+
+    invoke-virtual {v6, v10, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/reflect/Method;
+
+    if-eqz v3, :cond_5
+
+    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v8
+
+    const-class v9, Ljava/util/Map;
+
+    invoke-virtual {v8, v9}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_5
+
+    const-class v8, Ljava/lang/Deprecated;
+
+    invoke-virtual {v3, v8}, Ljava/lang/reflect/Method;->isAnnotationPresent(Ljava/lang/Class;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_5
+
+    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getModifiers()I
+
+    move-result v8
+
+    invoke-static {v8}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_5
+
+    invoke-static {v4}, Lcom/google/android/material/R$style;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-array v6, v5, [Ljava/lang/Object;
+
+    invoke-static {v3, p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {p1, p2, v4, v3}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto/16 :goto_1
+
+    :cond_5
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "set"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/reflect/Method;
+
+    if-nez v3, :cond_6
+
+    goto/16 :goto_1
+
+    :cond_6
+    const-string v3, "Bytes"
+
+    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, -0x5
+
+    invoke-virtual {v6, v5, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    goto/16 :goto_1
+
+    :cond_7
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v5, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v10}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/reflect/Method;
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "has"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/reflect/Method;
+
+    if-eqz v4, :cond_2
+
+    new-array v8, v5, [Ljava/lang/Object;
+
+    invoke-static {v4, p0, v8}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-nez v6, :cond_11
+
+    instance-of v6, v4, Ljava/lang/Boolean;
+
+    if-eqz v6, :cond_8
+
+    move-object v6, v4
+
+    check-cast v6, Ljava/lang/Boolean;
+
+    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v6
+
+    xor-int/2addr v6, v10
+
+    goto/16 :goto_4
+
+    :cond_8
+    instance-of v6, v4, Ljava/lang/Integer;
+
+    if-eqz v6, :cond_9
+
+    move-object v6, v4
+
+    check-cast v6, Ljava/lang/Integer;
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    if-nez v6, :cond_f
+
+    goto :goto_3
+
+    :cond_9
+    instance-of v6, v4, Ljava/lang/Float;
+
+    if-eqz v6, :cond_a
+
+    move-object v6, v4
+
+    check-cast v6, Ljava/lang/Float;
+
+    invoke-virtual {v6}, Ljava/lang/Float;->floatValue()F
+
+    move-result v6
+
+    const/4 v8, 0x0
+
+    cmpl-float v6, v6, v8
+
+    if-nez v6, :cond_f
+
+    goto :goto_3
+
+    :cond_a
+    instance-of v6, v4, Ljava/lang/Double;
+
+    if-eqz v6, :cond_b
+
+    move-object v6, v4
+
+    check-cast v6, Ljava/lang/Double;
+
+    invoke-virtual {v6}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v8
+
+    const-wide/16 v11, 0x0
+
+    cmpl-double v6, v8, v11
+
+    if-nez v6, :cond_f
+
+    goto :goto_3
+
+    :cond_b
+    instance-of v6, v4, Ljava/lang/String;
+
+    if-eqz v6, :cond_c
+
+    const-string v6, ""
+
+    invoke-virtual {v4, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    goto :goto_4
+
+    :cond_c
+    instance-of v6, v4, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    if-eqz v6, :cond_d
+
+    sget-object v6, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    invoke-virtual {v4, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    goto :goto_4
+
+    :cond_d
+    instance-of v6, v4, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    if-eqz v6, :cond_e
+
+    move-object v6, v4
+
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    invoke-interface {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;->getDefaultInstanceForType()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object v6
+
+    if-ne v4, v6, :cond_f
+
+    goto :goto_3
+
+    :cond_e
+    instance-of v6, v4, Ljava/lang/Enum;
+
+    if-eqz v6, :cond_f
+
+    move-object v6, v4
+
+    check-cast v6, Ljava/lang/Enum;
+
+    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v6
+
+    if-nez v6, :cond_f
+
+    :goto_3
+    move v6, v10
+
+    goto :goto_4
+
+    :cond_f
+    move v6, v5
+
+    :goto_4
+    if-nez v6, :cond_10
+
+    goto :goto_5
+
+    :cond_10
+    move v10, v5
+
+    goto :goto_5
+
+    :cond_11
+    new-array v8, v5, [Ljava/lang/Object;
+
+    invoke-static {v6, p0, v8}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Boolean;
+
+    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v10
+
+    :goto_5
+    if-eqz v10, :cond_2
+
+    invoke-static {v3}, Lcom/google/android/material/R$style;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p1, p2, v3, v4}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto/16 :goto_1
+
+    :cond_12
+    instance-of v0, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    if-eqz v0, :cond_13
+
+    move-object v0, p0
+
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_6
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_13
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    const-string v2, "["
+
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget v3, v3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
+
+    const-string v6, "]"
+
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {p1, p2, v2, v1}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_6
+
+    :cond_13
+    check-cast p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    iget-object p0, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+
+    if-eqz p0, :cond_14
+
+    :goto_7
+    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->count:I
+
+    if-ge v5, v0, :cond_14
+
+    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->tags:[I
+
+    aget v0, v0, v5
+
+    ushr-int/2addr v0, v4
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
+
+    aget-object v1, v1, v5
+
+    invoke-static {p1, p2, v0, v1}, Lcom/google/android/material/R$style;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_7
+
+    :cond_14
+    return-void
+.end method
+
+.method public static reflectivePrintWithIndent(Lcom/google/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+    .locals 12
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    new-instance v2, Ljava/util/TreeSet;
+
+    invoke-direct {v2}, Ljava/util/TreeSet;-><init>()V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    const/4 v5, 0x0
+
+    move v6, v5
+
+    :goto_0
+    const-string v7, "get"
+
+    if-ge v6, v4, :cond_1
+
+    aget-object v8, v3, v6
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v1, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+
+    move-result-object v9
+
+    array-length v9, v9
+
+    if-nez v9, :cond_0
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v0, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_2
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v7, v4}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v6, "List"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    const/4 v8, 0x1
+
+    if-eqz v6, :cond_3
+
+    const-string v6, "OrBuilderList"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_3
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v5, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    add-int/lit8 v9, v9, -0x4
+
+    invoke-virtual {v3, v8, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v0, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/reflect/Method;
+
+    if-eqz v9, :cond_3
+
+    invoke-static {v6}, Lcom/google/android/material/R$style;->camelCaseToSnakeCase1(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-array v4, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, p0, v4}, Lcom/google/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {p1, p2, v3, v4}, Lcom/google/android/material/R$style;->printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "set"
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/reflect/Method;
+
+    if-nez v6, :cond_4
+
+    goto/16 :goto_1
+
+    :cond_4
+    const-string v6, "Bytes"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    add-int/lit8 v9, v9, -0x5
+
+    invoke-virtual {v3, v5, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    goto/16 :goto_1
+
+    :cond_5
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v5, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v0, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/reflect/Method;
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "has"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/reflect/Method;
+
+    if-eqz v9, :cond_2
+
+    new-array v10, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, p0, v10}, Lcom/google/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    if-nez v3, :cond_f
+
+    instance-of v3, v9, Ljava/lang/Boolean;
+
+    if-eqz v3, :cond_6
+
+    move-object v3, v9
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    xor-int/2addr v3, v8
+
+    goto/16 :goto_3
+
+    :cond_6
+    instance-of v3, v9, Ljava/lang/Integer;
+
+    if-eqz v3, :cond_7
+
+    move-object v3, v9
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-nez v3, :cond_d
+
+    goto :goto_2
+
+    :cond_7
+    instance-of v3, v9, Ljava/lang/Float;
+
+    if-eqz v3, :cond_8
+
+    move-object v3, v9
+
+    check-cast v3, Ljava/lang/Float;
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    cmpl-float v3, v3, v4
+
+    if-nez v3, :cond_d
+
+    goto :goto_2
+
+    :cond_8
+    instance-of v3, v9, Ljava/lang/Double;
+
+    if-eqz v3, :cond_9
+
+    move-object v3, v9
+
+    check-cast v3, Ljava/lang/Double;
+
+    invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v3
+
+    const-wide/16 v10, 0x0
+
+    cmpl-double v3, v3, v10
+
+    if-nez v3, :cond_d
+
+    goto :goto_2
+
+    :cond_9
+    instance-of v3, v9, Ljava/lang/String;
+
+    if-eqz v3, :cond_a
+
+    invoke-virtual {v9, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    goto :goto_3
+
+    :cond_a
+    instance-of v3, v9, Lcom/google/protobuf/ByteString;
+
+    if-eqz v3, :cond_b
+
+    sget-object v3, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {v9, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    goto :goto_3
+
+    :cond_b
+    instance-of v3, v9, Lcom/google/protobuf/MessageLite;
+
+    if-eqz v3, :cond_c
+
+    move-object v3, v9
+
+    check-cast v3, Lcom/google/protobuf/MessageLite;
+
+    invoke-interface {v3}, Lcom/google/protobuf/MessageLiteOrBuilder;->getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
+
+    move-result-object v3
+
+    if-ne v9, v3, :cond_d
+
+    goto :goto_2
+
+    :cond_c
+    instance-of v3, v9, Ljava/lang/Enum;
+
+    if-eqz v3, :cond_d
+
+    move-object v3, v9
+
+    check-cast v3, Ljava/lang/Enum;
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    if-nez v3, :cond_d
+
+    :goto_2
+    move v3, v8
+
+    goto :goto_3
+
+    :cond_d
+    move v3, v5
+
+    :goto_3
+    if-nez v3, :cond_e
+
+    goto :goto_4
+
+    :cond_e
+    move v8, v5
+
+    goto :goto_4
+
+    :cond_f
+    new-array v4, v5, [Ljava/lang/Object;
+
+    invoke-static {v3, p0, v4}, Lcom/google/protobuf/GeneratedMessageLite;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v8
+
+    :goto_4
+    if-eqz v8, :cond_2
+
+    invoke-static {v6}, Lcom/google/android/material/R$style;->camelCaseToSnakeCase1(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p1, p2, v3, v9}, Lcom/google/android/material/R$style;->printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto/16 :goto_1
+
+    :cond_10
+    instance-of v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    if-eqz v0, :cond_12
+
+    move-object v0, p0
+
+    check-cast v0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    iget-object v0, v0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
+
+    iget-boolean v1, v0, Lcom/google/protobuf/FieldSet;->hasLazyField:Z
+
+    if-eqz v1, :cond_11
+
+    new-instance v1, Lcom/google/protobuf/LazyField$LazyIterator;
+
+    iget-object v0, v0, Lcom/google/protobuf/FieldSet;->fields:Lcom/google/protobuf/SmallSortedMap;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/SmallSortedMap$EntrySet;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap$EntrySet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lcom/google/protobuf/LazyField$LazyIterator;-><init>(Ljava/util/Iterator;)V
+
+    goto :goto_5
+
+    :cond_11
+    iget-object v0, v0, Lcom/google/protobuf/FieldSet;->fields:Lcom/google/protobuf/SmallSortedMap;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/SmallSortedMap$EntrySet;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap$EntrySet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_5
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    const-string v2, "["
+
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget v3, v3, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
+
+    const-string v4, "]"
+
+    invoke-static {v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {p1, p2, v2, v0}, Lcom/google/android/material/R$style;->printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_5
+
+    :cond_12
+    check-cast p0, Lcom/google/protobuf/GeneratedMessageLite;
+
+    iget-object p0, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
+
+    if-eqz p0, :cond_13
+
+    :goto_6
+    iget v0, p0, Lcom/google/protobuf/UnknownFieldSetLite;->count:I
+
+    if-ge v5, v0, :cond_13
+
+    iget-object v0, p0, Lcom/google/protobuf/UnknownFieldSetLite;->tags:[I
+
+    aget v0, v0, v5
+
+    ushr-int/lit8 v0, v0, 0x3
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
+
+    aget-object v1, v1, v5
+
+    invoke-static {p1, p2, v0, v1}, Lcom/google/android/material/R$style;->printField1(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_6
+
+    :cond_13
+    return-void
+.end method
+
+.method public static resolve(Landroid/content/Context;I)Landroid/util/TypedValue;
+    .locals 2
+
+    new-instance v0, Landroid/util/TypedValue;
+
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, p1, v0, v1}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public static resolveBoolean(Landroid/content/Context;IZ)Z
+    .locals 1
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->resolve(Landroid/content/Context;I)Landroid/util/TypedValue;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    iget p1, p0, Landroid/util/TypedValue;->type:I
+
+    const/16 v0, 0x12
+
+    if-ne p1, v0, :cond_1
+
+    iget p0, p0, Landroid/util/TypedValue;->data:I
+
+    if-eqz p0, :cond_0
+
+    const/4 p2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :cond_1
+    :goto_0
+    return p2
+.end method
+
+.method public static resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    .locals 3
+
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->resolve(Landroid/content/Context;I)Landroid/util/TypedValue;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget p0, v0, Landroid/util/TypedValue;->data:I
+
+    return p0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p2, v1, v2
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    aput-object p0, v1, p2
+
+    const-string p0, "%1$s requires a value for the %2$s attribute to be set in your app theme. You can either set the attribute in your theme or update your theme to inherit from Theme.MaterialComponents (or a descendant)."
+
+    invoke-static {p0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static setElevation(Landroid/view/View;F)V
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    iget-object v0, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget v1, v0, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevation:F
+
+    cmpl-float v1, v1, p1
+
+    if-eqz v1, :cond_0
+
+    iput p1, v0, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevation:F
+
+    invoke-virtual {p0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->updateZ()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public static setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    .locals 2
+
+    iget-object v0, p1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget-object v0, v0, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevationOverlayProvider:Lcom/google/android/material/elevation/ElevationOverlayProvider;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, v0, Lcom/google/android/material/elevation/ElevationOverlayProvider;->elevationOverlayEnabled:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-static {p0}, Lcom/google/android/material/R$style;->getParentAbsoluteElevation(Landroid/view/View;)F
+
+    move-result p0
+
+    iget-object v0, p1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget v1, v0, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->parentAbsoluteElevation:F
+
+    cmpl-float v1, v1, p0
+
+    if-eqz v1, :cond_1
+
+    iput p0, v0, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->parentAbsoluteElevation:F
+
+    invoke-virtual {p1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->updateZ()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public static skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    ushr-int/lit8 v0, p0, 0x3
+
+    if-eqz v0, :cond_8
+
+    and-int/lit8 v0, p0, 0x7
+
+    if-eqz v0, :cond_7
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_6
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_5
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 p0, 0x5
+
+    if-ne v0, p0, :cond_0
+
+    add-int/lit8 p2, p2, 0x4
+
+    return p2
+
+    :cond_0
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_1
+    and-int/lit8 p0, p0, -0x8
+
+    or-int/lit8 p0, p0, 0x4
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge p2, p3, :cond_3
+
+    invoke-static {p1, p2, p4}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    iget v0, p4, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    if-ne v0, p0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/google/android/material/R$style;->skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p2
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    if-gt p2, p3, :cond_4
+
+    if-ne v0, p0, :cond_4
+
+    return p2
+
+    :cond_4
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_5
+    invoke-static {p1, p2, p4}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p0
+
+    iget p1, p4, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr p0, p1
+
+    return p0
+
+    :cond_6
+    add-int/lit8 p2, p2, 0x8
+
+    return p2
+
+    :cond_7
+    invoke-static {p1, p2, p4}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p0
+
+    return p0
+
+    :cond_8
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method public static smear(I)I
+    .locals 4
+
+    int-to-long v0, p0
+
+    const-wide/32 v2, -0x3361d2af
+
+    mul-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    const/16 v0, 0xf
+
+    invoke-static {p0, v0}, Ljava/lang/Integer;->rotateLeft(II)I
+
+    move-result p0
+
+    int-to-long v0, p0
+
+    const-wide/32 v2, 0x1b873593
+
+    mul-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+.end method
+
+.method public static toByteArray([BJI)V
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "num",
+            "idx"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    :goto_0
+    const/4 v1, 0x4
+
+    if-ge v0, v1, :cond_0
+
+    add-int v1, p3, v0
+
+    const-wide/16 v2, 0xff
+
+    and-long/2addr v2, p1
+
+    long-to-int v2, v2
+
+    int-to-byte v2, v2
+
+    aput-byte v2, p0, v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    const/16 v1, 0x8
+
+    shr-long/2addr p1, v1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public static toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "type"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P521:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "unknown curve type: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P384:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+
+    :cond_2
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P256:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+.end method
+
+.method public static toCurveType1(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "type"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P521:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    const-string v1, "unknown curve type: "
+
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P384:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+
+    :cond_2
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P256:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    return-object p0
+.end method
+
+.method public static toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hash"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const-string p0, "SHA-512"
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unsupported hash "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const-string p0, "SHA-384"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "SHA-256"
+
+    return-object p0
+
+    :cond_3
+    const-string p0, "SHA-1"
+
+    return-object p0
+.end method
+
+.method public static toEcdsaEncoding(Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;)Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "encoding"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;->DER:Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    const-string v1, "unknown ECDSA encoding: "
+
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;->IEEE_P1363:Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;
+
+    return-object p0
+.end method
+
+.method public static toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hash"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA512:Lcom/google/crypto/tink/subtle/Enums$HashType;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    const-string v1, "unsupported hash type: "
+
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA256:Lcom/google/crypto/tink/subtle/Enums$HashType;
+
+    return-object p0
+
+    :cond_2
+    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA384:Lcom/google/crypto/tink/subtle/Enums$HashType;
+
+    return-object p0
+.end method
+
+.method public static toHmacAlgo(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hash"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/NoSuchAlgorithmException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    const-string p0, "HmacSha512"
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/NoSuchAlgorithmException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "hash unsupported for HMAC: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/NoSuchAlgorithmException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const-string p0, "HmacSha256"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "HmacSha1"
+
+    return-object p0
+.end method
+
+.method public static toHmacAlgo1(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hash"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/NoSuchAlgorithmException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    const-string p0, "HmacSha512"
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/NoSuchAlgorithmException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "hash unsupported for HMAC: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/NoSuchAlgorithmException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const-string p0, "HmacSha256"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "HmacSha1"
+
+    return-object p0
+.end method
+
+.method public static toPointFormatType(Lcom/google/crypto/tink/proto/EcPointFormat;)Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "format"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;->DO_NOT_USE_CRUNCHY_UNCOMPRESSED:Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/security/GeneralSecurityException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "unknown point format: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;->COMPRESSED:Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
+
+    return-object p0
+
+    :cond_2
+    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;->UNCOMPRESSED:Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
+
+    return-object p0
+.end method
+
+.method public static updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+    .locals 1
+
+    if-eqz p1, :cond_1
+
+    if-nez p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p0, v0}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result p0
+
+    new-instance p1, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-direct {p1, p0, p2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    return-object p1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public static validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "params"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->getKemParams()Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/proto/EciesHkdfKemParams;->getCurveType()Lcom/google/crypto/tink/proto/EllipticCurveType;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/R$style;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->getKemParams()Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/proto/EciesHkdfKemParams;->getHkdfHashType()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toHmacAlgo(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->getEcPointFormat()Lcom/google/crypto/tink/proto/EcPointFormat;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/crypto/tink/proto/EcPointFormat;->UNKNOWN_FORMAT:Lcom/google/crypto/tink/proto/EcPointFormat;
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->getDemParams()Lcom/google/crypto/tink/proto/EciesAeadDemParams;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadDemParams;->getAeadDem()Lcom/google/crypto/tink/proto/KeyTemplate;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/crypto/tink/Registry;->newKeyData(Lcom/google/crypto/tink/proto/KeyTemplate;)Lcom/google/crypto/tink/proto/KeyData;
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "unknown EC point format"
+
+    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static validateEcdsaParams(Lcom/google/crypto/tink/proto/EcdsaParams;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "params"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    sget-object v0, Lcom/google/crypto/tink/proto/HashType;->SHA512:Lcom/google/crypto/tink/proto/HashType;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EcdsaParams;->getEncoding()Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EcdsaParams;->getHashType()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EcdsaParams;->getCurve()Lcom/google/crypto/tink/proto/EllipticCurveType;
+
+    move-result-object p0
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    if-eq v1, v4, :cond_1
+
+    if-ne v1, v3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "unsupported signature encoding"
+
+    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p0
+
+    const-string v1, "Invalid ECDSA parameters"
+
+    if-eq p0, v4, :cond_6
+
+    if-eq p0, v3, :cond_4
+
+    const/4 v3, 0x3
+
+    if-ne p0, v3, :cond_3
+
+    if-ne v2, v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_4
+    sget-object p0, Lcom/google/crypto/tink/proto/HashType;->SHA384:Lcom/google/crypto/tink/proto/HashType;
+
+    if-eq v2, p0, :cond_7
+
+    if-ne v2, v0, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_6
+    sget-object p0, Lcom/google/crypto/tink/proto/HashType;->SHA256:Lcom/google/crypto/tink/proto/HashType;
+
+    if-ne v2, p0, :cond_8
+
+    :cond_7
+    :goto_1
+    return-void
+
+    :cond_8
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    invoke-direct {p0, v1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static validateRsaSsaPkcs1Params(Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "params"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;->getHashType()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+
+    return-void
+.end method
+
+.method public static validateRsaSsaPssParams(Lcom/google/crypto/tink/proto/RsaSsaPssParams;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "params"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/GeneralSecurityException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/RsaSsaPssParams;->getSigHash()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/RsaSsaPssParams;->getSigHash()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/RsaSsaPssParams;->getMgf1Hash()Lcom/google/crypto/tink/proto/HashType;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/google/crypto/tink/proto/RsaSsaPssParams;->getSaltLength()I
+
+    move-result p0
+
+    if-ltz p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "salt length is negative"
+
+    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "MGF1 hash is different from signature hash"
+
+    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static final xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "output",
+            "x",
+            "y",
+            "len"
+        }
+    .end annotation
+
+    if-ltz p3, :cond_1
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    if-lt v0, p3, :cond_1
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    if-lt v0, p3, :cond_1
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    if-lt v0, p3, :cond_1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v1
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    int-to-byte v1, v1
+
+    invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "That combination of buffers, offsets and length to xor result in out-of-bond accesses."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static final xor([BI[BII)[B
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0,
+            0x10,
+            0x0,
+            0x0
+        }
+        names = {
+            "x",
+            "offsetX",
+            "y",
+            "offsetY",
+            "len"
+        }
+    .end annotation
+
+    if-ltz p4, :cond_1
+
+    array-length v0, p0
+
+    sub-int/2addr v0, p4
+
+    if-lt v0, p1, :cond_1
+
+    array-length v0, p2
+
+    sub-int/2addr v0, p4
+
+    if-lt v0, p3, :cond_1
+
+    new-array v0, p4, [B
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, p4, :cond_0
+
+    add-int v2, v1, p1
+
+    aget-byte v2, p0, v2
+
+    add-int v3, v1, p3
+
+    aget-byte v3, p2, v3
+
+    xor-int/2addr v2, v3
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "That combination of buffers, offsets and length to xor result in out-of-bond accesses."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static final xor([B[B)[B
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "x",
+            "y"
+        }
+    .end annotation
+
+    array-length v0, p0
+
+    array-length v1, p1
+
+    if-ne v0, v1, :cond_0
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1, p1, v1, v0}, Lcom/google/android/material/R$style;->xor([BI[BII)[B
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "The lengths of x and y should match."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method

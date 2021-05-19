@@ -41,7 +41,7 @@
 
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar$5;->this$0:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    sget v0, Lcom/google/android/material/R$string;->mtrl_picker_toggle_to_year_selection:I
+    const v0, 0x7f1201d5
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -52,7 +52,7 @@
     :cond_0
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar$5;->this$0:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    sget v0, Lcom/google/android/material/R$string;->mtrl_picker_toggle_to_day_selection:I
+    const v0, 0x7f1201d3
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

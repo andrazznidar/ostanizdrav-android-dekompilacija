@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCWADebug.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWADebug.kt\nde/rki/coronawarnapp/util/CWADebug\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,49:1\n2871#2,12:50\n*E\n*S KotlinDebug\n*F\n+ 1 CWADebug.kt\nde/rki/coronawarnapp/util/CWADebug\n*L\n31#1,12:50\n*E\n"
+    value = "SMAP\nCWADebug.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWADebug.kt\nde/rki/coronawarnapp/util/CWADebug\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,68:1\n2871#2,12:69\n*E\n*S KotlinDebug\n*F\n+ 1 CWADebug.kt\nde/rki/coronawarnapp/util/CWADebug\n*L\n36#1,12:69\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/util/CWADebug$isAUnitTest$2;->INSTANCE:Lde/rki/coronawarnapp/util/CWADebug$isAUnitTest$2;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -158,4 +158,64 @@
     move-result v0
 
     return v0
+.end method
+
+.method public final logDeviceInfos()V
+    .locals 6
+
+    const/4 v0, 0x2
+
+    new-array v1, v0, [Ljava/lang/Object;
+
+    const v2, 0x11664c
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    const-string v2, "no commit hash"
+
+    const/4 v4, 0x1
+
+    aput-object v2, v1, v4
+
+    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v5, "CWA version: %s (%s)"
+
+    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const-string v1, "device"
+
+    aput-object v1, v0, v3
+
+    const-string v1, "release"
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v2, "CWA flavor: %s (%s)"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-array v0, v4, [Ljava/lang/Object;
+
+    sget-object v1, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v2, "Build.FINGERPRINT: %s"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
 .end method

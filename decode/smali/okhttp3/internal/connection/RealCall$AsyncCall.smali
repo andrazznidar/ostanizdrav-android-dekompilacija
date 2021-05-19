@@ -82,7 +82,7 @@
 
     const-string v0, "OkHttp "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -216,7 +216,7 @@
 
     invoke-direct {v0, v4}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     iget-object v4, p0, Lokhttp3/internal/connection/RealCall$AsyncCall;->responseCallback:Lokhttp3/Callback;
 

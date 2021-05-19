@@ -25,7 +25,11 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
 
+.field public static final enum DATA_DONATION:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
 .field public static final enum DOWNLOAD:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
+.field public static final enum SAFETYNET_API_KEY:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
 
 .field public static final enum SUBMISSION:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
 
@@ -44,7 +48,7 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    const/4 v0, 0x5
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
 
@@ -113,6 +117,32 @@
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;->VERIFICATION_KEYS:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
+    const-string v2, "DATA_DONATION"
+
+    const/4 v3, 0x5
+
+    const-string v4, "DATA_DONATION_CDN_URL"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;->DATA_DONATION:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
+
+    const-string v2, "SAFETYNET_API_KEY"
+
+    const/4 v3, 0x6
+
+    invoke-direct {v1, v2, v3, v2}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;->SAFETYNET_API_KEY:Lde/rki/coronawarnapp/environment/EnvironmentSetup$EnvKey;
 
     aput-object v1, v0, v3
 

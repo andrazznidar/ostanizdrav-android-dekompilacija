@@ -33,6 +33,14 @@
 
 .method public constructor <init>(Landroidx/work/impl/WorkContinuationImpl;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workContinuation"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,6 +57,14 @@
 
 .method public static processContinuation(Landroidx/work/impl/WorkContinuationImpl;)Z
     .locals 25
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workContinuation"
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -1019,6 +1035,14 @@
 
 .method public static tryDelegateConstrainedWorkSpec(Landroidx/work/impl/model/WorkSpec;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpec"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 

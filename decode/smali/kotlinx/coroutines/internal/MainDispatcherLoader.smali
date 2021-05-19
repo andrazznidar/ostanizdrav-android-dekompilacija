@@ -42,15 +42,15 @@
     const-string v0, "Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. \'kotlinx-coroutines-android\' and ensure it has the same version as \'kotlinx-coroutines-core\'"
 
     :try_start_0
-    invoke-static {}, L$$ServiceLoaderMethods;->$load1()Ljava/util/Iterator;
+    invoke-static {}, L$$ServiceLoaderMethods;->$load$kotlinx$coroutines$internal$MainDispatcherLoader$loadMainDispatcher$-159772$$0()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v1
 

@@ -4,6 +4,16 @@
 
 
 # instance fields
+.field public aggregatedRiskPerDateResults:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final mostRecentDateWithHighRisk:Lorg/joda/time/Instant;
 
 .field public final mostRecentDateWithLowRisk:Lorg/joda/time/Instant;
@@ -20,8 +30,21 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;IILorg/joda/time/Instant;Lorg/joda/time/Instant;II)V
+.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;IILorg/joda/time/Instant;Lorg/joda/time/Instant;IILjava/util/List;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;",
+            "II",
+            "Lorg/joda/time/Instant;",
+            "Lorg/joda/time/Instant;",
+            "II",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;",
+            ">;)V"
+        }
+    .end annotation
 
     const-string v0, "totalRiskLevel"
 
@@ -42,6 +65,8 @@
     iput p6, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithLowRisk:I
 
     iput p7, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
 
     return-void
 .end method
@@ -109,9 +134,19 @@
 
     iget v0, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
 
-    iget p1, p1, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
+    iget v1, p1, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
 
-    if-ne v0, p1, :cond_0
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
@@ -184,21 +219,39 @@
 
     invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
 
-    move-result v1
+    move-result v2
+
+    goto :goto_2
 
     :cond_2
-    add-int/2addr v0, v1
+    move v2, v1
+
+    :goto_2
+    add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithLowRisk:I
+    iget v2, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithLowRisk:I
 
-    add-int/2addr v0, v1
+    add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
+    iget v2, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
 
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :cond_3
     add-int/2addr v0, v1
 
     return v0
@@ -225,11 +278,11 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const-string v0, "AggregatedRiskResult(totalRiskLevel="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -283,9 +336,21 @@
 
     iget v1, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->numberOfDaysWithHighRisk:I
 
-    const-string v2, ")"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    const-string v1, ", aggregatedRiskPerDateResults="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

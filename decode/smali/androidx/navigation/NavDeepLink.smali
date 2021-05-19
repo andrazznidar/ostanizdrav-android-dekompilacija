@@ -1,4 +1,4 @@
-.class public Landroidx/navigation/NavDeepLink;
+.class public final Landroidx/navigation/NavDeepLink;
 .super Ljava/lang/Object;
 .source "NavDeepLink.java"
 
@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/navigation/NavDeepLink$MimeType;,
         Landroidx/navigation/NavDeepLink$ParamQuery;
     }
 .end annotation
@@ -16,6 +17,8 @@
 
 
 # instance fields
+.field public final mAction:Ljava/lang/String;
+
 .field public final mArguments:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -26,9 +29,13 @@
     .end annotation
 .end field
 
-.field public final mExactDeepLink:Z
+.field public mExactDeepLink:Z
 
-.field public final mIsParameterizedQuery:Z
+.field public mIsParameterizedQuery:Z
+
+.field public final mMimeType:Ljava/lang/String;
+
+.field public mMimeTypePattern:Ljava/util/regex/Pattern;
 
 .field public final mParamArgMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -41,7 +48,9 @@
     .end annotation
 .end field
 
-.field public final mPattern:Ljava/util/regex/Pattern;
+.field public mPattern:Ljava/util/regex/Pattern;
+
+.field public final mUri:Ljava/lang/String;
 
 
 # direct methods
@@ -59,255 +68,351 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 16
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 12
 
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v1, p1
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v2, Ljava/util/ArrayList;
+    iput-object v0, p0, Landroidx/navigation/NavDeepLink;->mArguments:Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object v2, v0, Landroidx/navigation/NavDeepLink;->mArguments:Ljava/util/ArrayList;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    new-instance v2, Ljava/util/HashMap;
+    iput-object v0, p0, Landroidx/navigation/NavDeepLink;->mParamArgMap:Ljava/util/Map;
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object v2, v0, Landroidx/navigation/NavDeepLink;->mParamArgMap:Ljava/util/Map;
+    iput-object v0, p0, Landroidx/navigation/NavDeepLink;->mPattern:Ljava/util/regex/Pattern;
 
-    invoke-static/range {p1 .. p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const/4 v1, 0x0
 
-    move-result-object v2
+    iput-boolean v1, p0, Landroidx/navigation/NavDeepLink;->mExactDeepLink:Z
 
-    invoke-virtual {v2}, Landroid/net/Uri;->getQuery()Ljava/lang/String;
+    iput-boolean v1, p0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
 
-    move-result-object v3
+    iput-object v0, p0, Landroidx/navigation/NavDeepLink;->mMimeTypePattern:Ljava/util/regex/Pattern;
 
-    const/4 v4, 0x1
+    iput-object p1, p0, Landroidx/navigation/NavDeepLink;->mUri:Ljava/lang/String;
 
-    const/4 v5, 0x0
+    iput-object p2, p0, Landroidx/navigation/NavDeepLink;->mAction:Ljava/lang/String;
 
-    if-eqz v3, :cond_0
+    iput-object p3, p0, Landroidx/navigation/NavDeepLink;->mMimeType:Ljava/lang/String;
 
-    move v3, v4
+    if-eqz p1, :cond_7
+
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/net/Uri;->getQuery()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_0
+
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    move v3, v5
+    move v0, v1
 
     :goto_0
-    iput-boolean v3, v0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
+    iput-boolean v0, p0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v6, "^"
+    const-string v3, "^"
 
-    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v6, Landroidx/navigation/NavDeepLink;->SCHEME_PATTERN:Ljava/util/regex/Pattern;
+    sget-object v3, Landroidx/navigation/NavDeepLink;->SCHEME_PATTERN:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v6, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v3, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v6}, Ljava/util/regex/Matcher;->find()Z
+    invoke-virtual {v3}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result v6
+    move-result v3
 
-    if-nez v6, :cond_1
+    if-nez v3, :cond_1
 
-    const-string v6, "http[s]?://"
+    const-string v3, "http[s]?://"
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_1
-    const-string v6, "\\{(.+?)\\}"
+    const-string v3, "\\{(.+?)\\}"
 
-    invoke-static {v6}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v6
+    move-result-object v3
 
-    iget-boolean v7, v0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
+    iget-boolean v4, p0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
 
-    const-string v8, "\\E.*\\Q"
+    const-string v5, "\\E.*\\Q"
 
-    const-string v9, ".*"
+    const-string v6, ".*"
 
-    if-eqz v7, :cond_5
+    if-eqz v4, :cond_5
 
-    const-string v7, "(\\?)"
+    const-string v4, "(\\?)"
 
-    invoke-static {v7}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v4}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v7, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v4, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v7}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_2
-
-    invoke-virtual {v7}, Ljava/util/regex/Matcher;->start()I
+    invoke-virtual {v4}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v7
 
-    invoke-virtual {v1, v5, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    if-eqz v7, :cond_2
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v3, v6}, Landroidx/navigation/NavDeepLink;->buildPathRegex(Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/util/regex/Pattern;)Z
-
-    :cond_2
-    iput-boolean v5, v0, Landroidx/navigation/NavDeepLink;->mExactDeepLink:Z
-
-    invoke-virtual {v2}, Landroid/net/Uri;->getQueryParameterNames()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_6
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/String;
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v7}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v6, v11}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v12
-
-    new-instance v13, Landroidx/navigation/NavDeepLink$ParamQuery;
-
-    invoke-direct {v13}, Landroidx/navigation/NavDeepLink$ParamQuery;-><init>()V
-
-    move v14, v5
-
-    :goto_2
-    invoke-virtual {v12}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v15
-
-    if-eqz v15, :cond_3
-
-    invoke-virtual {v12, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v15
-
-    iget-object v4, v13, Landroidx/navigation/NavDeepLink$ParamQuery;->mArguments:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v12}, Ljava/util/regex/Matcher;->start()I
+    invoke-virtual {v4}, Ljava/util/regex/Matcher;->start()I
 
     move-result v4
 
-    invoke-virtual {v11, v14, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v1, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1, v0, v3}, Landroidx/navigation/NavDeepLink;->buildPathRegex(Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/util/regex/Pattern;)Z
+
+    :cond_2
+    iput-boolean v1, p0, Landroidx/navigation/NavDeepLink;->mExactDeepLink:Z
+
+    invoke-virtual {p2}, Landroid/net/Uri;->getQueryParameterNames()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-static {v4}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    move-result-object v4
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "(.+?)?"
+    invoke-virtual {p2, v4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    invoke-virtual {v12}, Ljava/util/regex/Matcher;->end()I
+    invoke-virtual {v3, v8}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result v14
+    move-result-object v9
 
-    const/4 v4, 0x1
+    new-instance v10, Landroidx/navigation/NavDeepLink$ParamQuery;
+
+    invoke-direct {v10}, Landroidx/navigation/NavDeepLink$ParamQuery;-><init>()V
+
+    :goto_2
+    invoke-virtual {v9}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_3
+
+    invoke-virtual {v9, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v11, v10, Landroidx/navigation/NavDeepLink$ParamQuery;->mArguments:Ljava/util/ArrayList;
+
+    invoke-virtual {v11, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v9}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v8, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "(.+?)?"
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v1
+
+    const/4 v2, 0x1
 
     goto :goto_2
 
     :cond_3
-    invoke-virtual {v11}, Ljava/lang/String;->length()I
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v2
 
-    if-ge v14, v4, :cond_4
+    if-ge v1, v2, :cond_4
 
-    invoke-virtual {v11, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v8, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {v4}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_4
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v9, v8}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v1, v6, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    iput-object v4, v13, Landroidx/navigation/NavDeepLink$ParamQuery;->mParamRegex:Ljava/lang/String;
+    iput-object v1, v10, Landroidx/navigation/NavDeepLink$ParamQuery;->mParamRegex:Ljava/lang/String;
 
-    iget-object v4, v0, Landroidx/navigation/NavDeepLink;->mParamArgMap:Ljava/util/Map;
+    iget-object v1, p0, Landroidx/navigation/NavDeepLink;->mParamArgMap:Ljava/util/Map;
 
-    invoke-interface {v4, v7, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v4, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v4, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     goto :goto_1
 
     :cond_5
-    invoke-virtual {v0, v1, v3, v6}, Landroidx/navigation/NavDeepLink;->buildPathRegex(Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/util/regex/Pattern;)Z
+    invoke-virtual {p0, p1, v0, v3}, Landroidx/navigation/NavDeepLink;->buildPathRegex(Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/util/regex/Pattern;)Z
 
-    move-result v1
+    move-result p1
 
-    iput-boolean v1, v0, Landroidx/navigation/NavDeepLink;->mExactDeepLink:Z
+    iput-boolean p1, p0, Landroidx/navigation/NavDeepLink;->mExactDeepLink:Z
 
     :cond_6
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v1, v9, v8}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v6, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v1
+    move-result-object p1
 
-    iput-object v1, v0, Landroidx/navigation/NavDeepLink;->mPattern:Ljava/util/regex/Pattern;
+    iput-object p1, p0, Landroidx/navigation/NavDeepLink;->mPattern:Ljava/util/regex/Pattern;
 
+    :cond_7
+    if-eqz p3, :cond_9
+
+    const-string p1, "^[\\s\\S]+/[\\s\\S]+$"
+
+    invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_8
+
+    new-instance p1, Landroidx/navigation/NavDeepLink$MimeType;
+
+    invoke-direct {p1, p3}, Landroidx/navigation/NavDeepLink$MimeType;-><init>(Ljava/lang/String;)V
+
+    const-string p2, "^("
+
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    iget-object p3, p1, Landroidx/navigation/NavDeepLink$MimeType;->mType:Ljava/lang/String;
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, "|[*]+)/("
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p1, p1, Landroidx/navigation/NavDeepLink$MimeType;->mSubType:Ljava/lang/String;
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "|[*]+)$"
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "*|[*]"
+
+    const-string p3, "[\\s\\S]"
+
+    invoke-virtual {p1, p2, p3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/navigation/NavDeepLink;->mMimeTypePattern:Ljava/util/regex/Pattern;
+
+    goto :goto_3
+
+    :cond_8
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The given mimeType "
+
+    const-string v0, " does not match to required \"type/subtype\" format"
+
+    invoke-static {p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_9
+    :goto_3
     return-void
 .end method
 

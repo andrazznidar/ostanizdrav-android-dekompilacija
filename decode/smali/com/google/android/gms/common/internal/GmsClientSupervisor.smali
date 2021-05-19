@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -41,7 +41,7 @@
 .method public static getDefaultBindFlags()I
     .locals 1
 
-    const/16 v0, 0x81
+    const/16 v0, 0x1081
 
     return v0
 .end method
@@ -50,6 +50,22 @@
 # virtual methods
 .method public final zza(Ljava/lang/String;Ljava/lang/String;ILandroid/content/ServiceConnection;Ljava/lang/String;Z)V
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # Landroid/content/ServiceConnection;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p5    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     new-instance p5, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;
 
@@ -57,28 +73,28 @@
 
     move-object p1, p0
 
-    check-cast p1, Lcom/google/android/gms/common/internal/zzf;
+    check-cast p1, Lcom/google/android/gms/common/internal/zzg;
 
     const-string p2, "ServiceConnection must not be null"
 
-    invoke-static {p4, p2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p4, p2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p2, p1, Lcom/google/android/gms/common/internal/zzf;->zza:Ljava/util/HashMap;
+    iget-object p2, p1, Lcom/google/android/gms/common/internal/zzg;->zza:Ljava/util/HashMap;
 
     monitor-enter p2
 
     :try_start_0
-    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzf;->zza:Ljava/util/HashMap;
+    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzg;->zza:Ljava/util/HashMap;
 
     invoke-virtual {p3, p5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lcom/google/android/gms/common/internal/zzh;
+    check-cast p3, Lcom/google/android/gms/common/internal/zzi;
 
     if-eqz p3, :cond_2
 
-    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzh;->zza:Ljava/util/Map;
+    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
 
     invoke-interface {p6, p4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -86,11 +102,11 @@
 
     if-eqz p6, :cond_1
 
-    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzh;->zza:Ljava/util/Map;
+    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
 
     invoke-interface {p6, p4}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/zzh;->zza:Ljava/util/Map;
+    iget-object p3, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
 
     invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
 
@@ -98,7 +114,7 @@
 
     if-eqz p3, :cond_0
 
-    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzf;->zzc:Landroid/os/Handler;
+    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzg;->zzc:Landroid/os/Handler;
 
     const/4 p4, 0x0
 
@@ -106,9 +122,9 @@
 
     move-result-object p3
 
-    iget-object p4, p1, Lcom/google/android/gms/common/internal/zzf;->zzc:Landroid/os/Handler;
+    iget-object p4, p1, Lcom/google/android/gms/common/internal/zzg;->zzc:Landroid/os/Handler;
 
-    iget-wide p5, p1, Lcom/google/android/gms/common/internal/zzf;->zze:J
+    iget-wide p5, p1, Lcom/google/android/gms/common/internal/zzg;->zze:J
 
     invoke-virtual {p4, p3, p5, p6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 

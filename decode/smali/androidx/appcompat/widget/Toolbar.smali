@@ -114,7 +114,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    sget v0, Landroidx/appcompat/R$attr;->toolbarStyle:I
+    const v0, 0x7f040384
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/appcompat/widget/Toolbar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -122,423 +122,423 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 5
+    .locals 11
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const p1, 0x800013
+    const v0, 0x800013
 
-    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
+    iput v0, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
 
-    new-instance p1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mTempViews:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mTempViews:Ljava/util/ArrayList;
 
-    new-instance p1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mHiddenViews:Ljava/util/ArrayList;
 
-    const/4 p1, 0x2
+    const/4 v0, 0x2
 
-    new-array p1, p1, [I
+    new-array v1, v0, [I
 
-    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mTempMargins:[I
+    iput-object v1, p0, Landroidx/appcompat/widget/Toolbar;->mTempMargins:[I
 
-    new-instance p1, Landroidx/appcompat/widget/Toolbar$1;
+    new-instance v1, Landroidx/appcompat/widget/Toolbar$1;
 
-    invoke-direct {p1, p0}, Landroidx/appcompat/widget/Toolbar$1;-><init>(Landroidx/appcompat/widget/Toolbar;)V
+    invoke-direct {v1, p0}, Landroidx/appcompat/widget/Toolbar$1;-><init>(Landroidx/appcompat/widget/Toolbar;)V
 
-    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mMenuViewItemClickListener:Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
+    iput-object v1, p0, Landroidx/appcompat/widget/Toolbar;->mMenuViewItemClickListener:Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
 
-    new-instance p1, Landroidx/appcompat/widget/Toolbar$2;
+    new-instance v1, Landroidx/appcompat/widget/Toolbar$2;
 
-    invoke-direct {p1, p0}, Landroidx/appcompat/widget/Toolbar$2;-><init>(Landroidx/appcompat/widget/Toolbar;)V
+    invoke-direct {v1, p0}, Landroidx/appcompat/widget/Toolbar$2;-><init>(Landroidx/appcompat/widget/Toolbar;)V
 
-    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mShowOverflowMenuRunnable:Ljava/lang/Runnable;
+    iput-object v1, p0, Landroidx/appcompat/widget/Toolbar;->mShowOverflowMenuRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v1
 
-    sget-object v0, Landroidx/appcompat/R$styleable;->Toolbar:[I
+    sget-object v2, Landroidx/appcompat/R$styleable;->Toolbar:[I
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {p1, p2, v0, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+    invoke-static {v1, p2, v2, p3, v3}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
-    move-result-object p1
+    move-result-object v1
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleTextAppearance:I
+    sget-object v6, Landroidx/appcompat/R$styleable;->Toolbar:[I
 
-    invoke-virtual {p1, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+    iget-object v8, v1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    move-result p2
+    const/4 v10, 0x0
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleTextAppearance:I
+    move-object v4, p0
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_subtitleTextAppearance:I
+    move-object v5, p1
 
-    invoke-virtual {p1, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+    move-object v7, p2
 
-    move-result p2
+    move v9, p3
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextAppearance:I
+    invoke-static/range {v4 .. v10}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_android_gravity:I
+    const/16 p1, 0x1c
 
-    iget p3, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
+    invoke-virtual {v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
-    iget-object v0, p1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    move-result p1
 
-    invoke-virtual {v0, p2, p3}, Landroid/content/res/TypedArray;->getInteger(II)I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleTextAppearance:I
 
-    move-result p2
+    const/16 p1, 0x13
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
+    invoke-virtual {v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_buttonGravity:I
+    move-result p1
 
-    iget-object p3, p1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextAppearance:I
 
-    const/16 v0, 0x30
+    iget p1, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
 
-    invoke-virtual {p3, p2, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v1, v3, p1}, Landroidx/appcompat/widget/TintTypedArray;->getInteger(II)I
 
-    move-result p2
+    move-result p1
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mButtonGravity:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mGravity:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleMargin:I
+    const/16 p1, 0x30
 
-    invoke-virtual {p1, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->getInteger(II)I
 
-    move-result p2
+    move-result p1
 
-    sget p3, Landroidx/appcompat/R$styleable;->Toolbar_titleMargins:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mButtonGravity:I
 
-    invoke-virtual {p1, p3}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+    const/16 p1, 0x16
+
+    invoke-virtual {v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+
+    move-result p1
+
+    const/16 p2, 0x1b
+
+    invoke-virtual {v1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p3
 
     if-eqz p3, :cond_0
 
-    sget p3, Landroidx/appcompat/R$styleable;->Toolbar_titleMargins:I
+    invoke-virtual {v1, p2, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    invoke-virtual {p1, p3, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
-
-    move-result p2
+    move-result p1
 
     :cond_0
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom:I
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop:I
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd:I
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleMarginStart:I
+    const/16 p1, 0x19
 
-    const/4 p3, -0x1
+    const/4 p2, -0x1
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    move-result p2
+    move-result p1
 
-    if-ltz p2, :cond_1
+    if-ltz p1, :cond_1
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart:I
 
     :cond_1
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleMarginEnd:I
+    const/16 p1, 0x18
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    move-result p2
+    move-result p1
 
-    if-ltz p2, :cond_2
+    if-ltz p1, :cond_2
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd:I
 
     :cond_2
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleMarginTop:I
+    const/16 p1, 0x1a
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    move-result p2
+    move-result p1
 
-    if-ltz p2, :cond_3
+    if-ltz p1, :cond_3
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop:I
 
     :cond_3
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleMarginBottom:I
+    const/16 p1, 0x17
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    move-result p2
+    move-result p1
 
-    if-ltz p2, :cond_4
+    if-ltz p1, :cond_4
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom:I
 
     :cond_4
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_maxButtonHeight:I
+    const/16 p1, 0xd
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result p1
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mMaxButtonHeight:I
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mMaxButtonHeight:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetStart:I
+    const/16 p1, 0x9
 
-    const/high16 p3, -0x80000000
+    const/high16 p2, -0x80000000
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
-    move-result p2
+    move-result p1
 
-    sget v0, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetEnd:I
+    const/4 p3, 0x5
 
-    invoke-virtual {p1, v0, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p3, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+
+    move-result p3
+
+    const/4 v0, 0x7
+
+    invoke-virtual {v1, v0, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
 
     move-result v0
 
-    sget v2, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetLeft:I
+    const/16 v2, 0x8
 
-    invoke-virtual {p1, v2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, v2, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
 
     move-result v2
-
-    sget v3, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetRight:I
-
-    invoke-virtual {p1, v3, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(II)I
-
-    move-result v3
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/Toolbar;->ensureContentInsets()V
 
     iget-object v4, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsets:Landroidx/appcompat/widget/RtlSpacingHelper;
 
-    iput-boolean v1, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRelative:Z
+    iput-boolean v3, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRelative:Z
 
-    if-eq v2, p3, :cond_5
+    if-eq v0, p2, :cond_5
 
-    iput v2, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitLeft:I
+    iput v0, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitLeft:I
 
-    iput v2, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft:I
+    iput v0, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft:I
 
     :cond_5
-    if-eq v3, p3, :cond_6
+    if-eq v2, p2, :cond_6
 
-    iput v3, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitRight:I
+    iput v2, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitRight:I
 
-    iput v3, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight:I
+    iput v2, v4, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight:I
 
     :cond_6
-    if-ne p2, p3, :cond_7
+    if-ne p1, p2, :cond_7
 
-    if-eq v0, p3, :cond_8
+    if-eq p3, p2, :cond_8
 
     :cond_7
-    iget-object v2, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsets:Landroidx/appcompat/widget/RtlSpacingHelper;
+    iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsets:Landroidx/appcompat/widget/RtlSpacingHelper;
 
-    invoke-virtual {v2, p2, v0}, Landroidx/appcompat/widget/RtlSpacingHelper;->setRelative(II)V
+    invoke-virtual {v0, p1, p3}, Landroidx/appcompat/widget/RtlSpacingHelper;->setRelative(II)V
 
     :cond_8
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetStartWithNavigation:I
+    const/16 p1, 0xa
 
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+
+    move-result p1
+
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsetStartWithNavigation:I
+
+    const/4 p1, 0x6
+
+    invoke-virtual {v1, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
+
+    move-result p1
+
+    iput p1, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions:I
+
+    const/4 p1, 0x4
+
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mCollapseIcon:Landroid/graphics/drawable/Drawable;
+
+    const/4 p1, 0x3
+
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mCollapseDescription:Ljava/lang/CharSequence;
+
+    const/16 p1, 0x15
+
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsetStartWithNavigation:I
+    if-nez p2, :cond_9
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_contentInsetEndWithActions:I
-
-    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
-
-    move-result p2
-
-    iput p2, p0, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions:I
-
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_collapseIcon:I
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    iput-object p2, p0, Landroidx/appcompat/widget/Toolbar;->mCollapseIcon:Landroid/graphics/drawable/Drawable;
-
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_collapseContentDescription:I
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    iput-object p2, p0, Landroidx/appcompat/widget/Toolbar;->mCollapseDescription:Ljava/lang/CharSequence;
-
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_title:I
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p3
-
-    if-nez p3, :cond_9
-
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
 
     :cond_9
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_subtitle:I
+    const/16 p1, 0x12
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result p3
+    move-result p2
 
-    if-nez p3, :cond_a
+    if-nez p2, :cond_a
 
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
 
     :cond_a
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object p2
+    move-result-object p1
 
-    iput-object p2, p0, Landroidx/appcompat/widget/Toolbar;->mPopupContext:Landroid/content/Context;
+    iput-object p1, p0, Landroidx/appcompat/widget/Toolbar;->mPopupContext:Landroid/content/Context;
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_popupTheme:I
+    const/16 p1, 0x11
 
-    invoke-virtual {p1, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+    invoke-virtual {v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setPopupTheme(I)V
+
+    const/16 p1, 0x10
+
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_b
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_b
+    const/16 p1, 0xf
+
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setPopupTheme(I)V
+    if-nez p2, :cond_c
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_navigationIcon:I
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_b
-
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_b
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_navigationContentDescription:I
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p3
-
-    if-nez p3, :cond_c
-
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_c
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_logo:I
+    const/16 p1, 0xb
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p2
+    move-result-object p1
 
-    if-eqz p2, :cond_d
+    if-eqz p1, :cond_d
 
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V
 
     :cond_d
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_logoDescription:I
+    const/16 p1, 0xc
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result p3
+    move-result p2
 
-    if-nez p3, :cond_e
+    if-nez p2, :cond_e
 
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setLogoDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setLogoDescription(Ljava/lang/CharSequence;)V
 
     :cond_e
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleTextColor:I
+    const/16 p1, 0x1d
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_f
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_titleTextColor:I
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    move-result-object p1
 
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setTitleTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setTitleTextColor(Landroid/content/res/ColorStateList;)V
 
     :cond_f
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_subtitleTextColor:I
+    const/16 p1, 0x14
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_10
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_subtitleTextColor:I
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    move-result-object p1
 
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/Toolbar;->setSubtitleTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar;->setSubtitleTextColor(Landroid/content/res/ColorStateList;)V
 
     :cond_10
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_menu:I
+    const/16 p1, 0xe
 
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+    invoke-virtual {v1, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_11
 
-    sget p2, Landroidx/appcompat/R$styleable;->Toolbar_menu:I
+    invoke-virtual {v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
-    invoke-virtual {p1, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
-
-    move-result p2
+    move-result p1
 
     invoke-direct {p0}, Landroidx/appcompat/widget/Toolbar;->getMenuInflater()Landroid/view/MenuInflater;
 
-    move-result-object p3
+    move-result-object p2
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/Toolbar;->getMenu()Landroid/view/Menu;
 
-    move-result-object v0
+    move-result-object p3
 
-    invoke-virtual {p3, p2, v0}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
+    invoke-virtual {p2, p1, p3}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
     :cond_11
-    iget-object p1, p1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object p1, v1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -785,7 +785,7 @@
 
     const/4 v2, 0x0
 
-    sget v3, Landroidx/appcompat/R$attr;->toolbarNavigationButtonStyle:I
+    const v3, 0x7f040383
 
     invoke-direct {v0, v1, v2, v3}, Landroidx/appcompat/widget/AppCompatImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -974,7 +974,7 @@
 
     const/4 v2, 0x0
 
-    sget v3, Landroidx/appcompat/R$attr;->toolbarNavigationButtonStyle:I
+    const v3, 0x7f040383
 
     invoke-direct {v0, v1, v2, v3}, Landroidx/appcompat/widget/AppCompatImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -1838,6 +1838,22 @@
     iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mWrapper:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
 
     return-object v0
+.end method
+
+.method public inflateMenu(I)V
+    .locals 2
+
+    invoke-direct {p0}, Landroidx/appcompat/widget/Toolbar;->getMenuInflater()Landroid/view/MenuInflater;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/Toolbar;->getMenu()Landroid/view/Menu;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
+
+    return-void
 .end method
 
 .method public final isChildOrHidden(Landroid/view/View;)Z

@@ -154,7 +154,7 @@
 
     move-result-object v8
 
-    invoke-static {v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v8}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v8
 
@@ -437,7 +437,7 @@
     :cond_b
     move-object/from16 v1, v16
 
-    invoke-static {v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -529,7 +529,7 @@
 
     new-instance v3, Lokhttp3/internal/http/RealResponseBody;
 
-    invoke-static {v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Source;)Lokio/BufferedSource;
+    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Source;)Lokio/BufferedSource;
 
     move-result-object v5
 
@@ -663,7 +663,7 @@
 
     const-string v3, " had non-zero Content-Length: "
 
-    invoke-static {v2, v6, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v6, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -734,7 +734,7 @@
     :cond_17
     move-object/from16 v0, v16
 
-    invoke-static {v0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

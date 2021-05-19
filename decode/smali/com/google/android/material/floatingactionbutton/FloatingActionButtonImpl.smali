@@ -488,7 +488,7 @@
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p1, p4}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p1, p4}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     return-object p1
 .end method
@@ -858,7 +858,7 @@
 
     const-string v2, "Didn\'t initialize content background"
 
-    invoke-static {v1, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v2}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->shouldAddPadding()Z
 

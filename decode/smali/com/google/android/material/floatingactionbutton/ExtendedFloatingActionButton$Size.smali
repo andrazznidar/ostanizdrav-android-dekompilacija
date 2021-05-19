@@ -18,5 +18,8 @@
 .method public abstract getHeight()I
 .end method
 
+.method public abstract getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+.end method
+
 .method public abstract getWidth()I
 .end method

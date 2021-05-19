@@ -45,7 +45,7 @@
 
     invoke-direct {p1, p2, p0}, L-$$LambdaGroup$ks$eG7QEpCb3effGwe1AF1Iujmbm1c;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -57,7 +57,7 @@
 
     invoke-direct {p1, p2, p0}, L-$$LambdaGroup$ks$eG7QEpCb3effGwe1AF1Iujmbm1c;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -67,7 +67,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/util/security/EncryptionErrorResetTool$prefs$2;-><init>(Lde/rki/coronawarnapp/util/security/EncryptionErrorResetTool;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

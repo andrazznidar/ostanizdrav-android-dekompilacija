@@ -60,7 +60,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f120044
+    const v0, 0x7f120079
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -70,11 +70,11 @@
 
     invoke-direct {v7, p0}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$deleteAllLocationsConfirmationDialog$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$deleteAllLocationsConfirmationDialog$2;)V
 
-    const v2, 0x7f120049
+    const v2, 0x7f12007e
 
-    const v3, 0x7f120048
+    const v3, 0x7f12007d
 
-    const v4, 0x7f120045
+    const v4, 0x7f12007a
 
     const/4 v6, 0x0
 

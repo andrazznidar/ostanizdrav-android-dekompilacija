@@ -178,7 +178,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
+    invoke-static {p1, v1, v2}, Lcom/google/zxing/client/android/R$id;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -306,7 +306,7 @@
 
     const-string v0, "DispatchedContinuation["
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -320,7 +320,7 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->continuation:Lkotlin/coroutines/Continuation;
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->toDebugString(Lkotlin/coroutines/Continuation;)Ljava/lang/String;
 
     move-result-object v1
 

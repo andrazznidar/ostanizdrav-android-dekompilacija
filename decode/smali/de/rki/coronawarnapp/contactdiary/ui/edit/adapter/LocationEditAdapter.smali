@@ -1,0 +1,132 @@
+.class public final Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;
+.super Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter;
+.source "LocationEditAdapter.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter<",
+        "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+        "Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final clickLabelString:Ljava/lang/String;
+
+.field public final getContentDescriptionString:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final onItemClicked:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "clickLabelString"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "getContentDescriptionString"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "onItemClicked"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;->clickLabelString:Ljava/lang/String;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;->getContentDescriptionString:Lkotlin/jvm/functions/Function1;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;->onItemClicked:Lkotlin/jvm/functions/Function1;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;ILjava/util/List;)V
+    .locals 1
+
+    check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;
+
+    const-string v0, "holder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "payloads"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, p3}, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;->bind(Ljava/lang/Object;Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public onCreateBaseVH(Landroid/view/ViewGroup;I)Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;
+    .locals 0
+
+    const-string p2, "parent"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p2, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;
+
+    invoke-direct {p2, p0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;Landroid/view/ViewGroup;)V
+
+    return-object p2
+.end method

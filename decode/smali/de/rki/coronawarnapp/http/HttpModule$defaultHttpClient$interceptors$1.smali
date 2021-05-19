@@ -6,7 +6,23 @@
 .implements Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
 
+# static fields
+.field public static final INSTANCE:Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;
+
+
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;-><init>()V
+
+    sput-object v0, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;->INSTANCE:Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -17,7 +33,7 @@
 
 
 # virtual methods
-.method public log(Ljava/lang/String;)V
+.method public final log(Ljava/lang/String;)V
     .locals 2
 
     const-string v0, "message"

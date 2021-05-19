@@ -47,7 +47,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0077
+    const v6, 0x7f0c0090
 
     aput v6, v4, v5
 
@@ -85,7 +85,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09016f
+    const v1, 0x7f0901cf
 
     const/16 v2, 0x8
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09016b
+    const v1, 0x7f0901cc
 
     const/16 v2, 0x9
 
@@ -101,7 +101,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090168
+    const v1, 0x7f0901c9
 
     const/16 v2, 0xa
 
@@ -120,11 +120,11 @@
 
     :array_1
     .array-data 4
-        0x7f0c0078
         0x7f0c0091
-        0x7f0c0091
-        0x7f0c00a8
-        0x7f0c00aa
+        0x7f0c00a0
+        0x7f0c00a0
+        0x7f0c00b1
+        0x7f0c00b3
     .end array-data
 .end method
 
@@ -260,11 +260,46 @@
     iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsCard:Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
+
+    if-eqz v0, :cond_1
+
+    iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_1
     iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    if-eqz v0, :cond_2
+
+    iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+
+    if-eqz v0, :cond_3
+
+    iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    if-eqz v0, :cond_4
+
+    iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
+    iget-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsTest:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+
+    if-eqz v0, :cond_5
+
+    iput-object v13, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_5
+    const v0, 0x7f09015b
 
     invoke-virtual {v14, v0, v13}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -375,7 +410,7 @@
 
     if-eqz v7, :cond_6
 
-    const v7, 0x7f12020b
+    const v7, 0x7f1202d9
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -401,12 +436,12 @@
 
     if-eqz v8, :cond_7
 
-    const v8, 0x7f120219
+    const v8, 0x7f1202e7
 
     goto :goto_5
 
     :cond_7
-    const v8, 0x7f120218
+    const v8, 0x7f1202e6
 
     :goto_5
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -433,12 +468,12 @@
 
     if-eqz v14, :cond_8
 
-    const v14, 0x7f120212
+    const v14, 0x7f1202e0
 
     goto :goto_6
 
     :cond_8
-    const v14, 0x7f120213
+    const v14, 0x7f1202e1
 
     :goto_6
     invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -455,7 +490,7 @@
 
     move-result-object v14
 
-    const-string v15, "c"
+    const-string v15, "context"
 
     invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -463,42 +498,46 @@
 
     if-eqz v15, :cond_9
 
-    const v15, 0x7f0800cb
+    const v15, 0x7f0800d7
 
     goto :goto_7
 
     :cond_9
-    const v15, 0x7f08010a
+    const v15, 0x7f08011d
 
     :goto_7
-    invoke-virtual {v14, v15}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const-string v9, "$this$getDrawableCompat"
+
+    invoke-static {v14, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v14, v15}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v9
+
+    iget-object v14, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v14
 
-    iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    const-string v15, "c"
 
-    invoke-virtual {v15}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v15
+    iget-boolean v15, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
 
-    const-string v9, "c"
+    if-eqz v15, :cond_a
 
-    invoke-static {v15, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const v15, 0x7f1202dd
 
-    iget-boolean v9, v0, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsState;->isNotificationsEnabled:Z
+    invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    if-eqz v9, :cond_a
-
-    const v9, 0x7f12020f
-
-    invoke-virtual {v15, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
+    move-result-object v14
 
     goto :goto_8
 
     :cond_a
-    const/4 v9, 0x0
+    const/4 v14, 0x0
 
     :goto_8
     iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
@@ -515,12 +554,12 @@
 
     if-eqz v10, :cond_b
 
-    const v10, 0x7f120219
+    const v10, 0x7f1202e7
 
     goto :goto_9
 
     :cond_b
-    const v10, 0x7f120218
+    const v10, 0x7f1202e6
 
     :goto_9
     invoke-virtual {v15, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -542,7 +581,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v14, 0x0
+    const/4 v9, 0x0
 
     const/4 v15, 0x0
 
@@ -550,7 +589,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v9, 0x0
+    const/4 v14, 0x0
 
     goto :goto_a
 
@@ -561,7 +600,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v14, 0x0
+    const/4 v9, 0x0
 
     const/4 v15, 0x0
 
@@ -569,7 +608,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v9, 0x0
+    const/4 v14, 0x0
 
     const/4 v11, 0x0
 
@@ -645,7 +684,7 @@
 
     iget-object v12, v12, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-static {v12, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    invoke-static {v12, v0}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -653,13 +692,11 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    move-object v6, v0
+    invoke-virtual {v0, v14}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setHeadline(Ljava/lang/String;)V
 
-    check-cast v6, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    iput-object v9, v6, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mHeadline:Ljava/lang/String;
-
-    invoke-virtual {v0, v14}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustration(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v9}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->setIllustration(Landroid/graphics/drawable/Drawable;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -669,7 +706,7 @@
 
     iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-static {v0, v11}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v11}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
@@ -712,7 +749,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f12020d
+    const v3, 0x7f1202db
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -728,7 +765,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f12020e
+    const v3, 0x7f1202dc
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -744,7 +781,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120210
+    const v3, 0x7f1202de
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -760,7 +797,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080110
+    const v3, 0x7f080123
 
     invoke-static {v2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -772,17 +809,17 @@
 
     iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v3, 0x7f080094
+    const v3, 0x7f08009f
 
-    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsNotificationsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v2, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v3, 0x7f120217
+    const v3, 0x7f1202e5
 
-    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v2, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBinding;->settingsSwitchRowNotificationsRisk:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
@@ -804,7 +841,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120215
+    const v3, 0x7f1202e3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -832,7 +869,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120216
+    const v3, 0x7f1202e4
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1037,207 +1074,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_8
-
-    if-eq p1, v1, :cond_6
-
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_4
-
-    const/4 v2, 0x3
-
-    if-eq p1, v2, :cond_2
-
-    const/4 v2, 0x4
-
-    if-eq p1, v2, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x10
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x8
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
-
-    :cond_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p1
-
-    :cond_5
-    :goto_2
-    return v0
-
-    :cond_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    if-nez p3, :cond_7
-
-    monitor-enter p0
-
-    :try_start_3
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_3
-
-    :catchall_3
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    throw p1
-
-    :cond_7
-    :goto_3
-    return v0
-
-    :cond_8
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;
-
-    if-nez p3, :cond_9
-
-    monitor-enter p0
-
-    :try_start_4
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw p1
-
-    :cond_9
-    :goto_4
-    return v0
-.end method
-
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
 
@@ -1290,7 +1126,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2b
+    const/16 p1, 0x2a
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

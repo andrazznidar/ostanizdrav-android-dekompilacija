@@ -39,13 +39,13 @@
 
     iget v0, p1, Landroid/os/Message;->what:I
 
-    sget v1, Lcom/google/zxing/client/android/R$id;->zxing_prewiew_size_ready:I
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const v3, 0x7f090575
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v3, :cond_8
 
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview$3;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
 
@@ -55,9 +55,9 @@
 
     iput-object p1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->previewSize:Lcom/journeyapps/barcodescanner/Size;
 
-    iget-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->containerSize:Lcom/journeyapps/barcodescanner/Size;
+    iget-object v3, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->containerSize:Lcom/journeyapps/barcodescanner/Size;
 
-    if-eqz v1, :cond_7
+    if-eqz v3, :cond_7
 
     const/4 v4, 0x0
 
@@ -71,9 +71,9 @@
 
     iget v7, p1, Lcom/journeyapps/barcodescanner/Size;->height:I
 
-    iget v8, v1, Lcom/journeyapps/barcodescanner/Size;->width:I
+    iget v8, v3, Lcom/journeyapps/barcodescanner/Size;->width:I
 
-    iget v1, v1, Lcom/journeyapps/barcodescanner/Size;->height:I
+    iget v3, v3, Lcom/journeyapps/barcodescanner/Size;->height:I
 
     iget-object v9, v5, Lcom/journeyapps/barcodescanner/camera/DisplayConfiguration;->previewScalingStrategy:Lcom/journeyapps/barcodescanner/camera/PreviewScalingStrategy;
 
@@ -102,15 +102,15 @@
 
     new-instance p1, Landroid/graphics/Rect;
 
-    invoke-direct {p1, v3, v3, v8, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {p1, v2, v2, v8, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    iget-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->surfaceRect:Landroid/graphics/Rect;
+    iget-object v3, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->surfaceRect:Landroid/graphics/Rect;
 
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    invoke-virtual {v5, v1}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
+    invoke-virtual {v5, v3}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
     iget-object p1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
 
@@ -120,35 +120,35 @@
 
     move-result p1
 
-    iget-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
+    iget-object v3, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
 
-    iget v1, v1, Lcom/journeyapps/barcodescanner/Size;->width:I
+    iget v3, v3, Lcom/journeyapps/barcodescanner/Size;->width:I
 
-    sub-int/2addr p1, v1
+    sub-int/2addr p1, v3
 
     div-int/lit8 p1, p1, 0x2
 
-    invoke-static {v3, p1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
 
-    move-result v1
+    move-result v3
 
     iget-object v8, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
 
     iget v8, v8, Lcom/journeyapps/barcodescanner/Size;->height:I
 
-    sub-int/2addr v1, v8
+    sub-int/2addr v3, v8
 
-    div-int/lit8 v1, v1, 0x2
+    div-int/lit8 v3, v3, 0x2
 
-    invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v5, p1, v1}, Landroid/graphics/Rect;->inset(II)V
+    invoke-virtual {v5, p1, v2}, Landroid/graphics/Rect;->inset(II)V
 
     goto :goto_0
 
@@ -187,9 +187,9 @@
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
 
-    move-result v1
+    move-result v3
 
-    if-le p1, v1, :cond_2
+    if-le p1, v3, :cond_2
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
 
@@ -197,13 +197,13 @@
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
 
-    move-result v1
+    move-result v3
 
-    sub-int/2addr p1, v1
+    sub-int/2addr p1, v3
 
     div-int/lit8 p1, p1, 0x2
 
-    invoke-virtual {v5, v3, p1}, Landroid/graphics/Rect;->inset(II)V
+    invoke-virtual {v5, v2, p1}, Landroid/graphics/Rect;->inset(II)V
 
     :cond_2
     :goto_0
@@ -211,23 +211,23 @@
 
     new-instance p1, Landroid/graphics/Rect;
 
-    iget-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRect:Landroid/graphics/Rect;
+    iget-object v2, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRect:Landroid/graphics/Rect;
 
-    invoke-direct {p1, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct {p1, v2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    iget-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->surfaceRect:Landroid/graphics/Rect;
+    iget-object v2, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->surfaceRect:Landroid/graphics/Rect;
 
-    iget v3, v1, Landroid/graphics/Rect;->left:I
+    iget v3, v2, Landroid/graphics/Rect;->left:I
 
     neg-int v3, v3
 
-    iget v1, v1, Landroid/graphics/Rect;->top:I
+    iget v2, v2, Landroid/graphics/Rect;->top:I
 
-    neg-int v1, v1
+    neg-int v2, v2
 
-    invoke-virtual {p1, v3, v1}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {p1, v3, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
     iget v3, p1, Landroid/graphics/Rect;->left:I
 
@@ -277,11 +277,11 @@
 
     div-int/2addr p1, v6
 
-    invoke-direct {v1, v3, v5, v8, p1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v3, v5, v8, p1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    iput-object v1, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->previewFramingRect:Landroid/graphics/Rect;
+    iput-object v2, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->previewFramingRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
     move-result p1
 
@@ -312,9 +312,9 @@
 
     sget-object p1, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
 
-    const-string v1, "Preview frame is too small"
+    const-string v2, "Preview frame is too small"
 
-    invoke-static {p1, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
     :goto_2
@@ -341,12 +341,12 @@
 
     :cond_7
     :goto_3
-    return v2
+    return v1
 
     :cond_8
-    sget v1, Lcom/google/zxing/client/android/R$id;->zxing_camera_error:I
+    const v3, 0x7f09056f
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v3, :cond_a
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -361,10 +361,10 @@
     goto :goto_4
 
     :cond_9
-    move v2, v3
+    move v1, v2
 
     :goto_4
-    if-eqz v2, :cond_b
+    if-eqz v1, :cond_b
 
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview$3;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
 
@@ -379,7 +379,7 @@
     goto :goto_5
 
     :cond_a
-    sget p1, Lcom/google/zxing/client/android/R$id;->zxing_camera_closed:I
+    const p1, 0x7f09056e
 
     if-ne v0, p1, :cond_b
 
@@ -391,5 +391,5 @@
 
     :cond_b
     :goto_5
-    return v3
+    return v2
 .end method

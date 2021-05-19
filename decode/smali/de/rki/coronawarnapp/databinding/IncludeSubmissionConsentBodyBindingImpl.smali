@@ -73,7 +73,7 @@
 
     new-array v6, v3, [I
 
-    const v7, 0x7f0c006c
+    const v7, 0x7f0c008b
 
     aput v7, v6, v4
 
@@ -105,7 +105,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036a
+    const v1, 0x7f090456
 
     const/16 v2, 0xa
 
@@ -113,7 +113,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036d
+    const v1, 0x7f090459
 
     const/16 v2, 0xb
 
@@ -121,7 +121,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090369
+    const v1, 0x7f090455
 
     const/16 v2, 0xc
 
@@ -129,7 +129,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036c
+    const v1, 0x7f090458
 
     const/16 v2, 0xd
 
@@ -137,7 +137,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036e
+    const v1, 0x7f09045a
 
     const/16 v2, 0xe
 
@@ -158,11 +158,11 @@
 
     :array_1
     .array-data 4
-        0x7f0c00fa
-        0x7f0c00fa
-        0x7f0c00fa
-        0x7f0c00fa
-        0x7f0c00ab
+        0x7f0c011e
+        0x7f0c011e
+        0x7f0c011e
+        0x7f0c011e
+        0x7f0c00b4
     .end array-data
 .end method
 
@@ -342,6 +342,34 @@
     iput-object v15, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
+    iget-object v0, v15, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainFirstPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_3
+
+    iput-object v15, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    iget-object v0, v15, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainFourthPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_4
+
+    iput-object v15, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
+    iget-object v0, v15, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainSecondPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_5
+
+    iput-object v15, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_5
+    iget-object v0, v15, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentMainThirdPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_6
+
+    iput-object v15, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_6
     iget-object v0, v15, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBinding;->submissionConsentYourConsentSubsectionFirstPoint:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
@@ -350,7 +378,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     move-object/from16 v1, p2
 
@@ -395,7 +423,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12024e
+    const v2, 0x7f12034f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -411,7 +439,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12024f
+    const v2, 0x7f120350
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -427,7 +455,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120252
+    const v2, 0x7f120354
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -443,7 +471,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120253
+    const v2, 0x7f120355
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -665,168 +693,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_6
-
-    if-eq p1, v1, :cond_4
-
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_2
-
-    const/4 v2, 0x3
-
-    if-eq p1, v2, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x8
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
-
-    :cond_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p1
-
-    :cond_5
-    :goto_2
-    return v0
-
-    :cond_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_7
-
-    monitor-enter p0
-
-    :try_start_3
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_3
-
-    :catchall_3
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    throw p1
-
-    :cond_7
-    :goto_3
-    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

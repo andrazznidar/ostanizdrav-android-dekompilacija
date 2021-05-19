@@ -47,7 +47,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f070189
+    const v4, 0x7f0701a1
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -59,7 +59,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f07018a
+    const v5, 0x7f0701a2
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -85,13 +85,17 @@
 
     invoke-virtual {v5, v1, v4, v1, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    const v1, 0x7f1302d0
+    const v1, 0x7f1302f9
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setTextAppearance(I)V
 
-    const v1, 0x7f06002c
+    const-string v1, "$this$getColorStateListCompat"
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v1, 0x7f06002e
+
+    invoke-static {v0, v1}, Landroidx/core/content/ContextCompat;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 

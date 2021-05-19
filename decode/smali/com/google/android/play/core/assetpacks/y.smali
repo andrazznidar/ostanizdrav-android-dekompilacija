@@ -2,11 +2,11 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/play/core/internal/ag;
+.implements Lcom/google/android/play/core/internal/am;
 
 
 # static fields
-.field public static final a:Lcom/google/android/play/core/internal/ag;
+.field public static final a:Lcom/google/android/play/core/internal/am;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/google/android/play/core/assetpacks/y;-><init>()V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/y;->a:Lcom/google/android/play/core/internal/ag;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/y;->a:Lcom/google/android/play/core/internal/am;
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public final a(Landroid/os/IBinder;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p1}, Lcom/google/android/play/core/internal/r;->a(Landroid/os/IBinder;)Lcom/google/android/play/core/internal/s;
+    invoke-static {p1}, Lcom/google/android/play/core/internal/s;->b(Landroid/os/IBinder;)Lcom/google/android/play/core/internal/t;
 
     move-result-object p1
 

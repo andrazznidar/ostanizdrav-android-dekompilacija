@@ -106,7 +106,7 @@
 
     const-string v0, "concurrency="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -241,7 +241,7 @@
 
     const/4 v4, 0x6
 
-    invoke-static {v1, v3, v3, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {v1, v3, v3, v4}, Lcom/google/zxing/client/android/R$id;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v1
 

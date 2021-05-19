@@ -62,7 +62,7 @@
 
     check-cast p0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toState(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->toState(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -154,7 +154,7 @@
     invoke-interface {p2, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p2
 

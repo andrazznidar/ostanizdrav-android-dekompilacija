@@ -26,6 +26,8 @@
 
 .field public errorView:Landroid/widget/TextView;
 
+.field public errorViewContentDescription:Ljava/lang/CharSequence;
+
 .field public errorViewTextColor:Landroid/content/res/ColorStateList;
 
 .field public helperText:Ljava/lang/CharSequence;
@@ -65,7 +67,7 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/android/material/R$dimen;->design_textinput_caption_translate_y:I
+    const v0, 0x7f0700a7
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -81,11 +83,13 @@
 
 # virtual methods
 .method public addIndicator(Landroid/widget/TextView;I)V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    const/4 v1, 0x0
+    const/4 v1, -0x2
+
+    const/4 v2, 0x0
 
     if-nez v0, :cond_0
 
@@ -95,55 +99,41 @@
 
     new-instance v0, Landroid/widget/LinearLayout;
 
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
+    iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
 
-    invoke-direct {v0, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
 
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
+    iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    const/4 v4, -0x2
-
-    invoke-virtual {v0, v2, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;II)V
+    invoke-virtual {v0, v3, v4, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;II)V
 
     new-instance v0, Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
+    iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
 
-    invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
-
-    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
-
-    invoke-direct {v5, v4, v4}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v2, v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v0, Landroid/widget/Space;
-
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
-
-    invoke-direct {v0, v2}, Landroid/widget/Space;-><init>(Landroid/content/Context;)V
-
-    new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    invoke-direct {v2, v1, v1, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    invoke-direct {v0, v2, v1, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v3, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    iget-object v4, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v3, v4, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -165,20 +155,20 @@
     goto :goto_0
 
     :cond_1
-    move v2, v1
+    move p2, v2
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    move v2, v0
+    move p2, v0
 
     :goto_1
-    if-eqz v2, :cond_3
+    if-eqz p2, :cond_3
 
     iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
 
-    invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
 
@@ -193,14 +183,18 @@
     goto :goto_2
 
     :cond_3
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
+    new-instance p2, Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v2, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
+    invoke-direct {p2, v1, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iget-object v1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v1, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     :goto_2
     iget-object p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     iget p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorsAdded:I
 
@@ -651,9 +645,14 @@
 
     move/from16 v10, p3
 
+    if-ne v8, v9, :cond_0
+
+    return-void
+
+    :cond_0
     const/4 v11, 0x0
 
-    if-eqz v10, :cond_0
+    if-eqz v10, :cond_1
 
     new-instance v12, Landroid/animation/AnimatorSet;
 
@@ -689,7 +688,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/android/material/textfield/IndicatorViewController;->createCaptionAnimators(Ljava/util/List;ZLandroid/widget/TextView;III)V
 
-    invoke-static {v12, v13}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {v12, v13}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/textfield/IndicatorViewController;->getCaptionViewFromDisplayState(I)Landroid/widget/TextView;
 
@@ -717,19 +716,19 @@
 
     goto :goto_0
 
-    :cond_0
-    if-ne v8, v9, :cond_1
+    :cond_1
+    if-ne v8, v9, :cond_2
 
     goto :goto_0
 
-    :cond_1
-    if-eqz v9, :cond_2
+    :cond_2
+    if-eqz v9, :cond_3
 
     invoke-virtual {p0, v9}, Lcom/google/android/material/textfield/IndicatorViewController;->getCaptionViewFromDisplayState(I)Landroid/widget/TextView;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -737,14 +736,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    :cond_2
-    if-eqz v8, :cond_3
+    :cond_3
+    if-eqz v8, :cond_4
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/textfield/IndicatorViewController;->getCaptionViewFromDisplayState(I)Landroid/widget/TextView;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     const/4 v1, 0x4
 
@@ -752,13 +751,13 @@
 
     const/4 v1, 0x1
 
-    if-ne v8, v1, :cond_3
+    if-ne v8, v1, :cond_4
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_3
+    :cond_4
     iput v9, v7, Lcom/google/android/material/textfield/IndicatorViewController;->captionDisplayed:I
 
     :goto_0

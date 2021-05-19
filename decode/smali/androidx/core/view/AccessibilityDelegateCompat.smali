@@ -152,7 +152,7 @@
 .method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 8
 
-    sget v0, Landroidx/core/R$id;->tag_accessibility_actions:I
+    const v0, 0x7f090501
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -303,7 +303,7 @@
     :cond_5
     if-nez v0, :cond_9
 
-    sget v2, Landroidx/core/R$id;->accessibility_action_clickable_span:I
+    const v2, 0x7f09000f
 
     if-ne p2, v2, :cond_9
 
@@ -315,7 +315,7 @@
 
     move-result p2
 
-    sget p3, Landroidx/core/R$id;->tag_accessibility_clickable_spans:I
+    const p3, 0x7f090502
 
     invoke-virtual {p1, p3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

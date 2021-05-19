@@ -12,21 +12,25 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lde/rki/coronawarnapp/util/DeviceUIState;",
-        "Landroid/text/Spannable;",
+        "Landroid/text/SpannableString;",
         ">;"
     }
 .end annotation
 
 
 # instance fields
+.field public final synthetic $context:Landroid/content/Context;
+
 .field public final synthetic $uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)V
+.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+    iput-object p1, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$context:Landroid/content/Context;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
 
     const/4 p1, 0x1
 
@@ -46,10 +50,6 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v0
-
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
@@ -67,7 +67,9 @@
     :pswitch_0
     new-instance p1, Landroid/text/SpannableString;
 
-    const v1, 0x7f12034f
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$context:Landroid/content/Context;
+
+    const v1, 0x7f120451
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -78,18 +80,26 @@
     goto :goto_0
 
     :pswitch_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+    new-instance p1, Landroid/text/SpannableString;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->formatTestResult(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)Landroid/text/Spannable;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$context:Landroid/content/Context;
 
-    move-result-object p1
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->formatTestResult(Landroid/content/Context;Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)Landroid/text/Spannable;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
     :pswitch_2
     new-instance p1, Landroid/text/SpannableString;
 
-    const v1, 0x7f120351
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/formatter/FormatterSubmissionHelper$formatTestResultCardContent$1;->$context:Landroid/content/Context;
+
+    const v1, 0x7f120453
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -99,8 +109,6 @@
 
     :goto_0
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

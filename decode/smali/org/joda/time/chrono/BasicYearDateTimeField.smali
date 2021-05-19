@@ -59,7 +59,7 @@
 
     const-string v1, " + "
 
-    invoke-static {p2, v0, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline9(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, v0, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -79,7 +79,7 @@
 .method public add(JJ)J
     .locals 0
 
-    invoke-static {p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeToInt(J)I
+    invoke-static {p3, p4}, Lcom/google/zxing/client/android/R$id;->safeToInt(J)I
 
     move-result p3
 
@@ -275,7 +275,7 @@
 
     move-result v1
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 
@@ -305,7 +305,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    invoke-static {p0, p3, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
+    invoke-static {p0, p3, v0, v1}, Lcom/google/zxing/client/android/R$id;->verifyValueBounds(Lorg/joda/time/DateTimeField;III)V
 
     iget-object v0, p0, Lorg/joda/time/chrono/BasicYearDateTimeField;->iChronology:Lorg/joda/time/chrono/BasicChronology;
 

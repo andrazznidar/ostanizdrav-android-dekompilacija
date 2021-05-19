@@ -63,18 +63,22 @@
     .end annotation
 .end field
 
-.field public final submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+.field public final submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
+
+.field public final testResultDataCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/registeredtest/TestResultDataCollector;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/storage/SubmissionRepository;)V
-    .locals 4
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
+.method public constructor <init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/registeredtest/TestResultDataCollector;)V
+    .locals 3
 
     const-string v0, "submissionRepository"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "testResultDataCollector"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -82,7 +86,9 @@
 
     invoke-direct {p0, v0, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel;->testResultDataCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/registeredtest/TestResultDataCollector;
 
     new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
@@ -104,15 +110,15 @@
 
     new-instance p1, Landroidx/lifecycle/MutableLiveData;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel$RegistrationState;
+    new-instance p2, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel$RegistrationState;
 
-    sget-object v2, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->IDLE:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->IDLE:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v1, v2, v0, v3}, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel$RegistrationState;-><init>(Lde/rki/coronawarnapp/ui/submission/ApiRequestState;Lde/rki/coronawarnapp/util/formatter/TestResult;I)V
+    invoke-direct {p2, v1, v0, v2}, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel$RegistrationState;-><init>(Lde/rki/coronawarnapp/ui/submission/ApiRequestState;Lde/rki/coronawarnapp/util/formatter/TestResult;I)V
 
-    invoke-direct {p1, v1}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p1, p2}, Landroidx/lifecycle/MutableLiveData;-><init>(Ljava/lang/Object;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel;->registrationState:Landroidx/lifecycle/MutableLiveData;
 

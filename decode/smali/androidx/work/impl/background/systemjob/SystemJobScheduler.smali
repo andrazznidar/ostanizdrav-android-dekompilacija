@@ -37,6 +37,16 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workManager"
+        }
+    .end annotation
 
     const-string v0, "jobscheduler"
 
@@ -65,6 +75,14 @@
 
 .method public static cancelAll(Landroid/content/Context;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     const-string v0, "jobscheduler"
 
@@ -119,6 +137,16 @@
 
 .method public static cancelJobById(Landroid/app/job/JobScheduler;I)V
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "jobScheduler",
+            "id"
+        }
+    .end annotation
 
     :try_start_0
     invoke-virtual {p0, p1}, Landroid/app/job/JobScheduler;->cancel(I)V
@@ -170,6 +198,19 @@
 
 .method public static getPendingJobIds(Landroid/content/Context;Landroid/app/job/JobScheduler;Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "jobScheduler",
+            "workSpecId"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -246,6 +287,17 @@
 
 .method public static getPendingJobs(Landroid/content/Context;Landroid/app/job/JobScheduler;)Ljava/util/List;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "jobScheduler"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -350,6 +402,14 @@
 
 .method public static getWorkSpecIdFromJobInfo(Landroid/app/job/JobInfo;)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "jobInfo"
+        }
+    .end annotation
 
     const-string v0, "EXTRA_WORK_SPEC_ID"
 
@@ -383,6 +443,16 @@
 
 .method public static reconcileJobs(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;)Z
     .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workManager"
+        }
+    .end annotation
 
     const-string v0, "jobscheduler"
 
@@ -638,6 +708,14 @@
 # virtual methods
 .method public cancel(Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecId"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mContext:Landroid/content/Context;
 
@@ -709,6 +787,14 @@
 
 .method public varargs schedule([Landroidx/work/impl/model/WorkSpec;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecs"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
 
@@ -985,6 +1071,16 @@
 
 .method public scheduleInternal(Landroidx/work/impl/model/WorkSpec;I)V
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "workSpec",
+            "jobId"
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 

@@ -68,7 +68,7 @@
     :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->myConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -81,7 +81,7 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_4
+    if-ge v2, v1, :cond_5
 
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -97,10 +97,27 @@
 
     move-result v5
 
+    iget-boolean v6, v0, Landroidx/constraintlayout/widget/ConstraintSet;->mForceId:Z
+
+    if-eqz v6, :cond_2
+
     const/4 v6, -0x1
 
-    if-eq v5, v6, :cond_3
+    if-eq v5, v6, :cond_1
 
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "All children of ConstraintLayout must have ids to use ConstraintSet"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
+    :goto_1
     iget-object v6, v0, Landroidx/constraintlayout/widget/ConstraintSet;->mConstraints:Ljava/util/HashMap;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -111,7 +128,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_1
+    if-nez v6, :cond_3
 
     iget-object v6, v0, Landroidx/constraintlayout/widget/ConstraintSet;->mConstraints:Ljava/util/HashMap;
 
@@ -125,7 +142,7 @@
 
     invoke-virtual {v6, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
+    :cond_3
     iget-object v6, v0, Landroidx/constraintlayout/widget/ConstraintSet;->mConstraints:Ljava/util/HashMap;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -140,7 +157,7 @@
 
     instance-of v7, v3, Landroidx/constraintlayout/widget/ConstraintHelper;
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_4
 
     check-cast v3, Landroidx/constraintlayout/widget/ConstraintHelper;
 
@@ -148,48 +165,51 @@
 
     instance-of v7, v3, Landroidx/constraintlayout/widget/Barrier;
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_4
 
-    const/4 v7, 0x1
+    iget-object v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
-    iput v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mHelperType:I
+    const/4 v8, 0x1
+
+    iput v8, v7, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mHelperType:I
 
     check-cast v3, Landroidx/constraintlayout/widget/Barrier;
 
     invoke-virtual {v3}, Landroidx/constraintlayout/widget/Barrier;->getType()I
 
-    move-result v7
+    move-result v8
 
-    iput v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mBarrierDirection:I
+    iput v8, v7, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierDirection:I
+
+    iget-object v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
     invoke-virtual {v3}, Landroidx/constraintlayout/widget/ConstraintHelper;->getReferencedIds()[I
 
-    move-result-object v3
+    move-result-object v8
 
-    iput-object v3, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->mReferenceIds:[I
+    iput-object v8, v7, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mReferenceIds:[I
 
-    :cond_2
+    iget-object v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
+
+    invoke-virtual {v3}, Landroidx/constraintlayout/widget/Barrier;->getMargin()I
+
+    move-result v3
+
+    iput v3, v7, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierMargin:I
+
+    :cond_4
     invoke-virtual {v6, v5, v4}, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->fillFromConstraints(ILandroidx/constraintlayout/widget/Constraints$LayoutParams;)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_3
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "All children of ConstraintLayout must have ids to use ConstraintSet"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
+    :cond_5
     iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->myConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
 
     return-object v0
 
-    :cond_5
+    :cond_6
     const/4 v0, 0x0
 
     throw v0

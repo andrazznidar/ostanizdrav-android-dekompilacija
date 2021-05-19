@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field public final context:Landroid/content/Context;
-
 .field public final homeFragment:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
 
@@ -21,16 +19,6 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeMenu;->homeFragment:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const-string v0, "homeFragment.requireContext()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeMenu;->context:Landroid/content/Context;
-
     return-void
 .end method
 
@@ -39,7 +27,7 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeMenu;->homeFragment:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-static {p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+    invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
     move-result-object p0
 

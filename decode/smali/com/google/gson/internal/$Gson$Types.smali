@@ -156,7 +156,7 @@
     const/4 p0, 0x1
 
     :goto_1
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
+    invoke-static {p0}, Lcom/google/android/material/R$style;->checkArgument(Z)V
 
     return-void
 .end method
@@ -560,7 +560,7 @@
 
     instance-of v0, p0, Ljava/lang/Class;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
+    invoke-static {v0}, Lcom/google/android/material/R$style;->checkArgument(Z)V
 
     check-cast p0, Ljava/lang/Class;
 
@@ -698,7 +698,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
+    invoke-static {v0}, Lcom/google/android/material/R$style;->checkArgument(Z)V
 
     invoke-static {p0, p1, p2}, Lcom/google/gson/internal/$Gson$Types;->getGenericSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 

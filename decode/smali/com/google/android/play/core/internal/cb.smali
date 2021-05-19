@@ -1,20 +1,28 @@
-.class public final Lcom/google/android/play/core/internal/cb;
-.super Lcom/google/android/play/core/internal/bx;
+.class public abstract Lcom/google/android/play/core/internal/cb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/io/Closeable;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/play/core/internal/bx;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 0
+.method public abstract a()J
+.end method
 
-    return-void
+.method public abstract b(JJ)Ljava/io/InputStream;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

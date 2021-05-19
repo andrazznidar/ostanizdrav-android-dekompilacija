@@ -37,7 +37,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/preference/R$styleable;->PreferenceImageView_maxWidth:I
+    const/4 p2, 0x3
 
     invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -45,7 +45,7 @@
 
     invoke-virtual {p0, p2}, Landroidx/preference/internal/PreferenceImageView;->setMaxWidth(I)V
 
-    sget p2, Landroidx/preference/R$styleable;->PreferenceImageView_maxHeight:I
+    const/4 p2, 0x2
 
     invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 

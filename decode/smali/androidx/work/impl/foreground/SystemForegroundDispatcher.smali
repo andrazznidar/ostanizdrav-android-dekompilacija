@@ -84,6 +84,14 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -150,6 +158,14 @@
 
 .method public static createStopForegroundIntent(Landroid/content/Context;)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -168,6 +184,14 @@
 # virtual methods
 .method public final handleNotify(Landroid/content/Intent;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "intent"
+        }
+    .end annotation
 
     const-string v0, "KEY_NOTIFICATION_ID"
 
@@ -353,6 +377,15 @@
 
 .method public onAllConstraintsMet(Ljava/util/List;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecIds"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -367,6 +400,15 @@
 
 .method public onAllConstraintsNotMet(Ljava/util/List;)V
     .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecIds"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -483,7 +525,17 @@
 .end method
 
 .method public onExecuted(Ljava/lang/String;Z)V
-    .locals 6
+    .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "workSpecId",
+            "needsReschedule"
+        }
+    .end annotation
 
     iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mLock:Ljava/lang/Object;
 
@@ -628,67 +680,65 @@
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_3
-    if-eqz p2, :cond_4
-
     iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+
+    if-eqz p2, :cond_4
 
     if-eqz v0, :cond_4
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
-    move-result-object v0
+    move-result-object v2
 
-    sget-object v2, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->TAG:Ljava/lang/String;
+    sget-object v3, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->TAG:Ljava/lang/String;
 
-    const-string v3, "Removing Notification (id: %s, workSpecId: %s ,notificationType: %s)"
+    const-string v4, "Removing Notification (id: %s, workSpecId: %s ,notificationType: %s)"
 
-    const/4 v4, 0x3
+    const/4 v5, 0x3
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    iget v5, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
+    iget v6, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v6
 
-    aput-object v5, v4, v1
+    aput-object v6, v5, v1
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    aput-object p1, v4, v5
+    aput-object p1, v5, v6
 
     const/4 p1, 0x2
 
-    iget v5, p2, Landroidx/work/ForegroundInfo;->mForegroundServiceType:I
+    iget v6, p2, Landroidx/work/ForegroundInfo;->mForegroundServiceType:I
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v6
 
-    aput-object v5, v4, p1
+    aput-object v6, v5, p1
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     new-array v1, v1, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v2, p1, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v3, p1, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    iget-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->mCallback:Landroidx/work/impl/foreground/SystemForegroundDispatcher$Callback;
+    iget p1, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
 
-    iget p2, p2, Landroidx/work/ForegroundInfo;->mNotificationId:I
+    check-cast v0, Landroidx/work/impl/foreground/SystemForegroundService;
 
-    check-cast p1, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    iget-object v0, p1, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
+    iget-object p2, v0, Landroidx/work/impl/foreground/SystemForegroundService;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/work/impl/foreground/SystemForegroundService$3;
 
-    invoke-direct {v1, p1, p2}, Landroidx/work/impl/foreground/SystemForegroundService$3;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;I)V
+    invoke-direct {v1, v0, p1}, Landroidx/work/impl/foreground/SystemForegroundService$3;-><init>(Landroidx/work/impl/foreground/SystemForegroundService;I)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p2, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_4
     return-void

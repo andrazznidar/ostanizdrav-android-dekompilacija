@@ -30,43 +30,35 @@
 
     const-string v0, "bundle"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-class v1, Lde/rki/coronawarnapp/ui/submission/symptoms/calendar/SubmissionSymptomCalendarFragmentArgs;
 
-    const-class v0, Lde/rki/coronawarnapp/ui/submission/symptoms/calendar/SubmissionSymptomCalendarFragmentArgs;
+    const-string v2, "symptomIndication"
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-static {p0, v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline41(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+    if-eqz v0, :cond_3
 
-    const-string v0, "symptomIndication"
+    const-class v0, Landroid/os/Parcelable;
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    const-class v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    if-eqz v1, :cond_3
+    move-result v0
 
-    const-class v1, Landroid/os/Parcelable;
+    if-nez v0, :cond_1
 
-    const-class v2, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    const-class v0, Ljava/io/Serializable;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    const-class v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    if-nez v1, :cond_1
+    move-result v0
 
-    const-class v1, Ljava/io/Serializable;
-
-    const-class v2, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
@@ -79,17 +71,9 @@
 
     const-class v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v2, " must implement Parcelable or Serializable or must be an Enum."
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " must implement Parcelable or Serializable or must be an Enum."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -99,7 +83,7 @@
 
     :cond_1
     :goto_0
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -194,7 +178,7 @@
 
     const-string v0, "SubmissionSymptomCalendarFragmentArgs(symptomIndication="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

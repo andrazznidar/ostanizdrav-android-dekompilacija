@@ -203,7 +203,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v3}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v3
 
@@ -265,7 +265,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {p1}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object p1
 

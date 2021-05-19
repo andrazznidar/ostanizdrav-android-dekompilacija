@@ -81,7 +81,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/storage/DeviceStorage$storageManager$2;-><init>(Lde/rki/coronawarnapp/storage/DeviceStorage;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -444,7 +444,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -458,7 +458,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage;->privateStorage:Ljava/io/File;
 
@@ -482,7 +482,7 @@
 
     invoke-direct/range {v2 .. v7}, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;-><init>(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;JLkotlin/coroutines/Continuation;)V
 
-    invoke-static {p3, v8, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p3, v8, v0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p3
 

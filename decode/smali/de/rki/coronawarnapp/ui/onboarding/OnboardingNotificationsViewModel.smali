@@ -18,8 +18,6 @@
 # direct methods
 .method public constructor <init>()V
     .locals 2
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const/4 v0, 0x0
 

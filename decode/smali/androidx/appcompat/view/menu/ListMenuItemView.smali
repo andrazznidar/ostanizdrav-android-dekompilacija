@@ -47,23 +47,23 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
 
-    sget v0, Landroidx/appcompat/R$attr;->listMenuViewStyle:I
-
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroidx/appcompat/R$styleable;->MenuView:[I
+    sget-object v1, Landroidx/appcompat/R$styleable;->MenuView:[I
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v1, p2, v2, v0, v3}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+    const v3, 0x7f040221
+
+    invoke-static {v0, p2, v1, v3, v2}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object p2
 
-    sget v0, Landroidx/appcompat/R$styleable;->MenuView_android_itemBackground:I
+    const/4 v0, 0x5
 
     invoke-virtual {p2, v0}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -71,55 +71,53 @@
 
     iput-object v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    sget v0, Landroidx/appcompat/R$styleable;->MenuView_android_itemTextAppearance:I
+    const/4 v0, 0x1
 
     const/4 v1, -0x1
 
     invoke-virtual {p2, v0, v1}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearance:I
+    iput v1, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearance:I
 
-    sget v0, Landroidx/appcompat/R$styleable;->MenuView_preserveIconSpacing:I
+    const/4 v1, 0x7
 
-    invoke-virtual {p2, v0, v3}, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p2, v1, v2}, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(IZ)Z
 
-    move-result v0
+    move-result v1
 
-    iput-boolean v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mPreserveIconSpacing:Z
+    iput-boolean v1, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mPreserveIconSpacing:Z
 
     iput-object p1, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearanceContext:Landroid/content/Context;
 
-    sget v0, Landroidx/appcompat/R$styleable;->MenuView_subMenuArrow:I
+    const/16 v1, 0x8
 
-    invoke-virtual {p2, v0}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    move-result-object v1
 
-    iput-object v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrow:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object p1
 
-    const/4 v0, 0x1
-
     new-array v0, v0, [I
 
     const v1, 0x1010129
 
-    aput v1, v0, v3
+    aput v1, v0, v2
 
-    sget v1, Landroidx/appcompat/R$attr;->dropDownListViewStyle:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const v3, 0x7f04012f
 
-    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, v0, v3, v2}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    invoke-virtual {p1, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
@@ -320,7 +318,7 @@
 
     move-result-object v0
 
-    sget v1, Landroidx/appcompat/R$layout;->abc_list_menu_item_checkbox:I
+    const v1, 0x7f0c000e
 
     const/4 v2, 0x0
 
@@ -356,7 +354,7 @@
 
     move-result-object v0
 
-    sget v1, Landroidx/appcompat/R$layout;->abc_list_menu_item_radio:I
+    const v1, 0x7f0c0011
 
     const/4 v2, 0x0
 
@@ -394,7 +392,7 @@
 
     invoke-static {p0, v0}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    sget v0, Landroidx/appcompat/R$id;->title:I
+    const v0, 0x7f09053d
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -415,7 +413,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
     :cond_0
-    sget v0, Landroidx/appcompat/R$id;->shortcut:I
+    const v0, 0x7f0903f8
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -425,7 +423,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mShortcutView:Landroid/widget/TextView;
 
-    sget v0, Landroidx/appcompat/R$id;->submenuarrow:I
+    const v0, 0x7f090432
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -442,7 +440,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_1
-    sget v0, Landroidx/appcompat/R$id;->group_divider:I
+    const v0, 0x7f0901c2
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -452,7 +450,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider:Landroid/widget/ImageView;
 
-    sget v0, Landroidx/appcompat/R$id;->content:I
+    const v0, 0x7f090149
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -750,7 +748,7 @@
 
     move-result-object v2
 
-    sget v3, Landroidx/appcompat/R$layout;->abc_list_menu_item_icon:I
+    const v3, 0x7f0c000f
 
     invoke-virtual {v2, v3, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -887,7 +885,7 @@
 
     if-eqz v6, :cond_2
 
-    sget v6, Landroidx/appcompat/R$string;->abc_prepend_shortcut_label:I
+    const v6, 0x7f120011
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -914,7 +912,7 @@
     :goto_1
     const/high16 v6, 0x10000
 
-    sget v7, Landroidx/appcompat/R$string;->abc_menu_meta_shortcut_label:I
+    const v7, 0x7f12000d
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -924,7 +922,7 @@
 
     const/16 v6, 0x1000
 
-    sget v7, Landroidx/appcompat/R$string;->abc_menu_ctrl_shortcut_label:I
+    const v7, 0x7f120009
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -934,7 +932,7 @@
 
     const/4 v6, 0x2
 
-    sget v7, Landroidx/appcompat/R$string;->abc_menu_alt_shortcut_label:I
+    const v7, 0x7f120008
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -944,7 +942,7 @@
 
     const/4 v6, 0x1
 
-    sget v7, Landroidx/appcompat/R$string;->abc_menu_shift_shortcut_label:I
+    const v7, 0x7f12000e
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -954,7 +952,7 @@
 
     const/4 v6, 0x4
 
-    sget v7, Landroidx/appcompat/R$string;->abc_menu_sym_shortcut_label:I
+    const v7, 0x7f120010
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -962,7 +960,7 @@
 
     invoke-static {v5, v2, v6, v7}, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder;IILjava/lang/String;)V
 
-    sget v6, Landroidx/appcompat/R$string;->abc_menu_function_shortcut_label:I
+    const v6, 0x7f12000c
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -985,7 +983,7 @@
     goto :goto_2
 
     :cond_4
-    sget v0, Landroidx/appcompat/R$string;->abc_menu_space_shortcut_label:I
+    const v0, 0x7f12000f
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -996,7 +994,7 @@
     goto :goto_2
 
     :cond_5
-    sget v0, Landroidx/appcompat/R$string;->abc_menu_enter_shortcut_label:I
+    const v0, 0x7f12000b
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1007,7 +1005,7 @@
     goto :goto_2
 
     :cond_6
-    sget v0, Landroidx/appcompat/R$string;->abc_menu_delete_shortcut_label:I
+    const v0, 0x7f12000a
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

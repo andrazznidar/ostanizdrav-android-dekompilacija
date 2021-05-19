@@ -162,116 +162,12 @@
 .end method
 
 .method public beginDelayedTransition(Landroid/view/ViewGroup;Ljava/lang/Object;)V
-    .locals 3
+    .locals 0
 
     check-cast p2, Landroidx/transition/Transition;
 
-    sget-object v0, Landroidx/transition/TransitionManager;->sPendingTransitions:Ljava/util/ArrayList;
+    invoke-static {p1, p2}, Landroidx/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroidx/transition/Transition;)V
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    sget-object v0, Landroidx/transition/TransitionManager;->sPendingTransitions:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p2}, Landroidx/transition/Transition;->clone()Landroidx/transition/Transition;
-
-    move-result-object p2
-
-    invoke-static {}, Landroidx/transition/TransitionManager;->getRunningTransitions()Landroidx/collection/ArrayMap;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-lez v2, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/transition/Transition;
-
-    invoke-virtual {v2, p1}, Landroidx/transition/Transition;->pause(Landroid/view/View;)V
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p2, :cond_1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p2, p1, v0}, Landroidx/transition/Transition;->captureValues(Landroid/view/ViewGroup;Z)V
-
-    :cond_1
-    sget v0, Landroidx/transition/R$id;->transition_current_scene:I
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/transition/Scene;
-
-    if-nez v0, :cond_2
-
-    sget v0, Landroidx/transition/R$id;->transition_current_scene:I
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
-
-    if-eqz p2, :cond_3
-
-    new-instance v0, Landroidx/transition/TransitionManager$MultiListener;
-
-    invoke-direct {v0, p2, p1}, Landroidx/transition/TransitionManager$MultiListener;-><init>(Landroidx/transition/Transition;Landroid/view/ViewGroup;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
-
-    goto :goto_1
-
-    :cond_2
-    throw v1
-
-    :cond_3
-    :goto_1
     return-void
 .end method
 
@@ -611,9 +507,9 @@
 
     check-cast p1, Landroidx/transition/Transition;
 
-    new-instance v0, Landroidx/transition/FragmentTransitionSupport$4;
+    new-instance v0, Landroidx/transition/FragmentTransitionSupport$6;
 
-    invoke-direct {v0, p0, p2}, Landroidx/transition/FragmentTransitionSupport$4;-><init>(Landroidx/transition/FragmentTransitionSupport;Landroid/graphics/Rect;)V
+    invoke-direct {v0, p0, p2}, Landroidx/transition/FragmentTransitionSupport$6;-><init>(Landroidx/transition/FragmentTransitionSupport;Landroid/graphics/Rect;)V
 
     invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setEpicenterCallback(Landroidx/transition/Transition$EpicenterCallback;)V
 
@@ -641,6 +537,26 @@
     invoke-virtual {p1, p2}, Landroidx/transition/Transition;->setEpicenterCallback(Landroidx/transition/Transition$EpicenterCallback;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public setListenerForTransitionEnd(Landroidx/fragment/app/Fragment;Ljava/lang/Object;Landroidx/core/os/CancellationSignal;Ljava/lang/Runnable;)V
+    .locals 0
+
+    check-cast p2, Landroidx/transition/Transition;
+
+    new-instance p1, Landroidx/transition/FragmentTransitionSupport$4;
+
+    invoke-direct {p1, p0, p2}, Landroidx/transition/FragmentTransitionSupport$4;-><init>(Landroidx/transition/FragmentTransitionSupport;Landroidx/transition/Transition;)V
+
+    invoke-virtual {p3, p1}, Landroidx/core/os/CancellationSignal;->setOnCancelListener(Landroidx/core/os/CancellationSignal$OnCancelListener;)V
+
+    new-instance p1, Landroidx/transition/FragmentTransitionSupport$5;
+
+    invoke-direct {p1, p0, p4}, Landroidx/transition/FragmentTransitionSupport$5;-><init>(Landroidx/transition/FragmentTransitionSupport;Ljava/lang/Runnable;)V
+
+    invoke-virtual {p2, p1}, Landroidx/transition/Transition;->addListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
+
     return-void
 .end method
 

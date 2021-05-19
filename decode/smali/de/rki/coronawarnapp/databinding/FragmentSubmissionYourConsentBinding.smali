@@ -19,46 +19,36 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/CountryListView;Landroid/view/View;Landroid/view/View;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
-    .locals 4
+    .locals 2
 
     move-object v0, p0
 
-    move-object/from16 v1, p15
-
-    move-object/from16 v2, p16
-
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    move-object v3, p7
+    move-object v1, p7
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementCountryList:Lde/rki/coronawarnapp/ui/view/CountryListView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementCountryList:Lde/rki/coronawarnapp/ui/view/CountryListView;
 
-    move-object v3, p10
+    move-object v1, p10
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementDetailsText:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementDetailsText:Landroid/widget/TextView;
 
-    move-object v3, p11
+    move-object v1, p11
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementShareSymptomsText:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentAgreementShareSymptomsText:Landroid/widget/TextView;
 
-    move-object/from16 v3, p14
+    move-object/from16 v1, p14
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    move-object/from16 v1, p15
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
-    if-eqz v1, :cond_0
+    move-object/from16 v1, p16
 
-    iput-object v0, v1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    :cond_0
-    iput-object v2, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-eqz v2, :cond_1
-
-    iput-object v0, v2, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_1
     return-void
 .end method
 
@@ -67,7 +57,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c0068
+    const v1, 0x7f0c0074
 
     invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 

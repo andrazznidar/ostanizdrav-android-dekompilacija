@@ -24,6 +24,8 @@
 
 .field public mDestroyed:Z
 
+.field public final mRecreatingHashCode:I
+
 .field public mStarted:Z
 
 .field public mStopQueued:Z
@@ -44,6 +46,12 @@
     iput-boolean v0, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mStopQueued:Z
 
     iput-object p1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mActivity:Landroid/app/Activity;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result p1
+
+    iput p1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mRecreatingHashCode:I
 
     return-void
 .end method
@@ -80,30 +88,38 @@
 
     iget-boolean v0, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mDestroyed:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-boolean v0, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mStopQueued:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-boolean v0, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mStarted:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->currentlyRecreatingToken:Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget v1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mRecreatingHashCode:I
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     :try_start_0
-    sget-object v3, Landroidx/core/app/ActivityRecreator;->tokenField:Ljava/lang/reflect/Field;
+    sget-object v4, Landroidx/core/app/ActivityRecreator;->tokenField:Ljava/lang/reflect/Field;
 
-    invoke-virtual {v3, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eq v3, v0, :cond_0
+    if-ne v4, v0, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    if-eq v0, v1, :cond_0
 
     goto :goto_0
 
@@ -116,15 +132,15 @@
 
     sget-object v0, Landroidx/core/app/ActivityRecreator;->mainHandler:Landroid/os/Handler;
 
-    new-instance v4, Landroidx/core/app/ActivityRecreator$3;
+    new-instance v1, Landroidx/core/app/ActivityRecreator$3;
 
-    invoke-direct {v4, p1, v3}, Landroidx/core/app/ActivityRecreator$3;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p1, v4}, Landroidx/core/app/ActivityRecreator$3;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v0, v4}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move v1, v2
+    move v2, v3
 
     goto :goto_0
 
@@ -133,20 +149,21 @@
 
     const-string v0, "ActivityRecreator"
 
-    const-string v3, "Exception while fetching field values"
+    const-string v1, "Exception while fetching field values"
 
-    invoke-static {v0, v3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    :cond_1
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_2
 
-    iput-boolean v2, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mStopQueued:Z
+    iput-boolean v3, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->mStopQueued:Z
 
     const/4 p1, 0x0
 
     iput-object p1, p0, Landroidx/core/app/ActivityRecreator$LifecycleCheckCallbacks;->currentlyRecreatingToken:Ljava/lang/Object;
 
-    :cond_1
+    :cond_2
     return-void
 .end method
 

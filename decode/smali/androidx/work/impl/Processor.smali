@@ -102,6 +102,23 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/Configuration;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/impl/WorkDatabase;Ljava/util/List;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "appContext",
+            "configuration",
+            "workTaskExecutor",
+            "workDatabase",
+            "schedulers"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -166,6 +183,16 @@
 
 .method public static interrupt(Ljava/lang/String;Landroidx/work/impl/WorkerWrapper;)Z
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "id",
+            "wrapper"
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -200,6 +227,8 @@
     if-eqz v3, :cond_1
 
     if-nez v2, :cond_1
+
+    iput-boolean v0, v3, Landroidx/work/ListenableWorker;->mStopped:Z
 
     invoke-virtual {v3}, Landroidx/work/ListenableWorker;->onStopped()V
 
@@ -279,6 +308,14 @@
 # virtual methods
 .method public addExecutionListener(Landroidx/work/impl/ExecutionListener;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "executionListener"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -305,6 +342,14 @@
 
 .method public isEnqueued(Ljava/lang/String;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecId"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -355,6 +400,16 @@
 
 .method public onExecuted(Ljava/lang/String;Z)V
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x0
+        }
+        names = {
+            "workSpecId",
+            "needsReschedule"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -449,6 +504,14 @@
 
 .method public removeExecutionListener(Landroidx/work/impl/ExecutionListener;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "executionListener"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -475,6 +538,16 @@
 
 .method public startWork(Ljava/lang/String;Landroidx/work/WorkerParameters$RuntimeExtras;)Z
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "id",
+            "runtimeExtras"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -707,6 +780,14 @@
 
 .method public stopForegroundWork(Ljava/lang/String;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "id"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
@@ -765,6 +846,14 @@
 
 .method public stopWork(Ljava/lang/String;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "id"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 

@@ -66,3 +66,15 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public build()Landroidx/work/Constraints;
+    .locals 1
+
+    new-instance v0, Landroidx/work/Constraints;
+
+    invoke-direct {v0, p0}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
+
+    return-object v0
+.end method

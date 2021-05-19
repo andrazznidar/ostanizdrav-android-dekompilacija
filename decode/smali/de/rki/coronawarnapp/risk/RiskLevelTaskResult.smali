@@ -237,7 +237,7 @@
 .method public getLastRiskEncounterAt()Lorg/joda/time/Instant;
     .locals 1
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->getLastRiskEncounterAt(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Lorg/joda/time/Instant;
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getLastRiskEncounterAt(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Lorg/joda/time/Instant;
 
     move-result-object v0
 
@@ -428,7 +428,7 @@
 .method public isIncreasedRisk()Z
     .locals 1
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->isIncreasedRisk(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Z
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->isIncreasedRisk(Lde/rki/coronawarnapp/risk/RiskLevelResult;)Z
 
     move-result v0
 
@@ -436,11 +436,13 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    const-string v0, "RiskLevelTaskResult(calculatedAt="
+    const-string v0, "RiskLevelTaskResult("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "calculatedAt="
+
+    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -448,28 +450,52 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", failureReason="
+    const-string v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+    const-string v2, "failureReason="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", aggregatedRiskResult="
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;->aggregatedRiskResult:Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
+    const-string v2, "aggregatedRiskResult="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", exposureWindows="
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;->aggregatedRiskResult:Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "exposureWindows.size="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;->exposureWindows:Ljava/util/List;
 
+    if-eqz v1, :cond_0
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ")"

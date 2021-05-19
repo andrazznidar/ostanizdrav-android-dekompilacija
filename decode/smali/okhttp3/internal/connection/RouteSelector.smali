@@ -121,7 +121,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;-><init>(Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+    value = Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;-><init>(Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/main/CWASettings;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,14 +31,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nLauncherActivityViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LauncherActivityViewModel.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,32:1\n1#2:33\n*E\n"
+    value = "SMAP\nLauncherActivityViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LauncherActivityViewModel.kt\nde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,40:1\n1#2:41\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.ui.launcher.LauncherActivityViewModel$1"
     f = "LauncherActivityViewModel.kt"
     l = {
-        0x14
+        0x18
     }
     m = "invokeSuspend"
 .end annotation
@@ -117,7 +117,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 7
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -129,7 +129,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -143,7 +143,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel$1;->this$0:Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;
 
@@ -165,6 +165,8 @@
 
     iget-boolean v0, p1, Lde/rki/coronawarnapp/update/UpdateChecker$Result;->isUpdateNeeded:Z
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_4
 
     new-instance v0, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowUpdateDialog;
@@ -177,51 +179,83 @@
 
     move-result-object p1
 
-    check-cast p1, Landroid/content/Intent;
+    move-object v1, p1
 
-    goto :goto_1
+    check-cast v1, Landroid/content/Intent;
 
     :cond_3
-    const/4 p1, 0x0
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    :goto_1
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowUpdateDialog;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowUpdateDialog;-><init>(Landroid/content/Intent;)V
 
     goto :goto_2
 
     :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel$1;->this$0:Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
+    if-eqz p1, :cond_8
 
-    move-result-object p1
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->isOnboarded()Z
 
-    move-result-object v0
-
-    const v1, 0x7f1201a9
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
+    move-result v0
 
     const/4 v1, 0x0
 
-    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    if-eqz v0, :cond_6
 
-    move-result p1
+    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    if-eqz p1, :cond_5
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
 
-    sget-object v0, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToMainActivity;->INSTANCE:Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToMainActivity;
+    move-result-object v0
+
+    const-string v3, "preference_interoperability_is_used_at_least_once"
+
+    invoke-interface {v0, v3, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/main/CWASettings;->lastChangelogVersion:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->getInternalValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v3
+
+    sget-object p1, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->INSTANCE:Lde/rki/coronawarnapp/environment/BuildConfigWrap;
+
+    sget-wide v5, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->VERSION_CODE:J
+
+    cmp-long p1, v3, v5
+
+    if-gez p1, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    move v2, v1
+
+    :cond_6
+    :goto_1
+    if-eqz v2, :cond_7
+
+    sget-object v0, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToOnboarding;->INSTANCE:Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToOnboarding;
 
     goto :goto_2
 
-    :cond_5
-    sget-object v0, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToOnboarding;->INSTANCE:Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToOnboarding;
+    :cond_7
+    sget-object v0, Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToMainActivity;->INSTANCE:Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToMainActivity;
 
     :goto_2
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel$1;->this$0:Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;
@@ -233,4 +267,7 @@
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
+
+    :cond_8
+    throw v1
 .end method

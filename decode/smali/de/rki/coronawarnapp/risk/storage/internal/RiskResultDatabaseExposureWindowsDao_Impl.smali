@@ -94,6 +94,8 @@
 
     move-result-object v10
 
+    check-cast v10, Ljava/util/ArrayList;
+
     invoke-virtual {v2, v8, v9, v10}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
     add-int/lit8 v6, v6, 0x1
@@ -184,7 +186,7 @@
     move-result-object v3
 
     :try_start_0
-    invoke-static {v3, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
     :try_end_0
@@ -202,29 +204,29 @@
     :try_start_1
     const-string v7, "id"
 
-    invoke-static {v3, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
-    invoke-static {v3, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v8, "minAttenuationDb"
 
-    invoke-static {v3, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "secondsSinceLastScan"
 
-    invoke-static {v3, v9}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
     const-string v10, "typicalAttenuationDb"
 
-    invoke-static {v3, v10}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
@@ -385,4 +387,112 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getWindowsForResult(Ljava/util/List;)Lkotlinx/coroutines/flow/Flow;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;",
+            ">;>;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "SELECT "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "*"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " FROM exposurewindows WHERE riskLevelResultId IN ("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+
+    const-string v2, ")"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    add-int/2addr v1, v2
+
+    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {v0, v1}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0, v1, v3}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    const-string v1, "scaninstances"
+
+    const-string v3, "exposurewindows"
+
+    filled-new-array {v1, v3}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v3, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl$6;
+
+    invoke-direct {v3, p0, v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl$6;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+
+    invoke-static {p1, v2, v1, v3}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 7
+    .locals 3
 
     const-string v0, "cause"
 
@@ -17,19 +17,17 @@
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "an error occurred while trying to establish a secure connection to the server"
+    const v1, 0x7f120124
 
-    const/4 v5, 0x0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v6, 0x8
+    move-result-object v1
 
-    move-object v1, p0
+    const-string v2, "An error occurred while trying to establish a secure connection to the server"
 
-    move-object v4, p1
-
-    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/exception/reporting/ReportedIOException;-><init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;I)V
+    invoke-direct {p0, v0, v2, p1, v1}, Lde/rki/coronawarnapp/exception/reporting/ReportedIOException;-><init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;)V
 
     return-void
 .end method

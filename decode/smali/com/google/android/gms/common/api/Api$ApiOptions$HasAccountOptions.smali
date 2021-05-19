@@ -1,6 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/api/Api$ApiOptions$HasAccountOptions;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$ApiOptions;
@@ -19,4 +19,6 @@
 
 # virtual methods
 .method public abstract getAccount()Landroid/accounts/Account;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method

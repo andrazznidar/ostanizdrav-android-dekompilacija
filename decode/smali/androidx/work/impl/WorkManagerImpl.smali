@@ -72,12 +72,24 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/Configuration;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "configuration",
+            "workTaskExecutor"
+        }
+    .end annotation
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget v1, Landroidx/work/R$bool;->workmanager_test_configuration:I
+    const v1, 0x7f050008
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -233,6 +245,14 @@
 
 .method public static getInstance(Landroid/content/Context;)Landroidx/work/impl/WorkManagerImpl;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     sget-object v0, Landroidx/work/impl/WorkManagerImpl;->sLock:Ljava/lang/Object;
 
@@ -334,6 +354,16 @@
 
 .method public static initialize(Landroid/content/Context;Landroidx/work/Configuration;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "configuration"
+        }
+    .end annotation
 
     sget-object v0, Landroidx/work/impl/WorkManagerImpl;->sLock:Ljava/lang/Object;
 
@@ -407,8 +437,50 @@
 
 
 # virtual methods
+.method public cancelUniqueWork(Ljava/lang/String;)Landroidx/work/Operation;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "uniqueWorkName"
+        }
+    .end annotation
+
+    new-instance v0, Landroidx/work/impl/utils/CancelWorkRunnable$3;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, p1, v1}, Landroidx/work/impl/utils/CancelWorkRunnable$3;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;Z)V
+
+    iget-object p1, p0, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+
+    check-cast p1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
+
+    iget-object p1, p1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
+
+    invoke-virtual {p1, v0}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
+
+    iget-object p1, v0, Landroidx/work/impl/utils/CancelWorkRunnable;->mOperation:Landroidx/work/impl/OperationImpl;
+
+    return-object p1
+.end method
+
 .method public enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "uniqueWorkName",
+            "existingPeriodicWorkPolicy",
+            "periodicWork"
+        }
+    .end annotation
 
     sget-object v0, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
 
@@ -528,6 +600,14 @@
 
 .method public stopWork(Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecId"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 

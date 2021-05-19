@@ -63,64 +63,46 @@
 
     invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->setUiState(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;
+    iget-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;
 
-    sget v1, Lde/rki/coronawarnapp/R$id;->submission_tan_character_error:I
+    iget-object v1, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanCharacterError:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findCachedViewById(I)Landroid/view/View;
+    const-string v2, "submissionTanContent.submissionTanCharacterError"
 
-    move-result-object v0
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v0, Landroid/widget/TextView;
+    iget-boolean v2, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->areCharactersCorrect:Z
 
-    const-string v1, "submission_tan_character_error"
+    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-boolean v1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->isCorrectLength:Z
 
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->areCharactersCorrect:Z
+    const-string v2, "submissionTanContent.submissionTanError"
 
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    if-eqz v1, :cond_0
 
-    iget-boolean v0, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->isCorrectLength:Z
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;
 
-    const-string v1, "submission_tan_error"
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanError:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;
-
-    sget v2, Lde/rki/coronawarnapp/R$id;->submission_tan_error:I
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findCachedViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean p1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->isTanValid:Z
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;
+    iget-object p1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;
 
-    sget v0, Lde/rki/coronawarnapp/R$id;->submission_tan_error:I
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanError:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findCachedViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/TextView;
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setGone(Landroid/view/View;Z)V
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
 
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

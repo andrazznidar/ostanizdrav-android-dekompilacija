@@ -36,7 +36,7 @@
 
     if-eqz p1, :cond_0
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

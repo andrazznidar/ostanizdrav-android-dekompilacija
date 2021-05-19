@@ -86,7 +86,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f12009d
+    const v7, 0x7f12011d
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -134,7 +134,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f12009a
+    const v8, 0x7f12011a
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f120098
+    const v8, 0x7f120118
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f120097
+    const v9, 0x7f120117
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +176,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f120099
+    const v9, 0x7f120119
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -225,15 +225,22 @@
 
     move-result-object v14
 
-    if-eqz v14, :cond_4
+    if-eqz v14, :cond_5
 
     invoke-virtual {v0, v13}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    if-eqz v0, :cond_4
+
     goto :goto_2
 
     :cond_4
+    move-object v0, v3
+
+    goto :goto_2
+
+    :cond_5
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -305,11 +312,11 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     move-object v4, v3
 
     :goto_3
@@ -321,11 +328,11 @@
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     move-object v3, v5
 
-    :cond_6
+    :cond_7
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -342,7 +349,7 @@
 
     sget-boolean v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->isAppInForeground:Z
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_8
 
     const/4 v0, 0x0
 
@@ -356,16 +363,12 @@
 
     return-void
 
-    :cond_7
+    :cond_8
     new-instance v1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
     move-object/from16 v2, p0
 
     iget-object v14, v2, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;->activity:Landroid/app/Activity;
-
-    const-string v3, "dialogTitle"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v19, 0x0
 

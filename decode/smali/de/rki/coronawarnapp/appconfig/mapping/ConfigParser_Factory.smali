@@ -3,14 +3,14 @@
 .source "ConfigParser_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;",
         ">;"
     }
@@ -18,6 +18,16 @@
 
 
 # instance fields
+.field public final analyticsConfigMapperProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/AnalyticsConfig$Mapper;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final cwaConfigMapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -58,9 +68,19 @@
     .end annotation
 .end field
 
+.field public final surveyConfigMapperProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/SurveyConfig$Mapper;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,6 +96,12 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig$Mapper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/SurveyConfig$Mapper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/AnalyticsConfig$Mapper;",
             ">;)V"
         }
     .end annotation
@@ -90,13 +116,17 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->exposureWindowRiskCalculationConfigMapperProvider:Ljavax/inject/Provider;
 
+    iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->surveyConfigMapperProvider:Ljavax/inject/Provider;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->analyticsConfigMapperProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 5
+    .locals 8
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->cwaConfigMapperProvider:Ljavax/inject/Provider;
 
@@ -104,35 +134,65 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/appconfig/CWAConfig$Mapper;
+    move-object v2, v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->keyDownloadConfigMapperProvider:Ljavax/inject/Provider;
+    check-cast v2, Lde/rki/coronawarnapp/appconfig/CWAConfig$Mapper;
 
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->keyDownloadConfigMapperProvider:Ljavax/inject/Provider;
 
-    move-result-object v1
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$Mapper;
+    move-result-object v0
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->exposureDetectionConfigMapperProvider:Ljavax/inject/Provider;
+    move-object v3, v0
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v3, Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$Mapper;
 
-    move-result-object v2
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->exposureDetectionConfigMapperProvider:Ljavax/inject/Provider;
 
-    check-cast v2, Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig$Mapper;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->exposureWindowRiskCalculationConfigMapperProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-object v4, v0
 
-    move-result-object v3
+    check-cast v4, Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig$Mapper;
 
-    check-cast v3, Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig$Mapper;
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->exposureWindowRiskCalculationConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;-><init>(Lde/rki/coronawarnapp/appconfig/CWAConfig$Mapper;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$Mapper;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig$Mapper;Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig$Mapper;)V
+    move-result-object v0
 
-    return-object v4
+    move-object v5, v0
+
+    check-cast v5, Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig$Mapper;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->surveyConfigMapperProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lde/rki/coronawarnapp/appconfig/SurveyConfig$Mapper;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;->analyticsConfigMapperProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lde/rki/coronawarnapp/appconfig/AnalyticsConfig$Mapper;
+
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;-><init>(Lde/rki/coronawarnapp/appconfig/CWAConfig$Mapper;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$Mapper;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig$Mapper;Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig$Mapper;Lde/rki/coronawarnapp/appconfig/SurveyConfig$Mapper;Lde/rki/coronawarnapp/appconfig/AnalyticsConfig$Mapper;)V
+
+    return-object v0
 .end method

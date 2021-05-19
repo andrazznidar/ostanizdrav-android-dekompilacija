@@ -30,6 +30,9 @@
 .method public abstract getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 .end method
 
+.method public abstract getEventDrivenUserSurveyParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddEdusParameters$PPDDEventDrivenUserSurveyParametersAndroid;
+.end method
+
 .method public abstract getExposureDetectionParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$ExposureDetectionParametersAndroid;
 .end method
 
@@ -40,6 +43,9 @@
 .end method
 
 .method public abstract getMinVersionCode()J
+.end method
+
+.method public abstract getPrivacyPreservingAnalyticsParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersAndroid;
 .end method
 
 .method public abstract getRiskCalculationParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
@@ -74,10 +80,16 @@
 .method public abstract hasDiagnosisKeysDataMapping()Z
 .end method
 
+.method public abstract hasEventDrivenUserSurveyParameters()Z
+.end method
+
 .method public abstract hasExposureDetectionParameters()Z
 .end method
 
 .method public abstract hasKeyDownloadParameters()Z
+.end method
+
+.method public abstract hasPrivacyPreservingAnalyticsParameters()Z
 .end method
 
 .method public abstract hasRiskCalculationParameters()Z

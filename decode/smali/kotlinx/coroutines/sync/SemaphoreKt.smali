@@ -33,7 +33,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v0 .. v5}, Lcom/google/zxing/client/android/R$id;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 
@@ -83,7 +83,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lcom/google/zxing/client/android/R$id;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 

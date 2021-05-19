@@ -43,7 +43,7 @@
 
     invoke-direct {p1, p0, p2}, Lde/rki/coronawarnapp/util/location/LocationProvider$isLocationEnabled$1;-><init>(Lde/rki/coronawarnapp/util/location/LocationProvider;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->callbackFlow(Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->callbackFlow(Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -53,7 +53,7 @@
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v1, v0, p2, v2}, Landroidx/transition/ViewGroupUtilsApi14;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p1, v1, v0, p2, v2}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 

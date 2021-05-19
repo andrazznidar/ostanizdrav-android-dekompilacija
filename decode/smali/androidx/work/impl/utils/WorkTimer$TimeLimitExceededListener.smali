@@ -16,4 +16,12 @@
 
 # virtual methods
 .method public abstract onTimeLimitExceeded(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "workSpecId"
+        }
+    .end annotation
 .end method

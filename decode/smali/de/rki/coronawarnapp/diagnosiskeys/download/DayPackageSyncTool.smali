@@ -165,7 +165,7 @@
 
     check-cast v3, Ljava/util/List;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_6
 
@@ -195,7 +195,7 @@
 
     check-cast v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -210,7 +210,7 @@
 
     check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v14, v13
 
@@ -223,7 +223,7 @@
     goto :goto_1
 
     :cond_4
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_DAY:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
@@ -289,7 +289,7 @@
 
     new-instance v13, Ljava/util/ArrayList;
 
-    invoke-static {v2, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v2, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v15
 
@@ -389,7 +389,7 @@
 
     invoke-direct {v13, v5, v1, v11}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v12, v13, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v12, v13, v3}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -413,7 +413,7 @@
 
     invoke-direct {v12, v1, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Ljava/util/Collection;)V
 
-    invoke-static {v12}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v12}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
@@ -451,7 +451,7 @@
 
     new-instance v7, Ljava/util/ArrayList;
 
-    invoke-static {v1, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -567,7 +567,7 @@
     :cond_f
     new-instance v1, Ljava/util/ArrayList;
 
-    invoke-static {v2, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v2, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v3
 
@@ -747,7 +747,7 @@
 
     check-cast v9, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v14, v9
 
@@ -763,7 +763,7 @@
     throw v1
 
     :cond_2
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     new-instance v1, Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -804,7 +804,7 @@
 
     new-instance v10, Ljava/util/ArrayList;
 
-    invoke-static {v9, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v9, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v8
 
@@ -836,7 +836,7 @@
     goto :goto_2
 
     :cond_3
-    invoke-static {v4, v10}, Landroidx/transition/ViewGroupUtilsApi14;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    invoke-static {v4, v10}, Lcom/google/zxing/client/android/R$id;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
     goto :goto_1
 
@@ -867,7 +867,7 @@
 
     new-instance v6, Ljava/util/ArrayList;
 
-    invoke-static {v4, v8}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v4, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v7
 
@@ -910,7 +910,7 @@
 
     iget-object v7, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    invoke-interface {v7}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {v7}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v15
 
@@ -944,7 +944,7 @@
 
     move-object/from16 v7, v16
 
-    invoke-static {v15, v7, v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v15, v7, v2}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -1055,12 +1055,12 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_9
 
     :pswitch_1
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_8
 
@@ -1077,7 +1077,7 @@
 
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
@@ -1103,7 +1103,7 @@
     check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
     :try_start_0
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1135,7 +1135,7 @@
 
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -1150,7 +1150,7 @@
 
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v11, v10
 
@@ -1163,7 +1163,7 @@
     goto :goto_1
 
     :pswitch_6
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
@@ -1458,7 +1458,7 @@
 
     iput v2, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->label:I
 
-    invoke-static {v0, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1512,7 +1512,7 @@
 
     const-string v4, "Download success: "
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 

@@ -21,9 +21,6 @@
 .method public abstract getBugReporter()Lde/rki/coronawarnapp/bugreporting/BugReporter;
 .end method
 
-.method public abstract getConnectivityHelperInjection()Lde/rki/coronawarnapp/util/ConnectivityHelperInjection;
-.end method
-
 .method public abstract getEncryptedPreferencesFactory()Lde/rki/coronawarnapp/util/security/EncryptedPreferencesFactory;
 .end method
 
@@ -39,5 +36,5 @@
 .method public abstract getPlaybook()Lde/rki/coronawarnapp/playbook/Playbook;
 .end method
 
-.method public abstract getSettingsRepository()Lde/rki/coronawarnapp/storage/SettingsRepository;
+.method public abstract inject(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;)V
 .end method

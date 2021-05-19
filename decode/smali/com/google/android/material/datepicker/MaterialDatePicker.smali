@@ -53,6 +53,8 @@
 
 .field public headerToggleButton:Lcom/google/android/material/internal/CheckableImageButton;
 
+.field public inputMode:I
+
 .field public final onCancelListeners:Ljava/util/LinkedHashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -175,25 +177,25 @@
 
     move-result-object p0
 
-    sget v0, Lcom/google/android/material/R$dimen;->mtrl_calendar_content_padding:I
+    const v0, 0x7f07010c
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v0
 
-    invoke-static {}, Lcom/google/android/material/datepicker/Month;->today()Lcom/google/android/material/datepicker/Month;
+    invoke-static {}, Lcom/google/android/material/datepicker/Month;->current()Lcom/google/android/material/datepicker/Month;
 
     move-result-object v1
 
     iget v1, v1, Lcom/google/android/material/datepicker/Month;->daysInWeek:I
 
-    sget v2, Lcom/google/android/material/R$dimen;->mtrl_calendar_day_width:I
+    const v2, 0x7f070112
 
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    sget v3, Lcom/google/android/material/R$dimen;->mtrl_calendar_month_horizontal_padding:I
+    const v3, 0x7f070120
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -217,15 +219,15 @@
 .method public static isFullscreen(Landroid/content/Context;)Z
     .locals 4
 
-    sget v0, Lcom/google/android/material/R$attr;->materialCalendarStyle:I
+    const-class v0, Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    const-class v1, Lcom/google/android/material/datepicker/MaterialCalendar;
+    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const v1, 0x7f04024d
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {p0, v1, v0}, Lcom/google/android/material/R$style;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v0
 
@@ -255,7 +257,7 @@
 .method public static thisMonthInUtcMilliseconds()J
     .locals 2
 
-    invoke-static {}, Lcom/google/android/material/datepicker/Month;->today()Lcom/google/android/material/datepicker/Month;
+    invoke-static {}, Lcom/google/android/material/datepicker/Month;->current()Lcom/google/android/material/datepicker/Month;
 
     move-result-object v0
 
@@ -348,9 +350,17 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
 
-    move-result-object p1
+    move-result-object v0
 
-    iput-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->titleText:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->titleText:Ljava/lang/CharSequence;
+
+    const-string v0, "INPUT_MODE_KEY"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->inputMode:I
 
     return-void
 .end method
@@ -394,7 +404,7 @@
 
     iput-boolean v1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->fullscreen:Z
 
-    sget v1, Lcom/google/android/material/R$attr;->colorSurface:I
+    const v1, 0x7f0400c9
 
     const-class v2, Lcom/google/android/material/datepicker/MaterialDatePicker;
 
@@ -402,7 +412,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {v0, v1, v2}, Lcom/google/android/material/R$style;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v1
 
@@ -410,9 +420,9 @@
 
     const/4 v3, 0x0
 
-    sget v4, Lcom/google/android/material/R$attr;->materialCalendarStyle:I
+    const v4, 0x7f04024d
 
-    sget v5, Lcom/google/android/material/R$style;->Widget_MaterialComponents_MaterialCalendar:I
+    const v5, 0x7f1302c7
 
     invoke-static {v0, v3, v4, v5}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
@@ -462,12 +472,12 @@
 
     if-eqz p3, :cond_0
 
-    sget p3, Lcom/google/android/material/R$layout;->mtrl_picker_fullscreen:I
+    const p3, 0x7f0c00c9
 
     goto :goto_0
 
     :cond_0
-    sget p3, Lcom/google/android/material/R$layout;->mtrl_picker_dialog:I
+    const p3, 0x7f0c00c8
 
     :goto_0
     invoke-virtual {p1, p3, p2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -480,11 +490,11 @@
 
     iget-boolean p3, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->fullscreen:Z
 
+    const v0, 0x7f0902b2
+
     if-eqz p3, :cond_1
 
-    sget p3, Lcom/google/android/material/R$id;->mtrl_calendar_frame:I
-
-    invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p3
 
@@ -503,13 +513,11 @@
     goto :goto_1
 
     :cond_1
-    sget p3, Lcom/google/android/material/R$id;->mtrl_calendar_main_pane:I
+    const p3, 0x7f0902b3
 
     invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p3
-
-    sget v0, Lcom/google/android/material/R$id;->mtrl_calendar_frame:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -535,13 +543,13 @@
 
     move-result-object p3
 
-    sget v1, Lcom/google/android/material/R$dimen;->mtrl_calendar_navigation_height:I
+    const v1, 0x7f070123
 
     invoke-virtual {p3, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    sget v2, Lcom/google/android/material/R$dimen;->mtrl_calendar_navigation_top_padding:I
+    const v2, 0x7f070124
 
     invoke-virtual {p3, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -549,7 +557,7 @@
 
     add-int/2addr v2, v1
 
-    sget v1, Lcom/google/android/material/R$dimen;->mtrl_calendar_navigation_bottom_padding:I
+    const v1, 0x7f070122
 
     invoke-virtual {p3, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -557,7 +565,7 @@
 
     add-int/2addr v1, v2
 
-    sget v2, Lcom/google/android/material/R$dimen;->mtrl_calendar_days_of_week_height:I
+    const v2, 0x7f070113
 
     invoke-virtual {p3, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -565,7 +573,7 @@
 
     sget v4, Lcom/google/android/material/datepicker/MonthAdapter;->MAXIMUM_WEEKS:I
 
-    sget v5, Lcom/google/android/material/R$dimen;->mtrl_calendar_day_height:I
+    const v5, 0x7f07010e
 
     invoke-virtual {p3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -577,7 +585,7 @@
 
     add-int/2addr v4, v3
 
-    sget v3, Lcom/google/android/material/R$dimen;->mtrl_calendar_month_vertical_padding:I
+    const v3, 0x7f070121
 
     invoke-virtual {p3, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -587,7 +595,7 @@
 
     add-int/2addr v3, v5
 
-    sget v4, Lcom/google/android/material/R$dimen;->mtrl_calendar_bottom_padding:I
+    const v4, 0x7f07010b
 
     invoke-virtual {p3, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -602,7 +610,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setMinimumHeight(I)V
 
     :goto_1
-    sget p3, Lcom/google/android/material/R$id;->mtrl_picker_header_selection_text:I
+    const p3, 0x7f0902be
 
     invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -616,7 +624,7 @@
 
     invoke-static {p3, v0}, Landroidx/core/view/ViewCompat;->setAccessibilityLiveRegion(Landroid/view/View;I)V
 
-    sget p3, Lcom/google/android/material/R$id;->mtrl_picker_header_toggle:I
+    const p3, 0x7f0902c0
 
     invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -626,7 +634,7 @@
 
     iput-object p3, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->headerToggleButton:Lcom/google/android/material/internal/CheckableImageButton;
 
-    sget p3, Lcom/google/android/material/R$id;->mtrl_picker_title_text:I
+    const p3, 0x7f0902c4
 
     invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -668,7 +676,7 @@
 
     aput v3, v2, v4
 
-    sget v3, Lcom/google/android/material/R$drawable;->ic_calendar_black_24dp:I
+    const v3, 0x7f080153
 
     invoke-static {p2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -678,7 +686,7 @@
 
     new-array v2, v4, [I
 
-    sget v3, Lcom/google/android/material/R$drawable;->ic_edit_black_24dp:I
+    const v3, 0x7f080155
 
     invoke-static {p2, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -687,6 +695,22 @@
     invoke-virtual {v1, v2, p2}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {p3, v1}, Landroidx/appcompat/widget/AppCompatImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->headerToggleButton:Lcom/google/android/material/internal/CheckableImageButton;
+
+    iget p3, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->inputMode:I
+
+    if-eqz p3, :cond_3
+
+    move p3, v0
+
+    goto :goto_3
+
+    :cond_3
+    move p3, v4
+
+    :goto_3
+    invoke-virtual {p2, p3}, Lcom/google/android/material/internal/CheckableImageButton;->setChecked(Z)V
 
     iget-object p2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->headerToggleButton:Lcom/google/android/material/internal/CheckableImageButton;
 
@@ -706,7 +730,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    sget p2, Lcom/google/android/material/R$id;->confirm_button:I
+    const p2, 0x7f0900f6
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -722,20 +746,20 @@
 
     move-result p2
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_4
 
     iget-object p2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
 
     invoke-virtual {p2, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_3
+    :cond_4
     iget-object p2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
 
     invoke-virtual {p2, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
-    :goto_3
+    :goto_4
     iget-object p2, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
 
     const-string p3, "CONFIRM_BUTTON_TAG"
@@ -750,7 +774,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    sget p2, Lcom/google/android/material/R$id;->cancel_button:I
+    const p2, 0x7f0900df
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -995,7 +1019,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/google/android/material/R$dimen;->mtrl_calendar_dialog_background_inset:I
+    const v2, 0x7f070114
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1154,17 +1178,15 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     new-instance v2, Landroidx/fragment/app/BackStackRecord;
 
     invoke-direct {v2, v0}, Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V
 
-    sget v0, Lcom/google/android/material/R$id;->mtrl_calendar_frame:I
+    const v0, 0x7f0902b2
 
     iget-object v3, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->pickerFragment:Lcom/google/android/material/datepicker/PickerFragment;
-
-    if-eqz v0, :cond_2
 
     const/4 v4, 0x2
 
@@ -1185,15 +1207,6 @@
     return-void
 
     :cond_2
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Must use non-zero containerViewId"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_3
     throw v1
 .end method
 
@@ -1212,7 +1225,7 @@
 
     iget-object v1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker;->headerSelectionText:Landroid/widget/TextView;
 
-    sget v2, Lcom/google/android/material/R$string;->mtrl_picker_announce_current_selection:I
+    const v2, 0x7f1201b9
 
     invoke-virtual {p0, v2}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -1254,7 +1267,7 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/android/material/R$string;->mtrl_picker_toggle_to_calendar_input_mode:I
+    const v0, 0x7f1201d2
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1267,7 +1280,7 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/android/material/R$string;->mtrl_picker_toggle_to_text_input_mode:I
+    const v0, 0x7f1201d4
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

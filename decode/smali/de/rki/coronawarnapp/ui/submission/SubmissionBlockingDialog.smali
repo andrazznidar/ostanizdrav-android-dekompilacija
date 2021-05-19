@@ -25,7 +25,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog$dialog$2;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -96,7 +96,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {p1}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
     :cond_1
     :goto_0

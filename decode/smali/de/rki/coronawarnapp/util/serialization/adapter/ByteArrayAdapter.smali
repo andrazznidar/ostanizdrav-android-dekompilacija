@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     const-string v0, "reader"
 
@@ -40,11 +40,11 @@
 
     sget-object v1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
 
-    const/4 v2, 0x0
-
     if-ne v0, v1, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+
+    const/4 p1, 0x0
 
     goto :goto_0
 
@@ -55,42 +55,33 @@
 
     sget-object v0, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
-    const-string v0, "raw"
+    const-string v1, "raw"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$this$decodeBase64"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lokio/-Base64;->decodeBase64ToArray(Ljava/lang/String;)[B
+    invoke-virtual {v0, p1}, Lokio/ByteString$Companion;->decodeBase64(Ljava/lang/String;)Lokio/ByteString;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    new-instance v2, Lokio/ByteString;
+    invoke-virtual {v0}, Lokio/ByteString;->toByteArray()[B
 
-    invoke-direct {v2, v0}, Lokio/ByteString;-><init>([B)V
+    move-result-object v0
 
-    :cond_1
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v2}, Lokio/ByteString;->toByteArray()[B
-
-    move-result-object v2
-
-    if-eqz v2, :cond_2
+    move-object p1, v0
 
     :goto_0
-    return-object v2
+    return-object p1
 
-    :cond_2
+    :cond_1
     new-instance v0, Lcom/google/gson/JsonParseException;
 
     const-string v1, "Can\'t decode base64 ByteArray: "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -2,14 +2,14 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/play/core/internal/ci;
+.implements Lcom/google/android/play/core/internal/co;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/android/play/core/internal/ci<",
+        "Lcom/google/android/play/core/internal/co<",
         "Ljava/util/concurrent/Executor;",
         ">;"
     }
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     sget-object v0, Lcom/google/android/play/core/assetpacks/l;->a:Ljava/util/concurrent/ThreadFactory;
 
@@ -36,9 +36,7 @@
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/material/R$style;->j(Ljava/lang/Object;)V
 
     return-object v0
 .end method

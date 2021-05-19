@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/zah;
 .super Lcom/google/android/gms/common/api/internal/zad;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -147,9 +147,9 @@
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zah;->zac:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    check-cast v0, Lcom/google/android/gms/common/api/internal/zach;
+    check-cast v0, Lcom/google/android/gms/common/api/internal/zacj;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zach;->zaa:Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zacj;->zaa:Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -188,7 +188,7 @@
 .end method
 
 .method public final zaa(Lcom/google/android/gms/common/api/internal/zav;Z)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zah;->zac:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
@@ -206,28 +206,9 @@
 
     invoke-direct {v1, p1, v0}, Lcom/google/android/gms/common/api/internal/zaw;-><init>(Lcom/google/android/gms/common/api/internal/zav;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    if-eqz p2, :cond_0
-
-    sget-object p1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
-
-    iget-object v0, p2, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
-
-    new-instance v2, Lcom/google/android/gms/tasks/zzi;
-
-    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
-
-    invoke-direct {v2, p1, v1}, Lcom/google/android/gms/tasks/zzi;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/common/api/internal/zaw;)V
-
-    invoke-virtual {v0, v2}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
-
-    invoke-virtual {p2}, Lcom/google/android/gms/tasks/zzu;->zze()V
+    invoke-virtual {p2, v1}, Lcom/google/android/gms/tasks/Task;->addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public final zaa(Ljava/lang/Exception;)V

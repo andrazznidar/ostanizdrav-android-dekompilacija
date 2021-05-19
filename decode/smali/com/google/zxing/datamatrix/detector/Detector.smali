@@ -61,11 +61,11 @@
 
     iget p1, p1, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {v0, p0, v1, p1}, Landroidx/transition/ViewGroupUtilsApi14;->distance(FFFF)F
+    invoke-static {v0, p0, v1, p1}, Lcom/google/zxing/client/android/R$id;->distance(FFFF)F
 
     move-result p0
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result p0
 

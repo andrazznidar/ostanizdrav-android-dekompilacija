@@ -71,7 +71,7 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {p1}, Lcom/google/android/material/datepicker/UtcDates;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object p1
 
@@ -117,11 +117,11 @@
 
     new-instance v0, Ljava/text/SimpleDateFormat;
 
-    const-string v1, "MMMM, yyyy"
+    const-string v1, "LLLL, yyyy"
 
     invoke-direct {v0, v1, p1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTimeZone()Ljava/util/TimeZone;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object p1
 
@@ -153,7 +153,7 @@
 .method public static create(II)Lcom/google/android/material/datepicker/Month;
     .locals 2
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -175,7 +175,7 @@
 .method public static create(J)Lcom/google/android/material/datepicker/Month;
     .locals 1
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -188,12 +188,12 @@
     return-object p0
 .end method
 
-.method public static today()Lcom/google/android/material/datepicker/Month;
+.method public static current()Lcom/google/android/material/datepicker/Month;
     .locals 2
 
     new-instance v0, Lcom/google/android/material/datepicker/Month;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object v1
 
@@ -348,7 +348,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v0}, Lcom/google/android/material/datepicker/UtcDates;->getDayCopy(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v0
 

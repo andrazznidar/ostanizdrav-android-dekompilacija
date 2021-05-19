@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/storage/SettingsRepository;Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;)V
+    value = Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/datadonation/analytics/Analytics;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -62,7 +62,7 @@
 
     invoke-direct {v2, v3, p0}, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel$$special$$inlined$combine$1$3;-><init>(Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel$$special$$inlined$combine$1;)V
 
-    invoke-static {p1, v0, v1, v2, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->combineInternal(Lkotlinx/coroutines/flow/FlowCollector;[Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0, v1, v2, p2}, Lcom/google/zxing/client/android/R$id;->combineInternal(Lkotlinx/coroutines/flow/FlowCollector;[Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -6,6 +6,7 @@
 .implements Lorg/joda/time/convert/InstantConverter;
 .implements Lorg/joda/time/convert/PartialConverter;
 .implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PeriodConverter;
 
 
 # static fields
@@ -95,4 +96,74 @@
     const-class v0, Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public setInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/Object;Lorg/joda/time/Chronology;)V
+    .locals 3
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->standard()Lorg/joda/time/format/PeriodFormatter;
+
+    move-result-object p3
+
+    invoke-interface {p1}, Lorg/joda/time/ReadWritablePeriod;->clear()V
+
+    invoke-virtual {p3}, Lorg/joda/time/format/PeriodFormatter;->checkParser()V
+
+    iget-object v0, p3, Lorg/joda/time/format/PeriodFormatter;->iParser:Lorg/joda/time/format/PeriodParser;
+
+    iget-object v1, p3, Lorg/joda/time/format/PeriodFormatter;->iLocale:Ljava/util/Locale;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, p1, p2, v2, v1}, Lorg/joda/time/format/PeriodParser;->parseInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/String;ILjava/util/Locale;)I
+
+    move-result v0
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1
+
+    if-gez v0, :cond_0
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePeriod;->getPeriodType()Lorg/joda/time/PeriodType;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p1}, Lorg/joda/time/format/PeriodFormatter;->withParseType(Lorg/joda/time/PeriodType;)Lorg/joda/time/format/PeriodFormatter;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lorg/joda/time/format/PeriodFormatter;->parseMutablePeriod(Ljava/lang/String;)Lorg/joda/time/MutablePeriod;
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Invalid format: \""
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 p2, 0x22
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    return-void
 .end method

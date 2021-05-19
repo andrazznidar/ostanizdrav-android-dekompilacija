@@ -328,7 +328,7 @@
 
     const-string v1, "An exception happened in constructor of "
 
-    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -374,7 +374,7 @@
 
     const-string v1, "Failed to access "
 
-    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 

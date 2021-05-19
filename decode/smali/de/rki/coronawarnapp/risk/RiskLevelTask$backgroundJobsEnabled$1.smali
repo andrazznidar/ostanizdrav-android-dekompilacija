@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x9d
+        0xbf
     }
     m = "backgroundJobsEnabled"
 .end annotation

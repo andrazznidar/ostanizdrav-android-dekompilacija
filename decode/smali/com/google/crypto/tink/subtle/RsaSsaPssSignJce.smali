@@ -140,7 +140,7 @@
 
     iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/android/material/R$style;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -226,7 +226,7 @@
 
     iget-object v8, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v3, v4, v8}, Landroidx/transition/ViewGroupUtilsApi14;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v3, v4, v8}, Lcom/google/android/material/R$style;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
 
     move-result-object v8
 

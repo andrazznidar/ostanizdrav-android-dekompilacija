@@ -16,6 +16,15 @@
 # virtual methods
 .method public merge(Ljava/util/List;)Landroidx/work/Data;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "inputs"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

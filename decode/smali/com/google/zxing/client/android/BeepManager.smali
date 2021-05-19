@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    sget v1, Lcom/google/zxing/client/android/R$raw;->zxing_beep:I
+    const v1, 0x7f110001
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
 

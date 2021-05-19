@@ -322,17 +322,66 @@
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "navigation destination "
+    const-string v2, "Navigation destination "
 
-    const-string v3, " is unknown to this NavController"
+    const-string v3, " cannot be found in the navigation graph "
 
-    invoke-static {v2, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline32(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, p0, Landroidx/navigation/NavDeepLinkBuilder;->mGraph:Landroidx/navigation/NavGraph;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
+.end method
+
+.method public setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "+",
+            "Landroid/app/Activity;",
+            ">;)",
+            "Landroidx/navigation/NavDeepLinkBuilder;"
+        }
+    .end annotation
+
+    new-instance v0, Landroid/content/ComponentName;
+
+    iget-object v1, p0, Landroidx/navigation/NavDeepLinkBuilder;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1, p1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    iget-object p1, p0, Landroidx/navigation/NavDeepLinkBuilder;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    return-object p0
+.end method
+
+.method public setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
+    .locals 0
+
+    iput p1, p0, Landroidx/navigation/NavDeepLinkBuilder;->mDestId:I
+
+    iget-object p1, p0, Landroidx/navigation/NavDeepLinkBuilder;->mGraph:Landroidx/navigation/NavGraph;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Landroidx/navigation/NavDeepLinkBuilder;->fillInIntent()V
+
+    :cond_0
+    return-object p0
 .end method
 
 .method public setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;

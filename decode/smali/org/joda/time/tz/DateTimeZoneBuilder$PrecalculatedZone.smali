@@ -81,13 +81,13 @@
     :goto_1
     if-ge v2, v3, :cond_2
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v4
 
     aput-wide v4, v6, v2
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v4
 
@@ -95,7 +95,7 @@
 
     aput v4, v7, v2
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v4
 
@@ -150,7 +150,7 @@
 
     new-instance v0, Lorg/joda/time/tz/DateTimeZoneBuilder$DSTZone;
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v1
 

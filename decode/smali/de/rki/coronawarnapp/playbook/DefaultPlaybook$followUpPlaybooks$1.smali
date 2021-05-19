@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x8b,
-        0x8d
+        0xa4,
+        0xa6
     }
     m = "followUpPlaybooks"
 .end annotation

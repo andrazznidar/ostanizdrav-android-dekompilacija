@@ -29,7 +29,7 @@
 
     mul-long/2addr v0, v2
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lcom/google/zxing/client/android/R$id;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -135,7 +135,7 @@
     move-wide p3, v2
 
     :goto_1
-    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/client/android/R$id;->safeAdd(JJ)J
 
     move-result-wide p1
 
@@ -189,7 +189,7 @@
 .method public getDifferenceAsLong(JJ)J
     .locals 0
 
-    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+    invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/client/android/R$id;->safeSubtract(JJ)J
 
     move-result-wide p1
 

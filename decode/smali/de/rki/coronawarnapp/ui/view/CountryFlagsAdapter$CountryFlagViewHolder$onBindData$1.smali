@@ -3,7 +3,7 @@
 .source "CountryListView.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function2;
+.implements Lkotlin/jvm/functions/Function3;
 
 
 # annotations
@@ -19,9 +19,13 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lkotlin/jvm/functions/Function2<",
+        "Lkotlin/jvm/functions/Function3<",
         "Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;",
         "Lde/rki/coronawarnapp/ui/Country;",
+        "Ljava/util/List<",
+        "+",
+        "Ljava/lang/Object;",
+        ">;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -48,7 +52,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
@@ -57,12 +61,14 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;
 
     check-cast p2, Lde/rki/coronawarnapp/ui/Country;
+
+    check-cast p3, Ljava/util/List;
 
     const-string v0, "$receiver"
 
@@ -71,6 +77,10 @@
     const-string v0, "item"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "<anonymous parameter 1>"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;->countryListEntryImage:Landroid/widget/ImageView;
 

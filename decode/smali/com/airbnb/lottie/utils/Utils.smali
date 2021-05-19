@@ -8,42 +8,73 @@
 
 .field public static dpScale:F
 
-.field public static final pathMeasure:Landroid/graphics/PathMeasure;
+.field public static final threadLocalPathMeasure:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Landroid/graphics/PathMeasure;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final points:[F
+.field public static final threadLocalPoints:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "[F>;"
+        }
+    .end annotation
+.end field
 
-.field public static final tempPath:Landroid/graphics/Path;
+.field public static final threadLocalTempPath:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Landroid/graphics/Path;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final tempPath2:Landroid/graphics/Path;
+.field public static final threadLocalTempPath2:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Landroid/graphics/Path;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Landroid/graphics/PathMeasure;
+    new-instance v0, Lcom/airbnb/lottie/utils/Utils$1;
 
-    invoke-direct {v0}, Landroid/graphics/PathMeasure;-><init>()V
+    invoke-direct {v0}, Lcom/airbnb/lottie/utils/Utils$1;-><init>()V
 
-    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
+    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalPathMeasure:Ljava/lang/ThreadLocal;
 
-    new-instance v0, Landroid/graphics/Path;
+    new-instance v0, Lcom/airbnb/lottie/utils/Utils$2;
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v0}, Lcom/airbnb/lottie/utils/Utils$2;-><init>()V
 
-    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
+    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalTempPath:Ljava/lang/ThreadLocal;
 
-    new-instance v0, Landroid/graphics/Path;
+    new-instance v0, Lcom/airbnb/lottie/utils/Utils$3;
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v0}, Lcom/airbnb/lottie/utils/Utils$3;-><init>()V
 
-    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
+    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalTempPath2:Ljava/lang/ThreadLocal;
 
-    const/4 v0, 0x4
+    new-instance v0, Lcom/airbnb/lottie/utils/Utils$4;
 
-    new-array v0, v0, [F
+    invoke-direct {v0}, Lcom/airbnb/lottie/utils/Utils$4;-><init>()V
 
-    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->points:[F
+    sput-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalPoints:Ljava/lang/ThreadLocal;
 
     const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
@@ -65,211 +96,203 @@
 .end method
 
 .method public static applyTrimPathIfNeeded(Landroid/graphics/Path;FFF)V
-    .locals 7
+    .locals 10
 
-    sget-object v0, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
+    sget-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalPathMeasure:Ljava/lang/ThreadLocal;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0, p0, v1}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
+    move-result-object v0
 
-    sget-object v0, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
+    check-cast v0, Landroid/graphics/PathMeasure;
+
+    sget-object v1, Lcom/airbnb/lottie/utils/Utils;->threadLocalTempPath:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/Path;
+
+    sget-object v2, Lcom/airbnb/lottie/utils/Utils;->threadLocalTempPath2:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/graphics/Path;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, p0, v3}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
 
     invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F
 
-    move-result v0
+    move-result v3
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    cmpl-float v2, p1, v1
+    cmpl-float v5, p1, v4
 
-    const-string v3, "applyTrimPathIfNeeded"
+    const-string v6, "applyTrimPathIfNeeded"
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
-    if-nez v2, :cond_0
+    if-nez v5, :cond_0
 
-    cmpl-float v2, p2, v4
+    cmpl-float v5, p2, v7
 
-    if-nez v2, :cond_0
+    if-nez v5, :cond_0
 
-    invoke-static {v3}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
+    invoke-static {v6}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     return-void
 
     :cond_0
-    cmpg-float v2, v0, v1
+    cmpg-float v5, v3, v4
 
-    if-ltz v2, :cond_9
+    if-ltz v5, :cond_9
 
-    sub-float v2, p2, p1
+    sub-float v5, p2, p1
 
-    sub-float/2addr v2, v1
+    sub-float/2addr v5, v4
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
-    move-result v1
+    move-result v4
 
-    float-to-double v1, v1
+    float-to-double v4, v4
 
-    const-wide v5, 0x3f847ae147ae147bL    # 0.01
+    const-wide v8, 0x3f847ae147ae147bL    # 0.01
 
-    cmpg-double v1, v1, v5
+    cmpg-double v4, v4, v8
 
-    if-gez v1, :cond_1
+    if-gez v4, :cond_1
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_1
-    mul-float/2addr p1, v0
+    mul-float/2addr p1, v3
 
-    mul-float/2addr p2, v0
+    mul-float/2addr p2, v3
 
     invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
 
-    move-result v1
+    move-result v4
 
     invoke-static {p1, p2}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
-    mul-float/2addr p3, v0
+    mul-float/2addr p3, v3
 
-    add-float/2addr v1, p3
+    add-float/2addr v4, p3
 
     add-float/2addr p1, p3
 
-    cmpl-float p2, v1, v0
+    cmpl-float p2, v4, v3
 
     if-ltz p2, :cond_2
 
-    cmpl-float p2, p1, v0
+    cmpl-float p2, p1, v3
 
     if-ltz p2, :cond_2
 
-    invoke-static {v1, v0}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
+    invoke-static {v4, v3}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
 
     move-result p2
 
-    int-to-float v1, p2
+    int-to-float v4, p2
 
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
+    invoke-static {p1, v3}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
 
     move-result p1
 
     int-to-float p1, p1
 
     :cond_2
-    cmpg-float p2, v1, v4
+    cmpg-float p2, v4, v7
 
     if-gez p2, :cond_3
 
-    invoke-static {v1, v0}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
+    invoke-static {v4, v3}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
 
     move-result p2
 
-    int-to-float v1, p2
+    int-to-float v4, p2
 
     :cond_3
-    cmpg-float p2, p1, v4
+    cmpg-float p2, p1, v7
 
     if-gez p2, :cond_4
 
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
+    invoke-static {p1, v3}, Lcom/airbnb/lottie/utils/MiscUtils;->floorMod(FF)I
 
     move-result p1
 
     int-to-float p1, p1
 
     :cond_4
-    cmpl-float p2, v1, p1
+    cmpl-float p2, v4, p1
 
     if-nez p2, :cond_5
 
     invoke-virtual {p0}, Landroid/graphics/Path;->reset()V
 
-    invoke-static {v3}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
+    invoke-static {v6}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     return-void
 
     :cond_5
     if-ltz p2, :cond_6
 
-    sub-float/2addr v1, v0
+    sub-float/2addr v4, v3
 
     :cond_6
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
+    invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
-    invoke-virtual {p2}, Landroid/graphics/Path;->reset()V
+    const/4 p2, 0x1
 
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
+    invoke-virtual {v0, v4, p1, v1, p2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
 
-    sget-object p3, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
+    cmpl-float p3, p1, v3
 
-    const/4 v2, 0x1
+    if-lez p3, :cond_7
 
-    invoke-virtual {p2, v1, p1, p3, v2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
+    invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
-    cmpl-float p2, p1, v0
+    rem-float/2addr p1, v3
 
-    if-lez p2, :cond_7
+    invoke-virtual {v0, v7, p1, v2, p2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
 
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
-
-    invoke-virtual {p2}, Landroid/graphics/Path;->reset()V
-
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
-
-    rem-float/2addr p1, v0
-
-    sget-object p3, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
-
-    invoke-virtual {p2, v4, p1, p3, v2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
-
-    sget-object p1, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
-
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;)V
 
     goto :goto_0
 
     :cond_7
-    cmpg-float p1, v1, v4
+    cmpg-float p1, v4, v7
 
     if-gez p1, :cond_8
 
-    sget-object p1, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
+    invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
-    invoke-virtual {p1}, Landroid/graphics/Path;->reset()V
+    add-float/2addr v4, v3
 
-    sget-object p1, Lcom/airbnb/lottie/utils/Utils;->pathMeasure:Landroid/graphics/PathMeasure;
+    invoke-virtual {v0, v4, v3, v2, p2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
 
-    add-float/2addr v1, v0
-
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
-
-    invoke-virtual {p1, v1, v0, p2, v2}, Landroid/graphics/PathMeasure;->getSegment(FFLandroid/graphics/Path;Z)Z
-
-    sget-object p1, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
-
-    sget-object p2, Lcom/airbnb/lottie/utils/Utils;->tempPath2:Landroid/graphics/Path;
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;)V
 
     :cond_8
     :goto_0
-    sget-object p1, Lcom/airbnb/lottie/utils/Utils;->tempPath:Landroid/graphics/Path;
+    invoke-virtual {p0, v1}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
 
-    invoke-virtual {p0, p1}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
-
-    invoke-static {v3}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
+    invoke-static {v6}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     return-void
 
     :cond_9
     :goto_1
-    invoke-static {v3}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
+    invoke-static {v6}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     return-void
 .end method
@@ -478,7 +501,13 @@
 .method public static getScale(Landroid/graphics/Matrix;)F
     .locals 6
 
-    sget-object v0, Lcom/airbnb/lottie/utils/Utils;->points:[F
+    sget-object v0, Lcom/airbnb/lottie/utils/Utils;->threadLocalPoints:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [F
 
     const/4 v1, 0x0
 
@@ -502,21 +531,19 @@
 
     invoke-virtual {p0, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    sget-object p0, Lcom/airbnb/lottie/utils/Utils;->points:[F
+    aget p0, v0, v4
 
-    aget v0, p0, v4
+    aget v1, v0, v1
 
-    aget v1, p0, v1
+    sub-float/2addr p0, v1
 
-    sub-float/2addr v0, v1
+    aget v1, v0, v5
 
-    aget v1, p0, v5
+    aget v0, v0, v3
 
-    aget p0, p0, v3
+    sub-float/2addr v1, v0
 
-    sub-float/2addr v1, p0
-
-    float-to-double v2, v0
+    float-to-double v2, p0
 
     float-to-double v0, v1
 

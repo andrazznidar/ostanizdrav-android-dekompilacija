@@ -156,6 +156,25 @@
     return v0
 .end method
 
+.method public get(Lorg/joda/time/DurationFieldType;)I
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/joda/time/base/BaseSingleFieldPeriod;->getFieldType()Lorg/joda/time/DurationFieldType;
+
+    move-result-object v0
+
+    if-ne p1, v0, :cond_0
+
+    iget p1, p0, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
 .method public abstract getFieldType()Lorg/joda/time/DurationFieldType;
 .end method
 
@@ -226,6 +245,14 @@
     move-result v0
 
     add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    const/4 v0, 0x1
 
     return v0
 .end method

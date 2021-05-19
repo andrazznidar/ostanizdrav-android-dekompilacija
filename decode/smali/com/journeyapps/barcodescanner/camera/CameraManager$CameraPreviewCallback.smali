@@ -112,7 +112,7 @@
 
     iget-object p1, p1, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
 
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_decode:I
+    const v2, 0x7f090570
 
     invoke-virtual {p1, v2, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 

@@ -55,13 +55,13 @@
 
     sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    const-string v4, "Symptom submission was cancelled."
+    const-string v4, "Symptom submission was skipped."
 
     invoke-virtual {v3, v4, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v2, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomInput$1;
+    new-instance v2, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomInput$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;Lkotlin/coroutines/Continuation;)V
 
     const/4 v3, 0x1
 

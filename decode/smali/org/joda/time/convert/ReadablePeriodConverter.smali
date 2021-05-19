@@ -3,7 +3,7 @@
 .source "ReadablePeriodConverter.java"
 
 # interfaces
-.implements Lorg/joda/time/convert/Converter;
+.implements Lorg/joda/time/convert/PeriodConverter;
 
 
 # static fields
@@ -33,6 +33,18 @@
 
 
 # virtual methods
+.method public getPeriodType(Ljava/lang/Object;)Lorg/joda/time/PeriodType;
+    .locals 0
+
+    check-cast p1, Lorg/joda/time/ReadablePeriod;
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePeriod;->getPeriodType()Lorg/joda/time/PeriodType;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public getSupportedType()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -46,4 +58,14 @@
     const-class v0, Lorg/joda/time/ReadablePeriod;
 
     return-object v0
+.end method
+
+.method public setInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/Object;Lorg/joda/time/Chronology;)V
+    .locals 0
+
+    check-cast p2, Lorg/joda/time/ReadablePeriod;
+
+    invoke-interface {p1, p2}, Lorg/joda/time/ReadWritablePeriod;->setPeriod(Lorg/joda/time/ReadablePeriod;)V
+
+    return-void
 .end method

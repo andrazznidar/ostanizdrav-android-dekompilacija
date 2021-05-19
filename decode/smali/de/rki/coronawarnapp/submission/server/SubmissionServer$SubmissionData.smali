@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public final visistedCountries:Ljava/util/List;
+.field public final visitedCountries:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -64,7 +64,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "visistedCountries"
+    const-string v0, "visitedCountries"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -76,7 +76,7 @@
 
     iput-boolean p3, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->consentToFederation:Z
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iput-object p4, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
     return-void
 .end method
@@ -120,9 +120,9 @@
 
     if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iget-object p1, p1, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -194,7 +194,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iget-object v2, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
     if-eqz v2, :cond_3
 
@@ -213,7 +213,7 @@
 
     const-string v0, "SubmissionData(authCode="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -237,11 +237,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", visistedCountries="
+    const-string v1, ", visitedCountries="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visistedCountries:Ljava/util/List;
+    iget-object v1, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer$SubmissionData;->visitedCountries:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

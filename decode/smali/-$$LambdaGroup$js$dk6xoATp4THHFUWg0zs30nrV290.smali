@@ -77,7 +77,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/main/share/MainShareFragment;
 
-    const v1, 0x7f120124
+    const v1, 0x7f1201a6
 
     invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -131,7 +131,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
 
     :goto_0
     return-void

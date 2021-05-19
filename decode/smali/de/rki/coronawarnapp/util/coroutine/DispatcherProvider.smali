@@ -4,11 +4,11 @@
 
 
 # virtual methods
-.method public abstract getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public abstract getDefault()Lkotlin/coroutines/CoroutineContext;
 .end method
 
-.method public abstract getIO()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public abstract getIO()Lkotlin/coroutines/CoroutineContext;
 .end method
 
-.method public abstract getMain()Lkotlinx/coroutines/CoroutineDispatcher;
+.method public abstract getMain()Lkotlin/coroutines/CoroutineContext;
 .end method

@@ -75,13 +75,13 @@
 
     if-eqz p6, :cond_0
 
-    sget p6, Landroidx/appcompat/R$dimen;->abc_dropdownitem_icon_width:I
+    const p6, 0x7f070029
 
     invoke-virtual {p2, p6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result p6
 
-    sget p7, Landroidx/appcompat/R$dimen;->abc_dropdownitem_text_padding_left:I
+    const p7, 0x7f07002a
 
     invoke-virtual {p2, p7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

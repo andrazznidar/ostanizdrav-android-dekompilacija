@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 HomeFragmentViewModel.kt\nde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n43#4:135\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 HomeFragmentViewModel.kt\nde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n93#4:135\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -104,7 +104,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$$special$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -130,7 +130,7 @@
 
     if-ne p1, v2, :cond_3
 
-    sget-object p1, Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$LocationDisabled;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$LocationDisabled;
+    sget-object p1, Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$LocationDisabled;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$LocationDisabled;
 
     goto :goto_1
 
@@ -142,17 +142,17 @@
     throw p1
 
     :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$BluetoothDisabled;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$BluetoothDisabled;
+    sget-object p1, Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$BluetoothDisabled;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$BluetoothDisabled;
 
     goto :goto_1
 
     :cond_5
-    sget-object p1, Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$TracingInActive;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$TracingInActive;
+    sget-object p1, Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$TracingInActive;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$TracingInActive;
 
     goto :goto_1
 
     :cond_6
-    sget-object p1, Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$TracingActive;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState$TracingActive;
+    sget-object p1, Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$TracingActive;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState$TracingActive;
 
     :goto_1
     iput v3, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$$special$$inlined$map$1$2$1;->label:I

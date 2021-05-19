@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.storage.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0x9b,
-        0x9b
+        0x88,
+        0x88
     }
     m = "delete"
 .end annotation

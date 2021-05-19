@@ -65,7 +65,7 @@
 .method public getActionId()I
     .locals 1
 
-    const v0, 0x7f09007c
+    const v0, 0x7f090090
 
     return v0
 .end method
@@ -144,17 +144,9 @@
 
     const-class v2, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v3, " must implement Parcelable or Serializable or must be an Enum."
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " must implement Parcelable or Serializable or must be an Enum."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -188,7 +180,7 @@
 
     const-string v0, "ActionSubmissionSymptomIntroductionFragmentToSubmissionSymptomCalendarFragment(symptomIndication="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

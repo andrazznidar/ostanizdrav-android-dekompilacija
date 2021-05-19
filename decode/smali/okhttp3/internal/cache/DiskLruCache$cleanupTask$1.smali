@@ -124,7 +124,7 @@
 
     invoke-direct {v4}, Lokio/BlackholeSink;-><init>()V
 
-    invoke-static {v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->buffer(Lokio/Sink;)Lokio/BufferedSink;
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Sink;)Lokio/BufferedSink;
 
     move-result-object v4
 

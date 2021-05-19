@@ -44,6 +44,14 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,6 +74,14 @@
 
 .method public static createConstraintsChangedIntent(Landroid/content/Context;)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -82,6 +98,16 @@
 
 .method public static createDelayMetIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workSpecId"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -102,6 +128,18 @@
 
 .method public static createExecutionCompletedIntent(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workSpecId",
+            "needsReschedule"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -126,6 +164,16 @@
 
 .method public static createScheduleWorkIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workSpecId"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -148,6 +196,16 @@
 # virtual methods
 .method public onExecuted(Ljava/lang/String;Z)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "workSpecId",
+            "needsReschedule"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/background/systemalarm/CommandHandler;->mLock:Ljava/lang/Object;
 
@@ -183,6 +241,18 @@
 
 .method public onHandleIntent(Landroid/content/Intent;ILandroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "intent",
+            "startId",
+            "dispatcher"
+        }
+    .end annotation
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 

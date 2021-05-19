@@ -3,8 +3,10 @@
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <fragment android:label="ContactDiaryDayFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.day.ContactDiaryDayFragment" android:id="@id/contactDiaryDayFragment">
         <argument android:name="selectedDay" android:defaultValue="2020-03-25" app:argType="string" />
-        <action android:id="@id/action_contactDiaryDayFragment_to_contactDiaryPersonBottomSheetDialogFragment" app:destination="@id/contactDiaryPersonBottomSheetDialogFragment" />
-        <action android:id="@id/action_contactDiaryDayFragment_to_contactDiaryLocationBottomSheetDialogFragment" app:destination="@id/contactDiaryLocationBottomSheetDialogFragment" />
+        <action android:id="@id/action_contactDiaryDayFragment_to_contactDiaryAddPersonFragment" app:destination="@id/contactDiaryAddPersonFragment" />
+        <action android:id="@id/action_contactDiaryDayFragment_to_contactDiaryAddLocationFragment" app:destination="@id/contactDiaryAddLocationFragment" />
+        <deepLink app:uri="coronawarnapp://contact-journal/day/{selectedDay}" />
+        <action android:id="@id/action_contactDiaryDayFragment_to_contactDiaryCommentInfoFragment" app:destination="@id/contactDiaryCommentInfoFragment" />
     </fragment>
     <fragment android:label="ContactDiaryPersonListFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.day.tabs.person.ContactDiaryPersonListFragment" android:id="@id/contactDiaryPersonListFragment">
         <argument android:name="selectedDay" app:argType="string" />
@@ -12,17 +14,19 @@
     <fragment android:label="ContactDiaryPlaceListFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.day.tabs.location.ContactDiaryLocationListFragment" android:id="@id/contactDiaryPlaceListFragment">
         <argument android:name="selectedDay" app:argType="string" />
     </fragment>
-    <dialog android:label="ContactDiaryPersonBottomSheetDialogFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.sheets.person.ContactDiaryPersonBottomSheetDialogFragment" android:id="@id/contactDiaryPersonBottomSheetDialogFragment">
+    <fragment android:label="ContactDiaryAddPersonFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.person.ContactDiaryAddPersonFragment" android:id="@id/contactDiaryAddPersonFragment">
         <argument android:name="selectedPerson" android:defaultValue="@null" app:argType="de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryPersonEntity" app:nullable="true" />
         <argument android:name="addedAt" android:defaultValue="@null" app:argType="string" app:nullable="true" />
-    </dialog>
-    <dialog android:label="ContactDiaryLocationBottomSheetDialogFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.sheets.location.ContactDiaryLocationBottomSheetDialogFragment" android:id="@id/contactDiaryLocationBottomSheetDialogFragment">
+    </fragment>
+    <fragment android:label="ContactDiaryAddLocationFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.location.ContactDiaryAddLocationFragment" android:id="@id/contactDiaryAddLocationFragment">
         <argument android:name="selectedLocation" android:defaultValue="@null" app:argType="de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryLocationEntity" app:nullable="true" />
         <argument android:name="addedAt" android:defaultValue="@null" app:argType="string" app:nullable="true" />
-    </dialog>
+    </fragment>
     <fragment android:label="ContactDiaryOnboardingFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.onboarding.ContactDiaryOnboardingFragment" android:id="@id/contactDiaryOnboardingFragment">
         <action android:id="@id/action_contactDiaryOnboardingFragment_to_contactDiaryInformationPrivacyFragment" app:destination="@id/contactDiaryInformationPrivacyFragment" />
         <action android:id="@id/action_contactDiaryOnboardingFragment_to_contactDiaryOverviewFragment" app:destination="@id/contactDiaryOverviewFragment" app:popUpTo="@id/contact_diary_nav_graph" app:popUpToInclusive="true" />
+        <argument android:name="showBottomNav" android:defaultValue="true" app:argType="boolean" />
+        <deepLink app:popUpTo="@id/contact_diary_nav_graph" app:popUpToInclusive="true" app:uri="coronawarnapp://contact-journal/oboarding/?goToDay={goToDay}" />
     </fragment>
     <fragment android:label="InformationPrivacyFragment" android:name="de.rki.coronawarnapp.ui.information.InformationPrivacyFragment" android:id="@id/contactDiaryInformationPrivacyFragment" />
     <fragment android:label="contact_diary_overview_fragment" android:name="de.rki.coronawarnapp.contactdiary.ui.overview.ContactDiaryOverviewFragment" android:id="@id/contactDiaryOverviewFragment">
@@ -32,9 +36,10 @@
         <action android:id="@id/action_contactDiaryOverviewFragment_to_contactDiaryOnboardingFragment" app:destination="@id/contactDiaryOnboardingFragment" />
     </fragment>
     <fragment android:label="ContactDiaryEditLocationsFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.edit.ContactDiaryEditLocationsFragment" android:id="@id/contactDiaryEditLocationsFragment">
-        <action android:id="@id/action_contactDiaryEditLocationsFragment_to_contactDiaryLocationBottomSheetDialogFragment" app:destination="@id/contactDiaryLocationBottomSheetDialogFragment" />
+        <action android:id="@id/action_contactDiaryEditLocationsFragment_to_contactDiaryAddLocationFragment" app:destination="@id/contactDiaryAddLocationFragment" />
     </fragment>
     <fragment android:label="ContactDiaryEditPersonsFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.edit.ContactDiaryEditPersonsFragment" android:id="@id/contactDiaryEditPersonsFragment">
-        <action android:id="@id/action_contactDiaryEditPersonsFragment_to_contactDiaryPersonBottomSheetDialogFragment" app:destination="@id/contactDiaryPersonBottomSheetDialogFragment" />
+        <action android:id="@id/action_contactDiaryEditPersonsFragment_to_contactDiaryAddPersonFragment" app:destination="@id/contactDiaryAddPersonFragment" />
     </fragment>
+    <fragment android:label="CommentInfoFragment" android:name="de.rki.coronawarnapp.contactdiary.ui.day.tabs.ContactDiaryCommentInfoFragment" android:id="@id/contactDiaryCommentInfoFragment" />
 </navigation>

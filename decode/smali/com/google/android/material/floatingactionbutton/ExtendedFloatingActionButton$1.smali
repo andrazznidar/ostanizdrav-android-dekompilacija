@@ -35,6 +35,18 @@
     return v0
 .end method
 
+.method public getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .locals 2
+
+    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v1, -0x2
+
+    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    return-object v0
+.end method
+
 .method public getWidth()I
     .locals 1
 

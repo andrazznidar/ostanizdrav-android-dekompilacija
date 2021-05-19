@@ -26,8 +26,6 @@
 
 
 # instance fields
-.field public final mLocalFieldId:I
-
 .field public final mObservable:Landroidx/databinding/ViewDataBinding$ObservableReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,31 +42,6 @@
         }
     .end annotation
 .end field
-
-
-# direct methods
-.method public constructor <init>(Landroidx/databinding/ViewDataBinding;ILandroidx/databinding/ViewDataBinding$ObservableReference;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/databinding/ViewDataBinding;",
-            "I",
-            "Landroidx/databinding/ViewDataBinding$ObservableReference<",
-            "TT;>;)V"
-        }
-    .end annotation
-
-    sget-object v0, Landroidx/databinding/ViewDataBinding;->sReferenceQueue:Ljava/lang/ref/ReferenceQueue;
-
-    invoke-direct {p0, p1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
-
-    iput p2, p0, Landroidx/databinding/ViewDataBinding$WeakListener;->mLocalFieldId:I
-
-    iput-object p3, p0, Landroidx/databinding/ViewDataBinding$WeakListener;->mObservable:Landroidx/databinding/ViewDataBinding$ObservableReference;
-
-    return-void
-.end method
 
 
 # virtual methods

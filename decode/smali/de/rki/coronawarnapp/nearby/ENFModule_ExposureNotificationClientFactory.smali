@@ -3,14 +3,14 @@
 .source "ENFModule_ExposureNotificationClientFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;",
         ">;"
     }
@@ -76,19 +76,17 @@
 
     const-string v0, "Context must not be null"
 
-    invoke-static {v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzt;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzaw;
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzt;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzaw;-><init>(Landroid/content/Context;)V
 
     const-string v1, "Nearby.getExposureNotificationClient(context)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 

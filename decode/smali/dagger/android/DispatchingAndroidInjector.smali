@@ -80,7 +80,7 @@
 
     add-int/2addr v1, v0
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object v0
 
@@ -192,7 +192,7 @@
 
     move-result-object v6
 
-    invoke-static {v4, v5, v6}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v5, v6}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {v4, p1}, Ldagger/android/AndroidInjector;->inject(Ljava/lang/Object;)V
     :try_end_0

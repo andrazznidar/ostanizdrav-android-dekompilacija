@@ -105,19 +105,28 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewFragmentBinding;
+
+    instance-of v1, v0, Landroidx/databinding/ViewDataBinding;
+
+    if-eqz v1, :cond_0
+
+    move-object v1, v0
+
+    check-cast v1, Landroidx/databinding/ViewDataBinding;
 
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
-
-    return-object v0
+    invoke-virtual {v1, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     :cond_0
+    return-object v0
+
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.databinding.ContactDiaryOverviewFragmentBinding"

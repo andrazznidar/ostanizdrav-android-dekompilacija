@@ -48,7 +48,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
+    invoke-static {v0, p1}, Lcom/google/android/material/R$style;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
 
     invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
 

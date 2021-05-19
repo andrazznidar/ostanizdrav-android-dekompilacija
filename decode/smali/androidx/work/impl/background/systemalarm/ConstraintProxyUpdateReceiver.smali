@@ -32,6 +32,22 @@
 
 .method public static newConstraintProxyUpdateIntent(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "batteryNotLowProxyEnabled",
+            "batteryChargingProxyEnabled",
+            "storageNotLowProxyEnabled",
+            "networkStateProxyEnabled"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -76,6 +92,16 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "context",
+            "intent"
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 

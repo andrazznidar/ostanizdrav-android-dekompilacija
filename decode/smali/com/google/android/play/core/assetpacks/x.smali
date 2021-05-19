@@ -1,57 +1,43 @@
-.class public interface abstract Lcom/google/android/play/core/assetpacks/x;
+.class public final synthetic Lcom/google/android/play/core/assetpacks/x;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/play/core/internal/am;
+
+
+# static fields
+.field public static final a:Lcom/google/android/play/core/internal/am;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/play/core/assetpacks/x;
+
+    invoke-direct {v0}, Lcom/google/android/play/core/assetpacks/x;-><init>()V
+
+    sput-object v0, Lcom/google/android/play/core/assetpacks/x;->a:Lcom/google/android/play/core/internal/am;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/util/Map;)Lcom/google/android/play/core/tasks/m;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;)",
-            "Lcom/google/android/play/core/tasks/m<",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end method
+.method public final a(Landroid/os/IBinder;)Ljava/lang/Object;
+    .locals 0
 
-.method public abstract a()V
-.end method
+    invoke-static {p1}, Lcom/google/android/play/core/internal/s;->b(Landroid/os/IBinder;)Lcom/google/android/play/core/internal/t;
 
-.method public abstract a(I)V
-.end method
+    move-result-object p1
 
-.method public abstract a(ILjava/lang/String;)V
-.end method
-
-.method public abstract a(ILjava/lang/String;Ljava/lang/String;I)V
-.end method
-
-.method public abstract a(Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract b(ILjava/lang/String;Ljava/lang/String;I)Lcom/google/android/play/core/tasks/m;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "I)",
-            "Lcom/google/android/play/core/tasks/m<",
-            "Landroid/os/ParcelFileDescriptor;",
-            ">;"
-        }
-    .end annotation
+    return-object p1
 .end method

@@ -14,6 +14,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/PeriodicWorkRequest$Builder;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "builder"
+        }
+    .end annotation
 
     iget-object v0, p1, Landroidx/work/WorkRequest$Builder;->mId:Ljava/util/UUID;
 

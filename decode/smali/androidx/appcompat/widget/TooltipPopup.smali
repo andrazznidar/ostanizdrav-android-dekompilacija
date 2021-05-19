@@ -53,7 +53,7 @@
 
     move-result-object p1
 
-    sget v0, Landroidx/appcompat/R$layout;->abc_tooltip:I
+    const v0, 0x7f0c001b
 
     const/4 v1, 0x0
 
@@ -63,7 +63,7 @@
 
     iput-object p1, p0, Landroidx/appcompat/widget/TooltipPopup;->mContentView:Landroid/view/View;
 
-    sget v0, Landroidx/appcompat/R$id;->message:I
+    const v0, 0x7f0902a3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->format:I
 
-    sget v0, Landroidx/appcompat/R$style;->Animation_AppCompat_Tooltip:I
+    const v0, 0x7f130005
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

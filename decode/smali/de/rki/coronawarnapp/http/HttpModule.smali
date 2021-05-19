@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHttpModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HttpModule.kt\nde/rki/coronawarnapp/http/HttpModule\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,95:1\n1819#2,2:96\n1#3:98\n*E\n*S KotlinDebug\n*F\n+ 1 HttpModule.kt\nde/rki/coronawarnapp/http/HttpModule\n*L\n48#1,2:96\n*E\n"
+    value = "SMAP\nHttpModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HttpModule.kt\nde/rki/coronawarnapp/http/HttpModule\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,91:1\n1819#2,2:92\n1#3:94\n*E\n*S KotlinDebug\n*F\n+ 1 HttpModule.kt\nde/rki/coronawarnapp/http/HttpModule\n*L\n44#1,2:92\n*E\n"
 .end annotation
 
 

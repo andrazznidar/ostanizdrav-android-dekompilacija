@@ -6,17 +6,6 @@
 .implements Landroidx/recyclerview/widget/ChildHelper$Callback;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/recyclerview/widget/RecyclerView;->initChildrenHelper()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic this$0:Landroidx/recyclerview/widget/RecyclerView;
 

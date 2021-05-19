@@ -59,7 +59,7 @@
     return v0
 .end method
 
-.method public onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;I)V
+.method public onBindBaseVH(Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;ILjava/util/List;)V
     .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;
@@ -68,19 +68,21 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter;->countryList:Ljava/util/List;
+    const-string v0, "payloads"
 
-    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object p3, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter;->countryList:Ljava/util/List;
+
+    invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Lde/rki/coronawarnapp/ui/Country;
+    const/4 p3, 0x0
 
-    const-string v0, "item"
+    const/4 v0, 0x2
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;)V
+    invoke-static {p1, p2, p3, v0, p3}, Lcom/google/zxing/client/android/R$id;->bind$default(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)V
 
     return-void
 .end method

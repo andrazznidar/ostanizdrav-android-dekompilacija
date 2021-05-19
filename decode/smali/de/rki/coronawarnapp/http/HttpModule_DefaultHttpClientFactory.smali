@@ -3,14 +3,14 @@
 .source "HttpModule_DefaultHttpClientFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lokhttp3/OkHttpClient;",
         ">;"
     }
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 7
+    .locals 5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/HttpModule_DefaultHttpClientFactory;->module:Lde/rki/coronawarnapp/http/HttpModule;
 
@@ -55,9 +55,7 @@
 
     new-instance v1, Lokhttp3/logging/HttpLoggingInterceptor;
 
-    new-instance v2, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;
-
-    invoke-direct {v2}, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;-><init>()V
+    sget-object v2, Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;->INSTANCE:Lde/rki/coronawarnapp/http/HttpModule$defaultHttpClient$interceptors$1;
 
     invoke-direct {v1, v2}, Lokhttp3/logging/HttpLoggingInterceptor;-><init>(Lokhttp3/logging/HttpLoggingInterceptor$Logger;)V
 
@@ -81,7 +79,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -91,51 +89,23 @@
 
     sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-string v3, "unit"
+    const-wide/16 v3, 0x4e20
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v4, "timeout"
-
-    const-wide/16 v5, 0x4e20
-
-    invoke-static {v4, v5, v6, v2}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v2
-
-    iput v2, v1, Lokhttp3/OkHttpClient$Builder;->connectTimeout:I
+    invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v5, v6, v2}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v2
-
-    iput v2, v1, Lokhttp3/OkHttpClient$Builder;->readTimeout:I
+    invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    invoke-static {v4, v5, v6, v2}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
+    const-wide/32 v2, 0x75300
 
-    move-result v2
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iput v2, v1, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I
-
-    const-wide/32 v5, 0x75300
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v5, v6, v2}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
-
-    move-result v2
-
-    iput v2, v1, Lokhttp3/OkHttpClient$Builder;->callTimeout:I
+    invoke-virtual {v1, v2, v3, v4}, Lokhttp3/OkHttpClient$Builder;->callTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -169,9 +139,7 @@
 
     invoke-direct {v0, v1}, Lokhttp3/OkHttpClient;-><init>(Lokhttp3/OkHttpClient$Builder;)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 

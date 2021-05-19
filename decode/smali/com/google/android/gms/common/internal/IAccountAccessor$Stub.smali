@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/IAccountAccessor$Stub;
 .super Lcom/google/android/gms/internal/common/zza;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/IAccountAccessor;
@@ -26,6 +26,12 @@
 # direct methods
 .method public static asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/IAccountAccessor;
     .locals 2
+    .param p0    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     if-nez p0, :cond_0
 

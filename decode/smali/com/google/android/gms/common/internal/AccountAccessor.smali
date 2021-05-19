@@ -1,11 +1,17 @@
 .class public Lcom/google/android/gms/common/internal/AccountAccessor;
 .super Lcom/google/android/gms/common/internal/IAccountAccessor$Stub;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # direct methods
 .method public static getAccountBinderSafe(Lcom/google/android/gms/common/internal/IAccountAccessor;)Landroid/accounts/Account;
     .locals 3
+    .param p0    # Lcom/google/android/gms/common/internal/IAccountAccessor;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 
     if-eqz p0, :cond_0
 
@@ -54,9 +60,5 @@
     const/4 p0, 0x0
 
     :goto_2
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    check-cast p0, Landroid/accounts/Account;
-
     return-object p0
 .end method

@@ -18,7 +18,8 @@
     f = "ContactDiaryCleanTask.kt"
     l = {
         0x1a,
-        0x1d
+        0x1d,
+        0x20
     }
     m = "run"
 .end annotation

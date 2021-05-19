@@ -47,6 +47,12 @@
     return p1
 .end method
 
+.method public onSuffixVisibilityChanged(Z)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public shouldTintIconOnError()Z
     .locals 1
 

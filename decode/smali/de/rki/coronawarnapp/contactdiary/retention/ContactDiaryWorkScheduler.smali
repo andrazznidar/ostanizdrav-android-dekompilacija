@@ -35,6 +35,16 @@
 .method public final schedulePeriodic()V
     .locals 7
 
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    const-string v2, "ContactDiaryWorkScheduler schedulePeriodic()"
+
+    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkScheduler;->workManager:Landroidx/work/WorkManager;
 
     sget-object v1, Landroidx/work/ExistingPeriodicWorkPolicy;->REPLACE:Landroidx/work/ExistingPeriodicWorkPolicy;

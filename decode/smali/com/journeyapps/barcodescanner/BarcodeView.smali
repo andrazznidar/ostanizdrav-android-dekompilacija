@@ -130,7 +130,7 @@
 .method public setDecoderFactory(Lcom/journeyapps/barcodescanner/DecoderFactory;)V
     .locals 1
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderFactory:Lcom/journeyapps/barcodescanner/DecoderFactory;
 
@@ -189,7 +189,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     new-instance v1, Landroid/os/HandlerThread;
 
@@ -244,7 +244,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->LOCK:Ljava/lang/Object;
 

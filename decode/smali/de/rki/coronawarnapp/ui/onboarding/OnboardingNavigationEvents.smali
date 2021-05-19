@@ -7,13 +7,12 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingPrivacy;,
-        Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToEasyLanguageUrl;,
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingTracing;,
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingFragment;,
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingTest;,
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$ShowCancelDialog;,
         Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingNotifications;,
-        Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToMainActivity;
+        Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingAnalytics;
     }
 .end annotation
 

@@ -49,7 +49,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c0076
+    const v4, 0x7f0c008f
 
     aput v4, v2, v5
 
@@ -61,7 +61,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09030b
+    const v1, 0x7f0903df
 
     const/4 v2, 0x6
 
@@ -69,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090310
+    const v1, 0x7f0903e4
 
     const/4 v2, 0x7
 
@@ -77,7 +77,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902f6
+    const v1, 0x7f0903c7
 
     const/16 v2, 0x8
 
@@ -85,7 +85,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09016e
+    const v1, 0x7f0901ce
 
     const/16 v2, 0x9
 
@@ -93,7 +93,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902f7
+    const v1, 0x7f0903c8
 
     const/16 v2, 0xa
 
@@ -248,7 +248,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     invoke-virtual {v13, v0, v12}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -287,44 +287,56 @@
 
     iget-object v9, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->mBody:Ljava/lang/String;
 
-    const/4 v10, 0x0
+    iget-object v10, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->mSubtitle:Ljava/lang/String;
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->mSubtitle:Ljava/lang/String;
+    const-wide/16 v11, 0x41
 
-    const-wide/16 v12, 0x41
+    and-long/2addr v11, v2
+
+    cmp-long v11, v11, v4
+
+    const-wide/16 v12, 0x42
 
     and-long/2addr v12, v2
 
     cmp-long v12, v12, v4
 
-    const-wide/16 v13, 0x42
+    const/4 v13, 0x0
 
-    and-long/2addr v13, v2
-
-    cmp-long v13, v13, v4
-
-    if-eqz v13, :cond_0
+    if-eqz v12, :cond_0
 
     invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v6
 
-    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static {v6}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
-    move-result v10
+    move-result v6
+
+    goto :goto_0
 
     :cond_0
+    move v6, v13
+
+    :goto_0
     const-wide/16 v14, 0x44
 
     and-long/2addr v14, v2
 
-    cmp-long v6, v14, v4
-
-    const-wide/16 v14, 0x48
-
-    and-long/2addr v14, v2
-
     cmp-long v14, v14, v4
+
+    if-eqz v14, :cond_1
+
+    invoke-static {v7}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Integer;)I
+
+    move-result v13
+
+    :cond_1
+    const-wide/16 v15, 0x48
+
+    and-long/2addr v15, v2
+
+    cmp-long v7, v15, v4
 
     const-wide/16 v15, 0x50
 
@@ -338,64 +350,50 @@
 
     cmp-long v2, v2, v4
 
-    if-eqz v13, :cond_1
+    if-eqz v12, :cond_2
 
     iget-object v3, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     iget-object v3, v3, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v3, v10}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_1
-    if-eqz v14, :cond_2
+    :cond_2
+    if-eqz v7, :cond_3
 
     iget-object v3, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->mboundView3:Landroid/widget/TextView;
 
-    invoke-static {v3, v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v3, v8}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_2
-    if-eqz v15, :cond_3
+    :cond_3
+    if-eqz v15, :cond_4
 
     iget-object v3, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->settingsRowBody:Landroid/widget/TextView;
 
-    invoke-static {v3, v9}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v3, v9}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_3
-    if-eqz v2, :cond_4
+    :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v2, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->settingsRowHeaderSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v2, v11}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v2, v10}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    :cond_4
-    if-eqz v12, :cond_5
+    :cond_5
+    if-eqz v11, :cond_6
 
     iget-object v2, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->settingsRowIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_5
-    if-eqz v6, :cond_6
-
-    sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v0, v2, :cond_6
+    :cond_6
+    if-eqz v14, :cond_7
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->settingsRowIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v0, v13}, Lcom/google/zxing/client/android/R$id;->setTint(Landroid/widget/ImageView;I)V
 
-    move-result v2
-
-    invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    :cond_6
+    :cond_7
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -497,14 +495,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
 .method public setBody(Ljava/lang/String;)V
     .locals 4
 
@@ -525,7 +515,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 p1, 0x3
+    const/4 p1, 0x4
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -603,7 +593,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -654,7 +644,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x28
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -693,7 +683,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2d
+    const/16 p1, 0x2c
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -732,7 +722,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x31
+    const/16 p1, 0x2f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

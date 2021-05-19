@@ -1,38 +1,73 @@
 .class public final Lcom/google/android/play/core/assetpacks/bs;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/play/core/internal/ci;
+.super Lcom/google/android/play/core/assetpacks/cr;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/play/core/internal/ci<",
-        "Lcom/google/android/play/core/assetpacks/bq;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public final a:I
+
+.field public final b:J
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:J
+
+.field public final h:I
+
+.field public final i:Ljava/io/InputStream;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(ILjava/lang/String;IJLjava/lang/String;IIIJILjava/io/InputStream;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lcom/google/android/play/core/assetpacks/cr;-><init>(ILjava/lang/String;)V
+
+    iput p3, p0, Lcom/google/android/play/core/assetpacks/bs;->a:I
+
+    iput-wide p4, p0, Lcom/google/android/play/core/assetpacks/bs;->b:J
+
+    iput-object p6, p0, Lcom/google/android/play/core/assetpacks/bs;->c:Ljava/lang/String;
+
+    iput p7, p0, Lcom/google/android/play/core/assetpacks/bs;->d:I
+
+    iput p8, p0, Lcom/google/android/play/core/assetpacks/bs;->e:I
+
+    iput p9, p0, Lcom/google/android/play/core/assetpacks/bs;->f:I
+
+    iput-wide p10, p0, Lcom/google/android/play/core/assetpacks/bs;->g:J
+
+    iput p12, p0, Lcom/google/android/play/core/assetpacks/bs;->h:I
+
+    iput-object p13, p0, Lcom/google/android/play/core/assetpacks/bs;->i:Ljava/io/InputStream;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+.method public final a()Z
+    .locals 3
 
-    new-instance v0, Lcom/google/android/play/core/assetpacks/bq;
+    iget v0, p0, Lcom/google/android/play/core/assetpacks/bs;->e:I
 
-    invoke-direct {v0}, Lcom/google/android/play/core/assetpacks/bq;-><init>()V
+    const/4 v1, 0x1
 
-    return-object v0
+    add-int/2addr v0, v1
+
+    iget v2, p0, Lcom/google/android/play/core/assetpacks/bs;->f:I
+
+    if-ne v0, v2, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

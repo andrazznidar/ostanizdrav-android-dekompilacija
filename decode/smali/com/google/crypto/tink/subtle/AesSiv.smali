@@ -157,7 +157,7 @@
 
     const-string v1, "invalid key size: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -165,7 +165,7 @@
 
     const-string v2, " bytes; key must have 64 bytes"
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -275,7 +275,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->isAndroid()Z
+    invoke-static {}, Lcom/google/android/material/R$style;->isAndroid()Z
 
     move-result p1
 
@@ -296,7 +296,7 @@
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
+    invoke-static {v3, p1}, Lcom/google/android/material/R$style;->equal([B[B)Z
 
     move-result p1
 
@@ -424,7 +424,7 @@
 
     aput-object p1, v0, p2
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->concat([[B)[B
+    invoke-static {v0}, Lcom/google/android/material/R$style;->concat([[B)[B
 
     move-result-object p1
 
@@ -503,7 +503,7 @@
     aget-object v3, p1, v2
 
     :goto_1
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
+    invoke-static {v0}, Lcom/google/android/material/R$style;->dbl([B)[B
 
     move-result-object v0
 
@@ -513,7 +513,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
+    invoke-static {v0, v3}, Lcom/google/android/material/R$style;->xor([B[B)[B
 
     move-result-object v0
 
@@ -583,15 +583,15 @@
     throw p1
 
     :cond_4
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->cmacPad([B)[B
+    invoke-static {p1}, Lcom/google/android/material/R$style;->cmacPad([B)[B
 
     move-result-object p1
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
+    invoke-static {v0}, Lcom/google/android/material/R$style;->dbl([B)[B
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
+    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->xor([B[B)[B
 
     move-result-object p1
 

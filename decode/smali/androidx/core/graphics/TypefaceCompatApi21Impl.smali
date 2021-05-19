@@ -259,7 +259,7 @@
 
     aget-object v4, p2, v2
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v5
 
@@ -271,7 +271,7 @@
     :try_start_1
     iget v6, v4, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
 
-    invoke-static {v5, p3, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
+    invoke-static {v5, p3, v6}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
 
     move-result v6
     :try_end_1

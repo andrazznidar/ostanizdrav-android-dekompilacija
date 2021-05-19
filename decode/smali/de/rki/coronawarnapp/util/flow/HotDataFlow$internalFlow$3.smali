@@ -77,11 +77,13 @@
 
     sget-object p3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
-    const/4 p3, 0x0
+    instance-of p3, p2, Ljava/util/concurrent/CancellationException;
 
-    if-eqz p2, :cond_0
+    const/4 v0, 0x0
+
+    if-eqz p3, :cond_0
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
 
@@ -89,22 +91,39 @@
 
     move-result-object p1
 
-    new-array p3, p3, [Ljava/lang/Object;
+    new-array p2, v0, [Ljava/lang/Object;
 
-    const-string v0, "internal onCompletion due to error"
+    const-string p3, "internal onCompletion due to cancelation"
 
-    invoke-virtual {p1, p2, v0, p3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, p3, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
+    if-eqz p2, :cond_1
+
     iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
 
     invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     move-result-object p1
 
-    new-array p2, p3, [Ljava/lang/Object;
+    new-array p3, v0, [Ljava/lang/Object;
+
+    const-string v0, "internal onCompletion due to error"
+
+    invoke-virtual {p1, p2, v0, p3}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
+
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object p1
+
+    new-array p2, v0, [Ljava/lang/Object;
 
     const-string p3, "internal onCompletion"
 
@@ -119,33 +138,18 @@
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalFlow$3;->L$0:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Throwable;
 
-    const/4 v0, 0x0
+    instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    if-eqz p1, :cond_0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalFlow$3;->this$0:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
+    if-eqz v0, :cond_0
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
-
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const-string v2, "internal onCompletion due to error"
-
-    invoke-virtual {v1, p1, v2, v0}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
     iget-object p1, p0, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalFlow$3;->this$0:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
@@ -154,7 +158,43 @@
 
     move-result-object p1
 
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
+
+    const-string v1, "internal onCompletion due to cancelation"
+
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalFlow$3;->this$0:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
+
+    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v2, "internal onCompletion due to error"
+
+    invoke-virtual {v0, p1, v2, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/util/flow/HotDataFlow$internalFlow$3;->this$0:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->tag:Ljava/lang/String;
+
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object p1
+
+    new-array v0, v1, [Ljava/lang/Object;
 
     const-string v1, "internal onCompletion"
 

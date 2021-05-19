@@ -1,4 +1,4 @@
-.class public final Landroidx/navigation/NavType$1;
+.class public Landroidx/navigation/NavType$1;
 .super Landroidx/navigation/NavType;
 .source "NavType.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

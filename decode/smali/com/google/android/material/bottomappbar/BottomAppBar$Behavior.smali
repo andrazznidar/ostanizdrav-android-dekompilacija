@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$Behavior;->viewRef:Ljava/lang/ref/WeakReference;
 
-    invoke-static {p2}, Lcom/google/android/material/bottomappbar/BottomAppBar;->access$1700(Lcom/google/android/material/bottomappbar/BottomAppBar;)Landroid/view/View;
+    invoke-static {p2}, Lcom/google/android/material/bottomappbar/BottomAppBar;->access$2800(Lcom/google/android/material/bottomappbar/BottomAppBar;)Landroid/view/View;
 
     move-result-object v0
 
@@ -172,46 +172,39 @@
 .end method
 
 .method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
-    .locals 7
+    .locals 0
 
-    move-object v2, p2
+    check-cast p2, Lcom/google/android/material/bottomappbar/BottomAppBar;
 
-    check-cast v2, Lcom/google/android/material/bottomappbar/BottomAppBar;
-
-    invoke-virtual {v2}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getHideOnScroll()Z
-
-    move-result p2
-
-    const/4 v6, 0x0
-
-    if-eqz p2, :cond_1
-
-    if-nez p6, :cond_0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
+    invoke-virtual {p2}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getHideOnScroll()Z
 
     move-result p1
+
+    const/4 p2, 0x1
+
+    const/4 p3, 0x0
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x2
+
+    if-ne p5, p1, :cond_0
+
+    move p1, p2
 
     goto :goto_0
 
     :cond_0
-    move p1, v6
+    move p1, p3
 
     :goto_0
     if-eqz p1, :cond_1
 
-    const/4 v6, 0x1
+    goto :goto_1
 
     :cond_1
-    return v6
+    move p2, p3
+
+    :goto_1
+    return p2
 .end method

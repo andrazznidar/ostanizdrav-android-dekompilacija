@@ -18,11 +18,12 @@
     f = "DataReset.kt"
     l = {
         0x5f,
+        0x43,
+        0x46,
+        0x47,
+        0x48,
         0x4b,
-        0x4c,
-        0x4d,
-        0x50,
-        0x54
+        0x52
     }
     m = "clearAllLocalData"
 .end annotation

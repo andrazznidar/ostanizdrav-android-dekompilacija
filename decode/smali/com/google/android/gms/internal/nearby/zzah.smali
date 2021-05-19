@@ -1,112 +1,35 @@
-.class public final synthetic Lcom/google/android/gms/internal/nearby/zzah;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/nearby/zzah;
+.super Lcom/google/android/gms/internal/nearby/zzdn;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/internal/nearby/zzt;
-
-.field public final zzb:Ljava/util/List;
-
-.field public final zzc:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-.field public final zzd:Ljava/lang/String;
+.field public final synthetic zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzah;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzah;->zza:Lcom/google/android/gms/internal/nearby/zzt;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzb:Ljava/util/List;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzc:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
-
-    iput-object p4, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzd:Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzdn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final then(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;
-    .locals 8
+.method public final zzb(Lcom/google/android/gms/common/api/Status;J)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzah;->zza:Lcom/google/android/gms/internal/nearby/zzt;
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzb:Ljava/util/List;
+    move-result-object p2
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzc:Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+    iget-object p3, p0, Lcom/google/android/gms/internal/nearby/zzah;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/nearby/zzah;->zzd:Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/airbnb/lottie/R$attr;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    const-wide v6, 0x4016bb0c4L
-
-    cmp-long p1, v4, v6
-
-    if-ltz p1, :cond_0
-
-    new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;
-
-    invoke-direct {p1, v1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;-><init>(Ljava/util/List;)V
-
-    invoke-virtual {v0, p1, v2, v3}, Lcom/google/android/gms/internal/nearby/zzt;->zza(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)Lcom/google/android/gms/tasks/Task;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
-
-    move-result-object p1
-
-    new-instance v4, Lcom/google/android/gms/internal/nearby/zzad;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lcom/google/android/gms/internal/nearby/zzad;-><init>(Lcom/google/android/gms/internal/nearby/zzt;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
-
-    iput-object v4, p1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
-
-    const/4 v1, 0x1
-
-    new-array v2, v1, [Lcom/google/android/gms/common/Feature;
-
-    const/4 v3, 0x0
-
-    sget-object v4, Lcom/google/android/gms/nearby/zza;->zzb:Lcom/google/android/gms/common/Feature;
-
-    aput-object v4, v2, v3
-
-    iput-object v2, p1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/common/api/GoogleApi;->zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
-
-    move-result-object p1
-
-    :goto_0
-    return-object p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method

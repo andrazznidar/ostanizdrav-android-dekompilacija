@@ -3,6 +3,11 @@
 .source "FabTransformationScrimBehavior.java"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # instance fields
 .field public final collapseTiming:Lcom/google/android/material/animation/MotionTiming;
 
@@ -161,7 +166,7 @@
 
     invoke-direct {p4}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p4, p1}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p4, p1}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     new-instance p1, Lcom/google/android/material/transformation/FabTransformationScrimBehavior$1;
 

@@ -23,24 +23,9 @@
 
     iput-object p6, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    if-eqz p6, :cond_0
-
-    iput-object p0, p6, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
-    if-eqz p8, :cond_1
-
-    iput-object p0, p8, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_1
     iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
-    if-eqz p9, :cond_2
-
-    iput-object p0, p9, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_2
     return-void
 .end method

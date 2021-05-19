@@ -63,9 +63,7 @@
 
     move-result-object v1
 
-    sget v2, Landroidx/appcompat/R$styleable;->TextAppearance_android_textSize:I
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, v0, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v2
 

@@ -12,7 +12,6 @@
         Landroidx/databinding/ViewDataBinding$OnStartListener;,
         Landroidx/databinding/ViewDataBinding$IncludedLayouts;,
         Landroidx/databinding/ViewDataBinding$CreateWeakListener;,
-        Landroidx/databinding/ViewDataBinding$LiveDataListener;,
         Landroidx/databinding/ViewDataBinding$WeakListener;,
         Landroidx/databinding/ViewDataBinding$ObservableReference;
     }
@@ -323,7 +322,7 @@
 
     if-eqz v0, :cond_0
 
-    sget v1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v1, 0x7f09015b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1052,46 +1051,6 @@
 .method public abstract invalidateAll()V
 .end method
 
-.method public abstract onFieldChange(ILjava/lang/Object;I)Z
-.end method
-
-.method public registerTo(ILjava/lang/Object;Landroidx/databinding/ViewDataBinding$CreateWeakListener;)V
-    .locals 1
-
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding;->mLocalFieldObservers:[Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    aget-object v0, v0, p1
-
-    if-nez v0, :cond_0
-
-    invoke-interface {p3, p0, p1}, Landroidx/databinding/ViewDataBinding$CreateWeakListener;->create(Landroidx/databinding/ViewDataBinding;I)Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    move-result-object v0
-
-    iget-object p3, p0, Landroidx/databinding/ViewDataBinding;->mLocalFieldObservers:[Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    aput-object v0, p3, p1
-
-    iget-object p1, p0, Landroidx/databinding/ViewDataBinding;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
-
-    if-eqz p1, :cond_0
-
-    iget-object p3, v0, Landroidx/databinding/ViewDataBinding$WeakListener;->mObservable:Landroidx/databinding/ViewDataBinding$ObservableReference;
-
-    invoke-interface {p3, p1}, Landroidx/databinding/ViewDataBinding$ObservableReference;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
-
-    :cond_0
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding$WeakListener;->unregister()Z
-
-    iput-object p2, v0, Landroidx/databinding/ViewDataBinding$WeakListener;->mTarget:Ljava/lang/Object;
-
-    iget-object p1, v0, Landroidx/databinding/ViewDataBinding$WeakListener;->mObservable:Landroidx/databinding/ViewDataBinding$ObservableReference;
-
-    invoke-interface {p1, p2}, Landroidx/databinding/ViewDataBinding$ObservableReference;->addListener(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
 .method public requestRebind()V
     .locals 3
 
@@ -1268,7 +1227,7 @@
 .end method
 
 .method public updateLiveDataRegistration(ILandroidx/lifecycle/LiveData;)Z
-    .locals 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1277,76 +1236,39 @@
         }
     .end annotation
 
-    const/4 v0, 0x1
+    const/4 p2, 0x1
 
-    iput-boolean v0, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
+    iput-boolean p2, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
     :try_start_0
-    sget-object v2, Landroidx/databinding/ViewDataBinding;->CREATE_LIVE_DATA_LISTENER:Landroidx/databinding/ViewDataBinding$CreateWeakListener;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding;->mLocalFieldObservers:[Landroidx/databinding/ViewDataBinding$WeakListener;
 
-    if-nez p2, :cond_1
-
-    iget-object p2, p0, Landroidx/databinding/ViewDataBinding;->mLocalFieldObservers:[Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    aget-object p1, p2, p1
+    aget-object p1, v0, p1
 
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroidx/databinding/ViewDataBinding$WeakListener;->unregister()Z
 
     move-result p1
-
-    move v0, p1
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v3, p0, Landroidx/databinding/ViewDataBinding;->mLocalFieldObservers:[Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    aget-object v4, v3, p1
-
-    if-nez v4, :cond_2
-
-    invoke-virtual {p0, p1, p2, v2}, Landroidx/databinding/ViewDataBinding;->registerTo(ILjava/lang/Object;Landroidx/databinding/ViewDataBinding$CreateWeakListener;)V
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v4, v4, Landroidx/databinding/ViewDataBinding$WeakListener;->mTarget:Ljava/lang/Object;
-
-    if-ne v4, p2, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    aget-object v3, v3, p1
-
-    if-eqz v3, :cond_4
-
-    invoke-virtual {v3}, Landroidx/databinding/ViewDataBinding$WeakListener;->unregister()Z
-
-    :cond_4
-    invoke-virtual {p0, p1, p2, v2}, Landroidx/databinding/ViewDataBinding;->registerTo(ILjava/lang/Object;Landroidx/databinding/ViewDataBinding$CreateWeakListener;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_1
-    iput-boolean v1, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
+    goto :goto_0
 
-    return v0
+    :cond_0
+    move p1, p2
+
+    :goto_0
+    iput-boolean p2, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
+
+    return p1
 
     :catchall_0
     move-exception p1
 
-    iput-boolean v1, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
+    iput-boolean p2, p0, Landroidx/databinding/ViewDataBinding;->mInLiveDataRegisterObserver:Z
 
     throw p1
 .end method

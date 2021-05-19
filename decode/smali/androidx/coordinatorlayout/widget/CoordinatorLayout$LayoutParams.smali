@@ -118,15 +118,13 @@
 
     move-result-object v2
 
-    sget v3, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_android_layout_gravity:I
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v2, v0, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
 
     move-result v3
 
     iput v3, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->gravity:I
 
-    sget v3, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_anchor:I
+    const/4 v3, 0x1
 
     invoke-virtual {v2, v3, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -134,7 +132,7 @@
 
     iput v3, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mAnchorId:I
 
-    sget v3, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_anchorGravity:I
+    const/4 v3, 0x2
 
     invoke-virtual {v2, v3, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
 
@@ -142,7 +140,7 @@
 
     iput v3, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->anchorGravity:I
 
-    sget v3, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_keyline:I
+    const/4 v3, 0x6
 
     invoke-virtual {v2, v3, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
@@ -150,7 +148,7 @@
 
     iput v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->keyline:I
 
-    sget v1, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_insetEdge:I
+    const/4 v1, 0x5
 
     invoke-virtual {v2, v1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -158,7 +156,7 @@
 
     iput v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->insetEdge:I
 
-    sget v1, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_dodgeInsetEdges:I
+    const/4 v1, 0x4
 
     invoke-virtual {v2, v1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -166,17 +164,15 @@
 
     iput v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->dodgeInsetEdges:I
 
-    sget v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_behavior:I
+    const/4 v0, 0x3
 
     invoke-virtual {v2, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v0
+    move-result v1
 
-    iput-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorResolved:Z
+    iput-boolean v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorResolved:Z
 
-    if-eqz v0, :cond_0
-
-    sget v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_Layout_layout_behavior:I
+    if-eqz v1, :cond_0
 
     invoke-virtual {v2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 

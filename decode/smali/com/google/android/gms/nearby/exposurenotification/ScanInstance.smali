@@ -5,6 +5,9 @@
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -27,9 +30,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzn;
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzo;
 
-    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzn;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzo;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -52,7 +55,7 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 4
 
     const/4 v0, 0x1
@@ -104,7 +107,7 @@
     return v1
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 3
 
     const/4 v0, 0x3
@@ -148,8 +151,10 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 5
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->zza:I
 
@@ -192,10 +197,14 @@
     return-object v0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
@@ -203,21 +212,21 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->zzb:I
 
-    iget v1, p0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->zzb:I
+    const/4 v1, 0x2
 
-    invoke-static {p1, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
-    const/4 v0, 0x3
+    iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->zzc:I
 
-    iget v1, p0, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->zzc:I
+    const/4 v1, 0x3
 
-    invoke-static {p1, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -164,17 +164,17 @@
 .end method
 
 .method public final dispatchAnimationFinished(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
-    .locals 4
+    .locals 8
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->mListener:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemAnimatorListener;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_6
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$ItemAnimatorRestoreListener;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_5
 
     const/4 v2, 0x1
 
@@ -201,29 +201,95 @@
 
     if-eqz v1, :cond_1
 
+    move v1, v2
+
     goto :goto_0
 
     :cond_1
-    move v2, v3
+    move v1, v3
 
     :goto_0
-    if-nez v2, :cond_3
+    if-nez v1, :cond_6
 
     iget-object v1, v0, Landroidx/recyclerview/widget/RecyclerView$ItemAnimatorRestoreListener;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    iget-object v2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v4, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->removeAnimatingView(Landroid/view/View;)Z
+    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->startInterceptRequestLayout()V
 
-    move-result v1
+    iget-object v5, v1, Landroidx/recyclerview/widget/RecyclerView;->mChildHelper:Landroidx/recyclerview/widget/ChildHelper;
 
-    if-nez v1, :cond_3
+    iget-object v6, v5, Landroidx/recyclerview/widget/ChildHelper;->mCallback:Landroidx/recyclerview/widget/ChildHelper$Callback;
+
+    check-cast v6, Landroidx/recyclerview/widget/RecyclerView$5;
+
+    iget-object v6, v6, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {v6, v4}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+
+    move-result v6
+
+    const/4 v7, -0x1
+
+    if-ne v6, v7, :cond_2
+
+    invoke-virtual {v5, v4}, Landroidx/recyclerview/widget/ChildHelper;->unhideViewInternal(Landroid/view/View;)Z
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v7, v5, Landroidx/recyclerview/widget/ChildHelper;->mBucket:Landroidx/recyclerview/widget/ChildHelper$Bucket;
+
+    invoke-virtual {v7, v6}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->get(I)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    iget-object v7, v5, Landroidx/recyclerview/widget/ChildHelper;->mBucket:Landroidx/recyclerview/widget/ChildHelper$Bucket;
+
+    invoke-virtual {v7, v6}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->remove(I)Z
+
+    invoke-virtual {v5, v4}, Landroidx/recyclerview/widget/ChildHelper;->unhideViewInternal(Landroid/view/View;)Z
+
+    iget-object v5, v5, Landroidx/recyclerview/widget/ChildHelper;->mCallback:Landroidx/recyclerview/widget/ChildHelper$Callback;
+
+    check-cast v5, Landroidx/recyclerview/widget/RecyclerView$5;
+
+    invoke-virtual {v5, v6}, Landroidx/recyclerview/widget/RecyclerView$5;->removeViewAt(I)V
+
+    goto :goto_1
+
+    :cond_3
+    move v2, v3
+
+    :goto_1
+    if-eqz v2, :cond_4
+
+    invoke-static {v4}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    move-result-object v4
+
+    iget-object v5, v1, Landroidx/recyclerview/widget/RecyclerView;->mRecycler:Landroidx/recyclerview/widget/RecyclerView$Recycler;
+
+    invoke-virtual {v5, v4}, Landroidx/recyclerview/widget/RecyclerView$Recycler;->unscrapView(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+
+    iget-object v5, v1, Landroidx/recyclerview/widget/RecyclerView;->mRecycler:Landroidx/recyclerview/widget/RecyclerView$Recycler;
+
+    invoke-virtual {v5, v4}, Landroidx/recyclerview/widget/RecyclerView$Recycler;->recycleViewHolderInternal(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+
+    :cond_4
+    xor-int/lit8 v4, v2, 0x1
+
+    invoke-virtual {v1, v4}, Landroidx/recyclerview/widget/RecyclerView;->stopInterceptRequestLayout(Z)V
+
+    if-nez v2, :cond_6
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isTmpDetached()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_6
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ItemAnimatorRestoreListener;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -231,13 +297,13 @@
 
     invoke-virtual {v0, p1, v3}, Landroidx/recyclerview/widget/RecyclerView;->removeDetachedView(Landroid/view/View;Z)V
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_2
+    :cond_5
     throw v1
 
-    :cond_3
-    :goto_1
+    :cond_6
+    :goto_2
     return-void
 .end method
 

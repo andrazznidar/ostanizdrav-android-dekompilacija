@@ -343,7 +343,7 @@
 .end method
 
 .method public initializeAttributes(Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 4
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -355,54 +355,52 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/zxing/client/android/R$styleable;->zxing_camera_preview_zxing_framing_rect_width:I
+    const/4 v0, 0x1
 
     const/high16 v1, -0x40800000    # -1.0f
 
     invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    move-result v0
+    move-result v2
 
-    float-to-int v0, v0
+    float-to-int v2, v2
 
-    sget v2, Lcom/google/zxing/client/android/R$styleable;->zxing_camera_preview_zxing_framing_rect_height:I
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v2, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {p1, v3, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v1
 
     float-to-int v1, v1
 
-    if-lez v0, :cond_0
+    if-lez v2, :cond_0
 
     if-lez v1, :cond_0
 
-    new-instance v2, Lcom/journeyapps/barcodescanner/Size;
+    new-instance v3, Lcom/journeyapps/barcodescanner/Size;
 
-    invoke-direct {v2, v0, v1}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
+    invoke-direct {v3, v2, v1}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
 
-    iput-object v2, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
+    iput-object v3, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->framingRectSize:Lcom/journeyapps/barcodescanner/Size;
 
     :cond_0
-    sget v0, Lcom/google/zxing/client/android/R$styleable;->zxing_camera_preview_zxing_use_texture_view:I
+    const/4 v1, 0x3
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    move-result v2
 
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->useTextureView:Z
-
-    sget v0, Lcom/google/zxing/client/android/R$styleable;->zxing_camera_preview_zxing_preview_scaling_strategy:I
+    iput-boolean v2, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->useTextureView:Z
 
     const/4 v2, -0x1
 
-    invoke-virtual {p1, v0, v2}, Landroid/content/res/TypedArray;->getInteger(II)I
+    const/4 v3, 0x2
 
-    move-result v0
+    invoke-virtual {p1, v3, v2}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    if-ne v0, v1, :cond_1
+    move-result v2
+
+    if-ne v2, v0, :cond_1
 
     new-instance v0, Lcom/journeyapps/barcodescanner/camera/CenterCropStrategy;
 
@@ -413,9 +411,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_2
+    if-ne v2, v3, :cond_2
 
     new-instance v0, Lcom/journeyapps/barcodescanner/camera/FitCenterStrategy;
 
@@ -426,9 +422,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_3
+    if-ne v2, v1, :cond_3
 
     new-instance v0, Lcom/journeyapps/barcodescanner/camera/FitXYStrategy;
 
@@ -555,7 +549,7 @@
 
     const/4 p2, 0x0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-boolean p3, p1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -575,7 +569,7 @@
 
     if-eqz p3, :cond_0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-boolean p2, p3, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -720,7 +714,7 @@
 .method public pause()V
     .locals 4
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
 
@@ -738,7 +732,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-boolean v2, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -771,7 +765,7 @@
     :cond_1
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->stateHandler:Landroid/os/Handler;
 
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_camera_closed:I
+    const v2, 0x7f09056e
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
@@ -841,7 +835,7 @@
 .method public resume()V
     .locals 5
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
 
@@ -889,7 +883,7 @@
 
     iput-object v1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     const/4 v1, 0x1
 
@@ -1130,7 +1124,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-boolean v1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 
@@ -1177,7 +1171,7 @@
 
     iput-object p1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->surface:Lcom/journeyapps/barcodescanner/camera/CameraSurface;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iget-boolean p1, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
 

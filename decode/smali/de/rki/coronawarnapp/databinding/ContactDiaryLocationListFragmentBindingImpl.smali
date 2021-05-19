@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900e7
+    const v1, 0x7f090112
 
     const/4 v2, 0x1
 
@@ -31,7 +31,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900e3
+    const v1, 0x7f09010e
 
     const/4 v2, 0x2
 
@@ -39,7 +39,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900e4
+    const v1, 0x7f09010f
 
     const/4 v2, 0x3
 
@@ -47,7 +47,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900e6
+    const v1, 0x7f090111
 
     const/4 v2, 0x4
 
@@ -55,7 +55,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900e5
+    const v1, 0x7f090110
 
     const/4 v2, 0x5
 
@@ -91,7 +91,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Landroid/widget/ImageView;
+    check-cast v8, Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 v1, 0x5
 
@@ -125,7 +125,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Group;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Group;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;)V
 
     const-wide/16 v3, -0x1
 
@@ -141,7 +141,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -240,12 +240,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

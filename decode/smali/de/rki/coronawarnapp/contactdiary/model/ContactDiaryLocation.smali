@@ -7,8 +7,14 @@
 
 
 # virtual methods
+.method public abstract getEmailAddress()Ljava/lang/String;
+.end method
+
 .method public abstract getLocationId()J
 .end method
 
 .method public abstract getLocationName()Ljava/lang/String;
+.end method
+
+.method public abstract getPhoneNumber()Ljava/lang/String;
 .end method

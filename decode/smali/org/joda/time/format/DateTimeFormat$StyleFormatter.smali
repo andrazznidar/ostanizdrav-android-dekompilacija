@@ -112,59 +112,9 @@
 
     check-cast v1, Lorg/joda/time/format/DateTimeFormatter;
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_1
 
-    iget v1, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iType:I
-
-    if-eqz v1, :cond_3
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_2
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_1
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    iget v1, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iDateStyle:I
-
-    iget v2, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iTimeStyle:I
-
-    invoke-static {v1, v2, p1}, Ljava/text/DateFormat;->getDateTimeInstance(IILjava/util/Locale;)Ljava/text/DateFormat;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    iget v1, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iTimeStyle:I
-
-    invoke-static {v1, p1}, Ljava/text/DateFormat;->getTimeInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_3
-    iget v1, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iDateStyle:I
-
-    invoke-static {v1, p1}, Ljava/text/DateFormat;->getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
-
-    move-result-object v1
-
-    :goto_0
-    instance-of v2, v1, Ljava/text/SimpleDateFormat;
-
-    if-eqz v2, :cond_4
-
-    check-cast v1, Ljava/text/SimpleDateFormat;
-
-    invoke-virtual {v1}, Ljava/text/SimpleDateFormat;->toPattern()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->getPattern(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -180,13 +130,74 @@
 
     check-cast p1, Lorg/joda/time/format/DateTimeFormatter;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_1
 
     move-object v1, p1
 
-    goto :goto_1
+    :cond_1
+    return-object v1
+.end method
 
-    :cond_4
+.method public getPattern(Ljava/util/Locale;)Ljava/lang/String;
+    .locals 3
+
+    iget v0, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iType:I
+
+    if-eqz v0, :cond_2
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    iget v0, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iDateStyle:I
+
+    iget v1, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iTimeStyle:I
+
+    invoke-static {v0, v1, p1}, Ljava/text/DateFormat;->getDateTimeInstance(IILjava/util/Locale;)Ljava/text/DateFormat;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_1
+    iget v0, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iTimeStyle:I
+
+    invoke-static {v0, p1}, Ljava/text/DateFormat;->getTimeInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lorg/joda/time/format/DateTimeFormat$StyleFormatter;->iDateStyle:I
+
+    invoke-static {v0, p1}, Ljava/text/DateFormat;->getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+
+    move-result-object v0
+
+    :goto_0
+    instance-of v1, v0, Ljava/text/SimpleDateFormat;
+
+    if-eqz v1, :cond_3
+
+    check-cast v0, Ljava/text/SimpleDateFormat;
+
+    invoke-virtual {v0}, Ljava/text/SimpleDateFormat;->toPattern()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -206,10 +217,6 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_5
-    :goto_1
-    return-object v1
 .end method
 
 .method public parseInto(Lorg/joda/time/format/DateTimeParserBucket;Ljava/lang/CharSequence;I)I

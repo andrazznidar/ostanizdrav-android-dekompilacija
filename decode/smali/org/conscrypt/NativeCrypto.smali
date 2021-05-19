@@ -591,8 +591,16 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/crypto/ShortBufferException;,
-            Ljavax/crypto/BadPaddingException;,
-            Ljava/lang/IndexOutOfBoundsException;
+            Ljavax/crypto/BadPaddingException;
+        }
+    .end annotation
+.end method
+
+.method public static native EVP_AEAD_CTX_open_buf(J[BILjava/nio/ByteBuffer;[BLjava/nio/ByteBuffer;[B)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/crypto/ShortBufferException;,
+            Ljavax/crypto/BadPaddingException;
         }
     .end annotation
 .end method
@@ -601,8 +609,16 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/crypto/ShortBufferException;,
-            Ljavax/crypto/BadPaddingException;,
-            Ljava/lang/IndexOutOfBoundsException;
+            Ljavax/crypto/BadPaddingException;
+        }
+    .end annotation
+.end method
+
+.method public static native EVP_AEAD_CTX_seal_buf(J[BILjava/nio/ByteBuffer;[BLjava/nio/ByteBuffer;[B)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/crypto/ShortBufferException;,
+            Ljavax/crypto/BadPaddingException;
         }
     .end annotation
 .end method
@@ -1639,7 +1655,7 @@
 
     const-string v2, "cipherSuite "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1647,7 +1663,7 @@
 
     const-string v0, " is not supported."
 
-    invoke-static {v2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1668,7 +1684,7 @@
 
     const-string v2, "] == null"
 
-    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1754,7 +1770,7 @@
 
     const-string v1, " is not supported"
 
-    invoke-static {v0, v2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1931,7 +1947,7 @@
 
     const-string v1, "Unknown protocol encountered: "
 
-    invoke-static {v1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

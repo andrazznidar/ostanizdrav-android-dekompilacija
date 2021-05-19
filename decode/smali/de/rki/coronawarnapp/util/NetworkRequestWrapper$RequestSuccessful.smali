@@ -45,6 +45,10 @@
         }
     .end annotation
 
+    const-string v0, "data"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -116,7 +120,7 @@
 
     const-string v0, "RequestSuccessful(data="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

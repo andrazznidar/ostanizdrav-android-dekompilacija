@@ -115,7 +115,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
+    invoke-static {p1}, Lcom/google/android/material/R$style;->validate(Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;)V
 
     return-void
 .end method

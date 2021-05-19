@@ -4,19 +4,19 @@
 
 
 # direct methods
-.method public static $load1()Ljava/util/Iterator;
+.method public static $load$kotlinx$coroutines$CoroutineExceptionHandlerImplKt$$clinit$-163931$$0()Ljava/util/Iterator;
     .locals 3
 
     const/4 v0, 0x1
 
     :try_start_0
-    new-array v0, v0, [Lkotlinx/coroutines/internal/MainDispatcherFactory;
+    new-array v0, v0, [Lkotlinx/coroutines/CoroutineExceptionHandler;
 
     const/4 v1, 0x0
 
-    new-instance v2, Lkotlinx/coroutines/android/AndroidDispatcherFactory;
+    new-instance v2, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;
 
-    invoke-direct {v2}, Lkotlinx/coroutines/android/AndroidDispatcherFactory;-><init>()V
+    invoke-direct {v2}, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;-><init>()V
 
     aput-object v2, v0, v1
 
@@ -46,19 +46,19 @@
     throw v1
 .end method
 
-.method public static $load2()Ljava/util/Iterator;
+.method public static $load$kotlinx$coroutines$internal$MainDispatcherLoader$loadMainDispatcher$-159772$$0()Ljava/util/Iterator;
     .locals 3
 
     const/4 v0, 0x1
 
     :try_start_0
-    new-array v0, v0, [Lkotlinx/coroutines/CoroutineExceptionHandler;
+    new-array v0, v0, [Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
     const/4 v1, 0x0
 
-    new-instance v2, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;
+    new-instance v2, Lkotlinx/coroutines/android/AndroidDispatcherFactory;
 
-    invoke-direct {v2}, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;-><init>()V
+    invoke-direct {v2}, Lkotlinx/coroutines/android/AndroidDispatcherFactory;-><init>()V
 
     aput-object v2, v0, v1
 

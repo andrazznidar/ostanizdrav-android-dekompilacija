@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInformationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationFragment.kt\nde/rki/coronawarnapp/ui/information/InformationFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,116:1\n11#2,9:117\n16#3,11:126\n*E\n*S KotlinDebug\n*F\n+ 1 InformationFragment.kt\nde/rki/coronawarnapp/ui/information/InformationFragment\n*L\n31#1,9:117\n33#1,11:126\n*E\n"
+    value = "SMAP\nInformationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InformationFragment.kt\nde/rki/coronawarnapp/ui/information/InformationFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,130:1\n11#2,9:131\n16#3,11:140\n*E\n*S KotlinDebug\n*F\n+ 1 InformationFragment.kt\nde/rki/coronawarnapp/ui/information/InformationFragment\n*L\n32#1,9:131\n34#1,11:140\n*E\n"
 .end annotation
 
 
@@ -40,7 +40,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c0040
+    const v0, 0x7f0c0049
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -88,7 +88,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -127,14 +127,6 @@
     check-cast v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;
 
     return-object v0
-.end method
-
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    return-void
 .end method
 
 .method public onResume()V
@@ -180,7 +172,7 @@
 
     invoke-direct {p2, v0, p0}, L-$$LambdaGroup$ks$elcWUGeiXg0Sk-TzvSXG7XnRJBY;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragment;->vm$delegate:Lkotlin/Lazy;
 
@@ -198,7 +190,7 @@
 
     invoke-direct {p2, v1, p0}, L-$$LambdaGroup$ks$elcWUGeiXg0Sk-TzvSXG7XnRJBY;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/information/InformationFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;
 
@@ -220,9 +212,9 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -234,9 +226,9 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
-    invoke-direct {p2, v1, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v1, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -248,11 +240,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x2
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -264,11 +256,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x3
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -280,11 +272,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x4
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -296,11 +288,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x5
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -312,11 +304,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x6
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -330,11 +322,27 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
 
     const/4 v0, 0x7
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$dCrn-y3gjKB1xvvYtKDUBhHwh_s;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/information/InformationFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationRelease:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    new-instance p2, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;
+
+    const/16 v0, 0x8
+
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$aipq2qtK3HhiwVvvNFqAo_MYhS8;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

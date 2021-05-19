@@ -74,21 +74,9 @@
 
     new-instance v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
 
-    const-string v2, "INT_FED"
-
-    const/4 v3, 0x2
-
-    const-string v4, "INT-FED"
-
-    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    aput-object v1, v0, v3
-
-    new-instance v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
-
     const-string v2, "DEV"
 
-    const/4 v3, 0x3
+    const/4 v3, 0x2
 
     invoke-direct {v1, v2, v3, v2}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -98,7 +86,7 @@
 
     const-string v2, "WRU"
 
-    const/4 v3, 0x4
+    const/4 v3, 0x3
 
     invoke-direct {v1, v2, v3, v2}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -108,7 +96,7 @@
 
     const-string v2, "WRU_XA"
 
-    const/4 v3, 0x5
+    const/4 v3, 0x4
 
     const-string v4, "WRU-XA"
 
@@ -120,11 +108,21 @@
 
     const-string v2, "WRU_XD"
 
-    const/4 v3, 0x6
+    const/4 v3, 0x5
 
     const-string v4, "WRU-XD"
 
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;
+
+    const-string v2, "LOCAL"
+
+    const/4 v3, 0x6
+
+    invoke-direct {v1, v2, v3, v2}, Lde/rki/coronawarnapp/environment/EnvironmentSetup$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     aput-object v1, v0, v3
 

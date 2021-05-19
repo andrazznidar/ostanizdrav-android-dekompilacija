@@ -3,14 +3,14 @@
 .source "DefaultRiskLevelStorage_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;",
         ">;"
     }
@@ -38,9 +38,19 @@
     .end annotation
 .end field
 
+.field public final scopeProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lkotlinx/coroutines/CoroutineScope;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,6 +60,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lkotlinx/coroutines/CoroutineScope;",
             ">;)V"
         }
     .end annotation
@@ -60,13 +73,15 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage_Factory;->riskLevelResultMigratorProvider:Ljavax/inject/Provider;
 
+    iput-object p3, p0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage_Factory;->scopeProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage_Factory;->riskResultDatabaseFactoryProvider:Ljavax/inject/Provider;
 
@@ -84,9 +99,17 @@
 
     check-cast v1, Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;
 
-    new-instance v2, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage_Factory;->scopeProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;)V
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    return-object v2
+    move-result-object v2
+
+    check-cast v2, Lkotlinx/coroutines/CoroutineScope;
+
+    new-instance v3, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;
+
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;Lkotlinx/coroutines/CoroutineScope;)V
+
+    return-object v3
 .end method

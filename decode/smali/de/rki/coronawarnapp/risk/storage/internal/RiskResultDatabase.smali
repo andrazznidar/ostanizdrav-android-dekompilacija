@@ -8,6 +8,7 @@
     value = {
         Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;,
         Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;,
+        Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;,
         Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;
     }
 .end annotation

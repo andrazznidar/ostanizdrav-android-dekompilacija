@@ -127,7 +127,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
+    invoke-static {v1, v0}, Landroidx/core/app/AppOpsManagerCompat;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
     const-string v1, "}}"
 

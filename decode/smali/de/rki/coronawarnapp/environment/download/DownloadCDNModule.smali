@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

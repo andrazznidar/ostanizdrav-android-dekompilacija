@@ -70,7 +70,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Landroidx/fragment/app/FragmentManager;)V
-    .locals 5
+    .locals 6
 
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -88,20 +88,18 @@
 
     move-result-object v2
 
+    const/4 v3, 0x0
+
     if-nez v1, :cond_0
 
-    sget v1, Landroidx/fragment/R$styleable;->FragmentContainerView_android_name:I
-
-    invoke-virtual {v2, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     :cond_0
-    sget v3, Landroidx/fragment/R$styleable;->FragmentContainerView_android_tag:I
+    invoke-virtual {v2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
+    move-result-object v4
 
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -111,19 +109,19 @@
 
     invoke-virtual {p3, v2}, Landroidx/fragment/app/FragmentManager;->findFragmentById(I)Landroidx/fragment/app/Fragment;
 
-    move-result-object v4
+    move-result-object v5
 
     if-eqz v1, :cond_4
 
-    if-nez v4, :cond_4
+    if-nez v5, :cond_4
 
     if-gtz v2, :cond_2
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
     const-string p1, " with tag "
 
-    invoke-static {p1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -137,7 +135,7 @@
 
     const-string p3, "FragmentContainerView must have an android:id to add Fragment "
 
-    invoke-static {p3, v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -152,9 +150,9 @@
 
     invoke-virtual {p1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v2, v4, v1}, Landroidx/fragment/app/FragmentFactory;->instantiate(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    invoke-virtual {v2, v5, v1}, Landroidx/fragment/app/FragmentFactory;->instantiate(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
     move-result-object v1
 
@@ -174,15 +172,13 @@
 
     move-result p2
 
-    invoke-virtual {p1, p2, v1, v3, v0}, Landroidx/fragment/app/FragmentTransaction;->doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
+    invoke-virtual {p1, p2, v1, v4, v0}, Landroidx/fragment/app/FragmentTransaction;->doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
 
     iget-boolean p2, p1, Landroidx/fragment/app/FragmentTransaction;->mAddToBackStack:Z
 
     if-nez p2, :cond_3
 
-    const/4 p2, 0x0
-
-    iput-boolean p2, p1, Landroidx/fragment/app/FragmentTransaction;->mAllowAddToBackStack:Z
+    iput-boolean v3, p1, Landroidx/fragment/app/FragmentTransaction;->mAllowAddToBackStack:Z
 
     iget-object p2, p1, Landroidx/fragment/app/BackStackRecord;->mManager:Landroidx/fragment/app/FragmentManager;
 
@@ -246,33 +242,19 @@
 .end method
 
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .locals 2
+    .locals 1
 
-    sget v0, Landroidx/fragment/R$id;->fragment_container_view_tag:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/fragment/app/FragmentManager;->getViewFragment(Landroid/view/View;)Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
-    instance-of v1, v0, Landroidx/fragment/app/Fragment;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Landroidx/fragment/app/Fragment;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    :cond_1
+    :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -299,27 +281,13 @@
 .end method
 
 .method public addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
-    .locals 2
+    .locals 1
 
-    sget v0, Landroidx/fragment/R$id;->fragment_container_view_tag:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/fragment/app/FragmentManager;->getViewFragment(Landroid/view/View;)Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
-    instance-of v1, v0, Landroidx/fragment/app/Fragment;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Landroidx/fragment/app/Fragment;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
 
@@ -327,7 +295,7 @@
 
     return p1
 
-    :cond_1
+    :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;

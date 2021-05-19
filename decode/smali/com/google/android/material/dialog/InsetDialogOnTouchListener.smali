@@ -121,42 +121,51 @@
     :cond_0
     invoke-static {p2}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object p2
+    move-result-object v0
 
-    const/4 v0, 0x4
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    invoke-virtual {p2, v0}, Landroid/view/MotionEvent;->setAction(I)V
+    move-result p2
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v2, 0x1
 
-    const/16 v2, 0x1c
+    if-ne p2, v2, :cond_1
 
-    if-ge v0, v2, :cond_1
+    const/4 p2, 0x4
 
-    invoke-virtual {p2, v1}, Landroid/view/MotionEvent;->setAction(I)V
+    invoke-virtual {v0, p2}, Landroid/view/MotionEvent;->setAction(I)V
 
-    iget v0, p0, Lcom/google/android/material/dialog/InsetDialogOnTouchListener;->prePieSlop:I
+    :cond_1
+    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    neg-int v1, v0
+    const/16 v3, 0x1c
 
-    add-int/lit8 v1, v1, -0x1
+    if-ge p2, v3, :cond_2
+
+    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->setAction(I)V
+
+    iget p2, p0, Lcom/google/android/material/dialog/InsetDialogOnTouchListener;->prePieSlop:I
+
+    neg-int v1, p2
+
+    sub-int/2addr v1, v2
 
     int-to-float v1, v1
 
-    neg-int v0, v0
+    neg-int p2, p2
 
-    add-int/lit8 v0, v0, -0x1
+    sub-int/2addr p2, v2
 
-    int-to-float v0, v0
+    int-to-float p2, p2
 
-    invoke-virtual {p2, v1, v0}, Landroid/view/MotionEvent;->setLocation(FF)V
+    invoke-virtual {v0, v1, p2}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    :cond_1
+    :cond_2
     invoke-virtual {p1}, Landroid/view/View;->performClick()Z
 
     iget-object p1, p0, Lcom/google/android/material/dialog/InsetDialogOnTouchListener;->dialog:Landroid/app/Dialog;
 
-    invoke-virtual {p1, p2}, Landroid/app/Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p1, v0}, Landroid/app/Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 

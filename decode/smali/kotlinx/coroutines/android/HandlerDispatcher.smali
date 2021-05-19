@@ -28,7 +28,7 @@
 .method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
     .locals 0
 
-    invoke-static {p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
+    invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/client/android/R$id;->invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p1
 

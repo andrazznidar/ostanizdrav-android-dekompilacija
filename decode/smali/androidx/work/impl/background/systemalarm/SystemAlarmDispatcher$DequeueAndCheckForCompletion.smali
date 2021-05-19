@@ -24,6 +24,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "dispatcher"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

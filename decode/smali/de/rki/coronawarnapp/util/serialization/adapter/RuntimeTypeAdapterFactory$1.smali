@@ -62,7 +62,7 @@
         }
     .end annotation
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-static {p1}, Lcom/google/android/material/R$style;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object p1
 
@@ -70,7 +70,7 @@
 
     iget-boolean v0, v0, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;->maintainType:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/JsonElement;->getAsJsonObject()Lcom/google/gson/JsonObject;
 
@@ -80,27 +80,13 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;->typeFieldName:Ljava/lang/String;
 
-    iget-object v0, v0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
-
-    invoke-virtual {v0, v1}, Lcom/google/gson/internal/LinkedTreeMap;->findByObject(Ljava/lang/Object;)Lcom/google/gson/internal/LinkedTreeMap$Node;
+    invoke-virtual {v0, v1}, Lcom/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/google/gson/JsonElement;
 
     move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v0, Lcom/google/gson/internal/LinkedTreeMap$Node;->value:Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    check-cast v0, Lcom/google/gson/JsonElement;
-
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p1}, Lcom/google/gson/JsonElement;->getAsJsonObject()Lcom/google/gson/JsonObject;
 
     move-result-object v0
@@ -117,10 +103,10 @@
 
     check-cast v0, Lcom/google/gson/JsonElement;
 
-    :goto_1
+    :goto_0
     const-string v1, "cannot deserialize "
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsString()Ljava/lang/String;
 
@@ -134,7 +120,7 @@
 
     check-cast v2, Lcom/google/gson/TypeAdapter;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     :try_start_0
     new-instance v0, Lcom/google/gson/internal/bind/JsonTreeReader;
@@ -158,10 +144,10 @@
 
     throw v0
 
-    :cond_2
+    :cond_1
     new-instance p1, Lcom/google/gson/JsonParseException;
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -189,10 +175,10 @@
 
     throw p1
 
-    :cond_3
+    :cond_2
     new-instance p1, Lcom/google/gson/JsonParseException;
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -367,7 +353,7 @@
     :cond_3
     new-instance p1, Lcom/google/gson/JsonParseException;
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -398,21 +384,13 @@
     :cond_4
     new-instance p1, Lcom/google/gson/JsonParseException;
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v1, "; did you forget to register a subtype?"
 
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "; did you forget to register a subtype?"
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

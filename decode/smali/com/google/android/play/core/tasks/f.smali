@@ -24,6 +24,9 @@
 .field public final b:Ljava/lang/Object;
 
 .field public final c:Lcom/google/android/play/core/tasks/OnSuccessListener;
+    .annotation build Landroid/support/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/play/core/tasks/OnSuccessListener<",
@@ -85,8 +88,13 @@
     :try_start_0
     iget-object v1, p0, Lcom/google/android/play/core/tasks/f;->c:Lcom/google/android/play/core/tasks/OnSuccessListener;
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -101,15 +109,10 @@
 
     return-void
 
-    :cond_0
-    :try_start_1
-    monitor-exit v0
-
-    return-void
-
     :catchall_0
     move-exception p1
 
+    :try_start_1
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

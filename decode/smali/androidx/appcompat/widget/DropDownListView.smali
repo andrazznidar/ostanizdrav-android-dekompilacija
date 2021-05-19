@@ -46,11 +46,11 @@
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 2
 
-    sget v0, Landroidx/appcompat/R$attr;->dropDownListViewStyle:I
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const v1, 0x7f04012f
 
-    invoke-direct {p0, p1, v1, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, v0, v1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     new-instance p1, Landroid/graphics/Rect;
 
@@ -289,10 +289,6 @@
     invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingBottom()I
 
     move-result v1
-
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingLeft()I
-
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingRight()I
 
     invoke-virtual {p0}, Landroid/widget/ListView;->getDividerHeight()I
 

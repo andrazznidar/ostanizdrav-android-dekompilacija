@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.task.TaskController$toRunningState$1$1"
     f = "TaskController.kt"
     l = {
-        0xe9
+        0xec
     }
     m = "invokeSuspend"
 .end annotation
@@ -116,7 +116,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -130,7 +130,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1$1;->this$0:Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;
 

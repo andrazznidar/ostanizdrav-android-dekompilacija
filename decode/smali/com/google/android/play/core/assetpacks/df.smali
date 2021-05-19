@@ -3,39 +3,39 @@
 
 
 # static fields
-.field public static final a:Lcom/google/android/play/core/internal/aa;
+.field public static final a:Lcom/google/android/play/core/internal/ag;
 
 
 # instance fields
-.field public final b:Lcom/google/android/play/core/assetpacks/bc;
+.field public final b:Lcom/google/android/play/core/assetpacks/bb;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lcom/google/android/play/core/internal/aa;
+    new-instance v0, Lcom/google/android/play/core/internal/ag;
 
     const-string v1, "MergeSliceTaskHandler"
 
-    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/aa;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/ag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/df;->a:Lcom/google/android/play/core/internal/aa;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/df;->a:Lcom/google/android/play/core/internal/ag;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/play/core/assetpacks/bc;)V
+.method public constructor <init>(Lcom/google/android/play/core/assetpacks/bb;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bc;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bb;
 
     return-void
 .end method
 
-.method public static a(Ljava/io/File;Ljava/io/File;)V
+.method public static b(Ljava/io/File;Ljava/io/File;)V
     .locals 6
 
     invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
@@ -67,7 +67,7 @@
 
     invoke-direct {v4, p1, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-static {v3, v4}, Lcom/google/android/play/core/assetpacks/df;->a(Ljava/io/File;Ljava/io/File;)V
+    invoke-static {v3, v4}, Lcom/google/android/play/core/assetpacks/df;->b(Ljava/io/File;Ljava/io/File;)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -83,7 +83,7 @@
     goto :goto_1
 
     :cond_1
-    new-instance p1, Lcom/google/android/play/core/assetpacks/by;
+    new-instance p1, Lcom/google/android/play/core/assetpacks/bv;
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -101,11 +101,11 @@
 
     const-string v0, "Unable to delete directory: "
 
-    invoke-static {v1, v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Lcom/google/android/play/core/assetpacks/by;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p0}, Lcom/google/android/play/core/assetpacks/bv;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -126,7 +126,7 @@
     return-void
 
     :cond_3
-    new-instance p1, Lcom/google/android/play/core/assetpacks/by;
+    new-instance p1, Lcom/google/android/play/core/assetpacks/bv;
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -144,16 +144,16 @@
 
     const-string v0, "Unable to move file: "
 
-    invoke-static {v1, v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Lcom/google/android/play/core/assetpacks/by;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p0}, Lcom/google/android/play/core/assetpacks/bv;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_4
-    new-instance p0, Lcom/google/android/play/core/assetpacks/by;
+    new-instance p0, Lcom/google/android/play/core/assetpacks/bv;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -171,11 +171,11 @@
 
     const-string v0, "File clashing with existing file from other slice: "
 
-    invoke-static {v1, v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Lcom/google/android/play/core/assetpacks/by;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/google/android/play/core/assetpacks/bv;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -185,9 +185,9 @@
 .method public final a(Lcom/google/android/play/core/assetpacks/de;)V
     .locals 10
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bb;
 
-    iget-object v1, p1, Lcom/google/android/play/core/assetpacks/ct;->k:Ljava/lang/String;
+    iget-object v1, p1, Lcom/google/android/play/core/assetpacks/cr;->k:Ljava/lang/String;
 
     iget v2, p1, Lcom/google/android/play/core/assetpacks/de;->a:I
 
@@ -195,7 +195,7 @@
 
     iget-object v5, p1, Lcom/google/android/play/core/assetpacks/de;->c:Ljava/lang/String;
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/play/core/assetpacks/bc;->b(Ljava/lang/String;IJLjava/lang/String;)Ljava/io/File;
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/play/core/assetpacks/bb;->i(Ljava/lang/String;IJLjava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
@@ -209,15 +209,15 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bb;
 
-    iget-object v4, p1, Lcom/google/android/play/core/assetpacks/ct;->k:Ljava/lang/String;
+    iget-object v4, p1, Lcom/google/android/play/core/assetpacks/cr;->k:Ljava/lang/String;
 
     iget v5, p1, Lcom/google/android/play/core/assetpacks/de;->a:I
 
     iget-wide v6, p1, Lcom/google/android/play/core/assetpacks/de;->b:J
 
-    invoke-virtual {v1, v4, v5, v6, v7}, Lcom/google/android/play/core/assetpacks/bc;->c(Ljava/lang/String;IJ)Ljava/io/File;
+    invoke-virtual {v1, v4, v5, v6, v7}, Lcom/google/android/play/core/assetpacks/bb;->j(Ljava/lang/String;IJ)Ljava/io/File;
 
     move-result-object v1
 
@@ -230,24 +230,24 @@
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     :cond_0
-    invoke-static {v0, v1}, Lcom/google/android/play/core/assetpacks/df;->a(Ljava/io/File;Ljava/io/File;)V
+    invoke-static {v0, v1}, Lcom/google/android/play/core/assetpacks/df;->b(Ljava/io/File;Ljava/io/File;)V
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bb;
 
-    iget-object v1, p1, Lcom/google/android/play/core/assetpacks/ct;->k:Ljava/lang/String;
+    iget-object v1, p1, Lcom/google/android/play/core/assetpacks/cr;->k:Ljava/lang/String;
 
     iget v4, p1, Lcom/google/android/play/core/assetpacks/de;->a:I
 
     iget-wide v5, p1, Lcom/google/android/play/core/assetpacks/de;->b:J
 
-    invoke-virtual {v0, v1, v4, v5, v6}, Lcom/google/android/play/core/assetpacks/bc;->d(Ljava/lang/String;IJ)I
+    invoke-virtual {v0, v1, v4, v5, v6}, Lcom/google/android/play/core/assetpacks/bb;->k(Ljava/lang/String;IJ)I
 
     move-result v0
 
-    iget-object v4, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v4, p0, Lcom/google/android/play/core/assetpacks/df;->b:Lcom/google/android/play/core/assetpacks/bb;
 
-    iget-object v5, p1, Lcom/google/android/play/core/assetpacks/ct;->k:Ljava/lang/String;
+    iget-object v5, p1, Lcom/google/android/play/core/assetpacks/cr;->k:Ljava/lang/String;
 
     iget v6, p1, Lcom/google/android/play/core/assetpacks/de;->a:I
 
@@ -255,7 +255,7 @@
 
     add-int/lit8 v9, v0, 0x1
 
-    invoke-virtual/range {v4 .. v9}, Lcom/google/android/play/core/assetpacks/bc;->a(Ljava/lang/String;IJI)V
+    invoke-virtual/range {v4 .. v9}, Lcom/google/android/play/core/assetpacks/bb;->l(Ljava/lang/String;IJI)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -264,7 +264,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/df;->a:Lcom/google/android/play/core/internal/aa;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/df;->a:Lcom/google/android/play/core/internal/ag;
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -278,20 +278,20 @@
 
     const-string v4, "Writing merge checkpoint failed with %s."
 
-    invoke-virtual {v1, v3, v4, v2}, Lcom/google/android/play/core/internal/aa;->a(ILjava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v3, v4, v2}, Lcom/google/android/play/core/internal/ag;->f(ILjava/lang/String;[Ljava/lang/Object;)I
 
-    new-instance v1, Lcom/google/android/play/core/assetpacks/by;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/bv;
 
-    iget p1, p1, Lcom/google/android/play/core/assetpacks/ct;->j:I
+    iget p1, p1, Lcom/google/android/play/core/assetpacks/cr;->j:I
 
     const-string v2, "Writing merge checkpoint failed."
 
-    invoke-direct {v1, v2, v0, p1}, Lcom/google/android/play/core/assetpacks/by;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
+    invoke-direct {v1, v2, v0, p1}, Lcom/google/android/play/core/assetpacks/bv;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
 
     throw v1
 
     :cond_1
-    new-instance v0, Lcom/google/android/play/core/assetpacks/by;
+    new-instance v0, Lcom/google/android/play/core/assetpacks/bv;
 
     new-array v1, v2, [Ljava/lang/Object;
 
@@ -305,9 +305,9 @@
 
     move-result-object v1
 
-    iget p1, p1, Lcom/google/android/play/core/assetpacks/ct;->j:I
+    iget p1, p1, Lcom/google/android/play/core/assetpacks/cr;->j:I
 
-    invoke-direct {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/by;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/bv;-><init>(Ljava/lang/String;I)V
 
     throw v0
 .end method

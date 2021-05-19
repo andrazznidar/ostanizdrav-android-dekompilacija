@@ -325,57 +325,33 @@
     .locals 0
 
     :try_start_0
-    new-instance p1, Landroid/graphics/fonts/FontFamily$Builder;
+    new-instance p1, Landroid/graphics/fonts/Font$Builder;
 
-    new-instance p4, Landroid/graphics/fonts/Font$Builder;
+    invoke-direct {p1, p2, p3}, Landroid/graphics/fonts/Font$Builder;-><init>(Landroid/content/res/Resources;I)V
 
-    invoke-direct {p4, p2, p3}, Landroid/graphics/fonts/Font$Builder;-><init>(Landroid/content/res/Resources;I)V
-
-    invoke-virtual {p4}, Landroid/graphics/fonts/Font$Builder;->build()Landroid/graphics/fonts/Font;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Landroid/graphics/fonts/FontFamily$Builder;-><init>(Landroid/graphics/fonts/Font;)V
-
-    invoke-virtual {p1}, Landroid/graphics/fonts/FontFamily$Builder;->build()Landroid/graphics/fonts/FontFamily;
+    invoke-virtual {p1}, Landroid/graphics/fonts/Font$Builder;->build()Landroid/graphics/fonts/Font;
 
     move-result-object p1
+
+    new-instance p2, Landroid/graphics/fonts/FontFamily$Builder;
+
+    invoke-direct {p2, p1}, Landroid/graphics/fonts/FontFamily$Builder;-><init>(Landroid/graphics/fonts/Font;)V
+
+    invoke-virtual {p2}, Landroid/graphics/fonts/FontFamily$Builder;->build()Landroid/graphics/fonts/FontFamily;
+
+    move-result-object p2
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance p2, Landroid/graphics/fonts/FontStyle;
-
-    and-int/lit8 p3, p5, 0x1
-
-    if-eqz p3, :cond_0
-
-    const/16 p3, 0x2bc
-
-    goto :goto_0
-
-    :cond_0
-    const/16 p3, 0x190
-
-    :goto_0
-    and-int/lit8 p4, p5, 0x2
-
-    if-eqz p4, :cond_1
-
-    const/4 p4, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p4, 0x0
-
-    :goto_1
-    invoke-direct {p2, p3, p4}, Landroid/graphics/fonts/FontStyle;-><init>(II)V
-
     new-instance p3, Landroid/graphics/Typeface$CustomFallbackBuilder;
 
-    invoke-direct {p3, p1}, Landroid/graphics/Typeface$CustomFallbackBuilder;-><init>(Landroid/graphics/fonts/FontFamily;)V
+    invoke-direct {p3, p2}, Landroid/graphics/Typeface$CustomFallbackBuilder;-><init>(Landroid/graphics/fonts/FontFamily;)V
 
-    invoke-virtual {p3, p2}, Landroid/graphics/Typeface$CustomFallbackBuilder;->setStyle(Landroid/graphics/fonts/FontStyle;)Landroid/graphics/Typeface$CustomFallbackBuilder;
+    invoke-virtual {p1}, Landroid/graphics/fonts/Font;->getStyle()Landroid/graphics/fonts/FontStyle;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p1}, Landroid/graphics/Typeface$CustomFallbackBuilder;->setStyle(Landroid/graphics/fonts/FontStyle;)Landroid/graphics/Typeface$CustomFallbackBuilder;
 
     move-result-object p1
 

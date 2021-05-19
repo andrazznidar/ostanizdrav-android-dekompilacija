@@ -36,7 +36,7 @@
 .method public getDefaultMotionSpecResource()I
     .locals 1
 
-    sget v0, Lcom/google/android/material/R$animator;->mtrl_extended_fab_hide_motion_spec:I
+    const v0, 0x7f020008
 
     return v0
 .end method
@@ -141,7 +141,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
 
-    invoke-static {v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->access$900(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)Z
+    invoke-static {v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->access$800(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)Z
 
     move-result v0
 

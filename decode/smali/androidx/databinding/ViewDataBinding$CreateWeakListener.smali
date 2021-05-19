@@ -12,8 +12,3 @@
     accessFlags = 0x609
     name = "CreateWeakListener"
 .end annotation
-
-
-# virtual methods
-.method public abstract create(Landroidx/databinding/ViewDataBinding;I)Landroidx/databinding/ViewDataBinding$WeakListener;
-.end method

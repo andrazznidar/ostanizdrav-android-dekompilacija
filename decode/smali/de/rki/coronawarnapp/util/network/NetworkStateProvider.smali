@@ -10,10 +10,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkStateProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkStateProvider.kt\nde/rki/coronawarnapp/util/network/NetworkStateProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,97:1\n1#2:98\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final appScope:Lkotlinx/coroutines/CoroutineScope;
@@ -71,7 +67,7 @@
 
     invoke-direct {p1, p0, p2}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider$networkState$1;-><init>(Lde/rki/coronawarnapp/util/network/NetworkStateProvider;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->callbackFlow(Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->callbackFlow(Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -81,7 +77,7 @@
 
     const/4 v0, 0x4
 
-    invoke-static {p1, p4, p3, p2, v0}, Landroidx/transition/ViewGroupUtilsApi14;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p1, p4, p3, p2, v0}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -91,7 +87,7 @@
 .end method
 
 .method public static final access$getCurrentState$p(Lde/rki/coronawarnapp/util/network/NetworkStateProvider;)Lde/rki/coronawarnapp/util/network/NetworkStateProvider$State;
-    .locals 4
+    .locals 8
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider;->getManager()Landroid/net/ConnectivityManager;
 
@@ -103,33 +99,72 @@
 
     const/4 v1, 0x0
 
+    const-string v2, "NetworkStateProvider"
+
+    const/4 v3, 0x0
+
     if-eqz v0, :cond_0
 
+    :try_start_0
     invoke-virtual {p0}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider;->getManager()Landroid/net/ConnectivityManager;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2, v0}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
+    invoke-virtual {v4, v0}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
 
-    move-result-object v2
+    move-result-object v4
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    :catch_0
+    move-exception v4
+
+    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v5
+
+    new-array v6, v1, [Ljava/lang/Object;
+
+    const-string v7, "Failed to determine network capabilities."
+
+    invoke-virtual {v5, v4, v7, v6}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
     :cond_0
-    move-object v2, v1
+    move-object v4, v3
 
     :goto_0
     if-eqz v0, :cond_1
 
+    :try_start_1
     invoke-virtual {p0}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider;->getManager()Landroid/net/ConnectivityManager;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-virtual {v1, v0}, Landroid/net/ConnectivityManager;->getLinkProperties(Landroid/net/Network;)Landroid/net/LinkProperties;
+    invoke-virtual {v5, v0}, Landroid/net/ConnectivityManager;->getLinkProperties(Landroid/net/Network;)Landroid/net/LinkProperties;
 
-    move-result-object v1
+    move-result-object v3
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v5
+
+    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v6, "Failed to determine link properties."
+
+    invoke-virtual {v2, v5, v6, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_1
+    :goto_1
     iget-object p0, p0, Lde/rki/coronawarnapp/util/network/NetworkStateProvider;->testSettings:Lde/rki/coronawarnapp/storage/TestSettings;
 
     iget-object p0, p0, Lde/rki/coronawarnapp/storage/TestSettings;->fakeMeteredConnection:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
@@ -144,11 +179,11 @@
 
     move-result p0
 
-    new-instance v3, Lde/rki/coronawarnapp/util/network/NetworkStateProvider$State;
+    new-instance v1, Lde/rki/coronawarnapp/util/network/NetworkStateProvider$State;
 
-    invoke-direct {v3, v0, v2, v1, p0}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider$State;-><init>(Landroid/net/Network;Landroid/net/NetworkCapabilities;Landroid/net/LinkProperties;Z)V
+    invoke-direct {v1, v0, v4, v3, p0}, Lde/rki/coronawarnapp/util/network/NetworkStateProvider$State;-><init>(Landroid/net/Network;Landroid/net/NetworkCapabilities;Landroid/net/LinkProperties;Z)V
 
-    return-object v3
+    return-object v1
 .end method
 
 

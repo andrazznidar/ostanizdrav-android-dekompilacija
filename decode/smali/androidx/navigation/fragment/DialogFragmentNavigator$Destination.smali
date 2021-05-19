@@ -56,7 +56,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/navigation/fragment/R$styleable;->DialogFragmentNavigator_android_name:I
+    const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 

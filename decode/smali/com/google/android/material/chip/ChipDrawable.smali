@@ -28,6 +28,8 @@
 
 .field public checkedIcon:Landroid/graphics/drawable/Drawable;
 
+.field public checkedIconTint:Landroid/content/res/ColorStateList;
+
 .field public checkedIconVisible:Z
 
 .field public chipBackgroundColor:Landroid/content/res/ColorStateList;
@@ -194,6 +196,10 @@
     move-result-object p2
 
     invoke-direct {p0, p2}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
+
+    const/high16 p2, -0x40800000    # -1.0f
+
+    iput p2, p0, Lcom/google/android/material/chip/ChipDrawable;->chipCornerRadius:F
 
     new-instance p2, Landroid/graphics/Paint;
 
@@ -1786,7 +1792,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -2557,7 +2563,7 @@
 
     iget-object v3, p0, Lcom/google/android/material/chip/ChipDrawable;->tintMode:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {p0, v0, v3}, Landroidx/transition/ViewGroupUtilsApi14;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {p0, v0, v3}, Lcom/google/android/material/R$style;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object v0
 
@@ -2787,6 +2793,52 @@
     return-void
 .end method
 
+.method public setCheckedIconTint(Landroid/content/res/ColorStateList;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->checkedIconTint:Landroid/content/res/ColorStateList;
+
+    if-eq v0, p1, :cond_2
+
+    iput-object p1, p0, Lcom/google/android/material/chip/ChipDrawable;->checkedIconTint:Landroid/content/res/ColorStateList;
+
+    iget-boolean v0, p0, Lcom/google/android/material/chip/ChipDrawable;->checkedIconVisible:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->checkedIcon:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/google/android/material/chip/ChipDrawable;->checkable:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->checkedIcon:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/material/chip/ChipDrawable;->onStateChange([I)Z
+
+    :cond_2
+    return-void
+.end method
+
 .method public setCheckedIconVisible(Z)V
     .locals 1
 
@@ -2916,7 +2968,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -3671,7 +3723,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/chip/ChipDrawable;->tint:Landroid/content/res/ColorStateList;
 
-    invoke-static {p0, v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {p0, v0, p1}, Lcom/google/android/material/R$style;->updateTintFilter(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object p1
 

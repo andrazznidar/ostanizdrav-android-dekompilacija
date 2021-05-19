@@ -50,7 +50,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p1, p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->createTransactionContext(Landroidx/room/RoomDatabase;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Landroidx/navigation/ui/R$anim;->createTransactionContext(Landroidx/room/RoomDatabase;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

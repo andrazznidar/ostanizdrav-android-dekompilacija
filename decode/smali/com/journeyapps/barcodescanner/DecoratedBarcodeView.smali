@@ -38,9 +38,9 @@
 
     move-result-object p1
 
-    sget v0, Lcom/google/zxing/client/android/R$styleable;->zxing_view_zxing_scanner_layout:I
+    const/4 v0, 0x0
 
-    sget v1, Lcom/google/zxing/client/android/R$layout;->zxing_barcode_scanner:I
+    const v1, 0x7f0c012b
 
     invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -54,7 +54,7 @@
 
     invoke-static {p1, v0, p0}, Landroid/widget/FrameLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    sget p1, Lcom/google/zxing/client/android/R$id;->zxing_barcode_surface:I
+    const p1, 0x7f09056d
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -68,7 +68,7 @@
 
     invoke-virtual {p1, p2}, Lcom/journeyapps/barcodescanner/CameraPreview;->initializeAttributes(Landroid/util/AttributeSet;)V
 
-    sget p1, Lcom/google/zxing/client/android/R$id;->zxing_viewfinder_view:I
+    const p1, 0x7f090577
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, p2}, Lcom/journeyapps/barcodescanner/ViewfinderView;->setCameraPreview(Lcom/journeyapps/barcodescanner/CameraPreview;)V
 
-    sget p1, Lcom/google/zxing/client/android/R$id;->zxing_status_view:I
+    const p1, 0x7f090576
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +120,7 @@
 .method public getBarcodeView()Lcom/journeyapps/barcodescanner/BarcodeView;
     .locals 1
 
-    sget v0, Lcom/google/zxing/client/android/R$id;->zxing_barcode_surface:I
+    const v0, 0x7f09056d
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

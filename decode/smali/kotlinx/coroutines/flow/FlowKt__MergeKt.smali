@@ -25,7 +25,7 @@
 
     const v3, 0x7fffffff
 
-    invoke-static {v0, v1, v2, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->systemProp(Ljava/lang/String;III)I
+    invoke-static {v0, v1, v2, v3}, Lcom/google/zxing/client/android/R$id;->systemProp(Ljava/lang/String;III)I
 
     move-result v0
 
@@ -122,7 +122,7 @@
     :cond_2
     const-string p0, "Expected positive concurrency level, but had "
 
-    invoke-static {p0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 

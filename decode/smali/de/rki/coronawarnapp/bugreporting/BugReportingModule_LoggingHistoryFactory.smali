@@ -3,14 +3,14 @@
 .source "BugReportingModule_LoggingHistoryFactory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Ltimber/log/Timber$Tree;",
         ">;"
     }
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/bugreporting/BugReportingModule_LoggingHistoryFactory;->module:Lde/rki/coronawarnapp/bugreporting/BugReportingModule;
 
@@ -45,9 +45,7 @@
 
     invoke-direct {v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingModule$loggingHistory$1;-><init>()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 

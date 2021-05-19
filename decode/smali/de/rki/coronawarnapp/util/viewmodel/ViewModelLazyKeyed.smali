@@ -118,11 +118,11 @@
 
 # virtual methods
 .method public getValue()Ljava/lang/Object;
-    .locals 4
+    .locals 6
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->cached:Landroidx/lifecycle/ViewModel;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->factoryProducer:Lkotlin/jvm/functions/Function0;
 
@@ -158,48 +158,100 @@
     const-string v2, "androidx.lifecycle.ViewModelProvider.DefaultKey"
 
     :goto_0
-    new-instance v3, Landroidx/lifecycle/ViewModelProvider;
+    const-string v3, ":"
 
-    invoke-direct {v3, v1, v0}, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;)V
+    invoke-static {v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ":"
+    move-result-object v2
 
-    invoke-static {v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->viewModelClass:Lkotlin/reflect/KClass;
+
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->viewModelClass:Lkotlin/reflect/KClass;
+
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+
+    move-result-object v3
+
+    iget-object v4, v1, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
+
+    invoke-virtual {v4, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/lifecycle/ViewModel;
+
+    invoke-virtual {v3, v4}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    instance-of v1, v0, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
+
+    invoke-virtual {v0, v4}, Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;->onRequery(Landroidx/lifecycle/ViewModel;)V
+
+    :cond_1
+    move-object v0, v4
+
+    goto :goto_2
+
+    :cond_2
+    instance-of v4, v0, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
+
+    if-eqz v4, :cond_3
+
+    check-cast v0, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;
+
+    invoke-virtual {v0, v2, v3}, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;->create(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->viewModelClass:Lkotlin/reflect/KClass;
+    goto :goto_1
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_3
+    invoke-interface {v0, v3}, Landroidx/lifecycle/ViewModelProvider$Factory;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->viewModelClass:Lkotlin/reflect/KClass;
+    :goto_1
+    iget-object v1, v1, Landroidx/lifecycle/ViewModelStore;->mMap:Ljava/util/HashMap;
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v3, v0, v1}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+    check-cast v1, Landroidx/lifecycle/ViewModel;
 
-    move-result-object v0
+    if-eqz v1, :cond_4
 
+    invoke-virtual {v1}, Landroidx/lifecycle/ViewModel;->onCleared()V
+
+    :cond_4
+    :goto_2
     iput-object v0, p0, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyed;->cached:Landroidx/lifecycle/ViewModel;
 
     const-string v1, "ViewModelProvider(store,\u2026ed = it\n                }"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_1
+    :cond_5
     return-object v0
 .end method

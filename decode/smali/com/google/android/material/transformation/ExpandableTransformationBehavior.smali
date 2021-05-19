@@ -3,6 +3,11 @@
 .source "ExpandableTransformationBehavior.java"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # instance fields
 .field public currentAnimation:Landroid/animation/AnimatorSet;
 

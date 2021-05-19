@@ -175,7 +175,7 @@
 
     check-cast v0, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -189,7 +189,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->p$:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -199,7 +199,7 @@
 
     const/4 v4, 0x6
 
-    invoke-static {v1, v3, v3, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {v1, v3, v3, v4}, Lcom/google/zxing/client/android/R$id;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v1
 
@@ -223,7 +223,7 @@
 
     iget-object v3, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->$db:Landroidx/room/RoomDatabase;
 
-    invoke-static {v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {v3}, Landroidx/navigation/ui/R$anim;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object v3
 
@@ -232,7 +232,7 @@
     :cond_2
     iget-object v3, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->$db:Landroidx/room/RoomDatabase;
 
-    invoke-static {v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {v3}, Landroidx/navigation/ui/R$anim;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object v3
 
@@ -269,7 +269,7 @@
 
     iput v2, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->label:I
 
-    invoke-static {v12, v13, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v12, v13, p0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

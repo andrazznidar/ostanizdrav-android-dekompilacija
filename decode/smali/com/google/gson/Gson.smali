@@ -816,6 +816,116 @@
     throw p2
 .end method
 
+.method public fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "TT;>;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/gson/JsonSyntaxException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_0
+
+    const-class p2, Ljava/lang/Integer;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_1
+
+    const-class p2, Ljava/lang/Float;
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_2
+
+    const-class p2, Ljava/lang/Byte;
+
+    goto :goto_0
+
+    :cond_2
+    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_3
+
+    const-class p2, Ljava/lang/Double;
+
+    goto :goto_0
+
+    :cond_3
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_4
+
+    const-class p2, Ljava/lang/Long;
+
+    goto :goto_0
+
+    :cond_4
+    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_5
+
+    const-class p2, Ljava/lang/Character;
+
+    goto :goto_0
+
+    :cond_5
+    sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_6
+
+    const-class p2, Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    :cond_6
+    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_7
+
+    const-class p2, Ljava/lang/Short;
+
+    goto :goto_0
+
+    :cond_7
+    sget-object v0, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+
+    if-ne p2, v0, :cond_8
+
+    const-class p2, Ljava/lang/Void;
+
+    :cond_8
+    :goto_0
+    invoke-virtual {p2, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

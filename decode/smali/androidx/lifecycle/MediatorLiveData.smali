@@ -108,7 +108,9 @@
 
     if-eqz p1, :cond_3
 
-    invoke-virtual {v0}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
+    iget-object p1, v0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V
 
     :cond_3
     return-void
@@ -146,7 +148,9 @@
 
     check-cast v1, Landroidx/lifecycle/MediatorLiveData$Source;
 
-    invoke-virtual {v1}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
+    iget-object v2, v1, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
+
+    invoke-virtual {v2, v1}, Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V
 
     goto :goto_0
 

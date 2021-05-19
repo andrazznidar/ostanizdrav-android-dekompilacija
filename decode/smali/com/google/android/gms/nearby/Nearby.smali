@@ -6,6 +6,10 @@
 # direct methods
 .method public static zza(Landroid/content/Context;)Z
     .locals 2
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-static {p0}, Lcom/google/android/gms/common/wrappers/Wrappers;->packageManager(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
@@ -19,6 +23,8 @@
 
     move-result v0
 
+    const/4 v1, 0x1
+
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -27,14 +33,12 @@
 
     const-string v0, "gms:nearby:requires_gms_check"
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/internal/nearby/zznj;->zza(Landroid/content/ContentResolver;Ljava/lang/String;)Z
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/internal/nearby/zznk;->zza(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    const/4 p0, 0x1
-
-    return p0
+    return v1
 .end method

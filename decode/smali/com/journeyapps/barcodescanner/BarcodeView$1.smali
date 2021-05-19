@@ -41,11 +41,11 @@
 
     iget v1, p1, Landroid/os/Message;->what:I
 
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_decode_succeeded:I
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const v3, 0x7f090572
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v3, :cond_1
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -55,23 +55,23 @@
 
     iget-object v1, p0, Lcom/journeyapps/barcodescanner/BarcodeView$1;->this$0:Lcom/journeyapps/barcodescanner/BarcodeView;
 
-    iget-object v2, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->callback:Lcom/journeyapps/barcodescanner/BarcodeCallback;
+    iget-object v3, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->callback:Lcom/journeyapps/barcodescanner/BarcodeCallback;
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     iget-object v1, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
 
     if-eq v1, v0, :cond_0
 
-    invoke-interface {v2, p1}, Lcom/journeyapps/barcodescanner/BarcodeCallback;->barcodeResult(Lcom/journeyapps/barcodescanner/BarcodeResult;)V
+    invoke-interface {v3, p1}, Lcom/journeyapps/barcodescanner/BarcodeCallback;->barcodeResult(Lcom/journeyapps/barcodescanner/BarcodeResult;)V
 
     iget-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView$1;->this$0:Lcom/journeyapps/barcodescanner/BarcodeView;
 
     iget-object v1, p1, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
 
-    sget-object v2, Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;->SINGLE:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+    sget-object v3, Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;->SINGLE:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v3, :cond_0
 
     iput-object v0, p1, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
 
@@ -82,19 +82,19 @@
     invoke-virtual {p1}, Lcom/journeyapps/barcodescanner/BarcodeView;->stopDecoderThread()V
 
     :cond_0
-    return v3
+    return v2
 
     :cond_1
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_decode_failed:I
+    const v3, 0x7f090571
 
-    if-ne v1, v2, :cond_2
+    if-ne v1, v3, :cond_2
 
-    return v3
+    return v2
 
     :cond_2
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_possible_result_points:I
+    const v3, 0x7f090573
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v3, :cond_4
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -102,18 +102,18 @@
 
     iget-object v1, p0, Lcom/journeyapps/barcodescanner/BarcodeView$1;->this$0:Lcom/journeyapps/barcodescanner/BarcodeView;
 
-    iget-object v2, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->callback:Lcom/journeyapps/barcodescanner/BarcodeCallback;
+    iget-object v3, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->callback:Lcom/journeyapps/barcodescanner/BarcodeCallback;
 
-    if-eqz v2, :cond_3
+    if-eqz v3, :cond_3
 
     iget-object v1, v1, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
 
     if-eq v1, v0, :cond_3
 
-    invoke-interface {v2, p1}, Lcom/journeyapps/barcodescanner/BarcodeCallback;->possibleResultPoints(Ljava/util/List;)V
+    invoke-interface {v3, p1}, Lcom/journeyapps/barcodescanner/BarcodeCallback;->possibleResultPoints(Ljava/util/List;)V
 
     :cond_3
-    return v3
+    return v2
 
     :cond_4
     const/4 p1, 0x0

@@ -36,8 +36,8 @@
     c = "de.rki.coronawarnapp.submission.data.tekhistory.TEKHistoryUpdater$updateTEKHistory$deferred$1"
     f = "TEKHistoryUpdater.kt"
     l = {
-        0x5d,
-        0x62
+        0x6a,
+        0x6f
     }
     m = "invokeSuspend"
 .end annotation
@@ -146,7 +146,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -160,12 +160,12 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$updateTEKHistory$deferred$1;->$availableTEKs:Ljava/util/List;
 
@@ -247,7 +247,7 @@
 
     invoke-direct {v4, v1, v3, v5}, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage$storeTEKData$2;-><init>(Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage$TEKBatch;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v2, v4, p0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v4, p0}, Landroidx/navigation/ui/R$anim;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 

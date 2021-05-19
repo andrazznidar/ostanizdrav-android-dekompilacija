@@ -44,7 +44,7 @@
 
 
 # virtual methods
-.method public final verify(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
+.method public verify([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
     .locals 0
 
     const/4 p1, 0x1

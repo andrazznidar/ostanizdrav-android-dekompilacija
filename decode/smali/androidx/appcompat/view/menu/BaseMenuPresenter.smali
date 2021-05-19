@@ -11,6 +11,8 @@
 
 .field public mContext:Landroid/content/Context;
 
+.field public mId:I
+
 .field public mItemLayoutRes:I
 
 .field public mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
@@ -61,6 +63,14 @@
     const/4 p1, 0x0
 
     return p1
+.end method
+
+.method public getId()I
+    .locals 1
+
+    iget v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mId:I
+
+    return v0
 .end method
 
 .method public getItemView(Landroidx/appcompat/view/menu/MenuItemImpl;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
@@ -129,15 +139,23 @@
 
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
+
+    :goto_0
     invoke-interface {v0, p1}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
 
     move-result p1
 
     return p1
 
-    :cond_0
+    :cond_1
     const/4 p1, 0x0
 
     return p1

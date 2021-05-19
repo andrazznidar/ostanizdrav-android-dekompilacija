@@ -63,7 +63,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090380
+    const v1, 0x7f09046e
 
     const/4 v2, 0x7
 
@@ -71,7 +71,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09037e
+    const v1, 0x7f09046c
 
     const/16 v2, 0x8
 
@@ -91,10 +91,10 @@
 
     :array_1
     .array-data 4
-        0x7f0c0077
-        0x7f0c0099
-        0x7f0c0098
-        0x7f0c00ab
+        0x7f0c0090
+        0x7f0c00a8
+        0x7f0c00a7
+        0x7f0c00b4
     .end array-data
 .end method
 
@@ -212,7 +212,28 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    if-eqz p1, :cond_1
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+
+    if-eqz p1, :cond_2
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_2
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+
+    if-eqz p1, :cond_3
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -332,17 +353,17 @@
 
     iget-object v6, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v13, 0x7f080094
+    const v13, 0x7f08009f
 
-    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v6, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v13, 0x7f1202ac
+    const v13, 0x7f1203ae
 
-    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_5
     and-long/2addr v11, v2
@@ -542,276 +563,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    packed-switch p1, :pswitch_data_0
-
-    return v1
-
-    :pswitch_0
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_0
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x40
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :pswitch_1
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x20
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_1
-    move v0, v1
-
-    :goto_1
-    return v0
-
-    :pswitch_2
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_2
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x10
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p1
-
-    :cond_2
-    move v0, v1
-
-    :goto_2
-    return v0
-
-    :pswitch_3
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_3
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x8
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_3
-
-    :catchall_3
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    throw p1
-
-    :cond_3
-    move v0, v1
-
-    :goto_3
-    return v0
-
-    :pswitch_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
-
-    if-nez p3, :cond_4
-
-    monitor-enter p0
-
-    :try_start_4
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x4
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw p1
-
-    :cond_4
-    move v0, v1
-
-    :goto_4
-    return v0
-
-    :pswitch_5
-    check-cast p2, Landroidx/lifecycle/LiveData;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_5
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x2
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_5
-
-    :catchall_5
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_5
-
-    throw p1
-
-    :cond_5
-    move v0, v1
-
-    :goto_5
-    return v0
-
-    :pswitch_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_6
-
-    monitor-enter p0
-
-    :try_start_6
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v1, 0x1
-
-    or-long/2addr p1, v1
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    goto :goto_6
-
-    :catchall_6
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_6
-
-    throw p1
-
-    :cond_6
-    move v0, v1
-
-    :goto_6
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

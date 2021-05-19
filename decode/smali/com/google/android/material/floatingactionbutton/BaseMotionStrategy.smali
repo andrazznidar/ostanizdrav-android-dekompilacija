@@ -166,7 +166,7 @@
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     return-object p1
 .end method
@@ -200,7 +200,7 @@
     :cond_1
     iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->defaultMotionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/material/animation/MotionSpec;
 

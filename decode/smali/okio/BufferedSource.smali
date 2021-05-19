@@ -8,6 +8,9 @@
 
 
 # virtual methods
+.method public abstract buffer()Lokio/Buffer;
+.end method
+
 .method public abstract exhausted()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -28,6 +31,9 @@
 .end method
 
 .method public abstract inputStream()Ljava/io/InputStream;
+.end method
+
+.method public abstract peek()Lokio/BufferedSource;
 .end method
 
 .method public abstract readAll(Lokio/Sink;)J
@@ -87,6 +93,14 @@
 .end method
 
 .method public abstract readShort()S
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

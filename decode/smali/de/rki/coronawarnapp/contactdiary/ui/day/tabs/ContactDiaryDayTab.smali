@@ -15,6 +15,8 @@
 # instance fields
 .field public final fabTextResource:I
 
+.field public final fabTextResourceAccessibility:I
+
 .field public final fragmentInstantiation:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -30,7 +32,7 @@
 
 
 # direct methods
-.method public constructor <init>(IILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public constructor <init>(IIILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +41,9 @@
 
     iput p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;->fabTextResource:I
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;->fragmentInstantiation:Lkotlin/jvm/functions/Function1;
+    iput p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;->fabTextResourceAccessibility:I
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;->fragmentInstantiation:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method

@@ -54,7 +54,7 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->FloatingActionButton_Behavior_Layout_behavior_autoHide:I
+    const/4 p2, 0x0
 
     const/4 v0, 0x1
 

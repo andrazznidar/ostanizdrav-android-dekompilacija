@@ -187,7 +187,7 @@
 
     const-string v0, "AsyncTimeout.sink("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -219,7 +219,7 @@
 
     move-wide v5, p2
 
-    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->checkOffsetAndCount(JJJ)V
 
     :goto_0
     const-wide/16 v0, 0x0

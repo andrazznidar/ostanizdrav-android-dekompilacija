@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -47,7 +47,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_inflatedId:I
+    const/4 p2, 0x2
 
     const/4 v1, -0x1
 
@@ -57,21 +57,19 @@
 
     iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->mInflatedId:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_layout:I
+    const/4 p2, 0x1
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result p2
+    move-result v2
 
-    iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->mLayoutResource:I
+    iput v2, p0, Landroidx/appcompat/widget/ViewStubCompat;->mLayoutResource:I
 
-    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_id:I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    move-result v0
 
-    move-result p2
-
-    invoke-virtual {p0, p2}, Landroid/view/View;->setId(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -79,9 +77,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ViewStubCompat;->setVisibility(I)V
 
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setWillNotDraw(Z)V
+    invoke-virtual {p0, p2}, Landroid/view/View;->setWillNotDraw(Z)V
 
     return-void
 .end method

@@ -20,8 +20,6 @@
 # instance fields
 .field public mContentLayoutId:I
 
-.field public mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-
 .field public final mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
 
 .field public final mOnBackPressedDispatcher:Landroidx/activity/OnBackPressedDispatcher;
@@ -124,64 +122,6 @@
 
 
 # virtual methods
-.method public getDefaultViewModelProviderFactory()Landroidx/lifecycle/ViewModelProvider$Factory;
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Landroidx/activity/ComponentActivity;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Landroidx/lifecycle/SavedStateViewModelFactory;
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-direct {v0, v1, p0, v2}, Landroidx/lifecycle/SavedStateViewModelFactory;-><init>(Landroid/app/Application;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;)V
-
-    iput-object v0, p0, Landroidx/activity/ComponentActivity;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-
-    :cond_1
-    iget-object v0, p0, Landroidx/activity/ComponentActivity;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-
-    return-object v0
-
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Your activity is not yet attached to the Application instance. You can\'t request ViewModel before onCreate call."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
     .locals 1
 

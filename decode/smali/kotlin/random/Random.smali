@@ -57,6 +57,149 @@
 .method public abstract nextBits(I)I
 .end method
 
+.method public abstract nextDouble()D
+.end method
+
+.method public nextDouble(DD)D
+    .locals 6
+
+    cmpl-double v0, p3, p1
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-lez v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    if-eqz v0, :cond_5
+
+    sub-double v3, p3, p1
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->isInfinite(D)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->isInfinite(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_1
+    move v0, v2
+
+    :goto_1
+    if-eqz v0, :cond_3
+
+    invoke-static {p3, p4}, Ljava/lang/Double;->isInfinite(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v1, v2
+
+    :goto_2
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p0}, Lkotlin/random/Random;->nextDouble()D
+
+    move-result-wide v0
+
+    const/4 v2, 0x2
+
+    int-to-double v2, v2
+
+    div-double v4, p3, v2
+
+    div-double v2, p1, v2
+
+    sub-double/2addr v4, v2
+
+    mul-double/2addr v4, v0
+
+    add-double/2addr p1, v4
+
+    add-double/2addr p1, v4
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {p0}, Lkotlin/random/Random;->nextDouble()D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v3
+
+    add-double/2addr p1, v0
+
+    :goto_3
+    cmpl-double v0, p1, p3
+
+    if-ltz v0, :cond_4
+
+    const-wide/high16 p1, -0x10000000000000L    # Double.NEGATIVE_INFINITY
+
+    invoke-static {p3, p4, p1, p2}, Ljava/lang/Math;->nextAfter(DD)D
+
+    move-result-wide p1
+
+    :cond_4
+    return-wide p1
+
+    :cond_5
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    invoke-static {p3, p4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
 .method public abstract nextFloat()F
 .end method
 
@@ -116,7 +259,7 @@
 
     if-ne p2, v1, :cond_4
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->fastLog2(I)I
 
     move-result p2
 
@@ -159,7 +302,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -224,7 +367,7 @@
 
     if-eqz p3, :cond_1
 
-    invoke-static {p3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->fastLog2(I)I
 
     move-result p3
 
@@ -249,7 +392,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->fastLog2(I)I
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->fastLog2(I)I
 
     move-result p3
 
@@ -327,7 +470,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->boundsErrorMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

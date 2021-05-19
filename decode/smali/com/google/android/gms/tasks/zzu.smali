@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzu;
 .super Lcom/google/android/gms/tasks/Task;
-.source "com.google.android.gms:play-services-tasks@@17.1.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # annotations
@@ -65,6 +65,35 @@
 
 
 # virtual methods
+.method public final addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/tasks/OnCompleteListener<",
+            "TTResult;>;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;"
+        }
+    .end annotation
+
+    sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    new-instance v2, Lcom/google/android/gms/tasks/zzi;
+
+    invoke-static {v0}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    invoke-direct {v2, v0, p1}, Lcom/google/android/gms/tasks/zzi;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
+
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
+
+    return-object p0
+.end method
+
 .method public final addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -123,6 +152,30 @@
     return-object p0
 .end method
 
+.method public final getException()Ljava/lang/Exception;
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
 .method public final getResult()Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -140,7 +193,7 @@
 
     const-string v2, "Task is not yet complete"
 
-    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
     iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
 
@@ -185,6 +238,30 @@
     move-exception v1
 
     goto :goto_0
+.end method
+
+.method public final isComplete()Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
+
+    monitor-exit v0
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method public final isSuccessful()Z
@@ -234,7 +311,7 @@
 
     const-string v0, "Exception must not be null"
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 

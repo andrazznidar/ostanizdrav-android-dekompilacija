@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.storage.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0xad,
-        0x48
+        0x9a,
+        0x35
     }
     m = "getDao"
 .end annotation

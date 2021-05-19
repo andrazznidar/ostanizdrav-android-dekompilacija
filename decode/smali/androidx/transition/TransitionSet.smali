@@ -784,7 +784,15 @@
     return-void
 .end method
 
-.method public setDuration(J)Landroidx/transition/Transition;
+.method public bridge synthetic setDuration(J)Landroidx/transition/Transition;
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Landroidx/transition/TransitionSet;->setDuration(J)Landroidx/transition/TransitionSet;
+
+    return-object p0
+.end method
+
+.method public setDuration(J)Landroidx/transition/TransitionSet;
     .locals 3
 
     iput-wide p1, p0, Landroidx/transition/Transition;->mDuration:J
@@ -866,7 +874,15 @@
     return-void
 .end method
 
-.method public setInterpolator(Landroid/animation/TimeInterpolator;)Landroidx/transition/Transition;
+.method public bridge synthetic setInterpolator(Landroid/animation/TimeInterpolator;)Landroidx/transition/Transition;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroidx/transition/TransitionSet;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroidx/transition/TransitionSet;
+
+    return-object p0
+.end method
+
+.method public setInterpolator(Landroid/animation/TimeInterpolator;)Landroidx/transition/TransitionSet;
     .locals 3
 
     iget v0, p0, Landroidx/transition/TransitionSet;->mChangeFlags:I
@@ -928,7 +944,7 @@
 
     const-string v1, "Invalid parameter for TransitionSet ordering: "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1065,7 +1081,7 @@
 
     const-string v2, "\n"
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline22(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

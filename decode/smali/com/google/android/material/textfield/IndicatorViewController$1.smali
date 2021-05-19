@@ -62,7 +62,7 @@
 
     iget-object p1, p0, Lcom/google/android/material/textfield/IndicatorViewController$1;->val$captionViewToHide:Landroid/widget/TextView;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x4
 

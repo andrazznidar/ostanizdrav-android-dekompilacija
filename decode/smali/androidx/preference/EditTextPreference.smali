@@ -15,11 +15,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    sget v0, Landroidx/preference/R$attr;->editTextPreferenceStyle:I
+    const v0, 0x7f040135
 
     const v1, 0x1010092
 
-    invoke-static {p1, v0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getAttr(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->getAttr(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -33,9 +33,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/preference/R$styleable;->EditTextPreference_useSimpleSummaryProvider:I
-
-    invoke-static {p1, p2, p2, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, v1, v1, v1}, Landroidx/core/app/AppOpsManagerCompat;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 

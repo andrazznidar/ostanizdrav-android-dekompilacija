@@ -37,13 +37,13 @@
 .method public create(Ljava/lang/Object;)Ldagger/android/AndroidInjector;
     .locals 2
 
-    check-cast p1, Lde/rki/coronawarnapp/ui/tracing/settings/SettingsTracingFragment;
+    check-cast p1, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;
 
     new-instance v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$SettingsTracingFragmentSubcomponentImpl;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$SettingsTracingFragmentSubcomponentFactory;->this$1:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;
 
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$SettingsTracingFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/ui/tracing/settings/SettingsTracingFragment;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$SettingsTracingFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;)V
 
     return-object v0
 .end method

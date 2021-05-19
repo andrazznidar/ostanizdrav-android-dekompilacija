@@ -24,6 +24,19 @@
 
 .method public static setComponentEnabled(Landroid/content/Context;Ljava/lang/Class;Z)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "klazz",
+            "enabled"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -3,33 +3,19 @@
 .source "MaterialToolbar.java"
 
 
-# static fields
-.field public static final DEF_STYLE_RES:I
-
-
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    sget v0, Lcom/google/android/material/R$style;->Widget_MaterialComponents_Toolbar:I
-
-    sput v0, Lcom/google/android/material/appbar/MaterialToolbar;->DEF_STYLE_RES:I
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    sget v0, Lcom/google/android/material/R$attr;->toolbarStyle:I
+    const v0, 0x7f1302f3
 
-    sget v1, Lcom/google/android/material/appbar/MaterialToolbar;->DEF_STYLE_RES:I
+    const v1, 0x7f040384
 
-    invoke-static {p1, p2, v0, v1}, Lcom/google/android/material/internal/ThemeEnforcement;->createThemedContext(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p0, p1, p2, v0}, Landroidx/appcompat/widget/Toolbar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v1}, Landroidx/appcompat/widget/Toolbar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -111,7 +97,7 @@
 
     check-cast v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    invoke-static {p0, v0}, Landroidx/transition/ViewGroupUtilsApi14;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/android/material/R$style;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     return-void
@@ -122,7 +108,7 @@
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setElevation(F)V
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->setElevation(Landroid/view/View;F)V
+    invoke-static {p0, p1}, Lcom/google/android/material/R$style;->setElevation(Landroid/view/View;F)V
 
     return-void
 .end method

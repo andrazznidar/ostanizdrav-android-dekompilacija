@@ -273,9 +273,9 @@
 
     iget-object v2, p0, Lcom/google/android/material/button/MaterialButtonHelper;->materialButton:Lcom/google/android/material/button/MaterialButton;
 
-    sget v3, Lcom/google/android/material/R$attr;->colorSurface:I
+    const v3, 0x7f0400c9
 
-    invoke-static {v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->getColor(Landroid/view/View;I)I
+    invoke-static {v2, v3}, Lcom/google/android/material/R$style;->getColor(Landroid/view/View;I)I
 
     move-result v2
 

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.storage.DeviceStorage"
     f = "DeviceStorage.kt"
     l = {
-        0x7c
+        0x82
     }
     m = "requireSpacePrivateStorage"
 .end annotation

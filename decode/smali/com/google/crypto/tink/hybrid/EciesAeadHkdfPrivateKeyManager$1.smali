@@ -77,7 +77,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v2}, Lcom/google/android/material/R$style;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
 
     move-result-object v2
 
@@ -89,7 +89,7 @@
 
     move-result-object p1
 
-    invoke-static {v2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
+    invoke-static {v2, p1}, Lcom/google/android/material/R$style;->getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
 
     move-result-object v4
 
@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->toHmacAlgo(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/material/R$style;->toHmacAlgo(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -127,7 +127,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->toPointFormatType(Lcom/google/crypto/tink/proto/EcPointFormat;)Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->toPointFormatType(Lcom/google/crypto/tink/proto/EcPointFormat;)Lcom/google/crypto/tink/subtle/EllipticCurves$PointFormatType;
 
     move-result-object v7
 

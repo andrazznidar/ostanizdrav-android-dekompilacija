@@ -97,17 +97,17 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 1
+    .locals 2
 
     move-object v0, p0
 
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zznx;
+    check-cast v0, Lcom/google/android/gms/internal/nearby/zznz;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/nearby/zznx;->listIterator()Ljava/util/ListIterator;
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/nearby/zznz;->zzm(I)Lcom/google/android/gms/internal/nearby/zzoi;
 
     move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zzoj;
 
     return-object v0
 .end method
@@ -202,8 +202,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {p1, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zzc()I
 
     move-result v1
@@ -222,26 +239,7 @@
 
     return-object p1
 
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    goto :goto_0
-
     :cond_1
-    array-length v2, p1
-
     if-le v2, v1, :cond_2
 
     aput-object v0, p1, v1
@@ -250,44 +248,12 @@
     :goto_0
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zznw;->zza([Ljava/lang/Object;I)I
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zznw;->zzg([Ljava/lang/Object;I)I
 
     return-object p1
 
     :cond_3
     throw v0
-.end method
-
-.method public zza([Ljava/lang/Object;I)I
-    .locals 3
-
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zzok;
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p2, 0x1
-
-    aput-object v1, p1, p2
-
-    move p2, v2
-
-    goto :goto_0
-
-    :cond_0
-    return p2
 .end method
 
 .method public zzb()[Ljava/lang/Object;
@@ -319,4 +285,12 @@
 .end method
 
 .method public abstract zzf()Z
+.end method
+
+.method public zzg([Ljava/lang/Object;I)I
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

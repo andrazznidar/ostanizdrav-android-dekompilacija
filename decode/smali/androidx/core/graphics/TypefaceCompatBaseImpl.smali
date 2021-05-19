@@ -149,7 +149,7 @@
 .method public createFromInputStream(Landroid/content/Context;Ljava/io/InputStream;)Landroid/graphics/Typeface;
     .locals 1
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object p1
 
@@ -161,7 +161,7 @@
 
     :cond_0
     :try_start_0
-    invoke-static {p1, p2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->copyToFile(Ljava/io/File;Ljava/io/InputStream;)Z
+    invoke-static {p1, p2}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Ljava/io/InputStream;)Z
 
     move-result p2
     :try_end_0
@@ -207,7 +207,7 @@
 .method public createFromResourcesFontFile(Landroid/content/Context;Landroid/content/res/Resources;ILjava/lang/String;I)Landroid/graphics/Typeface;
     .locals 0
 
-    invoke-static {p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object p1
 
@@ -219,7 +219,7 @@
 
     :cond_0
     :try_start_0
-    invoke-static {p1, p2, p3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
+    invoke-static {p1, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
 
     move-result p2
     :try_end_0

@@ -178,7 +178,7 @@
     :cond_3
     const-string p1, "The number of acquired permits should be in 0.."
 
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -203,7 +203,7 @@
     :cond_4
     const-string p1, "Semaphore should have at least 1 permit, but had "
 
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -258,11 +258,11 @@
     return-object v1
 
     :cond_0
-    invoke-static/range {p1 .. p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v2
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
 
     move-result-object v2
 
@@ -326,7 +326,7 @@
     :goto_2
     if-nez v9, :cond_b
 
-    invoke-static {v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
+    invoke-static {v8}, Lcom/google/zxing/client/android/R$id;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v9
 
@@ -396,7 +396,7 @@
 
     :cond_b
     :goto_6
-    invoke-static {v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
+    invoke-static {v8}, Lcom/google/zxing/client/android/R$id;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v3
 
@@ -651,7 +651,7 @@
     :goto_2
     if-nez v8, :cond_d
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v8
 
@@ -721,7 +721,7 @@
 
     :cond_d
     :goto_6
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v0
 
@@ -876,7 +876,7 @@
     :cond_17
     const-string v0, "The number of released permits cannot be greater than "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

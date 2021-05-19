@@ -65,7 +65,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBinding;->submissionTestResultAvailableText:Landroid/widget/TextView;
 
-    const v1, 0x7f1202fd
+    const v1, 0x7f1203ff
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -80,7 +80,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBinding;->submissionTestResultAvailableText:Landroid/widget/TextView;
 
-    const v1, 0x7f1202fe
+    const v1, 0x7f120400
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

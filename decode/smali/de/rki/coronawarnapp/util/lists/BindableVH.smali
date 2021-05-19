@@ -17,12 +17,27 @@
 
 
 # virtual methods
-.method public abstract getOnBindData()Lkotlin/jvm/functions/Function2;
+.method public abstract bind(Ljava/lang/Object;Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TItemT;",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract getOnBindData()Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lkotlin/jvm/functions/Function2<",
+            "Lkotlin/jvm/functions/Function3<",
             "TViewBindingT;TItemT;",
+            "Ljava/util/List<",
+            "+",
+            "Ljava/lang/Object;",
+            ">;",
             "Lkotlin/Unit;",
             ">;"
         }

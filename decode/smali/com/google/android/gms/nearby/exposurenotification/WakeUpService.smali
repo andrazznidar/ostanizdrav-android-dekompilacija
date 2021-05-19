@@ -3,14 +3,6 @@
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -22,16 +14,20 @@
 
 
 # virtual methods
-.method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .locals 2
+.method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
+    .locals 1
+    .param p1    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 
     new-instance p1, Landroid/os/Messenger;
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzr;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/nearby/exposurenotification/WakeUpService$zza;-><init>(Lcom/google/android/gms/nearby/exposurenotification/zzp;)V
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzr;-><init>()V
 
     invoke-direct {p1, v0}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 

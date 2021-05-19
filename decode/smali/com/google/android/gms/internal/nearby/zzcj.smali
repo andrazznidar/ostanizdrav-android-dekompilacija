@@ -1,99 +1,168 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzcj;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/internal/nearby/zzcj;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/internal/nearby/zzce;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public zza:Lcom/google/android/gms/internal/nearby/zzdo;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzck;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/nearby/zzck;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/nearby/zzcj;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 2
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.nearby.exposurenotification.internal.ILongCallback"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lcom/google/android/gms/internal/nearby/zzdo;
+
+    if-eqz v1, :cond_1
+
+    move-object p1, v0
+
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzdo;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzdm;
+
+    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/nearby/zzdm;-><init>(Landroid/os/IBinder;)V
+
+    move-object p1, v0
+
+    :goto_0
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/nearby/zzch;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validateObjectHeader(Landroid/os/Parcel;)I
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    instance-of v0, p1, Lcom/google/android/gms/internal/nearby/zzcj;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lcom/google/android/gms/internal/nearby/zzcj;
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
+
+    iget-object p1, p1, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
+
+    invoke-static {v0, p1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    move-object v2, v1
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-ge v3, v0, :cond_2
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    const v4, 0xffff
-
-    and-int/2addr v4, v3
-
-    const/4 v5, 0x1
-
-    if-eq v4, v5, :cond_1
-
-    const/4 v5, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    invoke-static {p1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {p1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/internal/nearby/zzce;
-
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/internal/nearby/zzce;-><init>(Landroid/os/IBinder;Landroid/os/IBinder;)V
-
-    return-object p1
+    return v0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
 
-    new-array p1, p1, [Lcom/google/android/gms/internal/nearby/zzce;
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
 
-    return-object p1
+    move-result p2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
+
+    invoke-interface {v0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+
+    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

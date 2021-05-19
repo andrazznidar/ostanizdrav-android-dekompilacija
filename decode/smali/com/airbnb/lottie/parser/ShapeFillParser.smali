@@ -60,40 +60,38 @@
 
     move-object v7, v4
 
-    move-object v8, v7
-
     :goto_0
     invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_6
 
-    sget-object v2, Lcom/airbnb/lottie/parser/ShapeFillParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+    sget-object v3, Lcom/airbnb/lottie/parser/ShapeFillParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    invoke-virtual {p0, v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+    invoke-virtual {p0, v3}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
-    if-eq v2, v1, :cond_4
+    if-eq v3, v1, :cond_4
 
-    const/4 v3, 0x2
+    const/4 v6, 0x2
 
-    if-eq v2, v3, :cond_3
+    if-eq v3, v6, :cond_3
 
-    const/4 v3, 0x3
+    const/4 v6, 0x3
 
-    if-eq v2, v3, :cond_2
+    if-eq v3, v6, :cond_2
 
-    const/4 v3, 0x4
+    const/4 v6, 0x4
 
-    if-eq v2, v3, :cond_1
+    if-eq v3, v6, :cond_1
 
-    const/4 v3, 0x5
+    const/4 v6, 0x5
 
-    if-eq v2, v3, :cond_0
+    if-eq v3, v6, :cond_0
 
     invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
@@ -123,14 +121,14 @@
     goto :goto_0
 
     :cond_3
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parseInteger(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
-    move-result-object v8
+    move-result-object v2
 
     goto :goto_0
 
     :cond_4
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parseColor(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v7
 
@@ -144,16 +142,44 @@
     goto :goto_0
 
     :cond_6
-    if-ne v0, v1, :cond_7
+    if-nez v2, :cond_7
 
-    sget-object p0, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
+    new-instance p0, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
+
+    new-instance p1, Lcom/airbnb/lottie/value/Keyframe;
+
+    const/16 v2, 0x64
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-direct {p1, v2}, Lcom/airbnb/lottie/value/Keyframe;-><init>(Ljava/lang/Object;)V
+
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;-><init>(Ljava/util/List;)V
+
+    move-object v8, p0
 
     goto :goto_1
 
     :cond_7
-    sget-object p0, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
+    move-object v8, v2
 
     :goto_1
+    if-ne v0, v1, :cond_8
+
+    sget-object p0, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
+
+    goto :goto_2
+
+    :cond_8
+    sget-object p0, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
+
+    :goto_2
     move-object v6, p0
 
     new-instance p0, Lcom/airbnb/lottie/model/content/ShapeFill;

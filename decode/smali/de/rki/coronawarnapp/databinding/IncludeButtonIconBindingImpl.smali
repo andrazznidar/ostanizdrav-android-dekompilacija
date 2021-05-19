@@ -47,7 +47,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -94,7 +94,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lcom/google/zxing/client/android/R$id;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
 
     :cond_0
     if-eqz v0, :cond_1
@@ -183,14 +183,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
 .method public setIcon(Landroid/graphics/drawable/Drawable;)V
     .locals 4
 
@@ -211,7 +203,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -250,7 +242,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

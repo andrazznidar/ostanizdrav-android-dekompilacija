@@ -164,3 +164,82 @@
     :cond_6
     return-void
 .end method
+
+.method public matchesOtherAffix(ILjava/lang/String;I)Z
+    .locals 12
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$IgnorableAffix;->iOtherAffixes:[Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$IgnorableAffix;->iOtherAffixes:[Ljava/lang/String;
+
+    array-length v2, v0
+
+    move v3, v1
+
+    :goto_0
+    if-ge v3, v2, :cond_3
+
+    aget-object v10, v0, v3
+
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
+
+    move-result v11
+
+    if-ge p1, v11, :cond_0
+
+    const/4 v5, 0x1
+
+    const/4 v8, 0x0
+
+    move-object v4, p2
+
+    move v6, p3
+
+    move-object v7, v10
+
+    move v9, v11
+
+    invoke-virtual/range {v4 .. v9}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    :cond_0
+    if-ne p1, v11, :cond_2
+
+    const/4 v5, 0x0
+
+    const/4 v8, 0x0
+
+    move-object v4, p2
+
+    move v6, p3
+
+    move-object v7, v10
+
+    move v9, v11
+
+    invoke-virtual/range {v4 .. v9}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    :cond_1
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    return v1
+.end method

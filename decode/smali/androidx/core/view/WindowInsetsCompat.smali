@@ -18,6 +18,10 @@
 .end annotation
 
 
+# static fields
+.field public static final CONSUMED:Landroidx/core/view/WindowInsetsCompat;
+
+
 # instance fields
 .field public final mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
 
@@ -63,6 +67,10 @@
     iget-object v0, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
 
     invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/core/view/WindowInsetsCompat;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
 
     return-void
 .end method
@@ -122,6 +130,61 @@
     iput-object p1, p0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
 
     return-void
+.end method
+
+.method public static insetInsets(Landroidx/core/graphics/Insets;IIII)Landroidx/core/graphics/Insets;
+    .locals 5
+
+    iget v0, p0, Landroidx/core/graphics/Insets;->left:I
+
+    sub-int/2addr v0, p1
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    iget v2, p0, Landroidx/core/graphics/Insets;->top:I
+
+    sub-int/2addr v2, p2
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    iget v3, p0, Landroidx/core/graphics/Insets;->right:I
+
+    sub-int/2addr v3, p3
+
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v3
+
+    iget v4, p0, Landroidx/core/graphics/Insets;->bottom:I
+
+    sub-int/2addr v4, p4
+
+    invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    if-ne v0, p1, :cond_0
+
+    if-ne v2, p2, :cond_0
+
+    if-ne v3, p3, :cond_0
+
+    if-ne v1, p4, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {v0, v2, v3, v1}, Landroidx/core/graphics/Insets;->of(IIII)Landroidx/core/graphics/Insets;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static toWindowInsetsCompat(Landroid/view/WindowInsets;)Landroidx/core/view/WindowInsetsCompat;

@@ -23,6 +23,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/room/RoomDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "__db"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,6 +49,14 @@
 # virtual methods
 .method public getLongValue(Ljava/lang/String;)Ljava/lang/Long;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "key"
+        }
+    .end annotation
 
     const-string v0, "SELECT long_value FROM Preference where `key`=?"
 
@@ -120,6 +136,14 @@
 
 .method public insertPreference(Landroidx/work/impl/model/Preference;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "preference"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/work/impl/model/PreferenceDao_Impl;->__db:Landroidx/room/RoomDatabase;
 

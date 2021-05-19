@@ -16,6 +16,16 @@
 
 .field public mIndexedVariables:[Landroidx/constraintlayout/solver/SolverVariable;
 
+.field public optimizedArrayRowPool:Landroidx/constraintlayout/solver/Pools$SimplePool;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/constraintlayout/solver/Pools$SimplePool<",
+            "Landroidx/constraintlayout/solver/ArrayRow;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public solverVariablePool:Landroidx/constraintlayout/solver/Pools$SimplePool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36,6 +46,12 @@
     new-instance v0, Landroidx/constraintlayout/solver/Pools$SimplePool;
 
     const/16 v1, 0x100
+
+    invoke-direct {v0, v1}, Landroidx/constraintlayout/solver/Pools$SimplePool;-><init>(I)V
+
+    iput-object v0, p0, Landroidx/constraintlayout/solver/Cache;->optimizedArrayRowPool:Landroidx/constraintlayout/solver/Pools$SimplePool;
+
+    new-instance v0, Landroidx/constraintlayout/solver/Pools$SimplePool;
 
     invoke-direct {v0, v1}, Landroidx/constraintlayout/solver/Pools$SimplePool;-><init>(I)V
 

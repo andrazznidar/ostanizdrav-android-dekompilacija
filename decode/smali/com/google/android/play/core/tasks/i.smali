@@ -41,16 +41,10 @@
 
 
 # virtual methods
-.method public final b(Ljava/lang/Exception;)V
+.method public final d(Ljava/lang/Exception;)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/play/core/tasks/i;->a:Lcom/google/android/play/core/tasks/m;
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "Exception must not be null"
-
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
     iget-object v1, v0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
 
@@ -59,8 +53,13 @@
     :try_start_0
     iget-boolean v2, v0, Lcom/google/android/play/core/tasks/m;->c:Z
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
+    monitor-exit v1
+
+    goto :goto_0
+
+    :cond_0
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/google/android/play/core/tasks/m;->c:Z
@@ -73,13 +72,7 @@
 
     iget-object p1, v0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/m;)V
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v1
+    invoke-virtual {p1, v0}, Lcom/google/android/play/core/tasks/h;->b(Lcom/google/android/play/core/tasks/m;)V
 
     :goto_0
     return-void
@@ -87,19 +80,15 @@
     :catchall_0
     move-exception p1
 
+    :try_start_1
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
-.method public final b(Ljava/lang/Object;)V
+.method public final e(Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -116,8 +105,13 @@
     :try_start_0
     iget-boolean v2, v0, Lcom/google/android/play/core/tasks/m;->c:Z
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
+    monitor-exit v1
+
+    goto :goto_0
+
+    :cond_0
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/google/android/play/core/tasks/m;->c:Z
@@ -130,13 +124,7 @@
 
     iget-object p1, v0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/m;)V
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v1
+    invoke-virtual {p1, v0}, Lcom/google/android/play/core/tasks/h;->b(Lcom/google/android/play/core/tasks/m;)V
 
     :goto_0
     return-void
@@ -144,6 +132,7 @@
     :catchall_0
     move-exception p1
 
+    :try_start_1
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

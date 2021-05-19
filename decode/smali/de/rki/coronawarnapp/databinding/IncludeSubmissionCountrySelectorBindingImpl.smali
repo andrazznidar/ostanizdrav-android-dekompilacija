@@ -47,7 +47,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c00ab
+    const v4, 0x7f0c00b4
 
     aput v4, v2, v5
 
@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090388
+    const v1, 0x7f090476
 
     const/4 v2, 0x3
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -152,7 +152,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 7
+    .locals 8
 
     monitor-enter p0
 
@@ -179,19 +179,15 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result v1
+    move-result-object v1
 
-    const v2, 0x7f06006f
+    const-string v2, "context"
 
-    const v3, 0x7f060031
-
-    invoke-static {v1, v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->formatColor(ZII)I
-
-    move-result v1
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -199,13 +195,43 @@
 
     move-result v2
 
-    const v3, 0x7f060068
+    const v3, 0x7f060070
 
-    const v4, 0x7f060069
+    const v5, 0x7f060071
 
-    invoke-static {v2, v3, v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatColor(ZII)I
+    invoke-static {v1, v2, v3, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
+
+    move-result v1
+
+    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string v3, "context"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    const v4, 0x7f060078
+
+    const v5, 0x7f060033
+
+    invoke-static {v2, v3, v4, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v2
+
+    move v7, v2
+
+    move v2, v1
+
+    move v1, v7
 
     goto :goto_0
 
@@ -334,14 +360,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public setActive(Ljava/lang/Boolean;)V

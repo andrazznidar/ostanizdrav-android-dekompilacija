@@ -1,23 +1,22 @@
-.class public interface abstract Lcom/google/android/play/core/internal/ci;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/play/core/internal/ci;
+.super Lcom/google/android/play/core/internal/cd;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/play/core/internal/cd;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+.method public final a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    .locals 0
+
+    invoke-virtual {p1, p2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    return-void
 .end method

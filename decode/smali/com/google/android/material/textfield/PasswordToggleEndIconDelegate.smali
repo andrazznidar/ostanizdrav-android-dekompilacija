@@ -77,7 +77,7 @@
 
     iget-object v1, p0, Lcom/google/android/material/textfield/EndIconDelegate;->context:Landroid/content/Context;
 
-    sget v2, Lcom/google/android/material/R$drawable;->design_password_eye:I
+    const v2, 0x7f080097
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/google/android/material/R$string;->password_toggle_content_description:I
+    const v2, 0x7f120245
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -121,5 +121,63 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
+    iget-object v0, p0, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
+
+    invoke-virtual {v0}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v1
+
+    const/16 v2, 0x10
+
+    if-eq v1, v2, :cond_0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v1
+
+    const/16 v2, 0x80
+
+    if-eq v1, v2, :cond_0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v1
+
+    const/16 v2, 0x90
+
+    if-eq v1, v2, :cond_0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v1
+
+    const/16 v2, 0xe0
+
+    if-ne v1, v2, :cond_1
+
+    :cond_0
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    if-eqz v1, :cond_2
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    :cond_2
     return-void
 .end method

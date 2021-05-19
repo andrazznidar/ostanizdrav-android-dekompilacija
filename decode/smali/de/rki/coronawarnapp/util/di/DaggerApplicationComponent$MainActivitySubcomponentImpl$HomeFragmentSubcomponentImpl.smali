@@ -45,9 +45,13 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$HomeFragmentSubcomponentImpl;->this$1:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->access$6000(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;)Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider_AssistedFactory;
+    iget-object v0, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider20:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider$Factory;
 
     iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->viewModelFactory:Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider$Factory;
 
@@ -59,13 +63,21 @@
 
     iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->homeMenu:Lde/rki/coronawarnapp/ui/main/home/HomeMenu;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/main/home/TracingExplanationDialog;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/TracingExplanationDialog;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$HomeFragmentSubcomponentImpl;->arg0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/main/home/TracingExplanationDialog;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/tracing/ui/TracingExplanationDialog;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
 
-    iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->tracingExplanationDialog:Lde/rki/coronawarnapp/ui/main/home/TracingExplanationDialog;
+    iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->tracingExplanationDialog:Lde/rki/coronawarnapp/tracing/ui/TracingExplanationDialog;
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$HomeFragmentSubcomponentImpl;->arg0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->deviceTimeIncorrectDialog:Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog;
 
     return-void
 .end method

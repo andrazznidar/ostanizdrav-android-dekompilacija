@@ -7,9 +7,9 @@
 
 .field public b:Lcom/google/android/play/core/assetpacks/j;
 
-.field public c:Lcom/google/android/play/core/assetpacks/bc;
+.field public c:Lcom/google/android/play/core/assetpacks/bb;
 
-.field public final d:Lcom/google/android/play/core/internal/aa;
+.field public final d:Lcom/google/android/play/core/internal/ag;
 
 .field public e:Lcom/google/android/play/core/assetpacks/b;
 
@@ -22,26 +22,26 @@
 
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    new-instance v0, Lcom/google/android/play/core/internal/aa;
+    new-instance v0, Lcom/google/android/play/core/internal/ag;
 
     const-string v1, "AssetPackExtractionService"
 
-    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/aa;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/ag;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/aa;
+    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/ag;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
+.method public final declared-synchronized b()V
     .locals 5
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/aa;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/ag;
 
     const-string v1, "Stopping service."
 
@@ -51,7 +51,7 @@
 
     const/4 v4, 0x4
 
-    invoke-virtual {v0, v4, v1, v3}, Lcom/google/android/play/core/internal/aa;->a(ILjava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v4, v1, v3}, Lcom/google/android/play/core/internal/ag;->f(ILjava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->b:Lcom/google/android/play/core/assetpacks/j;
 
@@ -77,7 +77,7 @@
     throw v0
 .end method
 
-.method public final declared-synchronized b(Landroid/os/Bundle;)V
+.method public final declared-synchronized c(Landroid/os/Bundle;)V
     .locals 9
 
     monitor-enter p0
@@ -143,14 +143,11 @@
     move-result-object v2
 
     :goto_0
-    if-nez v4, :cond_1
+    if-eqz v4, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
-    :goto_1
+    :cond_1
     const v3, 0x1080081
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -187,7 +184,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/aa;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/ag;
 
     const-string v2, "Starting foreground service."
 
@@ -195,7 +192,7 @@
 
     const/4 v4, 0x4
 
-    invoke-virtual {v1, v4, v2, v3}, Lcom/google/android/play/core/internal/aa;->a(ILjava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v4, v2, v3}, Lcom/google/android/play/core/internal/ag;->f(ILjava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->b:Lcom/google/android/play/core/assetpacks/j;
 
@@ -257,7 +254,7 @@
 
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/aa;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->d:Lcom/google/android/play/core/internal/ag;
 
     const-string v1, "onCreate"
 
@@ -267,18 +264,18 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {v0, v3, v1, v2}, Lcom/google/android/play/core/internal/aa;->a(ILjava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v3, v1, v2}, Lcom/google/android/play/core/internal/ag;->f(ILjava/lang/String;[Ljava/lang/Object;)I
 
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const-class v1, Landroidx/transition/ViewGroupUtilsApi14;
+    const-class v1, Lcom/google/android/material/R$style;
 
     monitor-enter v1
 
     :try_start_0
-    sget-object v2, Landroidx/transition/ViewGroupUtilsApi14;->a:Lcom/google/android/play/core/assetpacks/bu;
+    sget-object v2, Lcom/google/android/material/R$style;->a:Lcom/google/android/play/core/assetpacks/br;
 
     if-nez v2, :cond_1
 
@@ -295,32 +292,30 @@
     :cond_0
     invoke-direct {v2, v0}, Lcom/google/android/play/core/assetpacks/n;-><init>(Landroid/content/Context;)V
 
-    new-instance v0, Lcom/google/android/play/core/assetpacks/bu;
+    new-instance v0, Lcom/google/android/play/core/assetpacks/br;
 
-    invoke-direct {v0, v2}, Lcom/google/android/play/core/assetpacks/bu;-><init>(Lcom/google/android/play/core/assetpacks/n;)V
+    invoke-direct {v0, v2}, Lcom/google/android/play/core/assetpacks/br;-><init>(Lcom/google/android/play/core/assetpacks/n;)V
 
-    sput-object v0, Landroidx/transition/ViewGroupUtilsApi14;->a:Lcom/google/android/play/core/assetpacks/bu;
+    sput-object v0, Lcom/google/android/material/R$style;->a:Lcom/google/android/play/core/assetpacks/br;
 
     :cond_1
-    sget-object v0, Landroidx/transition/ViewGroupUtilsApi14;->a:Lcom/google/android/play/core/assetpacks/bu;
+    sget-object v0, Lcom/google/android/material/R$style;->a:Lcom/google/android/play/core/assetpacks/br;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/bu;->a:Lcom/google/android/play/core/assetpacks/n;
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/br;->a:Lcom/google/android/play/core/assetpacks/n;
 
     iget-object v1, v1, Lcom/google/android/play/core/assetpacks/n;->a:Landroid/content/Context;
 
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/material/R$style;->j(Ljava/lang/Object;)V
 
     iput-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->a:Landroid/content/Context;
 
-    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/bu;->x:Lcom/google/android/play/core/internal/ci;
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/br;->y:Lcom/google/android/play/core/internal/co;
 
-    invoke-interface {v1}, Lcom/google/android/play/core/internal/ci;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lcom/google/android/play/core/internal/co;->a()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -328,23 +323,23 @@
 
     iput-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->b:Lcom/google/android/play/core/assetpacks/j;
 
-    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/bu;->d:Lcom/google/android/play/core/internal/ci;
+    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/br;->d:Lcom/google/android/play/core/internal/co;
 
-    invoke-interface {v0}, Lcom/google/android/play/core/internal/ci;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lcom/google/android/play/core/internal/co;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/play/core/assetpacks/bc;
+    check-cast v0, Lcom/google/android/play/core/assetpacks/bb;
 
-    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->c:Lcom/google/android/play/core/assetpacks/bc;
+    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->c:Lcom/google/android/play/core/assetpacks/bb;
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/b;
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->a:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->c:Lcom/google/android/play/core/assetpacks/bc;
+    iget-object v2, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->c:Lcom/google/android/play/core/assetpacks/bb;
 
-    invoke-direct {v0, v1, p0, v2}, Lcom/google/android/play/core/assetpacks/b;-><init>(Landroid/content/Context;Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;Lcom/google/android/play/core/assetpacks/bc;)V
+    invoke-direct {v0, v1, p0, v2}, Lcom/google/android/play/core/assetpacks/b;-><init>(Landroid/content/Context;Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;Lcom/google/android/play/core/assetpacks/bb;)V
 
     iput-object v0, p0, Lcom/google/android/play/core/assetpacks/AssetPackExtractionService;->e:Lcom/google/android/play/core/assetpacks/b;
 

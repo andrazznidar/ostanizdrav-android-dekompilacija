@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionQuota.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,96:1\n109#2,11:97\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n*L\n38#1,11:97\n*E\n"
+    value = "SMAP\nSubmissionQuota.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,100:1\n109#2,11:101\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n*L\n38#1,11:101\n*E\n"
 .end annotation
 
 
@@ -119,11 +119,11 @@
 
     if-eqz v6, :cond_0
 
-    invoke-static {v4, v5, v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeMultiply(JI)J
+    invoke-static {v4, v5, v8}, Lcom/google/zxing/client/android/R$id;->safeMultiply(JI)J
 
     move-result-wide v4
 
-    invoke-static {v10, v11, v4, v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeAdd(JJ)J
+    invoke-static {v10, v11, v4, v5}, Lcom/google/zxing/client/android/R$id;->safeAdd(JJ)J
 
     move-result-wide v10
 
@@ -304,7 +304,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -318,7 +318,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->mutex:Lkotlinx/coroutines/sync/Mutex;
 

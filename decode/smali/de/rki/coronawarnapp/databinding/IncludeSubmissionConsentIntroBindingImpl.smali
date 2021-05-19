@@ -45,7 +45,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c00ab
+    const v5, 0x7f0c00b4
 
     aput v5, v2, v4
 
@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090365
+    const v1, 0x7f090451
 
     const/4 v2, 0x2
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090358
+    const v1, 0x7f090444
 
     const/4 v2, 0x3
 
@@ -73,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090359
+    const v1, 0x7f090445
 
     const/4 v2, 0x4
 
@@ -81,7 +81,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09035f
+    const v1, 0x7f09044b
 
     const/4 v2, 0x5
 
@@ -89,7 +89,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09035b
+    const v1, 0x7f090447
 
     const/4 v2, 0x6
 
@@ -97,7 +97,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090360
+    const v1, 0x7f09044c
 
     const/4 v2, 0x7
 
@@ -105,7 +105,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09035a
+    const v1, 0x7f090446
 
     const/16 v2, 0x8
 
@@ -113,7 +113,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09035e
+    const v1, 0x7f09044a
 
     const/16 v2, 0x9
 
@@ -121,7 +121,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09035d
+    const v1, 0x7f090449
 
     const/16 v2, 0xa
 
@@ -262,7 +262,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     invoke-virtual {v14, v0, v13}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -386,14 +386,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

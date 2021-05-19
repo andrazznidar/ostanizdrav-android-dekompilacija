@@ -95,7 +95,7 @@
 
     const-string v1, "OpenSSLContextImpl"
 
-    invoke-static {p1, v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -157,7 +157,7 @@
 
     const-string p2, "Choice of default protocol is unsupported: "
 
-    invoke-static {p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -320,7 +320,7 @@
 
     const-string v0, "AlgorithmParameters.AES"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.AlgorithmParameters.2.16.840.1.101.3.4.1.2"
 
@@ -336,7 +336,7 @@
 
     const-string v0, "AES"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -366,7 +366,7 @@
 
     const-string v0, "AlgorithmParameters.DESEDE"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.AlgorithmParameters.TDEA"
 
@@ -376,7 +376,7 @@
 
     const-string v0, "DESEDE"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -386,7 +386,7 @@
 
     const-string v0, "AlgorithmParameters.GCM"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.AlgorithmParameters.2.16.840.1.101.3.4.1.6"
 
@@ -402,7 +402,7 @@
 
     const-string v0, "GCM"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -472,7 +472,7 @@
 
     const-string v0, "MessageDigest.SHA-1"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.SHA1"
 
@@ -488,7 +488,7 @@
 
     const-string v0, "SHA-1"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -498,7 +498,7 @@
 
     const-string v0, "MessageDigest.SHA-224"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.SHA224"
 
@@ -508,7 +508,7 @@
 
     const-string v0, "SHA-224"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -518,7 +518,7 @@
 
     const-string v0, "MessageDigest.SHA-256"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.SHA256"
 
@@ -528,7 +528,7 @@
 
     const-string v0, "SHA-256"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -538,7 +538,7 @@
 
     const-string v0, "MessageDigest.SHA-384"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.SHA384"
 
@@ -548,7 +548,7 @@
 
     const-string v0, "SHA-384"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -558,7 +558,7 @@
 
     const-string v0, "MessageDigest.SHA-512"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.SHA512"
 
@@ -568,7 +568,7 @@
 
     const-string v0, "SHA-512"
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -578,7 +578,7 @@
 
     const-string v0, "MessageDigest.MD5"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.MessageDigest.1.2.840.113549.2.5"
 
@@ -596,7 +596,7 @@
 
     const-string v0, "KeyGenerator.ARC4"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.RC4"
 
@@ -604,7 +604,7 @@
 
     const-string p3, "Alg.Alias.KeyGenerator.1.2.840.113549.3.4"
 
-    invoke-static {p0, p1, p2, p3, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p2, p3, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -654,7 +654,7 @@
 
     const-string v1, "KeyGenerator.DESEDE"
 
-    invoke-static {p1, p3, v0, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p3, v0, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.TDEA"
 
@@ -672,7 +672,7 @@
 
     const-string v1, "KeyGenerator.HmacMD5"
 
-    invoke-static {p1, p3, v0, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p3, v0, p0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.3.6.1.5.5.8.1.1"
 
@@ -684,7 +684,7 @@
 
     const-string v0, "Alg.Alias.KeyGenerator.HMAC/MD5"
 
-    invoke-static {p0, p1, p3, v0, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, p3, v0, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -694,7 +694,7 @@
 
     const-string v2, "KeyGenerator.HmacSHA1"
 
-    invoke-static {p1, v0, v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.2.840.113549.2.7"
 
@@ -710,7 +710,7 @@
 
     const-string v1, "Alg.Alias.KeyGenerator.HMAC/SHA1"
 
-    invoke-static {p0, p1, v0, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v0, v1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -720,7 +720,7 @@
 
     const-string v3, "KeyGenerator.HmacSHA224"
 
-    invoke-static {p1, v1, v2, p0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v1, v2, p0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.2.840.113549.2.8"
 
@@ -732,7 +732,7 @@
 
     const-string v2, "Alg.Alias.KeyGenerator.HMAC/SHA224"
 
-    invoke-static {p0, p1, v1, v2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v1, v2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -742,7 +742,7 @@
 
     const-string v4, "KeyGenerator.HmacSHA256"
 
-    invoke-static {p1, v2, v3, p0, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v2, v3, p0, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.2.840.113549.2.9"
 
@@ -758,7 +758,7 @@
 
     const-string v3, "Alg.Alias.KeyGenerator.HMAC/SHA256"
 
-    invoke-static {p0, p1, v2, v3, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v2, v3, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -768,7 +768,7 @@
 
     const-string v5, "KeyGenerator.HmacSHA384"
 
-    invoke-static {p1, v3, v4, p0, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v3, v4, p0, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.2.840.113549.2.10"
 
@@ -780,7 +780,7 @@
 
     const-string v4, "Alg.Alias.KeyGenerator.HMAC/SHA384"
 
-    invoke-static {p0, p1, v3, v4, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v3, v4, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -790,7 +790,7 @@
 
     const-string v6, "KeyGenerator.HmacSHA512"
 
-    invoke-static {p1, v4, v5, p0, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v4, v5, p0, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyGenerator.1.2.840.113549.2.11"
 
@@ -802,7 +802,7 @@
 
     const-string v5, "Alg.Alias.KeyGenerator.HMAC/SHA512"
 
-    invoke-static {p0, p1, v4, v5, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v4, v5, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -812,7 +812,7 @@
 
     const-string v7, "KeyPairGenerator.RSA"
 
-    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyPairGenerator.1.2.840.113549.1.1.1"
 
@@ -824,7 +824,7 @@
 
     const-string v6, "Alg.Alias.KeyPairGenerator.2.5.8.1.1"
 
-    invoke-static {p0, p1, v5, v6, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v5, v6, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -834,7 +834,7 @@
 
     const-string v8, "KeyPairGenerator.EC"
 
-    invoke-static {p1, v6, v7, p0, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v6, v7, p0, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyPairGenerator.1.2.840.10045.2.1"
 
@@ -844,7 +844,7 @@
 
     const-string v8, "EC"
 
-    invoke-static {p0, p1, v6, v7, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v6, v7, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -854,7 +854,7 @@
 
     const-string v8, "KeyFactory.RSA"
 
-    invoke-static {p1, v6, v7, p0, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v6, v7, p0, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyFactory.1.2.840.113549.1.1.1"
 
@@ -864,7 +864,7 @@
 
     const-string v6, "Alg.Alias.KeyFactory.2.5.8.1.1"
 
-    invoke-static {p0, p1, v5, v6, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v5, v6, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -874,7 +874,7 @@
 
     const-string v7, "KeyFactory.EC"
 
-    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.KeyFactory.1.2.840.10045.2.1"
 
@@ -884,7 +884,7 @@
 
     const-string v7, "EC"
 
-    invoke-static {p0, p1, v5, v6, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v5, v6, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -894,7 +894,7 @@
 
     const-string v7, "SecretKeyFactory.DESEDE"
 
-    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.SecretKeyFactory.TDEA"
 
@@ -1276,7 +1276,7 @@
 
     const-string v7, "SecureRandom.SHA1PRNG"
 
-    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, v5, v6, p0, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "SecureRandom.SHA1PRNG ImplementedIn"
 
@@ -1762,7 +1762,7 @@
 
     const-string p2, "Alg.Alias.Mac.PBEWITHHMACSHA512"
 
-    invoke-static {p0, p1, v4, p2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v4, p2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline33(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1772,7 +1772,7 @@
 
     const-string v0, "CertificateFactory.X509"
 
-    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline40(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
 
     const-string p1, "Alg.Alias.CertificateFactory.X.509"
 
@@ -1820,7 +1820,7 @@
 
     sget-object v2, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v1, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1890,13 +1890,13 @@
 
     const-string v2, "OpenSSLKeyHolder"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v1, "Mac."
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1906,7 +1906,7 @@
 
     sget-object v2, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1962,7 +1962,7 @@
 
     sget-object v2, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v1, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2016,7 +2016,7 @@
 
     const-string v1, "Cipher."
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2026,7 +2026,7 @@
 
     sget-object v2, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2076,7 +2076,7 @@
 
     const-string v1, "Signature."
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2086,7 +2086,7 @@
 
     sget-object v2, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2102,7 +2102,7 @@
 
     const-string v0, "Cipher."
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2112,7 +2112,7 @@
 
     sget-object v1, Lorg/conscrypt/OpenSSLProvider;->PREFIX:Ljava/lang/String;
 
-    invoke-static {v0, v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

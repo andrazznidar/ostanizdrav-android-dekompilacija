@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/BackgroundDetector;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 # interfaces
 .implements Landroid/app/Application$ActivityLifecycleCallbacks;
@@ -84,6 +84,10 @@
 # virtual methods
 .method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 2
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BackgroundDetector;->zzb:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -109,18 +113,30 @@
 
 .method public final onActivityDestroyed(Landroid/app/Activity;)V
     .locals 0
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final onActivityPaused(Landroid/app/Activity;)V
     .locals 0
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final onActivityResumed(Landroid/app/Activity;)V
     .locals 3
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BackgroundDetector;->zzb:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -146,24 +162,44 @@
 
 .method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final onActivityStarted(Landroid/app/Activity;)V
     .locals 0
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final onActivityStopped(Landroid/app/Activity;)V
     .locals 0
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
+    .param p1    # Landroid/content/res/Configuration;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

@@ -282,6 +282,14 @@
         }
     .end annotation
 
+    iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
+
+    invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLECPublicKey;->getEncoded()[B
@@ -291,6 +299,15 @@
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/io/NotSerializableException;
+
+    const-string v0, "Hardware backed keys cannot be serialized"
+
+    invoke-direct {p1, v0}, Ljava/io/NotSerializableException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 

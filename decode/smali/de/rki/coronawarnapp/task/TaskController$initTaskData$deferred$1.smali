@@ -141,7 +141,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -155,7 +155,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
@@ -173,7 +173,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->label:I
 
-    invoke-static {v3, v4, p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v3, v4, p1, p0}, Lcom/google/zxing/client/android/R$id;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

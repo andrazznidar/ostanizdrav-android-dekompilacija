@@ -4,13 +4,9 @@
 
 
 # static fields
-.field public static final ANDROID_THEME_OVERLAY_ATTRS:[I
-
 .field public static final APPCOMPAT_CHECK_ATTRS:[I
 
 .field public static final MATERIAL_CHECK_ATTRS:[I
-
-.field public static final MATERIAL_THEME_OVERLAY_ATTR:[I
 
 
 # direct methods
@@ -21,7 +17,7 @@
 
     new-array v1, v0, [I
 
-    sget v2, Lcom/google/android/material/R$attr;->colorPrimary:I
+    const v2, 0x7f0400c2
 
     const/4 v3, 0x0
 
@@ -29,35 +25,13 @@
 
     sput-object v1, Lcom/google/android/material/internal/ThemeEnforcement;->APPCOMPAT_CHECK_ATTRS:[I
 
-    new-array v1, v0, [I
-
-    sget v2, Lcom/google/android/material/R$attr;->colorPrimaryVariant:I
-
-    aput v2, v1, v3
-
-    sput-object v1, Lcom/google/android/material/internal/ThemeEnforcement;->MATERIAL_CHECK_ATTRS:[I
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [I
-
-    const/high16 v2, 0x1010000
-
-    aput v2, v1, v3
-
-    sget v2, Lcom/google/android/material/R$attr;->theme:I
-
-    aput v2, v1, v0
-
-    sput-object v1, Lcom/google/android/material/internal/ThemeEnforcement;->ANDROID_THEME_OVERLAY_ATTRS:[I
-
     new-array v0, v0, [I
 
-    sget v1, Lcom/google/android/material/R$attr;->materialThemeOverlay:I
+    const v1, 0x7f0400c5
 
     aput v1, v0, v3
 
-    sput-object v0, Lcom/google/android/material/internal/ThemeEnforcement;->MATERIAL_THEME_OVERLAY_ATTR:[I
+    sput-object v0, Lcom/google/android/material/internal/ThemeEnforcement;->MATERIAL_CHECK_ATTRS:[I
 
     return-void
 .end method
@@ -71,17 +45,17 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->ThemeEnforcement_enforceMaterialTheme:I
+    const/4 p2, 0x1
 
     const/4 p3, 0x0
 
     invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result p2
+    move-result p3
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    if-eqz p2, :cond_1
+    if-eqz p3, :cond_1
 
     new-instance p1, Landroid/util/TypedValue;
 
@@ -89,13 +63,11 @@
 
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object p2
+    move-result-object p3
 
-    sget p3, Lcom/google/android/material/R$attr;->isMaterialTheme:I
+    const v0, 0x7f0401b3
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p2, p3, p1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {p3, v0, p1, p2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
     move-result p2
 
@@ -137,7 +109,7 @@
 
     move-result-object v0
 
-    sget v1, Lcom/google/android/material/R$styleable;->ThemeEnforcement_enforceTextAppearance:I
+    const/4 v1, 0x2
 
     const/4 v2, 0x0
 
@@ -198,9 +170,7 @@
 
     :cond_4
     :goto_1
-    sget p0, Lcom/google/android/material/R$styleable;->ThemeEnforcement_android_textAppearance:I
-
-    invoke-virtual {v0, p0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p0
 
@@ -275,91 +245,13 @@
 
     const-string v0, " (or a descendant)."
 
-    invoke-static {p1, p2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
-.end method
-
-.method public static createThemedContext(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
-    .locals 1
-
-    sget-object v0, Lcom/google/android/material/internal/ThemeEnforcement;->MATERIAL_THEME_OVERLAY_ATTR:[I
-
-    invoke-virtual {p0, p1, v0, p2, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object p2
-
-    const/4 p3, 0x0
-
-    invoke-virtual {p2, p3, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
-
-    if-eqz v0, :cond_3
-
-    instance-of p2, p0, Landroidx/appcompat/view/ContextThemeWrapper;
-
-    if-eqz p2, :cond_0
-
-    move-object p2, p0
-
-    check-cast p2, Landroidx/appcompat/view/ContextThemeWrapper;
-
-    iget p2, p2, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource:I
-
-    if-eq p2, v0, :cond_3
-
-    :cond_0
-    new-instance p2, Landroidx/appcompat/view/ContextThemeWrapper;
-
-    invoke-direct {p2, p0, v0}, Landroidx/appcompat/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
-
-    sget-object p0, Lcom/google/android/material/internal/ThemeEnforcement;->ANDROID_THEME_OVERLAY_ATTRS:[I
-
-    invoke-virtual {p2, p1, p0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p3, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result p3
-
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move p1, p3
-
-    :goto_0
-    if-eqz p1, :cond_2
-
-    new-instance p0, Landroidx/appcompat/view/ContextThemeWrapper;
-
-    invoke-direct {p0, p2, p1}, Landroidx/appcompat/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
-
-    goto :goto_1
-
-    :cond_2
-    move-object p0, p2
-
-    :cond_3
-    :goto_1
-    return-object p0
 .end method
 
 .method public static varargs obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;

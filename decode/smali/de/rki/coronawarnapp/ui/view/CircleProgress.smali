@@ -20,7 +20,9 @@
 
 .field public progress:F
 
-.field public final progressPaint:Landroid/graphics/Paint;
+.field public progressColor:I
+
+.field public progressPaint:Landroid/graphics/Paint;
 
 .field public progressWidth:F
 
@@ -67,11 +69,11 @@
 
     move-result-object v2
 
-    const v3, 0x7f0c00fb
+    const v3, 0x7f0c011f
 
     invoke-virtual {v2, v3, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v2, 0x7f0900b8
+    const v2, 0x7f0900ef
 
     invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +83,7 @@
 
     if-eqz v3, :cond_0
 
-    const v2, 0x7f0900b9
+    const v2, 0x7f0900f0
 
     invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -107,7 +109,7 @@
 
     move-result-object p2
 
-    const v2, 0x7f060066
+    const v2, 0x7f06006e
 
     invoke-static {p1, v2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
@@ -117,7 +119,7 @@
 
     move-result v2
 
-    const v3, 0x7f06003f
+    const v3, 0x7f06003d
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getColor(I)I
 
@@ -129,7 +131,7 @@
 
     const/4 v3, 0x5
 
-    const v4, 0x7f06006c
+    const v4, 0x7f060075
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getColor(I)I
 
@@ -195,24 +197,6 @@
 
     invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    iget v1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressWidth:F
-
-    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    invoke-virtual {p1, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->circlePaint:Landroid/graphics/Paint;
-
-    new-instance p1, Landroid/graphics/Paint;
-
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
-
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -223,9 +207,11 @@
 
     invoke-virtual {p1, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->circlePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/view/CircleProgress;->paintProgressCircle()Landroid/graphics/Paint;
+
+    move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressPaint:Landroid/graphics/Paint;
 
@@ -261,6 +247,14 @@
     .locals 1
 
     iget v0, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progress:F
+
+    return v0
+.end method
+
+.method public final getProgressColor()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressColor:I
 
     return v0
 .end method
@@ -353,8 +347,38 @@
     return-void
 .end method
 
+.method public final paintProgressCircle()Landroid/graphics/Paint;
+    .locals 2
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iget v1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressColor:I
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget v1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressWidth:F
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    sget-object v1, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+
+    return-object v0
+.end method
+
 .method public final setProgress(F)V
-    .locals 5
+    .locals 8
 
     iput p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progress:F
 
@@ -376,9 +400,9 @@
 
     iget-boolean v2, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->disableText:Z
 
-    const/4 v3, 0x0
+    const/16 v3, 0x8
 
-    const/16 v4, 0x8
+    const/4 v4, 0x0
 
     if-nez v2, :cond_1
 
@@ -391,13 +415,45 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    float-to-int v2, p1
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v2
+
+    const v5, 0x7f1202b8
+
+    invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v5, "context.getString(R.stri\u2026ing_days_circle_progress)"
+
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v5, 0x1
+
+    new-array v6, v5, [Ljava/lang/Object;
+
+    float-to-int v7, p1
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    aput-object v7, v6, v4
+
+    invoke-static {v6, v5}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-static {v2, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v5, "java.lang.String.format(this, *args)"
+
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -405,7 +461,7 @@
 
     :cond_1
     :goto_0
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     :goto_1
     sget v0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->DEFAULT_MAX_PROGRESS:F
@@ -414,14 +470,38 @@
 
     if-nez p1, :cond_2
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_2
 
     :cond_2
-    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :goto_2
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    return-void
+.end method
+
+.method public final setProgressColor(I)V
+    .locals 2
+
+    iput p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressColor:I
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->binding:Lde/rki/coronawarnapp/databinding/ViewCircleProgressBinding;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ViewCircleProgressBinding;->circleProgressIcon:Landroid/widget/ImageView;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, p1, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/view/CircleProgress;->paintProgressCircle()Landroid/graphics/Paint;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CircleProgress;->progressPaint:Landroid/graphics/Paint;
+
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

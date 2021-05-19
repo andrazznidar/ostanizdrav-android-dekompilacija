@@ -3,14 +3,14 @@
 .source "DefaultTEKHistoryProvider_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;",
         ">;"
     }
@@ -28,15 +28,41 @@
     .end annotation
 .end field
 
+.field public final contextProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final enfVersionProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/nearby/modules/version/ENFVersion;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
             "Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/nearby/modules/version/ENFVersion;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Landroid/content/Context;",
             ">;)V"
         }
     .end annotation
@@ -45,13 +71,17 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->clientProvider:Ljavax/inject/Provider;
 
+    iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->enfVersionProvider:Ljavax/inject/Provider;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->contextProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->clientProvider:Ljavax/inject/Provider;
 
@@ -61,9 +91,25 @@
 
     check-cast v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;
+    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->enfVersionProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;-><init>(Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;)V
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    return-object v1
+    move-result-object v1
+
+    check-cast v1, Lde/rki/coronawarnapp/nearby/modules/version/ENFVersion;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;->contextProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/Context;
+
+    new-instance v3, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;
+
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;-><init>(Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;Lde/rki/coronawarnapp/nearby/modules/version/ENFVersion;Landroid/content/Context;)V
+
+    return-object v3
 .end method

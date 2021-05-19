@@ -141,7 +141,7 @@
 
     const-string v2, "Invalid signature algorithm "
 
-    invoke-static {v2, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,24 +1,20 @@
 .class public final Lcom/google/android/gms/common/api/internal/zabf;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zaa:I
-
-.field public final synthetic zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+.field public final synthetic zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;I)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-    iput p2, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:I
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,13 +24,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabf;->zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
-    iget v1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:I
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(I)V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zao()V
 
     return-void
 .end method

@@ -457,7 +457,7 @@
 
     move-result-object v7
 
-    sget v10, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_threshold:I
+    const v10, 0x7f0701c4
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -493,7 +493,7 @@
 
     move-result-object v7
 
-    sget v10, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_extra_offset:I
+    const v10, 0x7f0701c3
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -525,12 +525,12 @@
 
     if-eqz v5, :cond_6
 
-    sget v12, Landroidx/appcompat/R$dimen;->tooltip_y_offset_touch:I
+    const v12, 0x7f0701c7
 
     goto :goto_3
 
     :cond_6
-    sget v12, Landroidx/appcompat/R$dimen;->tooltip_y_offset_non_touch:I
+    const v12, 0x7f0701c6
 
     :goto_3
     invoke-virtual {v7, v12}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I

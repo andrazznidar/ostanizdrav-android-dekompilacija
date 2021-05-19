@@ -50,23 +50,23 @@
     :goto_0
     new-instance v0, Lde/rki/coronawarnapp/appconfig/mapping/ExposureDetectionConfigMapper$ExposureDetectionConfigContainer;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->maxExposureDetectionsPerDay(Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)I
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->maxExposureDetectionsPerDay(Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)I
 
     move-result v1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->maxExposureDetectionsPerDay(Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)I
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->maxExposureDetectionsPerDay(Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    const-wide/16 v2, 0x63
+    const-wide/16 v2, 0x1
 
     invoke-static {v2, v3}, Lorg/joda/time/Duration;->standardDays(J)Lorg/joda/time/Duration;
 
     move-result-object v2
 
-    const-string v3, "Duration.standardDays(99)"
+    const-string v3, "Duration.standardDays(1)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,117 +49,111 @@
 
     move-result-object p2
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textSize:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    invoke-virtual {p2, v1, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    move-result v2
 
-    move-result v1
+    iput v2, p0, Lcom/google/android/material/resources/TextAppearance;->textSize:F
 
-    iput v1, p0, Lcom/google/android/material/resources/TextAppearance;->textSize:F
+    const/4 v2, 0x3
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColor:I
+    invoke-static {p1, p2, v2}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    move-result-object v2
 
-    move-result-object v1
+    iput-object v2, p0, Lcom/google/android/material/resources/TextAppearance;->textColor:Landroid/content/res/ColorStateList;
 
-    iput-object v1, p0, Lcom/google/android/material/resources/TextAppearance;->textColor:Landroid/content/res/ColorStateList;
+    const/4 v2, 0x4
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorHint:I
+    invoke-static {p1, p2, v2}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    move-result-object v2
 
-    move-result-object v1
+    iput-object v2, p0, Lcom/google/android/material/resources/TextAppearance;->textColorHint:Landroid/content/res/ColorStateList;
 
-    iput-object v1, p0, Lcom/google/android/material/resources/TextAppearance;->textColorHint:Landroid/content/res/ColorStateList;
+    const/4 v2, 0x5
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorLink:I
+    invoke-static {p1, p2, v2}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    move-result-object v2
 
-    move-result-object v1
+    iput-object v2, p0, Lcom/google/android/material/resources/TextAppearance;->textColorLink:Landroid/content/res/ColorStateList;
 
-    iput-object v1, p0, Lcom/google/android/material/resources/TextAppearance;->textColorLink:Landroid/content/res/ColorStateList;
+    const/4 v2, 0x2
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_textStyle:I
+    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    invoke-virtual {p2, v1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    move-result v2
 
-    move-result v1
+    iput v2, p0, Lcom/google/android/material/resources/TextAppearance;->textStyle:I
 
-    iput v1, p0, Lcom/google/android/material/resources/TextAppearance;->textStyle:I
+    const/4 v2, 0x1
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_android_typeface:I
+    invoke-virtual {p2, v2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    const/4 v3, 0x1
+    move-result v2
 
-    invoke-virtual {p2, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    iput v2, p0, Lcom/google/android/material/resources/TextAppearance;->typeface:I
 
-    move-result v1
+    const/16 v2, 0xc
 
-    iput v1, p0, Lcom/google/android/material/resources/TextAppearance;->typeface:I
+    invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_fontFamily:I
+    move-result v3
 
-    sget v3, Lcom/google/android/material/R$styleable;->TextAppearance_android_fontFamily:I
-
-    invoke-virtual {p2, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move v1, v3
+    const/16 v2, 0xa
 
     :goto_0
-    invoke-virtual {p2, v1, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
     iput v3, p0, Lcom/google/android/material/resources/TextAppearance;->fontFamilyResourceId:I
 
-    invoke-virtual {p2, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, p0, Lcom/google/android/material/resources/TextAppearance;->fontFamily:Ljava/lang/String;
+    iput-object v2, p0, Lcom/google/android/material/resources/TextAppearance;->fontFamily:Ljava/lang/String;
 
-    sget v1, Lcom/google/android/material/R$styleable;->TextAppearance_textAllCaps:I
+    const/16 v2, 0xe
 
-    invoke-virtual {p2, v1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    sget v0, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowColor:I
+    const/4 v0, 0x6
 
-    invoke-static {p1, p2, v0}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, p2, v0}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/material/resources/TextAppearance;->shadowColor:Landroid/content/res/ColorStateList;
 
-    sget p1, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowDx:I
+    const/4 p1, 0x7
 
-    invoke-virtual {p2, p1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p2, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
     iput p1, p0, Lcom/google/android/material/resources/TextAppearance;->shadowDx:F
 
-    sget p1, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowDy:I
+    const/16 p1, 0x8
 
-    invoke-virtual {p2, p1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p2, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
     iput p1, p0, Lcom/google/android/material/resources/TextAppearance;->shadowDy:F
 
-    sget p1, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowRadius:I
+    const/16 p1, 0x9
 
-    invoke-virtual {p2, p1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p2, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
@@ -309,7 +303,7 @@
 
     move-object v2, p1
 
-    invoke-static/range {v2 .. v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;Z)Landroid/graphics/Typeface;
+    invoke-static/range {v2 .. v8}, Landroidx/core/app/AppOpsManagerCompat;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;Z)Landroid/graphics/Typeface;
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -321,7 +315,7 @@
 
     const-string v0, "Error loading font "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

@@ -121,7 +121,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration$cacheDir$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -222,7 +222,7 @@
     check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -243,7 +243,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-boolean p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;->isInit:Z
 
@@ -379,7 +379,7 @@
 
     move-result-wide v9
 
-    invoke-static {v9, v10, v7, v8}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->safeSubtract(JJ)J
+    invoke-static {v9, v10, v7, v8}, Lcom/google/zxing/client/android/R$id;->safeSubtract(JJ)J
 
     move-result-wide v6
 
@@ -425,11 +425,15 @@
     goto :goto_6
 
     :cond_8
-    const-string v6, "file"
+    sget-object v6, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "file"
 
-    invoke-static {v5}, Lde/rki/coronawarnapp/util/HashExtensions;->hashToMD5(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v7, 0x0
+
+    invoke-static {v6, v5, v7, v4}, Lde/rki/coronawarnapp/util/HashExtensions;->hashToMD5$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/io/File;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -686,7 +690,7 @@
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;
 
     :try_start_0
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -723,7 +727,7 @@
 
     check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;
 
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p3, p1
 
@@ -732,7 +736,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p3, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/legacy/LegacyKeyCacheMigration;->workMutex:Lkotlinx/coroutines/sync/Mutex;
 
@@ -848,7 +852,7 @@
     const/16 p2, 0x2000
 
     :try_start_6
-    invoke-static {v4, v5, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+    invoke-static {v4, v5, p2}, Lcom/google/zxing/client/android/R$id;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
 
     move-result-wide v10
 
@@ -859,7 +863,7 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     :try_start_7
-    invoke-static {v5, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v5, v6}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
 
@@ -872,7 +876,7 @@
     .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     :try_start_8
-    invoke-static {v4, v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v4, v6}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
     .catchall {:try_start_8 .. :try_end_8} :catchall_5
@@ -947,7 +951,7 @@
     move-exception v8
 
     :try_start_c
-    invoke-static {v5, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v5, p2}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v8
     :try_end_c
@@ -965,7 +969,7 @@
     move-exception v5
 
     :try_start_e
-    invoke-static {v4, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v4, p2}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v5
     :try_end_e

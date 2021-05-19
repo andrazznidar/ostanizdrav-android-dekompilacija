@@ -33,11 +33,6 @@
 
     iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;->onboardingButtonBack:Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;
 
-    if-eqz p9, :cond_0
-
-    iput-object p0, p9, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_0
     iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;->onboardingButtonDisable:Landroid/widget/Button;
 
     iput-object p11, p0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBinding;->onboardingButtonNext:Landroid/widget/Button;
@@ -54,7 +49,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
 
-    const v1, 0x7f0c004f
+    const v1, 0x7f0c005a
 
     invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 

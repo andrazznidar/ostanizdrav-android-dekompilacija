@@ -756,7 +756,7 @@
 
     move-result-object v7
 
-    invoke-static {v3, v7}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
+    invoke-static {v3, v7}, Lcom/google/android/material/R$style;->equal([B[B)Z
 
     move-result v3
 

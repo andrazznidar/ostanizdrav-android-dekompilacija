@@ -25,6 +25,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/work/impl/model/WorkSpecDao_Impl;Landroidx/room/RoomDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "database"
+        }
+    .end annotation
 
     invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
@@ -35,6 +45,16 @@
 # virtual methods
 .method public bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000,
+            0x1000
+        }
+        names = {
+            "stmt",
+            "value"
+        }
+    .end annotation
 
     move-object/from16 v1, p1
 
@@ -58,7 +78,7 @@
     :goto_0
     iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->stateToInt(Landroidx/work/WorkInfo$State;)I
+    invoke-static {v2}, Landroidx/navigation/ui/R$anim;->stateToInt(Landroidx/work/WorkInfo$State;)I
 
     move-result v2
 

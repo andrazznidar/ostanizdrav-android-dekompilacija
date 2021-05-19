@@ -45,7 +45,7 @@
 
     iget-object v1, p0, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
 
-    invoke-static {v0, v1, p1, p2, p3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->onNestedFling(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
+    invoke-static {v0, v1, p1, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->onNestedFling(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
 
     move-result p1
 
@@ -72,7 +72,7 @@
 
     iget-object v1, p0, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
 
-    invoke-static {v0, v1, p1, p2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->onNestedPreFling(Landroid/view/ViewParent;Landroid/view/View;FF)Z
+    invoke-static {v0, v1, p1, p2}, Landroidx/core/app/AppOpsManagerCompat;->onNestedPreFling(Landroid/view/ViewParent;Landroid/view/View;FF)Z
 
     move-result p1
 
@@ -171,7 +171,7 @@
 
     move v7, p5
 
-    invoke-static/range {v2 .. v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->onNestedPreScroll(Landroid/view/ViewParent;Landroid/view/View;II[II)V
+    invoke-static/range {v2 .. v7}, Landroidx/core/app/AppOpsManagerCompat;->onNestedPreScroll(Landroid/view/ViewParent;Landroid/view/View;II[II)V
 
     if-eqz p4, :cond_6
 
@@ -208,6 +208,30 @@
     return v1
 .end method
 
+.method public dispatchNestedScroll(IIII[II[I)V
+    .locals 8
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move v6, p6
+
+    move-object v7, p7
+
+    invoke-virtual/range {v0 .. v7}, Landroidx/core/view/NestedScrollingChildHelper;->dispatchNestedScrollInternal(IIII[II[I)Z
+
+    return-void
+.end method
+
 .method public dispatchNestedScroll(IIII[I)Z
     .locals 8
 
@@ -237,25 +261,25 @@
 .method public final dispatchNestedScrollInternal(IIII[II[I)Z
     .locals 15
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-object/from16 v1, p5
+    move-object/from16 v10, p5
 
-    iget-boolean v2, v0, Landroidx/core/view/NestedScrollingChildHelper;->mIsNestedScrollingEnabled:Z
+    move/from16 v0, p6
 
-    const/4 v3, 0x0
+    iget-boolean v2, v1, Landroidx/core/view/NestedScrollingChildHelper;->mIsNestedScrollingEnabled:Z
 
-    if-eqz v2, :cond_7
+    const/4 v11, 0x0
 
-    move/from16 v2, p6
+    if-eqz v2, :cond_a
 
-    invoke-virtual {p0, v2}, Landroidx/core/view/NestedScrollingChildHelper;->getNestedScrollingParentForType(I)Landroid/view/ViewParent;
+    invoke-virtual {p0, v0}, Landroidx/core/view/NestedScrollingChildHelper;->getNestedScrollingParentForType(I)Landroid/view/ViewParent;
 
-    move-result-object v4
+    move-result-object v8
 
-    if-nez v4, :cond_0
+    if-nez v8, :cond_0
 
-    return v3
+    return v11
 
     :cond_0
     const/4 v12, 0x1
@@ -271,103 +295,197 @@
     goto :goto_0
 
     :cond_1
-    if-eqz v1, :cond_7
+    if-eqz v10, :cond_a
 
-    aput v3, v1, v3
+    aput v11, v10, v11
 
-    aput v3, v1, v12
+    aput v11, v10, v12
 
-    goto :goto_3
+    goto/16 :goto_4
 
     :cond_2
     :goto_0
-    if-eqz v1, :cond_3
+    if-eqz v10, :cond_3
 
-    iget-object v5, v0, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
+    iget-object v2, v1, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
 
-    invoke-virtual {v5, v1}, Landroid/view/View;->getLocationInWindow([I)V
+    invoke-virtual {v2, v10}, Landroid/view/View;->getLocationInWindow([I)V
 
-    aget v5, v1, v3
+    aget v2, v10, v11
 
-    aget v6, v1, v12
+    aget v3, v10, v12
 
-    move v13, v5
+    move v13, v2
 
-    move v14, v6
+    move v14, v3
 
     goto :goto_1
 
     :cond_3
-    move v13, v3
+    move v13, v11
 
     move v14, v13
 
     :goto_1
     if-nez p7, :cond_5
 
-    iget-object v5, v0, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
+    iget-object v2, v1, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
 
-    if-nez v5, :cond_4
+    if-nez v2, :cond_4
 
-    const/4 v5, 0x2
+    const/4 v2, 0x2
 
-    new-array v5, v5, [I
+    new-array v2, v2, [I
 
-    iput-object v5, v0, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
+    iput-object v2, v1, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
 
     :cond_4
-    iget-object v5, v0, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
+    iget-object v2, v1, Landroidx/core/view/NestedScrollingChildHelper;->mTempNestedScrollConsumed:[I
 
-    aput v3, v5, v3
+    aput v11, v2, v11
 
-    aput v3, v5, v12
+    aput v11, v2, v12
 
-    move-object v11, v5
+    move-object v9, v2
 
     goto :goto_2
 
     :cond_5
-    move-object/from16 v11, p7
+    move-object/from16 v9, p7
 
     :goto_2
-    iget-object v5, v0, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
+    iget-object v3, v1, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
 
-    move/from16 v6, p1
+    instance-of v2, v8, Landroidx/core/view/NestedScrollingParent3;
 
-    move/from16 v7, p2
+    if-eqz v2, :cond_6
 
-    move/from16 v8, p3
+    move-object v2, v8
 
-    move/from16 v9, p4
+    check-cast v2, Landroidx/core/view/NestedScrollingParent3;
 
-    move/from16 v10, p6
+    move/from16 v4, p1
 
-    invoke-static/range {v4 .. v11}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->onNestedScroll(Landroid/view/ViewParent;Landroid/view/View;IIIII[I)V
+    move/from16 v5, p2
 
-    if-eqz v1, :cond_6
+    move/from16 v6, p3
 
-    iget-object v2, v0, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
+    move/from16 v7, p4
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->getLocationInWindow([I)V
+    move/from16 v8, p6
 
-    aget v2, v1, v3
+    invoke-interface/range {v2 .. v9}, Landroidx/core/view/NestedScrollingParent3;->onNestedScroll(Landroid/view/View;IIIII[I)V
 
-    sub-int/2addr v2, v13
-
-    aput v2, v1, v3
-
-    aget v2, v1, v12
-
-    sub-int/2addr v2, v14
-
-    aput v2, v1, v12
+    goto :goto_3
 
     :cond_6
-    return v12
+    aget v2, v9, v11
+
+    add-int v2, v2, p3
+
+    aput v2, v9, v11
+
+    aget v2, v9, v12
+
+    add-int v2, v2, p4
+
+    aput v2, v9, v12
+
+    instance-of v2, v8, Landroidx/core/view/NestedScrollingParent2;
+
+    if-eqz v2, :cond_7
+
+    move-object v2, v8
+
+    check-cast v2, Landroidx/core/view/NestedScrollingParent2;
+
+    move/from16 v4, p1
+
+    move/from16 v5, p2
+
+    move/from16 v6, p3
+
+    move/from16 v7, p4
+
+    move/from16 v8, p6
+
+    invoke-interface/range {v2 .. v8}, Landroidx/core/view/NestedScrollingParent2;->onNestedScroll(Landroid/view/View;IIIII)V
+
+    goto :goto_3
 
     :cond_7
+    if-nez v0, :cond_8
+
+    move-object v2, v8
+
+    move/from16 v4, p1
+
+    move/from16 v5, p2
+
+    move/from16 v6, p3
+
+    move/from16 v7, p4
+
+    :try_start_0
+    invoke-interface/range {v2 .. v7}, Landroid/view/ViewParent;->onNestedScroll(Landroid/view/View;IIII)V
+    :try_end_0
+    .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception v0
+
+    move-object v2, v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "ViewParent "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v3, " does not implement interface method onNestedScroll"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "ViewParentCompat"
+
+    invoke-static {v3, v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_8
     :goto_3
-    return v3
+    if-eqz v10, :cond_9
+
+    iget-object v0, v1, Landroidx/core/view/NestedScrollingChildHelper;->mView:Landroid/view/View;
+
+    invoke-virtual {v0, v10}, Landroid/view/View;->getLocationInWindow([I)V
+
+    aget v0, v10, v11
+
+    sub-int/2addr v0, v13
+
+    aput v0, v10, v11
+
+    aget v0, v10, v12
+
+    sub-int/2addr v0, v14
+
+    aput v0, v10, v12
+
+    :cond_9
+    return v12
+
+    :cond_a
+    :goto_4
+    return v11
 .end method
 
 .method public final getNestedScrollingParentForType(I)Landroid/view/ViewParent;

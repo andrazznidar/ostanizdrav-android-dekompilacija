@@ -53,19 +53,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;->vm$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentViewModel;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
-
-    sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToEasyLanguageUrl;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToEasyLanguageUrl;
-
-    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    invoke-static {p1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;->access$openEasyLanguageLink(Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;)V
 
     return-void
 
@@ -79,19 +67,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;->vm$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentViewModel;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
-
-    sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingPrivacy;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingPrivacy;
-
-    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    invoke-static {p1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;->access$goToOnboardingPrivacyFragment(Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment;)V
 
     return-void
 .end method

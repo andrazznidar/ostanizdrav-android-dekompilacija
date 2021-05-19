@@ -12,7 +12,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lde/rki/coronawarnapp/util/DeviceUIState;",
-        "Landroid/text/Spannable;",
+        "Landroid/text/SpannableString;",
         ">;"
     }
 .end annotation
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f12034f
+    const v1, 0x7f120451
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -84,11 +84,25 @@
     goto :goto_0
 
     :pswitch_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/view/TestResultSectionView$formatTestResultSectionContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+    new-instance p1, Landroid/text/SpannableString;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->formatTestResult(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)Landroid/text/Spannable;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/TestResultSectionView$formatTestResultSectionContent$1;->this$0:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "context"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/view/TestResultSectionView$formatTestResultSectionContent$1;->$uiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->formatTestResult(Landroid/content/Context;Lde/rki/coronawarnapp/util/NetworkRequestWrapper;)Landroid/text/Spannable;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
@@ -101,7 +115,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120351
+    const v1, 0x7f120453
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

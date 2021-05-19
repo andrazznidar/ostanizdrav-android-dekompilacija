@@ -5,12 +5,8 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimpleStepEntry.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimpleStepEntry.kt\nde/rki/coronawarnapp/ui/view/SimpleStepEntry\n+ 2 Context.kt\nandroidx/core/content/ContextKt\n*L\n1#1,34:1\n55#2,6:35\n*E\n*S KotlinDebug\n*F\n+ 1 SimpleStepEntry.kt\nde/rki/coronawarnapp/ui/view/SimpleStepEntry\n*L\n24#1,6:35\n*E\n"
+    value = "SMAP\nSimpleStepEntry.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimpleStepEntry.kt\nde/rki/coronawarnapp/ui/view/SimpleStepEntry\n+ 2 Context.kt\nandroidx/core/content/ContextKt\n*L\n1#1,32:1\n55#2,6:33\n*E\n*S KotlinDebug\n*F\n+ 1 SimpleStepEntry.kt\nde/rki/coronawarnapp/ui/view/SimpleStepEntry\n*L\n22#1,6:33\n*E\n"
 .end annotation
-
-
-# instance fields
-.field public _$_findViewCache:Ljava/util/HashMap;
 
 
 # direct methods
@@ -25,7 +21,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Lde/rki/coronawarnapp/ui/view/StepEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v1, 0x7f0c0092
+    const v1, 0x7f0c00a1
 
     invoke-static {p1, v1, p0}, Landroid/widget/FrameLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -39,7 +35,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f09032a
+    const p2, 0x7f0903fe
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -59,7 +55,7 @@
 
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const p2, 0x7f090329
+    const p2, 0x7f0903fd
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -104,50 +100,4 @@
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public _$_findCachedViewById(I)Landroid/view/View;
-    .locals 2
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;->_$_findViewCache:Ljava/util/HashMap;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;->_$_findViewCache:Ljava/util/HashMap;
-
-    :cond_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    return-object v0
 .end method

@@ -1,14 +1,7 @@
-.class public final Lcom/google/android/play/core/internal/al;
-.super Ljava/lang/RuntimeException;
+.class public interface abstract Lcom/google/android/play/core/internal/al;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "Failed to bind to the service."
-
-    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    return-void
+# virtual methods
+.method public abstract a()V
 .end method

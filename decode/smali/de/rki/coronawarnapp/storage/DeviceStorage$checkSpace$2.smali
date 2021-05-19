@@ -22,7 +22,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDeviceStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeviceStorage.kt\nde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,147:1\n1#2:148\n*E\n"
+    value = "SMAP\nDeviceStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeviceStorage.kt\nde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,153:1\n1#2:154\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -130,7 +130,7 @@
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 9
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_0
     sget-object p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->Companion:Lde/rki/coronawarnapp/storage/DeviceStorage;
@@ -285,7 +285,7 @@
 
     const-string v1, "checkSpace(path="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

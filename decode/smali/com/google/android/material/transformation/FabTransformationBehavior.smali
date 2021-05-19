@@ -10,6 +10,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field public dependencyOriginalTranslationX:F
@@ -473,7 +476,7 @@
     :cond_0
     instance-of v0, p1, Lcom/google/android/material/circularreveal/CircularRevealWidget;
 
-    sget v0, Lcom/google/android/material/R$id;->mtrl_child_content_container:I
+    const v0, 0x7f0902b9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1011,12 +1014,12 @@
 
     if-eqz v11, :cond_0
 
-    sget v1, Lcom/google/android/material/R$animator;->mtrl_fab_transformation_sheet_expand_spec:I
+    const v1, 0x7f02000e
 
     goto :goto_0
 
     :cond_0
-    sget v1, Lcom/google/android/material/R$animator;->mtrl_fab_transformation_sheet_collapse_spec:I
+    const v1, 0x7f02000d
 
     :goto_0
     new-instance v12, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;
@@ -1402,19 +1405,19 @@
     :cond_b
     const/4 v12, 0x0
 
-    invoke-static {v3, v4, v12, v12}, Landroidx/transition/ViewGroupUtilsApi14;->dist(FFFF)F
+    invoke-static {v3, v4, v12, v12}, Lcom/google/android/material/R$style;->dist(FFFF)F
 
     move-result v13
 
-    invoke-static {v3, v4, v0, v12}, Landroidx/transition/ViewGroupUtilsApi14;->dist(FFFF)F
+    invoke-static {v3, v4, v0, v12}, Lcom/google/android/material/R$style;->dist(FFFF)F
 
     move-result v16
 
-    invoke-static {v3, v4, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->dist(FFFF)F
+    invoke-static {v3, v4, v0, v1}, Lcom/google/android/material/R$style;->dist(FFFF)F
 
     move-result v0
 
-    invoke-static {v3, v4, v12, v1}, Landroidx/transition/ViewGroupUtilsApi14;->dist(FFFF)F
+    invoke-static {v3, v4, v12, v1}, Lcom/google/android/material/R$style;->dist(FFFF)F
 
     move-result v1
 
@@ -1458,7 +1461,7 @@
     move v13, v1
 
     :goto_5
-    invoke-static {v2, v3, v4, v13}, Landroidx/transition/ViewGroupUtilsApi14;->createCircularReveal(Lcom/google/android/material/circularreveal/CircularRevealWidget;FFF)Landroid/animation/Animator;
+    invoke-static {v2, v3, v4, v13}, Lcom/google/android/material/R$style;->createCircularReveal(Lcom/google/android/material/circularreveal/CircularRevealWidget;FFF)Landroid/animation/Animator;
 
     move-result-object v0
 
@@ -1508,7 +1511,7 @@
 
     iget v0, v0, Lcom/google/android/material/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    invoke-static {v2, v3, v4, v5}, Landroidx/transition/ViewGroupUtilsApi14;->createCircularReveal(Lcom/google/android/material/circularreveal/CircularRevealWidget;FFF)Landroid/animation/Animator;
+    invoke-static {v2, v3, v4, v5}, Lcom/google/android/material/R$style;->createCircularReveal(Lcom/google/android/material/circularreveal/CircularRevealWidget;FFF)Landroid/animation/Animator;
 
     move-result-object v1
 
@@ -1677,7 +1680,7 @@
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {v0, v7}, Landroidx/transition/ViewGroupUtilsApi14;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {v0, v7}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     new-instance v1, Lcom/google/android/material/transformation/FabTransformationBehavior$1;
 

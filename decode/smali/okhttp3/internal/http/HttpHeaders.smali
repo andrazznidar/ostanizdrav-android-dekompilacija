@@ -1025,7 +1025,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 

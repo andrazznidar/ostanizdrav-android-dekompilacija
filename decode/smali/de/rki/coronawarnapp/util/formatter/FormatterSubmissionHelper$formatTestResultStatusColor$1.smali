@@ -62,7 +62,7 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f060070
+    const v1, 0x7f060079
 
     if-eq p1, v0, :cond_1
 
@@ -77,7 +77,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f06006e
+    const v1, 0x7f060077
 
     :cond_1
     :goto_0

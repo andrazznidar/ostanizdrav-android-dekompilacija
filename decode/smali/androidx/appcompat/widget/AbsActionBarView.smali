@@ -59,7 +59,7 @@
 
     move-result-object p3
 
-    sget v0, Landroidx/appcompat/R$attr;->actionBarPopupTheme:I
+    const v0, 0x7f040003
 
     const/4 v1, 0x1
 
@@ -176,17 +176,17 @@
 
     sget-object v0, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
-    sget v1, Landroidx/appcompat/R$attr;->actionBarStyle:I
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const v2, 0x7f040006
 
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget v0, Landroidx/appcompat/R$styleable;->ActionBar_height:I
+    const/16 v0, 0xd
 
     invoke-virtual {p1, v0, v3}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 

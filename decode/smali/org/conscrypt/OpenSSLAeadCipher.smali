@@ -6,6 +6,8 @@
 # static fields
 .field public static final DEFAULT_TAG_SIZE_BITS:I = 0x80
 
+.field public static final ENABLE_BYTEBUFFER_OPTIMIZATIONS:Z = true
+
 .field public static lastGlobalMessageSize:I = 0x20
 
 
@@ -327,13 +329,103 @@
 
     const-string v1, "Tag length must be a multiple of 8; was "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-direct {v0, p1}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public doFinalInternal(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/crypto/ShortBufferException;,
+            Ljavax/crypto/IllegalBlockSizeException;,
+            Ljavax/crypto/BadPaddingException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/conscrypt/OpenSSLAeadCipher;->checkInitialization()V
+
+    :try_start_0
+    invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->isEncrypting()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-wide v1, p0, Lorg/conscrypt/OpenSSLAeadCipher;->evpAead:J
+
+    iget-object v3, p0, Lorg/conscrypt/OpenSSLCipher;->encodedKey:[B
+
+    iget v4, p0, Lorg/conscrypt/OpenSSLAeadCipher;->tagLengthInBytes:I
+
+    iget-object v6, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
+
+    iget-object v8, p0, Lorg/conscrypt/OpenSSLAeadCipher;->aad:[B
+
+    move-object v5, p2
+
+    move-object v7, p1
+
+    invoke-static/range {v1 .. v8}, Lorg/conscrypt/NativeCrypto;->EVP_AEAD_CTX_seal_buf(J[BILjava/nio/ByteBuffer;[BLjava/nio/ByteBuffer;[B)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-wide v0, p0, Lorg/conscrypt/OpenSSLAeadCipher;->evpAead:J
+
+    iget-object v2, p0, Lorg/conscrypt/OpenSSLCipher;->encodedKey:[B
+
+    iget v3, p0, Lorg/conscrypt/OpenSSLAeadCipher;->tagLengthInBytes:I
+
+    iget-object v5, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
+
+    iget-object v7, p0, Lorg/conscrypt/OpenSSLAeadCipher;->aad:[B
+
+    move-object v4, p2
+
+    move-object v6, p1
+
+    invoke-static/range {v0 .. v7}, Lorg/conscrypt/NativeCrypto;->EVP_AEAD_CTX_open_buf(J[BILjava/nio/ByteBuffer;[BLjava/nio/ByteBuffer;[B)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->isEncrypting()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    const/4 p2, 0x1
+
+    iput-boolean p2, p0, Lorg/conscrypt/OpenSSLAeadCipher;->mustInitialize:Z
+
+    :cond_1
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    invoke-virtual {p1}, Ljavax/crypto/BadPaddingException;->getMessage()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Ljavax/crypto/BadPaddingException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    invoke-direct {p0, p2, v0}, Lorg/conscrypt/OpenSSLAeadCipher;->throwAEADBadTagExceptionIfAvailable(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
 .end method
 
 .method public doFinalInternal([BII)I
@@ -440,6 +532,156 @@
     throw p1
 .end method
 
+.method public engineDoFinal(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/crypto/ShortBufferException;,
+            Ljavax/crypto/IllegalBlockSizeException;,
+            Ljavax/crypto/BadPaddingException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_5
+
+    if-eqz p2, :cond_5
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lorg/conscrypt/OpenSSLAeadCipher;->getOutputSizeForFinal(I)I
+
+    move-result v0
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v1
+
+    if-gt v0, v1, :cond_4
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->isReadOnly()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget v0, p0, Lorg/conscrypt/OpenSSLAeadCipher;->bufCount:I
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1, p2}, Ljavax/crypto/CipherSpi;->engineDoFinal(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->mark()Ljava/nio/Buffer;
+
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->reset()Ljava/nio/Buffer;
+
+    move-object p1, v0
+
+    :cond_1
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lorg/conscrypt/OpenSSLAeadCipher;->getOutputSizeForFinal(I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Lorg/conscrypt/OpenSSLAeadCipher;->doFinalInternal(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+
+    move-result v1
+
+    invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0, p1, p2}, Lorg/conscrypt/OpenSSLAeadCipher;->doFinalInternal(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+
+    move-result v1
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    :goto_0
+    return v1
+
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Cannot write to Read Only ByteBuffer"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_4
+    new-instance p1, Lorg/conscrypt/ShortBufferWithoutStackTraceException;
+
+    const-string p2, "Insufficient Bytes for Output Buffer"
+
+    invoke-direct {p1, p2}, Lorg/conscrypt/ShortBufferWithoutStackTraceException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_5
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null ByteBuffer Error"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public engineDoFinal([BII[BI)I
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
@@ -465,11 +707,11 @@
     goto :goto_0
 
     :cond_0
-    new-instance p1, Ljavax/crypto/ShortBufferException;
+    new-instance p1, Lorg/conscrypt/ShortBufferWithoutStackTraceException;
 
     const-string p2, "Insufficient output space"
 
-    invoke-direct {p1, p2}, Ljavax/crypto/ShortBufferException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Lorg/conscrypt/ShortBufferWithoutStackTraceException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -577,7 +819,7 @@
 
     const-string p2, "IV must be specified in "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -607,7 +849,7 @@
 
     const-string p2, "IV not used in "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -642,7 +884,7 @@
 
     const-string p3, " but was "
 
-    invoke-static {p2, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2, v1, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 

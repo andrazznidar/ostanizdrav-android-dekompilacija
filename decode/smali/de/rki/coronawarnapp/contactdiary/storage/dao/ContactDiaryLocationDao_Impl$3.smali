@@ -58,7 +58,35 @@
     invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
-    const/4 v0, 0x3
+    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;->phoneNumber:Ljava/lang/String;
+
+    const/4 v1, 0x3
+
+    if-nez v0, :cond_1
+
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    :goto_1
+    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;->emailAddress:Ljava/lang/String;
+
+    const/4 v1, 0x4
+
+    if-nez v0, :cond_2
+
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    :goto_2
+    const/4 v0, 0x5
 
     iget-wide v1, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;->locationId:J
 
@@ -70,7 +98,7 @@
 .method public createQuery()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "UPDATE OR ABORT `locations` SET `locationId` = ?,`locationName` = ? WHERE `locationId` = ?"
+    const-string v0, "UPDATE OR ABORT `locations` SET `locationId` = ?,`locationName` = ?,`phoneNumber` = ?,`emailAddress` = ? WHERE `locationId` = ?"
 
     return-object v0
 .end method

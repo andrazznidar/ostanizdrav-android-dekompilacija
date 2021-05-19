@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field public volatile _aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
+
 .field public volatile _exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
 
 .field public volatile _riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
@@ -84,6 +86,10 @@
 
     invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    const-string v5, "DELETE FROM `riskperdate`"
+
+    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
     invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -141,7 +147,7 @@
 .end method
 
 .method public createInvalidationTracker()Landroidx/room/InvalidationTracker;
-    .locals 6
+    .locals 7
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -161,7 +167,9 @@
 
     const-string v5, "scaninstances"
 
-    filled-new-array {v3, v4, v5}, [Ljava/lang/String;
+    const-string v6, "riskperdate"
+
+    filled-new-array {v3, v4, v5, v6}, [Ljava/lang/String;
 
     move-result-object v3
 
@@ -177,13 +185,13 @@
 
     new-instance v1, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x3
 
     invoke-direct {v1, p0, v2}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;I)V
 
-    const-string v2, "8d5e82a0429a20bd137235b7cc055b1a"
+    const-string v2, "42caa51e3dfceb800f45aae144eeb39f"
 
-    const-string v3, "42066ba3726c24cd11a071e223cf14a6"
+    const-string v3, "becf3b13bff9bf154696b2fc6c41579e"
 
     invoke-direct {v0, p1, v1, v2, v3}, Landroidx/room/RoomOpenHelper;-><init>(Landroidx/room/DatabaseConfiguration;Landroidx/room/RoomOpenHelper$Delegate;Ljava/lang/String;Ljava/lang/String;)V
 

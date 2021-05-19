@@ -244,11 +244,11 @@
 
     move-result-object p2
 
-    invoke-static {v3, p2}, Landroidx/transition/ViewGroupUtilsApi14;->computeMac([B[B)[B
+    invoke-static {v3, p2}, Lcom/google/android/material/R$style;->computeMac([B[B)[B
 
     move-result-object p2
 
-    invoke-static {p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
+    invoke-static {p2, v1}, Lcom/google/android/material/R$style;->equal([B[B)Z
 
     move-result p2
     :try_end_0
@@ -421,7 +421,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Landroidx/transition/ViewGroupUtilsApi14;->computeMac([B[B)[B
+    invoke-static {v1, p1}, Lcom/google/android/material/R$style;->computeMac([B[B)[B
 
     move-result-object p1
 

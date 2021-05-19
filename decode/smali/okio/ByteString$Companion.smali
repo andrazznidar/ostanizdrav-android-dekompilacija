@@ -56,7 +56,7 @@
 
     int-to-long v4, p3
 
-    invoke-static/range {v0 .. v5}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v0 .. v5}, Lcom/google/zxing/client/android/R$id;->checkOffsetAndCount(JJJ)V
 
     new-instance p0, Lokio/ByteString;
 
@@ -73,6 +73,32 @@
 
 
 # virtual methods
+.method public final decodeBase64(Ljava/lang/String;)Lokio/ByteString;
+    .locals 1
+
+    const-string v0, "$this$decodeBase64"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lokio/-Base64;->decodeBase64ToArray(Ljava/lang/String;)[B
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    new-instance v0, Lokio/ByteString;
+
+    invoke-direct {v0, p1}, Lokio/ByteString;-><init>([B)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
 .method public final decodeHex(Ljava/lang/String;)Lokio/ByteString;
     .locals 6
 
@@ -155,7 +181,7 @@
     :cond_2
     const-string v0, "Unexpected hex string: "
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

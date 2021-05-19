@@ -1,46 +1,68 @@
 .class public final Lcom/google/android/play/core/assetpacks/dn;
-.super Lcom/google/android/play/core/assetpacks/ct;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/play/core/internal/co;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/play/core/internal/co<",
+        "Lcom/google/android/play/core/assetpacks/dm;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:J
-
-.field public final c:I
-
-.field public final d:J
-
-.field public final e:I
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:J
-
-.field public final h:Ljava/io/InputStream;
+.field public final a:Lcom/google/android/play/core/internal/co;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/co<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;IJIJILjava/lang/String;JLjava/io/InputStream;)V
+.method public constructor <init>(Lcom/google/android/play/core/internal/co;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/play/core/internal/co<",
+            "Landroid/content/Context;",
+            ">;)V"
+        }
+    .end annotation
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/play/core/assetpacks/ct;-><init>(ILjava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Lcom/google/android/play/core/assetpacks/dn;->a:I
-
-    iput-wide p4, p0, Lcom/google/android/play/core/assetpacks/dn;->b:J
-
-    iput p6, p0, Lcom/google/android/play/core/assetpacks/dn;->c:I
-
-    iput-wide p7, p0, Lcom/google/android/play/core/assetpacks/dn;->d:J
-
-    iput p9, p0, Lcom/google/android/play/core/assetpacks/dn;->e:I
-
-    iput-object p10, p0, Lcom/google/android/play/core/assetpacks/dn;->f:Ljava/lang/String;
-
-    iput-wide p11, p0, Lcom/google/android/play/core/assetpacks/dn;->g:J
-
-    iput-object p13, p0, Lcom/google/android/play/core/assetpacks/dn;->h:Ljava/io/InputStream;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/dn;->a:Lcom/google/android/play/core/internal/co;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/dn;->a:Lcom/google/android/play/core/internal/co;
+
+    check-cast v0, Lcom/google/android/play/core/assetpacks/s;
+
+    invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/s;->b()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/play/core/assetpacks/dm;
+
+    invoke-direct {v1, v0}, Lcom/google/android/play/core/assetpacks/dm;-><init>(Landroid/content/Context;)V
+
+    return-object v1
 .end method

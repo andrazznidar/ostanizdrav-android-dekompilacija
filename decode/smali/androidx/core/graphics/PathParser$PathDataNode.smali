@@ -37,7 +37,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->copyOfRange([FII)[F
+    invoke-static {p1, v1, v0}, Landroidx/core/app/AppOpsManagerCompat;->copyOfRange([FII)[F
 
     move-result-object p1
 

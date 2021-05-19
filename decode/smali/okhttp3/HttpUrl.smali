@@ -584,6 +584,169 @@
     return v0
 .end method
 
+.method public final newBuilder()Lokhttp3/HttpUrl$Builder;
+    .locals 6
+
+    new-instance v0, Lokhttp3/HttpUrl$Builder;
+
+    invoke-direct {v0}, Lokhttp3/HttpUrl$Builder;-><init>()V
+
+    iget-object v1, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedUsername()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "<set-?>"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPassword()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;
+
+    iget-object v1, p0, Lokhttp3/HttpUrl;->host:Ljava/lang/String;
+
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
+
+    iget v1, p0, Lokhttp3/HttpUrl;->port:I
+
+    iget-object v2, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+
+    const-string v3, "scheme"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v3
+
+    const v4, 0x310888    # 4.503E-39f
+
+    const/4 v5, -0x1
+
+    if-eq v3, v4, :cond_1
+
+    const v4, 0x5f008eb
+
+    if-eq v3, v4, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v3, "https"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const/16 v2, 0x1bb
+
+    goto :goto_1
+
+    :cond_1
+    const-string v3, "http"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const/16 v2, 0x50
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    move v2, v5
+
+    :goto_1
+    if-eq v1, v2, :cond_3
+
+    iget v5, p0, Lokhttp3/HttpUrl;->port:I
+
+    :cond_3
+    iput v5, v0, Lokhttp3/HttpUrl$Builder;->port:I
+
+    iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->clear()V
+
+    iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
+
+    invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPathSegments()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lokhttp3/HttpUrl$Builder;->encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+
+    iget-object v1, p0, Lokhttp3/HttpUrl;->fragment:Ljava/lang/String;
+
+    if-nez v1, :cond_4
+
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    :cond_4
+    iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
+
+    const/16 v2, 0x23
+
+    const/4 v3, 0x6
+
+    const/4 v4, 0x0
+
+    invoke-static {v1, v2, v4, v4, v3}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;CIZI)I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "(this as java.lang.String).substring(startIndex)"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_2
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
+
+    return-object v0
+
+    :cond_5
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public final newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
     .locals 1
 
@@ -702,325 +865,88 @@
 .end method
 
 .method public final uri()Ljava/net/URI;
-    .locals 25
+    .locals 24
 
-    move-object/from16 v1, p0
+    invoke-virtual/range {p0 .. p0}, Lokhttp3/HttpUrl;->newBuilder()Lokhttp3/HttpUrl$Builder;
 
-    new-instance v0, Lokhttp3/HttpUrl$Builder;
+    move-result-object v0
 
-    invoke-direct {v0}, Lokhttp3/HttpUrl$Builder;-><init>()V
+    iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
 
-    iget-object v2, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;
+    const-string v3, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
 
-    invoke-virtual/range {p0 .. p0}, Lokhttp3/HttpUrl;->encodedUsername()Ljava/lang/String;
+    const-string v4, "replacement"
 
-    move-result-object v2
+    const-string v5, "input"
 
-    const-string v3, "<set-?>"
+    const-string v6, ""
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "nativePattern"
 
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;
+    const-string v8, "Pattern.compile(pattern)"
 
-    invoke-virtual/range {p0 .. p0}, Lokhttp3/HttpUrl;->encodedPassword()Ljava/lang/String;
+    const-string v9, "pattern"
 
-    move-result-object v2
+    if-eqz v1, :cond_0
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v10, "[\"<>^`{|}]"
 
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;
+    invoke-static {v10, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, v1, Lokhttp3/HttpUrl;->host:Ljava/lang/String;
+    invoke-static {v10}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
+    move-result-object v10
 
-    iget v2, v1, Lokhttp3/HttpUrl;->port:I
+    invoke-static {v10, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v3, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+    invoke-static {v10, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "scheme"
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v10, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result v4
+    move-result-object v1
 
-    const v5, 0x310888    # 4.503E-39f
+    invoke-virtual {v1, v6}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v6, -0x1
+    move-result-object v1
 
-    if-eq v4, v5, :cond_1
-
-    const v5, 0x5f008eb
-
-    if-eq v4, v5, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    const-string v4, "https"
+    move-object v1, v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const/16 v3, 0x1bb
-
-    goto :goto_1
-
-    :cond_1
-    const-string v4, "http"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const/16 v3, 0x50
-
-    goto :goto_1
-
-    :cond_2
     :goto_0
-    move v3, v6
+    iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
+
+    iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v10, 0x0
+
+    move v11, v10
 
     :goto_1
-    if-eq v2, v3, :cond_3
+    if-ge v11, v1, :cond_1
 
-    iget v6, v1, Lokhttp3/HttpUrl;->port:I
+    iget-object v12, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
 
-    :cond_3
-    iput v6, v0, Lokhttp3/HttpUrl$Builder;->port:I
+    sget-object v13, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
-    iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->clear()V
-
-    iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-
-    invoke-virtual/range {p0 .. p0}, Lokhttp3/HttpUrl;->encodedPathSegments()Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    invoke-virtual/range {p0 .. p0}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lokhttp3/HttpUrl$Builder;->encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
-
-    iget-object v2, v1, Lokhttp3/HttpUrl;->fragment:Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    if-nez v2, :cond_4
-
-    move-object v2, v3
-
-    goto :goto_2
-
-    :cond_4
-    iget-object v2, v1, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-
-    const/16 v5, 0x23
-
-    const/4 v6, 0x6
-
-    invoke-static {v2, v5, v4, v4, v6}, Lkotlin/text/StringsKt__IndentKt;->indexOf$default(Ljava/lang/CharSequence;CIZI)I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    iget-object v5, v1, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-
-    if-eqz v5, :cond_a
-
-    invoke-virtual {v5, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v5, "(this as java.lang.String).substring(startIndex)"
-
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_2
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
-
-    iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
-
-    const-string v5, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
-
-    const-string v6, "replacement"
-
-    const-string v7, "input"
-
-    const-string v8, ""
-
-    const-string v9, "nativePattern"
-
-    const-string v10, "Pattern.compile(pattern)"
-
-    const-string v11, "pattern"
-
-    if-eqz v2, :cond_5
-
-    const-string v12, "[\"<>^`{|}]"
-
-    invoke-static {v12, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v12}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v12
-
-    invoke-static {v12, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v12, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v8, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v12, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :cond_5
-    move-object v2, v3
-
-    :goto_3
-    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
-
-    iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    move v12, v4
-
-    :goto_4
-    if-ge v12, v2, :cond_6
-
-    iget-object v13, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-
-    sget-object v14, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
-
-    invoke-interface {v13, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v15
-
-    check-cast v15, Ljava/lang/String;
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v19, 0x1
-
-    const/16 v20, 0x1
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0xe3
-
-    const-string v18, "[]"
-
-    invoke-static/range {v14 .. v24}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+    invoke-interface {v12, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v14
 
-    invoke-interface {v13, v12, v14}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v12, v12, 0x1
-
-    goto :goto_4
-
-    :cond_6
-    iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
-
-    if-eqz v2, :cond_8
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v12
-
-    :goto_5
-    if-ge v4, v12, :cond_8
-
-    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    move-object v15, v13
-
-    check-cast v15, Ljava/lang/String;
-
-    if-eqz v15, :cond_7
-
-    sget-object v14, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v19, 0x1
-
-    const/16 v20, 0x1
-
-    const/16 v21, 0x1
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0xc3
-
-    const-string v18, "\\^`{|}"
-
-    invoke-static/range {v14 .. v24}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
-
-    move-result-object v13
-
-    goto :goto_6
-
-    :cond_7
-    move-object v13, v3
-
-    :goto_6
-    invoke-interface {v2, v4, v13}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_5
-
-    :cond_8
-    iget-object v14, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
-
-    if-eqz v14, :cond_9
-
-    sget-object v13, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+    check-cast v14, Ljava/lang/String;
 
     const/4 v15, 0x0
 
@@ -1032,90 +958,198 @@
 
     const/16 v20, 0x0
 
-    const/16 v21, 0x1
+    const/16 v21, 0x0
 
     const/16 v22, 0x0
 
-    const/16 v23, 0xa3
+    const/16 v23, 0xe3
 
-    const-string v17, " \"#<>\\^`{|}"
+    const-string v17, "[]"
 
     invoke-static/range {v13 .. v23}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v13
 
-    :cond_9
-    iput-object v3, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
+    invoke-interface {v12, v11, v13}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v11, v11, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    :goto_2
+    if-ge v10, v11, :cond_3
+
+    invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    move-object v14, v12
+
+    check-cast v14, Ljava/lang/String;
+
+    if-eqz v14, :cond_2
+
+    sget-object v13, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v18, 0x1
+
+    const/16 v19, 0x1
+
+    const/16 v20, 0x1
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x0
+
+    const/16 v23, 0xc3
+
+    const-string v17, "\\^`{|}"
+
+    invoke-static/range {v13 .. v23}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object v12
+
+    goto :goto_3
+
+    :cond_2
+    move-object v12, v2
+
+    :goto_3
+    invoke-interface {v1, v10, v12}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v13, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
+
+    if-eqz v13, :cond_4
+
+    sget-object v12, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v17, 0x1
+
+    const/16 v18, 0x1
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x1
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0xa3
+
+    const-string v16, " \"#<>\\^`{|}"
+
+    invoke-static/range {v12 .. v22}, Lokhttp3/HttpUrl$Companion;->canonicalize$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    :cond_4
+    iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
 
     invoke-virtual {v0}, Lokhttp3/HttpUrl$Builder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     :try_start_0
     new-instance v0, Ljava/net/URI;
 
-    invoke-direct {v0, v2}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_7
+    goto :goto_4
 
     :catch_0
     move-exception v0
 
     :try_start_1
-    const-string v3, "[\\u0000-\\u001F\\u007F-\\u009F\\p{javaWhitespace}]"
+    const-string v2, "[\\u0000-\\u001F\\u007F-\\u009F\\p{javaWhitespace}]"
 
-    invoke-static {v3, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v3, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v8, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-static {v6, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v2
+    invoke-virtual {v2, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    invoke-virtual {v2, v8}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1, v6}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v1
 
-    invoke-static {v2}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
 
     move-result-object v0
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    const-string v2, "try {\n        val stripp\u2026e) // Unexpected!\n      }"
+    const-string v1, "try {\n        val stripp\u2026e) // Unexpected!\n      }"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_7
+    :goto_4
     return-object v0
 
     :catch_1
-    new-instance v2, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    invoke-direct {v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v1
+.end method
 
-    :cond_a
-    new-instance v0, Ljava/lang/NullPointerException;
+.method public final url()Ljava/net/URL;
+    .locals 2
 
-    const-string v2, "null cannot be cast to non-null type java.lang.String"
+    :try_start_0
+    new-instance v0, Ljava/net/URL;
 
-    invoke-direct {v0, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    throw v0
+    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

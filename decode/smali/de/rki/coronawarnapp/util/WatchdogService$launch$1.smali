@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.util.WatchdogService$launch$1"
     f = "WatchdogService.kt"
     l = {
-        0x33
+        0x3a
     }
     m = "invokeSuspend"
 .end annotation
@@ -108,7 +108,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 14
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -132,7 +132,7 @@
 
     check-cast v1, Landroid/os/PowerManager$WakeLock;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
@@ -146,7 +146,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/util/WatchdogService$launch$1;->this$0:Lde/rki/coronawarnapp/util/WatchdogService;
 
@@ -160,7 +160,7 @@
 
     const-string v1, "CWA-WAKE-"
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -200,7 +200,7 @@
 
     const-string v6, "CWA-WIFI-"
 
-    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -238,7 +238,7 @@
 
     iget-object v5, v5, Lde/rki/coronawarnapp/util/WatchdogService;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
-    new-instance v12, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+    new-instance v13, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
     const-class v6, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
@@ -254,13 +254,15 @@
 
     const/4 v9, 0x0
 
-    const/4 v11, 0x4
+    const/4 v11, 0x0
+
+    const/16 v12, 0x14
 
     const-string v10, "WatchdogService"
 
-    move-object v6, v12
+    move-object v6, v13
 
-    invoke-direct/range {v6 .. v11}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;I)V
+    invoke-direct/range {v6 .. v12}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
     iput-object v1, p0, Lde/rki/coronawarnapp/util/WatchdogService$launch$1;->L$0:Ljava/lang/Object;
 
@@ -268,7 +270,7 @@
 
     iput v4, p0, Lde/rki/coronawarnapp/util/WatchdogService$launch$1;->label:I
 
-    invoke-static {v5, v12, p0}, Landroidx/transition/ViewGroupUtilsApi14;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v5, v13, p0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v4
 

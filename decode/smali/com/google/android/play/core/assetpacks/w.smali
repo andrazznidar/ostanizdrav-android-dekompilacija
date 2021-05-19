@@ -1,44 +1,57 @@
-.class public final Lcom/google/android/play/core/assetpacks/w;
+.class public interface abstract Lcom/google/android/play/core/assetpacks/w;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/play/core/internal/ci;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/play/core/internal/ci<",
-        "Ljava/util/concurrent/Executor;",
-        ">;"
-    }
-.end annotation
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
+.method public abstract b(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+.end method
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/m;->a:Ljava/util/concurrent/ThreadFactory;
+.method public abstract c(Ljava/util/Map;)Lcom/google/android/play/core/tasks/m;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;)",
+            "Lcom/google/android/play/core/tasks/m<",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+.end method
 
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+.method public abstract e(ILjava/lang/String;Ljava/lang/String;I)V
+.end method
 
-    move-result-object v0
+.method public abstract f(ILjava/lang/String;)V
+.end method
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+.method public abstract g(I)V
+.end method
 
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/String;)V
+.method public abstract h(ILjava/lang/String;Ljava/lang/String;I)Lcom/google/android/play/core/tasks/m;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "I)",
+            "Lcom/google/android/play/core/tasks/m<",
+            "Landroid/os/ParcelFileDescriptor;",
+            ">;"
+        }
+    .end annotation
+.end method
 
-    return-object v0
+.method public abstract j()V
 .end method

@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.nearby.TracingPermissionHelper$startTracing$1"
     f = "TracingPermissionHelper.kt"
     l = {
-        0x17
+        0x18
     }
     m = "invokeSuspend"
 .end annotation
@@ -125,7 +125,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -139,7 +139,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
@@ -151,7 +151,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;->label:I
 
-    invoke-static {p1, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

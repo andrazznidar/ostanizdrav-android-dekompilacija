@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 4
+    .locals 11
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -89,112 +89,124 @@
 
     invoke-virtual {p1, p2, v3, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object p2
+    move-result-object v3
 
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_orientation:I
+    sget-object v6, Landroidx/appcompat/R$styleable;->LinearLayoutCompat:[I
 
-    invoke-virtual {p2, p3, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/4 v10, 0x0
 
-    move-result p3
+    move-object v4, p0
 
-    if-ltz p3, :cond_0
+    move-object v5, p1
 
-    invoke-virtual {p0, p3}, Landroidx/appcompat/widget/LinearLayoutCompat;->setOrientation(I)V
+    move-object v7, p2
+
+    move-object v8, v3
+
+    move v9, p3
+
+    invoke-static/range {v4 .. v10}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+
+    invoke-virtual {v3, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p2
+
+    if-ltz p2, :cond_0
+
+    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->setOrientation(I)V
 
     :cond_0
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_gravity:I
+    invoke-virtual {v3, v2, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    invoke-virtual {p2, p3, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    move-result p2
 
-    move-result p3
+    if-ltz p2, :cond_1
 
-    if-ltz p3, :cond_1
-
-    invoke-virtual {p0, p3}, Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V
+    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V
 
     :cond_1
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAligned:I
+    const/4 p2, 0x2
 
-    invoke-virtual {p2, p3, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v3, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result p3
+    move-result p2
 
-    if-nez p3, :cond_2
+    if-nez p2, :cond_2
 
-    invoke-virtual {p0, p3}, Landroidx/appcompat/widget/LinearLayoutCompat;->setBaselineAligned(Z)V
+    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->setBaselineAligned(Z)V
 
     :cond_2
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_weightSum:I
+    const/4 p2, 0x4
 
-    const/high16 v0, -0x40800000    # -1.0f
+    const/high16 p3, -0x40800000    # -1.0f
 
-    invoke-virtual {p2, p3, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v3, p2, p3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    move-result p2
+
+    iput p2, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum:F
+
+    const/4 p2, 0x3
+
+    invoke-virtual {v3, p2, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p2
+
+    iput p2, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
+
+    const/4 p2, 0x7
+
+    invoke-virtual {v3, p2, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mUseLargestChild:Z
+
+    const/4 p2, 0x5
+
+    invoke-virtual {v3, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result p3
 
-    iput p3, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum:F
+    if-eqz p3, :cond_3
 
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAlignedChildIndex:I
-
-    invoke-virtual {p2, p3, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v3, p2, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p3
 
-    iput p3, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
+    if-eqz p3, :cond_3
 
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_measureWithLargestChild:I
-
-    invoke-virtual {p2, p3, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result p3
-
-    iput-boolean p3, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mUseLargestChild:Z
-
-    sget p3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_divider:I
-
-    invoke-virtual {p2, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p2, p3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-static {p1, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, p3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {p2, p3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     :goto_0
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    sget p1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_showDividers:I
+    const/16 p1, 0x8
 
-    invoke-virtual {p2, p1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v3, p1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p1
 
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
-    sget p1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_dividerPadding:I
+    const/4 p1, 0x6
 
-    invoke-virtual {p2, p1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v3, p1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p1
 
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerPadding:I
 
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
@@ -4421,7 +4433,7 @@
 
     const-string v0, "base aligned child index out of range (0, "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

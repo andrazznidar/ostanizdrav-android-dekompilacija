@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;)V
+    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;Lkotlinx/coroutines/CoroutineScope;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -50,13 +50,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$riskResultsTables$2;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->database$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    invoke-static {v0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->access$getDatabase$p(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
     move-result-object v0
-
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
     check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 

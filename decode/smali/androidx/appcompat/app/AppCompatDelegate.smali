@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final sActiveDelegates:Landroidx/collection/ArraySet;
+.field public static final sActivityDelegates:Landroidx/collection/ArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/ArraySet<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public static final sActiveDelegatesLock:Ljava/lang/Object;
+.field public static final sActivityDelegatesLock:Ljava/lang/Object;
 
 
 # direct methods
@@ -26,13 +26,13 @@
 
     invoke-direct {v0}, Landroidx/collection/ArraySet;-><init>()V
 
-    sput-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActiveDelegates:Landroidx/collection/ArraySet;
+    sput-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegates:Landroidx/collection/ArraySet;
 
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActiveDelegatesLock:Ljava/lang/Object;
+    sput-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegatesLock:Ljava/lang/Object;
 
     return-void
 .end method
@@ -78,12 +78,12 @@
 .method public static removeDelegateFromActives(Landroidx/appcompat/app/AppCompatDelegate;)V
     .locals 4
 
-    sget-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActiveDelegatesLock:Ljava/lang/Object;
+    sget-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegatesLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Landroidx/appcompat/app/AppCompatDelegate;->sActiveDelegates:Landroidx/collection/ArraySet;
+    sget-object v1, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegates:Landroidx/collection/ArraySet;
 
     invoke-virtual {v1}, Landroidx/collection/ArraySet;->iterator()Ljava/util/Iterator;
 
@@ -154,7 +154,7 @@
 .method public abstract onCreate(Landroid/os/Bundle;)V
 .end method
 
-.method public abstract onStop()V
+.method public abstract onDestroy()V
 .end method
 
 .method public abstract requestWindowFeature(I)Z

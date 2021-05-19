@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.nearby.modules.diagnosiskeyprovider.SubmissionQuota"
     f = "SubmissionQuota.kt"
     l = {
-        0x66
+        0x6a
     }
     m = "consumeQuota"
 .end annotation

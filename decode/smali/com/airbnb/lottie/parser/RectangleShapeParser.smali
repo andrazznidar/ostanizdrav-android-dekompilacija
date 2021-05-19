@@ -99,14 +99,14 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v6
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parsePoint(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     move-result-object v5
 

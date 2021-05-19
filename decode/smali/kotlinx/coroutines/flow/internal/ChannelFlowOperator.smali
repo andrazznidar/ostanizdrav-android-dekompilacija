@@ -162,7 +162,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, p1, v3, v1, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->withContextUndispatched(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, p1, v3, v1, p2}, Lcom/google/zxing/client/android/R$id;->withContextUndispatched(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

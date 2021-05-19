@@ -134,7 +134,7 @@
 
     move-result-object p4
 
-    invoke-interface {p3, p4}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;->onSelectionChanged(Ljava/lang/Object;)V
+    invoke-virtual {p3, p4}, Lcom/google/android/material/datepicker/OnSelectionChangedListener;->onSelectionChanged(Ljava/lang/Object;)V
 
     goto :goto_1
 

@@ -60,60 +60,6 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Exception;)V
-    .locals 3
-
-    const-string v0, "Exception must not be null"
-
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/play/core/tasks/m;->c:Z
-
-    const/4 v2, 0x1
-
-    xor-int/2addr v1, v2
-
-    if-eqz v1, :cond_0
-
-    iput-boolean v2, p0, Lcom/google/android/play/core/tasks/m;->c:Z
-
-    iput-object p1, p0, Lcom/google/android/play/core/tasks/m;->e:Ljava/lang/Exception;
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
-
-    invoke-virtual {p1, p0}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/m;)V
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Task is already complete"
-
-    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
 .method public final a(Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -145,7 +91,7 @@
 
     iget-object p1, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-    invoke-virtual {p1, p0}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/m;)V
+    invoke-virtual {p1, p0}, Lcom/google/android/play/core/tasks/h;->b(Lcom/google/android/play/core/tasks/m;)V
 
     return-void
 
@@ -169,7 +115,57 @@
     throw p1
 .end method
 
-.method public final c()V
+.method public final c(Ljava/lang/Exception;)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/play/core/tasks/m;->c:Z
+
+    const/4 v2, 0x1
+
+    xor-int/2addr v1, v2
+
+    if-eqz v1, :cond_0
+
+    iput-boolean v2, p0, Lcom/google/android/play/core/tasks/m;->c:Z
+
+    iput-object p1, p0, Lcom/google/android/play/core/tasks/m;->e:Ljava/lang/Exception;
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
+
+    invoke-virtual {p1, p0}, Lcom/google/android/play/core/tasks/h;->b(Lcom/google/android/play/core/tasks/m;)V
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Task is already complete"
+
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final g()V
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/play/core/tasks/m;->a:Ljava/lang/Object;
@@ -179,27 +175,27 @@
     :try_start_0
     iget-boolean v1, p0, Lcom/google/android/play/core/tasks/m;->c:Z
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v0, p0, Lcom/google/android/play/core/tasks/m;->b:Lcom/google/android/play/core/tasks/h;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/play/core/tasks/h;->a(Lcom/google/android/play/core/tasks/m;)V
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    monitor-exit v0
+    invoke-virtual {v0, p0}, Lcom/google/android/play/core/tasks/h;->b(Lcom/google/android/play/core/tasks/m;)V
 
     return-void
 
     :catchall_0
     move-exception v1
 
+    :try_start_1
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

@@ -1,39 +1,38 @@
-.class public abstract Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;
-.super Landroidx/databinding/ViewDataBinding;
+.class public final Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;
+.super Ljava/lang/Object;
 .source "ContactDiaryPersonListItemBinding.java"
+
+# interfaces
+.implements Landroidx/viewbinding/ViewBinding;
 
 
 # instance fields
-.field public final contactDiaryPersonListLineIcon:Landroid/widget/ImageView;
+.field public final circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-.field public final contactDiaryPersonListLineName:Landroid/widget/TextView;
+.field public final durationGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
+
+.field public final environmentGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
+
+.field public final mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
+
+.field public final maskGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;Lcom/google/android/material/button/MaterialButton;Lcom/google/android/material/button/MaterialButton;Lcom/google/android/material/button/MaterialButtonToggleGroup;Lcom/google/android/material/button/MaterialButtonToggleGroup;Lcom/google/android/material/button/MaterialButton;Lcom/google/android/material/button/MaterialButton;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;Lcom/google/android/material/button/MaterialButtonToggleGroup;Lcom/google/android/material/button/MaterialButton;Lcom/google/android/material/button/MaterialButton;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->contactDiaryPersonListLineIcon:Landroid/widget/ImageView;
+    iput-object p2, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->contactDiaryPersonListLineName:Landroid/widget/TextView;
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->durationGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->environmentGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
+
+    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
+
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;->maskGroup:Lcom/google/android/material/button/MaterialButtonToggleGroup;
 
     return-void
-.end method
-
-.method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;
-    .locals 2
-
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
-
-    const v1, 0x7f0c002b
-
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
-
-    move-result-object p0
-
-    check-cast p0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListItemBinding;
-
-    return-object p0
 .end method

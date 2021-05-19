@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n34#4:135\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n32#4:135\n*E\n"
 .end annotation
 
 
@@ -92,9 +92,9 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_3
+    goto :goto_1
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -106,32 +106,16 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$map$2$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
     check-cast p1, Ljava/util/List;
 
-    if-eqz p1, :cond_4
-
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    const/4 p1, 0x0
-
-    goto :goto_2
-
-    :cond_4
-    :goto_1
-    move p1, v3
-
-    :goto_2
     xor-int/2addr p1, v3
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -144,12 +128,12 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v1, :cond_3
 
     return-object v1
 
-    :cond_5
-    :goto_3
+    :cond_3
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

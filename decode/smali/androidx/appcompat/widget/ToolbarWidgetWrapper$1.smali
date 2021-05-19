@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/widget/ToolbarWidgetWrapper;)V
-    .locals 7
+    .locals 6
 
     iput-object p1, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->this$0:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
 
@@ -32,7 +32,7 @@
 
     iget-object v0, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->this$0:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
 
-    iget-object v6, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
+    iget-object v5, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
 
     const/4 v2, 0x0
 
@@ -40,11 +40,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
-
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v6}, Landroidx/appcompat/view/menu/ActionMenuItem;-><init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
+    invoke-direct/range {v0 .. v5}, Landroidx/appcompat/view/menu/ActionMenuItem;-><init>(Landroid/content/Context;IIILjava/lang/CharSequence;)V
 
     iput-object p1, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroidx/appcompat/view/menu/ActionMenuItem;
 

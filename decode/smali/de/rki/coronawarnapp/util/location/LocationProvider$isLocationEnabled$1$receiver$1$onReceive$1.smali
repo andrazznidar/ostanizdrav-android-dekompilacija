@@ -147,7 +147,7 @@
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/util/location/LocationProvider$isLocationEnabled$1$receiver$1$onReceive$1;->Z$0:Z
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -161,7 +161,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-boolean p1, p0, Lde/rki/coronawarnapp/util/location/LocationProvider$isLocationEnabled$1$receiver$1$onReceive$1;->$isGpsEnabled:Z
 

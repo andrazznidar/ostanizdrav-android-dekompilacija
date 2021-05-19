@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.deadman.DeadmanNotificationSender"
     f = "DeadmanNotificationSender.kt"
     l = {
-        0x37
+        0x17
     }
     m = "sendNotification"
 .end annotation

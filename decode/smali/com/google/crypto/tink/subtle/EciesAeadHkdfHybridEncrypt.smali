@@ -52,7 +52,7 @@
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
+    invoke-static {p2, p1}, Lcom/google/android/material/R$style;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
 
     iput-object p3, p0, Lcom/google/crypto/tink/subtle/EciesAeadHkdfHybridEncrypt;->hkdfHmacAlgo:Ljava/lang/String;
 

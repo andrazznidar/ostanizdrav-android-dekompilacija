@@ -231,18 +231,18 @@
 .method public clear()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/util/Map;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
     :cond_0
-    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus:Ljava/util/Map;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus:Landroidx/collection/SimpleArrayMap;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
     :cond_1
     iget-object v0, p0, Landroidx/appcompat/view/menu/MenuWrapperICS;->mWrappedObject:Landroidx/core/internal/view/SupportMenu;
@@ -343,44 +343,44 @@
 .end method
 
 .method public removeGroup(I)V
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/util/Map;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
     if-nez v0, :cond_0
 
     goto :goto_1
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_1
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
-    move-result v1
+    iget v2, v1, Landroidx/collection/SimpleArrayMap;->mSize:I
 
-    if-eqz v1, :cond_2
+    if-ge v0, v2, :cond_2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Landroid/view/MenuItem;
+    check-cast v1, Landroidx/core/internal/view/SupportMenuItem;
 
     invoke-interface {v1}, Landroid/view/MenuItem;->getGroupId()I
 
     move-result v1
 
-    if-ne p1, v1, :cond_1
+    if-ne v1, p1, :cond_1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+
+    add-int/lit8 v0, v0, -0x1
+
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
@@ -394,46 +394,49 @@
 .end method
 
 .method public removeItem(I)V
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/util/Map;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    :goto_0
+    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget v2, v1, Landroidx/collection/SimpleArrayMap;->mSize:I
 
-    move-result-object v0
+    if-ge v0, v2, :cond_2
 
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Landroid/view/MenuItem;
+    check-cast v1, Landroidx/core/internal/view/SupportMenuItem;
 
     invoke-interface {v1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v1
 
-    if-ne p1, v1, :cond_1
+    if-ne v1, p1, :cond_1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 
     :cond_2
-    :goto_0
+    :goto_1
     iget-object v0, p0, Landroidx/appcompat/view/menu/MenuWrapperICS;->mWrappedObject:Landroidx/core/internal/view/SupportMenu;
 
     invoke-interface {v0, p1}, Landroid/view/Menu;->removeItem(I)V

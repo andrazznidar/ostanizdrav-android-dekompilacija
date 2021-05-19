@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n*L\n1#1,132:1\n53#2:133\n48#3:134\n38#4,4:135\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n*L\n1#1,132:1\n53#2:133\n48#3:134\n76#4:135\n*E\n"
 .end annotation
 
 
@@ -100,7 +100,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -118,34 +118,26 @@
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
     check-cast p1, Ljava/util/List;
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;
 
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->riskLevelResultMigrator:Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;
+    iget-object v2, v2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
     iput-object p2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2$1;->L$0:Ljava/lang/Object;
 
     iput v4, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2$1;->label:I
 
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;->getLegacyResults(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->fallbackToLegacyIfEmpty(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -161,30 +153,21 @@
     move-object p1, v5
 
     :goto_1
-    check-cast p2, Ljava/util/List;
-
-    move-object v5, p2
-
-    move-object p2, p1
-
-    move-object p1, v5
-
-    :cond_5
     const/4 v2, 0x0
 
     iput-object v2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1$2$1;->label:I
 
-    invoke-interface {p2, p1, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p1, p2, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_6
+    if-ne p1, v1, :cond_5
 
     return-object v1
 
-    :cond_6
+    :cond_5
     :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

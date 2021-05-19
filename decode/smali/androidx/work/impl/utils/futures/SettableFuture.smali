@@ -28,6 +28,15 @@
 # virtual methods
 .method public set(Ljava/lang/Object;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)Z"
@@ -64,6 +73,14 @@
 
 .method public setException(Ljava/lang/Throwable;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "throwable"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/work/impl/utils/futures/AbstractFuture$Failure;
 
@@ -99,6 +116,15 @@
 
 .method public setFuture(Lcom/google/common/util/concurrent/ListenableFuture;)Z
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "future"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -28,12 +28,16 @@
 
 
 # instance fields
-.field public final onBindData:Lkotlin/jvm/functions/Function2;
+.field public final onBindData:Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lkotlin/jvm/functions/Function2<",
+            "Lkotlin/jvm/functions/Function3<",
             "Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;",
             "Lde/rki/coronawarnapp/ui/Country;",
+            "Ljava/util/List<",
+            "+",
+            "Ljava/lang/Object;",
+            ">;",
             "Lkotlin/Unit;",
             ">;"
         }
@@ -59,7 +63,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f0c00ff
+    const v0, 0x7f0c0123
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -67,7 +71,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder$viewBinding$1;-><init>(Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;)V
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -75,27 +79,49 @@
 
     sget-object p1, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder$onBindData$1;->INSTANCE:Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder$onBindData$1;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;->onBindData:Lkotlin/jvm/functions/Function2;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;->onBindData:Lkotlin/jvm/functions/Function3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOnBindData()Lkotlin/jvm/functions/Function2;
+.method public bind(Ljava/lang/Object;Ljava/util/List;)V
+    .locals 1
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v0, "item"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "payloads"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, p1, p2}, Lcom/google/zxing/client/android/R$id;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public getOnBindData()Lkotlin/jvm/functions/Function3;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lkotlin/jvm/functions/Function2<",
+            "Lkotlin/jvm/functions/Function3<",
             "Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;",
             "Lde/rki/coronawarnapp/ui/Country;",
+            "Ljava/util/List<",
+            "+",
+            "Ljava/lang/Object;",
+            ">;",
             "Lkotlin/Unit;",
             ">;"
         }
     .end annotation
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;->onBindData:Lkotlin/jvm/functions/Function2;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CountryFlagsAdapter$CountryFlagViewHolder;->onBindData:Lkotlin/jvm/functions/Function3;
 
     return-object v0
 .end method

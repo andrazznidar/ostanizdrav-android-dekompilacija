@@ -25,7 +25,7 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->SnackbarLayout_android_maxWidth:I
+    const/4 p2, 0x0
 
     const/4 v0, -0x1
 
@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->maxWidth:I
 
-    sget p2, Lcom/google/android/material/R$styleable;->SnackbarLayout_maxActionInlineWidth:I
+    const/4 p2, 0x7
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -71,7 +71,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    sget v0, Lcom/google/android/material/R$id;->snackbar_text:I
+    const v0, 0x7f090407
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     iput-object v0, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->messageView:Landroid/widget/TextView;
 
-    sget v0, Lcom/google/android/material/R$id;->snackbar_action:I
+    const v0, 0x7f090406
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    sget v1, Lcom/google/android/material/R$dimen;->design_snackbar_padding_vertical_2lines:I
+    const v1, 0x7f0700a1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/google/android/material/R$dimen;->design_snackbar_padding_vertical:I
+    const v2, 0x7f0700a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -214,6 +214,14 @@
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     :cond_5
+    return-void
+.end method
+
+.method public setMaxInlineActionWidth(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->maxInlineActionWidth:I
+
     return-void
 .end method
 

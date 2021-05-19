@@ -42,7 +42,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p2, v0, p1, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {p2, v0, p1, v0}, Lcom/google/zxing/client/android/R$id;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     :cond_0
     return-void
@@ -97,7 +97,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0, p2, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {p1, v0, p2, v0}, Lcom/google/zxing/client/android/R$id;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     :cond_0
     return-void

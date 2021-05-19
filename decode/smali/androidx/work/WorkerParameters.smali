@@ -28,6 +28,33 @@
 # direct methods
 .method public constructor <init>(Ljava/util/UUID;Landroidx/work/Data;Ljava/util/Collection;Landroidx/work/WorkerParameters$RuntimeExtras;ILjava/util/concurrent/Executor;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/WorkerFactory;Landroidx/work/ProgressUpdater;Landroidx/work/impl/utils/WorkForegroundUpdater;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "id",
+            "inputData",
+            "tags",
+            "runtimeExtras",
+            "runAttemptCount",
+            "backgroundExecutor",
+            "workTaskExecutor",
+            "workerFactory",
+            "progressUpdater",
+            "foregroundUpdater"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

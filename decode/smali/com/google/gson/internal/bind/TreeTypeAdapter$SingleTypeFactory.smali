@@ -123,7 +123,7 @@
     const/4 p1, 0x1
 
     :goto_3
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
+    invoke-static {p1}, Lcom/google/android/material/R$style;->checkArgument(Z)V
 
     iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->exactType:Lcom/google/gson/reflect/TypeToken;
 

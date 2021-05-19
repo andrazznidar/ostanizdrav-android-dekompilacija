@@ -45,7 +45,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c0076
+    const v4, 0x7f0c008f
 
     aput v4, v2, v5
 
@@ -57,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902ff
+    const v1, 0x7f0903d0
 
     const/4 v2, 0x4
 
@@ -65,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09016f
+    const v1, 0x7f0901cf
 
     const/4 v2, 0x5
 
@@ -73,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09016b
+    const v1, 0x7f0901cc
 
     const/4 v2, 0x6
 
@@ -157,6 +157,13 @@
 
     iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+
+    if-eqz p1, :cond_0
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_0
     const/4 p1, 0x0
 
     aget-object p1, v0, p1
@@ -177,7 +184,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -189,7 +196,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 11
+    .locals 10
 
     monitor-enter p0
 
@@ -204,64 +211,60 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mShowDivider:Ljava/lang/Boolean;
+    const/4 v4, 0x0
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mStatusText:Ljava/lang/String;
+    const-wide/16 v5, 0x12
+
+    and-long/2addr v5, v0
+
+    cmp-long v5, v5, v2
 
     const/4 v6, 0x0
 
-    iget-object v7, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mSubtitle:Ljava/lang/String;
+    if-eqz v5, :cond_0
 
-    const-wide/16 v8, 0x12
-
-    and-long/2addr v8, v0
-
-    cmp-long v8, v8, v2
-
-    if-eqz v8, :cond_0
-
-    invoke-static {v4}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
+    invoke-static {v6}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Boolean;)Z
 
     move-result v4
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
 
-    move-result v6
+    move-result v4
 
     :cond_0
-    const-wide/16 v9, 0x14
+    const-wide/16 v7, 0x14
 
-    and-long/2addr v9, v0
+    and-long/2addr v7, v0
 
-    cmp-long v4, v9, v2
+    cmp-long v7, v7, v2
 
-    const-wide/16 v9, 0x18
+    const-wide/16 v8, 0x18
 
-    and-long/2addr v0, v9
+    and-long/2addr v0, v8
 
     cmp-long v0, v0, v2
 
-    if-eqz v8, :cond_1
+    if-eqz v5, :cond_1
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     iget-object v1, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v1, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
-    if-eqz v4, :cond_2
+    if-eqz v7, :cond_2
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->settingsPlainRowHeaderBody:Landroid/widget/TextView;
 
-    invoke-static {v1, v5}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v1, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_2
     if-eqz v0, :cond_3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->settingsPlainRowHeaderSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v7}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_3
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
@@ -365,51 +368,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v0, 0x1
-
-    or-long/2addr p1, v0
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-.end method
-
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
 
@@ -420,121 +378,4 @@
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     return-void
-.end method
-
-.method public setShowDivider(Ljava/lang/Boolean;)V
-    .locals 4
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mShowDivider:Ljava/lang/Boolean;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0x29
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public setStatusText(Ljava/lang/String;)V
-    .locals 4
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mStatusText:Ljava/lang/String;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0x2d
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public setSubtitle(Ljava/lang/String;)V
-    .locals 4
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->mSubtitle:Ljava/lang/String;
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x8
-
-    or-long/2addr v0, v2
-
-    iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/16 p1, 0x31
-
-    invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
-
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
 .end method

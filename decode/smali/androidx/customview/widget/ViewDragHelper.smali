@@ -22,6 +22,8 @@
 
 .field public mCapturedView:Landroid/view/View;
 
+.field public final mDefaultEdgeSize:I
+
 .field public mDragState:I
 
 .field public mEdgeDragsInProgress:[I
@@ -116,6 +118,8 @@
     add-float/2addr p3, v0
 
     float-to-int p3, p3
+
+    iput p3, p0, Landroidx/customview/widget/ViewDragHelper;->mDefaultEdgeSize:I
 
     iput p3, p0, Landroidx/customview/widget/ViewDragHelper;->mEdgeSize:I
 
@@ -254,7 +258,7 @@
 
     const-string p2, "captureChildView: parameter must be a descendant of the ViewDragHelper\'s tracked parent view ("
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -1147,15 +1151,7 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p1, " because ACTION_DOWN was not received "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "for this pointer before ACTION_MOVE. It likely happened because "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, " ViewDragHelper did not receive all the events in the event stream."
+    const-string p1, " because ACTION_DOWN was not received for this pointer before ACTION_MOVE. It likely happened because  ViewDragHelper did not receive all the events in the event stream."
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

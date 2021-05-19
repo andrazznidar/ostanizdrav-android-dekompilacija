@@ -436,7 +436,13 @@
 
     move-object/from16 v2, p2
 
-    sget-object v3, Lcom/airbnb/lottie/utils/Utils;->points:[F
+    sget-object v3, Lcom/airbnb/lottie/utils/Utils;->threadLocalPoints:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v3}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [F
 
     const/4 v4, 0x0
 
@@ -461,8 +467,6 @@
     aput v7, v3, v9
 
     invoke-virtual {v2, v3}, Landroid/graphics/Matrix;->mapPoints([F)V
-
-    sget-object v3, Lcom/airbnb/lottie/utils/Utils;->points:[F
 
     aget v7, v3, v4
 

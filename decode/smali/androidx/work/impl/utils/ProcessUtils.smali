@@ -24,6 +24,16 @@
 
 .method public static isDefaultProcess(Landroid/content/Context;Landroidx/work/Configuration;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "configuration"
+        }
+    .end annotation
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 

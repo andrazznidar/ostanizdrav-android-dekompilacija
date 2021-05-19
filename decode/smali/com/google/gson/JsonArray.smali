@@ -82,6 +82,43 @@
     return p1
 .end method
 
+.method public getAsBoolean()Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/gson/JsonElement;
+
+    invoke-virtual {v0}, Lcom/google/gson/JsonElement;->getAsBoolean()Z
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+.end method
+
 .method public getAsString()Ljava/lang/String;
     .locals 2
 

@@ -6,6 +6,10 @@
 # static fields
 .field public static depthPastMaxDepth:I
 
+.field public static volatile networkCache:Lcom/airbnb/lottie/network/NetworkCache;
+
+.field public static volatile networkFetcher:Lcom/airbnb/lottie/network/NetworkFetcher;
+
 
 # direct methods
 .method public static endSection(Ljava/lang/String;)F

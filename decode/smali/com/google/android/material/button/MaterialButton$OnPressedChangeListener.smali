@@ -12,8 +12,3 @@
     accessFlags = 0x609
     name = "OnPressedChangeListener"
 .end annotation
-
-
-# virtual methods
-.method public abstract onPressedChanged(Lcom/google/android/material/button/MaterialButton;Z)V
-.end method

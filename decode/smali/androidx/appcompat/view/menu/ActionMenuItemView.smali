@@ -65,9 +65,7 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/appcompat/R$styleable;->ActionMenuItemView_android_minWidth:I
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p2
 
@@ -749,12 +747,12 @@
     iget-object v1, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->mTitle:Ljava/lang/CharSequence;
 
     :goto_5
-    invoke-static {p0, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, v1}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
     :cond_7
-    invoke-static {p0, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, v2}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     :goto_6
     return-void

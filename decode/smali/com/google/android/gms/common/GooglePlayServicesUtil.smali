@@ -1,11 +1,17 @@
 .class public final Lcom/google/android/gms/common/GooglePlayServicesUtil;
 .super Lcom/google/android/gms/common/GooglePlayServicesUtilLight;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # direct methods
 .method public static getRemoteResource(Landroid/content/Context;)Landroid/content/res/Resources;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;

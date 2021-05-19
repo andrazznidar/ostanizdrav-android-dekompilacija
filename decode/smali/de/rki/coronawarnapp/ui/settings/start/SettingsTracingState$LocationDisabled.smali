@@ -46,13 +46,17 @@
 .method public getTracingIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    const-string v0, "c"
+    const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f08010d
+    const-string v0, "$this$getDrawableCompat"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v0, 0x7f080120
+
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -62,13 +66,17 @@
 .method public getTracingIconColor(Landroid/content/Context;)I
     .locals 1
 
-    const-string v0, "c"
+    const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f060070
+    const-string v0, "$this$getColorCompat"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v0, 0x7f060079
+
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result p1
 
@@ -76,21 +84,17 @@
 .end method
 
 .method public getTracingStatusText(Landroid/content/Context;)Ljava/lang/String;
-    .locals 1
+    .locals 3
 
-    const-string v0, "c"
+    const-string v0, "context"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const v1, 0x7f12030c
 
-    const v0, 0x7f12023c
+    const-string v2, "context.getString(R.stri\u2026_tracing_status_inactive)"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {p1, v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline6(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
-
-    const-string v0, "c.getString(R.string.set\u2026_tracing_status_inactive)"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method

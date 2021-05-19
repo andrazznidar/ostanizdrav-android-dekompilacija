@@ -2,24 +2,24 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/play/core/assetpacks/cq;
+.implements Lcom/google/android/play/core/assetpacks/co;
 
 
 # instance fields
-.field public final a:Lcom/google/android/play/core/assetpacks/cr;
+.field public final a:Lcom/google/android/play/core/assetpacks/cp;
 
-.field public final b:Landroid/os/Bundle;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/play/core/assetpacks/cr;Landroid/os/Bundle;)V
+.method public constructor <init>(Lcom/google/android/play/core/assetpacks/cp;Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/cf;->a:Lcom/google/android/play/core/assetpacks/cr;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/cf;->a:Lcom/google/android/play/core/assetpacks/cp;
 
-    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/cf;->b:Landroid/os/Bundle;
+    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/cf;->b:Ljava/util/List;
 
     return-void
 .end method
@@ -27,94 +27,78 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .locals 4
+    .locals 7
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/cf;->a:Lcom/google/android/play/core/assetpacks/cr;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/cf;->a:Lcom/google/android/play/core/assetpacks/cp;
 
-    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/cf;->b:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/cf;->b:Ljava/util/List;
 
     if-eqz v0, :cond_3
 
-    const-string v2, "session_id"
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    move-result v2
+    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/cp;->f:Ljava/util/Map;
 
-    if-nez v2, :cond_0
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    :goto_0
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    move-result-object v0
 
-    goto :goto_1
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
 
     :cond_0
-    iget-object v3, v0, Lcom/google/android/play/core/assetpacks/cr;->f:Ljava/util/Map;
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v3, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-eqz v3, :cond_2
 
-    goto :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_1
-    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/cr;->f:Ljava/util/Map;
+    move-result-object v3
 
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v3, Lcom/google/android/play/core/assetpacks/cm;
 
-    move-result-object v0
+    iget-object v4, v3, Lcom/google/android/play/core/assetpacks/cm;->c:Lcom/google/android/play/core/assetpacks/cl;
 
-    check-cast v0, Lcom/google/android/play/core/assetpacks/co;
+    iget-object v4, v4, Lcom/google/android/play/core/assetpacks/cl;->a:Ljava/lang/String;
 
-    iget-object v2, v0, Lcom/google/android/play/core/assetpacks/co;->c:Lcom/google/android/play/core/assetpacks/cn;
+    invoke-interface {v1, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    iget v2, v2, Lcom/google/android/play/core/assetpacks/cn;->c:I
+    move-result v5
 
-    const/4 v3, 0x6
+    if-eqz v5, :cond_0
 
-    if-ne v2, v3, :cond_2
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/play/core/assetpacks/cm;
+
+    if-nez v5, :cond_1
+
+    const/4 v5, -0x1
 
     goto :goto_1
 
-    :cond_2
-    invoke-static {v1}, Lcom/google/android/play/core/assetpacks/cr;->e(Landroid/os/Bundle;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "status"
-
-    invoke-static {v3, v2}, Landroidx/transition/ViewGroupUtilsApi14;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/co;->c:Lcom/google/android/play/core/assetpacks/cn;
-
-    iget v0, v0, Lcom/google/android/play/core/assetpacks/cn;->c:I
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->a(II)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    :cond_1
+    iget v5, v5, Lcom/google/android/play/core/assetpacks/cm;->a:I
 
     :goto_1
-    return-object v0
+    iget v6, v3, Lcom/google/android/play/core/assetpacks/cm;->a:I
+
+    if-ge v5, v6, :cond_0
+
+    invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_2
+    return-object v2
 
     :cond_3
     const/4 v0, 0x0

@@ -301,7 +301,7 @@
 
     move-object v6, p3
 
-    invoke-static/range {v2 .. v8}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;Z)Landroid/graphics/Typeface;
+    invoke-static/range {v2 .. v8}, Landroidx/core/app/AppOpsManagerCompat;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;Z)Landroid/graphics/Typeface;
 
     move-result-object p1
 
@@ -315,6 +315,18 @@
     iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getInteger(II)I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+
+    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getInteger(II)I
 
     move-result p1
 

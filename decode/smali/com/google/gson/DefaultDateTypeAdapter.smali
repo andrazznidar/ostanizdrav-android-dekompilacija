@@ -110,7 +110,7 @@
 
     iget-object p1, p0, Lcom/google/gson/DefaultDateTypeAdapter;->dateFormats:Ljava/util/List;
 
-    invoke-static {p2, p3}, Landroidx/transition/ViewGroupUtilsApi14;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
+    invoke-static {p2, p3}, Lcom/google/android/material/R$style;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
 
     move-result-object p2
 
@@ -443,7 +443,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -464,7 +464,7 @@
     return-object v0
 
     :cond_0
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

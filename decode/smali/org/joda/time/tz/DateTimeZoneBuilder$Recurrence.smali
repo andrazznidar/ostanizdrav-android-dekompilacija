@@ -60,7 +60,7 @@
 
     move-result v6
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v9
 
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->readMillis(Ljava/io/DataInput;)J
+    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->readMillis(Ljava/io/DataInput;)J
 
     move-result-wide v2
 

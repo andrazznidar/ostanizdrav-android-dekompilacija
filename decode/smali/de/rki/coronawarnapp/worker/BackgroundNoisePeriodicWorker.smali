@@ -28,16 +28,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/work/WorkerParameters;
-        .annotation build Lcom/squareup/inject/assisted/Assisted;
-        .end annotation
-    .end param
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "context"
 
@@ -126,7 +116,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f12019f
+    const v5, 0x7f120259
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -138,13 +128,9 @@
 
     move-result-wide v3
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    sget-object v5, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
 
-    move-result-object v3
-
-    sget-object v4, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
-
-    invoke-direct {v2, v3, v4}, Lorg/joda/time/DateTime;-><init>(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)V
+    invoke-direct {v2, v3, v4, v5}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/DateTimeZone;)V
 
     invoke-virtual {v2, v1}, Lorg/joda/time/DateTime;->plusDays(I)Lorg/joda/time/DateTime;
 
@@ -154,7 +140,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {}, Lorg/joda/time/DateTimeUtils;->currentTimeMillis()J
 
     move-result-wide v3
 
@@ -260,7 +246,23 @@
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->BACKGROUND_NOISE_PERIODIC_WORK:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->stop(Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;)Landroidx/work/Operation;
+    const-string v1, "$this$stop"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->getWorkManager()Landroidx/work/WorkManager;
+
+    move-result-object v1
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler$WorkType;->uniqueName:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Landroidx/work/WorkManager;->cancelUniqueWork(Ljava/lang/String;)Landroidx/work/Operation;
+
+    move-result-object v0
+
+    const-string v1, "workManager.cancelUniqueWork(this.uniqueName)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lde/rki/coronawarnapp/worker/BackgroundNoisePeriodicWorker;->TAG:Ljava/lang/String;
 

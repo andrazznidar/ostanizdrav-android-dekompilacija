@@ -8,6 +8,9 @@
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -36,9 +39,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzo;
+    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzp;
 
-    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzo;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/nearby/exposurenotification/zzp;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -67,7 +70,7 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     instance-of v0, p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;
@@ -102,7 +105,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -120,7 +123,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -138,7 +141,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -156,7 +159,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -176,8 +179,10 @@
     return v1
 .end method
 
-.method public final getKeyData()[B
+.method public getKeyData()[B
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zza:[B
 
@@ -190,7 +195,7 @@
     return-object v0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 3
 
     const/4 v0, 0x6
@@ -260,8 +265,10 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 12
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -373,25 +380,25 @@
 
     aput-object v2, v1, v3
 
-    const/4 v2, 0x5
+    iget v2, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzf:I
 
-    iget v3, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzf:I
+    const v3, 0x7fffffff
 
-    const v4, 0x7fffffff
+    if-ne v2, v3, :cond_1
 
-    if-ne v3, v4, :cond_1
-
-    const-string v3, "unknown"
+    const-string v2, "unknown"
 
     goto :goto_1
 
     :cond_1
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
     :goto_1
-    aput-object v3, v1, v2
+    const/4 v3, 0x5
+
+    aput-object v2, v1, v3
 
     const-string v2, "TemporaryExposureKey<keyData: %s, rollingStartIntervalNumber: %s, transmissionRiskLevel: %d, rollingPeriod: %d, reportType: %d, daysSinceOnsetOfSymptoms: %s>"
 
@@ -402,10 +409,14 @@
     return-object v0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
@@ -417,39 +428,39 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v1, v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->writeByteArray(Landroid/os/Parcel;I[BZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeByteArray(Landroid/os/Parcel;I[BZ)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzb:I
 
     const/4 v1, 0x2
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzc:I
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzd:I
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zze:I
 
     const/4 v1, 0x5
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzf:I
 
     const/4 v1, 0x6
 
-    invoke-static {p1, v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

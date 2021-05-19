@@ -25,3 +25,6 @@
         }
     .end annotation
 .end method
+
+.method public abstract isDeviceTimeCheckEnabled()Z
+.end method

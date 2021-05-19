@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState;",
+        "Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -49,7 +49,7 @@
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    check-cast p1, Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState;
+    check-cast p1, Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState;
 
     const-string v0, "it"
 
@@ -57,11 +57,11 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentHomeBinding;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->getBinding()Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/databinding/FragmentHomeBinding;->setTracingHeader(Lde/rki/coronawarnapp/ui/main/home/TracingHeaderState;)V
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;->setTracingHeader(Lde/rki/coronawarnapp/tracing/ui/statusbar/TracingHeaderState;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

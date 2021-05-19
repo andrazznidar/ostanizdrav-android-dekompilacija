@@ -101,5 +101,9 @@
 .method public onTransitionStart(Landroidx/transition/Transition;)V
     .locals 0
 
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
+
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->addListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
+
     return-void
 .end method

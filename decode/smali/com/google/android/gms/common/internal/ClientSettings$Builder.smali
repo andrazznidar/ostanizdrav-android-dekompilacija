@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/ClientSettings$Builder;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -51,6 +51,8 @@
 # virtual methods
 .method public final build()Lcom/google/android/gms/common/internal/ClientSettings;
     .locals 10
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     new-instance v9, Lcom/google/android/gms/common/internal/ClientSettings;
 

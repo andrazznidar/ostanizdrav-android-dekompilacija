@@ -151,8 +151,10 @@
 
 
 # virtual methods
-.method public final build()Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
+.method public build()Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
     .locals 12
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     new-instance v11, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
 

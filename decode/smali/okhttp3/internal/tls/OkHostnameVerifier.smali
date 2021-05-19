@@ -166,7 +166,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -202,7 +202,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -339,7 +339,7 @@
 
     if-nez v7, :cond_a
 
-    invoke-static {p1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -355,7 +355,7 @@
 
     if-nez v8, :cond_b
 
-    invoke-static {v5, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 

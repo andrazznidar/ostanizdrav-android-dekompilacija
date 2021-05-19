@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/Status;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Result;
@@ -9,6 +9,9 @@
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -19,10 +22,24 @@
 .end field
 
 .field public static final RESULT_CANCELED:Lcom/google/android/gms/common/api/Status;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
+
+.field public static final RESULT_INTERRUPTED:Lcom/google/android/gms/common/api/Status;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final RESULT_TIMEOUT:Lcom/google/android/gms/common/api/Status;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -33,6 +50,8 @@
 .field public final zzd:Ljava/lang/String;
 
 .field public final zze:Landroid/app/PendingIntent;
+
+.field public final zzf:Lcom/google/android/gms/common/ConnectionResult;
 
 
 # direct methods
@@ -48,6 +67,14 @@
     invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
     sput-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
+
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_INTERRUPTED:Lcom/google/android/gms/common/api/Status;
 
     new-instance v0, Lcom/google/android/gms/common/api/Status;
 
@@ -74,7 +101,7 @@
     return-void
 .end method
 
-.method public constructor <init>(IILjava/lang/String;Landroid/app/PendingIntent;)V
+.method public constructor <init>(IILjava/lang/String;Landroid/app/PendingIntent;Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
@@ -86,6 +113,8 @@
     iput-object p3, p0, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
 
     iput-object p4, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+
+    iput-object p5, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
 
     return-void
 .end method
@@ -106,6 +135,30 @@
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Landroid/app/PendingIntent;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+
+    const/4 p3, 0x1
+
+    iput p3, p0, Lcom/google/android/gms/common/api/Status;->zzb:I
+
+    iput p1, p0, Lcom/google/android/gms/common/api/Status;->zzc:I
+
+    iput-object p2, p0, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
 
     return-void
 .end method
@@ -142,7 +195,7 @@
 
     iget-object v2, p1, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -150,9 +203,19 @@
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+    iget-object v2, p1, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
+
+    iget-object p1, p1, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-static {v0, p1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -168,6 +231,8 @@
 
 .method public final getStatus()Lcom/google/android/gms/common/api/Status;
     .locals 0
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     return-object p0
 .end method
@@ -192,7 +257,7 @@
 .method public final hashCode()I
     .locals 3
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -228,6 +293,12 @@
 
     aput-object v1, v0, v2
 
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
@@ -254,6 +325,10 @@
 
 .method public final startResolutionForResult(Landroid/app/Activity;I)V
     .locals 8
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;
@@ -271,7 +346,9 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    check-cast v0, Landroid/app/PendingIntent;
 
     invoke-virtual {v0}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
@@ -296,8 +373,10 @@
 
 .method public final toString()Ljava/lang/String;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
+    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
     move-result-object v0
 
@@ -310,7 +389,7 @@
     :cond_0
     iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzc:I
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->getStatusCodeString(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/airbnb/lottie/R$attr;->getStatusCodeString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -334,8 +413,12 @@
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -343,29 +426,35 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->zzd:Ljava/lang/String;
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v1, v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/airbnb/lottie/R$attr;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->zze:Landroid/app/PendingIntent;
+    const/4 v2, 0x3
 
-    invoke-static {p1, v1, v2, p2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    const/16 p2, 0x3e8
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->zzf:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzb:I
+    const/4 v2, 0x4
 
-    invoke-static {p1, p2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->zzb(Landroid/os/Parcel;I)V
+    iget p2, p0, Lcom/google/android/gms/common/api/Status;->zzb:I
+
+    const/16 v1, 0x3e8
+
+    invoke-static {p1, v1, p2}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+
+    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
 
     return-void
 .end method

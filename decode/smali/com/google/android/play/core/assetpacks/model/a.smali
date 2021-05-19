@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 13
+    .locals 14
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -164,21 +164,33 @@
 
     sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->a:Ljava/util/Map;
 
-    const/16 v11, -0x64
+    const/16 v11, -0xd
 
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
-    const-string v12, "Unknown error downloading an asset pack."
+    const-string v12, "The app is not owned by any user on this device. An app is \"owned\" if it has been acquired from Play."
 
     invoke-interface {v0, v11, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->a:Ljava/util/Map;
+
+    const/16 v12, -0x64
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    const-string v13, "Unknown error downloading an asset pack."
+
+    invoke-interface {v0, v12, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->b:Ljava/util/Map;
 
-    const-string v12, "APP_UNAVAILABLE"
+    const-string v13, "APP_UNAVAILABLE"
 
-    invoke-interface {v0, v1, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->b:Ljava/util/Map;
 
@@ -236,9 +248,15 @@
 
     sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->b:Ljava/util/Map;
 
-    const-string v1, "INTERNAL_ERROR"
+    const-string v1, "APP_NOT_OWNED"
 
     invoke-interface {v0, v11, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/google/android/play/core/assetpacks/model/a;->b:Ljava/util/Map;
+
+    const-string v1, "INTERNAL_ERROR"
+
+    invoke-interface {v0, v12, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method

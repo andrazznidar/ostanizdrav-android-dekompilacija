@@ -64,33 +64,29 @@
 
     move-result-object p1
 
-    sget p2, Landroidx/preference/R$styleable;->PreferenceGroup_orderingFromXml:I
+    const/4 p2, 0x2
 
     const/4 p3, 0x1
 
-    invoke-static {p1, p2, p2, p3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
 
-    sget p2, Landroidx/preference/R$styleable;->PreferenceGroup_initialExpandedChildrenCount:I
-
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    sget p2, Landroidx/preference/R$styleable;->PreferenceGroup_initialExpandedChildrenCount:I
+    const p2, 0x7fffffff
 
-    const p4, 0x7fffffff
+    invoke-virtual {p1, p3, p2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    invoke-virtual {p1, p2, p4}, Landroid/content/res/TypedArray;->getInt(II)I
+    move-result p4
 
-    move-result v0
+    invoke-virtual {p1, p3, p4}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    move-result p4
 
-    move-result p2
-
-    if-eq p2, p4, :cond_0
+    if-eq p4, p2, :cond_0
 
     iget-object p2, p0, Landroidx/preference/Preference;->mKey:Ljava/lang/String;
 

@@ -43,7 +43,7 @@
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -139,7 +139,7 @@
 
     move-result-object p2
 
-    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_day_of_week:I
+    const v0, 0x7f0c00bc
 
     invoke-virtual {p2, v0, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -185,7 +185,7 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$string;->mtrl_picker_day_of_week_column_header:I
+    const p2, 0x7f1201bf
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

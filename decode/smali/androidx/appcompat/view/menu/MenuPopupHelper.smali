@@ -103,7 +103,7 @@
 
     move-result-object v1
 
-    sget v2, Landroidx/appcompat/R$dimen;->abc_cascading_menus_min_smallest_width:I
+    const v2, 0x7f070016
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

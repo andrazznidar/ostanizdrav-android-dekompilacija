@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/api/GoogleApi$Settings;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -16,12 +16,21 @@
 
 # static fields
 .field public static final DEFAULT_SETTINGS:Lcom/google/android/gms/common/api/GoogleApi$Settings;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # instance fields
 .field public final zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public final zab:Landroid/os/Looper;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # direct methods

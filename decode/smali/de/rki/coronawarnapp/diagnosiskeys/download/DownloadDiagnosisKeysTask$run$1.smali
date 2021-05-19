@@ -17,15 +17,15 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask"
     f = "DownloadDiagnosisKeysTask.kt"
     l = {
-        0x36,
-        0x42,
-        0x44,
+        0x37,
+        0x43,
         0x45,
-        0x48,
-        0x52,
-        0x65,
-        0x71,
-        0x75
+        0x46,
+        0x49,
+        0x58,
+        0x6b,
+        0x7c,
+        0x80
     }
     m = "run"
 .end annotation

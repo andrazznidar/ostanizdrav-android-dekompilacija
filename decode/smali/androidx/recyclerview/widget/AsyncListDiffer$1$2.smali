@@ -193,7 +193,7 @@
     :cond_2
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    invoke-static {v15, v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v15, v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -379,7 +379,7 @@
     :cond_8
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    invoke-static {v15, v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline21(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v15, v1, v14}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

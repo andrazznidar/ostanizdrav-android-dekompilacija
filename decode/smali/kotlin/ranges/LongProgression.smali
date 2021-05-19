@@ -56,17 +56,17 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {p3, p4, p5, p6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {p3, p4, p5, p6}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide v0
 
-    invoke-static {p1, p2, p5, p6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {p1, p2, p5, p6}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide p1
 
     sub-long/2addr v0, p1
 
-    invoke-static {v0, v1, p5, p6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {v0, v1, p5, p6}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide p1
 
@@ -86,17 +86,17 @@
     :cond_2
     neg-long v0, p5
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide p1
 
-    invoke-static {p3, p4, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {p3, p4, v0, v1}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide v2
 
     sub-long/2addr p1, v2
 
-    invoke-static {p1, p2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->mod(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lcom/google/zxing/client/android/R$id;->mod(JJ)J
 
     move-result-wide p1
 

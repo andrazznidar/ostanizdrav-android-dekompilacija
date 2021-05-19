@@ -393,11 +393,13 @@
 
     move-result-object v5
 
-    check-cast v4, Landroidx/appcompat/view/menu/MenuItemImpl;
+    invoke-interface {v4, v5}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
 
-    invoke-virtual {v4, v5}, Landroidx/appcompat/view/menu/MenuItemImpl;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
+    move-result-object v4
 
     invoke-interface {v4, v3}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+
+    move-result-object v3
 
     if-eqz p8, :cond_3
 
@@ -405,7 +407,7 @@
 
     if-ltz p7, :cond_3
 
-    aput-object v4, p8, p7
+    aput-object v3, p8, p7
 
     :cond_3
     add-int/lit8 v1, v1, 0x1
@@ -2329,8 +2331,16 @@
     return-void
 .end method
 
+.method public setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+    .locals 0
+
+    iput-object p1, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mCallback:Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+
+    return-void
+.end method
+
 .method public setGroupCheckable(IZZ)V
-    .locals 6
+    .locals 4
 
     iget-object v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
@@ -2340,49 +2350,31 @@
 
     const/4 v1, 0x0
 
-    move v2, v1
-
     :goto_0
-    if-ge v2, v0, :cond_2
+    if-ge v1, v0, :cond_1
 
-    iget-object v3, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v2, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Landroidx/appcompat/view/menu/MenuItemImpl;
+    check-cast v2, Landroidx/appcompat/view/menu/MenuItemImpl;
 
-    iget v4, v3, Landroidx/appcompat/view/menu/MenuItemImpl;->mGroup:I
+    iget v3, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mGroup:I
 
-    if-ne v4, p1, :cond_1
+    if-ne v3, p1, :cond_0
 
-    iget v4, v3, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags:I
+    invoke-virtual {v2, p3}, Landroidx/appcompat/view/menu/MenuItemImpl;->setExclusiveCheckable(Z)V
 
-    and-int/lit8 v4, v4, -0x5
-
-    if-eqz p3, :cond_0
-
-    const/4 v5, 0x4
-
-    goto :goto_1
+    invoke-virtual {v2, p2}, Landroidx/appcompat/view/menu/MenuItemImpl;->setCheckable(Z)Landroid/view/MenuItem;
 
     :cond_0
-    move v5, v1
-
-    :goto_1
-    or-int/2addr v4, v5
-
-    iput v4, v3, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags:I
-
-    invoke-virtual {v3, p2}, Landroidx/appcompat/view/menu/MenuItemImpl;->setCheckable(Z)Landroid/view/MenuItem;
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 

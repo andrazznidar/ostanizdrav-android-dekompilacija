@@ -480,6 +480,14 @@
     return-object v0
 .end method
 
+.method public getResult()Lde/rki/coronawarnapp/task/Task$Result;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
+
+    return-object v0
+.end method
+
 .method public getStartedAt()Lorg/joda/time/Instant;
     .locals 1
 
@@ -752,12 +760,38 @@
     return v0
 .end method
 
+.method public isSuccessful()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->isFinished()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getResult()Lde/rki/coronawarnapp/task/Task$Result;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
     const-string v0, "InternalTaskState(id="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

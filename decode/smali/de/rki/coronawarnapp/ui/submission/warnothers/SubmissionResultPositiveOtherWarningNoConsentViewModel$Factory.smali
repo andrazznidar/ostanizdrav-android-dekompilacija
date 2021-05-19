@@ -7,9 +7,6 @@
 
 
 # annotations
-.annotation build Lcom/squareup/inject/assisted/AssistedInject$Factory;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;
 .end annotation

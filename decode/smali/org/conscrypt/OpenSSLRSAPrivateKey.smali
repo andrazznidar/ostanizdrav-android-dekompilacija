@@ -447,18 +447,35 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
+
+    invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
 
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/io/NotSerializableException;
+
+    const-string v0, "Hardware backed keys can not be serialized"
+
+    invoke-direct {p1, v0}, Ljava/io/NotSerializableException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 
@@ -599,6 +616,19 @@
 
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
+    invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
+
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
 
     move-result-object v0
@@ -613,6 +643,19 @@
 .method public final getFormat()Ljava/lang/String;
     .locals 1
 
+    iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
+
+    invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
     const-string v0, "PKCS#8"
 
     return-object v0
@@ -637,13 +680,30 @@
 .end method
 
 .method public final getPrivateExponent()Ljava/math/BigInteger;
-    .locals 1
+    .locals 2
+
+    iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
+
+    invoke-virtual {v0}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
 
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->privateExponent:Ljava/math/BigInteger;
 
     return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Private exponent cannot be extracted"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public hashCode()I
@@ -682,14 +742,35 @@
 
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     const/4 v1, 0x2
 
     aget-object v2, p1, v1
 
-    if-eqz v2, :cond_1
+    if-nez v2, :cond_1
 
+    iget-object v2, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
+
+    invoke-virtual {v2}, Lorg/conscrypt/OpenSSLKey;->isHardwareBacked()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "privateExponent == null"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    :goto_0
     new-instance v2, Ljava/math/BigInteger;
 
     aget-object v0, p1, v0
@@ -700,7 +781,7 @@
 
     aget-object v0, p1, v1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     new-instance v0, Ljava/math/BigInteger;
 
@@ -710,19 +791,10 @@
 
     iput-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->privateExponent:Ljava/math/BigInteger;
 
-    :cond_0
+    :cond_2
     return-void
 
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "privateExponent == null"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
+    :cond_3
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "modulus == null"

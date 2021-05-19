@@ -466,7 +466,7 @@
     :cond_0
     const/4 v1, 0x1
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument1(Z)V
+    invoke-static {v1}, Lcom/google/android/material/R$style;->checkArgument(Z)V
 
     instance-of v2, p2, Lcom/google/gson/InstanceCreator;
 

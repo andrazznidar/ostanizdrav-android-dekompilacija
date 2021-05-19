@@ -1,4 +1,4 @@
-.class public final Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel$1;
+.class public Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel$1;
 .super Ljava/lang/Object;
 .source "RiskLevelOuterClass.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

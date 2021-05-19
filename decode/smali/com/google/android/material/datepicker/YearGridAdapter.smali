@@ -99,7 +99,7 @@
 
     move-result-object p2
 
-    sget v1, Lcom/google/android/material/R$string;->mtrl_picker_navigate_to_year_description:I
+    const v1, 0x7f1201c4
 
     invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -151,7 +151,7 @@
 
     iget-object p2, p2, Lcom/google/android/material/datepicker/MaterialCalendar;->calendarStyle:Lcom/google/android/material/datepicker/CalendarStyle;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getTodayCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getTodayCalendar()Ljava/util/Calendar;
 
     move-result-object v1
 
@@ -238,7 +238,7 @@
 
     move-result-object p2
 
-    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_year:I
+    const v0, 0x7f0c00c4
 
     const/4 v1, 0x0
 

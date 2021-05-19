@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.submission.data.tekhistory.TEKHistoryUpdater"
     f = "TEKHistoryUpdater.kt"
     l = {
-        0x6b
+        0x78
     }
     m = "updateTEKHistory"
 .end annotation

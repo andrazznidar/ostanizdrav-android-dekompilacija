@@ -15,7 +15,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/GridView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->getUtcCalendar()Ljava/util/Calendar;
+    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getUtcCalendar()Ljava/util/Calendar;
 
     move-result-object p1
 
@@ -31,11 +31,11 @@
 
     if-eqz p1, :cond_0
 
-    sget p1, Lcom/google/android/material/R$id;->cancel_button:I
+    const p1, 0x7f0900df
 
     invoke-virtual {p0, p1}, Landroid/widget/GridView;->setNextFocusLeftId(I)V
 
-    sget p1, Lcom/google/android/material/R$id;->confirm_button:I
+    const p1, 0x7f0900f6
 
     invoke-virtual {p0, p1}, Landroid/widget/GridView;->setNextFocusRightId(I)V
 
@@ -330,6 +330,16 @@
     if-lez v8, :cond_a
 
     invoke-virtual {v1}, Lcom/google/android/material/datepicker/MonthAdapter;->lastPositionInMonth()I
+
+    move-result v8
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/GridView;->getChildCount()I
+
+    move-result v9
+
+    sub-int/2addr v9, v12
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v8
 

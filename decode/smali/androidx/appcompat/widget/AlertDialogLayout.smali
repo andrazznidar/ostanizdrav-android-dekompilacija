@@ -320,7 +320,7 @@
 
     move-result v9
 
-    sget v10, Landroidx/appcompat/R$id;->topPanel:I
+    const v10, 0x7f090544
 
     if-ne v9, v10, :cond_1
 
@@ -329,7 +329,7 @@
     goto :goto_1
 
     :cond_1
-    sget v10, Landroidx/appcompat/R$id;->buttonPanel:I
+    const v10, 0x7f0900d0
 
     if-ne v9, v10, :cond_2
 
@@ -338,11 +338,11 @@
     goto :goto_1
 
     :cond_2
-    sget v10, Landroidx/appcompat/R$id;->contentPanel:I
+    const v10, 0x7f09014a
 
     if-eq v9, v10, :cond_3
 
-    sget v10, Landroidx/appcompat/R$id;->customPanel:I
+    const v10, 0x7f090158
 
     if-ne v9, v10, :cond_4
 

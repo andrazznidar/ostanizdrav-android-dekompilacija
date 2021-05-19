@@ -139,7 +139,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_3
 
@@ -157,12 +157,12 @@
 
     check-cast v1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/util/location/LocationProvider$isLocationEnabled$1;->L$0:Ljava/lang/Object;
 
@@ -261,7 +261,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/util/location/LocationProvider$isLocationEnabled$1;->label:I
 
-    invoke-static {v1, v3, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->awaitClose(Lkotlinx/coroutines/channels/ProducerScope;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, v3, p0}, Lcom/google/zxing/client/android/R$id;->awaitClose(Lkotlinx/coroutines/channels/ProducerScope;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

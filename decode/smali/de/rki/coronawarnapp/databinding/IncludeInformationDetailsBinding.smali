@@ -6,6 +6,8 @@
 # instance fields
 .field public final informationDetailsHeaderBody:Landroid/widget/TextView;
 
+.field public final informationDetailsHeaderHeadline:Landroid/widget/TextView;
+
 .field public final informationDetailsHeaderIllustration:Landroid/widget/ImageView;
 
 .field public mBody:Ljava/lang/CharSequence;
@@ -18,14 +20,16 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/ImageView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderBody:Landroid/widget/TextView;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderBody:Landroid/widget/TextView;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderIllustration:Landroid/widget/ImageView;
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderHeadline:Landroid/widget/TextView;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderIllustration:Landroid/widget/ImageView;
 
     return-void
 .end method
@@ -33,6 +37,9 @@
 
 # virtual methods
 .method public abstract setBody(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract setHeadline(Ljava/lang/String;)V
 .end method
 
 .method public abstract setIllustration(Landroid/graphics/drawable/Drawable;)V

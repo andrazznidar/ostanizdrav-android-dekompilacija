@@ -1,28 +1,14 @@
-.class public final Lcom/google/android/gms/signin/zae;
+.class public interface abstract Lcom/google/android/gms/signin/zae;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/Api$ApiOptions;
+.implements Lcom/google/android/gms/common/api/Api$Client;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
+.method public abstract zaa(Lcom/google/android/gms/signin/internal/zae;)V
 .end method
 
-.method public final hashCode()I
-    .locals 1
-
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
+.method public abstract zab()V
 .end method

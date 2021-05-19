@@ -74,23 +74,23 @@
     goto :goto_0
 
     :cond_0
-    instance-of v0, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailSheet;
+    instance-of v0, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailFragment;
 
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;
 
-    check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailSheet;
+    check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailFragment;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailSheet;->person:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;
+    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent$ShowPersonDetailFragment;->person:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;
 
     const/4 v1, 0x0
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragmentDirections$ActionContactDiaryEditPersonsFragmentToContactDiaryPersonBottomSheetDialogFragment;
+    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragmentDirections$ActionContactDiaryEditPersonsFragmentToContactDiaryAddPersonFragment;
 
-    invoke-direct {v2, p1, v1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragmentDirections$ActionContactDiaryEditPersonsFragmentToContactDiaryPersonBottomSheetDialogFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;Ljava/lang/String;)V
+    invoke-direct {v2, p1, v1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragmentDirections$ActionContactDiaryEditPersonsFragmentToContactDiaryAddPersonFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;Ljava/lang/String;)V
 
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {v0, v2}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     :cond_1
     :goto_0

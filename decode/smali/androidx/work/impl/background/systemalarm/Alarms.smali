@@ -24,6 +24,18 @@
 
 .method public static cancelAlarm(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workManager",
+            "workSpecId"
+        }
+    .end annotation
 
     iget-object p1, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -75,6 +87,18 @@
 
 .method public static cancelExactAlarm(Landroid/content/Context;Ljava/lang/String;I)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workSpecId",
+            "alarmId"
+        }
+    .end annotation
 
     const-string v0, "alarm"
 
@@ -138,6 +162,20 @@
 
 .method public static setAlarm(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;J)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workManager",
+            "workSpecId",
+            "triggerAtMillis"
+        }
+    .end annotation
 
     iget-object p1, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -272,6 +310,20 @@
 
 .method public static setExactAlarm(Landroid/content/Context;Ljava/lang/String;IJ)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "workSpecId",
+            "alarmId",
+            "triggerAtMillis"
+        }
+    .end annotation
 
     const-string v0, "alarm"
 

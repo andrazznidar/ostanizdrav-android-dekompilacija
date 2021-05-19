@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.deadman.DeadmanNotificationScheduler"
     f = "DeadmanNotificationScheduler.kt"
     l = {
-        0x16
+        0x17
     }
     m = "scheduleOneTime"
 .end annotation

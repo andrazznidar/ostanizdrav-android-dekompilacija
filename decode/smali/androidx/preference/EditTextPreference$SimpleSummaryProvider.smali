@@ -56,7 +56,7 @@
 
     iget-object p1, p1, Landroidx/preference/Preference;->mContext:Landroid/content/Context;
 
-    sget v0, Landroidx/preference/R$string;->not_set:I
+    const v0, 0x7f1201d9
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

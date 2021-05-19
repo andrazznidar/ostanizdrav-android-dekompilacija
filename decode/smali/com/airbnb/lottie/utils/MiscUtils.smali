@@ -42,6 +42,20 @@
     return-object v0
 .end method
 
+.method public static clamp(DDD)D
+    .locals 0
+
+    invoke-static {p4, p5, p0, p1}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide p0
+
+    invoke-static {p2, p3, p0, p1}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
 .method public static clamp(FFF)F
     .locals 0
 
@@ -127,18 +141,6 @@
     sub-int/2addr p0, p1
 
     return p0
-.end method
-
-.method public static lerp(DDD)D
-    .locals 0
-
-    sub-double/2addr p2, p0
-
-    mul-double/2addr p2, p4
-
-    add-double/2addr p2, p0
-
-    return-wide p2
 .end method
 
 .method public static lerp(FFF)F

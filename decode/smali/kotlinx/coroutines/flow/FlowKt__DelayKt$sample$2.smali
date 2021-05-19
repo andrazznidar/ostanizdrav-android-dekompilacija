@@ -147,7 +147,7 @@
 
     check-cast v7, Lkotlinx/coroutines/CoroutineScope;
 
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v10, v1
 
@@ -177,7 +177,7 @@
     throw v0
 
     :cond_1
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v2, v1, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
@@ -195,7 +195,7 @@
 
     invoke-direct {v7, v1, v8}, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$values$1;-><init>(Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v2, v8, v6, v7, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->produce$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;I)Lkotlinx/coroutines/channels/ReceiveChannel;
+    invoke-static {v2, v8, v6, v7, v3}, Lcom/google/zxing/client/android/R$id;->produce$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;I)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object v6
 
@@ -251,7 +251,7 @@
 
     invoke-direct/range {v9 .. v14}, Lkotlinx/coroutines/flow/FlowKt__DelayKt$fixedPeriodTicker$3;-><init>(JJLkotlin/coroutines/Continuation;)V
 
-    invoke-static {v2, v8, v15, v7, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->produce$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;I)Lkotlinx/coroutines/channels/ReceiveChannel;
+    invoke-static {v2, v8, v15, v7, v3}, Lcom/google/zxing/client/android/R$id;->produce$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;I)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object v7
 
@@ -411,7 +411,7 @@
 
     if-eqz v3, :cond_4
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -443,7 +443,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, v0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v3, v0}, Lcom/google/zxing/client/android/R$id;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :cond_6
     :goto_4

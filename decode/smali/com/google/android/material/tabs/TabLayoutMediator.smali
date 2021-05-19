@@ -34,6 +34,8 @@
 
 .field public pagerAdapterObserver:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObserver;
 
+.field public final smoothScroll:Z
+
 .field public final tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 
 .field public final tabLayout:Lcom/google/android/material/tabs/TabLayout;
@@ -54,6 +56,8 @@
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->autoRefresh:Z
+
+    iput-boolean p1, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->smoothScroll:Z
 
     iput-object p3, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 

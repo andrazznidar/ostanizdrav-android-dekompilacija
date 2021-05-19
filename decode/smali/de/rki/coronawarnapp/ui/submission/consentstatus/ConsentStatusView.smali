@@ -31,7 +31,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f0c00fc
+    const p2, 0x7f0c0120
 
     const/4 v0, 0x1
 
@@ -61,7 +61,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
-    const p1, 0x7f0900c1
+    const p1, 0x7f0900fa
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -95,14 +95,14 @@
 
     if-ne p1, v0, :cond_0
 
-    const v0, 0x7f120254
+    const v0, 0x7f120356
 
     goto :goto_0
 
     :cond_0
     if-nez p1, :cond_1
 
-    const v0, 0x7f120255
+    const v0, 0x7f120357
 
     :goto_0
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/consentstatus/ConsentStatusView;->titleTextView:Landroid/widget/TextView;

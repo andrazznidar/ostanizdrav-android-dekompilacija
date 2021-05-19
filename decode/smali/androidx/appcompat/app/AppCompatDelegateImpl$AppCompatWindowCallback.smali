@@ -517,7 +517,7 @@
 
     move-result-object v6
 
-    sget v7, Landroidx/appcompat/R$attr;->actionBarTheme:I
+    const v7, 0x7f04000a
 
     invoke-virtual {v6, v7, v3, v5}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -567,7 +567,7 @@
 
     new-instance v7, Landroid/widget/PopupWindow;
 
-    sget v8, Landroidx/appcompat/R$attr;->actionModePopupWindowStyle:I
+    const v8, 0x7f040018
 
     invoke-direct {v7, v6, v1, v8}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -593,7 +593,7 @@
 
     move-result-object v7
 
-    sget v8, Landroidx/appcompat/R$attr;->actionBarSize:I
+    const v8, 0x7f040004
 
     invoke-virtual {v7, v8, v3, v5}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -632,7 +632,7 @@
     :cond_6
     iget-object v3, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor:Landroid/view/ViewGroup;
 
-    sget v6, Landroidx/appcompat/R$id;->action_mode_bar_stub:I
+    const v6, 0x7f090064
 
     invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

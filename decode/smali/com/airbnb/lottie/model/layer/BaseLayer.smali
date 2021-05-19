@@ -49,6 +49,10 @@
 
 .field public final mattePaint:Landroid/graphics/Paint;
 
+.field public outlineMasksAndMattes:Z
+
+.field public outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
 .field public parentLayer:Lcom/airbnb/lottie/model/layer/BaseLayer;
 
 .field public parentLayers:Ljava/util/List;
@@ -178,7 +182,7 @@
 
     const-string v2, "#draw"
 
-    invoke-static {p1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -510,7 +514,7 @@
 
     iget-boolean v3, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->visible:Z
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_20
 
     iget-object v3, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->layerModel:Lcom/airbnb/lottie/model/layer/Layer;
 
@@ -1512,6 +1516,55 @@
     invoke-static {v8}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     :cond_1e
+    iget-boolean v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattes:Z
+
+    if-eqz v2, :cond_1f
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    if-eqz v2, :cond_1f
+
+    sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    const v3, -0x3d7fd
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->rect:Landroid/graphics/RectF;
+
+    iget-object v3, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    sget-object v3, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    const v3, 0x50ebebeb
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v2, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->rect:Landroid/graphics/RectF;
+
+    iget-object v3, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    :cond_1f
     iget-object v1, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->drawTraceName:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
@@ -1522,7 +1575,7 @@
 
     return-void
 
-    :cond_1f
+    :cond_20
     :goto_d
     iget-object v1, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->drawTraceName:Ljava/lang/String;
 
@@ -1903,6 +1956,27 @@
             ">;)V"
         }
     .end annotation
+
+    return-void
+.end method
+
+.method public setOutlineMasksAndMattes(Z)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/airbnb/lottie/animation/LPaint;
+
+    invoke-direct {v0}, Lcom/airbnb/lottie/animation/LPaint;-><init>()V
+
+    iput-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattesPaint:Landroid/graphics/Paint;
+
+    :cond_0
+    iput-boolean p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->outlineMasksAndMattes:Z
 
     return-void
 .end method

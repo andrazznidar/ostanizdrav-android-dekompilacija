@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask"
     f = "DownloadDiagnosisKeysTask.kt"
     l = {
-        0xb0,
-        0xb3
+        0xc9,
+        0xcc
     }
     m = "getAvailableKeyFiles"
 .end annotation

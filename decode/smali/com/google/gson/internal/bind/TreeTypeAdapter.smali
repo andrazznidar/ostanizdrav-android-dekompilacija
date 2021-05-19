@@ -163,7 +163,7 @@
     return-object p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-static {p1}, Lcom/google/android/material/R$style;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object p1
 

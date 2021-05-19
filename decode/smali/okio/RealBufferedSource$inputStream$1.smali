@@ -168,7 +168,7 @@
 
     int-to-long v5, p3
 
-    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->checkOffsetAndCount(JJJ)V
 
     iget-object v0, p0, Lokio/RealBufferedSource$inputStream$1;->this$0:Lokio/RealBufferedSource;
 

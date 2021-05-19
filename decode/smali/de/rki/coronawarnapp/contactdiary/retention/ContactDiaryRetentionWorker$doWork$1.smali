@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.contactdiary.retention.ContactDiaryRetentionWorker"
     f = "ContactDiaryRetentionWorker.kt"
     l = {
-        0x1c
+        0x1d
     }
     m = "doWork"
 .end annotation

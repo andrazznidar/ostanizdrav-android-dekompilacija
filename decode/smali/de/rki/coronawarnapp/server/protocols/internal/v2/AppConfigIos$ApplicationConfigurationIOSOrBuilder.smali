@@ -24,6 +24,9 @@
 .method public abstract synthetic getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
 .end method
 
+.method public abstract getEventDrivenUserSurveyParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddEdusParameters$PPDDEventDrivenUserSurveyParametersIOS;
+.end method
+
 .method public abstract getExposureConfiguration()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
 .end method
 
@@ -37,6 +40,9 @@
 .end method
 
 .method public abstract getMinVersion()Lde/rki/coronawarnapp/server/protocols/internal/v2/SemanticVersionOuterClass$SemanticVersion;
+.end method
+
+.method public abstract getPrivacyPreservingAnalyticsParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersIOS;
 .end method
 
 .method public abstract getRiskCalculationParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
@@ -65,6 +71,9 @@
 .method public abstract hasAppFeatures()Z
 .end method
 
+.method public abstract hasEventDrivenUserSurveyParameters()Z
+.end method
+
 .method public abstract hasExposureConfiguration()Z
 .end method
 
@@ -78,6 +87,9 @@
 .end method
 
 .method public abstract hasMinVersion()Z
+.end method
+
+.method public abstract hasPrivacyPreservingAnalyticsParameters()Z
 .end method
 
 .method public abstract hasRiskCalculationParameters()Z

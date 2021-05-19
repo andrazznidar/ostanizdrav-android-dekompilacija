@@ -55,8 +55,6 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/Country;->label:Lde/rki/coronawarnapp/util/ui/CachedString;
-
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/CountryListView$countries$$inlined$also$lambda$1;->this$0:Lde/rki/coronawarnapp/ui/view/CountryListView;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -67,34 +65,9 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/ui/Country;->getLabel(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p1
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/util/ui/CachedString;->cached:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p1, Lde/rki/coronawarnapp/util/ui/CachedString;->provider:Lkotlin/jvm/functions/Function1;
-
-    invoke-interface {v1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Ljava/lang/String;
-
-    iput-object v1, p1, Lde/rki/coronawarnapp/util/ui/CachedString;->cached:Ljava/lang/String;
-
-    :goto_0
-    return-object v1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p1
 .end method

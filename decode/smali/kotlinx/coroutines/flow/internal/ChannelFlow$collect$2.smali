@@ -141,7 +141,7 @@
 
     check-cast v0, Lkotlinx/coroutines/CoroutineScope;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -155,7 +155,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;->p$:Lkotlinx/coroutines/CoroutineScope;
 
@@ -171,7 +171,7 @@
 
     iput v2, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;->label:I
 
-    invoke-static {v1, v3, v2, p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->emitAllImpl$FlowKt__ChannelsKt(Lkotlinx/coroutines/flow/FlowCollector;Lkotlinx/coroutines/channels/ReceiveChannel;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, v3, v2, p0}, Lcom/google/zxing/client/android/R$id;->emitAllImpl$FlowKt__ChannelsKt(Lkotlinx/coroutines/flow/FlowCollector;Lkotlinx/coroutines/channels/ReceiveChannel;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

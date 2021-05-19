@@ -496,7 +496,7 @@
 
     move-result-object v1
 
-    sget v2, Landroidx/appcompat/R$attr;->actionBarWidgetTheme:I
+    const v2, 0x7f04000b
 
     const/4 v3, 0x1
 
@@ -529,9 +529,9 @@
 .end method
 
 .method public final init(Landroid/view/View;)V
-    .locals 5
+    .locals 6
 
-    sget v0, Landroidx/appcompat/R$id;->decor_content_parent:I
+    const v0, 0x7f09016e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -546,7 +546,7 @@
     invoke-virtual {v0, p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setActionBarVisibilityCallback(Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;)V
 
     :cond_0
-    sget v0, Landroidx/appcompat/R$id;->action_bar:I
+    const v0, 0x7f090031
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -574,7 +574,7 @@
     :goto_0
     iput-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;
 
-    sget v0, Landroidx/appcompat/R$id;->action_context_bar:I
+    const v0, 0x7f090044
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -584,7 +584,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar;->mContextView:Landroidx/appcompat/widget/ActionBarContextView;
 
-    sget v0, Landroidx/appcompat/R$id;->action_bar_container:I
+    const v0, 0x7f090033
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -681,7 +681,7 @@
 
     move-result-object p1
 
-    sget v2, Landroidx/appcompat/R$bool;->abc_action_bar_embed_tabs:I
+    const/high16 v2, 0x7f050000
 
     invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -695,15 +695,13 @@
 
     sget-object v3, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
-    sget v4, Landroidx/appcompat/R$attr;->actionBarStyle:I
+    const v5, 0x7f040006
 
-    invoke-virtual {p1, v2, v3, v4, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v2, v3, v5, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget v2, Landroidx/appcompat/R$styleable;->ActionBar_hideOnContentScroll:I
-
-    invoke-virtual {p1, v2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, v4, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
@@ -732,7 +730,7 @@
 
     :cond_8
     :goto_5
-    sget v0, Landroidx/appcompat/R$styleable;->ActionBar_elevation:I
+    const/16 v0, 0xc
 
     invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -783,7 +781,7 @@
 
     const-string v1, "Can\'t make a decor toolbar out of "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -823,7 +821,7 @@
 
     move-result-object p1
 
-    sget v0, Landroidx/appcompat/R$bool;->abc_action_bar_embed_tabs:I
+    const/high16 v0, 0x7f050000
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
 

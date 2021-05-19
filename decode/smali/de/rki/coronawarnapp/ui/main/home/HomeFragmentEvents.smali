@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowInteropDeltaOnboarding;,
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;,
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowErrorResetDialog;,
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowDeleteTestDialog;,
-        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToContactDiary;
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowReactivateRiskCheckDialog;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToStatisticsExplanation;
     }
 .end annotation
 

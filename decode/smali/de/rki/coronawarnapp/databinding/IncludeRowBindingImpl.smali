@@ -12,9 +12,7 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-.field public final mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+.field public final mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
 
 # direct methods
@@ -47,7 +45,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c0076
+    const v4, 0x7f0c008f
 
     aput v4, v2, v5
 
@@ -59,7 +57,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090204
+    const v1, 0x7f09028b
 
     const/4 v2, 0x4
 
@@ -67,7 +65,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090167
+    const v1, 0x7f0901c8
 
     const/4 v2, 0x5
 
@@ -75,7 +73,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0902f7
+    const v1, 0x7f0903c8
 
     const/4 v2, 0x6
 
@@ -85,7 +83,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 11
+    .locals 12
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -129,13 +127,21 @@
 
     check-cast v9, Landroid/widget/TextView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x0
 
     aget-object v1, v0, v1
 
     move-object v10, v1
 
-    check-cast v10, Landroidx/constraintlayout/widget/Guideline;
+    check-cast v10, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const/4 v1, 0x6
+
+    aget-object v1, v0, v1
+
+    move-object v11, v1
+
+    check-cast v11, Landroidx/constraintlayout/widget/Guideline;
 
     const/4 v5, 0x0
 
@@ -145,7 +151,7 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;)V
+    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Guideline;)V
 
     const-wide/16 v1, -0x1
 
@@ -161,30 +167,24 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const/4 p1, 0x0
-
-    aget-object p1, v0, p1
-
-    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
-
     const/4 p1, 0x3
 
     aget-object p1, v0, p1
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     if-eqz p1, :cond_0
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->rootLayout:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -227,11 +227,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-static {v9}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Integer;)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityIcon(Ljava/lang/Object;)I
 
     move-result v9
 
@@ -253,9 +249,7 @@
 
     move-result v5
 
-    xor-int/lit8 v5, v5, 0x1
-
-    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibility(Z)I
+    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->formatVisibilityInverted(Z)I
 
     move-result v8
 
@@ -281,19 +275,19 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBinding;->mainRowItemSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_3
     if-eqz v10, :cond_4
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -335,7 +329,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -375,7 +369,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -392,14 +386,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)V
@@ -422,7 +408,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -446,7 +432,7 @@
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
@@ -473,7 +459,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x31
+    const/16 p1, 0x2f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

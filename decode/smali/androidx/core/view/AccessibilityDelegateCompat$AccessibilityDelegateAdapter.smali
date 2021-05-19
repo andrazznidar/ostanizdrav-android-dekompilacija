@@ -112,11 +112,11 @@
     :goto_0
     new-instance v3, Landroidx/core/view/ViewCompat$5;
 
-    sget v4, Landroidx/core/R$id;->tag_accessibility_heading:I
+    const-class v4, Ljava/lang/Boolean;
 
-    const-class v6, Ljava/lang/Boolean;
+    const v6, 0x7f090503
 
-    invoke-direct {v3, v4, v6, v5}, Landroidx/core/view/ViewCompat$5;-><init>(ILjava/lang/Class;I)V
+    invoke-direct {v3, v6, v4, v5}, Landroidx/core/view/ViewCompat$5;-><init>(ILjava/lang/Class;I)V
 
     invoke-virtual {v3, v0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->get(Landroid/view/View;)Ljava/lang/Object;
 
@@ -154,13 +154,13 @@
     :goto_2
     new-instance v3, Landroidx/core/view/ViewCompat$4;
 
-    sget v6, Landroidx/core/R$id;->tag_accessibility_pane_title:I
+    const-class v6, Ljava/lang/CharSequence;
 
-    const-class v7, Ljava/lang/CharSequence;
+    const v7, 0x7f090504
 
     const/16 v8, 0x8
 
-    invoke-direct {v3, v6, v7, v8, v5}, Landroidx/core/view/ViewCompat$4;-><init>(ILjava/lang/Class;II)V
+    invoke-direct {v3, v7, v6, v8, v5}, Landroidx/core/view/ViewCompat$4;-><init>(ILjava/lang/Class;II)V
 
     invoke-virtual {v3, v0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->get(Landroid/view/View;)Ljava/lang/Object;
 
@@ -246,137 +246,133 @@
 
     invoke-virtual {v5, v9}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
-    sget v5, Landroidx/core/R$id;->tag_accessibility_clickable_spans:I
+    const v5, 0x7f090502
 
     invoke-virtual {v0, v5}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v10
 
-    check-cast v5, Landroid/util/SparseArray;
+    check-cast v10, Landroid/util/SparseArray;
 
-    if-eqz v5, :cond_6
+    if-eqz v10, :cond_6
 
-    new-instance v10, Ljava/util/ArrayList;
+    new-instance v11, Ljava/util/ArrayList;
 
-    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
     :goto_4
-    invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
+    invoke-virtual {v10}, Landroid/util/SparseArray;->size()I
 
-    move-result v12
+    move-result v13
 
-    if-ge v11, v12, :cond_5
+    if-ge v12, v13, :cond_5
 
-    invoke-virtual {v5, v11}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v10, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Ljava/lang/ref/WeakReference;
+    check-cast v13, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v12}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v13}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    if-nez v12, :cond_4
+    if-nez v13, :cond_4
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_4
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v12, v12, 0x1
 
     goto :goto_4
 
     :cond_5
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
     :goto_5
-    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
-    move-result v12
+    move-result v13
 
-    if-ge v11, v12, :cond_6
+    if-ge v12, v13, :cond_6
 
-    invoke-virtual {v10, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v11, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    check-cast v12, Ljava/lang/Integer;
+    check-cast v13, Ljava/lang/Integer;
 
-    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v13}, Ljava/lang/Integer;->intValue()I
 
-    move-result v12
+    move-result v13
 
-    invoke-virtual {v5, v12}, Landroid/util/SparseArray;->remove(I)V
+    invoke-virtual {v10, v13}, Landroid/util/SparseArray;->remove(I)V
 
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v12, v12, 0x1
 
     goto :goto_5
 
     :cond_6
     invoke-static {v2}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->getClickableSpans(Ljava/lang/CharSequence;)[Landroid/text/style/ClickableSpan;
 
-    move-result-object v5
+    move-result-object v10
 
-    if-eqz v5, :cond_a
+    if-eqz v10, :cond_a
 
-    array-length v10, v5
+    array-length v11, v10
 
-    if-lez v10, :cond_a
+    if-lez v11, :cond_a
 
     invoke-virtual {v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v10
+    move-result-object v11
 
-    sget v11, Landroidx/core/R$id;->accessibility_action_clickable_span:I
+    const v12, 0x7f09000f
 
-    const-string v12, "androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ACTION_ID_KEY"
+    const-string v13, "androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ACTION_ID_KEY"
 
-    invoke-virtual {v10, v12, v11}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v11, v13, v12}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    sget v10, Landroidx/core/R$id;->tag_accessibility_clickable_spans:I
+    invoke-virtual {v0, v5}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v10}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    move-result-object v11
 
-    move-result-object v10
+    check-cast v11, Landroid/util/SparseArray;
 
-    check-cast v10, Landroid/util/SparseArray;
+    if-nez v11, :cond_7
 
-    if-nez v10, :cond_7
+    new-instance v11, Landroid/util/SparseArray;
 
-    new-instance v10, Landroid/util/SparseArray;
+    invoke-direct {v11}, Landroid/util/SparseArray;-><init>()V
 
-    invoke-direct {v10}, Landroid/util/SparseArray;-><init>()V
-
-    sget v11, Landroidx/core/R$id;->tag_accessibility_clickable_spans:I
-
-    invoke-virtual {v0, v11, v10}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v0, v5, v11}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     :cond_7
-    const/4 v11, 0x0
+    const/4 v5, 0x0
 
     :goto_6
-    array-length v12, v5
+    array-length v12, v10
 
-    if-ge v11, v12, :cond_a
+    if-ge v5, v12, :cond_a
 
-    aget-object v12, v5, v11
+    aget-object v12, v10, v5
 
     const/4 v13, 0x0
 
     :goto_7
-    invoke-virtual {v10}, Landroid/util/SparseArray;->size()I
+    invoke-virtual {v11}, Landroid/util/SparseArray;->size()I
 
     move-result v14
 
     if-ge v13, v14, :cond_9
 
-    invoke-virtual {v10, v13}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v11, v13}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v14
 
@@ -394,7 +390,7 @@
 
     if-eqz v14, :cond_8
 
-    invoke-virtual {v10, v13}, Landroid/util/SparseArray;->keyAt(I)I
+    invoke-virtual {v11, v13}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v12
 
@@ -415,13 +411,13 @@
     :goto_8
     new-instance v13, Ljava/lang/ref/WeakReference;
 
-    aget-object v14, v5, v11
+    aget-object v14, v10, v5
 
     invoke-direct {v13, v14}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v10, v12, v13}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v11, v12, v13}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    aget-object v13, v5, v11
+    aget-object v13, v10, v5
 
     move-object v14, v2
 
@@ -479,12 +475,12 @@
 
     invoke-interface {v4, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_6
 
     :cond_a
-    sget v2, Landroidx/core/R$id;->tag_accessibility_actions:I
+    const v2, 0x7f090501
 
     invoke-virtual {v0, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

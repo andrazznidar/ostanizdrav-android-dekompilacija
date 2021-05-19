@@ -6,20 +6,24 @@
 
 
 # instance fields
-.field public final a:Lcom/google/android/play/core/assetpacks/ax;
+.field public final a:Lcom/google/android/play/core/assetpacks/aw;
 
-.field public final b:Lcom/google/android/play/core/assetpacks/AssetPackState;
+.field public final b:Landroid/os/Bundle;
+
+.field public final c:Lcom/google/android/play/core/assetpacks/AssetPackState;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/play/core/assetpacks/ax;Lcom/google/android/play/core/assetpacks/AssetPackState;)V
+.method public constructor <init>(Lcom/google/android/play/core/assetpacks/aw;Landroid/os/Bundle;Lcom/google/android/play/core/assetpacks/AssetPackState;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/au;->a:Lcom/google/android/play/core/assetpacks/ax;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/au;->a:Lcom/google/android/play/core/assetpacks/aw;
 
-    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/au;->b:Lcom/google/android/play/core/assetpacks/AssetPackState;
+    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/au;->b:Landroid/os/Bundle;
+
+    iput-object p3, p0, Lcom/google/android/play/core/assetpacks/au;->c:Lcom/google/android/play/core/assetpacks/AssetPackState;
 
     return-void
 .end method
@@ -27,53 +31,50 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/au;->a:Lcom/google/android/play/core/assetpacks/ax;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/au;->a:Lcom/google/android/play/core/assetpacks/aw;
 
-    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/au;->b:Lcom/google/android/play/core/assetpacks/AssetPackState;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/au;->b:Landroid/os/Bundle;
 
-    monitor-enter v0
+    iget-object v2, p0, Lcom/google/android/play/core/assetpacks/au;->c:Lcom/google/android/play/core/assetpacks/AssetPackState;
 
-    :try_start_0
-    new-instance v2, Ljava/util/HashSet;
+    iget-object v3, v0, Lcom/google/android/play/core/assetpacks/aw;->c:Lcom/google/android/play/core/assetpacks/cp;
 
-    iget-object v3, v0, Lcom/google/android/play/core/assetpacks/ax;->b:Ljava/util/Set;
+    new-instance v4, Lcom/google/android/play/core/assetpacks/cd;
 
-    invoke-direct {v2, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v4, v3, v1}, Lcom/google/android/play/core/assetpacks/cd;-><init>(Lcom/google/android/play/core/assetpacks/cp;Landroid/os/Bundle;)V
 
-    invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3, v4}, Lcom/google/android/play/core/assetpacks/cp;->r(Lcom/google/android/play/core/assetpacks/co;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v1, Ljava/lang/Boolean;
 
-    move-result v3
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    if-eqz v3, :cond_0
+    move-result v1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    move-result-object v3
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/aw;->j:Landroid/os/Handler;
 
-    check-cast v3, Lcom/google/android/play/core/listener/StateUpdatedListener;
+    new-instance v3, Lcom/google/android/play/core/assetpacks/at;
 
-    invoke-interface {v3, v1}, Lcom/google/android/play/core/listener/StateUpdatedListener;->onStateUpdate(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v3, v0, v2}, Lcom/google/android/play/core/assetpacks/at;-><init>(Lcom/google/android/play/core/assetpacks/aw;Lcom/google/android/play/core/assetpacks/AssetPackState;)V
 
-    goto :goto_0
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/aw;->e:Lcom/google/android/play/core/internal/ck;
+
+    invoke-interface {v0}, Lcom/google/android/play/core/internal/ck;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/play/core/assetpacks/w;
+
+    invoke-interface {v0}, Lcom/google/android/play/core/assetpacks/w;->j()V
 
     :cond_0
-    monitor-exit v0
-
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
 .end method

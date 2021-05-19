@@ -1,31 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="new_release_body">
+        <item>You can use the app to voluntarily note the information about people they’ve met and places they’ve visited. This is important information for tracing the chain of infection. However, it is difficult to recall that information over a time period of two weeks so the contact journal serves as a useful memory aid.</item>
+        <item>You can now add an entry to your contact journal directly, without having to open the app first. To do so, tap and hold the icon for the #OstaniZdrav App for approximately 2 seconds, until a menu appears, and then tap “Add Journal Entry for Today”.</item>
+        <item>If the app indicates that you have an increased risk, you can now see whether the risk status is displayed based on one or more exposures with an increased risk or one or more exposures with a low risk.</item>
+        <item>See daily figures for TAN input.</item>
+    </string-array>
+    <string-array name="new_release_linkified_labels">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="new_release_target_urls">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="new_release_title">
+        <item>Contact Journal</item>
+        <item>Direct Access to Contact Journal</item>
+        <item>More Details about Your Risk Status</item>
+        <item>Statistics</item>
+    </string-array>
     <string-array name="submission_done_further_info_bullet_points">
-        <item>The duration of the isolation shall be determined by your treating doctor.</item>
-        <item>In case your disease worsens, please call your selected GP or an emergency doctor.</item>
-        <item>In case of emergencies, call 112. Tell them that you have a confirmed SARS-CoV-2 infection.</item>
-        <item>Once the isolation is complete, reset the app in the settings so you can use it again.</item>
+        <item>The duration of isolation is judged by your doctor.</item>
+        <item>In case of an exacerbation of the disease, consult your chosen personal or emergency physician over the phone. In an emergency, call 112. Tell them that you have been confirmed to be infected with SARS-CoV-2.</item>
+        <item></item>
+        <item></item>
     </string-array>
     <string-array name="submission_intro_bullet_points">
-        <item></item>
-        <item></item>
+        <item>If you have a confirmed SARS-CoV-2 infection, you can inform others by entering the TAN code. You received the TAN code via SMS.</item>
+        <item>If you have not yet received the TAN code or it has expired, you can obtain it via the online form in the next step.</item>
         <item></item>
         <item></item>
     </string-array>
     <string-array name="submission_symptom_symptom_bullets">
+        <item>General weakness and exhaustion</item>
+        <item>Runny nose</item>
+        <item>Cough</item>
         <item>Increased temperature or fever</item>
         <item>Shortness of breath</item>
+        <item>Headache</item>
+        <item>Aching limbs</item>
         <item>Loss of sense of smell/taste</item>
-        <item>Cough</item>
-        <item>Runny nose</item>
         <item>Sore throat</item>
-        <item>Headache and aching limbs</item>
-        <item>General weakness and exhaustion</item>
     </string-array>
     <string-array name="test_result_card_negative_further_info_bullet_points">
-        <item>Still feeling unwell? If you feel very poorly and/or your symptoms have worsened, please contact your general practitioner.</item>
-        <item>Remain at home until you feel well again. If you were to get infected with coronavirus (SARS-CoV-2) whilst weakened from another infection, this could lead to a serious illness.</item>
-        <item>Do not go to work if you feel unwell to ensure you do not put other people at risk.</item>
-        <item>If your symptoms worsen, you might need a further SARS-CoV-2 test.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
     </string-array>
 </resources>

@@ -75,7 +75,7 @@
 
     const-string v2, " bytes (must be 32)"
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -406,11 +406,11 @@
     return v2
 
     :cond_2
-    new-instance v1, Ljavax/crypto/ShortBufferException;
+    new-instance v1, Lorg/conscrypt/ShortBufferWithoutStackTraceException;
 
     const-string v2, "Insufficient output space"
 
-    invoke-direct {v1, v2}, Ljavax/crypto/ShortBufferException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lorg/conscrypt/ShortBufferWithoutStackTraceException;-><init>(Ljava/lang/String;)V
 
     throw v1
 .end method

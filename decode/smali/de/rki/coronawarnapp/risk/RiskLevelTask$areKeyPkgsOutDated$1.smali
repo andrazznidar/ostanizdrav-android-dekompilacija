@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x73
+        0x87
     }
     m = "areKeyPkgsOutDated"
 .end annotation

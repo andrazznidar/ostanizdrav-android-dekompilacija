@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDownloadDiagnosisKeysTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DownloadDiagnosisKeysTask.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,230:1\n1517#2:231\n1588#2,3:232\n1753#2,3:235\n1865#2,14:238\n734#2:252\n825#2,2:253\n1865#2,14:255\n1517#2:269\n1588#2,3:270\n*E\n*S KotlinDebug\n*F\n+ 1 DownloadDiagnosisKeysTask.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask\n*L\n97#1:231\n97#1,3:232\n98#1,3:235\n137#1,14:238\n151#1:252\n151#1,2:253\n151#1,14:255\n177#1:269\n177#1,3:270\n*E\n"
+    value = "SMAP\nDownloadDiagnosisKeysTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DownloadDiagnosisKeysTask.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,255:1\n1517#2:256\n1588#2,3:257\n1753#2,3:260\n1865#2,14:263\n734#2:277\n825#2,2:278\n1865#2,14:280\n1517#2:294\n1588#2,3:295\n*E\n*S KotlinDebug\n*F\n+ 1 DownloadDiagnosisKeysTask.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask\n*L\n103#1:256\n103#1,3:257\n104#1,3:260\n148#1,14:263\n176#1:277\n176#1,2:278\n176#1,14:280\n202#1:294\n202#1,3:295\n*E\n"
 .end annotation
 
 
@@ -242,7 +242,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_5
 
@@ -260,12 +260,12 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_3
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->environmentSetup:Lde/rki/coronawarnapp/environment/EnvironmentSetup;
 
@@ -283,7 +283,7 @@
 
     const-string p1, "EUR"
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
@@ -333,7 +333,7 @@
 
     const/16 v4, 0xa
 
-    invoke-static {p1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v4}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v4
 
@@ -751,7 +751,7 @@
     check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_0
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -782,7 +782,7 @@
     check-cast v9, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_1
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_5
@@ -812,7 +812,7 @@
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_2
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
@@ -851,7 +851,7 @@
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_3
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -888,7 +888,7 @@
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_4
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_5
     .catchall {:try_start_4 .. :try_end_4} :catchall_4
@@ -913,7 +913,7 @@
     check-cast v12, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_5
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
@@ -938,7 +938,7 @@
     check-cast v12, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_6
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_4
     .catchall {:try_start_6 .. :try_end_6} :catchall_3
@@ -984,7 +984,7 @@
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_7
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
     .catchall {:try_start_7 .. :try_end_7} :catchall_4
@@ -1007,7 +1007,7 @@
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
     :try_start_8
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_5
     .catchall {:try_start_8 .. :try_end_8} :catchall_4
@@ -1029,7 +1029,7 @@
     goto/16 :goto_14
 
     :pswitch_9
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -1046,7 +1046,7 @@
 
     invoke-virtual {v12, v5, v11}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     move-object v5, v0
 
@@ -1066,7 +1066,7 @@
 
     iput v8, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$1;->label:I
 
-    invoke-static {v5, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v5, v3}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v5
     :try_end_9
@@ -1115,13 +1115,13 @@
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_5
     .catchall {:try_start_a .. :try_end_a} :catchall_4
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1133,7 +1133,7 @@
 
     iget-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
 
-    invoke-static {v2, v9, v8, v9}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v9, v8, v9}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object v0
 
@@ -1309,6 +1309,61 @@
 
     invoke-virtual {v11}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->throwIfCancelled()V
 
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
+
+    move-result v12
+
+    if-nez v12, :cond_7
+
+    sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
+
+    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v2
+
+    const-string v3, "Aborting, Device time is incorrect, offset=%s"
+
+    new-array v4, v8, [Ljava/lang/Object;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getLocalOffset()Lorg/joda/time/Duration;
+
+    move-result-object v0
+
+    aput-object v0, v4, v10
+
+    invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$3;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$3;-><init>()V
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_5
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
+
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-boolean v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
+
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v3, v10, [Ljava/lang/Object;
+
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v4, v2, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
+
+    invoke-static {v2, v9, v8, v9}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+
+    return-object v0
+
+    :cond_7
+    :try_start_e
     iget-object v12, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
     invoke-virtual {v12}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
@@ -1319,7 +1374,7 @@
 
     move-result v13
 
-    if-nez v13, :cond_7
+    if-nez v13, :cond_8
 
     sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
@@ -1333,20 +1388,20 @@
 
     invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$3;
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$4;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$3;-><init>()V
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_5
-    .catchall {:try_start_d .. :try_end_d} :catchall_4
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$4;-><init>()V
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_5
+    .catchall {:try_start_e .. :try_end_e} :catchall_4
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1358,12 +1413,12 @@
 
     iget-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
 
-    invoke-static {v2, v9, v8, v9}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v9, v8, v9}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object v0
 
-    :cond_7
-    :try_start_e
+    :cond_8
+    :try_start_f
     iget-object v9, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
     iget-object v9, v9, Lde/rki/coronawarnapp/nearby/ENFClient;->exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
@@ -1390,18 +1445,18 @@
 
     iput v9, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$1;->label:I
 
-    invoke-static {v10, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v10, v3}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v9
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_5
-    .catchall {:try_start_e .. :try_end_e} :catchall_4
+    :try_end_f
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_5
+    .catchall {:try_start_f .. :try_end_f} :catchall_4
 
-    if-ne v9, v4, :cond_8
+    if-ne v9, v4, :cond_9
 
     return-object v4
 
-    :cond_8
+    :cond_9
     move-object v10, v5
 
     move-object v5, v0
@@ -1415,7 +1470,7 @@
     move-object/from16 v2, v18
 
     :goto_7
-    :try_start_f
+    :try_start_10
     check-cast v2, Ljava/util/Collection;
 
     iget-object v12, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->settings:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;
@@ -1442,13 +1497,13 @@
 
     cmp-long v12, v12, v14
 
-    if-gez v12, :cond_9
+    if-gez v12, :cond_a
 
     move v12, v8
 
     goto :goto_8
 
-    :cond_9
+    :cond_a
     const/4 v12, 0x0
 
     :goto_8
@@ -1462,13 +1517,13 @@
 
     new-array v15, v8, [Ljava/lang/Object;
 
-    if-eqz v12, :cond_a
+    if-eqz v12, :cond_b
 
     move/from16 v16, v8
 
     goto :goto_9
 
-    :cond_a
+    :cond_b
     const/16 v16, 0x0
 
     :goto_9
@@ -1482,13 +1537,13 @@
 
     invoke-virtual {v13, v14, v15}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-nez v12, :cond_b
+    if-nez v12, :cond_c
 
     invoke-virtual {v11, v0, v5, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->wasLastDetectionPerformedRecently(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;Ljava/util/Collection;)Z
 
     move-result v13
 
-    if-eqz v13, :cond_b
+    if-eqz v13, :cond_c
 
     sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
@@ -1504,20 +1559,20 @@
 
     invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$4;
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$5;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$4;-><init>()V
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_3
-    .catchall {:try_start_f .. :try_end_f} :catchall_2
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$5;-><init>()V
+    :try_end_10
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_3
+    .catchall {:try_start_10 .. :try_end_10} :catchall_2
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1533,19 +1588,19 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v3, v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v3, v8, v3}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object v0
 
-    :cond_b
-    if-nez v12, :cond_c
+    :cond_c
+    if-nez v12, :cond_d
 
-    :try_start_10
+    :try_start_11
     invoke-virtual {v11, v0, v9, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->hasRecentDetectionAndNoNewFiles(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/diagnosiskeys/download/KeyPackageSyncTool$Result;Ljava/util/Collection;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
@@ -1561,20 +1616,20 @@
 
     invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$5;
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$6;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$5;-><init>()V
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_3
-    .catchall {:try_start_10 .. :try_end_10} :catchall_2
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$6;-><init>()V
+    :try_end_11
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_3
+    .catchall {:try_start_11 .. :try_end_11} :catchall_2
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1590,19 +1645,19 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v3, v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v3, v8, v3}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object v0
 
-    :cond_c
-    :try_start_11
+    :cond_d
+    :try_start_12
     iget-object v0, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/KeyPackageSyncTool$Result;->availableKeys:Ljava/util/Collection;
 
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v9, 0xa
 
-    invoke-static {v0, v9}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v9}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -1617,7 +1672,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_e
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1631,7 +1686,7 @@
 
     goto :goto_a
 
-    :cond_d
+    :cond_e
     const-wide/16 v12, 0x0
 
     new-instance v0, Ljava/lang/Long;
@@ -1647,7 +1702,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_e
+    if-eqz v12, :cond_f
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1671,7 +1726,7 @@
 
     goto :goto_b
 
-    :cond_e
+    :cond_f
     invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v12
@@ -1705,15 +1760,15 @@
     invoke-virtual {v0, v9, v3}, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_3
-    .catchall {:try_start_11 .. :try_end_11} :catchall_2
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_3
+    .catchall {:try_start_12 .. :try_end_12} :catchall_2
 
-    if-ne v0, v4, :cond_f
+    if-ne v0, v4, :cond_10
 
     return-object v4
 
-    :cond_f
+    :cond_10
     move-object v0, v2
 
     move-object v9, v10
@@ -1721,11 +1776,68 @@
     move-object v10, v11
 
     :goto_c
-    :try_start_12
+    :try_start_13
     iget-object v2, v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->settings:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->updateLastVersionCodeToCurrent(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;)V
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->updateLastVersionCodeToCurrent(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;)V
 
+    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11
+
+    sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
+
+    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v0
+
+    const-string v2, "task aborted, positive test result"
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$7;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$7;-><init>()V
+    :try_end_13
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_2
+    .catchall {:try_start_13 .. :try_end_13} :catchall_6
+
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-boolean v3, v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
+
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v4, v2, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v2, v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->internalProgress:Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v3, v8, v3}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+
+    return-object v0
+
+    :cond_11
+    :try_start_14
     sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
     invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
@@ -1763,21 +1875,21 @@
     invoke-virtual {v2, v0, v5, v3}, Lde/rki/coronawarnapp/nearby/ENFClient;->provideDiagnosisKeys(Ljava/util/Collection;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_2
-    .catchall {:try_start_12 .. :try_end_12} :catchall_6
+    :try_end_14
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_2
+    .catchall {:try_start_14 .. :try_end_14} :catchall_6
 
-    if-ne v2, v4, :cond_10
+    if-ne v2, v4, :cond_12
 
     return-object v4
 
-    :cond_10
+    :cond_12
     move-object v5, v9
 
     move-object v9, v10
 
     :goto_d
-    :try_start_13
+    :try_start_15
     check-cast v2, Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -1794,13 +1906,13 @@
 
     new-array v11, v8, [Ljava/lang/Object;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_13
 
     move v0, v8
 
     goto :goto_e
 
-    :cond_11
+    :cond_13
     const/4 v0, 0x0
 
     :goto_e
@@ -1829,35 +1941,35 @@
     invoke-virtual {v0, v2, v3}, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_6
-    .catchall {:try_start_13 .. :try_end_13} :catchall_5
+    :try_end_15
+    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_6
+    .catchall {:try_start_15 .. :try_end_15} :catchall_5
 
-    if-ne v0, v4, :cond_12
+    if-ne v0, v4, :cond_14
 
     return-object v4
 
-    :cond_12
+    :cond_14
     move-object v4, v5
 
     move-object v3, v9
 
     :goto_f
-    :try_start_14
-    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$6;
+    :try_start_16
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$8;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$6;-><init>()V
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_0
-    .catchall {:try_start_14 .. :try_end_14} :catchall_0
+    invoke-direct {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$8;-><init>()V
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_0
+    .catchall {:try_start_16 .. :try_end_16} :catchall_0
 
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v4, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v4, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v4, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1873,7 +1985,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v3, v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v3, v8, v3}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     return-object v0
 
@@ -1931,8 +2043,8 @@
 
     goto :goto_16
 
-    :cond_13
-    :try_start_15
+    :cond_15
+    :try_start_17
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v3, "null cannot be cast to non-null type de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask.Arguments"
@@ -1940,9 +2052,9 @@
     invoke-direct {v0, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_8
-    .catchall {:try_start_15 .. :try_end_15} :catchall_7
+    :try_end_17
+    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_17} :catch_8
+    .catchall {:try_start_17 .. :try_end_17} :catchall_7
 
     :catchall_7
     move-exception v0
@@ -1959,7 +2071,7 @@
     move-object v9, v2
 
     :goto_16
-    :try_start_16
+    :try_start_18
     sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
     invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
@@ -1971,20 +2083,20 @@
     invoke-virtual {v3, v9}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->rollback(Ljava/util/List;)V
 
     throw v0
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_0
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_0
 
     :goto_17
     move-object v10, v3
 
     :goto_18
-    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     iget-boolean v3, v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->isCanceled:Z
 
-    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -2000,9 +2112,11 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v3, v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
+    invoke-static {v2, v3, v8, v3}, Lcom/google/zxing/client/android/R$id;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2037,7 +2151,7 @@
 .end method
 
 .method public final wasLastDetectionPerformedRecently(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;Ljava/util/Collection;)Z
-    .locals 6
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2057,13 +2171,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    move-object v0, v1
+    const/4 p3, 0x0
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -2072,111 +2184,193 @@
 
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
-    goto :goto_0
+    :goto_0
+    move-object p3, v0
+
+    goto :goto_1
 
     :cond_1
-    move-object v2, v0
+    move-object v1, v0
 
-    check-cast v2, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
+    check-cast v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_2
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
+
     move-result-object v3
 
-    move-object v4, v3
+    invoke-interface {v1, v3}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
-    check-cast v4, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
+    move-result v4
 
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
+    if-gez v4, :cond_3
 
-    move-result-object v4
+    move-object v0, v2
 
-    invoke-interface {v2, v4}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v5
-
-    if-gez v5, :cond_3
-
-    move-object v0, v3
-
-    move-object v2, v4
+    move-object v1, v3
 
     :cond_3
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_2
+    if-nez v2, :cond_2
 
-    :goto_0
-    check-cast v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
+    goto :goto_0
 
-    if-eqz v0, :cond_4
+    :goto_1
+    check-cast p3, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
+    const/4 v0, 0x0
 
-    move-result-object p3
+    if-nez p3, :cond_4
 
-    if-eqz p3, :cond_4
+    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
-    invoke-interface {p2}, Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;->getMinTimeBetweenDetections()Lorg/joda/time/Duration;
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-virtual {p3, p2}, Lorg/joda/time/Instant;->plus(Lorg/joda/time/ReadableDuration;)Lorg/joda/time/Instant;
+    new-array p2, v0, [Ljava/lang/Object;
+
+    const-string p3, "No previous detections exist, don\'t abort."
+
+    invoke-virtual {p1, p3, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return v0
+
+    :cond_4
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
 
     move-result-object v1
 
-    :cond_4
-    const/4 p2, 0x1
+    const-wide/16 v2, 0x1
 
-    const/4 p3, 0x0
+    invoke-static {v2, v3}, Lorg/joda/time/Duration;->standardHours(J)Lorg/joda/time/Duration;
 
-    if-eqz v1, :cond_5
+    move-result-object v2
 
-    invoke-virtual {p1, v1}, Lorg/joda/time/base/AbstractInstant;->isBefore(Lorg/joda/time/ReadableInstant;)Z
+    const/4 v3, 0x1
+
+    invoke-virtual {p1, v2, v3}, Lorg/joda/time/Instant;->withDurationAdded(Lorg/joda/time/ReadableDuration;I)Lorg/joda/time/Instant;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/joda/time/base/AbstractInstant;->isAfter(Lorg/joda/time/ReadableInstant;)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    move v1, p2
+    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
-    goto :goto_1
+    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object p1
+
+    new-array p2, v0, [Ljava/lang/Object;
+
+    const-string p3, "Last detection happened in our future? Don\'t abort as precaution."
+
+    invoke-virtual {p1, p3, p2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return v0
 
     :cond_5
-    move v1, p3
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->getStartedAt()Lorg/joda/time/Instant;
 
-    :goto_1
-    if-eqz v1, :cond_6
+    move-result-object v1
 
-    sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
+    invoke-interface {p2}, Lde/rki/coronawarnapp/appconfig/ExposureDetectionConfig;->getMinTimeBetweenDetections()Lorg/joda/time/Duration;
 
-    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    move-result-object p2
 
-    move-result-object v2
+    invoke-virtual {v1, p2}, Lorg/joda/time/Instant;->plus(Lorg/joda/time/ReadableDuration;)Lorg/joda/time/Instant;
 
-    const/4 v3, 0x2
+    move-result-object p2
 
-    new-array v3, v3, [Ljava/lang/Object;
+    if-ne p1, p2, :cond_6
 
-    aput-object v0, v3, p3
+    const-wide/16 v1, 0x0
 
-    aput-object p1, v3, p2
+    goto :goto_2
+
+    :cond_6
+    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getInstantMillis(Lorg/joda/time/ReadableInstant;)J
+
+    move-result-wide v1
+
+    invoke-static {p2}, Lorg/joda/time/DateTimeUtils;->getInstantMillis(Lorg/joda/time/ReadableInstant;)J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5, v1, v2}, Lcom/google/zxing/client/android/R$id;->safeSubtract(JJ)J
+
+    move-result-wide v1
+
+    :goto_2
+    sget-object v4, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
+
+    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v4
+
+    new-array v5, v3, [Ljava/lang/Object;
+
+    const-wide/32 v6, 0xea60
+
+    div-long/2addr v1, v6
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v5, v0
+
+    const-string v1, "Next detection is available in %d min"
+
+    invoke-virtual {v4, v1, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Lorg/joda/time/base/AbstractInstant;->isBefore(Lorg/joda/time/ReadableInstant;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_7
+
+    sget-object v1, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
+
+    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    aput-object p3, v2, v0
+
+    aput-object p1, v2, v3
 
     const-string p1, "Aborting. Last detection is recent: %s (now=%s)"
 
-    invoke-virtual {v2, p1, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :cond_6
-    return v1
+    :cond_7
+    return p2
 .end method

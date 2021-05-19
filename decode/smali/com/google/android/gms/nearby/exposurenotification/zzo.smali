@@ -11,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+        "Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;",
         ">;"
     }
 .end annotation
@@ -29,119 +29,84 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 10
+    .locals 7
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    move v5, v1
-
-    move v6, v5
-
-    move v7, v6
-
-    move v8, v7
-
-    move v9, v8
-
-    move-object v4, v2
+    move v3, v2
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v1
+    move-result v4
 
-    if-ge v1, v0, :cond_0
+    if-ge v4, v0, :cond_3
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v1
+    move-result v4
 
-    const v2, 0xffff
+    const v5, 0xffff
 
-    and-int/2addr v2, v1
+    and-int/2addr v5, v4
 
-    packed-switch v2, :pswitch_data_0
+    const/4 v6, 0x1
 
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->skipUnknownField(Landroid/os/Parcel;I)V
+    if-eq v5, v6, :cond_2
 
-    goto :goto_0
+    const/4 v6, 0x2
 
-    :pswitch_0
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
+    if-eq v5, v6, :cond_1
 
-    move-result v9
+    const/4 v6, 0x3
 
-    goto :goto_0
+    if-eq v5, v6, :cond_0
 
-    :pswitch_1
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v8
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v7
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v6
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v5
-
-    goto :goto_0
-
-    :pswitch_5
-    invoke-static {p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->createByteArray(Landroid/os/Parcel;I)[B
-
-    move-result-object v4
+    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
 
-    new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;
+    move-result v3
 
-    move-object v3, p1
+    goto :goto_0
 
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;-><init>([BIIIII)V
+    :cond_1
+    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;
+
+    invoke-direct {p1, v1, v2, v3}, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;-><init>(III)V
 
     return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    new-array p1, p1, [Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;
+    new-array p1, p1, [Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;
 
     return-object p1
 .end method

@@ -90,7 +90,7 @@
 
     invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
@@ -112,7 +112,7 @@
 
     const-string v3, "%s.androidInjector() returned null"
 
-    invoke-static {v1, v3, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3, v0}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {v1, p1}, Ldagger/android/AndroidInjector;->inject(Ljava/lang/Object;)V
 

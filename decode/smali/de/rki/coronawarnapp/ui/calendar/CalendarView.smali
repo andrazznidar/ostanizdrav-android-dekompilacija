@@ -82,13 +82,13 @@
 
     move-result-object p2
 
-    const v2, 0x7f0c003d
+    const v2, 0x7f0c0047
 
     const/4 v3, 0x1
 
     invoke-virtual {p2, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    const p2, 0x7f0900a9
+    const p2, 0x7f0900db
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->calendarLayout:Landroid/widget/LinearLayout;
 
-    const p2, 0x7f0900a8
+    const p2, 0x7f0900da
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -116,7 +116,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->headerTextView:Landroid/widget/TextView;
 
-    const p2, 0x7f0900ab
+    const p2, 0x7f0900dd
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -144,15 +144,17 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v4, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-virtual {v4, p2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
+    invoke-virtual {v4, v1}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->days:Ljava/util/List;
+    iget-object p2, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->days:Ljava/util/List;
 
-    new-instance p2, Lorg/joda/time/DateTime;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p1, Lorg/joda/time/DateTime;
 
     new-instance v4, Lorg/joda/time/Instant;
 
@@ -160,11 +162,11 @@
 
     sget-object v5, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
 
-    invoke-direct {p2, v4, v5}, Lorg/joda/time/DateTime;-><init>(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)V
+    invoke-direct {p1, v4, v5}, Lorg/joda/time/DateTime;-><init>(Ljava/lang/Object;Lorg/joda/time/DateTimeZone;)V
 
     const-string v4, "currentDate"
 
-    invoke-static {p2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v4, Ljava/util/ArrayList;
 
@@ -172,13 +174,13 @@
 
     new-instance v5, Lorg/joda/time/DateTime$Property;
 
-    iget-object v6, p2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    iget-object v6, p1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
 
     invoke-virtual {v6}, Lorg/joda/time/Chronology;->dayOfWeek()Lorg/joda/time/DateTimeField;
 
     move-result-object v6
 
-    invoke-direct {v5, p2, v6}, Lorg/joda/time/DateTime$Property;-><init>(Lorg/joda/time/DateTime;Lorg/joda/time/DateTimeField;)V
+    invoke-direct {v5, p1, v6}, Lorg/joda/time/DateTime$Property;-><init>(Lorg/joda/time/DateTime;Lorg/joda/time/DateTimeField;)V
 
     invoke-virtual {v5}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->get()I
 
@@ -204,7 +206,7 @@
 
     new-instance v9, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;
 
-    invoke-virtual {p2, v8}, Lorg/joda/time/DateTime;->plusDays(I)Lorg/joda/time/DateTime;
+    invoke-virtual {p1, v8}, Lorg/joda/time/DateTime;->plusDays(I)Lorg/joda/time/DateTime;
 
     move-result-object v8
 
@@ -236,7 +238,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-interface {p1, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {p2, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     new-instance p1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter;
 
@@ -260,7 +262,7 @@
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    const p1, 0x7f0900a7
+    const p1, 0x7f0900d9
 
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -270,15 +272,7 @@
 
     new-instance p2, Lorg/joda/time/LocalDate;
 
-    invoke-static {}, Lorg/joda/time/DateTimeUtils;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object v7
-
-    invoke-direct {p2, v5, v6, v7}, Lorg/joda/time/LocalDate;-><init>(JLorg/joda/time/Chronology;)V
+    invoke-direct {p2}, Lorg/joda/time/LocalDate;-><init>()V
 
     new-instance v5, Lorg/joda/time/DateTime;
 
@@ -357,7 +351,7 @@
 
     invoke-static {v8, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v8, v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->take(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v8, v3}, Lcom/google/zxing/client/android/R$id;->take(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -387,7 +381,7 @@
 
     iget-object v8, v7, Lde/rki/coronawarnapp/ui/calendar/CalendarWeekDayView;->textView:Landroid/widget/TextView;
 
-    const v9, 0x7f1302dc
+    const v9, 0x7f130306
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextAppearance(I)V
 
@@ -396,7 +390,7 @@
     :cond_3
     iget-object v8, v7, Lde/rki/coronawarnapp/ui/calendar/CalendarWeekDayView;->textView:Landroid/widget/TextView;
 
-    const v9, 0x7f1302db
+    const v9, 0x7f130305
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextAppearance(I)V
 
@@ -408,7 +402,7 @@
     goto :goto_2
 
     :cond_4
-    const p1, 0x7f0900aa
+    const p1, 0x7f0900dc
 
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -426,100 +420,124 @@
 
     iget-object p2, p2, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->days:Ljava/util/List;
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->days:Ljava/util/List;
 
-    invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->last(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v1}, Lkotlin/collections/ArraysKt___ArraysKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;
+    check-cast v1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
+    iget-object v1, v1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
 
-    const-string v1, "monthTextView"
+    const-string v2, "monthTextView"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "firstDate"
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v2
 
-    const-string v1, "lastDate"
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v0, "firstDate"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "lastDate"
+
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p2}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getField()Lorg/joda/time/DateTimeField;
+
+    move-result-object v6
+
+    invoke-virtual {v4}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getMillis()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8, v5}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getAsText(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
 
-    move-result-object v2
-
-    invoke-virtual {v0}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
-
     move-result-object v4
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
 
-    move-result v2
+    move-result-object v5
 
-    xor-int/2addr v2, v3
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const-string v3, " "
+    move-result v4
 
-    if-eqz v2, :cond_6
+    xor-int/2addr v3, v4
+
+    const-string v4, " "
+
+    if-eqz v3, :cond_6
 
     invoke-virtual {p2}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    const-string v4, " - "
+    const-string v5, " - "
 
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
-
-    move-result-object p2
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v2
-
-    invoke-virtual {p2, v2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getAsText(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
 
     move-result-object p2
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+
+    move-result-object v2
+
+    invoke-virtual {p2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getField()Lorg/joda/time/DateTimeField;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getMillis()J
+
+    move-result-wide v5
+
+    invoke-virtual {v3, v5, v6, v2}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_5
 
     :cond_5
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
 
@@ -529,28 +547,36 @@
 
     move-result p2
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->monthOfYear()Lorg/joda/time/LocalDate$Property;
 
     move-result-object p2
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
 
     move-result-object v2
 
-    invoke-virtual {p2, v2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getAsText(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getField()Lorg/joda/time/DateTimeField;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lorg/joda/time/field/AbstractReadableInstantFieldProperty;->getMillis()J
+
+    move-result-wide v5
+
+    invoke-virtual {v3, v5, v6, v2}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_5
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
 
     move-result-object p2
 
@@ -558,12 +584,12 @@
 
     move-result p2
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     goto :goto_6
 
     :cond_6
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Lorg/joda/time/LocalDate;->year()Lorg/joda/time/LocalDate$Property;
 
@@ -573,10 +599,10 @@
 
     move-result p2
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     :goto_6
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
@@ -637,7 +663,7 @@
 
     new-instance v5, Ljava/util/ArrayList;
 
-    invoke-static {v4, v2}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v4, v2}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
@@ -679,7 +705,7 @@
 
     new-instance v5, Ljava/util/ArrayList;
 
-    invoke-static {v4, v2}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v4, v2}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 

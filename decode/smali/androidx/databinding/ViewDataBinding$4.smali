@@ -25,17 +25,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public create(Landroidx/databinding/ViewDataBinding;I)Landroidx/databinding/ViewDataBinding$WeakListener;
-    .locals 1
-
-    new-instance v0, Landroidx/databinding/ViewDataBinding$LiveDataListener;
-
-    invoke-direct {v0, p1, p2}, Landroidx/databinding/ViewDataBinding$LiveDataListener;-><init>(Landroidx/databinding/ViewDataBinding;I)V
-
-    iget-object p1, v0, Landroidx/databinding/ViewDataBinding$LiveDataListener;->mListener:Landroidx/databinding/ViewDataBinding$WeakListener;
-
-    return-object p1
-.end method

@@ -90,7 +90,7 @@
 
     sget-object p2, Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;->OCSP_RESPONSE:Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;
 
-    invoke-direct {p0, p1, p2}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
+    invoke-static {p1, p2}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
 
     move-result-object p1
     :try_end_0
@@ -114,7 +114,7 @@
     return-object p1
 .end method
 
-.method private getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
+.method public static getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -127,21 +127,21 @@
         }
     .end annotation
 
-    if-nez p1, :cond_0
+    if-nez p0, :cond_0
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    return-object p0
 
     :cond_0
     const/4 v0, 0x2
 
     :try_start_0
-    invoke-static {p1, v0, v0}, Lorg/conscrypt/ct/Serialization;->readList([BII)[[B
+    invoke-static {p0, v0, v0}, Lorg/conscrypt/ct/Serialization;->readList([BII)[[B
 
-    move-result-object p1
+    move-result-object p0
     :try_end_0
     .catch Lorg/conscrypt/ct/SerializationException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -149,17 +149,17 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    array-length v1, p1
+    array-length v1, p0
 
     const/4 v2, 0x0
 
     :goto_0
     if-ge v2, v1, :cond_1
 
-    aget-object v3, p1, v2
+    aget-object v3, p0, v2
 
     :try_start_1
-    invoke-static {v3, p2}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->decode([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
+    invoke-static {v3, p1}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->decode([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
 
     move-result-object v3
 
@@ -178,9 +178,9 @@
     :catch_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    return-object p0
 .end method
 
 .method private getSCTsFromTLSExtension([B)Ljava/util/List;
@@ -196,7 +196,7 @@
 
     sget-object v0, Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;->TLS_EXTENSION:Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;
 
-    invoke-direct {p0, p1, v0}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
+    invoke-static {p1, v0}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
 
     move-result-object p1
 
@@ -242,7 +242,7 @@
 
     sget-object v0, Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;->EMBEDDED:Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;
 
-    invoke-direct {p0, p1, v0}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
+    invoke-static {p1, v0}, Lorg/conscrypt/ct/CTVerifier;->getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
 
     move-result-object p1
     :try_end_0

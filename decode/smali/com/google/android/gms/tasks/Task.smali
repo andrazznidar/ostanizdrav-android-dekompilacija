@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/tasks/Task;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.1.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # annotations
@@ -25,6 +25,27 @@
 
 
 # virtual methods
+.method public addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/tasks/OnCompleteListener<",
+            "TTResult;>;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;"
+        }
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "addOnCompleteListener is not implemented"
+
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public abstract addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -49,12 +70,18 @@
     .end annotation
 .end method
 
+.method public abstract getException()Ljava/lang/Exception;
+.end method
+
 .method public abstract getResult()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TTResult;"
         }
     .end annotation
+.end method
+
+.method public abstract isComplete()Z
 .end method
 
 .method public abstract isSuccessful()Z

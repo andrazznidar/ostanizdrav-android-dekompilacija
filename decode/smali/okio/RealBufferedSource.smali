@@ -43,6 +43,14 @@
 
 
 # virtual methods
+.method public buffer()Lokio/Buffer;
+    .locals 1
+
+    iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
+
+    return-object v0
+.end method
+
 .method public close()V
     .locals 3
 
@@ -376,6 +384,20 @@
     return v0
 .end method
 
+.method public peek()Lokio/BufferedSource;
+    .locals 1
+
+    new-instance v0, Lokio/PeekSource;
+
+    invoke-direct {v0, p0}, Lokio/PeekSource;-><init>(Lokio/BufferedSource;)V
+
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->buffer(Lokio/Source;)Lokio/BufferedSource;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public read(Ljava/nio/ByteBuffer;)I
     .locals 5
 
@@ -514,7 +536,7 @@
     :cond_3
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -736,9 +758,9 @@
 
     const/16 v2, 0x10
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->checkRadix(I)I
 
-    invoke-static {v2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->checkRadix(I)I
 
     invoke-static {v8, v2}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
@@ -861,9 +883,9 @@
 
     const/16 v3, 0x10
 
-    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->checkRadix(I)I
 
-    invoke-static {v3}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkRadix(I)I
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->checkRadix(I)I
 
     invoke-static {v2, v3}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
@@ -968,6 +990,28 @@
     move-result v0
 
     return v0
+.end method
+
+.method public readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
+
+    iget-object v1, p0, Lokio/RealBufferedSource;->source:Lokio/Source;
+
+    invoke-virtual {v0, v1}, Lokio/Buffer;->writeAll(Lokio/Source;)J
+
+    iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
+
+    invoke-virtual {v0, p1}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public readUtf8LineStrict()Ljava/lang/String;
@@ -1124,7 +1168,7 @@
 
     const-string v1, "\\n not found: limit="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1167,7 +1211,7 @@
     :cond_4
     const-string v0, "limit < 0: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1260,7 +1304,7 @@
     :cond_4
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1480,7 +1524,7 @@
 
     const-string v0, "buffer("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

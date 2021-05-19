@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+.field public shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
 
 # direct methods
@@ -53,7 +53,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
+    invoke-static {p0, p1}, Lcom/google/zxing/client/android/R$id;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
 
     const-string p1, "NOTIFICATION_ID"
 
@@ -89,7 +89,7 @@
 
     invoke-virtual {p2, p1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_0
     sget-object p2, Lde/rki/coronawarnapp/notification/NotificationReceiver;->TAG:Ljava/lang/String;
@@ -104,35 +104,35 @@
 
     invoke-virtual {p2, v0, p1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/notification/NotificationReceiver;->testResultNotificationService:Lde/rki/coronawarnapp/notification/TestResultNotificationService;
+    iget-object p1, p0, Lde/rki/coronawarnapp/notification/NotificationReceiver;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
 
     const/4 p2, 0x0
 
-    if-eqz p1, :cond_4
-
     if-eqz p1, :cond_3
+
+    if-eqz p1, :cond_2
 
     sget-object p2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/storage/LocalData;->getNumberOfRemainingPositiveTestResultReminders()I
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/storage/LocalData;->getNumberOfRemainingSharePositiveTestResultReminders()I
 
     move-result p2
 
-    if-lez p2, :cond_2
+    if-lez p2, :cond_1
 
     sget-object p2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
 
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/storage/LocalData;->getNumberOfRemainingPositiveTestResultReminders()I
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/storage/LocalData;->getNumberOfRemainingSharePositiveTestResultReminders()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/storage/LocalData;->setNumberOfRemainingPositiveTestResultReminders(I)V
+    invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/storage/LocalData;->setNumberOfRemainingSharePositiveTestResultReminders(I)V
 
     new-instance p2, Landroidx/navigation/NavDeepLinkBuilder;
 
-    iget-object v0, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->context:Landroid/content/Context;
+    iget-object v0, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->context:Landroid/content/Context;
 
     invoke-direct {p2, v0}, Landroidx/navigation/NavDeepLinkBuilder;-><init>(Landroid/content/Context;)V
 
@@ -142,27 +142,12 @@
 
     const-class v0, Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    new-instance v1, Landroid/content/ComponentName;
+    invoke-virtual {p2, v0}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    iget-object v2, p2, Landroidx/navigation/NavDeepLinkBuilder;->mContext:Landroid/content/Context;
+    const v0, 0x7f09043c
 
-    invoke-direct {v1, v2, v0}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p2, v0}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
-    iget-object v0, p2, Landroidx/navigation/NavDeepLinkBuilder;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    const v0, 0x7f090350
-
-    iput v0, p2, Landroidx/navigation/NavDeepLinkBuilder;->mDestId:I
-
-    iget-object v0, p2, Landroidx/navigation/NavDeepLinkBuilder;->mGraph:Landroidx/navigation/NavGraph;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p2}, Landroidx/navigation/NavDeepLinkBuilder;->fillInIntent()V
-
-    :cond_1
     invoke-virtual {p2}, Landroidx/navigation/NavDeepLinkBuilder;->createPendingIntent()Landroid/app/PendingIntent;
 
     move-result-object v6
@@ -171,11 +156,11 @@
 
     invoke-static {v6, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iget-object v1, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
-    iget-object p2, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->context:Landroid/content/Context;
+    iget-object p2, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->context:Landroid/content/Context;
 
-    const v0, 0x7f12015a
+    const v0, 0x7f1201e0
 
     invoke-virtual {p2, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -185,9 +170,9 @@
 
     invoke-static {v2, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->context:Landroid/content/Context;
+    iget-object p1, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->context:Landroid/content/Context;
 
-    const p2, 0x7f120155
+    const p2, 0x7f1201db
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -205,19 +190,19 @@
 
     goto :goto_0
 
-    :cond_2
-    iget-object p1, p1, Lde/rki/coronawarnapp/notification/TestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    :cond_1
+    iget-object p1, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
 
     invoke-virtual {p1, v4}, Lde/rki/coronawarnapp/notification/NotificationHelper;->cancelFutureNotifications(I)V
 
     :goto_0
     return-void
 
-    :cond_3
+    :cond_2
     throw p2
 
-    :cond_4
-    const-string p1, "testResultNotificationService"
+    :cond_3
+    const-string p1, "shareTestResultNotificationService"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 

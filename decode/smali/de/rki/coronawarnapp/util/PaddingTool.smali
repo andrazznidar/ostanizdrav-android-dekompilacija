@@ -77,7 +77,7 @@
 
     const/16 p0, 0xa
 
-    invoke-static {v0, p0}, Landroidx/transition/ViewGroupUtilsApi14;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, p0}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result p0
 

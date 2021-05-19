@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/dynamite/DynamiteModule$DynamiteLoaderClassLoader;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # annotations
@@ -10,6 +10,9 @@
 
 # static fields
 .field public static sClassLoader:Ljava/lang/ClassLoader;
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+.end field
 
 
 # direct methods

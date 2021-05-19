@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelChangeDetector"
     f = "RiskLevelChangeDetector.kt"
     l = {
-        0x44
+        0x46
     }
     m = "check"
 .end annotation
@@ -29,6 +29,8 @@
 .field public L$1:Ljava/lang/Object;
 
 .field public L$2:Ljava/lang/Object;
+
+.field public L$3:Ljava/lang/Object;
 
 .field public label:I
 

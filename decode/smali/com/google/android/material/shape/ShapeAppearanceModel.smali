@@ -214,64 +214,62 @@
 
     move-result-object p0
 
+    const/4 p1, 0x0
+
     :try_start_0
-    sget p1, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerFamily:I
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p0, p1, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerFamilyTopLeft:I
+    const/4 p2, 0x3
 
     invoke-virtual {p0, p2, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p2
 
-    sget v0, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerFamilyTopRight:I
+    const/4 v0, 0x4
 
     invoke-virtual {p0, v0, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
-    sget v1, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerFamilyBottomRight:I
+    const/4 v1, 0x2
 
     invoke-virtual {p0, v1, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
-    sget v2, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerFamilyBottomLeft:I
+    const/4 v2, 0x1
 
     invoke-virtual {p0, v2, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p1
 
-    sget v2, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerSize:I
+    const/4 v2, 0x5
 
     invoke-static {p0, v2, p3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->getCornerSize(Landroid/content/res/TypedArray;ILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/CornerSize;
 
     move-result-object p3
 
-    sget v2, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerSizeTopLeft:I
+    const/16 v2, 0x8
 
     invoke-static {p0, v2, p3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->getCornerSize(Landroid/content/res/TypedArray;ILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/CornerSize;
 
     move-result-object v2
 
-    sget v3, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerSizeTopRight:I
+    const/16 v3, 0x9
 
     invoke-static {p0, v3, p3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->getCornerSize(Landroid/content/res/TypedArray;ILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/CornerSize;
 
     move-result-object v3
 
-    sget v4, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerSizeBottomRight:I
+    const/4 v4, 0x7
 
     invoke-static {p0, v4, p3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->getCornerSize(Landroid/content/res/TypedArray;ILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/CornerSize;
 
     move-result-object v4
 
-    sget v5, Lcom/google/android/material/R$styleable;->ShapeAppearance_cornerSizeBottomLeft:I
+    const/4 v5, 0x6
 
     invoke-static {p0, v5, p3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->getCornerSize(Landroid/content/res/TypedArray;ILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/CornerSize;
 
@@ -281,7 +279,7 @@
 
     invoke-direct {v5}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>()V
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {p2}, Lcom/google/android/material/R$style;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -302,7 +300,7 @@
     :cond_1
     iput-object v2, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {v0}, Lcom/google/android/material/R$style;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -321,7 +319,7 @@
     :cond_2
     iput-object v3, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {v1}, Landroidx/transition/ViewGroupUtilsApi14;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {v1}, Lcom/google/android/material/R$style;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -340,7 +338,7 @@
     :cond_3
     iput-object v4, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {p1}, Lcom/google/android/material/R$style;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p1
 
@@ -400,23 +398,21 @@
 
     move-result-object p1
 
-    sget p2, Lcom/google/android/material/R$styleable;->MaterialShape_shapeAppearance:I
+    const/4 p2, 0x0
 
-    const/4 p3, 0x0
-
-    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result p2
-
-    sget v0, Lcom/google/android/material/R$styleable;->MaterialShape_shapeAppearanceOverlay:I
-
-    invoke-virtual {p1, v0, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p1, p2, p2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p3
 
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0, p2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result p2
+
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-static {p0, p2, p3, p4}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {p0, p3, p2, p4}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p0
 
@@ -643,35 +639,13 @@
 .end method
 
 .method public withCornerSize(F)Lcom/google/android/material/shape/ShapeAppearanceModel;
-    .locals 2
+    .locals 1
 
     new-instance v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     invoke-direct {v0, p0}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
-    new-instance v1, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    invoke-direct {v1, p1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    iput-object v1, v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
-
-    new-instance v1, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    invoke-direct {v1, p1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    iput-object v1, v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topRightCornerSize:Lcom/google/android/material/shape/CornerSize;
-
-    new-instance v1, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    invoke-direct {v1, p1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    iput-object v1, v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomRightCornerSize:Lcom/google/android/material/shape/CornerSize;
-
-    new-instance v1, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    invoke-direct {v1, p1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    iput-object v1, v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
+    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setAllCornerSizes(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     invoke-virtual {v0}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
 

@@ -182,9 +182,7 @@
 
     :cond_0
     :try_start_0
-    sget p1, Landroidx/viewpager2/R$styleable;->ViewPager2_android_orientation:I
-
-    invoke-virtual {v3, p1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v3, v0, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p1
 
@@ -208,7 +206,20 @@
 
     invoke-direct {p2, p0}, Landroidx/viewpager2/widget/ViewPager2$4;-><init>(Landroidx/viewpager2/widget/ViewPager2;)V
 
-    invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->addOnChildAttachStateChangeListener(Landroidx/recyclerview/widget/RecyclerView$OnChildAttachStateChangeListener;)V
+    iget-object v2, p1, Landroidx/recyclerview/widget/RecyclerView;->mOnChildAttachStateListeners:Ljava/util/List;
+
+    if-nez v2, :cond_1
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v2, p1, Landroidx/recyclerview/widget/RecyclerView;->mOnChildAttachStateListeners:Ljava/util/List;
+
+    :cond_1
+    iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView;->mOnChildAttachStateListeners:Ljava/util/List;
+
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     new-instance p1, Landroidx/viewpager2/widget/ScrollEventAdapter;
 
@@ -1188,11 +1199,7 @@
 
     if-eqz v1, :cond_a
 
-    iget-object v0, v0, Landroidx/viewpager2/widget/ScrollEventAdapter;->mCallback:Landroidx/viewpager2/widget/ViewPager2$OnPageChangeCallback;
-
-    if-eqz v0, :cond_a
-
-    invoke-virtual {v0, p1}, Landroidx/viewpager2/widget/ViewPager2$OnPageChangeCallback;->onPageSelected(I)V
+    invoke-virtual {v0, p1}, Landroidx/viewpager2/widget/ScrollEventAdapter;->dispatchSelected(I)V
 
     :cond_a
     if-nez p2, :cond_b

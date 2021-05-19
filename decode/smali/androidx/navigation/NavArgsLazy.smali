@@ -117,7 +117,7 @@
     :cond_0
     iget-object v1, p0, Landroidx/navigation/NavArgsLazy;->navArgsClass:Lkotlin/reflect/KClass;
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v1
 

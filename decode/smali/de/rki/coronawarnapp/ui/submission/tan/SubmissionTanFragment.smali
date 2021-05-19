@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionTanFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTanFragment.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,123:1\n11#2,9:124\n16#3,11:133\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTanFragment.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment\n*L\n32#1,9:124\n34#1,11:133\n*E\n"
+    value = "SMAP\nSubmissionTanFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTanFragment.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,123:1\n11#2,9:124\n16#3,11:133\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTanFragment.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment\n*L\n31#1,9:124\n33#1,11:133\n*E\n"
 .end annotation
 
 
@@ -17,8 +17,6 @@
 
 
 # instance fields
-.field public _$_findViewCache:Ljava/util/HashMap;
-
 .field public final binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
 .field public final viewModel$delegate:Lkotlin/Lazy;
@@ -42,7 +40,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -56,7 +54,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c0061
+    const v0, 0x7f0c006d
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -80,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -90,7 +88,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -122,11 +120,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f1202a0
+    const v6, 0x7f1203a2
 
-    const v7, 0x7f12029d
+    const v7, 0x7f12039f
 
-    const v8, 0x7f12029e
+    const v8, 0x7f1203a0
 
     const/4 v9, 0x0
 
@@ -154,12 +152,12 @@
     goto :goto_0
 
     :cond_1
-    instance-of v2, v1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
+    instance-of v1, v1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     :goto_0
-    new-instance v2, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
+    new-instance v1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
     invoke-virtual/range {p0 .. p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
 
@@ -167,33 +165,11 @@
 
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v6, 0x7f120291
+    const v6, 0x7f120393
 
-    const v3, 0x7f120292
+    const v7, 0x7f120394
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    iget v1, v1, Lde/rki/coronawarnapp/exception/http/CwaWebException;->statusCode:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v4, v7
-
-    invoke-virtual {v0, v3, v4}, Landroidx/fragment/app/Fragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v1, "getString(\n             \u2026tusCode\n                )"
-
-    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v8, 0x7f120290
+    const v8, 0x7f120392
 
     const/4 v9, 0x0
 
@@ -207,11 +183,9 @@
 
     const/16 v13, 0x80
 
-    move-object v4, v2
+    move-object v4, v1
 
-    invoke-direct/range {v4 .. v13}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;ILjava/lang/String;ILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
-
-    move-object v1, v2
+    invoke-direct/range {v4 .. v13}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     goto :goto_1
 
@@ -224,11 +198,11 @@
 
     invoke-static {v15, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v16, 0x7f120291
+    const v16, 0x7f120393
 
-    const v17, 0x7f12028f
+    const v17, 0x7f120391
 
-    const v18, 0x7f120290
+    const v18, 0x7f120392
 
     const/16 v19, 0x0
 
@@ -306,61 +280,6 @@
 
 
 # virtual methods
-.method public _$_findCachedViewById(I)Landroid/view/View;
-    .locals 2
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findViewCache:Ljava/util/HashMap;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findViewCache:Ljava/util/HashMap;
-
-    :cond_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_1
-    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findViewCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_2
-    return-object v0
-.end method
-
 .method public final getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
     .locals 3
 
@@ -395,21 +314,6 @@
     return-object v0
 .end method
 
-.method public onDestroyView()V
-    .locals 1
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->_$_findViewCache:Ljava/util/HashMap;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    :cond_0
-    return-void
-.end method
-
 .method public onResume()V
     .locals 2
 
@@ -429,7 +333,7 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "view"
 
@@ -447,39 +351,31 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$1;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
 
     move-result-object p1
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanInput:Lde/rki/coronawarnapp/ui/submission/tan/TanInput;
+    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanInput:Lde/rki/coronawarnapp/ui/submission/tan/TanInput;
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$2;
+    new-instance v0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$$inlined$apply$lambda$1;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
+    invoke-direct {v0, p1, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
 
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->setListener(Lkotlin/jvm/functions/Function1;)V
+    invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput;->setListener(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanButtonEnter:Landroid/widget/Button;
 
-    move-result-object p1
+    new-instance v0, L-$$LambdaGroup$js$Mx7xhnwVKosP8TlOve2PH25FJB0;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanButtonEnter:Landroid/widget/Button;
+    const/4 v1, 0x0
 
-    new-instance p2, L-$$LambdaGroup$js$LMAUxOqLLA-CVmTWKnmbo-7PRkU;
+    invoke-direct {v0, v1, p0}, L-$$LambdaGroup$js$Mx7xhnwVKosP8TlOve2PH25FJB0;-><init>(ILjava/lang/Object;)V
 
-    const/4 v0, 0x0
-
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$LMAUxOqLLA-CVmTWKnmbo-7PRkU;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
-
-    move-result-object p1
+    invoke-virtual {p2, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
@@ -487,11 +383,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$LMAUxOqLLA-CVmTWKnmbo-7PRkU;
+    new-instance p2, L-$$LambdaGroup$js$Mx7xhnwVKosP8TlOve2PH25FJB0;
 
     const/4 v0, 0x1
 
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$LMAUxOqLLA-CVmTWKnmbo-7PRkU;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$Mx7xhnwVKosP8TlOve2PH25FJB0;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -501,11 +397,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel;->registrationState:Landroidx/lifecycle/MutableLiveData;
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$5;
+    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$3;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$5;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$3;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel;
 
@@ -513,11 +409,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel;->registrationError:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$6;
+    new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$4;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$6;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$4;-><init>(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

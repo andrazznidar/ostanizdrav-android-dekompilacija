@@ -1098,6 +1098,30 @@
     return-object p0
 .end method
 
+.method public setExclusiveCheckable(Z)V
+    .locals 1
+
+    iget v0, p0, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags:I
+
+    and-int/lit8 v0, v0, -0x5
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    or-int/2addr p1, v0
+
+    iput p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags:I
+
+    return-void
+.end method
+
 .method public setIcon(I)Landroid/view/MenuItem;
     .locals 1
 

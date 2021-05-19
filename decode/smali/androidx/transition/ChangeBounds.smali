@@ -574,7 +574,7 @@
 
     sget-object v1, Landroidx/transition/ChangeBounds;->POSITION_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v9, v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v9, v1, v0}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
@@ -601,7 +601,7 @@
 
     sget-object v4, Landroidx/transition/ChangeBounds;->TOP_LEFT_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v1, v4, v2}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v4, v2}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
@@ -621,7 +621,7 @@
 
     sget-object v4, Landroidx/transition/ChangeBounds;->BOTTOM_RIGHT_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v1, v4, v3}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v4, v3}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
@@ -675,7 +675,7 @@
 
     sget-object v1, Landroidx/transition/ChangeBounds;->BOTTOM_RIGHT_ONLY_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v9, v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v9, v1, v0}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
@@ -699,7 +699,7 @@
 
     sget-object v1, Landroidx/transition/ChangeBounds;->TOP_LEFT_ONLY_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v9, v1, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v9, v1, v0}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
@@ -751,7 +751,7 @@
 
     sget-object v3, Landroidx/transition/ChangeBounds;->POSITION_PROPERTY:Landroid/util/Property;
 
-    invoke-static {v9, v3, v1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-static {v9, v3, v1}, Landroidx/navigation/ui/R$anim;->ofPointF(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 

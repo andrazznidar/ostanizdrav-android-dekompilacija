@@ -1,76 +1,70 @@
-.class public final Lcom/google/android/play/core/internal/k;
-.super Ljava/lang/Object;
+.class public Lcom/google/android/play/core/internal/k;
+.super Landroid/os/Binder;
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    const-class v0, Lcom/google/android/play/core/internal/k;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    invoke-virtual {p0, p0, p1}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
+
+# virtual methods
+.method public abstract a(ILandroid/os/Parcel;)Z
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "<T::",
-            "Landroid/os/Parcelable;",
-            ">(",
-            "Landroid/os/Parcel;",
-            "Landroid/os/Parcelable$Creator<",
-            "TT;>;)TT;"
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
         }
     .end annotation
 
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+    const v0, 0xffffff
 
-    move-result v0
+    if-le p1, v0, :cond_0
 
-    if-eqz v0, :cond_0
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    invoke-interface {p1, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    move-result p3
 
-    move-result-object p0
+    if-eqz p3, :cond_1
 
-    check-cast p0, Landroid/os/Parcelable;
+    const/4 p1, 0x1
 
-    return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public static a(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
-
-    return-void
+    return p1
 
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p0}, Landroid/os/Binder;->getInterfaceDescriptor()Ljava/lang/String;
 
-    return-void
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    :cond_1
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/play/core/internal/k;->a(ILandroid/os/Parcel;)Z
+
+    move-result p1
+
+    return p1
 .end method

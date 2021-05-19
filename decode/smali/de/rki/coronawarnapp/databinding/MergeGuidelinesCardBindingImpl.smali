@@ -64,7 +64,7 @@
 
     aget-object v0, p2, v2
 
-    sget v1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v1, 0x7f09015b
 
     invoke-virtual {v0, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -168,12 +168,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

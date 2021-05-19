@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;-><init>(Lde/rki/coronawarnapp/util/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
+    value = Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings;-><init>(Lde/rki/coronawarnapp/util/device/ForegroundState;Landroidx/core/app/NotificationManagerCompat;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

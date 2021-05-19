@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090246
+    const v1, 0x7f0902ce
 
     const/4 v2, 0x3
 
@@ -101,7 +101,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
+    const p1, 0x7f09015b
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -130,9 +130,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;->mSubtitle:Ljava/lang/String;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;->mSubtitle:Ljava/lang/String;
+    const/4 v6, 0x0
 
     const-wide/16 v7, 0x5
 
@@ -142,13 +142,9 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->formatVisibilityIcon(Ljava/lang/Object;)Ljava/lang/Integer;
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityIcon(Ljava/lang/Object;)I
 
-    move-result-object v5
-
-    invoke-static {v5}, Landroidx/databinding/ViewDataBinding;->safeUnbox(Ljava/lang/Integer;)I
-
-    move-result v5
+    move-result v6
 
     :cond_0
     const-wide/16 v8, 0x6
@@ -165,14 +161,14 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;->navigationRowIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :cond_1
     if-eqz v0, :cond_2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;->navigationRowSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v5}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_2
     return-void
@@ -254,14 +250,6 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
 .method public setSubtitle(Ljava/lang/String;)V
     .locals 4
 
@@ -282,7 +270,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x31
+    const/16 p1, 0x2f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

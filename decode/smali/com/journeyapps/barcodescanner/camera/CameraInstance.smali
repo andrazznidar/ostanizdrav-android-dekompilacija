@@ -79,7 +79,7 @@
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->closer:Ljava/lang/Runnable;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/camera/CameraThread;->instance:Lcom/journeyapps/barcodescanner/camera/CameraThread;
 
@@ -122,7 +122,7 @@
 
     if-eqz p0, :cond_0
 
-    sget v0, Lcom/google/zxing/client/android/R$id;->zxing_camera_error:I
+    const v0, 0x7f09056f
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 

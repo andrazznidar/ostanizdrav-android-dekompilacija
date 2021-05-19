@@ -17,11 +17,11 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.storage.KeyCacheRepository"
     f = "KeyCacheRepository.kt"
     l = {
-        0x7d,
-        0x7d,
-        0x83,
-        0x86,
-        0x86
+        0x6a,
+        0x6a,
+        0x70,
+        0x73,
+        0x73
     }
     m = "createCacheEntry"
 .end annotation

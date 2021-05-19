@@ -421,7 +421,7 @@
 
     if-gt p3, v1, :cond_0
 
-    invoke-static {v0, p1, p2, p3, p4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/google/zxing/client/android/R$id;->arrayRangeEquals([BI[BII)Z
 
     move-result p1
 
@@ -436,6 +436,22 @@
 
     :goto_0
     return p1
+.end method
+
+.method public string(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lokio/ByteString;->data:[B
+
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v0, p1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    return-object v1
 .end method
 
 .method public toAsciiLowercase()Lokio/ByteString;
@@ -1248,7 +1264,7 @@
 
     const-string v1, "[hex="
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1267,7 +1283,7 @@
     goto/16 :goto_1e
 
     :cond_48
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1336,7 +1352,7 @@
     :cond_4b
     const-string v1, "endIndex > length("
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1411,7 +1427,7 @@
 
     if-ge v5, v4, :cond_4d
 
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 

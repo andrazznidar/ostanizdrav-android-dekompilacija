@@ -18,7 +18,7 @@
         "<T:",
         "Ljava/lang/Object;",
         "U:",
-        "Ljava/lang/Object;",
+        "Ljava/lang/Throwable;",
         ">",
         "Lde/rki/coronawarnapp/util/NetworkRequestWrapper<",
         "TT;TU;>;"
@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final error:Ljava/lang/Object;
+.field public final error:Ljava/lang/Throwable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TU;"
@@ -37,7 +37,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -45,11 +45,15 @@
         }
     .end annotation
 
+    const-string v0, "error"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
+    iput-object p1, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Throwable;
 
     return-void
 .end method
@@ -67,9 +71,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Throwable;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Throwable;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -94,7 +98,7 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Throwable;
 
     if-eqz v0, :cond_0
 
@@ -116,11 +120,11 @@
 
     const-string v0, "RequestFailed(error="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Object;
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestFailed;->error:Ljava/lang/Throwable;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

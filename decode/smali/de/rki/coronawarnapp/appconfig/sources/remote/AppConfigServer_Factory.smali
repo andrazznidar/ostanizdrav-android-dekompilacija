@@ -3,14 +3,14 @@
 .source "AppConfigServer_Factory.java"
 
 # interfaces
-.implements Ljavax/inject/Provider;
+.implements Ldagger/internal/Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
+        "Ldagger/internal/Factory<",
         "Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;",
         ">;"
     }
@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final cacheProvider:Ljavax/inject/Provider;
+.field public final testSettingsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lokhttp3/Cache;",
+            "Lde/rki/coronawarnapp/storage/TestSettings;",
             ">;"
         }
     .end annotation
@@ -75,7 +75,7 @@
             "Lde/rki/coronawarnapp/util/TimeStamper;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lokhttp3/Cache;",
+            "Lde/rki/coronawarnapp/storage/TestSettings;",
             ">;)V"
         }
     .end annotation
@@ -88,7 +88,7 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;->cacheProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;->testSettingsProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -120,17 +120,17 @@
 
     check-cast v2, Lde/rki/coronawarnapp/util/TimeStamper;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;->cacheProvider:Ljavax/inject/Provider;
+    iget-object v3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;->testSettingsProvider:Ljavax/inject/Provider;
 
     invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lokhttp3/Cache;
+    check-cast v3, Lde/rki/coronawarnapp/storage/TestSettings;
 
     new-instance v4, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;-><init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/VerificationKeys;Lde/rki/coronawarnapp/util/TimeStamper;Lokhttp3/Cache;)V
+    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;-><init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/VerificationKeys;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/storage/TestSettings;)V
 
     return-object v4
 .end method

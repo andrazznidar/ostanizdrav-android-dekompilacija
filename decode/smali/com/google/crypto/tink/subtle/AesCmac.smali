@@ -82,13 +82,13 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
+    invoke-static {p1}, Lcom/google/android/material/R$style;->dbl([B)[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->dbl([B)[B
+    invoke-static {p1}, Lcom/google/android/material/R$style;->dbl([B)[B
 
     move-result-object p1
 
@@ -192,7 +192,7 @@
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1, v2, v4, v5, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([BI[BII)[B
+    invoke-static {p1, v2, v4, v5, v3}, Lcom/google/android/material/R$style;->xor([BI[BII)[B
 
     move-result-object v2
 
@@ -209,13 +209,13 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroidx/transition/ViewGroupUtilsApi14;->cmacPad([B)[B
+    invoke-static {v2}, Lcom/google/android/material/R$style;->cmacPad([B)[B
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey2:[B
 
-    invoke-static {v2, v4}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
+    invoke-static {v2, v4}, Lcom/google/android/material/R$style;->xor([B[B)[B
 
     move-result-object v2
 
@@ -231,7 +231,7 @@
 
     mul-int/lit8 v7, v6, 0x10
 
-    invoke-static {v4, v5, p1, v7, v3}, Landroidx/transition/ViewGroupUtilsApi14;->xor([BI[BII)[B
+    invoke-static {v4, v5, p1, v7, v3}, Lcom/google/android/material/R$style;->xor([BI[BII)[B
 
     move-result-object v4
 
@@ -244,7 +244,7 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {v2, v4}, Landroidx/transition/ViewGroupUtilsApi14;->xor([B[B)[B
+    invoke-static {v2, v4}, Lcom/google/android/material/R$style;->xor([B[B)[B
 
     move-result-object p1
 
@@ -286,7 +286,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Landroidx/transition/ViewGroupUtilsApi14;->equal([B[B)Z
+    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->equal([B[B)Z
 
     move-result p1
 

@@ -167,6 +167,50 @@
     return-void
 .end method
 
+.method public static convertToRippleDrawableColor(Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+    .locals 4
+
+    const/4 v0, 0x2
+
+    new-array v1, v0, [[I
+
+    new-array v0, v0, [I
+
+    const/4 v2, 0x0
+
+    sget-object v3, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_STATE_SET:[I
+
+    aput-object v3, v1, v2
+
+    sget-object v3, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_PRESSED_STATE_SET:[I
+
+    invoke-static {p0, v3}, Lcom/google/android/material/ripple/RippleUtils;->getColorForState(Landroid/content/res/ColorStateList;[I)I
+
+    move-result v3
+
+    aput v3, v0, v2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Landroid/util/StateSet;->NOTHING:[I
+
+    aput-object v3, v1, v2
+
+    sget-object v3, Lcom/google/android/material/ripple/RippleUtils;->PRESSED_STATE_SET:[I
+
+    invoke-static {p0, v3}, Lcom/google/android/material/ripple/RippleUtils;->getColorForState(Landroid/content/res/ColorStateList;[I)I
+
+    move-result p0
+
+    aput p0, v0, v2
+
+    new-instance p0, Landroid/content/res/ColorStateList;
+
+    invoke-direct {p0, v1, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    return-object p0
+.end method
+
 .method public static getColorForState(Landroid/content/res/ColorStateList;[I)I
     .locals 1
 

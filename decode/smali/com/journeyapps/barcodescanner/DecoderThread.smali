@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/DecoderThread;->previewCallback:Lcom/journeyapps/barcodescanner/camera/PreviewCallback;
 
-    invoke-static {}, Landroidx/transition/ViewGroupUtilsApi14;->validateMainThread()V
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
 
     iput-object p1, p0, Lcom/journeyapps/barcodescanner/DecoderThread;->cameraInstance:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
 

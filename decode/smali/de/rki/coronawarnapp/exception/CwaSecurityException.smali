@@ -19,7 +19,7 @@
 
     move-result-object v2
 
-    const-string v3, "something went wrong during a critical part of the application ensuring security, please referto the details for more information"
+    const-string v3, "Something went wrong during a critical part of the application ensuring security, please refer to the details for more information"
 
     const/4 v5, 0x0
 

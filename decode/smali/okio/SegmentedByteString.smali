@@ -290,9 +290,9 @@
 
     const-wide/16 v5, 0x1
 
-    invoke-static/range {v1 .. v6}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkOffsetAndCount(JJJ)V
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->checkOffsetAndCount(JJJ)V
 
-    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lcom/google/zxing/client/android/R$id;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 
@@ -355,7 +355,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lcom/google/zxing/client/android/R$id;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -463,7 +463,7 @@
     :cond_0
     add-int/2addr p4, p1
 
-    invoke-static {p0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p1}, Lcom/google/zxing/client/android/R$id;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v1
 
@@ -514,7 +514,7 @@
 
     aget-object v3, v3, v1
 
-    invoke-static {v3, v2, p2, p3, v4}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->arrayRangeEquals([BI[BII)Z
+    invoke-static {v3, v2, p2, p3, v4}, Lcom/google/zxing/client/android/R$id;->arrayRangeEquals([BI[BII)Z
 
     move-result v2
 
@@ -537,6 +537,28 @@
     :cond_4
     :goto_2
     return v0
+.end method
+
+.method public string(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "charset"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lokio/SegmentedByteString;->toByteString()Lokio/ByteString;
+
+    move-result-object v1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, v1, Lokio/ByteString;->data:[B
+
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v0, p1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    return-object v1
 .end method
 
 .method public toAsciiLowercase()Lokio/ByteString;
@@ -642,7 +664,7 @@
 
     add-int/2addr p3, p2
 
-    invoke-static {p0, p2}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->segment(Lokio/SegmentedByteString;I)I
+    invoke-static {p0, p2}, Lcom/google/zxing/client/android/R$id;->segment(Lokio/SegmentedByteString;I)I
 
     move-result v0
 

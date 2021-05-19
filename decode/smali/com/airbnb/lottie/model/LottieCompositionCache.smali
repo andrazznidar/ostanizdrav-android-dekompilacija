@@ -48,3 +48,20 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public put(Ljava/lang/String;Lcom/airbnb/lottie/LottieComposition;)V
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/airbnb/lottie/model/LottieCompositionCache;->cache:Landroidx/collection/LruCache;
+
+    invoke-virtual {v0, p1, p2}, Landroidx/collection/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method

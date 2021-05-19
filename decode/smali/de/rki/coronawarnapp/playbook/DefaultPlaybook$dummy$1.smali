@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x70,
-        0x73,
-        0x76
+        0x89,
+        0x8c,
+        0x8f
     }
     m = "dummy"
 .end annotation

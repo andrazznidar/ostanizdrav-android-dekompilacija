@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/BasePendingResult;
 .super Lcom/google/android/gms/common/api/PendingResult;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
 # annotations
@@ -23,6 +23,18 @@
         "TR;>;"
     }
 .end annotation
+
+
+# static fields
+.field public static final zaa:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -73,7 +85,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference<",
-            "Lcom/google/android/gms/common/api/internal/zaco;",
+            "Lcom/google/android/gms/common/api/internal/zacq;",
             ">;"
         }
     .end annotation
@@ -93,6 +105,8 @@
 
 .field public zam:Z
 
+.field public zap:Z
+
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -101,6 +115,8 @@
     new-instance v0, Lcom/google/android/gms/common/api/internal/zao;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/zao;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaa:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
@@ -138,6 +154,10 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zah:Ljava/util/concurrent/atomic/AtomicReference;
 
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zap:Z
+
     new-instance v0, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -153,6 +173,58 @@
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    .locals 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/PendingResult;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zae:Ljava/util/concurrent/CountDownLatch;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaf:Ljava/util/ArrayList;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zah:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zap:Z
+
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/GoogleApiClient;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
+
+    invoke-direct {v1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac:Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -212,18 +284,62 @@
 
 
 # virtual methods
-.method public abstract createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/Status;",
-            ")TR;"
-        }
-    .end annotation
+.method public final addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
+    .locals 2
+    .param p1    # Lcom/google/android/gms/common/api/PendingResult$StatusListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x1
+
+    const-string v1, "Callback cannot be null."
+
+    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isReady()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaj:Lcom/google/android/gms/common/api/Status;
+
+    invoke-interface {p1, v1}, Lcom/google/android/gms/common/api/PendingResult$StatusListener;->onComplete(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaf:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method
 
 .method public final forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
-    .locals 2
+    .locals 3
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -238,11 +354,13 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
+    new-instance v1, Lcom/google/android/gms/internal/safetynet/zzk$zza;
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
+    invoke-direct {v1, p1, v2}, Lcom/google/android/gms/internal/safetynet/zzk$zza;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/safetynet/zza;)V
+
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
 
     const/4 p1, 0x1
 
@@ -290,6 +408,10 @@
 
 .method public final setResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 5
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"
@@ -327,7 +449,7 @@
     :goto_0
     const-string v4, "Results have already been set"
 
-    invoke-static {v1, v4}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v1, v4}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
     iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
 
@@ -341,7 +463,7 @@
     :goto_1
     const-string v1, "Result has already been consumed"
 
-    invoke-static {v2, v1}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v2, v1}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab(Lcom/google/android/gms/common/api/Result;)V
 
@@ -367,7 +489,7 @@
 .end method
 
 .method public final zab(Lcom/google/android/gms/common/api/Result;)V
-    .locals 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"
@@ -390,121 +512,69 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
     if-nez p1, :cond_0
 
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zai:Lcom/google/android/gms/common/api/Result;
 
     instance-of p1, p1, Lcom/google/android/gms/common/api/Releasable;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_1
 
     new-instance p1, Lcom/google/android/gms/common/api/internal/BasePendingResult$zaa;
 
-    invoke-direct {p1, p0, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$zaa;-><init>(Lcom/google/android/gms/common/api/internal/BasePendingResult;Lcom/google/android/gms/common/api/internal/zao;)V
+    invoke-direct {p1, p0, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$zaa;-><init>(Lcom/google/android/gms/common/api/internal/BasePendingResult;Lcom/google/android/gms/common/api/internal/zao;)V
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->mResultGuardian:Lcom/google/android/gms/common/api/internal/BasePendingResult$zaa;
 
-    goto :goto_1
-
-    :cond_0
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac:Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
-
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac:Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
-
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    :try_start_0
-    iget-boolean v4, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
-
-    const/4 v5, 0x1
-
-    if-nez v4, :cond_1
-
-    move v4, v5
-
     goto :goto_0
 
-    :cond_1
-    move v4, v0
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac:Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
 
-    :goto_0
-    const-string v6, "Result has already been consumed."
+    const/4 v2, 0x2
 
-    invoke-static {v4, v6}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isReady()Z
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac:Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
 
-    move-result v4
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac()Lcom/google/android/gms/common/api/Result;
 
-    const-string v6, "Result is not ready."
+    move-result-object v2
 
-    invoke-static {v4, v6}, Landroidx/transition/ViewGroupUtilsApi14;->checkState(ZLjava/lang/Object;)V
+    if-eqz v1, :cond_3
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zai:Lcom/google/android/gms/common/api/Result;
+    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zai:Lcom/google/android/gms/common/api/Result;
+    new-instance v0, Landroid/util/Pair;
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zag:Lcom/google/android/gms/common/api/ResultCallback;
+    invoke-direct {v0, p1, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iput-boolean v5, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
+    const/4 p1, 0x1
 
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zah:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/gms/common/api/internal/zaco;
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v3, p0}, Lcom/google/android/gms/common/api/internal/zaco;->zaa(Lcom/google/android/gms/common/api/internal/BasePendingResult;)V
-
-    :cond_2
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    if-eqz v2, :cond_5
-
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v1, Landroid/util/Pair;
-
-    invoke-direct {v1, p1, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v2, v5, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, p1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
-    invoke-virtual {v2, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    :cond_3
-    :goto_1
+    :cond_1
+    :goto_0
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaf:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v0
 
-    :goto_2
-    if-ge v0, v1, :cond_4
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    :goto_1
+    if-ge v1, v0, :cond_2
+
+    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     check-cast v2, Lcom/google/android/gms/common/api/PendingResult$StatusListener;
 
@@ -512,25 +582,98 @@
 
     invoke-interface {v2, v3}, Lcom/google/android/gms/common/api/PendingResult$StatusListener;->onComplete(Lcom/google/android/gms/common/api/Status;)V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_4
+    :cond_2
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaf:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
     return-void
 
-    :cond_5
-    throw v1
+    :cond_3
+    throw v0
+.end method
+
+.method public final zac()Lcom/google/android/gms/common/api/Result;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TR;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
+
+    const/4 v2, 0x1
+
+    if-nez v1, :cond_0
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    const-string v3, "Result has already been consumed."
+
+    invoke-static {v1, v3}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isReady()Z
+
+    move-result v1
+
+    const-string v3, "Result is not ready."
+
+    invoke-static {v1, v3}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
+
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zai:Lcom/google/android/gms/common/api/Result;
+
+    const/4 v3, 0x0
+
+    iput-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zai:Lcom/google/android/gms/common/api/Result;
+
+    iput-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zag:Lcom/google/android/gms/common/api/ResultCallback;
+
+    iput-boolean v2, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zah:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/api/internal/zacq;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0, p0}, Lcom/google/android/gms/common/api/internal/zacq;->zaa(Lcom/google/android/gms/common/api/internal/BasePendingResult;)V
+
+    :cond_1
+    invoke-static {v1}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    check-cast v1, Lcom/google/android/gms/common/api/Result;
+
+    return-object v1
 
     :catchall_0
-    move-exception p1
+    move-exception v1
 
     :try_start_1
-    monitor-exit v3
+    monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw p1
+    throw v1
 .end method

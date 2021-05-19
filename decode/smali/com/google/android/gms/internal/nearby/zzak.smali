@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/internal/nearby/zzak;
-.super Lcom/google/android/gms/internal/nearby/zzdt;
+.super Lcom/google/android/gms/internal/nearby/zzcw;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
@@ -13,23 +13,19 @@
 
     iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzak;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzdt;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzcw;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/common/api/Status;J)V
-    .locals 0
+.method public final zzb(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
+    .locals 1
 
-    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzak;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-result-object p2
-
-    iget-object p3, p0, Lcom/google/android/gms/internal/nearby/zzak;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-static {p1, p2, p3}, Landroidx/transition/ViewGroupUtilsApi14;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
+    invoke-static {p1, p2, v0}, Lcom/airbnb/lottie/R$attr;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return-void
 .end method

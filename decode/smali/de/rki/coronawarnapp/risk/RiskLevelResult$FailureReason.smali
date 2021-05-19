@@ -25,11 +25,15 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
+.field public static final enum INCORRECT_DEVICE_TIME:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
 .field public static final enum NO_INTERNET:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
 .field public static final enum OUTDATED_RESULTS:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
 .field public static final enum OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+.field public static final enum POSITIVE_TEST_RESULT:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
 .field public static final enum TRACING_OFF:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
@@ -44,7 +48,7 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    const/4 v0, 0x5
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
@@ -92,9 +96,23 @@
 
     new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
-    const-string v2, "OUTDATED_RESULTS"
+    const-string v2, "INCORRECT_DEVICE_TIME"
 
     const/4 v3, 0x3
+
+    const-string v4, "incorrectDeviceTime"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;->INCORRECT_DEVICE_TIME:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+    const-string v2, "OUTDATED_RESULTS"
+
+    const/4 v3, 0x4
 
     const-string v4, "outDatedResults"
 
@@ -108,13 +126,27 @@
 
     const-string v2, "OUTDATED_RESULTS_MANUAL"
 
-    const/4 v3, 0x4
+    const/4 v3, 0x5
 
     const-string v4, "outDatedResults.manual"
 
     invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;->OUTDATED_RESULTS_MANUAL:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+    aput-object v1, v0, v3
+
+    new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+
+    const-string v2, "POSITIVE_TEST_RESULT"
+
+    const/4 v3, 0x6
+
+    const-string v4, "positiveTestResult"
+
+    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;->POSITIVE_TEST_RESULT:Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
 
     aput-object v1, v0, v3
 

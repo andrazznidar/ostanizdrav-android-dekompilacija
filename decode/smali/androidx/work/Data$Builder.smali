@@ -60,6 +60,15 @@
 
 .method public putAll(Ljava/util/Map;)Landroidx/work/Data$Builder;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "values"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

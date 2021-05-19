@@ -219,7 +219,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->hashCodeImpl(Ljava/util/Set;)I
+    invoke-static {p0}, Lcom/google/android/material/R$style;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0
 

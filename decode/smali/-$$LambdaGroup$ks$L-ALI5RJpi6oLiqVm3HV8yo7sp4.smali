@@ -75,13 +75,11 @@
 
     move-result-object v2
 
-    invoke-interface {v2}, Lde/rki/coronawarnapp/util/device/PowerManagement;->getToBatteryOptimizationSettingsIntent()Landroid/content/Intent;
-
-    move-result-object v2
+    iget-object v2, v2, Lde/rki/coronawarnapp/util/device/PowerManagement;->toBatteryOptimizationSettingsIntent:Landroid/content/Intent;
 
     const/4 v3, 0x2
 
-    invoke-static {v0, v2, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->startActivitySafely$default(Landroid/app/Activity;Landroid/content/Intent;Lkotlin/jvm/functions/Function1;I)V
+    invoke-static {v0, v2, v1, v3}, Lcom/google/zxing/client/android/R$id;->startActivitySafely$default(Landroid/app/Activity;Landroid/content/Intent;Lkotlin/jvm/functions/Function1;I)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

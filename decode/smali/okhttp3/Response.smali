@@ -233,12 +233,100 @@
     return v0
 .end method
 
+.method public final peekBody(J)Lokhttp3/ResponseBody;
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lokio/BufferedSource;->peek()Lokio/BufferedSource;
+
+    move-result-object v0
+
+    new-instance v1, Lokio/Buffer;
+
+    invoke-direct {v1}, Lokio/Buffer;-><init>()V
+
+    invoke-interface {v0, p1, p2}, Lokio/BufferedSource;->request(J)Z
+
+    invoke-interface {v0}, Lokio/BufferedSource;->getBuffer()Lokio/Buffer;
+
+    move-result-object v2
+
+    iget-wide v2, v2, Lokio/Buffer;->size:J
+
+    invoke-static {p1, p2, v2, v3}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide p1
+
+    const-string v2, "source"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, p1, v2
+
+    if-lez v2, :cond_1
+
+    invoke-interface {v0, v1, p1, p2}, Lokio/Source;->read(Lokio/Buffer;J)J
+
+    move-result-wide v2
+
+    const-wide/16 v4, -0x1
+
+    cmp-long v4, v2, v4
+
+    if-eqz v4, :cond_0
+
+    sub-long/2addr p1, v2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/io/EOFException;
+
+    invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
+
+    throw p1
+
+    :cond_1
+    iget-object p1, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
+
+    invoke-virtual {p1}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
+
+    move-result-object p1
+
+    iget-wide v2, v1, Lokio/Buffer;->size:J
+
+    const-string p2, "$this$asResponseBody"
+
+    invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p2, Lokhttp3/ResponseBody$Companion$asResponseBody$1;
+
+    invoke-direct {p2, v1, p1, v2, v3}, Lokhttp3/ResponseBody$Companion$asResponseBody$1;-><init>(Lokio/BufferedSource;Lokhttp3/MediaType;J)V
+
+    return-object p2
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
     const-string v0, "Response{protocol="
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

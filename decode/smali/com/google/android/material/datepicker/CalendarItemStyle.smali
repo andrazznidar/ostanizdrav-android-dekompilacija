@@ -25,19 +25,19 @@
 
     iget v0, p6, Landroid/graphics/Rect;->left:I
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkArgumentNonnegative(I)I
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkArgumentNonnegative(I)I
 
     iget v0, p6, Landroid/graphics/Rect;->top:I
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkArgumentNonnegative(I)I
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkArgumentNonnegative(I)I
 
     iget v0, p6, Landroid/graphics/Rect;->right:I
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkArgumentNonnegative(I)I
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkArgumentNonnegative(I)I
 
     iget v0, p6, Landroid/graphics/Rect;->bottom:I
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->checkArgumentNonnegative(I)I
+    invoke-static {v0}, Landroidx/core/app/AppOpsManagerCompat;->checkArgumentNonnegative(I)I
 
     iput-object p6, p0, Lcom/google/android/material/datepicker/CalendarItemStyle;->insets:Landroid/graphics/Rect;
 
@@ -57,97 +57,95 @@
 .method public static create(Landroid/content/Context;I)Lcom/google/android/material/datepicker/CalendarItemStyle;
     .locals 12
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    move v1, v0
+    move v2, v1
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    sget-object v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem:[I
+    sget-object v2, Lcom/google/android/material/R$styleable;->MaterialCalendarItem:[I
 
-    invoke-virtual {p0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p0, p1, v2}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_android_insetLeft:I
-
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
-
-    move-result v1
-
-    sget v2, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_android_insetTop:I
-
-    invoke-virtual {p1, v2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {p1, v1, v1}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result v2
 
-    sget v3, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_android_insetRight:I
+    const/4 v3, 0x2
 
-    invoke-virtual {p1, v3, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    invoke-virtual {p1, v3, v1}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result v3
 
-    sget v4, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_android_insetBottom:I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
-    invoke-virtual {p1, v4, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    move-result v0
+
+    const/4 v4, 0x3
+
+    invoke-virtual {p1, v4, v1}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result v4
 
     new-instance v11, Landroid/graphics/Rect;
 
-    invoke-direct {v11, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v11, v2, v3, v0, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemFillColor:I
+    const/4 v0, 0x4
 
-    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v0}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v6
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemTextColor:I
+    const/16 v0, 0x9
 
-    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v0}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v7
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemStrokeColor:I
+    const/4 v0, 0x7
 
-    invoke-static {p0, p1, v1}, Landroidx/transition/ViewGroupUtilsApi14;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p0, p1, v0}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v8
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemStrokeWidth:I
+    const/16 v0, 0x8
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v9
 
-    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemShapeAppearance:I
+    const/4 v0, 0x5
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v1
+    move-result v0
 
-    sget v2, Lcom/google/android/material/R$styleable;->MaterialCalendarItem_itemShapeAppearanceOverlay:I
+    const/4 v2, 0x6
 
-    invoke-virtual {p1, v2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p1, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
     new-instance v3, Lcom/google/android/material/shape/AbsoluteCornerSize;
 
-    int-to-float v0, v0
+    int-to-float v1, v1
 
-    invoke-direct {v3, v0}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
+    invoke-direct {v3, v1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
 
-    invoke-static {p0, v1, v2, v3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {p0, v0, v2, v3}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p0
 

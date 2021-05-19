@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/tracing_details_item_behavior_normal_view_0" android:padding="@dimen/card_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/risk_details_headline_behavior" android:accessibilityHeading="true" style="@style/headline5" />
+    <TextView android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/risk_details_subtitle_behavior" style="@style/body2" />
+    <de.rki.coronawarnapp.tracing.ui.details.items.behavior.BehaviorInfoRow android:icon="@drawable/ic_risk_details_wash" android:tag="binding_1" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/risk_details_behavior_body_wash_hands" />
+    <de.rki.coronawarnapp.tracing.ui.details.items.behavior.BehaviorInfoRow android:icon="@drawable/ic_risk_details_mask" android:tag="binding_2" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/risk_details_behavior_body_wear_mask" />
+    <de.rki.coronawarnapp.tracing.ui.details.items.behavior.BehaviorInfoRow android:icon="@drawable/ic_risk_details_distance" android:tag="binding_3" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/risk_details_behavior_body_stay_away" />
+    <de.rki.coronawarnapp.tracing.ui.details.items.behavior.BehaviorInfoRow android:icon="@drawable/ic_risk_details_sneeze" android:tag="binding_4" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/risk_details_behavior_body_cough_sneeze" />
+</LinearLayout>

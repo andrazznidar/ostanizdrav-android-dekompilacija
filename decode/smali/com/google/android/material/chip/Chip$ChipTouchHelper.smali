@@ -75,6 +75,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    iget-object v0, v0, Lcom/google/android/material/chip/Chip;->onCloseIconClickListener:Landroid/view/View$OnClickListener;
+
+    if-eqz v0, :cond_1
+
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -166,7 +172,7 @@
 
     move-result-object v2
 
-    sget v3, Lcom/google/android/material/R$string;->mtrl_chip_close_icon_content_description:I
+    const v3, 0x7f1201b4
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -198,7 +204,7 @@
     :goto_0
     iget-object p1, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
 
-    invoke-static {p1}, Lcom/google/android/material/chip/Chip;->access$400(Lcom/google/android/material/chip/Chip;)Landroid/graphics/Rect;
+    invoke-static {p1}, Lcom/google/android/material/chip/Chip;->access$500(Lcom/google/android/material/chip/Chip;)Landroid/graphics/Rect;
 
     move-result-object p1
 

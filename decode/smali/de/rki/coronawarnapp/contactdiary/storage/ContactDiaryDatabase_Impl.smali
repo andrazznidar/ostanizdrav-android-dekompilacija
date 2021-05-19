@@ -187,13 +187,13 @@
 
     new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     invoke-direct {v1, p0, v2}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;I)V
 
-    const-string v2, "857201ec8eba4f3c64ca96c8975ceb69"
+    const-string v2, "d702472d6dd506b73ff6a7b340686c9a"
 
-    const-string v3, "a372b363f581b329f9c60691aa10d3d5"
+    const-string v3, "6b9d9a6cf90bd94363ff57b3f804c95a"
 
     invoke-direct {v0, p1, v1, v2, v3}, Landroidx/room/RoomOpenHelper;-><init>(Landroidx/room/DatabaseConfiguration;Landroidx/room/RoomOpenHelper$Delegate;Ljava/lang/String;Ljava/lang/String;)V
 

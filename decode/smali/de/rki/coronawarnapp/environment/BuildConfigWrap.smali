@@ -13,7 +13,7 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    const v0, 0x10c947
+    const v0, 0x11664c
 
     int-to-long v0, v0
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="8.0dip" android:navigationIcon="@drawable/ic_close" style="@style/CWAToolbar" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/contact_diary_comment_info_screen_title" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip" style="@style/headline4" />
+            <TextView android:textStyle="bold" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="28.0dip" android:text="@string/contact_diary_comment_info_screen_description" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip" android:letterSpacing="0.015" style="@style/body1" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="@string/contact_diary_comment_info_screen_body" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip" style="@style/body1" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

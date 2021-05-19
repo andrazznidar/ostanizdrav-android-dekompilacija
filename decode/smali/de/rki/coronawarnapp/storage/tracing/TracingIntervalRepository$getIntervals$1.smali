@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.storage.tracing.TracingIntervalRepository"
     f = "TracingIntervalRepository.kt"
     l = {
-        0x41,
-        0x43
+        0x30,
+        0x32
     }
     m = "getIntervals"
 .end annotation

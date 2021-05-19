@@ -32,17 +32,21 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 4
+    .locals 6
 
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$PersonTab$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$PersonTab$1;
+    sget-object v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$PersonTab$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$PersonTab$1;
 
-    const v1, 0x7f120043
+    const v1, 0x7f120078
 
-    const v2, 0x7f120042
+    const v2, 0x7f120077
 
-    const/4 v3, 0x0
+    const v3, 0x7f120021
 
-    invoke-direct {p0, v1, v2, v0, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;-><init>(IILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;-><init>(IIILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method

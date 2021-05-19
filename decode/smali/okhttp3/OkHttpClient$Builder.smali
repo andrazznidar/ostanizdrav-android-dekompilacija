@@ -226,6 +226,42 @@
 
 
 # virtual methods
+.method public final callTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    .locals 1
+
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "timeout"
+
+    invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
+
+    move-result p1
+
+    iput p1, p0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I
+
+    return-object p0
+.end method
+
+.method public final connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    .locals 1
+
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "timeout"
+
+    invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
+
+    move-result p1
+
+    iput p1, p0, Lokhttp3/OkHttpClient$Builder;->connectTimeout:I
+
+    return-object p0
+.end method
+
 .method public final connectionSpecs(Ljava/util/List;)Lokhttp3/OkHttpClient$Builder;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -262,6 +298,42 @@
     move-result-object p1
 
     iput-object p1, p0, Lokhttp3/OkHttpClient$Builder;->connectionSpecs:Ljava/util/List;
+
+    return-object p0
+.end method
+
+.method public final readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    .locals 1
+
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "timeout"
+
+    invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
+
+    move-result p1
+
+    iput p1, p0, Lokhttp3/OkHttpClient$Builder;->readTimeout:I
+
+    return-object p0
+.end method
+
+.method public final writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    .locals 1
+
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "timeout"
+
+    invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
+
+    move-result p1
+
+    iput p1, p0, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I
 
     return-object p0
 .end method

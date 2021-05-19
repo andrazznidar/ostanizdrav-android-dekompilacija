@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionTanViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTanViewModel.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,84:1\n47#2:85\n49#2:89\n50#3:86\n55#3:88\n106#4:87\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTanViewModel.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel\n*L\n27#1:85\n27#1:89\n27#1:86\n27#1:88\n27#1:87\n*E\n"
+    value = "SMAP\nSubmissionTanViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTanViewModel.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,85:1\n47#2:86\n49#2:90\n50#3:87\n55#3:89\n106#4:88\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionTanViewModel.kt\nde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel\n*L\n28#1:86\n28#1:90\n28#1:87\n28#1:89\n28#1:88\n*E\n"
 .end annotation
 
 
@@ -56,14 +56,12 @@
     .end annotation
 .end field
 
-.field public final submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+.field public final submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/storage/SubmissionRepository;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/submission/SubmissionRepository;)V
     .locals 3
-    .annotation build Lcom/squareup/inject/assisted/AssistedInject;
-    .end annotation
 
     const-string v0, "dispatcherProvider"
 
@@ -79,7 +77,7 @@
 
     invoke-direct {p0, v0, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel;->submissionRepository:Lde/rki/coronawarnapp/storage/SubmissionRepository;
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
     new-instance p2, Lde/rki/coronawarnapp/ui/submission/tan/Tan;
 
@@ -97,7 +95,7 @@
 
     invoke-direct {v0, p2}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 

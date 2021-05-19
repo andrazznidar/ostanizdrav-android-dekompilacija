@@ -12,7 +12,7 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/LinearLayout;
+.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -43,7 +43,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c0077
+    const v5, 0x7f0c0090
 
     aput v5, v2, v4
 
@@ -55,7 +55,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903e8
+    const v1, 0x7f0903a6
 
     const/4 v2, 0x2
 
@@ -63,7 +63,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903ea
+    const v1, 0x7f0904b8
 
     const/4 v2, 0x3
 
@@ -71,7 +71,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09015d
+    const v1, 0x7f0904ba
 
     const/4 v2, 0x4
 
@@ -79,7 +79,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903eb
+    const v1, 0x7f0901bb
 
     const/4 v2, 0x5
 
@@ -87,7 +87,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090433
+    const v1, 0x7f0904bb
 
     const/4 v2, 0x6
 
@@ -95,7 +95,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090434
+    const v1, 0x7f09050e
 
     const/4 v2, 0x7
 
@@ -103,7 +103,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090435
+    const v1, 0x7f09050f
 
     const/16 v2, 0x8
 
@@ -111,9 +111,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090423
+    const v1, 0x7f090510
 
     const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f0904fe
+
+    const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -121,27 +129,27 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 17
+    .locals 18
 
-    move-object/from16 v13, p0
+    move-object/from16 v14, p0
 
-    move-object/from16 v14, p2
+    move-object/from16 v15, p2
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     sget-object v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
     move-object/from16 v3, p1
 
-    invoke-static {v3, v14, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+    invoke-static {v3, v15, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v16
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v4, v0
 
@@ -149,47 +157,47 @@
 
     const/4 v0, 0x2
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v5, v0
 
-    check-cast v5, Landroid/widget/LinearLayout;
-
-    const/4 v0, 0x1
-
-    aget-object v0, v15, v0
-
-    move-object v6, v0
-
-    check-cast v6, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast v5, Landroid/widget/ScrollView;
 
     const/4 v0, 0x3
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
+
+    move-object v6, v0
+
+    check-cast v6, Landroid/widget/LinearLayout;
+
+    const/4 v0, 0x1
+
+    aget-object v0, v16, v0
 
     move-object v7, v0
 
-    check-cast v7, Landroid/widget/TextView;
+    check-cast v7, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    const/4 v0, 0x5
+    const/4 v0, 0x4
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v8, v0
 
     check-cast v8, Landroid/widget/TextView;
 
-    const/16 v0, 0x9
+    const/4 v0, 0x6
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v9, v0
 
-    check-cast v9, Landroid/widget/Button;
+    check-cast v9, Landroid/widget/TextView;
 
-    const/4 v0, 0x6
+    const/16 v0, 0xa
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v10, v0
 
@@ -197,7 +205,7 @@
 
     const/4 v0, 0x7
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v11, v0
 
@@ -205,13 +213,21 @@
 
     const/16 v0, 0x8
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
     move-object v12, v0
 
     check-cast v12, Landroid/widget/Button;
 
-    const/16 v16, 0x1
+    const/16 v0, 0x9
+
+    aget-object v0, v16, v0
+
+    move-object v13, v0
+
+    check-cast v13, Landroid/widget/Button;
+
+    const/16 v17, 0x1
 
     move-object/from16 v0, p0
 
@@ -219,29 +235,36 @@
 
     move-object/from16 v2, p2
 
-    move/from16 v3, v16
+    move/from16 v3, v17
 
-    invoke-direct/range {v0 .. v12}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;)V
+    invoke-direct/range {v0 .. v13}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/ScrollView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;Landroid/widget/Button;)V
 
     const-wide/16 v0, -0x1
 
-    iput-wide v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mDirtyFlags:J
+    iput-wide v0, v14, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mDirtyFlags:J
 
     const/4 v0, 0x0
 
-    aget-object v0, v15, v0
+    aget-object v0, v16, v0
 
-    check-cast v0, Landroid/widget/LinearLayout;
+    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mboundView0:Landroid/widget/LinearLayout;
+    iput-object v0, v14, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    iget-object v0, v14, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBinding;->submissionSymptomHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    invoke-virtual {v14, v0, v13}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    if-eqz v0, :cond_0
+
+    iput-object v14, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_0
+    const v0, 0x7f09015b
+
+    invoke-virtual {v15, v0, v14}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     invoke-virtual/range {p0 .. p0}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->invalidateAll()V
 
@@ -278,17 +301,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f080099
+    const v2, 0x7f0800a2
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBinding;->submissionSymptomHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f1202ee
+    const v2, 0x7f1203f0
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBinding;->submissionSymptomHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
@@ -390,51 +413,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
-
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v0, 0x1
-
-    or-long/2addr p1, v0
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
 .end method
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V

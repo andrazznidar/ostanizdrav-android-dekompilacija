@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/GooglePlayServicesUtilLight;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.3.0"
+.source "com.google.android.gms:play-services-basement@@17.5.0"
 
 
 # static fields
@@ -47,6 +47,10 @@
 
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;I)I
     .locals 12
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -55,7 +59,7 @@
 
     move-result-object v0
 
-    sget v1, Lcom/google/android/gms/common/R$string;->common_google_play_services_unknown_issue:I
+    const v1, 0x7f120060
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
     :try_end_0
@@ -93,12 +97,12 @@
 
     if-nez v0, :cond_4
 
-    sget-object v0, Lcom/google/android/gms/common/internal/zzs;->zza:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/internal/zzt;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_1
-    sget-boolean v2, Lcom/google/android/gms/common/internal/zzs;->zzb:Z
+    sget-boolean v2, Lcom/google/android/gms/common/internal/zzt;->zzb:Z
 
     if-eqz v2, :cond_0
 
@@ -107,7 +111,7 @@
     goto :goto_2
 
     :cond_0
-    sput-boolean v1, Lcom/google/android/gms/common/internal/zzs;->zzb:Z
+    sput-boolean v1, Lcom/google/android/gms/common/internal/zzt;->zzb:Z
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -154,7 +158,7 @@
 
     move-result-object v3
 
-    sput-object v3, Lcom/google/android/gms/common/internal/zzs;->zzc:Ljava/lang/String;
+    sput-object v3, Lcom/google/android/gms/common/internal/zzt;->zzc:Ljava/lang/String;
 
     const-string v3, "com.google.android.gms.version"
 
@@ -162,7 +166,7 @@
 
     move-result v2
 
-    sput v2, Lcom/google/android/gms/common/internal/zzs;->zzd:I
+    sput v2, Lcom/google/android/gms/common/internal/zzt;->zzd:I
     :try_end_4
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
@@ -185,7 +189,7 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     :goto_2
-    sget v0, Lcom/google/android/gms/common/internal/zzs;->zzd:I
+    sget v0, Lcom/google/android/gms/common/internal/zzt;->zzd:I
 
     if-eqz v0, :cond_3
 
@@ -196,44 +200,16 @@
     goto :goto_3
 
     :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Lcom/google/android/gms/common/GooglePlayServicesIncorrectManifestValueException;
 
-    const/16 p1, 0x140
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, p1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p1, "The meta-data tag in your app\'s AndroidManifest.xml does not have the right value.  Expected "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " but found "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ".  You must have the following declaration within the <application> element:     <meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/common/GooglePlayServicesIncorrectManifestValueException;-><init>(I)V
 
     throw p0
 
     :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Lcom/google/android/gms/common/GooglePlayServicesMissingManifestValueException;
 
-    const-string p1, "A required meta-data tag in your app\'s AndroidManifest.xml does not exist.  You must have the following declaration within the <application> element:     <meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Lcom/google/android/gms/common/GooglePlayServicesMissingManifestValueException;-><init>()V
 
     throw p0
 
@@ -249,7 +225,7 @@
 
     :cond_4
     :goto_3
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -257,7 +233,7 @@
 
     if-nez v0, :cond_8
 
-    sget-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
+    sget-object v0, Lcom/airbnb/lottie/R$attr;->zzf:Ljava/lang/Boolean;
 
     if-nez v0, :cond_7
 
@@ -301,10 +277,10 @@
 
     move-result-object v0
 
-    sput-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
+    sput-object v0, Lcom/airbnb/lottie/R$attr;->zzf:Ljava/lang/Boolean;
 
     :cond_7
-    sget-object v0, Landroidx/transition/ViewGroupUtilsApi14;->zzf:Ljava/lang/Boolean;
+    sget-object v0, Lcom/airbnb/lottie/R$attr;->zzf:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -330,7 +306,7 @@
     move v3, v2
 
     :goto_7
-    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->checkArgument(Z)V
+    invoke-static {v3}, Lcom/airbnb/lottie/R$attr;->checkArgument(Z)V
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -392,7 +368,7 @@
     :try_end_8
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_8 .. :try_end_8} :catch_3
 
-    invoke-static {p0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-class v8, Lcom/google/android/gms/common/GoogleSignatureVerifier;
 
@@ -489,7 +465,7 @@
     :cond_d
     if-eqz v0, :cond_f
 
-    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v5, v1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;Z)Z
 

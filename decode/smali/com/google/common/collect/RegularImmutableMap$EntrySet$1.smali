@@ -46,7 +46,7 @@
 
     iget v0, v0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->size:I
 
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkElementIndex(II)I
+    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->checkElementIndex(II)I
 
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet$1;->this$0:Lcom/google/common/collect/RegularImmutableMap$EntrySet;
 

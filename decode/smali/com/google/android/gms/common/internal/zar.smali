@@ -1,25 +1,32 @@
 .class public final Lcom/google/android/gms/common/internal/zar;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lcom/google/android/gms/common/api/PendingResult$StatusListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/internal/zas;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public final synthetic zaa:Lcom/google/android/gms/common/api/PendingResult;
+
+.field public final synthetic zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+.field public final synthetic zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+.field public final synthetic zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/api/PendingResult;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zar;->zaa:Lcom/google/android/gms/common/api/PendingResult;
+
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zar;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/zar;->zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/zar;->zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,108 +35,129 @@
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 8
+.method public final onComplete(Lcom/google/android/gms/common/api/Status;)V
+    .locals 6
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->isSuccess()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_2
 
-    move v3, v2
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zar;->zaa:Lcom/google/android/gms/common/api/PendingResult;
 
-    move v4, v3
+    const-wide/16 v2, 0x0
 
-    move-object v2, v1
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    check-cast p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    move-result v5
+    if-eqz p1, :cond_1
 
-    if-ge v5, v0, :cond_4
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    iget-boolean v4, p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zak:Z
 
-    move-result v5
+    xor-int/2addr v4, v1
 
-    const v6, 0xffff
+    const-string v5, "Result has already been consumed."
 
-    and-int/2addr v6, v5
+    invoke-static {v4, v5}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
-    const/4 v7, 0x1
+    const-string v4, "Cannot await if then() has been called."
 
-    if-eq v6, v7, :cond_3
+    invoke-static {v1, v4}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
-    const/4 v7, 0x2
+    :try_start_0
+    iget-object v1, p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zae:Ljava/util/concurrent/CountDownLatch;
 
-    if-eq v6, v7, :cond_2
+    invoke-virtual {v1, v2, v3, v0}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
 
-    const/4 v7, 0x3
+    move-result v0
 
-    if-eq v6, v7, :cond_1
+    if-nez v0, :cond_0
 
-    const/4 v7, 0x4
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_TIMEOUT:Lcom/google/android/gms/common/api/Status;
 
-    if-eq v6, v7, :cond_0
-
-    invoke-static {p1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    :catch_0
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_INTERRUPTED:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
 
     :cond_0
-    sget-object v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isReady()Z
 
-    invoke-static {p1, v5, v2}, Landroidx/transition/ViewGroupUtilsApi14;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    move-result v0
 
-    move-result-object v2
+    const-string v1, "Result is not ready."
 
-    check-cast v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->checkState(ZLjava/lang/Object;)V
 
-    goto :goto_0
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zac()Lcom/google/android/gms/common/api/Result;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zar;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zar;->zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+    check-cast v1, Lcom/google/android/gms/common/internal/zaq;
+
+    iget-object v1, v1, Lcom/google/android/gms/common/internal/zaq;->zaa:Lcom/google/android/gms/common/api/Response;
+
+    iput-object p1, v1, Lcom/google/android/gms/common/api/Response;->zza:Lcom/google/android/gms/common/api/Result;
+
+    iget-object p1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Object;)V
+
+    return-void
 
     :cond_1
-    invoke-static {p1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v4
-
-    goto :goto_0
+    throw v1
 
     :cond_2
-    sget-object v1, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zar;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-static {p1, v5, v1}, Landroidx/transition/ViewGroupUtilsApi14;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/zar;->zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
 
-    move-result-object v1
+    check-cast v2, Lcom/google/android/gms/common/internal/zap;
 
-    check-cast v1, Landroid/accounts/Account;
+    if-eqz v2, :cond_4
 
-    goto :goto_0
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->hasResolution()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    new-instance v1, Lcom/google/android/gms/common/api/ResolvableApiException;
+
+    invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/ResolvableApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_1
 
     :cond_3
-    invoke-static {p1, v5}, Landroidx/transition/ViewGroupUtilsApi14;->readInt(Landroid/os/Parcel;I)I
+    new-instance v1, Lcom/google/android/gms/common/api/ApiException;
 
-    move-result v3
+    invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    goto :goto_0
+    :goto_1
+    iget-object p1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
+
+    return-void
 
     :cond_4
-    invoke-static {p1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/common/internal/zas;
-
-    invoke-direct {p1, v3, v1, v4, v2}, Lcom/google/android/gms/common/internal/zas;-><init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    new-array p1, p1, [Lcom/google/android/gms/common/internal/zas;
-
-    return-object p1
+    throw v1
 .end method

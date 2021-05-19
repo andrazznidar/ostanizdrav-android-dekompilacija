@@ -7,6 +7,9 @@
 .method public abstract getArguments()Lde/rki/coronawarnapp/task/Task$Arguments;
 .end method
 
+.method public abstract getErrorHandling()Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+.end method
+
 .method public abstract getId()Ljava/util/UUID;
 .end method
 

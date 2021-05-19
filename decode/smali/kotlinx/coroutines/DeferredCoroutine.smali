@@ -79,7 +79,7 @@
 
     check-cast p0, Lkotlinx/coroutines/DeferredCoroutine;
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -93,7 +93,7 @@
     throw p0
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-object p0, v1, Lkotlinx/coroutines/DeferredCoroutine$await$1;->L$0:Ljava/lang/Object;
 
@@ -138,7 +138,7 @@
 
     new-instance p1, Lkotlinx/coroutines/JobSupport$AwaitContinuation;
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v2
 
@@ -314,7 +314,7 @@
 
     move-result-object p1
 
-    invoke-static {p2, v0, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->startCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    invoke-static {p2, v0, p1}, Lcom/google/zxing/client/android/R$id;->startCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
     goto :goto_0
 

@@ -312,7 +312,7 @@
 
     iget v0, v6, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
 
-    invoke-static/range {p1 .. p1}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static/range {p1 .. p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v7
 
@@ -324,7 +324,7 @@
 
     :cond_1
     :try_start_1
-    invoke-static {v7, v8, v0}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
+    invoke-static {v7, v8, v0}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
 
     move-result v0
     :try_end_1
@@ -499,7 +499,7 @@
 
     if-nez v7, :cond_1
 
-    invoke-static {p1, p2, v6}, Landroid/support/v4/media/MediaDescriptionCompatApi21$Builder;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
+    invoke-static {p1, p2, v6}, Landroidx/core/app/AppOpsManagerCompat;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
 
     move-result-object v7
 

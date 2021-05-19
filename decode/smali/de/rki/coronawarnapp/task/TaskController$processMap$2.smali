@@ -34,14 +34,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTaskController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskController.kt\nde/rki/coronawarnapp/task/TaskController$processMap$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,272:1\n734#2:273\n825#2,2:274\n1013#2:276\n1819#2,2:277\n1013#2:279\n*E\n*S KotlinDebug\n*F\n+ 1 TaskController.kt\nde/rki/coronawarnapp/task/TaskController$processMap$2\n*L\n142#1:273\n142#1,2:274\n143#1:276\n145#1,2:277\n153#1:279\n*E\n"
+    value = "SMAP\nTaskController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TaskController.kt\nde/rki/coronawarnapp/task/TaskController$processMap$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,275:1\n734#2:276\n825#2,2:277\n1013#2:279\n1819#2,2:280\n1013#2:282\n*E\n*S KotlinDebug\n*F\n+ 1 TaskController.kt\nde/rki/coronawarnapp/task/TaskController$processMap$2\n*L\n143#1:276\n143#1,2:277\n144#1:279\n146#1,2:280\n155#1:282\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.task.TaskController$processMap$2"
     f = "TaskController.kt"
     l = {
-        0x86
+        0x87
     }
     m = "invokeSuspend"
 .end annotation
@@ -148,11 +148,11 @@
 
     check-cast v1, Ljava/util/Map;
 
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v6, p1
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -164,7 +164,7 @@
     throw v1
 
     :cond_1
-    invoke-static/range {p1 .. p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v2, v0, Lde/rki/coronawarnapp/task/TaskController$processMap$2;->L$0:Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
     invoke-static {v2}, Lkotlin/collections/ArraysKt___ArraysKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -272,7 +272,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_7
+    if-eqz v10, :cond_8
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -298,7 +298,7 @@
 
     move-object/from16 v18, v11
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_5
     invoke-static {v3}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
@@ -313,21 +313,33 @@
 
     invoke-virtual {v11, v15, v13, v12}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
+    iget-object v11, v10, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
+
+    invoke-interface {v11}, Lde/rki/coronawarnapp/task/TaskRequest;->getErrorHandling()Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+
+    move-result-object v11
+
+    if-eqz v11, :cond_6
+
+    goto :goto_3
+
+    :cond_6
     iget-object v11, v10, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
     invoke-interface {v11}, Lde/rki/coronawarnapp/task/TaskFactory$Config;->getErrorHandling()Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
     move-result-object v11
 
+    :goto_3
     sget-object v12, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->ALERT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
-    if-ne v11, v12, :cond_6
+    if-ne v11, v12, :cond_7
 
     sget-object v11, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-static {v15, v11}, Landroidx/transition/ViewGroupUtilsApi14;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {v15, v11}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
 
-    :cond_6
+    :cond_7
     iget-object v11, v10, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
 
     invoke-interface {v11}, Lde/rki/coronawarnapp/task/TaskRequest;->getType()Lkotlin/reflect/KClass;
@@ -338,11 +350,11 @@
 
     move-result-object v11
 
-    invoke-static {v15, v11, v7}, Landroidx/transition/ViewGroupUtilsApi14;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v15, v11, v7}, Lcom/google/zxing/client/android/R$id;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     move-object/from16 v18, v7
 
-    :goto_3
+    :goto_4
     iget-object v14, v10, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
     const/4 v12, 0x0
@@ -415,7 +427,7 @@
 
     goto/16 :goto_2
 
-    :cond_7
+    :cond_8
     invoke-interface {v2}, Ljava/util/Map;->clear()V
 
     invoke-interface {v2, v8}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
@@ -430,14 +442,14 @@
 
     move-result-object v6
 
-    if-ne v6, v1, :cond_8
+    if-ne v6, v1, :cond_9
 
     return-object v1
 
-    :cond_8
+    :cond_9
     move-object v1, v2
 
-    :goto_4
+    :goto_5
     check-cast v6, Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
@@ -452,7 +464,7 @@
 
     const/16 v7, 0x32
 
-    if-le v2, v7, :cond_b
+    if-le v2, v7, :cond_c
 
     new-array v2, v6, [Ljava/lang/Object;
 
@@ -492,13 +504,13 @@
 
     move-result-object v2
 
-    :cond_9
-    :goto_5
+    :cond_a
+    :goto_6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_b
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -520,13 +532,13 @@
 
     move-result v10
 
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_a
 
     invoke-interface {v8, v9}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_a
+    :cond_b
     new-instance v2, Lde/rki/coronawarnapp/task/TaskController$processMap$2$invokeSuspend$$inlined$sortedBy$1;
 
     invoke-direct {v2}, Lde/rki/coronawarnapp/task/TaskController$processMap$2$invokeSuspend$$inlined$sortedBy$1;-><init>()V
@@ -549,12 +561,12 @@
 
     move-result-object v2
 
-    :goto_6
+    :goto_7
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -582,9 +594,9 @@
 
     invoke-interface {v1, v7}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_b
+    :cond_c
     invoke-static {v3}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     move-result-object v2
@@ -641,7 +653,7 @@
 
     return-object v1
 
-    :cond_c
+    :cond_d
     move-object v1, v7
 
     throw v1

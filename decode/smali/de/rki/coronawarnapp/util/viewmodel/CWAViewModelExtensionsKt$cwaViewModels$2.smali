@@ -69,7 +69,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v1 .. v6}, Landroidx/transition/ViewGroupUtilsApi14;->create$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider$Factory;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;
+    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->create$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider$Factory;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;
 
     move-result-object v0
 

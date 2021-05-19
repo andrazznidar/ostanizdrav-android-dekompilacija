@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteroperabilityConfigurationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteroperabilityConfigurationFragment.kt\nde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,102:1\n11#2,9:103\n16#3,11:112\n*E\n*S KotlinDebug\n*F\n+ 1 InteroperabilityConfigurationFragment.kt\nde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment\n*L\n25#1,9:103\n27#1,11:112\n*E\n"
+    value = "SMAP\nInteroperabilityConfigurationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteroperabilityConfigurationFragment.kt\nde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,101:1\n11#2,9:102\n16#3,11:111\n*E\n*S KotlinDebug\n*F\n+ 1 InteroperabilityConfigurationFragment.kt\nde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment\n*L\n25#1,9:102\n27#1,11:111\n*E\n"
 .end annotation
 
 
@@ -44,7 +44,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline24(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
 
     move-result-object v1
 
@@ -58,7 +58,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c0047
+    const v0, 0x7f0c0050
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -82,7 +82,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Landroidx/transition/ViewGroupUtilsApi14;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -92,7 +92,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
 
-    invoke-static {p0, v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -164,19 +164,19 @@
 .end method
 
 .method public onDestroy()V
-    .locals 2
+    .locals 4
 
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroy()V
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->isNetworkCallbackRegistered:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
 
@@ -186,21 +186,57 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->networkCallback:Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment$networkCallback$1;
 
-    invoke-static {v0, v1}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->unregisterNetworkStatusCallback(Landroid/content/Context;Lde/rki/coronawarnapp/util/ConnectivityHelper$NetworkCallback;)V
+    const-string v2, "context"
 
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "callback"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    const-string v2, "connectivity"
+
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->unregisterNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "null cannot be cast to non-null type android.net.ConnectivityManager"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->CONNECTIVITY:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+
+    sget-object v2, Lde/rki/coronawarnapp/util/ConnectivityHelper;->TAG:Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->isNetworkCallbackRegistered:Z
 
-    :cond_0
-    return-void
-.end method
-
-.method public onDestroyView()V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
-
+    :cond_1
     return-void
 .end method
 
@@ -246,7 +282,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment$onViewCreated$1;-><init>(Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     sget-object p1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
 
@@ -299,15 +335,13 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment$onViewCreated$3;-><init>(Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;)V
 
-    invoke-static {p1, p0, p2}, Landroidx/transition/ViewGroupUtilsApi14;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBinding;
 
     move-result-object p1
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBinding;->interoperabilityConfigurationCountryList:Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;->noCountriesRiskdetailsInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBinding;->noCountriesRiskdetailsInfoview:Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;->riskDetailsOpenSettingsButton:Landroid/widget/Button;
 
@@ -323,13 +357,13 @@
 .end method
 
 .method public final registerNetworkCallback()V
-    .locals 2
+    .locals 4
 
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v1, Lde/rki/coronawarnapp/util/ConnectivityHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ConnectivityHelper;
 
@@ -339,12 +373,76 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->networkCallback:Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment$networkCallback$1;
 
-    invoke-static {v0, v1}, Lde/rki/coronawarnapp/util/ConnectivityHelper;->registerNetworkStatusCallback(Landroid/content/Context;Lde/rki/coronawarnapp/util/ConnectivityHelper$NetworkCallback;)V
+    const-string v2, "context"
 
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v2, "callback"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    new-instance v2, Landroid/net/NetworkRequest$Builder;
+
+    invoke-direct {v2}, Landroid/net/NetworkRequest$Builder;-><init>()V
+
+    const/16 v3, 0xc
+
+    invoke-virtual {v2, v3}, Landroid/net/NetworkRequest$Builder;->addCapability(I)Landroid/net/NetworkRequest$Builder;
+
+    move-result-object v2
+
+    const/16 v3, 0xd
+
+    invoke-virtual {v2, v3}, Landroid/net/NetworkRequest$Builder;->addCapability(I)Landroid/net/NetworkRequest$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/net/NetworkRequest$Builder;->build()Landroid/net/NetworkRequest;
+
+    move-result-object v2
+
+    const-string v3, "connectivity"
+
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    invoke-virtual {v0, v2, v1}, Landroid/net/ConnectivityManager;->registerNetworkCallback(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "null cannot be cast to non-null type android.net.ConnectivityManager"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->CONNECTIVITY:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+
+    sget-object v2, Lde/rki/coronawarnapp/util/ConnectivityHelper;->TAG:Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lde/rki/coronawarnapp/ui/interoperability/InteroperabilityConfigurationFragment;->isNetworkCallbackRegistered:Z
 
-    :cond_0
+    :cond_1
     return-void
 .end method

@@ -1,131 +1,118 @@
 .class public final Lcom/google/android/gms/signin/zaa;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.3.0"
+.super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.source "com.google.android.gms:play-services-base@@17.5.0"
 
 
-# static fields
-.field public static final zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            "Lcom/google/android/gms/signin/SignInOptions;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zac:Lcom/google/android/gms/common/api/Api$ClientKey;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$ClientKey<",
-            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zad:Lcom/google/android/gms/common/api/Api$ClientKey;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$ClientKey<",
-            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zae:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            "Lcom/google/android/gms/signin/zae;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
+        "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
+        "Lcom/google/android/gms/signin/SignInOptions;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/Api$ClientKey;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zac:Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    new-instance v0, Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/Api$ClientKey;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zad:Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    new-instance v0, Lcom/google/android/gms/signin/zac;
-
-    invoke-direct {v0}, Lcom/google/android/gms/signin/zac;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    new-instance v0, Lcom/google/android/gms/signin/zab;
-
-    invoke-direct {v0}, Lcom/google/android/gms/signin/zab;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zae:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    const-string v0, "profile"
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    const-string v1, "scopeUri must not be null or empty"
-
-    if-nez v0, :cond_1
-
-    const-string v0, "email"
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lcom/google/android/gms/signin/zaa;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    sget-object v1, Lcom/google/android/gms/signin/zaa;->zac:Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    const-string v2, "Cannot construct an Api with a null ClientBuilder"
-
-    invoke-static {v0, v2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v0, "Cannot construct an Api with a null ClientKey"
-
-    invoke-static {v1, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v1, Lcom/google/android/gms/signin/zaa;->zae:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    sget-object v3, Lcom/google/android/gms/signin/zaa;->zad:Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    invoke-static {v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v3, v0}, Landroidx/transition/ViewGroupUtilsApi14;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
+    .locals 8
+
+    check-cast p4, Lcom/google/android/gms/signin/SignInOptions;
+
+    new-instance p4, Lcom/google/android/gms/signin/internal/SignInClientImpl;
+
+    iget-object v0, p3, Lcom/google/android/gms/common/internal/ClientSettings;->zai:Lcom/google/android/gms/signin/SignInOptions;
+
+    iget-object v1, p3, Lcom/google/android/gms/common/internal/ClientSettings;->zak:Ljava/lang/Integer;
+
+    new-instance v5, Landroid/os/Bundle;
+
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
+
+    iget-object v2, p3, Lcom/google/android/gms/common/internal/ClientSettings;->zaa:Landroid/accounts/Account;
+
+    const-string v3, "com.google.android.gms.signin.internal.clientRequestedAccount"
+
+    invoke-virtual {v5, v3, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const-string v2, "com.google.android.gms.common.internal.ClientSettings.sessionId"
+
+    invoke-virtual {v5, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    if-eqz v0, :cond_1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    throw v0
+    const-string v1, "com.google.android.gms.signin.internal.offlineAccessRequested"
+
+    invoke-virtual {v5, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v1, "com.google.android.gms.signin.internal.idTokenRequested"
+
+    invoke-virtual {v5, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const/4 v1, 0x0
+
+    const-string v2, "com.google.android.gms.signin.internal.serverClientId"
+
+    invoke-virtual {v5, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v2, 0x1
+
+    const-string v3, "com.google.android.gms.signin.internal.usePromptModeForAuthCode"
+
+    invoke-virtual {v5, v3, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v2, "com.google.android.gms.signin.internal.forceCodeForRefreshToken"
+
+    invoke-virtual {v5, v2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v2, "com.google.android.gms.signin.internal.hostedDomain"
+
+    invoke-virtual {v5, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "com.google.android.gms.signin.internal.logSessionId"
+
+    invoke-virtual {v5, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "com.google.android.gms.signin.internal.waitForAccessTokenRefresh"
+
+    invoke-virtual {v5, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const/4 v3, 0x1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-object v0, p4
 
-    throw v0
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/signin/internal/SignInClientImpl;-><init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/ClientSettings;Landroid/os/Bundle;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+
+    return-object p4
 .end method

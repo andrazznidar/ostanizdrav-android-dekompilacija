@@ -23,7 +23,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 9
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -33,59 +33,59 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const-string v1, "include_header"
+    const-string v1, "merge_guidelines_side"
 
-    const-string v2, "merge_guidelines_side"
-
-    filled-new-array {v1, v2}, [Ljava/lang/String;
+    filled-new-array {v1}, [Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
     new-array v3, v2, [I
 
-    fill-array-data v3, :array_0
+    const/16 v4, 0x8
 
-    new-array v2, v2, [I
+    const/4 v5, 0x0
 
-    fill-array-data v2, :array_1
+    aput v4, v3, v5
 
-    const/4 v4, 0x0
+    new-array v4, v2, [I
 
-    invoke-virtual {v0, v4, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
+    const v6, 0x7f0c00b4
+
+    aput v6, v4, v5
+
+    invoke-virtual {v0, v5, v1, v3, v4}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const-string v1, "include_privacy_card_no_consent"
-
-    const-string v2, "view_bullet_point_text"
-
-    const-string v3, "view_bullet_point_text"
+    const-string v3, "include_privacy_card_no_consent"
 
     const-string v4, "view_bullet_point_text"
 
-    const-string v5, "merge_guidelines_side"
+    const-string v5, "view_bullet_point_text"
 
-    const-string v6, "merge_guidelines_card"
+    const-string v6, "view_bullet_point_text"
 
-    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
+    const-string v7, "merge_guidelines_side"
+
+    const-string v8, "merge_guidelines_card"
+
+    filled-new-array/range {v3 .. v8}, [Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x6
+    const/4 v3, 0x6
 
-    new-array v3, v2, [I
+    new-array v4, v3, [I
 
-    fill-array-data v3, :array_2
+    fill-array-data v4, :array_0
 
-    new-array v2, v2, [I
+    new-array v3, v3, [I
 
-    fill-array-data v2, :array_3
+    fill-array-data v3, :array_1
 
-    const/4 v4, 0x1
-
-    invoke-virtual {v0, v4, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
+    invoke-virtual {v0, v2, v1, v4, v3}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     new-instance v0, Landroid/util/SparseIntArray;
 
@@ -93,7 +93,23 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090121
+    const v1, 0x7f090542
+
+    const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f09014d
+
+    const/16 v2, 0xa
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const v1, 0x7f09049b
 
     const/16 v2, 0xb
 
@@ -101,7 +117,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903ae
+    const v1, 0x7f09049a
 
     const/16 v2, 0xc
 
@@ -109,7 +125,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903b3
+    const v1, 0x7f09049e
 
     const/16 v2, 0xd
 
@@ -117,7 +133,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903b4
+    const v1, 0x7f09049f
 
     const/16 v2, 0xe
 
@@ -125,7 +141,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090123
+    const v1, 0x7f090150
 
     const/16 v2, 0xf
 
@@ -133,7 +149,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090142
+    const v1, 0x7f090188
 
     const/16 v2, 0x10
 
@@ -141,7 +157,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090362
+    const v1, 0x7f09044e
 
     const/16 v2, 0x11
 
@@ -149,7 +165,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903b0
+    const v1, 0x7f09049c
 
     const/16 v2, 0x12
 
@@ -157,7 +173,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090164
+    const v1, 0x7f0901c5
 
     const/16 v2, 0x13
 
@@ -169,34 +185,22 @@
 
     :array_0
     .array-data 4
+        0x2
         0x3
-        0xa
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x7f0c0077
-        0x7f0c00ab
-    .end array-data
-
-    :array_2
-    .array-data 4
         0x4
         0x5
         0x6
         0x7
-        0x8
-        0x9
     .end array-data
 
-    :array_3
+    :array_1
     .array-data 4
-        0x7f0c0084
-        0x7f0c00fa
-        0x7f0c00fa
-        0x7f0c00fa
-        0x7f0c00ab
-        0x7f0c00aa
+        0x7f0c009c
+        0x7f0c011e
+        0x7f0c011e
+        0x7f0c011e
+        0x7f0c00b4
+        0x7f0c00b3
     .end array-data
 .end method
 
@@ -219,7 +223,7 @@
 
     move-result-object v20
 
-    const/16 v0, 0xb
+    const/16 v0, 0xa
 
     aget-object v0, v20, v0
 
@@ -259,7 +263,7 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const/4 v0, 0x5
+    const/4 v0, 0x3
 
     aget-object v0, v20, v0
 
@@ -267,7 +271,7 @@
 
     check-cast v9, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    const/4 v0, 0x6
+    const/4 v0, 0x4
 
     aget-object v0, v20, v0
 
@@ -275,7 +279,7 @@
 
     check-cast v10, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    const/4 v0, 0x7
+    const/4 v0, 0x5
 
     aget-object v0, v20, v0
 
@@ -283,7 +287,7 @@
 
     check-cast v11, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
-    const/4 v0, 0x4
+    const/4 v0, 0x2
 
     aget-object v0, v20, v0
 
@@ -299,39 +303,39 @@
 
     check-cast v13, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/4 v0, 0x3
+    const/16 v0, 0xc
 
     aget-object v0, v20, v0
 
     move-object v14, v0
 
-    check-cast v14, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast v14, Landroid/widget/TextView;
 
-    const/16 v0, 0xc
+    const/16 v0, 0xb
 
     aget-object v0, v20, v0
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast v0, Landroid/widget/ImageView;
 
     move-object v15, v0
-
-    const/4 v0, 0x2
-
-    aget-object v0, v20, v0
-
-    move-object/from16 v16, v0
-
-    check-cast v16, Landroid/widget/ImageView;
 
     const/16 v0, 0x12
 
     aget-object v0, v20, v0
 
-    move-object/from16 v17, v0
+    move-object/from16 v16, v0
 
-    check-cast v17, Landroid/widget/Button;
+    check-cast v16, Landroid/widget/Button;
 
     const/16 v0, 0xd
+
+    aget-object v0, v20, v0
+
+    move-object/from16 v17, v0
+
+    check-cast v17, Landroid/widget/TextView;
+
+    const/16 v0, 0xe
 
     aget-object v0, v20, v0
 
@@ -339,15 +343,15 @@
 
     check-cast v18, Landroid/widget/TextView;
 
-    const/16 v0, 0xe
+    const/16 v0, 0x9
 
     aget-object v0, v20, v0
 
     move-object/from16 v19, v0
 
-    check-cast v19, Landroid/widget/TextView;
+    check-cast v19, Landroidx/appcompat/widget/Toolbar;
 
-    const/4 v3, 0x5
+    const/4 v3, 0x4
 
     move-object/from16 v0, p0
 
@@ -355,7 +359,7 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v19}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ScrollView;Lde/rki/coronawarnapp/ui/view/CountryListView;Landroid/widget/FrameLayout;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v0 .. v19}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ScrollView;Lde/rki/coronawarnapp/ui/view/CountryListView;Landroid/widget/FrameLayout;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/appcompat/widget/Toolbar;)V
 
     const-wide/16 v0, -0x1
 
@@ -363,7 +367,7 @@
 
     iput-wide v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
 
-    const/16 v0, 0xa
+    const/16 v0, 0x8
 
     aget-object v0, v20, v0
 
@@ -388,7 +392,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const/16 v0, 0x8
+    const/4 v0, 0x6
 
     aget-object v0, v20, v0
 
@@ -401,7 +405,7 @@
     iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    const/16 v0, 0x9
+    const/4 v0, 0x7
 
     aget-object v0, v20, v0
 
@@ -414,15 +418,39 @@
     iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainFirstPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_3
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_3
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainSecondPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_4
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainThirdPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+
+    if-eqz v0, :cond_5
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_5
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
+
+    if-eqz v0, :cond_6
+
+    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_6
     iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacyContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
-
-    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
+    const v0, 0x7f09015b
 
     move-object/from16 v1, p2
 
@@ -451,7 +479,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x40
+    const-wide/16 v4, 0x20
 
     and-long/2addr v0, v4
 
@@ -467,7 +495,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12024e
+    const v2, 0x7f12034f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -483,7 +511,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120253
+    const v2, 0x7f120355
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -499,7 +527,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12024f
+    const v2, 0x7f120350
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -507,41 +535,7 @@
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;->setItemText(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    const v2, 0x7f080094
-
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    const v2, 0x7f1202b5
-
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline26(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f1202ad
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroidx/transition/ViewGroupUtilsApi14;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
-
     :cond_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
-
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -608,7 +602,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -619,7 +613,7 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainFirstPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -630,7 +624,7 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainFirstPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainSecondPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -641,7 +635,7 @@
     return v1
 
     :cond_3
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainSecondPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainThirdPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -652,7 +646,7 @@
     return v1
 
     :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionNoConsentMainThirdPoint:Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -663,7 +657,7 @@
     return v1
 
     :cond_5
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -674,7 +668,7 @@
     return v1
 
     :cond_6
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -685,17 +679,6 @@
     return v1
 
     :cond_7
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    return v1
-
-    :cond_8
     const/4 v0, 0x0
 
     return v0
@@ -716,7 +699,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x40
+    const-wide/16 v0, 0x20
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
@@ -724,10 +707,6 @@
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
 
@@ -772,215 +751,10 @@
     throw v0
 .end method
 
-.method public onFieldChange(ILjava/lang/Object;I)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_8
-
-    if-eq p1, v1, :cond_6
-
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_4
-
-    const/4 v2, 0x3
-
-    if-eq p1, v2, :cond_2
-
-    const/4 v2, 0x4
-
-    if-eq p1, v2, :cond_0
-
-    return v0
-
-    :cond_0
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-nez p3, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x10
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    check-cast p2, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
-
-    if-nez p3, :cond_3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x8
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return v0
-
-    :cond_4
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_5
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x4
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p1
-
-    :cond_5
-    :goto_2
-    return v0
-
-    :cond_6
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_7
-
-    monitor-enter p0
-
-    :try_start_3
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x2
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_3
-
-    :catchall_3
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    throw p1
-
-    :cond_7
-    :goto_3
-    return v0
-
-    :cond_8
-    check-cast p2, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;
-
-    if-nez p3, :cond_9
-
-    monitor-enter p0
-
-    :try_start_4
-    iget-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    const-wide/16 v2, 0x1
-
-    or-long/2addr p1, v2
-
-    iput-wide p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->mDirtyFlags:J
-
-    monitor-exit p0
-
-    move v0, v1
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw p1
-
-    :cond_9
-    :goto_4
-    return v0
-.end method
-
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;
 

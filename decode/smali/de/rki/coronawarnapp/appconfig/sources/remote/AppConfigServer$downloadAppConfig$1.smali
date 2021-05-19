@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.appconfig.sources.remote.AppConfigServer"
     f = "AppConfigServer.kt"
     l = {
-        0x24
+        0x25
     }
     m = "downloadAppConfig$Corona_Warn_App_deviceRelease"
 .end annotation

@@ -1054,7 +1054,7 @@
 
     const-string v3, " spans."
 
-    invoke-static {v1, v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1944,11 +1944,11 @@
 
     move-result v7
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
-    if-ne v7, v9, :cond_2
+    if-ne v7, v8, :cond_2
 
-    move v7, v9
+    move v7, v8
 
     goto :goto_0
 
@@ -1960,7 +1960,7 @@
 
     if-eq v7, v10, :cond_3
 
-    move v7, v9
+    move v7, v8
 
     goto :goto_1
 
@@ -1976,7 +1976,7 @@
 
     move-result v7
 
-    sub-int/2addr v7, v9
+    sub-int/2addr v7, v8
 
     move v11, v10
 
@@ -1991,14 +1991,14 @@
 
     move v11, v7
 
-    move v12, v9
+    move v12, v8
 
     const/4 v7, 0x0
 
     :goto_2
     iget v13, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientation:I
 
-    if-ne v13, v9, :cond_5
+    if-ne v13, v8, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->isLayoutRTL()Z
 
@@ -2006,7 +2006,7 @@
 
     if-eqz v13, :cond_5
 
-    move v13, v9
+    move v13, v8
 
     goto :goto_3
 
@@ -2018,13 +2018,13 @@
 
     move-result v14
 
-    move v9, v10
+    move v8, v10
 
-    move v15, v9
+    move v15, v8
 
     move/from16 v16, v12
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
     const/4 v12, 0x0
 
@@ -2047,7 +2047,7 @@
 
     if-ne v1, v3, :cond_6
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     :cond_6
     invoke-virtual {v1}, Landroid/view/View;->hasFocusable()Z
@@ -2060,18 +2060,18 @@
 
     if-eqz v4, :cond_7
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     :cond_7
     move-object/from16 v18, v3
 
     move-object/from16 v21, v7
 
-    move/from16 v19, v8
+    move/from16 v19, v9
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :cond_8
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2121,14 +2121,7 @@
     :cond_b
     move-object/from16 v21, v7
 
-    :goto_5
-    move/from16 v19, v8
-
-    const/4 v7, 0x1
-
-    const/4 v8, 0x0
-
-    goto :goto_a
+    goto :goto_6
 
     :cond_c
     invoke-static {v2, v6}, Ljava/lang/Math;->max(II)I
@@ -2149,36 +2142,42 @@
 
     if-eqz v19, :cond_f
 
-    if-le v7, v8, :cond_d
+    if-le v7, v9, :cond_d
 
-    :goto_6
-    goto :goto_5
+    goto :goto_6
 
     :cond_d
-    if-ne v7, v8, :cond_12
+    if-ne v7, v9, :cond_12
 
     if-le v2, v15, :cond_e
 
     const/4 v7, 0x1
 
-    goto :goto_7
+    goto :goto_5
 
     :cond_e
     const/4 v7, 0x0
 
-    :goto_7
+    :goto_5
     if-ne v13, v7, :cond_12
 
-    goto :goto_6
+    :goto_6
+    move/from16 v19, v9
+
+    const/4 v7, 0x1
+
+    const/4 v9, 0x0
+
+    goto :goto_9
 
     :cond_f
     if-nez v4, :cond_12
 
-    move/from16 v19, v8
+    move/from16 v19, v9
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    invoke-virtual {v0, v1, v8}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->isViewPartiallyVisible(Landroid/view/View;Z)Z
+    invoke-virtual {v0, v1, v9}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->isViewPartiallyVisible(Landroid/view/View;Z)Z
 
     move-result v20
 
@@ -2186,37 +2185,37 @@
 
     if-le v7, v12, :cond_10
 
-    :goto_8
-    const/4 v7, 0x1
-
-    goto :goto_a
+    goto :goto_8
 
     :cond_10
     if-ne v7, v12, :cond_13
 
-    if-le v2, v9, :cond_11
+    if-le v2, v8, :cond_11
 
+    const/4 v7, 0x1
+
+    goto :goto_7
+
+    :cond_11
+    move v7, v9
+
+    :goto_7
+    if-ne v13, v7, :cond_13
+
+    :goto_8
     const/4 v7, 0x1
 
     goto :goto_9
 
-    :cond_11
-    move v7, v8
-
-    :goto_9
-    if-ne v13, v7, :cond_13
-
-    goto :goto_8
-
     :cond_12
-    move/from16 v19, v8
+    move/from16 v19, v9
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
     :cond_13
-    move v7, v8
+    move v7, v9
 
-    :goto_a
+    :goto_9
     if-eqz v7, :cond_15
 
     invoke-virtual {v1}, Landroid/view/View;->hasFocusable()Z
@@ -2245,7 +2244,7 @@
 
     move-object v4, v1
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_14
     iget v7, v11, Landroidx/recyclerview/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
@@ -2260,17 +2259,17 @@
 
     sub-int v12, v3, v2
 
-    move v9, v7
+    move v8, v7
 
     move-object v7, v1
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_15
-    :goto_b
+    :goto_a
     move-object/from16 v7, v21
 
-    :goto_c
+    :goto_b
     add-int v10, v10, v16
 
     move-object/from16 v1, p3
@@ -2281,22 +2280,22 @@
 
     move-object/from16 v3, v18
 
-    move/from16 v8, v19
+    move/from16 v9, v19
 
     goto/16 :goto_4
 
     :cond_16
-    :goto_d
+    :goto_c
     move-object/from16 v21, v7
 
     if-eqz v4, :cond_17
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_17
     move-object/from16 v4, v21
 
-    :goto_e
+    :goto_d
     return-object v4
 .end method
 
@@ -2743,7 +2742,7 @@
 
     const-string v1, "Span count should be at least 1. Provided "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

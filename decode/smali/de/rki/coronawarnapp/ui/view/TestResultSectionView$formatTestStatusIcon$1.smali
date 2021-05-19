@@ -60,7 +60,7 @@
 
     move-result p1
 
-    const v0, 0x7f080130
+    const v0, 0x7f080146
 
     const/4 v1, 0x1
 
@@ -81,17 +81,17 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080131
+    const v0, 0x7f080147
 
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f080133
+    const v0, 0x7f080149
 
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f080132
+    const v0, 0x7f080148
 
     :goto_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

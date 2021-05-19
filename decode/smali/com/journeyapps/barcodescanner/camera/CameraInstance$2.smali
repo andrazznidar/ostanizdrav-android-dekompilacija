@@ -60,7 +60,7 @@
 
     iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
 
-    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_prewiew_size_ready:I
+    const v2, 0x7f090575
 
     iget-object v3, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$2;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
 

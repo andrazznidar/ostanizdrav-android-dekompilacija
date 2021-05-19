@@ -57,7 +57,7 @@
 
     new-array v0, v0, [I
 
-    sget v1, Lcom/google/android/material/R$attr;->state_dragged:I
+    const v1, 0x7f040305
 
     aput v1, v0, v3
 
@@ -66,9 +66,29 @@
     return-void
 .end method
 
+.method private getBoundsAsRectF()Landroid/graphics/RectF;
+    .locals 1
+
+    new-instance v0, Landroid/graphics/RectF;
+
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
 
 # virtual methods
 .method public getCardBackgroundColor()Landroid/content/res/ColorStateList;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public getCardForegroundColor()Landroid/content/res/ColorStateList;
     .locals 1
 
     const/4 v0, 0x0
@@ -247,11 +267,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    const-class v0, Landroidx/cardview/widget/CardView;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "androidx.cardview.widget.CardView"
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
@@ -269,11 +285,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    const-class v0, Landroidx/cardview/widget/CardView;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "androidx.cardview.widget.CardView"
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
@@ -360,6 +372,14 @@
     throw p1
 .end method
 
+.method public setCardForegroundColor(Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
 .method public setCheckable(Z)V
     .locals 0
 
@@ -416,9 +436,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method
 
 .method public setDragged(Z)V
@@ -521,7 +539,17 @@
 .end method
 
 .method public setShapeAppearanceModel(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
-    .locals 0
+    .locals 1
+
+    invoke-direct {p0}, Lcom/google/android/material/card/MaterialCardView;->getBoundsAsRectF()Landroid/graphics/RectF;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/material/shape/ShapeAppearanceModel;->isRoundRect(Landroid/graphics/RectF;)Z
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
     const/4 p1, 0x0
 

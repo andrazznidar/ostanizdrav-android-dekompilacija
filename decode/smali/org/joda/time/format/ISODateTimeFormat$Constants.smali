@@ -357,7 +357,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -388,7 +388,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -421,7 +421,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -454,7 +454,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -487,7 +487,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -544,7 +544,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 
@@ -571,7 +571,7 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    invoke-static {}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->date()Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {}, Lcom/google/zxing/client/android/R$id;->date()Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v1
 

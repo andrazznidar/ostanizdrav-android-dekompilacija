@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n25#4:135\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n1#1,132:1\n53#2:133\n48#3:134\n30#4,3:135\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -104,7 +104,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$$special$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -112,27 +112,17 @@
 
     new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$UIState;
 
-    const-string v4, "day"
+    new-instance v4, L-$$LambdaGroup$ks$V2sZXiqJMU6MiuHXIPQuvy8F3ec;
 
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    const-string v4, "$this$toFormattedDay"
+    invoke-direct {v4, v5, p1}, L-$$LambdaGroup$ks$V2sZXiqJMU6MiuHXIPQuvy8F3ec;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v5, L-$$LambdaGroup$ks$V2sZXiqJMU6MiuHXIPQuvy8F3ec;
 
-    sget-object v4, Ljava/util/Locale;->GERMAN:Ljava/util/Locale;
+    invoke-direct {v5, v3, p1}, L-$$LambdaGroup$ks$V2sZXiqJMU6MiuHXIPQuvy8F3ec;-><init>(ILjava/lang/Object;)V
 
-    const-string v5, "EEEE, dd.MM.yy"
-
-    invoke-virtual {p1, v5, v4}, Lorg/joda/time/LocalDate;->toString(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v4, "toString(\"EEEE, dd.MM.yy\", Locale.GERMAN)"
-
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$UIState;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v4, v5}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$UIState;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 
     iput v3, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$$special$$inlined$map$1$2$1;->label:I
 

@@ -20,9 +20,9 @@
 .method public final getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
     .locals 0
 
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getCardBackground()Landroid/graphics/drawable/Drawable;
+    check-cast p1, Landroidx/cardview/widget/CardView$1;
 
-    move-result-object p1
+    iget-object p1, p1, Landroidx/cardview/widget/CardView$1;->mCardBackground:Landroid/graphics/drawable/Drawable;
 
     check-cast p1, Landroidx/cardview/widget/RoundRectDrawable;
 
@@ -32,69 +32,93 @@
 .method public getMaxElevation(Landroidx/cardview/widget/CardViewDelegate;)F
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
-    throw p1
+    move-result-object p1
+
+    iget p1, p1, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
+
+    return p1
 .end method
 
 .method public getRadius(Landroidx/cardview/widget/CardViewDelegate;)F
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
-    throw p1
-.end method
+    move-result-object p1
 
-.method public setBackgroundColor(Landroidx/cardview/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
-    .locals 0
+    iget p1, p1, Landroidx/cardview/widget/RoundRectDrawable;->mRadius:F
 
-    const/4 p1, 0x0
-
-    throw p1
+    return p1
 .end method
 
 .method public setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
-    .locals 4
+    .locals 5
 
     invoke-virtual {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v0
 
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getUseCompatPadding()Z
+    move-object v1, p1
 
-    move-result v1
+    check-cast v1, Landroidx/cardview/widget/CardView$1;
 
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getPreventCornerOverlap()Z
+    iget-object v2, v1, Landroidx/cardview/widget/CardView$1;->this$0:Landroidx/cardview/widget/CardView;
+
+    invoke-virtual {v2}, Landroidx/cardview/widget/CardView;->getUseCompatPadding()Z
 
     move-result v2
 
-    iget v3, v0, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
+    invoke-virtual {v1}, Landroidx/cardview/widget/CardView$1;->getPreventCornerOverlap()Z
 
-    cmpl-float v3, p2, v3
+    move-result v3
 
-    if-nez v3, :cond_1
+    iget v4, v0, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
 
-    iget-boolean v3, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForPadding:Z
+    cmpl-float v4, p2, v4
 
-    if-ne v3, v1, :cond_1
+    if-nez v4, :cond_0
 
-    iget-boolean v3, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForRadius:Z
+    iget-boolean v4, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForPadding:Z
 
-    if-ne v3, v2, :cond_1
+    if-ne v4, v2, :cond_0
 
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getUseCompatPadding()Z
+    iget-boolean v4, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForRadius:Z
 
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    const/4 p2, 0x0
-
-    invoke-interface {p1, p2, p2, p2, p2}, Landroidx/cardview/widget/CardViewDelegate;->setShadowPadding(IIII)V
+    if-ne v4, v3, :cond_0
 
     goto :goto_0
 
     :cond_0
+    iput p2, v0, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
+
+    iput-boolean v2, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForPadding:Z
+
+    iput-boolean v3, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForRadius:Z
+
+    const/4 p2, 0x0
+
+    invoke-virtual {v0, p2}, Landroidx/cardview/widget/RoundRectDrawable;->updateBounds(Landroid/graphics/Rect;)V
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    :goto_0
+    iget-object p2, v1, Landroidx/cardview/widget/CardView$1;->this$0:Landroidx/cardview/widget/CardView;
+
+    invoke-virtual {p2}, Landroidx/cardview/widget/CardView;->getUseCompatPadding()Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x0
+
+    invoke-virtual {v1, p1, p1, p1, p1}, Landroidx/cardview/widget/CardView$1;->setShadowPadding(IIII)V
+
+    goto :goto_1
+
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object p2
@@ -103,57 +127,44 @@
 
     invoke-virtual {p0, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v0, v0, Landroidx/cardview/widget/RoundRectDrawable;->mRadius:F
+    iget p1, p1, Landroidx/cardview/widget/RoundRectDrawable;->mRadius:F
 
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getPreventCornerOverlap()Z
+    invoke-virtual {v1}, Landroidx/cardview/widget/CardView$1;->getPreventCornerOverlap()Z
 
-    move-result v1
+    move-result v0
 
-    invoke-static {p2, v0, v1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->calculateHorizontalPadding(FFZ)F
+    invoke-static {p2, p1, v0}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->calculateHorizontalPadding(FFZ)F
 
-    move-result v1
+    move-result v0
 
-    float-to-double v1, v1
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v1
-
-    double-to-int v1, v1
-
-    invoke-interface {p1}, Landroidx/cardview/widget/CardViewDelegate;->getPreventCornerOverlap()Z
-
-    move-result v2
-
-    invoke-static {p2, v0, v2}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->calculateVerticalPadding(FFZ)F
-
-    move-result p2
-
-    float-to-double v2, p2
+    float-to-double v2, v0
 
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
 
-    double-to-int p2, v2
+    double-to-int v0, v2
 
-    invoke-interface {p1, v1, p2, v1, p2}, Landroidx/cardview/widget/CardViewDelegate;->setShadowPadding(IIII)V
+    invoke-virtual {v1}, Landroidx/cardview/widget/CardView$1;->getPreventCornerOverlap()Z
 
-    :goto_0
+    move-result v2
+
+    invoke-static {p2, p1, v2}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->calculateVerticalPadding(FFZ)F
+
+    move-result p1
+
+    float-to-double p1, p1
+
+    invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide p1
+
+    double-to-int p1, p1
+
+    invoke-virtual {v1, v0, p1, v0, p1}, Landroidx/cardview/widget/CardView$1;->setShadowPadding(IIII)V
+
+    :goto_1
     return-void
-
-    :cond_1
-    iput p2, v0, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
-
-    iput-boolean v1, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForPadding:Z
-
-    iput-boolean v2, v0, Landroidx/cardview/widget/RoundRectDrawable;->mInsetForRadius:Z
-
-    const/4 p1, 0x0
-
-    invoke-virtual {v0, p1}, Landroidx/cardview/widget/RoundRectDrawable;->updateBounds(Landroid/graphics/Rect;)V
-
-    throw p1
 .end method

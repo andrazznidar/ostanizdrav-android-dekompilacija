@@ -56,13 +56,9 @@
 
     invoke-direct {v2, p1}, Lde/rki/coronawarnapp/service/submission/QRScanResult;-><init>(Ljava/lang/String;)V
 
-    iget-object p1, v2, Lde/rki/coronawarnapp/service/submission/QRScanResult;->guid$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/service/submission/QRScanResult;->getGuid()Ljava/lang/String;
 
     move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
 
     const/4 v3, 0x1
 
@@ -78,11 +74,21 @@
     :goto_0
     if-eqz p1, :cond_1
 
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/service/submission/QRScanResult;->getGuid()Ljava/lang/String;
+
+    move-result-object p1
+
+    sput-object p1, Lde/rki/coronawarnapp/bugreporting/censors/QRCodeCensor;->lastGUID:Ljava/lang/String;
+
     iget-object p1, v0, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel;->scanStatusValue:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     sget-object v4, Lde/rki/coronawarnapp/ui/submission/ScanStatus;->SUCCESS:Lde/rki/coronawarnapp/ui/submission/ScanStatus;
 
     invoke-virtual {p1, v4}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+
+    const-string p1, "scanResult"
+
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/ui/submission/qrcode/scan/SubmissionQRCodeScanViewModel$doDeviceRegistration$1;
 

@@ -23,16 +23,24 @@
 
 .field public volatile iAfterPrinter:Lorg/joda/time/format/PeriodPrinter;
 
+.field public final iBeforeParser:Lorg/joda/time/format/PeriodParser;
+
+.field public final iBeforePrinter:Lorg/joda/time/format/PeriodPrinter;
+
 .field public final iFinalText:Ljava/lang/String;
 
 .field public final iParsedForms:[Ljava/lang/String;
 
 .field public final iText:Ljava/lang/String;
 
+.field public final iUseAfter:Z
+
+.field public final iUseBefore:Z
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/joda/time/format/PeriodPrinter;Lorg/joda/time/format/PeriodParser;ZZ)V
-    .locals 0
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,15 +50,15 @@
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p4
+    move-result v0
 
-    if-eqz p4, :cond_1
+    if-eqz v0, :cond_1
 
     if-eqz p3, :cond_0
 
-    array-length p4, p3
+    array-length v0, p3
 
-    if-nez p4, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     const/4 p2, 0x1
@@ -66,15 +74,15 @@
     goto :goto_1
 
     :cond_1
-    new-instance p4, Ljava/util/TreeSet;
+    new-instance v0, Ljava/util/TreeSet;
 
-    sget-object p5, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
+    sget-object v1, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
-    invoke-direct {p4, p5}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+    invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    invoke-virtual {p4, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {p4, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     if-eqz p3, :cond_2
 
@@ -87,14 +95,14 @@
 
     aget-object p2, p3, p1
 
-    invoke-virtual {p4, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_2
     new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {p1, p4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     invoke-static {p1}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
 
@@ -113,5 +121,342 @@
     iput-object p1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iParsedForms:[Ljava/lang/String;
 
     :goto_1
+    iput-object p4, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforePrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    iput-object p5, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforeParser:Lorg/joda/time/format/PeriodParser;
+
+    iput-boolean p6, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseBefore:Z
+
+    iput-boolean p7, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseAfter:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public calculatePrintedLength(Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)I
+    .locals 5
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforePrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iAfterPrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    invoke-interface {v0, p1, p2}, Lorg/joda/time/format/PeriodPrinter;->calculatePrintedLength(Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)I
+
+    move-result v2
+
+    invoke-interface {v1, p1, p2}, Lorg/joda/time/format/PeriodPrinter;->calculatePrintedLength(Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    iget-boolean v2, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseBefore:Z
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0, p1, v4, p2}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    iget-boolean v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseAfter:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x2
+
+    invoke-interface {v1, p1, v0, p2}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result p1
+
+    if-lez p1, :cond_3
+
+    if-le p1, v4, :cond_0
+
+    iget-object p1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iFinalText:Ljava/lang/String;
+
+    :goto_0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    add-int/2addr p1, v3
+
+    move v3, p1
+
+    goto :goto_2
+
+    :cond_1
+    iget-object p1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    goto :goto_1
+
+    :cond_2
+    iget-boolean v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseAfter:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v1, p1, v4, p2}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result p1
+
+    if-lez p1, :cond_3
+
+    iget-object p1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    :goto_1
+    add-int/2addr v3, p1
+
+    :cond_3
+    :goto_2
+    return v3
+.end method
+
+.method public countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+    .locals 2
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforePrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    invoke-interface {v0, p1, p2, p3}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result v0
+
+    if-ge v0, p2, :cond_0
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iAfterPrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    invoke-interface {v1, p1, p2, p3}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result p1
+
+    add-int/2addr v0, p1
+
+    :cond_0
+    return v0
+.end method
+
+.method public parseInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/String;ILjava/util/Locale;)I
+    .locals 17
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v8, p2
+
+    move/from16 v2, p3
+
+    move-object/from16 v9, p4
+
+    iget-object v3, v0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforeParser:Lorg/joda/time/format/PeriodParser;
+
+    invoke-interface {v3, v1, v8, v2, v9}, Lorg/joda/time/format/PeriodParser;->parseInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/String;ILjava/util/Locale;)I
+
+    move-result v10
+
+    if-gez v10, :cond_0
+
+    return v10
+
+    :cond_0
+    const/4 v11, -0x1
+
+    const/4 v12, 0x0
+
+    if-le v10, v2, :cond_4
+
+    iget-object v13, v0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iParsedForms:[Ljava/lang/String;
+
+    array-length v14, v13
+
+    move v15, v12
+
+    :goto_0
+    if-ge v15, v14, :cond_4
+
+    aget-object v16, v13, v15
+
+    if-eqz v16, :cond_2
+
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const/4 v3, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    move-object/from16 v2, p2
+
+    move v4, v10
+
+    move-object/from16 v5, v16
+
+    invoke-virtual/range {v2 .. v7}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v15, v15, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    :goto_1
+    if-nez v16, :cond_3
+
+    move v11, v12
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    move v11, v2
+
+    :goto_2
+    add-int/2addr v10, v11
+
+    const/4 v12, 0x1
+
+    :cond_4
+    iget-object v2, v0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iAfterParser:Lorg/joda/time/format/PeriodParser;
+
+    invoke-interface {v2, v1, v8, v10, v9}, Lorg/joda/time/format/PeriodParser;->parseInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/String;ILjava/util/Locale;)I
+
+    move-result v1
+
+    if-gez v1, :cond_5
+
+    return v1
+
+    :cond_5
+    if-eqz v12, :cond_6
+
+    if-ne v1, v10, :cond_6
+
+    if-lez v11, :cond_6
+
+    not-int v1, v10
+
+    return v1
+
+    :cond_6
+    if-le v1, v10, :cond_7
+
+    if-nez v12, :cond_7
+
+    iget-boolean v2, v0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseBefore:Z
+
+    if-nez v2, :cond_7
+
+    not-int v1, v10
+
+    :cond_7
+    return v1
+.end method
+
+.method public printTo(Ljava/lang/StringBuffer;Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)V
+    .locals 4
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iBeforePrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    iget-object v1, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iAfterPrinter:Lorg/joda/time/format/PeriodPrinter;
+
+    invoke-interface {v0, p1, p2, p3}, Lorg/joda/time/format/PeriodPrinter;->printTo(Ljava/lang/StringBuffer;Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)V
+
+    iget-boolean v2, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseBefore:Z
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0, p2, v3, p3}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    iget-boolean v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseAfter:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x2
+
+    invoke-interface {v1, p2, v0, p3}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    if-le v0, v3, :cond_0
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iFinalText:Ljava/lang/String;
+
+    :goto_0
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_1
+
+    :cond_2
+    iget-boolean v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iUseAfter:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v1, p2, v3, p3}, Lorg/joda/time/format/PeriodPrinter;->countFieldsToPrint(Lorg/joda/time/ReadablePeriod;ILjava/util/Locale;)I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    iget-object v0, p0, Lorg/joda/time/format/PeriodFormatterBuilder$Separator;->iText:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    :cond_3
+    :goto_1
+    invoke-interface {v1, p1, p2, p3}, Lorg/joda/time/format/PeriodPrinter;->printTo(Ljava/lang/StringBuffer;Lorg/joda/time/ReadablePeriod;Ljava/util/Locale;)V
+
     return-void
 .end method

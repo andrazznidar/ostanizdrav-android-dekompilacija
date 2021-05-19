@@ -81,7 +81,7 @@
     if-ne v2, v3, :cond_1
 
     :try_start_0
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -102,7 +102,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$getENFClientVersion$1;->label:I
@@ -155,7 +155,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v1
 
@@ -196,7 +196,7 @@
 .end method
 
 .method public isAtLeast(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -242,19 +242,17 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->label:I
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
     iget-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->J$0:J
 
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -266,51 +264,25 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p3
-
-    const/16 v2, 0x8
-
-    if-ne p3, v2, :cond_3
-
-    move p3, v4
-
-    goto :goto_1
-
-    :cond_3
-    move p3, v3
-
-    :goto_1
-    if-eqz p3, :cond_7
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->J$0:J
 
-    iput v4, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->label:I
 
     invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion;->getENFClientVersion(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p3
 
-    if-ne p3, v1, :cond_4
+    if-ne p3, v1, :cond_3
 
     return-object v1
 
-    :cond_4
-    :goto_2
+    :cond_3
+    :goto_1
     check-cast p3, Ljava/lang/Long;
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_5
 
     invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
 
@@ -336,38 +308,34 @@
 
     move-result-object p3
 
-    new-array v2, v3, [Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    new-array v4, v2, [Ljava/lang/Object;
 
     sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
 
-    invoke-virtual {v5, p3, v2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, p3, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     cmp-long p1, v0, p1
 
-    if-ltz p1, :cond_5
+    if-ltz p1, :cond_4
 
-    move v3, v4
+    goto :goto_2
 
-    :cond_5
+    :cond_4
+    move v3, v2
+
+    :goto_2
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     return-object p1
 
-    :cond_6
+    :cond_5
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     return-object p1
-
-    :cond_7
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "given version has incorrect length"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public requireMinimumVersion(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -426,7 +394,7 @@
     iget-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$requireMinimumVersion$1;->J$0:J
 
     :try_start_0
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -442,7 +410,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     iput-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$requireMinimumVersion$1;->J$0:J

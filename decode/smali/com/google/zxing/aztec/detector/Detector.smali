@@ -647,7 +647,7 @@
 
     div-float/2addr v12, v13
 
-    invoke-static {v12}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v12}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v12
 
@@ -667,7 +667,7 @@
 
     div-float/2addr v9, v13
 
-    invoke-static {v9}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v9}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v8
 
@@ -1054,7 +1054,7 @@
 
     div-float/2addr v9, v13
 
-    invoke-static {v9}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v9}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v9
 
@@ -1074,7 +1074,7 @@
 
     div-float/2addr v10, v13
 
-    invoke-static {v10}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v10}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v8
 
@@ -1127,7 +1127,7 @@
 
     iget v7, v13, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
 
-    invoke-static {v6, v4, v2, v7}, Landroidx/transition/ViewGroupUtilsApi14;->distance(IIII)F
+    invoke-static {v6, v4, v2, v7}, Lcom/google/zxing/client/android/R$id;->distance(IIII)F
 
     move-result v2
 
@@ -1145,7 +1145,7 @@
 
     iget v3, v10, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
 
-    invoke-static {v4, v6, v7, v3}, Landroidx/transition/ViewGroupUtilsApi14;->distance(IIII)F
+    invoke-static {v4, v6, v7, v3}, Lcom/google/zxing/client/android/R$id;->distance(IIII)F
 
     move-result v3
 
@@ -1948,7 +1948,7 @@
 
     iget v3, p2, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
 
-    invoke-static {v0, v1, v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->distance(IIII)F
+    invoke-static {v0, v1, v2, v3}, Lcom/google/zxing/client/android/R$id;->distance(IIII)F
 
     move-result v0
 
@@ -2005,11 +2005,11 @@
 
     iget-object v8, p0, Lcom/google/zxing/aztec/detector/Detector;->image:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-static {v3}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v9
 
-    invoke-static {v4}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v10
 
@@ -2229,13 +2229,13 @@
 
     iget v0, p1, Lcom/google/zxing/ResultPoint;->x:F
 
-    invoke-static {v0}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v0
 
     iget p1, p1, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {p1}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result p1
 
@@ -2257,7 +2257,7 @@
 
     iget v3, p2, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {v0, v1, v2, v3}, Landroidx/transition/ViewGroupUtilsApi14;->distance(FFFF)F
+    invoke-static {v0, v1, v2, v3}, Lcom/google/zxing/client/android/R$id;->distance(FFFF)F
 
     move-result v0
 
@@ -2300,7 +2300,7 @@
 
     add-float/2addr v6, v2
 
-    invoke-static {v6}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v6}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v6
 
@@ -2308,7 +2308,7 @@
 
     add-float/2addr v5, p1
 
-    invoke-static {v5}, Landroidx/transition/ViewGroupUtilsApi14;->round(F)I
+    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->round(F)I
 
     move-result v5
 

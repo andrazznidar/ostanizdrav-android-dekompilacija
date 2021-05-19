@@ -26,7 +26,7 @@
 
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    sget v0, Lcom/google/android/material/R$id;->month_title:I
+    const v0, 0x7f0902ac
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -40,7 +40,7 @@
 
     invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setAccessibilityHeading(Landroid/view/View;Z)V
 
-    sget v0, Lcom/google/android/material/R$id;->month_grid:I
+    const v0, 0x7f0902a7
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

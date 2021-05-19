@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.appconfig.internal.AppConfigSource"
     f = "AppConfigSource.kt"
     l = {
-        0x17,
-        0x1f
+        0x1c,
+        0x27
     }
     m = "getConfigData"
 .end annotation

@@ -22,12 +22,15 @@
         "Lkotlin/jvm/functions/Function1<",
         "Ljava/util/List<",
         "+",
-        "Lde/rki/coronawarnapp/contactdiary/util/SelectableItem<",
-        "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;",
-        ">;>;",
+        "Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/DiaryPersonListItem;",
+        ">;",
         "Lkotlin/Unit;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nContactDiaryPersonListFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryPersonListFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListFragment$onViewCreated$2\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,58:1\n295#2,2:59\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryPersonListFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListFragment$onViewCreated$2\n*L\n47#1,2:59\n*E\n"
 .end annotation
 
 
@@ -69,7 +72,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {v0, p1, v1, v2}, Landroidx/transition/ViewGroupUtilsApi14;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
+    invoke-static {v0, p1, v1, v2}, Lcom/google/zxing/client/android/R$id;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListFragment;
 
@@ -77,9 +80,9 @@
 
     sget-object v3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    aget-object v1, v3, v1
+    aget-object v3, v3, v1
 
-    invoke-virtual {v2, v0, v1}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
+    invoke-virtual {v2, v0, v3}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
 
     move-result-object v0
 
@@ -87,9 +90,9 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListFragmentBinding;->contactDiaryPersonListNoItemsGroup:Landroidx/constraintlayout/widget/Group;
 
-    const-string v1, "binding.contactDiaryPersonListNoItemsGroup"
+    const-string v2, "binding.contactDiaryPersonListNoItemsGroup"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -97,7 +100,12 @@
 
     xor-int/lit8 p1, p1, 0x1
 
-    invoke-static {v0, p1}, Landroidx/transition/ViewGroupUtilsApi14;->setInvisible(Landroid/view/View;Z)V
+    if-eqz p1, :cond_0
+
+    const/16 v1, 0x8
+
+    :cond_0
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

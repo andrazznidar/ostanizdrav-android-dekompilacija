@@ -47,41 +47,41 @@
 
 # virtual methods
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 8
+    .locals 6
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    instance-of v0, p2, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
 
-    instance-of v1, p2, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    move-object v0, p2
 
-    move-object v1, p2
+    check-cast v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
 
-    check-cast v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
+    iget v1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
 
-    iget v2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
+    const/high16 v2, -0x80000000
 
-    const/high16 v3, -0x80000000
+    and-int v3, v1, v2
 
-    and-int v4, v2, v3
+    if-eqz v3, :cond_0
 
-    if-eqz v4, :cond_0
+    sub-int/2addr v1, v2
 
-    sub-int/2addr v2, v3
-
-    iput v2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
+    iput v1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
+    new-instance v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;
 
-    invoke-direct {v1, p0, p2}, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;-><init>(Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;-><init>(Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->result:Ljava/lang/Object;
+    iget-object p2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->result:Ljava/lang/Object;
 
-    iget v2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
 
     const/4 v3, 0x2
 
@@ -93,17 +93,17 @@
 
     if-ne v2, v3, :cond_1
 
-    iget-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
+    iget-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
 
     check-cast p1, Lkotlin/coroutines/Continuation;
 
-    iget-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
+    iget-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_a
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -115,28 +115,28 @@
     throw p1
 
     :cond_2
-    iget-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
+    iget-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
 
-    iget-object v2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
+    iget-object v2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
 
     check-cast v2, Lkotlin/coroutines/Continuation;
 
-    iget-object v5, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
+    iget-object v4, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
 
-    iget-object v6, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
 
-    check-cast v6, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;
+    check-cast v5, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;
 
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p2, p1
 
-    move-object p1, v5
+    move-object p1, v4
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p2}, Landroidx/transition/ViewGroupUtilsApi14;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1;->this$0:Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;
 
@@ -148,238 +148,52 @@
 
     invoke-direct {v5, p2, p1}, Lkotlin/collections/IndexedValue;-><init>(ILjava/lang/Object;)V
 
-    iput-object p0, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
+    iput-object p0, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
+    iput-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
 
-    iput-object v1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
+    iput-object v0, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
 
-    iput-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
+    iput-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
 
-    iput v4, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
+    iput v4, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
 
-    invoke-interface {v2, v5, v1}, Lkotlinx/coroutines/channels/SendChannel;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {v2, v5, v0}, Lkotlinx/coroutines/channels/SendChannel;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p2, v0, :cond_4
+    if-ne p2, v1, :cond_4
 
-    return-object v0
+    return-object v1
 
     :cond_4
-    move-object v6, p0
+    move-object v5, p0
 
     move-object p2, p1
 
-    move-object v2, v1
+    move-object v2, v0
 
     :goto_1
-    iput-object v6, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
+    iput-object v5, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
+    iput-object p1, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$1:Ljava/lang/Object;
 
-    iput-object v2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
+    iput-object v2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$2:Ljava/lang/Object;
 
-    iput-object p2, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
+    iput-object p2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->L$3:Ljava/lang/Object;
 
-    iput v3, v1, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
+    iput v3, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1$invokeSuspend$$inlined$collect$1$1;->label:I
 
-    invoke-interface {v1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->yield(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->checkCompletion(Lkotlin/coroutines/CoroutineContext;)V
+    if-ne p1, v1, :cond_5
 
-    invoke-static {v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p2
-
-    instance-of v2, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;
-
-    const/4 v3, 0x0
-
-    if-nez v2, :cond_5
-
-    move-object p2, v3
+    return-object v1
 
     :cond_5
-    check-cast p2, Lkotlinx/coroutines/internal/DispatchedContinuation;
-
-    if-eqz p2, :cond_e
-
-    iget-object v2, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
-
-    invoke-virtual {v2, p1}, Lkotlinx/coroutines/CoroutineDispatcher;->isDispatchNeeded(Lkotlin/coroutines/CoroutineContext;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    iput-object v2, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
-
-    iput v4, p2, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
-
-    iget-object v2, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
-
-    invoke-virtual {v2, p1, p2}, Lkotlinx/coroutines/CoroutineDispatcher;->dispatchYield(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
-
-    goto :goto_7
-
-    :cond_6
-    new-instance v2, Lkotlinx/coroutines/YieldContext;
-
-    invoke-direct {v2}, Lkotlinx/coroutines/YieldContext;-><init>()V
-
-    invoke-interface {p1, v2}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-
-    move-result-object p1
-
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    iput-object v5, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
-
-    iput v4, p2, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
-
-    iget-object v5, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
-
-    invoke-virtual {v5, p1, p2}, Lkotlinx/coroutines/CoroutineDispatcher;->dispatchYield(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
-
-    iget-boolean p1, v2, Lkotlinx/coroutines/YieldContext;->dispatcherWasUnconfined:Z
-
-    if-eqz p1, :cond_d
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    sget-object v2, Lkotlinx/coroutines/ThreadLocalEventLoop;->INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
-
-    invoke-static {}, Lkotlinx/coroutines/ThreadLocalEventLoop;->getEventLoop$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
-
-    move-result-object v2
-
-    iget-object v5, v2, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlinx/coroutines/internal/ArrayQueue;
-
-    const/4 v6, 0x0
-
-    if-eqz v5, :cond_8
-
-    iget v7, v5, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
-
-    iget v5, v5, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
-
-    if-ne v7, v5, :cond_7
-
-    goto :goto_2
-
-    :cond_7
-    move v5, v6
-
-    goto :goto_3
-
-    :cond_8
     :goto_2
-    move v5, v4
-
-    :goto_3
-    if-eqz v5, :cond_9
-
-    goto :goto_5
-
-    :cond_9
-    invoke-virtual {v2}, Lkotlinx/coroutines/EventLoop;->isUnconfinedLoopActive()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_a
-
-    iput-object p1, p2, Lkotlinx/coroutines/internal/DispatchedContinuation;->_state:Ljava/lang/Object;
-
-    iput v4, p2, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
-
-    invoke-virtual {v2, p2}, Lkotlinx/coroutines/EventLoop;->dispatchUnconfined(Lkotlinx/coroutines/DispatchedTask;)V
-
-    goto :goto_6
-
-    :cond_a
-    invoke-virtual {v2, v4}, Lkotlinx/coroutines/EventLoop;->incrementUseCount(Z)V
-
-    :try_start_0
-    invoke-virtual {p2}, Lkotlinx/coroutines/DispatchedTask;->run()V
-
-    :cond_b
-    invoke-virtual {v2}, Lkotlinx/coroutines/EventLoop;->processUnconfinedEvent()Z
-
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez p1, :cond_b
-
-    goto :goto_4
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    invoke-virtual {p2, p1, v3}, Lkotlinx/coroutines/DispatchedTask;->handleFatalException$kotlinx_coroutines_core(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :goto_4
-    invoke-virtual {v2, v4}, Lkotlinx/coroutines/EventLoop;->decrementUseCount(Z)V
-
-    :goto_5
-    move v4, v6
-
-    :goto_6
-    if-eqz v4, :cond_c
-
-    goto :goto_7
-
-    :cond_c
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    goto :goto_8
-
-    :catchall_1
-    move-exception p1
-
-    invoke-virtual {v2, v4}, Lkotlinx/coroutines/EventLoop;->decrementUseCount(Z)V
-
-    throw p1
-
-    :cond_d
-    :goto_7
-    move-object p1, v0
-
-    goto :goto_8
-
-    :cond_e
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_8
-    if-ne p1, v0, :cond_f
-
-    const-string p2, "frame"
-
-    invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_f
-    if-ne p1, v0, :cond_10
-
-    goto :goto_9
-
-    :cond_10
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_9
-    if-ne p1, v0, :cond_11
-
-    return-object v0
-
-    :cond_11
-    :goto_a
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
